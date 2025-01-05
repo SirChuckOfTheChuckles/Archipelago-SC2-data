@@ -41725,6 +41725,7 @@
             <Volume value="0.000000,0.000000"/>
         </Layers>
     </CActorSound>
+    <CActorSound id="AP_Bruh"/>
     <CActorModel id="AP_GuardianExplosiveSporesImpactModel">
         <Flags index="SuppressCreationErrors" value="1"/>
         <Flags index="SuppressSaveLoad" value="1"/>
