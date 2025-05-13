@@ -9880,6 +9880,9 @@
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="NydusCanal"/>
     </CUnit>
+    <CUnit id="AP_TechSkipNydusNetwork" parent="AP_NydusNetwork">
+        <AbilArray Link="AP_AutoMorphToNydusNetwork"/>
+    </CUnit>
     <CUnit id="AP_NydusWorm">
         <DeathRevealRadius value="3"/>
         <Facing value="29.9707"/>
@@ -17014,6 +17017,9 @@
         <GlossaryPriority value="244"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
+    <CUnit id="AP_TechSkipGreaterSpire" parent="AP_GreaterSpire">
+        <AbilArray Link="AP_AutoMorphToGreaterSpire"/>
+    </CUnit>
     <CUnit id="AP_LurkerDen">
         <DeathRevealRadius value="3"/>
         <Facing value="29.9926"/>
@@ -17072,6 +17078,9 @@
         <GlossaryPriority value="10"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipGreaterHydraDen" parent="AP_LurkerDen">
+        <AbilArray Link="AP_AutoMorphToGreaterHydraDen"/>
     </CUnit>
     <CUnit id="AP_ImpalerDen">
         <DeathRevealRadius value="3"/>
@@ -17202,6 +17211,9 @@
         <TechTreeUnlockedUnitArray value="SwarmHostMP"/>
         <TechTreeUnlockedUnitArray value=""/>
     </CUnit>
+    <CUnit id="AP_TechSkipInfestationPit" parent="AP_InfestationPit">
+        <AbilArray Link="AP_AutoMorphToInfestationPit"/>
+    </CUnit>
     <CUnit id="AP_HydraliskDen">
         <DeathRevealRadius value="3"/>
         <Facing value="332.9956"/>
@@ -17272,6 +17284,9 @@
         <GlossaryPriority value="10"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
+    <CUnit id="AP_TechSkipHydraliskDen" parent="AP_HydraliskDen">
+        <AbilArray Link="AP_AutoMorphToHydraliskDen"/>
+    </CUnit>
     <CUnit id="AP_BanelingNest">
         <DeathRevealRadius value="3"/>
         <Facing value="315"/>
@@ -17334,6 +17349,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="37"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipBanelingNest" parent="AP_BanelingNest">
+        <AbilArray Link="AP_AutoMorphToBanelingNest"/>
     </CUnit>
     <CUnit id="AP_EvolutionChamber">
         <DeathRevealRadius value="3"/>
@@ -17412,6 +17430,9 @@
         <GlossaryPriority value="29"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value=""/>
+    </CUnit>
+    <CUnit id="AP_TechSkipEvolutionChamber" parent="AP_EvolutionChamber">
+        <AbilArray Link="AP_AutoMorphToEvolutionChamber"/>
     </CUnit>
     <CUnit id="AP_Gateway">
         <DeathRevealRadius value="3"/>
@@ -18319,6 +18340,9 @@
         <GlossaryPriority value="18"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
+    <CUnit id="AP_TechSkipHive" parent="AP_Hive">
+        <AbilArray Link="AP_AutoMorphToHive"/>
+    </CUnit>
     <CUnit id="Hatchery">
         <!-- Override -->
         <!-- Zergling respawn -->
@@ -18538,6 +18562,9 @@
         <GlossaryPriority value="10"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Overseer"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipLair" parent="AP_Lair">
+        <AbilArray Link="AP_AutoMorphToLair"/>
     </CUnit>
     <CUnit id="AP_Queen">
         <DeathRevealRadius value="3"/>
@@ -22033,6 +22060,9 @@
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Mutalisk"/>
     </CUnit>
+    <CUnit id="AP_TechSkipSpire" parent="AP_Spire">
+        <AbilArray Link="AP_AutoMorphToSpire"/>
+    </CUnit>
     <CUnit id="AP_RoachWarren">
         <DeathRevealRadius value="3"/>
         <Facing value="326.997"/>
@@ -22097,6 +22127,9 @@
         <GlossaryPriority value="33"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Roach"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipRoachWarren" parent="AP_RoachWarren">
+        <AbilArray Link="AP_AutoMorphToRoachWarren"/>
     </CUnit>
     <CUnit id="AP_SpineCrawlerRootableAnywhere">
         <Name value="Unit/Name/AP_SpineCrawler"/>
@@ -22180,6 +22213,9 @@
         <AbilArray index="4" removed="1"/>
         <Footprint value="Footprint2x2ZergSpineCrawler"/>
         <PlacementFootprint value="Footprint2x2Creep2"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipSpineCrawler" parent="AP_SpineCrawler">
+        <AbilArray Link="AP_AutoMorphToSpineCrawler"/>
     </CUnit>
     <CUnit id="AP_SpineCrawlerUprooted">
         <DeathRevealRadius value="3"/>
@@ -22339,6 +22375,9 @@
         <Footprint value="Footprint2x2Contour2"/>
         <PlacementFootprint value="Footprint2x2Creep2"/>
     </CUnit>
+    <CUnit id="AP_TechSkipSporeCrawler" parent="AP_SporeCrawler">
+        <AbilArray Link="AP_AutoMorphToSporeCrawler"/>
+    </CUnit>
     <CUnit id="AP_SporeCrawlerUprooted">
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
@@ -22482,6 +22521,9 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:FactionEvolved"/>
         <Mover value="BileLauncherZagaraBombardment"/>
     </CUnit>
+    <CUnit id="AP_TechSkipBileLauncher" parent="AP_BileLauncher">
+        <AbilArray Link="AP_AutoMorphToBileLauncher"/>
+    </CUnit>
     <CUnit id="AP_SpawningPool">
         <DeathRevealRadius value="3"/>
         <Race value="Zerg"/>
@@ -22548,6 +22590,9 @@
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Zergling"/>
         <TechTreeUnlockedUnitArray value="Queen"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipSpawningPool" parent="AP_SpawningPool">
+        <AbilArray Link="AP_AutoMorphToSpawningPool"/>
     </CUnit>
     <CUnit id="AP_TalonsMissileWeapon" parent="MISSILE">
         <Race value="Zerg"/>
@@ -24430,6 +24475,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipUltraliskCavern" parent="AP_UltraliskCavern">
+        <AbilArray Link="AP_AutoMorphToUltraliskCavern"/>
     </CUnit>
     <CUnit id="AP_ZealotAiur">
         <DeathRevealRadius value="3"/>
@@ -26519,6 +26567,9 @@
         <GlossaryPriority value="10"/>
         <EditorCategories value="ObjectType:Structure"/>
         <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+    </CUnit>
+    <CUnit id="AP_TechSkipZergMercenaryCompound" parent="AP_ZergMercenaryCompound">
+        <AbilArray Link="AP_AutoMorphToZergMercenaryCompound"/>
     </CUnit>
     <CUnit id="AP_MercZergling" parent="AP_Zergling">
         <Name value="Unit/Name/AP_MercZergling"/>
@@ -30219,6 +30270,7 @@
             <LayoutButtons Face="AP_StopGenerateCreep" Type="AbilCmd" AbilCmd="AP_YggdrasilGenerateCreep,Off" Row="1" Column="1"/>
             <LayoutButtons Face="AP_YggdrasilHive" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build13" Row="2" Column="1"/>
             <LayoutButtons Face="AP_YggdrasilRoachWarren" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build14" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_YggdrasilBileLauncher" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build20" Row="2" Column="1"/>
             <LayoutButtons Face="AP_YggdrasilExtractor" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build3" Row="2" Column="1"/>
             <LayoutButtons Face="AP_YggdrasilAutomatedExtractor" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build19" Row="2" Column="1"/>
             <LayoutButtons Face="AP_YggdrasilHydraliskDen" Type="AbilCmd" AbilCmd="AP_YggdrasilBuild,Build6" Row="2" Column="1"/>

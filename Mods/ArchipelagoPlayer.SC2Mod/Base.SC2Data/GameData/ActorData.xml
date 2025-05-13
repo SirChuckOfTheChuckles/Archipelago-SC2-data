@@ -1713,6 +1713,9 @@
         <On Terms="AbilTransport.AP_NydusWormTransport.TransportLoad" Send="$Spell"/>
         <On Terms="AbilTransport.AP_NydusWormTransport.TransportUnload" Send="$Spell"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipNydusNetwork.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipNydusNetwork.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_NydusNetwork; MorphFrom AP_TechSkipNydusNetwork" Send="Create"/>
         <Model value="NydusNetwork"/>
         <BuildModel value="NydusNetwork"/>
         <DeathArray index="Normal" ModelLink="NydusNetworkDeath" SoundLink="NydusNetwork_Explode"/>
@@ -1737,6 +1740,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_NydusNetworkBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipNydusNetwork.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipNydusNetwork.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipNydusNetwork.Cancel" Send="Destroy"/>
         <Model value="NydusNetworkBuild"/>
     </CActorModel>
     <CActorSimple id="AP_NydusWormBuild">
@@ -8855,6 +8862,9 @@
     <CActorUnit id="AP_BanelingNest" parent="ZergBuildingEx" unitName="AP_BanelingNest">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipBanelingNest.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipBanelingNest.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_BanelingNest; MorphFrom AP_TechSkipBanelingNest" Send="Create"/>
         <Model value="BanelingNest"/>
         <BuildModel value="BanelingNest"/>
         <DeathArray index="Normal" ModelLink="BanelingNestDeath" SoundLink="BanelingNest_Explode"/>
@@ -8875,6 +8885,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_BanelingNestBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipBanelingNest.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipBanelingNest.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipBanelingNest.Cancel" Send="Destroy"/>
         <Model value="BanelingNestBuild"/>
     </CActorModel>
     <CActorUnit id="AP_AutomatedExtractor" parent="ZergBuilding" unitName="AP_AutomatedExtractor">
@@ -18287,8 +18301,11 @@
     <CActorSplat id="AP_KhaydarinMonolithSplat" parent="GenericUnitSplat" unitName="AP_KhaydarinMonolith"/>
     <CActorUnit id="AP_GreaterSpire" parent="ZergBuildingEx" unitName="AP_GreaterSpire">
         <Aliases value="_UnitHuge"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_GreaterSpire" Send="Create"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_GreaterSpire" Send="AnimPlay Morph Morph 0 0.000000 0.000000 2.000000 AsDuration"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_GreaterSpire; MorphFrom AP_Spire" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_GreaterSpire; MorphFrom AP_Spire" Send="AnimPlay Morph Morph 0 0.000000 0.000000 2.000000 AsDuration"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterSpire.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterSpire.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_GreaterSpire; MorphFrom AP_TechSkipGreaterSpire" Send="Create"/>
         <On index="69" Send="Create AP_SpireBuild"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
         <Model value="GreaterSpire"/>
@@ -18348,6 +18365,9 @@
     <CActorUnit id="AP_InfestationPit" parent="ZergBuildingEx" unitName="AP_InfestationPit">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipInfestationPit.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipInfestationPit.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_InfestationPit; MorphFrom AP_TechSkipInfestationPit" Send="Create"/>
         <Model value="InfestationPit"/>
         <BuildModel value="InfestationPit"/>
         <DeathArray index="Normal" ModelLink="InfestationPitDeath" SoundLink="InfestationPit_Explode"/>
@@ -18368,6 +18388,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_InfestationPitBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipInfestationPit.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipInfestationPit.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipInfestationPit.Cancel" Send="Destroy"/>
         <Model value="InfestationPitBuild"/>
     </CActorModel>
     <CActorTurret id="AP_KhaydarinMonolithTurret">
@@ -18398,6 +18422,9 @@
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_LurkerDen" Send="Create AP_HydraliskDen"/>
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_LurkerDen" Target="AP_HydraliskDen" Send="AnimPlay Rebirth Build,D,Start 0 0.000000 0.000000 0.300000 AsDuration"/>
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_LurkerDen" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterHydraDen.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterHydraDen.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_LurkerDen; MorphFrom AP_TechSkipGreaterHydraDen" Send="Create"/>
         <On index="69" Send="Create AP_HydraliskDenBuild"/>
         <BuildModel value="AP_LurkerDen"/>
         <DeathArray index="Normal" ModelLink="AP_LurkerDenDeath" SoundLink="AP_LurkerDen_Explode"/>
@@ -18450,6 +18477,9 @@
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_ImpalerDen" Send="AnimPlay Rebirth Build,D,Start 0 0.000000 0.000000 0.300000 AsDuration"/>
         <On Terms="Effect.HydraliskDenMorphFinishDummy.Start" Send="StatusSet MorphAnim 1"/>
         <On Terms="Effect.HydraliskDenMorphFinishDummy.Start" Send="AnimClear Waiting"/>
+        <On Terms="UnitConstruction.AP_TechSkipHydraliskDen.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipHydraliskDen.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskDen; MorphFrom AP_TechSkipHydraliskDen" Send="Create"/>
         <Model value="HydraliskDen"/>
         <BuildModel value="HydraliskDen"/>
         <DeathArray index="Normal" ModelLink="HydraliskDenDeath" SoundLink="HydraliskDen_Explode"/>
@@ -18470,6 +18500,13 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_HydraliskDenBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterHydraDen.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterHydraDen.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterHydraDen.Cancel" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipHydraliskDen.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipHydraliskDen.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipHydraliskDen.Cancel" Send="Destroy"/>
         <Model value="HydraliskDenBuild"/>
     </CActorModel>
     <CActorProgress id="AP_LurkerDenMorph">
@@ -18505,6 +18542,9 @@
     <CActorUnit id="AP_EvolutionChamber" parent="ZergBuildingEx" unitName="AP_EvolutionChamber">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipEvolutionChamber.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipEvolutionChamber.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_EvolutionChamber; MorphFrom AP_TechSkipEvolutionChamber" Send="Create"/>
         <Model value="EvolutionChamber"/>
         <BuildModel value="EvolutionChamber"/>
         <DeathArray index="Normal" ModelLink="EvolutionChamberDeath" SoundLink="EvolutionChamber_Explode"/>
@@ -18525,6 +18565,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_EvolutionChamberBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipEvolutionChamber.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipEvolutionChamber.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipEvolutionChamber.Cancel" Send="Destroy"/>
         <Model value="EvolutionChamberBuild"/>
     </CActorModel>
     <CActorUnit id="AP_Gateway" parent="ProtossBuildingEx" unitName="AP_Gateway">
@@ -18844,7 +18888,10 @@
         <On Terms="ActorCreation" Send="AnimGroupRemove B"/>
         <On Terms="ActorCreation" Send="AnimGroupApply C"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_Lair; MorphTo AP_Hive" Send="Create"/>
-        <On Terms="AbilMorph.*.Finish; MorphFrom AP_Hatchery; MorphTo AP_Hive" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom AP_Hatchery; MorphTo AP_Hive" Send="Create"/> 
+        <On Terms="UnitConstruction.AP_TechSkipHive.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipHive.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_Hive; MorphFrom AP_TechSkipHive" Send="Create"/>
         <On Terms="UnitBirth.AP_Hive; PlayerHasClanDecal" Send="Create ZergClanFlag"/>
         <On Terms="UnitBirth.AP_Hive; PlayerHasTrophy" Send="Create ZergPlayerTrophy"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
@@ -18920,6 +18967,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_HatcheryBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipHive.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipHive.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipHive.Cancel" Send="Destroy"/>
         <Model value="HatcheryBuild"/>
     </CActorModel>
     <CActorUnit id="AP_Lair" parent="ZergBuildingEx" unitName="AP_Lair">
@@ -18941,6 +18992,9 @@
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_Lair; MorphTo AP_Hive" Send="Destroy"/>
         <On Terms="UnitBirth.AP_Lair; PlayerHasClanDecal" Send="Create ZergClanFlag"/>
         <On Terms="UnitBirth.AP_Lair; PlayerHasTrophy" Send="Create ZergPlayerTrophy"/>
+        <On Terms="UnitConstruction.AP_TechSkipLair.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipLair.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_Lair; MorphFrom AP_TechSkipLair" Send="Create"/>
         <Model value="Lair"/>
         <BuildModel value="Lair"/>
         <DeathArray index="Normal" ModelLink="LairDeath" SoundLink=""/>
@@ -18962,6 +19016,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_LairBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipLair.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipLair.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipLair.Cancel" Send="Destroy"/>
         <Model value="HatcheryBuild"/>
     </CActorModel>
     <CActorProgress id="AP_ZergHatcheryToLair">
@@ -24097,6 +24155,9 @@
         <!--        <On Terms="AbilMorph.*.Cancel; MorphTo ImpalerDen" Send="AnimClear Morph"/>-->
         <!--        <On Terms="AbilMorph.*.Cancel; MorphTo ImpalerDen" Send="AnimPlay Rebirth Build,D,Start 0 0.000000 0.000000 0.300000 AsDuration"/>-->
         <!--        <On Terms="AbilMorph.*.Cancel; MorphTo ImpalerDen" Send="SetOpacity 1.000000"/>-->
+        <On Terms="UnitConstruction.AP_TechSkipRoachWarren.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipRoachWarren.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_RoachWarren; MorphFrom AP_TechSkipRoachWarren" Send="Create"/>
         <Model value="RoachWarren"/>
         <BuildModel value="RoachWarren"/>
         <DeathArray index="Normal" ModelLink="RoachWarrenDeath" SoundLink=""/>
@@ -24117,6 +24178,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_RoachWarrenBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipRoachWarren.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipRoachWarren.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipRoachWarren.Cancel" Send="Destroy"/>
         <Model value="RoachWarrenBuild"/>
     </CActorModel>
     <CActorSound id="AP_QueenSpawnLarvaLarvaLandSound" parent="SoundOneShot">
@@ -25237,6 +25302,9 @@
     <CActorUnit id="AP_UltraliskCavern" parent="ZergBuildingEx" unitName="AP_UltraliskCavern">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipUltraliskCavern.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipUltraliskCavern.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_UltraliskCavern; MorphFrom AP_TechSkipUltraliskCavern" Send="Create"/>
         <Model value="UltraliskCavern"/>
         <BuildModel value="UltraliskCavern"/>
         <DeathArray index="Normal" ModelLink="UltraliskCavernDeath" SoundLink="UltraliskCavern_Explode"/>
@@ -25259,6 +25327,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_UltraliskCavernBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipUltraliskCavern.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipUltraliskCavern.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipUltraliskCavern.Cancel" Send="Destroy"/>
         <Model value="UltraliskCavernBuild"/>
     </CActorModel>
     <CActorUnit id="AP_Spire" parent="ZergBuildingEx" unitName="AP_Spire">
@@ -25280,6 +25352,9 @@
         <On Terms="TimerExpired; TimerName DelayCreation" Target="AP_SpireMorph" Send="AnimSetPausedAll"/>
         <On Terms="Behavior.AP_BuildingStasis.Off" Target="AP_SpireMorph" Send="AnimSetPausedAll 0"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpire.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpire.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_Spire; MorphFrom AP_TechSkipSpire" Send="Create"/>
         <Model value="Spire"/>
         <BuildModel value="Spire"/>
         <DeathArray index="Normal" ModelLink="SpireDeath" SoundLink=""/>
@@ -25303,6 +25378,13 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_SpireBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterSpire.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterSpire.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipGreaterSpire.Cancel" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpire.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpire.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpire.Cancel" Send="Destroy"/>
         <Model value="SpireBuild"/>
     </CActorModel>
     <CActorModel id="AP_SpireMorph">
@@ -25395,6 +25477,9 @@
         <On Terms="AbilMorph.*.Finish; MorphTo AP_SpineCrawlerUprooted" Send="TerrainSquibActivateGroup RippleStandard"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_SpineCrawler" Send="TerrainSquibDeactivate"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_SpineCrawlerRootableAnywhere" Send="TerrainSquibDeactivate"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpineCrawler.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpineCrawler.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_SpineCrawler; MorphFrom AP_TechSkipSpineCrawler" Send="Create"/>
         <Model value="SpineCrawler"/>
         <AnimBlendTime value="0.400000"/>
         <HostedAttaches Name="TentacleAttack">
@@ -25443,6 +25528,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_SpineCrawlerBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpineCrawler.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpineCrawler.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpineCrawler.Cancel" Send="Destroy"/>
         <Model value="SpineCrawlerBuild"/>
     </CActorModel>
     <CActorAction id="AP_SpineCrawlerAttack" parent="GenericAttack" effectImpact="AP_ImpalerTentacleU" effectLaunch="AP_ImpalerTentacleLM">
@@ -25540,6 +25629,9 @@
         <On Terms="AbilMorph.*.Finish; MorphTo AP_SporeCrawlerRootableAnywhere" Target="SporeCrawlerBurrowLoop" Send="Destroy"/>
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_SporeCrawlerRootableAnywhere" Target="SporeCrawlerBurrowLoop" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_SporeCrawlerRootableAnywhere" Send="AnimBlendTimeApply 0.400000"/>
+        <On Terms="UnitConstruction.AP_TechSkipSporeCrawler.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSporeCrawler.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_SporeCrawler; MorphFrom AP_TechSkipSporeCrawler" Send="Create"/>
         <On Terms="Behavior.Corruption.On" Send="AnimSetPaused Morph"/>
         <On Terms="Behavior.Corruption.Off" Send="AnimSetPaused Morph 0"/>
         <On Terms="ActorCreation" Send="AnimGroupApply Burrow"/>
@@ -25598,6 +25690,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_SporeCrawlerBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSporeCrawler.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSporeCrawler.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSporeCrawler.Cancel" Send="Destroy"/>
         <Model value="SporeCrawlerBuild"/>
     </CActorModel>
     <CActorAction id="AP_SporeCrawlerAttack" parent="GenericAttack" effectImpact="AP_SporeCrawlerU" effectLaunch="AP_SporeCrawler">
@@ -25651,6 +25747,9 @@
     </CActorSound>
     <CActorUnit id="AP_BileLauncher" parent="ZergBuilding" unitName="AP_BileLauncher">
         <AnimBlendTime value="0.400000"/>
+        <On Terms="UnitConstruction.AP_TechSkipBileLauncher.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipBileLauncher.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_BileLauncher; MorphFrom AP_TechSkipBileLauncher" Send="Create"/>
         <DeathArray index="Normal" ModelLink="AP_BileLauncherDeath" SoundLink=""/>
         <DeathArray index="UnderConstruction" ModelLink="ZergBuildingDeath" SoundLink="SporeCrawler_Explode"/>
         <PlacementSound value="Zerg_BuildingPlacement"/>
@@ -25675,7 +25774,12 @@
         <PlaceholderActorModel value="PlaceholderModel"/>
         <Aliases value="_UnitHuge"/>
     </CActorUnit>
-    <CActorModel id="AP_BileLauncherBuild" parent="ZergBuildingBuild"/>
+    <CActorModel id="AP_BileLauncherBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipBileLauncher.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipBileLauncher.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipBileLauncher.Cancel" Send="Destroy"/>
+    </CActorModel>
     <CActorTurret id="AP_BileLauncherTurret">
         <On Terms="TurretEnable.AP_BileLauncher" Send="Create"/>
         <On Terms="TurretRotationUpdate.AP_BileLauncher; SubName StartRotatingLeft" Target="::HostTurretBody" Send="AnimPlay TurnLeft Turn,Left PlayForever"/>
@@ -25808,6 +25912,9 @@
     <CActorUnit id="AP_SpawningPool" parent="ZergBuildingEx" unitName="AP_SpawningPool">
         <Aliases value="_UnitHuge"/>
         <On Terms="UnitDeathCustomize; ModelIsLowQuality" Send="Create SpawningPool_DeathLow"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpawningPool.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpawningPool.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_SpawningPool; MorphFrom AP_TechSkipSpawningPool" Send="Create"/>
         <Model value="SpawningPool"/>
         <BuildModel value="SpawningPool"/>
         <DeathArray index="Normal" ModelLink="SpawningPoolDeath" SoundLink=""/>
@@ -25827,6 +25934,10 @@
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_SpawningPoolBuild" parent="ZergBuildingBuild">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpawningPool.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpawningPool.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipSpawningPool.Cancel" Send="Destroy"/>
         <Model value="SpawningPoolBuild"/>
     </CActorModel>
     <CActorModel id="WarpTrainModel">
@@ -32901,24 +33012,37 @@
     <CActorStateMonitor id="ZergBloodLargeBuilding">
         <!-- Override -->
         <On Terms="UnitCreation.AP_Hatchery" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipHatchery" Send="Create"/>
         <On Terms="UnitCreation.AP_Lair" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipLair" Send="Create"/>
         <On Terms="UnitCreation.AP_Hive" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipHive" Send="Create"/>
         <On Terms="UnitCreation.AP_NydusNetwork" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipNydusNetwork" Send="Create"/>
         <On Terms="UnitCreation.AP_EchidnaWorm" Send="Create"/>
     </CActorStateMonitor>
     <CActorStateMonitor id="ZergBloodMediumBuilding">
         <!-- Override -->
         <On Terms="UnitCreation.AP_UltraliskCavern" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipUltraliskCavern" Send="Create"/>
         <On Terms="UnitCreation.AP_ZergMercenaryCompound" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipZergMercenaryCompound" Send="Create"/>
         <On Terms="UnitCreation.AP_LurkerDen" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipGreaterHydraDen" Send="Create"/>
         <On Terms="UnitCreation.AP_ImpalerDen" Send="Create"/>
         <On Terms="UnitCreation.AP_InfestationPit" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipInfestationPit" Send="Create"/>
         <On Terms="UnitCreation.AP_HydraliskDen" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipHydraliskDen" Send="Create"/>
         <On Terms="UnitCreation.AP_RoachWarren" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipRoachWarren" Send="Create"/>
         <On Terms="UnitCreation.AP_BanelingNest" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipBanelingNest" Send="Create"/>
         <On Terms="UnitCreation.AP_EvolutionChamber" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipEvolutionChamber" Send="Create"/>
         <On Terms="UnitCreation.AP_NydusWorm" Send="Create"/>
         <On Terms="UnitCreation.AP_BileLauncher" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipBileLauncher" Send="Create"/>
         <On Terms="UnitCreation.AP_SIFactory" Send="Create"/>
         <On Terms="UnitCreation.AP_SIFactoryFlying" Send="Create"/>
         <On Terms="UnitCreation.AP_SIStarport" Send="Create"/>
@@ -32929,7 +33053,9 @@
     <CActorStateMonitor id="ZergBloodSmallBuilding">
         <!-- Override -->
         <On Terms="UnitCreation.AP_GreaterSpire" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipGreaterSpire" Send="Create"/>
         <On Terms="UnitCreation.AP_Spire" Send="Create"/>
+        <On Terms="UnitCreation.AP_TechSkipSpire" Send="Create"/>
         <On Terms="UnitCreation.AP_SITechLab" Send="Create"/>
         <On Terms="UnitCreation.AP_SIFactoryTechLab" Send="Create"/>
         <On Terms="UnitCreation.AP_SIStarportTechLab" Send="Create"/>
@@ -36235,6 +36361,9 @@
         <Model value="AP_ZergMercenaryCompound"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_HasZergGenericDeath" Send="DeathCustomize Detached"/>
         <On Terms="UnitBirth" Send="SetOpacity 1"/>
+        <On Terms="UnitConstruction.AP_TechSkipZergMercenaryCompound.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipZergMercenaryCompound.Finish" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ZergMercenaryCompound; MorphFrom AP_TechSkipZergMercenaryCompound" Send="Create"/>
         <DeathArray index="Normal" ModelLink="AP_ZergMercenaryCompoundDeath" SoundLink="Spire_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="ZergBuildingDeath" SoundLink="Spire_Explode"/>
         <PlacementSound value="Zerg_BuildingPlacement"/>
@@ -36272,6 +36401,9 @@
         <On Terms="ModelEvent; ModelEventName BuildD" Target="AP_ZergMercenaryCompound" Send="SetOpacity 1"/>
         <On Terms="UnitConstruction.*.Cancel" Target="AP_ZergMercenaryCompound" Send="SetScale 1.0"/>
         <On Terms="UnitConstruction.*.Cancel" Target="AP_ZergMercenaryCompound" Send="SetOpacity 1"/>
+        <On Terms="UnitConstruction.AP_TechSkipZergMercenaryCompound.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_TechSkipZergMercenaryCompound.Finish" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_TechSkipZergMercenaryCompound.Cancel" Send="Destroy"/>
     </CActorModel>
     <CActorSplat id="AP_MercZerglingBurrowedSplat" parent="BurrowedSplat" unitName="AP_MercZergling"/>
     <CActorUnit id="AP_MercZergling" parent="AP_GenericBurrowerStandard" unitName="AP_MercZergling">

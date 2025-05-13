@@ -7064,6 +7064,13 @@
         <EditorCategories value="Race:Zerg"/>
         <HotkeyAlias value="AP_YggdrasilAssimilate"/>
     </CButton>
+    <CButton id="AP_YggdrasilBileLauncher">
+        <Icon value="Assets\Textures\btn-building-zerg-sporecannon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-building-zerg-sporecannon.dds"/>
+        <Hotkey value="Button/Hotkey/AP_YggdrasilAssimilate"/>
+        <EditorCategories value="Race:Zerg"/>
+        <HotkeyAlias value="AP_YggdrasilAssimilate"/>
+    </CButton>
     <CButton id="AP_Pygalisk">
         <Icon value="Assets\Textures\btn-unit-zerg-ultralisk-rcz.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-zerg-ultralisk-rcz.dds"/>
