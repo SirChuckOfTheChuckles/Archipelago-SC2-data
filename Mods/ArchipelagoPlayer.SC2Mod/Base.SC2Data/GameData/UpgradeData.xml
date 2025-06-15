@@ -14780,18 +14780,6 @@
     <CUpgrade id="AP_CanInstallPurifiedEmbers"/>
     <CUpgrade id="AP_CanInstallRecursivePhotons"/>
     <CUpgrade id="AP_CanInstallHungerForSlaughter"/>
-
-    <CUpgrade id="AP_PlanetCrackerInstalled"/>
-    <CUpgrade id="AP_AstralRestorationInstalled"/>
-    <CUpgrade id="AP_SummonDeathFleetInstalled"/>
-    <CUpgrade id="AP_ThermalLanceInstalled"/>
-    <CUpgrade id="AP_TaldarimBlackHoleInstalled"/>
-    <CUpgrade id="AP_PowerRedirectionInstalled"/>
-    <CUpgrade id="AP_OverchargeWeaponSystemsInstalled"/>
-    <CUpgrade id="AP_BatteryOverchargeInstalled"/>
-    <CUpgrade id="AP_RevitalizeShieldsInstalled"/>
-
-
     <CUpgrade id="AP_MothershipPurifierPowerSource"/>
     <CUpgrade id="AP_MothershipAiurAttackSlow"/>
     <CUpgrade id="AP_VoidRaySpeedUpgrade">

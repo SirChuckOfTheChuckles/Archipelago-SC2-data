@@ -4715,6 +4715,16 @@
     <CRequirementCountUpgrade id="AP_CountUpgradeStargateFactionTaldarim">
         <Count Link="AP_StargateFactionTaldarim" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementAnd id="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0">
+        <Tooltip value=""/>
+        <OperandArray value="AP_CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="AP_EqCountUnitMothershipQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipPurifierQueuedOrBetter0">
+        <Tooltip value=""/>
+        <OperandArray value="AP_CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="AP_EqCountUnitMothershipQueuedOrBetter0"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AP_AndCountUnitCyberneticsCoreCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat"/>

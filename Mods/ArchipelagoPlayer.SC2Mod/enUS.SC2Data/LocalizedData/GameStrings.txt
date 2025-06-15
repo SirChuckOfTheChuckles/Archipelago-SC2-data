@@ -1646,9 +1646,7 @@ Button/Name/AP_Mothership=Warp In Mothership
 Button/Name/AP_MothershipAiur=Morph to Aiur Mothership
 Button/Name/AP_MothershipAuxiliary=Install Auxiliary Upgrades
 Button/Name/AP_MothershipBlackHole=Black Hole
-Button/Name/AP_MothershipPurifierBlackHole=Black Hole
 Button/Name/AP_MothershipBlackHoleInstall=Install Black Hole
-Button/Name/AP_MothershipPurifierBlackHoleInstall=Install Black Hole
 Button/Name/AP_MothershipCloakField=Cloaking Field
 Button/Name/AP_MothershipCoreAiur=Warp In Aiur Mothership Core
 Button/Name/AP_MothershipCoreAiurAdvancedRepulsion=Advanced Repulsion
@@ -3448,6 +3446,7 @@ Button/Tooltip/AP_PurificationNova=Gains <d ref="Behavior,AP_PurificationNovaSpe
 Button/Tooltip/AP_PurificationNovaEarly=Explode the Purification Nova early, dealing <d ref="Effect,AP_PurificationNovaDamage,Amount"/> splash damage and an additional <d ref="Effect,AP_PurificationNovaDamage,ShieldBonus"/> shield damage to nearby ground units and structures.
 Button/Tooltip/AP_PurificationNovaTargeted=Shoots out a ball of energy that lasts <d ref="Behavior,AP_PurificationNovaTargettedTarget,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,AP_PurificationNovaDamage,Amount"/> splash damage and an additional <d ref="Effect,AP_PurificationNovaDamage,ShieldBonus"/> shield damage to nearby enemy ground units and structures. Friendly ground units take <d ref="Effect,AP_PurificationNovaFriendlyDamage,Amount"/> splash damage. The Disruptor is immobile while this is active.
 Button/Tooltip/AP_PurificationNovaTargetedUpgrade=Shoots out a ball of energy that lasts <d ref="Behavior,AP_PurificationNovaTargettedTarget,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,AP_PurificationNovaDamage,Amount"/> splash damage and an additional <d ref="Effect,AP_PurificationNovaDamage,ShieldBonus"/> shield damage to nearby enemy ground units and structures. Friendly ground units take <d ref="Effect,AP_PurificationNovaFriendlyDamage,Amount"/> splash damage.
+Button/Tooltip/AP_PurifiedEmbers=The Mothership deals an additional <d ref="Behavior,AP_PurifiedEmbers,Duration/Behavior,AP_PurifiedEmbers,Period * Effect,AP_PurifiedEmbersDOT,Amount" precision="2"/> damage over <d ref="Behavior,AP_PurifiedEmbers,Duration" precision="2"/> seconds to targets it attacks.<n/><n/>Upgrade persists through death.
 Button/Tooltip/AP_PurifierFaction=Allows to produce units from Purifier faction
 Button/Tooltip/AP_Pygalisk=New xenotype created by Dominion scientists.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_PygaliskCombatCarapace=Pygalisks gain +<d ref="$UpgradeEffectArrayValue:AP_PygaliskCombatCarapace:Unit,AP_Pygalisk,LifeMax$"/> maximum health.

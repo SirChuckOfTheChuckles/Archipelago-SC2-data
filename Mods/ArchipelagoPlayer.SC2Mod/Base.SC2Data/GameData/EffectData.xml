@@ -11831,7 +11831,7 @@
         <PeriodCount value="3"/>
         <PeriodicValidator value="CasterNotDead"/>
         <PeriodicValidator value="NotInvulnerable"/>
-        <PeriodicEffectArray value="AP_SOAMothershipv4BeamSwitch"/>
+        <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
     <CEffectSet id="AP_SOAMothershipv4BeamSet">
@@ -11857,7 +11857,7 @@
         <PeriodicValidator value="AP_MothershipRangeCheckCombine"/>
         <PeriodicValidator value="CasterNotDead"/>
         <PeriodicValidator value="NotInvulnerable"/>
-        <PeriodicEffectArray value="AP_SOAMothershipv4BeamSwitch"/>
+        <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="AP_SOAMothershipv4FastBeamPersistent" parent="AP_SOAMothershipv4BeamPersistent">
