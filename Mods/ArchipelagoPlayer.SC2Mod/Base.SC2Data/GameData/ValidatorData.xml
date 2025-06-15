@@ -1663,6 +1663,9 @@
         <CombineArray value="NotMothership"/>
         <CombineArray value="NotTrain"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareAttackPriority id="AP_ThreatensBattlecruiser" parent="ThreatensUnit" unitLink="Hydralisk">
+        <AttackerAlternateType value="Battlecruiser"/>
+    </CValidatorUnitCompareAttackPriority>
     <CValidatorPlayerRequirement id="AP_SpectrePermanentCloakNotPurchased">
         <Find value="1"/>
         <Value value="AP_SpectrePermanentCloak"/>
@@ -2552,6 +2555,9 @@
     <CValidatorUnitFilters id="AP_UnitIsBiological">
         <Filters value="Biological;-"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="AP_IsStructure">
+        <Filters value="-;Structure"/>
+    </CValidatorUnitFilters>
     <CValidatorPlayerRequirement id="AP_HaveMultiTaskMAFServosLiberator">
         <Find value="1"/>
         <Value value="AP_HaveMultiTaskMAFServosLiberator"/>
@@ -3283,6 +3289,182 @@
         <CombineArray value="AP_IsVanillaNexus"/>
         <CombineArray value="AP_IsAPNexus"/>
     </CValidatorCombine>
+    <CValidatorUnitType id="AP_NotMothershipAiur">
+        <Value value="AP_MothershipAiur"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasMothershipCoreRecalling">
+        <WhichUnit Value="Source"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MothershipCoreRecalling"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasPowerRedirectedPhoton">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_PowerRedirectionPhoton"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasPowerRedirectedKhaydarin">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_PowerRedirectionKhaydarin"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_HavePowerRedirected">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="NotDead"/>
+        <CombineArray value="AP_HasPowerRedirectedPhoton"/>
+        <CombineArray value="AP_HasPowerRedirectedKhaydarin"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="AP_FriendlyTargetExcludeSelf">
+        <Filters value="-;Enemy"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="AP_TargetFirePriority">
+        <Compare value="GT"/>
+        <Behavior value="AP_TargetFire"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_IsPhotonOrKhaydarin">
+        <CombineArray value="AP_IsAPPhotonCannon"/>
+        <CombineArray value="AP_IsKhaydarinMonolith"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterIsNotBatteryOvercharged">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_BatteryOvercharge"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasBatteryOverchargeBehavior">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_BatteryOvercharge"/>
+        <Compare value="GT"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_NoAstralRestoration">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_AstralRestorationCaster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterAstralRestoration">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_AstralRestorationCaster"/>
+        <Compare value="GT"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterOverloadWeaponSystems">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_OverloadWeaponSystems"/>
+        <Compare value="GT"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="AP_HaveMothershipAiurAttackSlow">
+        <Find value="1"/>
+        <Value value="AP_HaveMothershipAiurAttackSlow"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveEnhancedTargeting">
+        <Find value="1"/>
+        <Value value="AP_HaveKaraxTurretRange"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NoEnhancedTargeting">
+        <Find value="0"/>
+        <Value value="AP_HaveKaraxTurretRange"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_CasterIsTaldarimMothership">
+        <CombineArray value="AP_CasterIsSlowedTaldarimMothership"/>
+        <CombineArray value="AP_CasterIsFasterTaldarimMothership"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="AP_CasterIsSlowedTaldarimMothership">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_SOAMothershipv4"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterIsFasterTaldarimMothership">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_MothershipTaldarim"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterIsAiurMothership">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_MothershipAiur"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="AP_CasterIsPurifierMothership">
+        <CombineArray value="AP_CasterIsPurifierMothershipUpgraded"/>
+        <CombineArray value="AP_CasterIsPurifierMothershipBase"/>
+    </CValidatorCombine>
+    <CValidatorUnitType id="AP_CasterIsPurifierMothershipCore">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_MothershipCorePurifier"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterIsPurifierMothershipBase">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_MothershipPurifier"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterIsPurifierMothershipUpgraded">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_MothershipPurifierPowerSource"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="AP_CasterIsMothership">
+        <CombineArray value="AP_CasterIsTaldarimMothership"/>
+        <CombineArray value="AP_CasterIsAiurMothership"/>
+        <CombineArray value="AP_CasterIsPurifierMothership"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveHungerForSlaughter">
+        <Find value="1"/>
+        <Value value="AP_HaveHungerForSlaughter"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotHaveHungerForSlaughter">
+        <Value value="AP_HaveHungerForSlaughter"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_MothershipTaldarimBaseAttackSwap">
+        <Behavior value="AP_EnableMothershipTaldarimAttackSwap"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveSOASuperShield">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_SoASuperShield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveTaldarimRecallShield">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_MothershipTaldarimRecallShield"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_UseSuperShieldGlaze">
+        <CombineArray value="AP_HaveSOASuperShield"/>
+        <CombineArray value="AP_HaveTaldarimRecallShield"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_HavePlanetCrackerInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_PlanetCrackerInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveRevitalizeShieldsInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_RevitalizeShieldsInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveOverloadWeaponSystemsInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_OverloadWeaponSystemsInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveAstralRestorationInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_AstralRestorationInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveSummonDeathFleetInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_SummonDeathFleetInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HaveThermalLanceInstalled">
+        <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_ThermalLanceInstalled"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="AP_HaveMothershipTaldarimIntegratedPower">
+        <Find value="1"/>
+        <Value value="AP_HaveMothershipTaldarimIntegratedPower"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="AP_CasterIsArbiter">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_ArbiterMP"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="AP_TaldarimRecall">
+        <Value value="1"/>
+        <Behavior value="AP_MothershipRecallTaldarimDummy"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="AP_NoRecallingBehaviors">
         <Type value="And"/>
         <CombineArray value="AP_IsNotArbiterRecalling"/>
