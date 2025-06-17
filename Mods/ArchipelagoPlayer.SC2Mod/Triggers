@@ -74558,7 +74558,11 @@
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000133"/>
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="B27A9EF5"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="17B2E5BB"/>
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="A36F1289"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="BBA43F8D"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="C4CB65E1"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="0A1A05A7"/>
         </Element>
         <Element Type="FunctionCall" Id="B27A9EF5">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
@@ -74589,6 +74593,38 @@
         <Element Type="Param" Id="4BD40DB8">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
             <Value>VespeneGeyser</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="FunctionCall" Id="17B2E5BB">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="62C2CEF0"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="D17FEAD7"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="57E86F13"/>
+        </Element>
+        <Element Type="Param" Id="62C2CEF0">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="68F1C6E0"/>
+        </Element>
+        <Element Type="FunctionCall" Id="68F1C6E0">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="E18D7935"/>
+        </Element>
+        <Element Type="Param" Id="E18D7935">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="2B036573"/>
+        </Element>
+        <Element Type="FunctionCall" Id="2B036573">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
+        </Element>
+        <Element Type="Param" Id="D17FEAD7">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="57E86F13">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>RichVespeneGeyser</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Unit"/>
         </Element>
@@ -74623,6 +74659,105 @@
             <Value>SpacePlatformGeyser</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Unit"/>
+        </Element>
+        <Element Type="FunctionCall" Id="BBA43F8D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="5F0EFAE1"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="53653F5F"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="0AA75738"/>
+        </Element>
+        <Element Type="Param" Id="5F0EFAE1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="65FB851B"/>
+        </Element>
+        <Element Type="FunctionCall" Id="65FB851B">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="ED845BD4"/>
+        </Element>
+        <Element Type="Param" Id="ED845BD4">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="3ADD4258"/>
+        </Element>
+        <Element Type="FunctionCall" Id="3ADD4258">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
+        </Element>
+        <Element Type="Param" Id="53653F5F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="0AA75738">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <CustomType Type="gamelink"/>
+            <ScriptCode>
+                &quot;ProtossVespeneGeyser&quot;
+            </ScriptCode>
+        </Element>
+        <Element Type="FunctionCall" Id="C4CB65E1">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="79A71AEF"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="8309FB60"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="4804E6A7"/>
+        </Element>
+        <Element Type="Param" Id="79A71AEF">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="BF392F98"/>
+        </Element>
+        <Element Type="FunctionCall" Id="BF392F98">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="397EA26F"/>
+        </Element>
+        <Element Type="Param" Id="397EA26F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="C31A7A07"/>
+        </Element>
+        <Element Type="FunctionCall" Id="C31A7A07">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
+        </Element>
+        <Element Type="Param" Id="8309FB60">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="4804E6A7">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <CustomType Type="gamelink"/>
+            <ScriptCode>
+                &quot;PurifierVespeneGeyser&quot;
+            </ScriptCode>
+        </Element>
+        <Element Type="FunctionCall" Id="0A1A05A7">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="40141CF3"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="94431972"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="8B5AE772"/>
+        </Element>
+        <Element Type="Param" Id="40141CF3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="54A01D56"/>
+        </Element>
+        <Element Type="FunctionCall" Id="54A01D56">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="043F2A34"/>
+        </Element>
+        <Element Type="Param" Id="043F2A34">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="8355D1F8"/>
+        </Element>
+        <Element Type="FunctionCall" Id="8355D1F8">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
+        </Element>
+        <Element Type="Param" Id="94431972">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="8B5AE772">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <CustomType Type="gamelink"/>
+            <ScriptCode>
+                &quot;ShakurasVespeneGeyser&quot;
+            </ScriptCode>
         </Element>
         <Element Type="FunctionCall" Id="A7890B3F">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
