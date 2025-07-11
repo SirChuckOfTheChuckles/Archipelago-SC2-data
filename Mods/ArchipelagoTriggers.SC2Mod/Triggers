@@ -5264,8 +5264,8 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockArchonSuicide, // 3
                     libABFE498B_gf_AP_Triggers_Protoss_unlockArchonWeaponUpgrade, // 4
                     libABFE498B_gf_AP_Triggers_Protoss_unlockSupplicantZenithPitch, // 5
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockIntercessorChronoclysm, // 6
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockIntercessorEntropicReversal, // 7
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockPulsarChronoclysm, // 6
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockPulsarEntropicReversal, // 7
                     ap_triggers_PlayerConsumer_sig, // 8  reserved for Mothership
                     ap_triggers_PlayerConsumer_sig, // 9  reserved for Mothership
                     ap_triggers_PlayerConsumer_sig, // 10 reserved for Mothership
@@ -5464,7 +5464,7 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockSkirmisherPeerContempt, // 3
                     libABFE498B_gf_AP_Triggers_Protoss_unlockVoidRayPrismaticRange, // 4
                     libABFE498B_gf_AP_Triggers_Protoss_unlockDestroyerReforgedBloodshardCore, // 5
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockIntercessorChronoShear, // 6
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockPulsarChronoShear, // 6
                     libABFE498B_gf_AP_Triggers_Protoss_unlockDawnbringerSolariteLens, // 7
                     libABFE498B_gf_AP_Triggers_Protoss_unlockCarrierAiurRepairDrones, // 8
                     libABFE498B_gf_AP_Triggers_Protoss_unlockSkylordHyperjump, // 9
@@ -73556,7 +73556,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="1D64B648">
-            <Identifier>AP_Triggers_Protoss_unlockIntercessorChronoShear</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockPulsarChronoShear</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="94E08DB8"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="DEBBFF02"/>
@@ -73593,7 +73593,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="F1BE5433">
-            <Identifier>AP_Triggers_Protoss_unlockIntercessorEntropicReversal</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockPulsarEntropicReversal</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="C5B2FDE8"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="EAE74BE4"/>
@@ -73630,7 +73630,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="4978D29B">
-            <Identifier>AP_Triggers_Protoss_unlockIntercessorChronoclysm</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockPulsarChronoclysm</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="8183EDC0"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="D816EE86"/>
