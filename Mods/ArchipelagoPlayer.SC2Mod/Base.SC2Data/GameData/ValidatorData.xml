@@ -7878,6 +7878,9 @@
         <CombineArray value="AP_CasterHasMaxShields40"/>
         <CombineArray value="AP_CasterNotWorker"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_AmplifiedPowerRerouterBuffEmpoweredNotActive">
+        <Behavior value="AP_AmplifiedPowerRerouterBuffEmpowered"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="AP_SILiberatorAGMorphValidatorCombine">
         <Type value="And"/>
         <CombineArray value="CasterNotDead"/>
