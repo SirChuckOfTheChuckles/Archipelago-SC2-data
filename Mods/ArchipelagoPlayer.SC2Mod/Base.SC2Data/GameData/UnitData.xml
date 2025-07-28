@@ -11682,6 +11682,87 @@
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
     </CUnit>
+    <CUnit id="AP_ArtanisHero">
+        <DeathTime value="-1"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="Protoss"/>
+        <Mob value="Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Psionic" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeRegenRate value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
+        <ShieldsStart value="100"/>
+        <ShieldsMax value="100"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <EnergyStart value="150"/>
+        <EnergyMax value="150"/>
+        <EnergyRegenRate value="2"/>
+        <Speed value="2.5"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="13"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="30"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+
+        <CardLayouts>
+            <LayoutButtons Face="AP_MoveChampions" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="AP_AttackChampions" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AP_NovaWeaponSwap" Type="Submenu" SubmenuCardId="WPN1" Row="2" Column="1"/>
+        </CardLayouts>
+        <CardLayouts CardId="WPN1">
+            <LayoutButtons Face="AP_NovaWeaponCanisterRifleSwap" Type="AbilCmd" AbilCmd="AP_NovaWeaponCanisterRifleSwap,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="AP_NovaWeaponHellfireShotgunSwap" Type="AbilCmd" AbilCmd="AP_NovaWeaponHellfireShotgunSwap,Execute" Row="0" Column="1"/>
+            <LayoutButtons Face="AP_NovaWeaponPlasmaRifleSwap" Type="AbilCmd" AbilCmd="AP_NovaWeaponPlasmaRifleSwap,Execute" Row="0" Column="2"/>
+            <LayoutButtons Face="AP_NovaWeaponPsiBladeSwap" Type="AbilCmd" AbilCmd="AP_NovaWeaponPsiBladeSwap,Execute" Row="0" Column="3"/>
+            <LayoutButtons Face="AP_NovaWeaponBlazefireBladeSwap" Type="AbilCmd" AbilCmd="AP_NovaWeaponBlazefireBladeSwap,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_HeroNukeCalldown" Type="AbilCmd" AbilCmd="AP_NovaNukeTimer,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_HeroNukeCalldown" Type="AbilCmd" AbilCmd="AP_HeroNuclearStrike,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_GhostHoldFire" Type="AbilCmd" AbilCmd="AP_NovaHoldFire,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_WeaponsFree" Type="AbilCmd" AbilCmd="AP_NovaWeaponsFree,Execute" Row="1" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="500"/>
+        <ScoreKill value="1000"/>
+        <SubgroupPriority value="99"/>
+        <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
+        <GlossaryCategory value="Unit/Category/AP_ProtossUnitsGround"/>
+        <GlossaryPriority value="340"/>
+        <GlossaryCategory value="Unit/Category/AP_ProtossUnitsGround"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <ReviveInfoBase>
+            <Charge Link="Artanis/Revive"/>
+            <Cooldown Link="Artanis/Revive" Location="Player" TimeUse="0.1"/>
+        </ReviveInfoBase>
+        <AlliedPushPriority value="11"/>
+    </CUnit>
     <CUnit id="AP_NovaDefensiveDroneRelease" parent="MISSILE_INVULNERABLE">
         <Race value="Terr"/>
         <Mover value="AutoTurretReleaseWeapon"/>
