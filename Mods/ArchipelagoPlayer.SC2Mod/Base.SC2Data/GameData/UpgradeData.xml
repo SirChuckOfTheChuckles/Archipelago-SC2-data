@@ -14400,6 +14400,10 @@
         <EffectArray Operation="Set" Reference="Abil,AP_ZergBuild,InfoArray[Build1].Time" Value="15"/>
     </CUpgrade>
     <CUpgrade id="AP_UnavailableInThisMission"/>
+    <CUpgrade id="AP_SymbolOfUnity">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_MothershipAiur"/>
+    </CUpgrade>
     <CUpgrade id="AP_VoidZealotWhirlwind">
         <EffectArray Operation="Set" Reference="Actor,AP_ZealotAiur,UnitIcon" Value="Assets\Textures\btn-unit-protoss-zealot-aiur.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ZealotAiur,GroupIcon.Image[0]" Value="Assets\Textures\wireframe-protoss-zealotelite.dds"/>
@@ -14790,6 +14794,18 @@
     <CUpgrade id="AP_CanInstallPurifiedEmbers"/>
     <CUpgrade id="AP_CanInstallRecursivePhotons"/>
     <CUpgrade id="AP_CanInstallHungerForSlaughter"/>
+
+    <CUpgrade id="AP_PlanetCrackerInstalled"/>
+    <CUpgrade id="AP_AstralRestorationInstalled"/>
+    <CUpgrade id="AP_SummonDeathFleetInstalled"/>
+    <CUpgrade id="AP_ThermalLanceInstalled"/>
+    <CUpgrade id="AP_TaldarimBlackHoleInstalled"/>
+    <CUpgrade id="AP_PowerRedirectionInstalled"/>
+    <CUpgrade id="AP_OverchargeWeaponSystemsInstalled"/>
+    <CUpgrade id="AP_BatteryOverchargeInstalled"/>
+    <CUpgrade id="AP_RevitalizeShieldsInstalled"/>
+
+
     <CUpgrade id="AP_MothershipPurifierPowerSource"/>
     <CUpgrade id="AP_MothershipAiurAttackSlow"/>
     <CUpgrade id="AP_VoidRaySpeedUpgrade">

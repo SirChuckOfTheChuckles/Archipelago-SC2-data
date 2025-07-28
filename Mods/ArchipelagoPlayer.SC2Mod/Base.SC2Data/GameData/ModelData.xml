@@ -12027,6 +12027,22 @@
         <Model value="Assets\COOP\Stetmann\Effects\GARY_Stetmann_COOP_TechnoOrbSmall\GARY_Stetmann_COOP_TechnoOrbSmall.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
+    <CModel id="AP_AmplifiedPowerRerouter" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ProtossWeatherShieldLarge\ProtossWeatherShieldLarge.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_ShadowOfDeathAura" parent="PersistentSpellFX">
+        <Model value="Assets\Units\Protoss\Alarak_COOP_RespawnBase\Alarak_COOP_RespawnBase.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_ShadowOfDeathDebuff" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Mothership_Taldarim_Thermal_Lance_Beam_Unit_Impact\Mothership_Taldarim_Thermal_Lance_Beam_Unit_Impact.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_CybrosShielding" parent="PersistentSpellFX">
+        <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Mothership_Purifier_Ex2_Shield_final.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="AP_TimeFieldImpactModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\TemporalFieldImpact\TemporalFieldImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -12041,6 +12057,10 @@
     </CModel>
     <CModel id="AP_TimeFieldTaldarimImpactModel">
         <Model value="Assets\Effects\Protoss\TimeWarpImpact_Red\TimeWarpImpact_Red.m3"/>
+    </CModel>
+    <CModel id="AP_TimeFieldPurifierModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TimeWarp_Red\TimeWarp_Red.m3"/>
+        <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="AP_RevitalizeShieldsModel">
         <Model value="Assets\Effects\Protoss\PlasmaSurgeImpact\PlasmaSurgeImpact.m3"/>
@@ -12058,11 +12078,33 @@
         <EditorCategories value="Race:Protoss"/>
         <ScaleMax value="1.500000,1.500000,1.500000"/>
         <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="AP_PurifierPowerUp" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\Void_Kerrigan_Extinction_Charge\Void_Kerrigan_Extinction_Charge.m3"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_SoulForgedConduitsGlaze">
+        <Model value="Assets\Effects\Glaze\Glaze_SoulAbsorption\Glaze_SoulAbsorption.m3"/>
+    </CModel>
+    <CModel id="AP_SoulForgedConduitsDummyAttackMissile" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\Alarak_SoulAbsorption_Missile\Alarak_SoulAbsorption_Missile.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+        <SelectionRadius value="0.333200"/>
+        <ShadowRadius value="0.333200"/>
+        <Events>
+            <Anim value="Stand,00"/>
+            <Name value="Alarak_SoulSteal_Missile"/>
+            <Type value="Sound"/>
+            <Time value="0.009000"/>
+            <Payload value="Alarak_SoulSteal_Missile"/>
+        </Events>
     </CModel>    
     <CModel id="AP_PlanetCrackerBeam" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Zerg\Kerrigan_Celestial_Beam\Kerrigan_Celestial_Beam.m3"/>
-        <ScaleMax value="3.500000,3.500000,3.500000"/>
-        <ScaleMin value="3.500000,3.500000,3.500000"/>
+        <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Effects\Mothership_Purifier_Ex2_PlanetCrackerBeam_final.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
         <EditorCategories value="Race:Protoss"/>
         <SelectionRadius value="0.238000"/>
         <ShadowRadius value="0.238000"/>
@@ -12133,6 +12175,9 @@
     <CModel id="AP_MothershipCoreAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\MotherShipCoreMissileImpact\MotherShipCoreMissileImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_MothershipCorePurifierMorphAddition" parent="PersistentSpellFX">
+        <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\MotherShipCore_Purifier_Ex2_Morph_Addition_final.m3"/>
     </CModel>
     <CModel id="AP_MothershipCoreMorphAddition" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\PurifierMatrixMorph\PurifierMatrixMorph.m3"/>
@@ -12226,10 +12271,16 @@
         </Events>
     </CModel>
     <CModel id="AP_PurifierMothership" parent="AP_AiurMothership" Race="Protoss">
-        <Model value="Assets\Units\Protoss\MotherShip_Purifier_Collection\MotherShip_Purifier_Collection.m3"/>
+        <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Mothership_Purifier_Ex2.m3"/>
     </CModel>
     <CModel id="AP_PurifierMothershipDeath" parent="AP_AiurMothershipDeath">
         <Model value="Assets\Units\Protoss\MotherShip_Purifier_Collection_Death\MotherShip_Purifier_Collection_Death.m3"/>
+    </CModel>
+    <CModel id="AP_AiurMothershipUpgrade" parent="AP_AiurMothership" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Mothership_Golden\Mothership_Golden.m3"/>
+    </CModel>
+    <CModel id="AP_AiurMothershipUpgradeDeath" parent="AP_AiurMothershipDeath">
+        <Model value="Assets\Units\Protoss\Mothership_Golden_Death\Mothership_Golden_Death.m3"/>
     </CModel>
     <CModel id="AP_MothershipCoreAiur" parent="Unit">
         <Model value="Assets\Units\Protoss\PurifierMatrix\PurifierMatrix.m3"/>
@@ -12293,7 +12344,7 @@
         <Occlusion value="Show"/>
     </CModel>
     <CModel id="AP_MothershipCorePurifier" parent="AP_MothershipCoreAiur">
-        <Model value="Assets\Units\Protoss\MothershipCore_Purifier_Collection\MothershipCore_Purifier_Collection.m3"/>
+        <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\MothershipCore_Purifier_Ex2_final.m3"/>
     </CModel>
     <CModel id="AP_MothershipCorePurifierDeath" parent="UnitDeath" Race="Protoss">
         <Model value="Assets\Units\Protoss\MothershipCore_Purifier_Collection\MothershipCore_Purifier_Collection.m3"/>
@@ -13088,6 +13139,16 @@
         <Model value="Assets\Buildings\Zerg\MorphZergDen\MorphZergDen.m3"/>
         <EditorCategories value="Race:Zerg"/>
         <Lighting value=""/>
+    </CModel>
+    <CModel id="ShieldRechargeMatrixImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\Artanis_AstralWinds_Impact\Artanis_AstralWinds_Impact.m3"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_SacrificialConduitsGlaze" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_SoulAbsorption\Glaze_SoulAbsorption.m3"/>
+        <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="AP_GhostSCBWLockdown@Glaze" parent="Glaze">
         <Model value="Assets\Effects\Glaze\Glaze_Goliath_Lockdown\Glaze_Goliath_Lockdown.m3"/>

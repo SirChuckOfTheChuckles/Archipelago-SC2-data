@@ -15691,4 +15691,16 @@
         <DupeDestroyCount value="10"/>
         <DupeMuteCount value="5"/>
     </CSound>
+    <CSound id="AP_SoulForgedConduits">
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="2"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="AP_SoulForgedConduitsMissile">
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <Volume value="-5.000000,-3.000000"/>
+    </CSound>
 </Catalog>

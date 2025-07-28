@@ -2309,14 +2309,16 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_RepulsorCannon">
         <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
         <DisplayEffect value="AP_MothershipCoreRepulsorCannonDamage"/>
-        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <RangeSlop value="0"/>
         <Range value="6"/>
         <Period value="0.85"/>
         <Effect value="AP_MothershipCorePlasmaDisruptorLaunchMissile"/>
-        <AllowedMovement value="Slowing"/>
+        <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_MothershipCoreWeapon">
         <Options index="Hidden" value="1"/>

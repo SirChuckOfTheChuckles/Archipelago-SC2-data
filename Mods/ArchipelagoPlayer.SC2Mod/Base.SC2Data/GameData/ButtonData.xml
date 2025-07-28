@@ -2751,12 +2751,18 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="AP_TimeFieldPurifier">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
+    </CButton>
     <CButton id="AP_TimeFieldEmpowered">
         <Icon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
-        <EditorCategories value="Race:Protoss"/>
         <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
     <CButton id="AP_TimeFieldTaldarim">
@@ -2764,7 +2770,6 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp-red.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
-        <EditorCategories value="Race:Protoss"/>
         <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
     <CButton id="AP_MothershipCoreNexusRecall">
@@ -2820,8 +2825,8 @@
         <Hotkey value="Button/Hotkey/AP_MothershipCoreAiur"/>
     </CButton>
     <CButton id="AP_MothershipCorePurifier">
-        <Icon value="Assets\Textures\btn-unit-collection-purifier-mothershipcore.dds"/>
-        <AlertIcon value="Assets\Textures\btn-unit-collection-purifier-mothershipcore.dds"/>
+        <Icon value="AP\Assets\Textures\btn-unit-protoss-mothershipcore-purifier-ex2.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-unit-protoss-mothershipcore-purifier-ex2.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipCorePurifier"/>
     </CButton>
@@ -2832,8 +2837,8 @@
         <Hotkey value="Button/Hotkey/AP_MorphToMothership"/>
     </CButton>
     <CButton id="AP_MothershipPurifier">
-        <Icon value="Assets\Textures\btn-unit-collection-purifier-mothership.dds"/>
-        <AlertIcon value="Assets\Textures\btn-unit-collection-purifier-mothership.dds"/>
+        <Icon value="AP\Assets\Textures\btn-unit-protoss-mothership-purifier-collection-ex2.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-unit-protoss-mothership-purifier-collection-ex2.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MorphToMothership"/>
     </CButton>
@@ -3072,8 +3077,8 @@
         <HotkeyAlias value="AP_MothershipDamagePrimary"/>
     </CButton>
     <CButton id="AP_PlanetCracker">
-        <Icon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
         <HotkeyAlias value="AP_MothershipDamagePrimary"/>
@@ -3097,8 +3102,8 @@
         <Hotkey value="Button/Hotkey/AP_MothershipDamage1"/>
     </CButton>
     <CButton id="AP_PlanetCrackerInstall">
-        <Icon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipDamage3"/>
     </CButton>
@@ -3379,10 +3384,21 @@
         <EditorCategories value="Race:Protoss"/>
         <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
-    <CButton id="AP_MothershipBlackHole">
+    <CButton id="AP_AiurMothershipBlackHole">
         <Icon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
         <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipBlackHole"/>
+        <AlertTooltip value="Button/Tooltip/AP_MothershipBlackHole"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
+    </CButton>
+    <CButton id="AP_PurifierMothershipBlackHole">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipBlackHole"/>
+        <AlertTooltip value="Button/Tooltip/AP_MothershipBlackHole"/>
         <EditorCategories value="Race:Protoss"/>
         <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
@@ -3401,6 +3417,13 @@
     <CButton id="AP_MothershipBlackHoleInstall">
         <Icon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipUtility1"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="AP_MothershipPurifierBlackHoleInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipBlackHoleInstall"/>
         <Hotkey value="Button/Hotkey/AP_MothershipUtility1"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>

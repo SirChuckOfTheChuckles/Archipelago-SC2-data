@@ -6,6 +6,7 @@
         <DeathCustomPriorityList value="Purifier"/>
         <DeathCustomPriorityList value="Nerazim"/>
         <DeathCustomPriorityList value="Aiur"/>
+        <DeathCustomPriorityList value="Unity"/>
     </CActorGlobalConfig>
     <const id="$AP_LurkerSpineSiteOps" value="{AP_LurkerSOpAoEVariancer SOpShadow SOpForwardCasterPoint SOp2DRotation AP_LurkerSOpShadowSpine SOpRotVariancerUp15}"/>
     <CActorUnit default="1" id="GenericUnitStandard">
@@ -2609,7 +2610,7 @@
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>
         <On Terms="Effect.AP_MedicSCBWRestoration@Set.Start; At Target" Send="Create"/>
-        <On Terms="Abil.AP_RevitalizeShields.SourceCastStart" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipShieldRestore.Start" Send="Create"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead" HoldRotation="1"/>
         <Model value="AP_MedicSCBWRestoration@Impact"/>
@@ -22006,13 +22007,13 @@
         <IconArcLength value="3.250000"/>
     </CActorRange>
     <CActorBeamSimple id="AP_PlanetCrackerBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <On Terms="Behavior.AP_PlanetCracker.On" Send="SetScale 3.300000 10.000000"/>
         <HostLaunch Subject="_Selectable" Actor="Find"/>
         <HostLaunchSiteOps Ops="SOpAttachOrigin"/>
         <HostImpact Subject="_Selectable" Actor="Find"/>
         <HostImpactSiteOps Ops="SOpAttachOrigin SOpShadow"/>
         <On Terms="Behavior.AP_PlanetCracker.On" Send="Create"/>
         <On Terms="Behavior.AP_PlanetCracker.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_PlanetCracker.On" Send="SetScale 1.150000"/>
     </CActorBeamSimple>
     <CActorModel id="AP_PlanetCrackerImpact" parent="ModelAnimationStyleOneShotUNIT">
         <On Terms="Effect.AP_PlanetCrackerDamage.Start; At Target" Send="Create"/>
@@ -22026,6 +22027,20 @@
     <CActorAction id="AP_PlanetCrackerShieldHitter" parent="AoEAttackShieldHitter" effectHit="AP_PlanetCrackerDamage"/>
     <CActorSplat id="AP_TimeFieldCursorSplat" parent="ProtossCursorSplat" abil="AP_TimeField"/>
     <CActorSplat id="AP_TimeFieldEmpoweredCursorSplat" parent="ProtossCursorSplat" abil="AP_TimeFieldEmpowered"/>
+    <CActorModel id="AP_PlanetCrackerChargeUp" parent="ModelAddition">
+        <Model value="AP_PurifierPowerUp"/>
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="Create"/>
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="SetScale 17.000000 3.500000"/>
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachHardPoint"/>
+    </CActorModel>
+    <CActorSound id="AP_PlanetCrackerChargeUpSound" parent="SoundOneShot">
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="Create"/>
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="AP_SOA_PurifierBeam_Birth_A"/>
+    </CActorSound>
     <CActorRange id="AP_PlanetCrackerRange" parent="RangeAbil" abil="AP_PlanetCracker">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
@@ -22035,33 +22050,23 @@
         <On Terms="ActorCreation" Send="SetTintColor {255,165,0 10.000000}"/>
         <On Terms="ActorCreation" Send="Create AP_PlanetCrackerCursorOuter"/>
         <On Terms="ActorDestruction" Target="AP_PlanetCrackerCursorOuter" Send="Destroy"/>
-        <Scale value="0.92"/>
+        <Scale value="1.225"/>
     </CActorSplat>
     <CActorSplat id="AP_PlanetCrackerCursorOuter" parent="ProtossCursorSplat">
         <Model value="LiberatorAGTargetCursorSplat"/>
-        <Scale value="0.92"/>
+        <Scale value="1.225"/>
         <On index="0" Terms="Abil.Cursor" Send="Create"/>
         <On Terms="ActorCreation" Send="SetTintColor {255,165,0 10.000000}"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
         <On Terms="ActorCreation" Send="TimerSet 0.250000 Scaling"/>
-        <On Terms="TimerExpired; TimerName Scaling" Send="SetScale 0.92"/>
+        <On Terms="TimerExpired; TimerName Scaling" Send="SetScale 1.225"/>
         <On Terms="TimerExpired; TimerName Scaling" Send="SetScale 2.07 2.00000"/>
         <On Terms="TimerExpired; TimerName Scaling" Send="TimerSet 2.00000 Scaling"/>
     </CActorSplat>
+    <CActorSplat id="AP_TimeFieldPurifierCursorSplat" parent="ProtossCursorSplat" abil="AP_TimeFieldPurifier"/>
     <CActorSplat id="AP_TimeFieldTaldarimCursorSplat" parent="ProtossCursorSplat" abil="AP_TimeFieldTaldarim">
         <Model value="AP_VoidSentryBlackHoleCursorSplat"/>
     </CActorSplat>
-    <CActorModel id="AP_PlanetCrackerRangeIndicator" parent="ModelAnimationStyleContinuous">
-        <On Terms="ActorCreation" Send="SetTeamColor {255,0,0 0.200000} {255,0,0 0.200000}"/>
-        <On Terms="Behavior.AP_PlanetCracker.On" Send="Create"/>
-        <On Terms="Behavior.AP_PlanetCracker.Off" Send="Destroy"/>
-        <On Terms="Behavior.AP_PlanetCracker.On" Send="SetScale 3.2"/>
-        <On Terms="Behavior.AP_PlanetCracker.On" Send="SetScale 6.33 10"/>
-        <On Terms="Behavior.AP_PlanetCracker.On" Send="SetTintColor {255,165,0 10.000000}"/>
-        <Host Subject="_Selectable"/>
-        <Model value="PurificationNovaRangeIndicator"/>
-        <HostSiteOps Ops="AP_PlanetCrackerOffset"/>
-    </CActorModel>
     <CActorSiteOpLocalOffset id="AP_PlanetCrackerOffset">
         <LocalOffset value="0.000000,0.000000,-2.000000"/>
     </CActorSiteOpLocalOffset>
@@ -22124,20 +22129,60 @@
         <On Terms="Behavior.AP_AstralRestorationCaster.On" Send="Create"/>
         <On Terms="Behavior.AP_AstralRestorationCaster.Off" Send="Destroy"/>
     </CActorSound>
+    <CActorModel id="AP_AmplifiedPowerRerouter" parent="ModelAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.AP_AmplifiedPowerRerouterAura.On" Send="Create"/>
+        <On Terms="Behavior.AP_AmplifiedPowerRerouterAura.On" Send="SetScale 1.40000"/>
+        <On Terms="ActorCreation" Send="$Stand PlayForever,ForceLooping"/>
+        <On Terms="Behavior.AP_AmplifiedPowerRerouterAura.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="AP_ShadowOfDeathAura" parent="ModelAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.AP_ShadowOfDeathAura.On" Send="Create"/>
+        <On Terms="Behavior.AP_ShadowOfDeathAura.On" Send="SetScale 1.50000"/>
+        <On Terms="ActorCreation" Send="$Stand PlayForever,ForceLooping"/>
+        <On Terms="Behavior.AP_ShadowOfDeathAura.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="AP_ShadowOfDeathDebuff" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.AP_ShadowOfDeathDebuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_ShadowOfDeathDebuff.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.40000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.90000"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorModel id="AP_CybrosShielding" parent="ModelAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.AP_CybrosShielding.On" Send="Create"/>
+        <On Terms="Behavior.AP_CybrosShielding.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter AP_CybrosShieldingOffset"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
     <CActorModel id="AP_OverloadWeaponSystems" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.AP_OverloadWeaponSystems.On" Send="Create"/>
         <On Terms="Behavior.AP_OverloadWeaponSystems.Off" Send="Destroy"/>
         <On Terms="Behavior.AP_OverloadWeaponSystems.On" Send="SetTintColor {255,165,0 10.000000}"/>
         <On Terms="Behavior.AP_OverloadWeaponSystems.On" Send="SetScale 0.700000"/>
-        <!-- <On Terms="ActorCreation" Send="SetTintColor 0,255,0"/> 
-        <On Terms="ActorCreation" Send="SetOpacity 0.750000"/>    -->
         <On Terms="ActorOrphan" Send="Destroy"/>
-        <Model value="AP_OverloadWeaponSystems"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter AP_OverloadWeaponSystemsOffset"/>
     </CActorModel>
     <CActorSiteOpLocalOffset id="AP_OverloadWeaponSystemsOffset">
         <LocalOffset value="0.000000,0.000000,0.500000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorSiteOpLocalOffset id="AP_CybrosShieldingOffset">
+        <LocalOffset value="0.000000,0.000000,-0.950000"/>
     </CActorSiteOpLocalOffset>
     <CActorModel id="AP_TimeFieldModel" parent="ModelAnimationStyleContinuous">
         <On Terms="Effect.AP_TimeFieldCreatePersistent.Start" Send="Create"/>
@@ -22145,6 +22190,23 @@
         <On Terms="Effect.AP_TimeFieldEmpoweredCreatePersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_TimeFieldEmpoweredCreatePersistent.Start" Send="SetScale 1.5000"/>
         <On Terms="Effect.AP_TimeFieldEmpoweredCreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ModelEvent; ModelEventName SoundStart" Send="Create GuardianShieldSoundBirth"/>
+        <On Terms="ModelEvent; ModelEventName SoundLoopStart" Send="Create GuardianShieldSoundLoop"/>
+        <On Terms="ModelEvent; ModelEventName SoundLoopEnd" Target="GuardianShieldSoundLoop" Send="Destroy"/>
+        <On Terms="ModelEvent; ModelEventName SoundLoopEnd" Send="Create GuardianShieldSoundDeath"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Macros value="GlobalLoopMacro"/>
+        <Inherits index="TeamColor" value="1"/>
+        <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
+    </CActorModel>
+    <CActorModel id="AP_TimeFieldPurifierModel">
+        <On Terms="ActorCreation" Send="AnimBracketStart SSD Spell Stand Death"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Effect.AP_TimeFieldPurifierCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_TimeFieldPurifierCreatePersistent.Start" Send="SetScale 1.3000"/>
+        <On Terms="Effect.AP_TimeFieldPurifierCreatePersistent.Stop" Send="AnimBracketStop SSD"/>
+        <On Terms="ActorCreation" Send="SetTintColor {110,255,10 2.000000}"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName SSD" Send="Destroy"/>
         <On Terms="ModelEvent; ModelEventName SoundStart" Send="Create GuardianShieldSoundBirth"/>
         <On Terms="ModelEvent; ModelEventName SoundLoopStart" Send="Create GuardianShieldSoundLoop"/>
         <On Terms="ModelEvent; ModelEventName SoundLoopEnd" Target="GuardianShieldSoundLoop" Send="Destroy"/>
@@ -22186,18 +22248,29 @@
         <IconArcLength value="3.250000"/>
         <Icon value="Assets\Textures\radaricon2.dds"/>
     </CActorRange>
+    <CActorRange id="AP_TimeFieldPurifierRange">
+        <EditorCategories value=""/>
+        <On Terms="Abil.AP_TimeFieldPurifier.TargetOn" Send="Create"/>
+        <On Terms="Abil.AP_TimeFieldPurifier.TargetOff" Send="Destroy"/>
+        <Abil Link="AP_TimeFieldPurifier"/>
+        <IconArcLength value="3.250000"/>
+        <Icon value="Assets\Textures\radaricon2.dds"/>
+    </CActorRange>
     <CActorRange id="AP_TimeFieldTaldarimRange">
         <EditorCategories value=""/>
         <On Terms="Abil.AP_TimeFieldTaldarim.TargetOn" Send="Create"/>
         <On Terms="Abil.AP_TimeFieldTaldarim.TargetOff" Send="Destroy"/>
         <Abil Link="AP_TimeFieldTaldarim"/>
         <IconArcLength value="3.250000"/>
+        <Icon value="Assets\Textures\radaricon2.dds"/>
     </CActorRange>
     <CActorSound id="AP_TimeFieldLoop" parent="SoundContinuous">
         <On Terms="Effect.AP_TimeFieldCreatePersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_TimeFieldCreatePersistent.Stop" Send="Destroy"/>
         <On Terms="Effect.AP_TimeFieldEmpoweredCreatePersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_TimeFieldEmpoweredCreatePersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.AP_TimeFieldPurifierCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_TimeFieldPurifierCreatePersistent.Stop" Send="Destroy"/>
         <On Terms="Effect.AP_TimeFieldTaldarimCreatePersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_TimeFieldTaldarimCreatePersistent.Stop" Send="Destroy"/>
         <Sound value="Mothership_TimeWarpLoop"/>
@@ -24338,11 +24411,14 @@
         <!--        <On Terms="Abil.MothershipCoreTeleport.SourceCastStart" Send="TimerSet 0.500000 ShrinkDelay"/>-->
         <On Terms="Abil.AP_BatteryOverchargeUpgrade.SourceCastStart" Send="$Spell"/>
         <On Terms="TimerExpired; TimerName ShrinkDelay" Target="::Main" Send="SetScale 1.000000 0.500000"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom AP_MothershipCoreAiur; ValidatePlayer AP_HaveSymbolOfUnity" Send="ModelSwap AP_AiurMothershipUpgrade"/>
+        <On Terms="Upgrade.AP_SymbolOfUnity.Add" Send="ModelSwap AP_AiurMothershipUpgrade"/>
         <On Terms="Behavior.WarpInEffect.On" Send="ModelSwap AP_MothershipTaldarimWarpInStargateBig"/>
         <On Terms="Behavior.WarpInEffect.On" Send="$Spell"/>
         <On Terms="AnimDone; AnimName Spell" Send="ModelSwap AP_AiurMothership"/>
         <On Terms="AnimDone; AnimName Spell" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
         <On Terms="AnimDone; AnimName Spell" Send="AnimClear Spell"/>
+        <On Terms="UnitDeathCustomize; ValidatePlayer AP_HaveSymbolOfUnity" Send="DeathCustomize Unity"/>
         <Model value="AP_AiurMothership"/>
         <Baselines index="Walk" AnimProps="Walk,01"/>
         <BuildModel value="AP_MotherShipTaldarimWarpIn"/>
@@ -24366,6 +24442,7 @@
         <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
         <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
         <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ModelLink="AP_AiurMothershipUpgradeDeath" SoundLink="AP_Mothership_Explode" Name="Unity"/>
         <DeathActorModel value="AP_AiurMothershipDeathModel"/>
         <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
         <PlacementModel value="AP_MothershipTaldarimPlacement"/>
@@ -24501,14 +24578,14 @@
         <On Terms="Effect.AP_PowerRedirectionCP.Start" Send="AnimBracketStart PR Stand,Work,Start Stand,Work Stand,Work,End"/>
         <On Terms="Effect.AP_PowerRedirectionCP.Stop" Send="AnimBracketStop PR"/>
         <On Terms="UnitBirth.AP_MothershipCorePurifier.Normal" Send="AnimPlay MorphStart Morph,End,A"/>
-        <On Terms="AbilMorph.*.Delay; MorphFrom AP_MothershipCorePurifier" Send="TimerSet 99.000000 DelayWarpOut"/>
+        <On Terms="AbilMorph.*.Delay; MorphFrom AP_MothershipCorePurifier" Send="TimerSet 109.000000 DelayWarpOut"/>
         <On Terms="TimerExpired; TimerName DelayWarpOut" Send="AnimPlay Morph Stand,Morph,Start PlayForever,NonLooping"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom AP_MothershipCorePurifier" Send="AnimClear Morph"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom AP_MothershipCorePurifier" Send="TimerKill DelayWarpOut"/>
-        <On Terms="AbilMorph.*.Cancel; MorphFrom AP_MothershipCorePurifier" Target="AP_MothershipCoreMorphAddition" Send="Destroy"/>
-        <On Terms="AbilMorph.*.Finish; MorphFrom AP_MothershipCorePurifier" Target="AP_MothershipCoreMorphAddition" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom AP_MothershipCorePurifier" Target="AP_MothershipCorePurifierMorphAddition" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom AP_MothershipCorePurifier" Target="AP_MothershipCorePurifierMorphAddition" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_MothershipCorePurifier" Send="Destroy"/>
-        <On Terms="Abil.AP_MorphToMothershipPurifier.Start" Send="Create AP_MothershipCoreMorphAddition"/>
+        <On Terms="Abil.AP_MorphToMothershipPurifier.Start" Send="Create AP_MothershipCorePurifierMorphAddition"/>
         <On Terms="Abil.AP_MorphToMothershipPurifier.Start" Send="Create AP_MothershipCoreUpgradeToMothershipStart"/>
         <On Terms="Abil.AP_MorphToMothershipPurifier.Start" Send="Create AP_MothershipCoreUpgradeToMothershipStart2"/>
         <On Terms="Abil.AP_MorphToMothershipPurifier.Start" Send="Create AP_MothershipCoreUpgradeToMothershipStart3"/>
@@ -24632,6 +24709,9 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="AP_MothershipCorePurifierMorphAddition" parent="AP_MothershipCoreMorphAddition">
+        <Model value="AP_MothershipCorePurifierMorphAddition"/>
+    </CActorModel>
     <CActorSound id="AP_MothershipCoreUpgradeToMothershipStart" parent="SoundOneShot">
         <Sound value="AP_CoreTransform"/>
     </CActorSound>
@@ -24656,16 +24736,28 @@
     <CActorSound id="AP_MothershipCoreUpgradeToMothershipEndHit" parent="SoundOneShot">
         <Sound value="AP_CoreTransformEndHit"/>
     </CActorSound>
-    <CActorSplat id="AP_MothershipBlackHoleCursorSplat" parent="ProtossCursorSplat" abil="AP_MothershipBlackHole"/>
-    <CActorRange id="AP_MothershipBlackHoleRange" parent="RangeAbil" abil="AP_MothershipBlackHole">
+    <CActorSplat id="AP_AiurMothershipBlackHoleCursorSplat" parent="ProtossCursorSplat" abil="AP_AiurMothershipBlackHole"/>
+    <CActorRange id="AP_AiurMothershipBlackHoleRange" parent="RangeAbil" abil="AP_AiurMothershipBlackHole">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
-    <CActorModel id="AP_MothershipBlackHole" parent="ModelAnimationStyleContinuous">
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Start" Send="Create"/>
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Stop" Send="AnimBracketStop BSD"/>
+    <CActorModel id="AP_AiurMothershipBlackHole" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Stop" Send="AnimBracketStop BSD"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
         <Model value="VortexModel"/>
     </CActorModel>
+    <CActorModel id="AP_PurifierMothershipBlackHole" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,110,10 3.000000}"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
+        <On Terms="ActorCreation" Send="SetScale 1.16667"/>
+        <Model value="VortexModel"/>
+    </CActorModel>
+    <CActorSplat id="AP_PurifierMothershipBlackHoleCursorSplat" parent="ProtossCursorSplat" abil="AP_PurifierMothershipBlackHole"/>
+    <CActorRange id="AP_PurifierMothershipBlackHoleRange" parent="RangeAbil" abil="AP_PurifierMothershipBlackHole">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+    </CActorRange>
     <CActorModel id="AP_MothershipDeathRagdoll" parent="UnitDeathRagdollFlier">
         <Model value="MothershipDeathRagdoll"/>
         <On Terms="ActorCreation" Send="Create AP_MothershipDeathRagdollDetonationForce"/>
@@ -25021,7 +25113,8 @@
     </CActorModel>
     <CActorSound id="AP_VoidSentryBlackHoleBirthSound" parent="SoundOneShot">
         <On Terms="Effect.AP_VoidSentryBlackHolePersistent.Start" Send="Create"/>
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Start" Send="Create"/>
         <Sound value="AP_BlackHole_Start1"/>
         <Layers>
             <Sound value="BlackHole_Start2"/>
@@ -25046,7 +25139,8 @@
     </CActorSound>
     <CActorSound id="AP_VoidSentryBlackHoleDeathSound" parent="SoundOneShot">
         <On Terms="Effect.AP_VoidSentryBlackHolePersistent.Stop" Send="Create"/>
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Stop" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Stop" Send="Create"/>
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Stop" Send="Create"/>
         <Sound value="AP_BlackHole_End"/>
     </CActorSound>
     <CActorSimple id="AP_VoidSentryBlackHoleFlail">
@@ -25059,8 +25153,10 @@
     <CActorSound id="AP_VoidSentryBlackHoleLoopSound" parent="SoundContinuous">
         <On Terms="Effect.AP_VoidSentryBlackHolePersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_VoidSentryBlackHolePersistent.Stop" Send="Destroy"/>
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Start" Send="Create"/>
-        <On Terms="Effect.AP_MothershipBlackHolePersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipBlackHolePersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Start" Send="Create"/>
+        <On Terms="Effect.AP_PurifierMothershipBlackHolePersistent.Stop" Send="Destroy"/>
         <Sound value="AP_BlackHole_Loop1"/>
         <Layers>
             <Sound value="BlackHole_Loop2"/>
@@ -33907,6 +34003,9 @@
         <On Terms="Behavior.AP_PowerRedirectionPhoton.Off" Send="Destroy"/>
         <On Terms="Behavior.AP_PowerRedirectionKhaydarin.Off" Send="ModelMaterialRemoveFrom ::Main"/>
         <On Terms="Behavior.AP_PowerRedirectionKhaydarin.Off" Send="Destroy"/>
+    </CActorModelMaterial>
+    <CActorModelMaterial id="AP_SacrificialConduitsGlaze" parent="GlazeParent">
+        <On Terms="Effect.AP_SOAMothershipv4BeamSwitch.Start; ValidatePlayer AP_HaveHHVikingPiercingAttackUpgrade; At Caster" Send="Create"/>
     </CActorModelMaterial>
     <CActorModelMaterial id="AP_PurifierStunGlaze" parent="GlazeParent">
         <On Terms="Behavior.AP_OverloadWeaponSystemsStun.On" Send="Create"/>
@@ -44420,6 +44519,29 @@
         <Model value="ArchonDeath"/>
     </CActorModel>
     <CActorRange id="AP_ArchonSiphonRange" parent="RangeAbil" abil="Ap_ArchonSiphon"/>
+    <CActorMissile id="AP_SoulForgedConduitsDummyAttackMissile" parent="GenericAttackMissile" unitName="AP_SoulForgedConduitsDummyAttackMissile"/>
+    <CActorMissile id="AP_SoulForgedConduitsMissile" parent="GenericAttackMissile" unitName="AP_SoulForgedConduitsMissle">
+        <On Terms="ActorCreation" Send="SetTintColor 185,2,38"/>
+        <Model value="AP_SoulForgedConduitsDummyAttackMissile"/>
+    </CActorMissile>
+    <CActorAction id="AP_SoulForgedConduitsDummyAttack" parent="GenericAttack" effectImpact="AP_SoulForgedConduitsModifyImpactDummy" effectLaunch="AP_SoulForgedConduitsModifyLM">
+        <LaunchAssets Sound=""/>
+        <ImpactMap index="None" Model="" Sound="Raven_PointDefenseDroneReleaseImpact"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorSound id="AP_SoulForgedConduitsActorSound" parent="SoundOneShot">
+        <Sound value="AP_SoulForgedConduits"/>
+        <On Terms="Effect.AP_SoulForgedConduitsMU.Start; At Source" Send="Create"/>
+        <On Terms="Effect.AP_SoulForgedConduitsTaldarimMU.Start; At Source" Send="Create"/>
+    </CActorSound>
+    <CActorModelMaterial id="AP_SoulForgedConduitsGlaze" parent="GlazeParent">
+        <On Terms="Effect.AP_SoulForgedConduitsMU.Start; At Target" Send="Create"/>
+        <On Terms="Effect.AP_SoulForgedConduitsTaldarimMU.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Birth Birth"/>
+        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModelMaterial>
     <CActorModel id="AP_FenixWarbringerColossusSlowModel" parent="ModelAnimationStyleContinuous">
         <!-- TODO -->
         <!-- <On Terms="Behavior.FenixWarbringerColossusIceFlatAmount.On" Send="Create"/> -->

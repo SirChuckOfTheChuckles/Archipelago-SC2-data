@@ -3820,6 +3820,10 @@
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeOracleEnergyUpgradeCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveSymbolOfUnity">
+        <EditorCategories value="Race:Protoss,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeSymbolOfUnityCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveFusionCoreFusionReactor">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeFusionCoreFusionReactorCompleteOnly"/>

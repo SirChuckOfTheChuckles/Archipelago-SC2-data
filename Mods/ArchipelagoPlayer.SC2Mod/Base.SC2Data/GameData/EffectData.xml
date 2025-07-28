@@ -11808,6 +11808,20 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_SOAMothershipTimedLife"/>
     </CEffectApplyBehavior>
+    <CEffectSwitch id="AP_SOAMothershipv4BeamSwitch">
+        <EditorCategories value="Race:Protoss"/>
+        <CaseArray Validator="AP_NoShieldsAndFriendly" Effect="AP_SOAMothershipv4BeamDamageLeech"/>
+        <CaseDefault value="AP_SOAMothershipv4BeamDamage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="AP_SOAMothershipv4BeamDamageLeech" parent="DU_WEAP_MISSILE">
+        <ValidatorArray value="AP_MothershipRangeCheck"/>
+        <ValidatorArray value="NotHidden"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Amount value="38"/>
+        <Death value="Fire"/>
+        <LeechFraction index="Life" value="1"/>
+    </CEffectDamage>
     <CEffectDamage id="AP_SOAMothershipv4BeamDamage" parent="DU_WEAP_MISSILE">
         <ValidatorArray value="AP_MothershipRangeCheck"/>
         <ValidatorArray value="NotHidden"/>
@@ -11832,7 +11846,7 @@
         <PeriodCount value="3"/>
         <PeriodicValidator value="CasterNotDead"/>
         <PeriodicValidator value="NotInvulnerable"/>
-        <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
+        <PeriodicEffectArray value="AP_SOAMothershipv4BeamSwitch"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
     <CEffectSet id="AP_SOAMothershipv4BeamSet">
@@ -11858,7 +11872,7 @@
         <PeriodicValidator value="AP_MothershipRangeCheckCombine"/>
         <PeriodicValidator value="CasterNotDead"/>
         <PeriodicValidator value="NotInvulnerable"/>
-        <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
+        <PeriodicEffectArray value="AP_SOAMothershipv4BeamSwitch"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="AP_SOAMothershipv4FastBeamPersistent" parent="AP_SOAMothershipv4BeamPersistent">
@@ -11892,7 +11906,27 @@
         <EffectArray value="AP_AiurMothershipWeaponAB"/>
         <EffectArray value="AP_AiurMothershipWeaponHeroicAB"/>
         <EffectArray value="AP_AiurMothershipBeamDamage"/>
+        <EffectArray value="AP_AiurMothershipShieldRestoreSearch"/>
     </CEffectSet>
+    <CEffectEnumArea id="AP_AiurMothershipShieldRestoreSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="Visible;Enemy,Missile,Stasis,Dead,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSShieldsFraction"/>
+        </TargetSorts>
+        <AreaArray Radius="6" MaxCount="1" Effect="AP_AiurMothershipShieldRestore"/>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
+    </CEffectEnumArea>
+    <CEffectModifyUnit id="AP_AiurMothershipShieldRestore">
+        <ValidatorArray value="ShieldsNotFull"/>
+        <EditorCategories value="Race:Protoss"/>
+        <VitalArray index="Shields">
+            <Change value="2"/>
+        </VitalArray>
+    </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_AiurMothershipBeamDummy">
         <ValidatorArray value="AP_MothershipRangeCheck"/>
         <EditorCategories value="Race:Protoss"/>
@@ -11941,23 +11975,24 @@
     </CEffectCreatePersistent>
     <CEffectSet id="AP_PurifierMothershipBeamSet">
         <EditorCategories value="Race:Protoss"/>
-        <EffectArray value="AP_MothershipPurifierBomberLP"/>
+        <EffectArray value="AP_PurifierMothershipBeamAcquireAB"/>
         <EffectArray value="AP_PurifierMothershipBeamPersistent"/>
         <EffectArray value="AP_PurifierMothershipSecondaryBeamPersistent"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="AP_PurifierMothershipBeamAcquireAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="AP_PurifierMothershipBeamAcquire"/>
+    </CEffectApplyBehavior>
     <CEffectSet id="AP_PurifierMothershipFriendlyBeamSet">
         <ValidatorArray value="AP_FriendlyTargetExcludeSelf"/>
         <EditorCategories value="Race:Protoss"/>
-        <EffectArray value="AP_MothershipPurifierBomberLP"/>
         <EffectArray value="AP_PurifierMothershipBeamPersistent"/>
         <EffectArray value="AP_PurifierMothershipSecondaryBeamPersistent"/>
     </CEffectSet>
     <CEffectSet id="AP_PurifierMothershipWeaponSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_PurifierMothershipWeaponSearch"/>
-        <EffectArray value="AP_PurifierMothershipWeaponSearchSS"/>
         <EffectArray value="AP_PurifierMothershipWeaponOverloadSearch"/>
-        <EffectArray value="AP_PurifierMothershipWeaponOverloadSearchSS"/>
         <EffectArray value="AP_PurifierMothershipFriendlyBeamSet"/>
         <TargetLocationType value="UnitOrPoint"/>
     </CEffectSet>
@@ -11970,30 +12005,26 @@
             <SortArray value="AP_TSThreatenBattlecruiser"/>
             <SortArray value="TSPriority"/>
         </TargetSorts>
-        <AreaArray MaxCount="3" Radius="7" Effect="AP_PurifierMothershipBeamSet"/>
+        <AreaArray>
+            <Arc value="360"/>
+            <MaxCount value="3"/>
+            <Radius value="7.5"/>
+            <Effect value="AP_PurifierMothershipBeamSet"/>
+        </AreaArray>
         <MinCount value="1"/>
         <SearchFlags index="CenterAtLaunch" value="1"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="0"/>
-        <ValidatorArray value="AP_HasNotHavocSquadSightBehavior"/>
     </CEffectEnumArea>
-    <CEffectEnumArea id="AP_PurifierMothershipWeaponSearchSS">
-        <EditorCategories value="Race:Protoss"/>
-        <ImpactLocation Value="CasterUnit"/>
-        <SearchFilters value="Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <TargetSorts>
-            <SortArray value="AP_MothershipTargetFire"/>
-            <SortArray value="AP_TSThreatenBattlecruiser"/>
-            <SortArray value="TSPriority"/>
-        </TargetSorts>
-        <AreaArray MaxCount="3" Radius="9" Effect="AP_PurifierMothershipBeamSet"/>
-        <MinCount value="1"/>
-        <SearchFlags index="CenterAtLaunch" value="1"/>
-        <SearchFlags index="ExtendByUnitRadius" value="1"/>
-        <SearchFlags index="OffsetAreaByAngle" value="0"/>
-        <ValidatorArray value="AP_HasHavocSquadSightBehavior"/>
+    <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch" parent="AP_PurifierMothershipWeaponSearch">
+        <AreaArray index="0">
+            <Arc value="360"/>
+            <MaxCount value="6"/>
+            <Radius value="7.5"/>
+            <Effect value="AP_PurifierMothershipBeamSet"/>
+        </AreaArray>
+        <ValidatorArray value="AP_CasterOverloadWeaponSystems"/>
     </CEffectEnumArea>
-
 
     <CEffectEnumArea id="AP_RevitalizeShieldsSearchArea">
         <EditorCategories value="Race:Protoss"/>
@@ -12220,23 +12251,84 @@
         <Behavior value="AP_NexusRecall"/>
         <EditorCategories value="Race:Protoss"/>
     </CEffectApplyBehavior>
-
+    <CEffectSet id="AP_SoulForgedConduitsABSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="AP_SoulForgedConduitsAB"/>
+        <EffectArray value="AP_SoulForgedConduitsTaldarimAB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_SoulForgedConduitsAB">
+        <EditorCategories value=""/>
+        <ValidatorArray value="AP_IsNotTaldarimUnit"/>
+        <Behavior value="AP_SoulForgedConduitsDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_SoulForgedConduitsTaldarimAB">
+        <EditorCategories value=""/>
+        <ValidatorArray value="AP_IsTaldarimUnit"/>
+        <Behavior value="AP_SoulForgedConduitsTaldarimDebuff"/>
+    </CEffectApplyBehavior>
+    <CEffectLaunchMissile id="AP_SoulForgedConduitsLM">
+        <EditorCategories value=""/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ImpactEffect value="AP_SoulForgedConduitsMU"/>
+        <AmmoUnit value="AP_SoulForgedConduitsMissle"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="AP_SoulForgedConduitsMU">
+        <EditorCategories value=""/>
+        <VitalArray index="Life" Change="10"/>
+        <VitalArray index="Shields" Change="20"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
+    <CEffectLaunchMissile id="AP_SoulForgedConduitsTaldarimLM">
+        <EditorCategories value=""/>
+        <ImpactLocation Value="CasterUnit"/>
+        <ImpactEffect value="AP_SoulForgedConduitsTaldarimMU"/>
+        <AmmoUnit value="AP_SoulForgedConduitsMissle"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="AP_SoulForgedConduitsTaldarimMU">
+        <EditorCategories value=""/>
+        <VitalArray index="Life" Change="20"/>
+        <VitalArray index="Shields" Change="20"/>
+        <VitalArray index="Energy" Change="1"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
+    <CEffectEnumArea id="AP_SoulForgedConduitsSearch">
+        <EditorCategories value=""/>
+        <AreaArray Radius="8" Effect="AP_SoulForgedConduitsABSet"/>
+        <SearchFilters value="-;Self,Ally,Neutral,Enemy,Structure"/>
+    </CEffectEnumArea>
+    <CEffectSet id="AP_SoulForgedConduitsImpactDummy"/>
+    <CEffectSet id="AP_SoulForgedConduitsLaunchDummy"/>
 
 
     <CEffectEnumArea id="AP_PlanetCrackerSearch">
         <EditorCategories value="Race:Protoss"/>
-        <AreaArray Radius="4.5" RadiusBonus="0.15" Effect="AP_PlanetCrackerDamage"/>
-        <SearchFilters value="-;Self,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="6.1" RadiusBonus="0.1" Effect="AP_PlanetCrackerDamage"/>
+        <SearchFilters value="-;Self,Stasis,Dead,Hidden,Missile,Invulnerable"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_PlanetCrackerAB">
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_PlanetCracker"/>
         <EditorCategories value="Race:Protoss"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_CybrosShieldingAB">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_CybrosShielding"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectApplyBehavior>
+   <CEffectRemoveBehavior id="AP_CybrosShieldingRB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_CybrosShielding"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="AP_PlanetCrackerChargeUpAB">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_PlanetCrackerChargeUp"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CEffectApplyBehavior>
     <CEffectDamage id="AP_PlanetCrackerDamage">
         <EditorCategories value="Race:Protoss"/>
         <Visibility value="Visible"/>
-        <Amount value="18"/>
+        <Amount value="25"/>
         <Death value="Fire"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
@@ -12245,9 +12337,9 @@
     </CEffectDamage>
     <CEffectSet id="AP_PlanetCrackerSet">
         <EditorCategories value="Race:Protoss"/>
-        <EffectArray value="AP_MothershipPurifierBomberRecall"/>
         <EffectArray value="AP_PlanetCrackerTeleport"/>
-        <EffectArray value="AP_PlanetCrackerAB"/>
+        <EffectArray value="AP_PlanetCrackerChargeUpAB"/>
+        <EffectArray value="AP_CybrosShieldingAB"/>
         <TargetLocationType value="Point"/>
     </CEffectSet>
     <CEffectTeleport id="AP_PlanetCrackerTeleport">
@@ -12295,14 +12387,6 @@
     <CEffectApplyBehavior id="AP_OverloadWeaponSystemsStunAB">
         <Behavior value="AP_OverloadWeaponSystemsStun"/>
     </CEffectApplyBehavior>
-    <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch" parent="AP_PurifierMothershipWeaponSearch">
-        <AreaArray MaxCount="6" Radius="7" Effect="AP_PurifierMothershipBeamSet"/>
-        <ValidatorArray value="AP_CasterOverloadWeaponSystems"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearchSS" parent="AP_PurifierMothershipWeaponSearchSS">
-        <AreaArray MaxCount="6" Radius="9" Effect="AP_PurifierMothershipBeamSet"/>
-        <ValidatorArray value="AP_CasterOverloadWeaponSystems"/>
-    </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_TargetFirePriority">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_TargetFire"/>
@@ -12321,39 +12405,74 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_BatteryOvercharge"/>
     </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_MothershipBlackHoleAB">
+    <CEffectApplyBehavior id="AP_AiurMothershipBlackHoleAB">
         <EditorCategories value="Race:Protoss"/>
-        <Behavior value="AP_MothershipBlackHole"/>
+        <Behavior value="AP_AiurMothershipBlackHole"/>
     </CEffectApplyBehavior>
-    <CEffectApplyForce id="AP_MothershipBlackHoleForce">
+    <CEffectApplyForce id="AP_AiurMothershipBlackHoleForce">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetPoint"/>
-        <WhichUnit Effect="AP_MothershipBlackHoleImpactSet"/>
+        <WhichUnit Effect="AP_AiurMothershipBlackHoleImpactSet"/>
         <Amount value="-1"/>
     </CEffectApplyForce>
-    <CEffectCreatePersistent id="AP_MothershipBlackHoleForceOffset">
+    <CEffectCreatePersistent id="AP_AiurMothershipBlackHoleForceOffset">
         <EditorCategories value="Race:Protoss"/>
-        <OffsetVectorStartLocation Effect="AP_MothershipBlackHoleSearch" Value="TargetPoint"/>
-        <InitialEffect value="AP_MothershipBlackHoleForce"/>
+        <OffsetVectorStartLocation Effect="AP_AiurMothershipBlackHoleSearch" Value="TargetPoint"/>
+        <InitialEffect value="AP_AiurMothershipBlackHoleForce"/>
         <InitialOffset value="0.375,0.1125,0"/>
     </CEffectCreatePersistent>
-    <CEffectSet id="AP_MothershipBlackHoleImpactSet">
+    <CEffectSet id="AP_AiurMothershipBlackHoleImpactSet">
         <EditorCategories value=""/>
-        <EffectArray value="AP_MothershipBlackHoleAB"/>
-        <EffectArray value="AP_MothershipBlackHoleForceOffset"/>
+        <EffectArray value="AP_AiurMothershipBlackHoleAB"/>
+        <EffectArray value="AP_AiurMothershipBlackHoleForceOffset"/>
     </CEffectSet>
-    <CEffectCreatePersistent id="AP_MothershipBlackHolePersistent">
+    <CEffectCreatePersistent id="AP_AiurMothershipBlackHolePersistent">
         <EditorCategories value="Race:Protoss"/>
         <PeriodCount value="128"/>
-        <PeriodicEffectArray value="AP_MothershipBlackHoleSearch"/>
+        <PeriodicEffectArray value="AP_AiurMothershipBlackHoleSearch"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectEnumArea id="AP_MothershipBlackHoleSearch">
+    <CEffectEnumArea id="AP_AiurMothershipBlackHoleSearch">
         <EditorCategories value="Race:Protoss"/>
         <LaunchLocation Value="TargetPoint"/>
         <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="3" Effect="AP_MothershipBlackHoleImpactSet"/>
+        <AreaArray Radius="3" Effect="AP_AiurMothershipBlackHoleImpactSet"/>
     </CEffectEnumArea>
+
+    <CEffectApplyBehavior id="AP_PurifierMothershipBlackHoleAB">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="AP_PurifierMothershipBlackHole"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyForce id="AP_PurifierMothershipBlackHoleForce">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Value="TargetPoint"/>
+        <WhichUnit Effect="AP_PurifierMothershipBlackHoleImpactSet"/>
+        <Amount value="-1"/>
+    </CEffectApplyForce>
+    <CEffectCreatePersistent id="AP_PurifierMothershipBlackHoleForceOffset">
+        <EditorCategories value="Race:Protoss"/>
+        <OffsetVectorStartLocation Effect="AP_PurifierMothershipBlackHoleSearch" Value="TargetPoint"/>
+        <InitialEffect value="AP_PurifierMothershipBlackHoleForce"/>
+        <InitialOffset value="0.4375,0.13125,0"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="AP_PurifierMothershipBlackHoleImpactSet">
+        <EditorCategories value=""/>
+        <EffectArray value="AP_PurifierMothershipBlackHoleAB"/>
+        <EffectArray value="AP_PurifierMothershipBlackHoleForceOffset"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="AP_PurifierMothershipBlackHolePersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="128"/>
+        <PeriodicEffectArray value="AP_PurifierMothershipBlackHoleSearch"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="AP_PurifierMothershipBlackHoleSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <LaunchLocation Value="TargetPoint"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3.5" Effect="AP_PurifierMothershipBlackHoleImpactSet"/>
+    </CEffectEnumArea>
+
     <CEffectApplyBehavior id="AP_PurifiedEmbersAB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_PurifiedEmbers"/>
@@ -13720,6 +13839,13 @@
         <Abil value="AP_HHWidowMineBlossom"/>
         <WhichUnit Value="Caster"/>
     </CEffectIssueOrder>
+    <CEffectSet id="AP_ShieldRechargeMatrixSet">
+        <EffectArray value="AP_MedicSCBWRestoration@RB"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="AP_ShieldRechargeMatrixModifyUnit">
+        <EditorCategories value="Race:Protoss"/>
+        <VitalArray index="Shields" Change="4"/>
+    </CEffectModifyUnit>
     <CEffectApplyBehavior id="AP_GhostSCBWLockdown@AB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_GhostSCBWLockdown"/>
@@ -18000,11 +18126,23 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_TimeField"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_TimeFieldPurifierApplyBehavior">
+        <ValidatorArray value="NotFrenzied"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="AP_TimeFieldPurifier"/>
+    </CEffectApplyBehavior>
     <CEffectCreatePersistent id="AP_TimeFieldCreatePersistent">
         <EditorCategories value="Race:Protoss"/>
         <InitialEffect value="AP_TimeFieldSearchAreaImpactDummy"/>
         <PeriodCount value="160"/>
         <PeriodicEffectArray value="AP_TimeFieldSearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_TimeFieldPurifierCreatePersistent">
+        <EditorCategories value="Race:Protoss"/>
+        <InitialEffect value="AP_TimeFieldSearchAreaImpactDummy"/>
+        <PeriodCount value="160"/>
+        <PeriodicEffectArray value="AP_TimeFieldPurifierSearchArea"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
     <CEffectDamage id="AP_TimeFieldDamageDummy" parent="DU_WEAP">
@@ -18020,6 +18158,11 @@
         <EditorCategories value="Race:Protoss"/>
         <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3.2" Effect="AP_TimeFieldApplyBehavior"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="AP_TimeFieldPurifierSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="4.8" Effect="AP_TimeFieldPurifierApplyBehavior"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_TimeFieldSearchAreaImpactDummy">
         <EditorCategories value="Race:Protoss"/>
@@ -18095,11 +18238,6 @@
         <SearchFilters value="-;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="4.8" Effect="AP_TimeFieldTaldarimApplyBehaviorSet"/>
     </CEffectEnumArea>
-    <CEffectSet id="AP_MothershipCoreNexusRecallApplyBehaviorSet">
-        <EditorCategories value="Race:Protoss"/>
-        <EffectArray value="AP_MothershipRecallTaldarimDummyAB"/>
-        <EffectArray value="AP_MothershipCoreNexusRecallApplyBehavior"/>
-    </CEffectSet>
     <CEffectApplyBehavior id="AP_MothershipCoreNexusRecallApplyBehavior">
         <ValidatorArray value="NotReleasedInterceptor"/>
         <ValidatorArray value="AP_NotAPLarvaEgg"/>
@@ -18112,14 +18250,6 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_MothershipRecallTaldarimDummy"/>
     </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_MothershipNexusRecallTaldarimAB">
-        <ValidatorArray value="NotReleasedInterceptor"/>
-        <ValidatorArray value="AP_NotAPLarvaEgg"/>
-        <ValidatorArray value="AP_NotAPLarva"/>
-        <ValidatorArray value="AP_NotAbducted"/>
-        <ValidatorArray value="AP_CasterIsTaldarimMothership"/>
-        <Behavior value="AP_MothershipTaldarimRecallShield"/>
-    </CEffectApplyBehavior>
     <CEffectApplyBehavior id="AP_MothershipCoreNexusRecallPostBehavior">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_MothershipCoreRecalled"/>
@@ -18131,7 +18261,7 @@
         <EffectArray value="AP_MothershipCoreNexusRecallSearch"/>
     </CEffectSet>
     <CEffectEnumArea id="AP_MothershipCoreNexusRecallSearch">
-        <AreaArray Radius="6.5" Effect="AP_MothershipCoreNexusRecallApplyBehaviorSet"/>
+        <AreaArray Radius="6.5" Effect="AP_MothershipCoreNexusRecallApplyBehavior"/>
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="CasterPoint"/>
         <MinCount value="1"/>
@@ -18169,7 +18299,7 @@
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_MothershipNexusRecallSearch">
-        <AreaArray Radius="6" Effect="AP_MothershipCoreNexusRecallApplyBehaviorSet"/>
+        <AreaArray Radius="6" Effect="AP_MothershipCoreNexusRecallApplyBehavior"/>
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="CasterPoint"/>
         <MinCount value="1"/>
@@ -18286,6 +18416,41 @@
     <CEffectModifyUnit id="AP_SetUpgradedMothershipTaldarimCooldown">
         <Weapon Weapon="AP_HungerForSlaughterWeapon" CooldownAmount="0.5"/>
     </CEffectModifyUnit>
+    <CEffectEnumArea id="AP_AmplifiedPowerRerouterSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
+        <AreaArray Radius="7" Effect="AP_AmplifiedPowerRerouterSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectSet id="AP_AmplifiedPowerRerouterSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="AP_AmplifiedPowerRerouterBuffEmpoweredAB"/>
+        <EffectArray value="AP_AmplifiedPowerRerouterBuffAB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_AmplifiedPowerRerouterBuffAB">
+        <ValidatorArray value="AP_NotPurifierAndHaveShields"/>
+        <Behavior value="AP_AmplifiedPowerRerouterBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_AmplifiedPowerRerouterBuffEmpoweredAB">
+        <ValidatorArray value="AP_IsPurifierUnitOrNoShields"/>
+        <Behavior value="AP_AmplifiedPowerRerouterBuffEmpowered"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="AP_ShadowOfDeathSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Structure,Missile,Dead,Hidden"/>
+        <AreaArray Radius="7" Effect="AP_ShadowOfDeathAB"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>  
+    <CEffectApplyBehavior id="AP_ShadowOfDeathAB">
+        <Behavior value="AP_ShadowOfDeathDebuff"/>
+    </CEffectApplyBehavior>  
+    <CEffectSet id="AP_TornadoMissileLMSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="AP_TornadoMissileLM"/>
+        <EffectArray value="AP_TornadoMissileLMDummy"/>
+    </CEffectSet>
     <CEffectCreatePersistent id="AP_TornadoMissileCP">
         <ValidatorArray value="AP_TornadoMaxDistance"/>
         <ValidatorArray value="AP_TornadoMissileFilters"/>
@@ -19787,6 +19952,17 @@
         <SearchFilters value="Ground;Self,Neutral,Enemy,Structure,Missile,Destructible,Dead,Hidden"/>
         <AreaArray Radius="10" Effect="AP_BattlecruiserBonusRangeAB"/>
     </CEffectEnumArea>
+    <CEffectEnumArea id="AP_SymbolOfUnitySearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Self,Neutral,Enemy,Missile,Destructible,Dead,Hidden"/>
+        <AreaArray Radius="6" Effect="AP_SymbolOfUnityBuffAB"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="AP_SymbolOfUnityBuffAB">
+        <EditorCategories value=""/>
+        <ValidatorArray value="EnergyNotFull"/>
+        <Behavior value="AP_SymbolOfUnityBuff"/>
+    </CEffectApplyBehavior>
     <CEffectEnumArea id="AP_FusionCoreFusionReactorSearch">
         <EditorCategories value=""/>
         <SearchFilters value="-;Self,Neutral,Enemy,Missile,Destructible,Dead,Hidden"/>
