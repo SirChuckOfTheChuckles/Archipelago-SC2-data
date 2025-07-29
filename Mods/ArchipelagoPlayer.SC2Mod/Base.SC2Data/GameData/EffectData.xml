@@ -18328,7 +18328,7 @@
         <EffectArray value="AP_AmplifiedPowerRerouterBuffAB"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_AmplifiedPowerRerouterBuffAB">
-        <ValidatorArray value="AP_PowerRerouterEmpoweredNotActive"/>
+        <ValidatorArray value="AP_AmplifiedPowerRerouterBuffEmpoweredNotActive"/>
         <Behavior value="AP_AmplifiedPowerRerouterBuff"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="AP_AmplifiedPowerRerouterBuffEmpoweredAB">

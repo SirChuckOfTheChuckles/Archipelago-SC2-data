@@ -22026,7 +22026,7 @@
     <CActorModel id="AP_PlanetCrackerChargeUp" parent="ModelAddition">
         <Model value="AP_PurifierPowerUp"/>
         <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="Create"/>
-        <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="SetScale 17.000000 3.500000"/>
+        <On Terms="Behavior.AP_PlanetCrackerChargeUp.On" Send="SetScale 18.000000 3.500000"/>
         <On Terms="Behavior.AP_PlanetCrackerChargeUp.Off" Send="AnimBracketStop BSD"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachHardPoint"/>

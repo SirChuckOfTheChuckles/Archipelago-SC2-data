@@ -786,6 +786,8 @@ Behavior/Tooltip/AP_AdeptPsionicTransferDamageBuff=Enemies that touch this unit 
 Behavior/Tooltip/AP_AdeptPsionicTransferDamageDebuff=This unit is taking increased damage.
 Behavior/Tooltip/AP_AlarakLightningStrikes=Alarak's next Deadly Charge also deals <d ref="Effect,AlarakLightningStrikesDamage,Amount"/> damage to <d ref="Effect,AlarakLightningStrikesSearch,AreaArray[0].MaxCount"/> enemy units near the primary target.
 Behavior/Tooltip/AP_AmorphousArmorcloud=Incoming damage from air units reduced by <d ref="Behavior,AP_AmorphousArmorcloud,DamageResponse.ModifyFraction*100" precision="1"/>%.
+Behavior/Tooltip/AP_AmplifiedPowerRerouterBuff=Attack speed increased by <d ref="Behavior,AP_AmplifiedPowerRerouterBuff,Modification.AttackSpeedMultiplier*100 - 100"/>%.
+Behavior/Tooltip/AP_AmplifiedPowerRerouterBuffEmpowered=Attack speed increased by <d ref="Behavior,AP_AmplifiedPowerRerouterBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>%.
 Behavior/Tooltip/AP_ArbiterMPCloakFieldEffect=This unit is cloaked unless revealed by <c val="FFE303">Detectors</c> or effects.
 Behavior/Tooltip/AP_AscendantSacrificeSelfBuff=This unit has increased shields and its abilities deal increased damage.
 Behavior/Tooltip/AP_AstralRestorationCaster=Healing units within range of Cloaking Field.
@@ -2320,6 +2322,7 @@ Button/Name/AP_WidowMineConcealment=Concealment
 Button/Name/AP_WidowMineDemolitionArmaments=Demolition Payload
 Button/Name/AP_WidowMineUnburrow=Deactivate Mine
 Button/Name/AP_WildMutation=Wild Mutation
+Button/Name/AP_WormholeTransit=Wormhole Transit
 Button/Name/AP_Wraith=Build Wraith
 Button/Name/AP_WraithAdvancedLaserTechnology=Advanced Laser Technology
 Button/Name/AP_WraithCloakOff=Decloak
@@ -4004,6 +4007,7 @@ Button/Tooltip/AP_WidowMineConcealment=This unit is no longer revealed while rel
 Button/Tooltip/AP_WidowMineDemolitionArmaments=Allows Widow Mines to attack buildings.
 Button/Tooltip/AP_WidowMineUnburrow=Unburrows the Widow Mine and deactivates its weapon, allowing it to move.
 Button/Tooltip/AP_WildMutation=Friendly zerg units in the target area gain +<d ref="Behavior,AP_WildMutation,Modification.VitalMaxArray[1]"/> maximum life and <d ref="(Behavior,AP_WildMutation,Modification.AttackSpeedMultiplier - 1) * 100"/>% increased attack speed for <d ref="Behavior,AP_WildMutation,Duration"/> seconds.<n/><n/><c val="ffff8a">Does not affect heroic units.</c>
+Button/Tooltip/AP_WormholeTransit=
 Button/Tooltip/AP_Wraith=Highly mobile flying unit. Excellent at surgical strikes.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/AP_WraithAdvancedLaserTechnology=<c val="ffff8a">Burst Lasers</c> do more damage and hit both air and ground units. Replaces Gemini Missiles weapon.
 Button/Tooltip/AP_WraithCloakOff=Decloaks the selected unit, making it visible to enemies.

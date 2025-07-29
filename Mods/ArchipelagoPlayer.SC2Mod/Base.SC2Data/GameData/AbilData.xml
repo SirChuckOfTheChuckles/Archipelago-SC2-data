@@ -7343,6 +7343,7 @@
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_SOAMothershipBlinkGlobal" parent="AP_SOAMothershipBlink">
         <Cost>
+            <Vital index="Energy" value="75"/>
             <Cooldown TimeUse="90"/>
         </Cost>
         <Range value="500"/>

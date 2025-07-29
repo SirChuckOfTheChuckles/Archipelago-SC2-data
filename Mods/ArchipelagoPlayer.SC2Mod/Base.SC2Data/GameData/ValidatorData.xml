@@ -4065,8 +4065,8 @@
     <CValidatorUnitType id="AP_IsImmortalPurifier">
         <Value value="AP_ImmortalPurifier"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="AP_IsTempest">
-        <Value value="AP_Tempest"/>
+    <CValidatorUnitType id="AP_IsTempestPurifier">
+        <Value value="AP_TempestPurifier"/>
     </CValidatorUnitType>
     <CValidatorUnitType id="AP_IsSentryPurifier">
         <Value value="AP_SentryPurifier"/>
@@ -4087,7 +4087,7 @@
         <CombineArray value="AP_IsCarrierPurifier"/>
         <CombineArray value="AP_IsImmortalPurifier"/>
         <CombineArray value="AP_IsPhoenixPurifier"/>
-        <CombineArray value="AP_IsTempest"/>
+        <CombineArray value="AP_IsTempestPurifier"/>
         <CombineArray value="AP_IsStalkerPurifier"/>
         <CombineArray value="AP_IsVoidRayPurifier"/>
         <CombineArray value="AP_IsScoutPurifier"/>
@@ -4138,10 +4138,6 @@
         <CombineArray value="AP_IsTaldarimMothershipBase"/>
         <CombineArray value="AP_IsTaldarimMothershipUpgraded"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareVital id="AP_ShieldsGT0">
-        <Compare value="GT"/>
-        <Vital value="Shields"/>
-    </CValidatorUnitCompareVital>
     <CValidatorUnitCompareVital id="AP_ShieldsEqual0">
         <Compare value="Equal"/>
         <Vital value="Shields"/>
@@ -4150,10 +4146,6 @@
         <Type value="Or"/>
         <CombineArray value="AP_IsPurifierUnit"/>
         <CombineArray value="AP_ShieldsEqual0"/>
-    </CValidatorCombine>
-    <CValidatorCombine id="AP_IsNotPurifierUnit">
-        <Negate value="1"/>
-        <CombineArray value="AP_IsPurifierUnit"/>
     </CValidatorCombine>
     <CValidatorCombine id="AP_IsNotTaldarimUnit">
         <Negate value="1"/>
