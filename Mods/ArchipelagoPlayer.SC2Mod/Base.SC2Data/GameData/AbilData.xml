@@ -7714,15 +7714,6 @@
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_VoidRayTaldarim" Requirements="AP_HaveSummonDeathFleetInstalled"/>
     </CAbilEffectInstant>
-    <CAbilEffectInstant id="AP_RefinedWeaponsInstallPurifier">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_RefinedWeaponsPurifier"/>
-        <Cost>
-            <Resource index="Minerals" value="100"/>
-            <Resource index="Vespene" value="75"/>
-        </Cost>
-        <Effect index="0" value="AP_RefinedWeaponsABSet"/>
-    </CAbilEffectInstant>
     <CAbilBehavior id="AP_MothershipTaldarimBaseAttackSwap">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <CmdButtonArray index="On" DefaultButtonFace="AP_MothershipTaldarimBaseAttackEnable" Requirements="AP_HaveHungerForSlaughter">
