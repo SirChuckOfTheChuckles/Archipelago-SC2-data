@@ -4864,20 +4864,17 @@
     <CRequirementNot id="AP_NotCountBehaviorTimeFieldInstalledCompleteOnlyAtUnit">
         <OperandArray index="0" value="AP_CountBehaviorTimeFieldInstalledCompleteOnlyAtUnit"/>
     </CRequirementNot>
-    <CRequirementCountBehavior id="AP_CountBehaviorMassRecallInstalledCompleteOnlyAtUnit">
+    <CRequirementCountBehavior id="AP_CountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_MassRecallInstalled" State="CompleteOnlyAtUnit"/>
+        <Count Link="AP_WormholeModuleInstalled" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementNot id="AP_NotCountBehaviorMassRecallInstalledCompleteOnlyAtUnit">
-        <OperandArray index="0" value="AP_CountBehaviorMassRecallInstalledCompleteOnlyAtUnit"/>
+    <CRequirementNot id="AP_NotCountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit">
+        <OperandArray index="0" value="AP_CountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit"/>
     </CRequirementNot>
-    <CRequirementCountBehavior id="AP_CountBehaviorNexusRecallInstalledCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_NexusRecallInstalled" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
-    <CRequirementNot id="AP_NotCountBehaviorNexusRecallInstalledCompleteOnlyAtUnit">
-        <OperandArray index="0" value="AP_CountBehaviorNexusRecallInstalledCompleteOnlyAtUnit"/>
-    </CRequirementNot>
+    <CRequirementAnd id="AP_AndCanInstallWormholeModuleCompleteOnly">
+        <OperandArray value="AP_CountUpgradeCanInstallWormholeModuleCompleteOnly"/>
+        <OperandArray value="AP_NotCountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
     <CRequirementCountBehavior id="AP_CountBehaviorMothershipTaldarimIntegratedPowerCompleteOnlyAtUnit">
         <Count Link="AP_MothershipTaldarimIntegratedPower" State="CompleteOnlyAtUnit"/>
         <Flags index="TechTreeCheat" value="0"/>
@@ -4901,16 +4898,40 @@
         <Count Link="AP_MothershipAiurHangar" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSymbolOfUnityCompleteOnly">
+        <Count Link="AP_SymbolOfUnity" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradePurifiedEmbersCompleteOnly">
         <Count Link="AP_PurifiedEmbers" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeHungerForSlaughterCompleteOnly">
-        <Count Link="AP_HungerForSlaughter" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBloodFusedParticlesCompleteOnly">
+        <Count Link="AP_BloodFusedParticles" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeRecursivePhotonsCompleteOnly">
-        <Count Link="AP_RecursivePhotons" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeShadowOfDeathCompleteOnly">
+        <Count Link="AP_ShadowOfDeath" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeAmplifiedPowerRerouterCompleteOnly">
+        <Count Link="AP_AmplifiedPowerRerouter" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSoulForgedConduitsCompleteOnly">
+        <Count Link="AP_SoulForgedConduits" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCybrosShieldingCompleteOnly">
+        <Count Link="AP_CybrosShielding" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeHarmonizedFeedbackConductorsCompleteOnly">
+        <Count Link="AP_HarmonizedFeedbackConductors" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeKhalaiShieldRechargersCompleteOnly">
+        <Count Link="AP_KhalaiShieldRechargers" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallTaldarimAuxiliaryCompleteOnly">
@@ -4961,28 +4982,52 @@
         <OperandArray value="AP_CountUpgradeCanInstallMothershipRecallCompleteOnly"/>
         <OperandArray value="AP_NotCountBehaviorNexusRecallInstalledCompleteOnlyAtUnit"/>
     </CRequirementAnd>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallRecursivePhotonsCompleteOnly">
-        <Count Link="AP_CanInstallRecursivePhotons" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallSymbolOfUnityCompleteOnly">
+        <Count Link="AP_CanInstallSymbolOfUnity" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallPurifiedEmbersCompleteOnly">
         <Count Link="AP_CanInstallPurifiedEmbers" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallHungerForSlaughterCompleteOnly">
-        <Count Link="AP_CanInstallHungerForSlaughter" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallBloodFusedParticlesCompleteOnly">
+        <Count Link="AP_CanInstallBloodFusedParticles" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallCybrosShieldingCompleteOnly">
+        <Count Link="AP_CanInstallCybrosShielding" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallAmplifiedPowerRerouterCompleteOnly">
+        <Count Link="AP_CanInstallAmplifiedPowerRerouter" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallSoulForgedConduitsCompleteOnly">
+        <Count Link="AP_CanInstallSoulForgedConduits" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallHarmonizedFeedbackConductorsCompleteOnly">
+        <Count Link="AP_CanInstallHarmonizedFeedbackConductors" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallKhalaiShieldRechargersCompleteOnly">
+        <Count Link="AP_CanInstallKhalaiShieldRechargers" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallShadowOfDeathCompleteOnly">
+        <Count Link="AP_CanInstallShadowOfDeath" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeMothershipPurifierPowerSourceCompleteOnly">
         <Count Link="AP_MothershipPurifierPowerSource" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipAiurAttackSlowCompleteOnly">
-        <Count Link="AP_MothershipAiurAttackSlow" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipAiurShieldArmorAuraCompleteOnly">
+        <Count Link="AP_MothershipAiurShieldArmorAura" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipCoreAiurAdvancedRepulsionCompleteOnly">
-        <Count Link="AP_MothershipCoreAiurAdvancedRepulsion" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipCoreAiurQuantumProjectionCompleteOnly">
+        <Count Link="AP_MothershipCoreAiurQuantumProjection" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeMothershipCorePurifierControlledBurnCompleteOnly">
@@ -6380,10 +6425,6 @@
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeOracleEnergyUpgradeCompleteOnly">
         <Count Link="AP_OracleEnergyUpgrade" State="CompleteOnly"/>
-        <Flags index="TechTreeCheat" value="0"/>
-    </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeSymbolOfUnityCompleteOnly">
-        <Count Link="AP_SymbolOfUnity" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeFusionCoreFusionReactorCompleteOnly">

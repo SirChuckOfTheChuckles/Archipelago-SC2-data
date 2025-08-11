@@ -7325,6 +7325,7 @@ Unit/EditorSuffix/AP_MothershipAiur=(Aiur)
 Unit/EditorSuffix/AP_MothershipCoreAiur=(Aiur)
 Unit/EditorSuffix/AP_MothershipCorePurifier=(Purifier)
 Unit/EditorSuffix/AP_MothershipPurifier=(Purifier)
+Unit/EditorSuffix/AP_MothershipPurifierPowerSource=(Purifier - Power Source)
 Unit/EditorSuffix/AP_NovaHero=- NC
 Unit/EditorSuffix/AP_NovaHoloDecoy=(Holo Decoy)
 Unit/EditorSuffix/AP_NovaPlasmaPuddleSmall=(Small)

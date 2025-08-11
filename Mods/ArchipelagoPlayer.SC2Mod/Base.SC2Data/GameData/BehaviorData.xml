@@ -3708,7 +3708,7 @@
     <CBehaviorBuff id="AP_EnableMothershipTaldarimAttack">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
-        <RemoveValidatorArray value="AP_NotHaveHungerForSlaughter"/>
+        <RemoveValidatorArray value="AP_NotHaveBloodFusedParticles"/>
         <Modification>
             <WeaponArray Link="AP_SOAMothershipv4Weapon"/>
         </Modification>
@@ -3725,9 +3725,9 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_MothershipTaldarimBaseAttackSwap"/>
-        <DisableValidatorArray value="AP_HaveHungerForSlaughter"/>
+        <DisableValidatorArray value="AP_HaveBloodFusedParticles"/>
         <Modification>
-            <WeaponArray Link="AP_HungerForSlaughterWeapon"/>
+            <WeaponArray Link="AP_BloodFusedParticlesWeapon"/>
         </Modification>
         <InitialEffect value="AP_SetUpgradedMothershipTaldarimCooldown"/>
     </CBehaviorBuff>
@@ -4805,6 +4805,7 @@
         <InfoIcon value="Assets\Textures\btn-ability-stetmann-stetzonegenerator-energy.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_NotHaveMothershipTaldarimIntegratedPower"/>
+        <DisableValidatorArray value="AP_NotInTimeFieldTaldarim"/>
         <DisableValidatorArray value="AP_CasterLocationNotHasPower"/>
         <Modification MoveSpeedMultiplier="0.2"/>
     </CBehaviorBuff>
@@ -5107,6 +5108,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Period value="1"/>
         <PeriodicEffect value="AP_SoulForgedConduitsSearch"/>
+        <Requirements value="AP_HaveSoulForgedConduits"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_SoulForgedConduitsDebuff">
@@ -5123,12 +5125,14 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Period value="0.2"/>
         <PeriodicEffect value="AP_ShadowOfDeathSearch"/>
+        <Requirements value="AP_HaveShadowOfDeath"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ShadowOfDeathDebuff">
+        <Alignment value="Negative"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="0.4"/>
-        <Modification MoveSpeedMultiplier="0.75"/>
-        <Modification AttackSpeedMultiplier="0.75"/>
+        <Modification MoveSpeedMultiplier="0.70"/>
+        <Modification AttackSpeedMultiplier="0.70"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_PlanetCrackerChargeUp">
         <InfoIcon value="Assets\Textures\btn-ability-spearofadun-purifierbeam.dds"/>
@@ -5172,73 +5176,29 @@
             <AbilLinkDisableArray value="AP_TimeFieldPurifier"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_PlanetCrackerInstalled">
+    <CBehaviorBuff id="AP_MothershipAbilityInstalled">
         <BehaviorFlags index="Permanent" value="1"/>
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_OverloadWeaponSystemsInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_PowerRedirectionInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_ThermalLanceInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_SummonDeathFleetInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_RevitalizeShieldsInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_BatteryOverchargeInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_AstralRestorationInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_BlackHoleInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_TimeFieldInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MassRecallInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_NexusRecallInstalled">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_PlanetCrackerInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_OverloadWeaponSystemsInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_PowerRedirectionInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_ThermalLanceInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_SummonDeathFleetInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_RevitalizeShieldsInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_BatteryOverchargeInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_AstralRestorationInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_BlackHoleInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_TimeFieldInstalled" parent="AP_MothershipAbilityInstalled"/>
+    <CBehaviorBuff id="AP_WormholeModuleInstalled" parent="AP_MothershipAbilityInstalled"/>
     <CBehaviorBuff id="AP_PurifiedEmbers">
         <Alignment value="Negative"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-immortalchampionchargeexplode.dds"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="4.00"/>
-        <Period value="0.25"/>
+        <Period value="0.20"/>
         <PeriodicEffect value="AP_PurifiedEmbersDOT"/>
         <Modification ShieldArmorBonus="-1">
             <LifeArmorBonus value="-1"/>
@@ -5277,23 +5237,15 @@
         <Modification MoveSpeedMultiplier="0.5"/>
         <Modification AttackSpeedMultiplier="0.5"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_TimeField">
-        <Alignment value="Negative"/>
-        <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="0.125"/>
-        <Modification MoveSpeedMultiplier="0.5"/>
-        <Modification AttackSpeedMultiplier="0.5"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="AP_TimeFieldPurifier">
-        <Alignment value="Negative"/>
+        <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="0.125"/>
         <Modification MoveSpeedMultiplier="1.50"/>
         <Modification AttackSpeedMultiplier="1.50"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_TimeFieldEmpowered">
+    <CBehaviorBuff id="AP_TimeFieldAiur">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -5303,7 +5255,7 @@
         <Modification MoveSpeedMultiplier="0.25"/>
         <Modification AttackSpeedMultiplier="0.25"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_TimeFieldEmpoweredHeroic">
+    <CBehaviorBuff id="AP_TimeFieldAiurHeroic">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -5314,13 +5266,38 @@
         <Modification AttackSpeedMultiplier="0.5"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_TimeFieldTaldarim">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_IsNotFriendly"/>
+        <DisableValidatorArray value="AP_NotTimeFieldTaldarimConfusion"/>
+        <Duration value="0.125"/>
+        <Modification MoveSpeedMultiplier="0.3"/>
+        <Modification AttackSpeedMultiplier="0.3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_TimeFieldTaldarimCaster">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="AP_FriendlyOrNeutralTarget"/>
+        <DisableValidatorArray value="AP_IsTaldarimMothership"/>
         <Duration value="0.125"/>
-        <Modification MoveSpeedMultiplier="1.35"/>
-        <Modification AttackSpeedMultiplier="1.35"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_TimeFieldTaldarimConfusion">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-confusion.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Period value="1"/>
+        <DisableValidatorArray value="AP_NotHeroic"/>
+        <InitialEffect value="AP_DarkArchonConfusionStopInitialSet"/>
+        <PeriodicEffect value="AP_DarkArchonConfusionAttackSearch"/>
+        <ExpireEffect value="AP_DarkArchonConfusionEndSet"/>
+        <Modification MoveSpeedMultiplier="1.7"/>
+        <Modification AttackSpeedMultiplier="1.7"/>
+        <Modification>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="IgnorePlayerAlliedFlags" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_TimeFieldDecelerationBuff">
         <InfoFlags index="Hidden" value="1"/>
@@ -6258,6 +6235,7 @@
         <DisplayDuration index="Neutral" value="1"/>
         <InitialEffect value="AP_PowerRedirectionCaster"/>
         <FinalEffect value="AP_PowerRedirectionCasterRB"/>
+        <ExpireEffect value="AP_CybrosShieldingRB"/>
         <Modification>
             <AdditiveAttackSpeedFactor value="1.25"/>
         </Modification>
@@ -6273,6 +6251,7 @@
         <DisplayDuration index="Neutral" value="1"/>
         <InitialEffect value="AP_PowerRedirectionCaster"/>
         <FinalEffect value="AP_PowerRedirectionCasterRB"/>
+        <ExpireEffect value="AP_CybrosShieldingRB"/>
         <Modification>
             <AdditiveAttackSpeedFactor value="1.0"/>
         </Modification>
@@ -6295,7 +6274,7 @@
             <AbilLinkDisableArray value="attack"/>
             <AbilLinkDisableArray value="stop"/>
             <AbilLinkDisableArray value="AP_MorphToMothershipPurifier"/>
-            <AbilLinkDisableArray value="AP_TimeField"/>
+            <AbilLinkDisableArray value="AP_TimeFieldPurifierCore"/>
             <AbilLinkDisableArray value="AP_MothershipCoreNexusRecall"/>
         </Modification>
     </CBehaviorBuff>
@@ -6305,6 +6284,15 @@
         <Radius value="0.5"/>
         <PowerLink value="PowerSource"/>
     </CBehaviorPowerSource>
+    <CBehaviorBuff id="AP_HarmonizedFeedbackConductorsAura">
+        <Alignment value="Positive"/>
+        <TimeScaleSource Value="Global"/>
+        <Requirements value="AP_HaveHarmonizedFeedbackConductors"/>
+        <InitialEffect value="AP_HarmonizedFeedbackConductorsSearchCaster"/>
+        <Duration value="10"/>
+        <Period value="5"/>
+        <PeriodicEffect value="AP_HarmonizedFeedbackConductorsSearchCaster"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_AstralRestorationCaster">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-chronobeam.dds"/>
@@ -6323,13 +6311,14 @@
         <TimeScaleSource Value="Global"/>
         <DisableValidatorArray value="AP_CasterOverloadWeaponSystems"/>
         <Duration value="10"/>
+        <ExpireEffect value="AP_CybrosShieldingRB"/>
         <FinalEffect value="AP_OverloadWeaponSystemsStunAB"/>
         <DisplayDuration index="Self" value="1"/>
         <DisplayDuration index="Ally" value="1"/>
         <DisplayDuration index="Neutral" value="1"/>
         <Modification MoveSpeedMultiplier="0.01">
             <AbilLinkDisableArray value="move"/>
-            <AdditiveAttackSpeedFactor value="0.30"/>
+            <AdditiveAttackSpeedFactor value="0.40"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_OverloadWeaponSystemsStun">
@@ -8562,20 +8551,33 @@
         <Name value="Button/Name/AP_BattlecruiserRangeAura"/>
         <Tooltip value="Button/Tooltip/AP_BattlecruiserRangeAura"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_SymbolOfUnityAura">
+    <CBehaviorBuff id="AP_MothershipAiurShieldArmor">
+        <Alignment value="Positive"/>       
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <Requirements value="AP_HaveSymbolOfUnity"/>
-        <Period value="0.25"/>
-        <PeriodicEffect value="AP_SymbolOfUnitySearch"/>
+        <Duration value="0.25"/>
+        <InfoIcon value="AP\Assets\Textures\btn-ability-protoss-emergencywarp-aiur.dds"/>
+        <Requirements value="AP_HaveMothershipAiurShieldArmorAura"/>
+        <Modification>
+            <ShieldArmorBonus value="1"/>
+            <VitalRegenArray index="Shields" value="2"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_SymbolOfUnityBuff">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
-        <Duration value="1"/>
-        <InfoIcon value="Assets\Textures\btn-tips-terran-energynova.dds"/>
+        <Duration value="0.25"/>
+        <InfoIcon value="Assets\Textures\talent-artanis-level01-swiftretribution.dds"/>
+        <Requirements value="AP_HaveSymbolOfUnity"/>
         <Modification>
             <VitalRegenArray index="Energy" value="0.4"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_SymbolOfUnityBuffAiur">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
+        <Duration value="0.25"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-protoss-symbolofunity.dds"/>
+        <Requirements value="AP_HaveSymbolOfUnity"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="0.6"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_FusionCoreFusionReactorAura">
@@ -10177,8 +10179,10 @@
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_CybrosShielding">
+        <Alignment value="Positive"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <DamageResponse ModifyFraction="0.60">
+        <Requirements value="AP_HaveCybrosShielding"/>
+        <DamageResponse ModifyFraction="0.50">
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
@@ -10186,6 +10190,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Period value="0.10"/>
         <PeriodicEffect value="AP_AmplifiedPowerRerouterSearch"/>
+        <Requirements value="AP_HaveAmplifiedPowerRerouter"/>
         <InfoIcon value="Assets\Textures\btn-upgrade-kerrigan-assimilationaura.dds"/>
         <Alignment value="Positive"/>
     </CBehaviorBuff>
@@ -10193,14 +10198,14 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="0.2"/>
         <Modification AttackSpeedMultiplier="1.08"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-kerrigan-assimilationaura.dds"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-protoss-purifier-sentry-optimizedemitters-orange.dds"/>
         <Alignment value="Positive"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_AmplifiedPowerRerouterBuffEmpowered">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="0.2"/>
         <Modification AttackSpeedMultiplier="1.12"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-purifier-sentry-optimizedemittersresearch.dds"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-protoss-purifier-sentry-optimizedemittersresearch-orange.dds"/>
         <Alignment value="Positive"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_KerriganVoidCoopEconDropCaster">

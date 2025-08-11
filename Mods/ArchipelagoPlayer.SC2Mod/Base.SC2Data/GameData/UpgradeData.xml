@@ -1525,7 +1525,7 @@
         <EffectArray Reference="Effect,AP_CarrierTaldarimLaserDamage,Amount" Value="5"/>
         <!--  Mothership -->
         <EffectArray Reference="Weapon,AP_SOAMothershipv4Weapon,Level" Value="1"/>
-        <EffectArray Reference="Weapon,AP_HungerForSlaughterWeapon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BloodFusedParticlesWeapon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_SOAMothershipv4BeamDamage,Amount" Value="4"/>
         <EffectArray Reference="Effect,AP_SOAMothershipv4FastBeamDamage,Amount" Value="2"/>
         <EffectArray Reference="Weapon,AP_RepulsorCannon,Level" Value="1"/>
@@ -10509,7 +10509,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_HungerForSlaughterWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_BloodFusedParticlesWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
@@ -10548,7 +10548,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_HungerForSlaughterWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_BloodFusedParticlesWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
@@ -10587,7 +10587,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_HungerForSlaughterWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_BloodFusedParticlesWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
@@ -10625,7 +10625,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_HungerForSlaughterWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_BloodFusedParticlesWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
@@ -10663,7 +10663,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_HungerForSlaughterWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_BloodFusedParticlesWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
@@ -14720,34 +14720,62 @@
         <AffectedUnitArray value="AP_MothershipPurifier"/>
         <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
     </CUpgrade>
-    <CUpgrade id="AP_RecursivePhotons">
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Effect" Value="AP_AiurMothershipSlowBeamSet"/>
+    <CUpgrade id="AP_CybrosShielding">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
-        <AffectedUnitArray value="AP_MothershipAiur"/>
+        <AffectedUnitArray value="AP_MothershipPurifier"/>
+        <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
     </CUpgrade>
-    <CUpgrade id="AP_HungerForSlaughter">
+    <CUpgrade id="AP_AmplifiedPowerRerouter">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_MothershipPurifier"/>
+        <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SoulForgedConduits">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
     </CUpgrade>
-    <CUpgrade id="AP_MothershipCoreAiurAdvancedRepulsion">
-        <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,AllowedMovement" Value="Moving"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Options[OnlyFireWhileInAttackOrder]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Options[OnlyFireAtAttackOrderTarget]" Value="0"/>
+    <CUpgrade id="AP_ShadowOfDeath">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_SOAMothershipv4"/>
+        <AffectedUnitArray value="AP_MothershipTaldarim"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BloodFusedParticles">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_SOAMothershipv4"/>
+        <AffectedUnitArray value="AP_MothershipTaldarim"/>
+    </CUpgrade>
+    <CUpgrade id="AP_HarmonizedFeedbackConductors">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_MothershipAiur"/>
+    </CUpgrade>
+    <CUpgrade id="AP_KhalaiShieldRechargers">
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_MothershipAiur"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MothershipTaldarimSlaynBasedSolarite">
+        <EffectArray Reference="Effect,AP_MothershipCoreNexusRecallSearch,AreaArray[0].Radius" Value="1.75"/>
+        <EffectArray Reference="Abil,AP_BatteryOvercharge,Range[0]" Value="2"/>
+        <EffectArray Reference="Abil,AP_TimeFieldAiurCore,Range[0]" Value="2"/>
+        <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_SOAMothershipv4"/>
+        <AffectedUnitArray value="AP_MothershipTaldarim"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MothershipCoreAiurQuantumProjection">
+        <EffectArray Reference="Effect,AP_MothershipCoreNexusRecallSearch,AreaArray[0].Radius" Value="1.75"/>
+        <EffectArray Reference="Abil,AP_BatteryOvercharge,Range[0]" Value="2"/>
+        <EffectArray Reference="Abil,AP_TimeFieldAiurCore,Range[0]" Value="2"/>
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipCoreAiur"/>
     </CUpgrade>
     <CUpgrade id="AP_MothershipCorePurifierControlledBurn">
         <EffectArray Reference="Weapon,AP_MothershipCorePurifierWeapon,RateMultiplier" Value="0.25"/>
-        <EffectArray Reference="Weapon,AP_MothershipCorePurifierWeapon,Range" Value="2"/>
+        <EffectArray Reference="Weapon,AP_MothershipCorePurifierWeapon,Range" Value="1"/>
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipCorePurifier"/>
     </CUpgrade>
     <CUpgrade id="AP_MothershipHangarInstallation">
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimInterceptorLaunch,Options[Hidden]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurInterceptorLaunch,Options[Hidden]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierBomberLaunch,Options[Hidden]" Value="0"/>
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
         <AffectedUnitArray value="AP_MothershipAiur"/>
@@ -14760,28 +14788,24 @@
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
     </CUpgrade>
-    <CUpgrade id="AP_MothershipPurifierHangar">
-        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierBomberLaunch,Options[Disabled]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_MothershipPurifierHangar,MaxCount" Value="6"/>
-        <AffectedUnitArray value="AP_MothershipPurifier"/>
-        <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
-    </CUpgrade>
-    <CUpgrade id="AP_MothershipAiurHangar">
-        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurInterceptorLaunch,Options[Disabled]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_MothershipAiurHangar,MaxCount" Value="8"/>
-        <AffectedUnitArray value="AP_MothershipAiur"/>
-    </CUpgrade>
+    <CUpgrade id="AP_MothershipPurifierHangar"/>
+    <CUpgrade id="AP_MothershipAiurHangar"/>
     <CUpgrade id="AP_CanInstallPlanetCracker"/>
     <CUpgrade id="AP_CanInstallAstralRestoration"/>
     <CUpgrade id="AP_CanInstallSummonDeathFleet"/>
     <CUpgrade id="AP_CanInstallTimeField"/>
-    <CUpgrade id="AP_CanInstallMothershipRecall"/>
-    <CUpgrade id="AP_CanInstallTaldarimAuxiliary"/>
+    <CUpgrade id="AP_CanInstallWormholeModule"/>
     <CUpgrade id="AP_CanInstallPurifiedEmbers"/>
-    <CUpgrade id="AP_CanInstallRecursivePhotons"/>
-    <CUpgrade id="AP_CanInstallHungerForSlaughter"/>
+    <CUpgrade id="AP_CanInstallSymbolOfUnity"/>
+    <CUpgrade id="AP_CanInstallBloodFusedParticles"/>
+    <CUpgrade id="AP_CanInstallCybrosShielding"/>
+    <CUpgrade id="AP_CanInstallHarmonizedFeedbackConductors"/>
+    <CUpgrade id="AP_CanInstallShadowOfDeath"/>
+    <CUpgrade id="AP_CanInstallAmplifiedPowerRerouter"/>
+    <CUpgrade id="AP_CanInstallKhalaiShieldRechargers"/>
+    <CUpgrade id="AP_CanInstallSoulForgedConduits"/>
     <CUpgrade id="AP_MothershipPurifierPowerSource"/>
-    <CUpgrade id="AP_MothershipAiurAttackSlow"/>
+    <CUpgrade id="AP_MothershipAiurShieldArmor"/>
     <CUpgrade id="AP_VoidRaySpeedUpgrade">
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>

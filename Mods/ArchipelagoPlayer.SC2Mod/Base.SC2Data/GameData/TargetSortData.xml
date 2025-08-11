@@ -53,4 +53,8 @@
     <CTargetSortValidator id="AP_TSThreatenBattlecruiser">
         <Validator value="AP_ThreatensBattlecruiser"/>
     </CTargetSortValidator>
+    <CTargetSortVital id="AP_TSEnergyDescending">
+        <Vital value="Energy"/>
+        <Descending value="1"/>
+    </CTargetSortVital>
 </Catalog>

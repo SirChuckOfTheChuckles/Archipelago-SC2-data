@@ -1695,14 +1695,11 @@
         <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
         <Options index="Disabled" value="1"/>
         <Options index="Hidden" value="1"/>
-        <DisplayEffect value="AP_MothershipInterceptorDamageDisplay"/>
+        <DisplayEffect value="AP_InterceptorBeamDamage"/>
         <Range value="7"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_InterceptorsTaldarimDummy" parent="AP_InterceptorsDummy">
         <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
-    </CWeaponLegacy>
-    <CWeaponLegacy id="AP_InterceptorsPurifierDummy" parent="AP_InterceptorsDummy">
-        <Icon value="Assets\Textures\btn-unit-collection-purifier-bomber.dds"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_CarrierTaldarimLaser">
         <EditorCategories value="Race:Protoss"/>
@@ -2456,7 +2453,7 @@
         <Effect value="AP_SOAMothershipv4BeamSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_HungerForSlaughterWeapon">
+    <CWeaponLegacy id="AP_BloodFusedParticlesWeapon">
         <EditorCategories value="Race:Protoss"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
@@ -2529,10 +2526,10 @@
         <DisplayEffect value="AP_MothershipCorePurifierWeaponDamage"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AcquirePrioritization value="ByDistanceFromTarget"/>
-        <Range value="5"/>
+        <Range value="6"/>
         <RangeSlop value="0"/>
         <Arc value="90"/>
-        <Period value="2.5"/>
+        <Period value="2.2"/>
         <DamagePoint value="0.0832"/>
         <Effect value="AP_MothershipCorePurifierWeaponInitialSet"/>
         <LegacyOptions index="KeepChanneling" value="1"/>

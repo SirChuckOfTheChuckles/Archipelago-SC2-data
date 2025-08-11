@@ -2553,6 +2553,9 @@
     <CRequirement id="AP_CanInstallTimeField">
         <NodeArray index="Show" Link="AP_AndCanInstallTimeFieldCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_CanInstallWormholeModule">
+        <NodeArray index="Show" Link="AP_AndCanInstallWormholeModuleCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_CanInstallMassRecall">
         <NodeArray index="Show" Link="AP_AndCanInstallMassRecallCompleteOnly"/>
     </CRequirement>
@@ -2562,11 +2565,29 @@
     <CRequirement id="AP_CanInstallPurifiedEmbers">
         <NodeArray index="Show" Link="AP_CountUpgradeCanInstallPurifiedEmbersCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallRecursivePhotons">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallRecursivePhotonsCompleteOnly"/>
+    <CRequirement id="AP_CanInstallSymbolOfUnity">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallSymbolOfUnityCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallHungerForSlaughter">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallHungerForSlaughterCompleteOnly"/>
+    <CRequirement id="AP_CanInstallBloodFusedParticles">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallBloodFusedParticlesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallCybrosShielding">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallCybrosShieldingCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallAmplifiedPowerRerouter">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAmplifiedPowerRerouterCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallSoulForgedConduits">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallSoulForgedConduitsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallShadowOfDeath">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallShadowOfDeathCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallHarmonizedFeedbackConductors">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallHarmonizedFeedbackConductorsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_CanInstallKhalaiShieldRechargers">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallKhalaiShieldRechargersCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_CanInstallTaldarimAuxiliary">
         <NodeArray index="Show" Link="AP_CountUpgradeCanInstallTaldarimAuxiliaryCompleteOnly"/>
@@ -2574,11 +2595,11 @@
     <CRequirement id="AP_HaveMothershipPurifierPowerSource">
         <NodeArray index="Use" Link="AP_CountUpgradeMothershipPurifierPowerSourceCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMothershipAiurAttackSlow">
-        <NodeArray index="Use" Link="AP_CountUpgradeMothershipAiurAttackSlowCompleteOnly"/>
+    <CRequirement id="AP_HaveMothershipAiurShieldArmorAura">
+        <NodeArray index="Use" Link="AP_CountUpgradeMothershipAiurShieldArmorAuraCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMothershipCoreAiurAdvancedRepulsion">
-        <NodeArray index="Use" Link="AP_CountUpgradeMothershipCoreAiurAdvancedRepulsionCompleteOnly"/>
+    <CRequirement id="AP_HaveMothershipCoreAiurQuantumProjection">
+        <NodeArray index="Use" Link="AP_CountUpgradeMothershipCoreAiurQuantumProjectionCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMothershipCorePurifierControlledBurn">
         <NodeArray index="Use" Link="AP_CountUpgradeMothershipCorePurifierControlledBurnCompleteOnly"/>
@@ -2613,23 +2634,44 @@
     <CRequirement id="AP_HaveTimeFieldInstalled">
         <NodeArray index="Show" Link="AP_CountBehaviorTimeFieldInstalledCompleteOnlyAtUnit"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMassRecallInstalled">
-        <NodeArray index="Show" Link="AP_CountBehaviorMassRecallInstalledCompleteOnlyAtUnit"/>
-    </CRequirement>
-    <CRequirement id="AP_HaveNexusRecallInstalled">
-        <NodeArray index="Show" Link="AP_CountBehaviorNexusRecallInstalledCompleteOnlyAtUnit"/>
+    <CRequirement id="AP_HaveWormholeModuleInstalled">
+        <NodeArray index="Show" Link="AP_CountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="AP_HavePurifiedEmbers">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountUpgradePurifiedEmbersCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveRecursivePhotons">
+    <CRequirement id="AP_HaveSymbolOfUnity">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeRecursivePhotonsCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeSymbolOfUnityCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveHungerForSlaughter">
+    <CRequirement id="AP_HaveBloodFusedParticles">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeHungerForSlaughterCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeBloodFusedParticlesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveCybrosShielding">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeCybrosShieldingCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveAmplifiedPowerRerouter">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeAmplifiedPowerRerouterCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveShadowOfDeath">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeShadowOfDeathCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveSoulForgedConduits">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeSoulForgedConduitsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveHarmonizedFeedbackConductors">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeHarmonizedFeedbackConductorsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveKhalaiShieldRechargers">
+        <EditorCategories value="Race:Protoss,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeKhalaiShieldRechargersCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMothershipHangarUpgrade">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>

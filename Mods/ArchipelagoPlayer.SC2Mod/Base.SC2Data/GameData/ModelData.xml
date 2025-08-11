@@ -12063,19 +12063,30 @@
         <Model value="Assets\Units\Protoss\Alarak_COOP_RespawnBase\Alarak_COOP_RespawnBase.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_ShadowOfDeathDebuff" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Protoss\Mothership_Taldarim_Thermal_Lance_Beam_Unit_Impact\Mothership_Taldarim_Thermal_Lance_Beam_Unit_Impact.m3"/>
-        <EditorCategories value="Race:Protoss"/>
-    </CModel>
     <CModel id="AP_CybrosShielding" parent="PersistentSpellFX">
         <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Mothership_Purifier_Ex2_Shield_final.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_TimeFieldImpactModel" parent="PersistentSpellFX">
+    <CModel id="AP_ChronoDrone" parent="Unit" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Purifier_RogueAI_BotHeal\Purifier_RogueAI_BotHeal.m3"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraLow05"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SquibTypeDefault value="Metal"/>
+        <TechPurchaseCamera value="Star2CameraLow05"/>
+        <UnitGlossaryCamera value="Star2CameraLow05"/>
+    </CModel>
+    <CModel id="AP_ChronoDroneDeath" parent="UnitDeath" Race="Protoss">
+        <Model value="Assets\Units\Protoss\Purifier_RogueAI_BotHeal_Death\Purifier_RogueAI_BotHeal_Death.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="AP_TimeFieldAiurImpactModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\TemporalFieldImpact\TemporalFieldImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_TimeFieldModel" parent="PersistentSpellFX">
+    <CModel id="AP_TimeFieldAiurModel" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\TemporalField\TemporalField.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
