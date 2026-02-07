@@ -9191,6 +9191,7 @@
         <AbilArray Link="AP_K5Leviathan"/>
         <AbilArray Link="AP_Apocalypse"/>
         <AbilArray Link="AP_K5KerriganBurrow"/>
+        <AbilArray Link="AP_KerriganReviveTimer"/>
         <AbilArray Link="AP_KerriganVoidCoopEconDrop"/>
         <AbilArray Link="AP_KerriganVoidCoopCrushingGripWave"/>
         <BehaviorArray Link="AP_KerriganVeterancyDummy"/>
@@ -9544,12 +9545,10 @@
         <AbilArray Link="que1"/>
         <AbilArray Link="AP_RallyReviveCocoon"/>
         <AbilArray Link="AP_KerriganRevive"/>
+        <AbilArray Link="AP_KerriganReviveTimer"/>
         <BehaviorArray Link="AP_CocoonReviveTimer"/>
         <CardLayouts>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyReviveCocoon,0" Row="1" Column="4"/>
-        </CardLayouts>
-        <CardLayouts>
-            <LayoutButtons Face="RallyEgg" Type="AbilCmd" AbilCmd="AP_RallyReviveCocoon,1" Row="1" Column="4"/>
         </CardLayouts>
         <SubgroupPriority value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>

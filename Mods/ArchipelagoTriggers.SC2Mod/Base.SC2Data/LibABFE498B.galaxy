@@ -5941,6 +5941,7 @@ void libABFE498B_gf_AP_Triggers_setKerriganPrimal (int lp_player) {
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_KerriganPostZerusSounds", 1);
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_KerriganInfestedCosmetic", 1);
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_KerriganPostZerus", 1);
+    lib15EF4C78_gv_zS_SwarmHeroUIIcon[1] = "Assets\\Textures\\btn-hero-kerriganqueenofblades.dds";
     lib5BD4895D_gf_AP_Core_SwitchKerriganSwarmToPrimalZerg();
 }
 

@@ -759,6 +759,9 @@
         <Amount value="20"/>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectDamage id="AP_DoNothing">
+        <Amount value="0"/>
+    </CEffectDamage>
     <CEffectDamage id="AP_CrucioShockCannonBlast" parent="DU_WEAP">
         <ValidatorArray value="TargetRadiusSmall"/>
         <ValidatorArray value="AP_NoShapedBlast"/>

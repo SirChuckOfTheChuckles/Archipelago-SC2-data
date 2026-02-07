@@ -4,6 +4,9 @@ include "TriggerLibs/natives"
 // Library: Archipelago Player Handlers
 //--------------------------------------------------------------------------------------------------
 // Preset Declarations
+const int lib15EF4C78_ge_HeroType_HeroType_None = 0;
+const int lib15EF4C78_ge_HeroType_HeroType_Kerrigan = 1;
+const int lib15EF4C78_ge_HeroType_HeroType_Nova = 2;
 const int lib15EF4C78_ge_NM_HeroType_NM_HeroType_None = 0;
 const int lib15EF4C78_ge_NM_HeroType_NM_HeroType_Nova = 1;
 const int lib15EF4C78_ge_SpearofAdunEnergyType_Absolute = 0;
@@ -56,6 +59,9 @@ const int lib15EF4C78_ge_AP_Player_GhostType_MALE = 0;
 const int lib15EF4C78_ge_AP_Player_GhostType_FEMALE = 1;
 
 // Constants
+const int lib15EF4C78_gv_heroCount = 10;
+const fixed lib15EF4C78_gv_ReviveCooldownTimeNova = 60.0;
+const fixed lib15EF4C78_gv_ReviveCooldownTimeKerrigan = 60.0;
 const int lib15EF4C78_gv_nMC_HEROCOUNT = 5;
 const fixed lib15EF4C78_gv_nM_ReviveCooldownTimeNova = 60.0;
 const string lib15EF4C78_gv_aP_SOA_ABILITIES = "AP_SOAFenixCalldown AP_SOAProxyPylon AP_SOAEmergencyRecall AP_SOARecall AP_SOAOrbitalStrikeActivate AP_SOAPurifierBeam AP_SOAPylonPower AP_SOAPylonWeapon AP_SoASuperShield AP_SOAShieldRegeneration AP_SOAStrafeAttackActivate AP_SOAStrafeAttack AP_SOASuperChrono AP_SOAGravitonBombActivate AP_SOAThermalLanceActivate AP_SOATimeFreeze AP_SOAVortex AP_SOAWarpInReinforcements";
@@ -93,6 +99,10 @@ const int lib15EF4C78_gv_aP_Player_MercInstantUsesLevel2 = 3;
 const string lib15EF4C78_gv_aP_PLAYER_TRANSFORMER_LAND_EVENT = "AP_PLAYER_TRANSFORMER_LAND";
 
 // Variable Declarations
+unit[lib15EF4C78_gv_heroCount + 1] lib15EF4C78_gv_heroRevivingUnit;
+unit[lib15EF4C78_gv_heroCount + 1] lib15EF4C78_gv_heroReviverUnit;
+abilcmd[lib15EF4C78_gv_heroCount + 1] lib15EF4C78_gv_heroReviveCommand;
+int[lib15EF4C78_gv_heroCount + 1] lib15EF4C78_gv_heroRevivePlayer;
 unitgroup lib15EF4C78_gv_stukov_HordeGroup;
 unit[21] lib15EF4C78_gv_stukov_RallyTarget;
 point[21] lib15EF4C78_gv_stukov_RallyPoint;
@@ -246,6 +256,7 @@ int[3] lib15EF4C78_gv_zS_SwarmHeroUIDialogButton;
 int[3] lib15EF4C78_gv_zS_SwarmHeroUIDialogLevelBox;
 int[3] lib15EF4C78_gv_zS_SwarmHeroUIDialogLevelupPortrait;
 fixed[3] lib15EF4C78_gv_zS_SwarmHeroUIDamageTimer;
+fixed lib15EF4C78_gv_zS_KerriganReviveTimeDuration;
 bool lib15EF4C78_gv_zS_KerriganHeroPanelLevelUpEffectPlaying;
 fixed lib15EF4C78_gv_zS_SwarmHeroUIDamage;
 bool[21] lib15EF4C78_gv_aP_Player_isKerriganRevivableForPlayer;
@@ -284,6 +295,7 @@ string[lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE + 1] lib15EF4C78_gv_aP_P
 unit lib15EF4C78_gv_aP_PlayerTransformerLandTriggeringUnit;
 
 // Function Declarations
+int lib15EF4C78_gf_HeroTypeFromUnitType (string lp_unitType);
 void lib15EF4C78_gf_AP_Player_initInitialInfestedBunkersForPlayer (int lp_player);
 void lib15EF4C78_gf_Stukov_NewBunkerUnitProcess (unit lp_bunker, unit lp_newUnit);
 void lib15EF4C78_gf_Stukov_SingleUnitGoToRally (unit lp_rallyingUnit, bool lp_overrideExistingOrders, point lp_overrideRallyPoint);
@@ -404,7 +416,7 @@ void lib15EF4C78_gf_ReplaceWorker (unit lp_worker, string lp_desiredFaction);
 void lib15EF4C78_gf_ReplaceTownHall (unit lp_townHall, string lp_desiredFaction, bool lp_hiveUpgrade);
 void lib15EF4C78_gf_AP_Player_MercApplySelfSufficientFix (int lp_player);
 int lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses (int lp_player);
-bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_player, int lp_mercenaryClass);
+bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_ndjmbfmatjllhoyy, int lp_mercenaryClass);
 void lib15EF4C78_gf_AP_Player_MercCompoundUpdateAvailableCount (int lp_player);
 void lib15EF4C78_gf_AP_Player_MercCompoundUpdateCountUpgrade (int lp_player, int lp_mercType, int lp_readyCount);
 void lib15EF4C78_gf_AP_Player_ResetMercenaryCooldowns (int lp_player);
@@ -433,6 +445,8 @@ void lib15EF4C78_gf_LotV_HideCampaignTeaching ();
 bool lib15EF4C78_gf_AP_Player_isPlayerInCinematicMode (int lp_player);
 
 // Trigger Declarations
+trigger lib15EF4C78_gt_HeroDies;
+trigger lib15EF4C78_gt_HeroReviveDone;
 trigger lib15EF4C78_gt_ApplyZergStructureRapidRegen;
 trigger lib15EF4C78_gt_Stukov_InfestedBunkerRegister;
 trigger lib15EF4C78_gt_Stukov_InfestedBunkerInitialSpawn;

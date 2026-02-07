@@ -231,6 +231,7 @@ void lib15EF4C78_InitVariables () {
     for (init_i = 0; init_i <= 2; init_i += 1) {
         lib15EF4C78_gv_zS_SwarmHeroUIDialogLevelupPortrait[init_i] = c_invalidDialogControlId;
     }
+    lib15EF4C78_gv_zS_KerriganReviveTimeDuration = 60.0;
     for (init_i = 0; init_i <= 20; init_i += 1) {
         lib15EF4C78_gv_aP_Player_isKerriganRevivableForPlayer[init_i] = true;
     }
@@ -266,6 +267,26 @@ void lib15EF4C78_InitCustomScript () {
 
 // Presets
 // Functions
+int lib15EF4C78_gf_HeroTypeFromUnitType (string lp_unitType) {
+    // Automatic Variable Declarations
+    string auto673ACF4F_val;
+
+    // Implementation
+    auto673ACF4F_val = lp_unitType;
+    if (auto673ACF4F_val == "AP_NovaHero") {
+        return lib15EF4C78_ge_HeroType_HeroType_Nova;
+    }
+    else if (auto673ACF4F_val == "AP_K5Kerrigan") {
+        return lib15EF4C78_ge_HeroType_HeroType_Kerrigan;
+    }
+    else if (auto673ACF4F_val == "AP_K5KerriganBurrowed") {
+        return lib15EF4C78_ge_HeroType_HeroType_Kerrigan;
+    }
+    else {
+        return lib15EF4C78_ge_HeroType_HeroType_None;
+    }
+}
+
 void lib15EF4C78_gf_AP_Player_initInitialInfestedBunkersForPlayer (int lp_player) {
     // Variable Declarations
     unit lv_cargoUnit;
@@ -2451,7 +2472,7 @@ void lib15EF4C78_gf_SetHeroPanelUnit (int lp_index, unit lp_heroUnit, int lp_pla
     lib15EF4C78_gv_zS_SwarmHeroUIUnit[lp_index] = lp_heroUnit;
     lib15EF4C78_gv_zS_SwarmHeroUIType[lp_index] = lib15EF4C78_ge_CampaignHeroes_None;
     if ((lp_heroUnit == lib15EF4C78_gf_AP_Player_getKerriganUnit(lp_player))) {
-        if ((TechTreeUpgradeCount(lp_player, "AP_KerriganInfestedCosmetic", c_techCountQueuedOrBetter) == 0)) {
+        if ((TechTreeUpgradeCount(lp_player, "AP_KerriganPostZerus", c_techCountQueuedOrBetter) == 0)) {
             lib15EF4C78_gv_zS_SwarmHeroUIIcon[lp_index] = "Assets\\Textures\\btn-hero-kerriganghost.dds";
         }
         else {
@@ -2681,11 +2702,8 @@ void lib15EF4C78_gf_ZS_UpdateHeroPanel (int lp_player, int lp_index) {
 
     if ((UnitIsAlive(lib15EF4C78_gv_zS_SwarmHeroUIUnit[lp_index]) == false)) {
         if ((lib15EF4C78_gv_zS_SwarmHeroUIUnit[lp_index] == lib15EF4C78_gf_AP_Player_getKerriganUnit(lp_player)) && (lib15EF4C78_gv_aP_Player_isKerriganRevivableForPlayer[lp_player] == true)) {
-            libNtve_gf_SetDialogItemAnimationTime(lib15EF4C78_gv_zS_SwarmHeroUIDialogCooldownImage[lp_index], (lib15EF4C78_gv_zS_ReviveCooldownTimeKerrigan - PlayerGetCooldown(lp_player, lib15EF4C78_gv_zSC_HeroReviveLinkKerrigan)), PlayerGroupAll());
+            libNtve_gf_SetDialogItemAnimationTime(lib15EF4C78_gv_zS_SwarmHeroUIDialogCooldownImage[lp_index], (60.0 - (60.0 * (PlayerGetCooldown(1, "Abil/AP_KerriganReviveTimer") / 60.0))), PlayerGroupAll());
             DialogControlSetVisible(lib15EF4C78_gv_zS_SwarmHeroUIDialogCooldownImage[lp_index], PlayerGroupAll(), true);
-        }
-        else if (true) {
-            DialogControlSetVisible(lib15EF4C78_gv_zS_SwarmHeroUIDialogCooldownImage[lp_index], PlayerGroupAll(), false);
         }
         if ((UnitGetPropertyFixed(lib15EF4C78_gv_zS_SwarmHeroUIUnit[lp_index], c_unitPropEnergyMax, c_unitPropCurrent) > 0)) {
             DialogControlSetVisible(lib15EF4C78_gv_zS_SwarmHeroUIDialogEnergyBarImage[lp_index], PlayerGroupAll(), false);
@@ -3388,7 +3406,7 @@ int lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses (int lp_player) {
     return lv_usesLeft;
 }
 
-bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_player, int lp_mercenaryClass) {
+bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_ndjmbfmatjllhoyy, int lp_mercenaryClass) {
     // Variable Declarations
     bool lv_untitledVariable001;
 
@@ -3396,11 +3414,11 @@ bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_player, int lp_m
     // Variable Initialization
 
     // Implementation
-    if ((TechTreeUpgradeCount(lp_player, "AP_UnrestrictedMutation", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_SCTWO) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_BROODWAR) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFESTED))) {
+    if ((TechTreeUpgradeCount(lp_ndjmbfmatjllhoyy, "AP_UnrestrictedMutation", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_SCTWO) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_BROODWAR) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFESTED))) {
         lv_untitledVariable001 = true;
     }
 
-    if ((TechTreeUpgradeCount(lp_player, "AP_RogueForces", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
+    if ((TechTreeUpgradeCount(lp_ndjmbfmatjllhoyy, "AP_RogueForces", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
         lv_untitledVariable001 = true;
     }
 
@@ -3552,7 +3570,7 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldowns (int lp_player) {
 
 void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsTerran (int lp_player) {
     // Variable Declarations
-    int lv_index;
+    int lv_gjmkeunefeptxomq;
 
     // Automatic Variable Declarations
     const int autoC941E96C_ae = lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE;
@@ -3561,10 +3579,10 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsTerran (int lp_player) {
     // Variable Initialization
 
     // Implementation
-    lv_index = 0;
-    for ( ; ( (autoC941E96C_ai >= 0 && lv_index <= autoC941E96C_ae) || (autoC941E96C_ai < 0 && lv_index >= autoC941E96C_ae) ) ; lv_index += autoC941E96C_ai ) {
-        if (((lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
-            libNtve_gf_PlayerRemoveCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_index]);
+    lv_gjmkeunefeptxomq = 0;
+    for ( ; ( (autoC941E96C_ai >= 0 && lv_gjmkeunefeptxomq <= autoC941E96C_ae) || (autoC941E96C_ai < 0 && lv_gjmkeunefeptxomq >= autoC941E96C_ae) ) ; lv_gjmkeunefeptxomq += autoC941E96C_ai ) {
+        if (((lib15EF4C78_gv_aP_Player_MercType[lv_gjmkeunefeptxomq] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_gjmkeunefeptxomq] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_gjmkeunefeptxomq] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
+            libNtve_gf_PlayerRemoveCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_gjmkeunefeptxomq]);
         }
 
     }
@@ -4050,6 +4068,111 @@ bool lib15EF4C78_gf_AP_Player_isPlayerInCinematicMode (int lp_player) {
 }
 
 // Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero Dies
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_HeroDies_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    text lv_reviveMessage;
+    text lv_reviveRebuildMessage;
+    unit lv_unit;
+    unit lv_townhall;
+    int lv_heroType;
+    unit lv_player;
+    fixed lv_reviveCooldown;
+
+    // Automatic Variable Declarations
+    string autoD832C00C_val;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!(((UnitGetType(EventUnit()) == "AP_NovaHero") || (UnitGetType(EventUnit()) == "AP_K5Kerrigan") || (UnitGetType(EventUnit()) == "AP_K5KerriganBurrowed")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_unit = EventUnit();
+    lv_heroType = lib15EF4C78_gf_HeroTypeFromUnitType(UnitGetType(lv_unit));
+    lib15EF4C78_gv_heroRevivePlayer[(lv_heroType)] = UnitGetOwner(lv_unit);
+    lib15EF4C78_gv_heroRevivingUnit[(lv_heroType)] = lv_unit;
+    Wait(2.0, c_timeGame);
+    lv_townhall = lib15EF4C78_gf_AP_Player_getPrimaryTownHall(lib15EF4C78_gf_AP_GetPlayerId());
+    while (((lv_townhall == null) || (UnitIsAlive(lv_townhall) == false))) {
+        Wait(1.0, c_timeGame);
+        lv_townhall = lib15EF4C78_gf_AP_Player_getPrimaryTownHall(lib15EF4C78_gf_AP_GetPlayerId());
+    }
+    autoD832C00C_val = UnitGetType(EventUnit());
+    if (autoD832C00C_val == "AP_NovaHero") {
+        lv_reviveCooldown = lib15EF4C78_gv_nM_ReviveCooldownTimeNova;
+        UnitCreate(1, "AP_NovaReviveCocoon", 0, 1, UnitGetPosition(lv_townhall), 225.0);
+        lib15EF4C78_gv_heroReviverUnit[(lv_heroType)] = UnitLastCreated();
+        lib15EF4C78_gv_heroReviveCommand[(lv_heroType)] = AbilityCommand("AP_NovaRevive", 0);
+        UnitBehaviorAddPlayer(UnitLastCreated(), "AP_CocoonReviveTimer", 1, 1);
+    }
+    else if (autoD832C00C_val == UnitGetType(lib15EF4C78_gf_AP_Player_getKerriganUnit(lib15EF4C78_gf_AP_GetPlayerId()))) {
+        UserDataSetInt("KerriganStates", "Alive", "Value", 1, 0);
+        UserDataSetInt("KerriganStates", "Dead", "Value", 1, 1);
+        UnitCreate(1, "AP_KerriganReviveCocoon", 0, 1, UnitGetPosition(lv_townhall), 225.0);
+        lib15EF4C78_gv_heroReviverUnit[(lv_heroType)] = UnitLastCreated();
+        UnitIssueOrder(UnitLastCreated(), Order(AbilityCommand("AP_KerriganReviveTimer", 0)), c_orderQueueReplace);
+        lib15EF4C78_gv_heroReviveCommand[(lv_heroType)] = AbilityCommand("AP_KerriganRevive", 0);
+        UnitBehaviorAddPlayer(UnitLastCreated(), "AP_CocoonReviveTimer", 1, 1);
+    }
+    else {
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_HeroDies_Init () {
+    lib15EF4C78_gt_HeroDies = TriggerCreate("lib15EF4C78_gt_HeroDies_Func");
+    TriggerAddEventUnitDied(lib15EF4C78_gt_HeroDies, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Hero Revive Done
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_HeroReviveDone_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_heroIndex;
+
+    // Automatic Variable Declarations
+    string auto667F5E16_val;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto667F5E16_val = UnitGetType(EventUnit());
+    if (auto667F5E16_val == "AP_KerriganReviveCocoon") {
+        lv_heroIndex = (lib15EF4C78_gf_HeroTypeFromUnitType("AP_K5Kerrigan"));
+    }
+    else if (auto667F5E16_val == "AP_NovaReviveCocoon") {
+        lv_heroIndex = (lib15EF4C78_gf_HeroTypeFromUnitType("AP_NovaHero"));
+    }
+    else {
+    }
+    UnitIssueOrder(lib15EF4C78_gv_heroReviverUnit[lv_heroIndex], libNtve_gf_ReviveOrderWithNoTarget(lib15EF4C78_gv_heroReviveCommand[lv_heroIndex], lib15EF4C78_gv_heroRevivingUnit[lv_heroIndex]), c_orderQueueReplace);
+    UnitKill(lib15EF4C78_gv_heroReviverUnit[lv_heroIndex]);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_HeroReviveDone_Init () {
+    lib15EF4C78_gt_HeroReviveDone = TriggerCreate("lib15EF4C78_gt_HeroReviveDone_Func");
+    TriggerAddEventUnitBehaviorChange(lib15EF4C78_gt_HeroReviveDone, null, "AP_CocoonReviveTimer", c_unitBehaviorChangeDeactivate);
+}
+
 //--------------------------------------------------------------------------------------------------
 // Trigger: Apply Zerg Structure Rapid Regen
 //--------------------------------------------------------------------------------------------------
@@ -5150,7 +5273,6 @@ bool lib15EF4C78_gt_NM_HeroReviveNova_Func (bool testConds, bool runActions) {
     }
 
     if ((UnitGetType(EventUnit()) == "AP_NovaHero")) {
-        lib15EF4C78_gf_HandleHeroDeathNova(EventUnit(), null, -1.0);
     }
 
     return true;
@@ -7536,12 +7658,6 @@ bool lib15EF4C78_gt_AP_Player_ZS_KerriganDied_Func (bool testConds, bool runActi
 
     lv_player = UnitGetOwner(EventUnit());
     if (((UnitGetType(EventUnit()) == "AP_K5Kerrigan") || (UnitGetType(EventUnit()) == "AP_K5KerriganBurrowed") || (UnitGetType(EventUnit()) == "AP_K5KerriganPsiStrike"))) {
-        UserDataSetInt("KerriganStates", "Alive", "Value", 1, 0);
-        UserDataSetInt("KerriganStates", "Dead", "Value", 1, 1);
-        if ((lib15EF4C78_gf_AP_Player_isKerriganRevivable(lv_player) == true)) {
-            lib15EF4C78_gf_StartKerriganReviveCooldown(lv_player);
-        }
-
     }
 
     return true;
@@ -8727,7 +8843,7 @@ void lib15EF4C78_gt_AP_Player_MercCompoundSetupCounts_Init () {
 bool lib15EF4C78_gt_AP_Player_MercCompoundOnMercUse_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv_index;
-    int lv_player;
+    int lv_hlkhiysuruqjrfmk;
     int lv_instantUsesLeft;
 
     // Automatic Variable Declarations
@@ -8741,28 +8857,28 @@ bool lib15EF4C78_gt_AP_Player_MercCompoundOnMercUse_Func (bool testConds, bool r
         return true;
     }
 
-    lv_player = EventPlayer();
-    lv_instantUsesLeft = lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses(lv_player);
+    lv_hlkhiysuruqjrfmk = EventPlayer();
+    lv_instantUsesLeft = lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses(lv_hlkhiysuruqjrfmk);
     if ((lv_instantUsesLeft > 0)) {
         lv_index = 0;
         for ( ; ( (auto40390B55_ai >= 0 && lv_index <= auto40390B55_ae) || (auto40390B55_ai < 0 && lv_index >= auto40390B55_ae) ) ; lv_index += auto40390B55_ai ) {
             if ((EventUnitAbility() == lib15EF4C78_gv_aP_Player_MercAbilityCommands[lv_index]) && ((lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
                 lv_instantUsesLeft -= 1;
-                libNtve_gf_SetUpgradeLevelForPlayer(lv_player, "AP_FastDeliveryCharges", lv_instantUsesLeft);
+                libNtve_gf_SetUpgradeLevelForPlayer(lv_hlkhiysuruqjrfmk, "AP_FastDeliveryCharges", lv_instantUsesLeft);
                 lib15EF4C78_gv_aP_Player_MercInstantUseIndex[lib15EF4C78_gv_aP_Player_MercInstantUsesUsed] = lv_index;
                 lib15EF4C78_gv_aP_Player_MercInstantUsesUsed += 1;
                 if ((lv_instantUsesLeft == 0)) {
-                    lib15EF4C78_gf_AP_Player_ResetMercenaryCooldownsTerranRespectStart(lv_player);
+                    lib15EF4C78_gf_AP_Player_ResetMercenaryCooldownsTerranRespectStart(lv_hlkhiysuruqjrfmk);
                 }
                 else {
-                    lib15EF4C78_gf_AP_Player_ResetMercenaryCooldownsSingle(lv_player, lv_index);
+                    lib15EF4C78_gf_AP_Player_ResetMercenaryCooldownsSingle(lv_hlkhiysuruqjrfmk, lv_index);
                 }
             }
 
         }
     }
 
-    lib15EF4C78_gf_AP_Player_MercCompoundUpdateAvailableCount(lv_player);
+    lib15EF4C78_gf_AP_Player_MercCompoundUpdateAvailableCount(lv_hlkhiysuruqjrfmk);
     return true;
 }
 
@@ -8988,6 +9104,8 @@ void lib15EF4C78_gt_EmitTransformerLand_Init () {
 }
 
 void lib15EF4C78_InitTriggers () {
+    lib15EF4C78_gt_HeroDies_Init();
+    lib15EF4C78_gt_HeroReviveDone_Init();
     lib15EF4C78_gt_ApplyZergStructureRapidRegen_Init();
     lib15EF4C78_gt_Stukov_InfestedBunkerRegister_Init();
     lib15EF4C78_gt_Stukov_InfestedBunkerInitialSpawn_Init();

@@ -9001,6 +9001,23 @@
         <Range value="6"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_SpawnBanelings" Requirements="AP_HaveK5SpawnBanelings"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="AP_NovaReviveTimer">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="0" DefaultButtonFace="AP_NovaSilentkill"/>
+        <BaseInfo>
+            <Cooldown Location="Player" TimeUse="60"/>
+        </BaseInfo>
+        <Effect value=""/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AP_KerriganReviveTimer">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_PsionicLift"/>
+        <Cost>
+            <Cooldown Location="Player" TimeUse="60"/>
+            <Cooldown Link="Abil/AP_KerriganReviveTimer" TimeUse="60"/>
+        </Cost>
+        <Effect index="0" value="AP_DoNothing"/>
+    </CAbilEffectInstant>
     <CAbilRevive id="AP_KerriganRevive" parent="ReviveSelf">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <CmdButtonArray index="Revive1" DefaultButtonFace="AP_KerriganRevive"/>
