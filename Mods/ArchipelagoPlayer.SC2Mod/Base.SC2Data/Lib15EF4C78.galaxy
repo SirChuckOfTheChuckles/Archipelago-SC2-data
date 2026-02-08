@@ -3570,7 +3570,7 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldowns (int lp_player) {
 
 void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsTerran (int lp_player) {
     // Variable Declarations
-    int lv_csklqxfnjodwswrw;
+    int lv_index;
 
     // Automatic Variable Declarations
     const int autoC941E96C_ae = lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE;
@@ -3579,10 +3579,10 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsTerran (int lp_player) {
     // Variable Initialization
 
     // Implementation
-    lv_csklqxfnjodwswrw = 0;
-    for ( ; ( (autoC941E96C_ai >= 0 && lv_csklqxfnjodwswrw <= autoC941E96C_ae) || (autoC941E96C_ai < 0 && lv_csklqxfnjodwswrw >= autoC941E96C_ae) ) ; lv_csklqxfnjodwswrw += autoC941E96C_ai ) {
-        if (((lib15EF4C78_gv_aP_Player_MercType[lv_csklqxfnjodwswrw] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_csklqxfnjodwswrw] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_csklqxfnjodwswrw] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
-            libNtve_gf_PlayerRemoveCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_csklqxfnjodwswrw]);
+    lv_index = 0;
+    for ( ; ( (autoC941E96C_ai >= 0 && lv_index <= autoC941E96C_ae) || (autoC941E96C_ai < 0 && lv_index >= autoC941E96C_ae) ) ; lv_index += autoC941E96C_ai ) {
+        if (((lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
+            libNtve_gf_PlayerRemoveCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_index]);
         }
 
     }

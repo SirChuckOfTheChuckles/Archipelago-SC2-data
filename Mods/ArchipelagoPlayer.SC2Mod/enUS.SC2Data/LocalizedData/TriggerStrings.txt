@@ -904,6 +904,7 @@ Variable/Name/lib_15EF4C78_55E2247B=ZS_SwarmHeroUIShowLevel
 Variable/Name/lib_15EF4C78_55E8FFCE=AP_Player_PrimaryTownHallPreferredLocation
 Variable/Name/lib_15EF4C78_56B6A7BB=player
 Variable/Name/lib_15EF4C78_56C66226=Tip
+Variable/Name/lib_15EF4C78_58F52A2B=index
 Variable/Name/lib_15EF4C78_5948BE07=nuke
 Variable/Name/lib_15EF4C78_597E9C3A=Distance
 Variable/Name/lib_15EF4C78_5A937457=Supplicant Warp Train Creator Finder Behavior Link
