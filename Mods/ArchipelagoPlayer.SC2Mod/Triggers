@@ -75262,6 +75262,7 @@
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="7DC5B110"/>
         </Element>
         <Element Type="ParamDef" Id="662DD18A">
+            <Identifier>lp_player</Identifier>
             <ParameterType>
                 <Type Value="int"/>
             </ParameterType>
@@ -76993,6 +76994,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="Variable" Id="11D7D857">
+            <Identifier>player</Identifier>
             <VariableType>
                 <Type Value="int"/>
             </VariableType>
