@@ -3406,7 +3406,7 @@ int lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses (int lp_player) {
     return lv_usesLeft;
 }
 
-bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_lp_player, int lp_mercenaryClass) {
+bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_player, int lp_mercenaryClass) {
     // Variable Declarations
     bool lv_untitledVariable001;
 
@@ -3414,11 +3414,11 @@ bool lib15EF4C78_gf_AP_Player_MercCompoundNoChargeLimit (int lp_lp_player, int l
     // Variable Initialization
 
     // Implementation
-    if ((TechTreeUpgradeCount(lp_lp_player, "AP_UnrestrictedMutation", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_SCTWO) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_BROODWAR) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFESTED))) {
+    if ((TechTreeUpgradeCount(lp_player, "AP_UnrestrictedMutation", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_SCTWO) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_BROODWAR) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFESTED))) {
         lv_untitledVariable001 = true;
     }
 
-    if ((TechTreeUpgradeCount(lp_lp_player, "AP_RogueForces", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
+    if ((TechTreeUpgradeCount(lp_player, "AP_RogueForces", c_techCountCompleteOnly) >= 1) && ((lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lp_mercenaryClass == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
         lv_untitledVariable001 = true;
     }
 

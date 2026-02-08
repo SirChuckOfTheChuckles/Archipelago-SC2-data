@@ -75262,7 +75262,7 @@
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="7DC5B110"/>
         </Element>
         <Element Type="ParamDef" Id="662DD18A">
-            <Identifier>lp_player</Identifier>
+            <Identifier>player</Identifier>
             <ParameterType>
                 <Type Value="int"/>
             </ParameterType>
