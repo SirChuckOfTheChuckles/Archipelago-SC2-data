@@ -4634,6 +4634,18 @@
             <Button DefaultButtonFace="AP_ArtanisNoAspect" Requirements="AP_HaveArtanisAnyAspectEquipped"/>
         </InfoArray>
     </CAbilSpecialize>
+    <CAbilBehavior id="AP_ArtanisAirAttackToggle">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="AP_ArtanisAntiAirDisable" Requirements="AP_HaveArtanisAntiAirWeaponUnlocked">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="AP_ArtanisAntiAirEnable" Requirements="AP_HaveArtanisAntiAirWeaponUnlocked">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <BehaviorArray value="AP_ArtanisAirAttackDisabled"/>
+    </CAbilBehavior>
     <CAbilEffectTarget id="AP_Exterminate">
         <AbilSetId value="AP_Exterminate"/>
         <Effect index="0" value="AP_ExterminateSet"/>

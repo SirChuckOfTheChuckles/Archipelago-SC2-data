@@ -2207,6 +2207,13 @@
         <RemoveValidatorArray value="AP_NoArtanisBladeWaltzRecastWalkSpeed"/>
         <Duration value="2"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ArtanisAirAttackDisabled">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <WeaponDisableArray value="AP_ArtanisAirAttack"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_StrengthInUnity">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Duration value="15"/>

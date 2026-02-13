@@ -2375,6 +2375,7 @@ Button/Name/AP_VoidVoidRayBeamBounce=Destruction Beam
 Button/Name/AP_VoidZealotShadowCharge=Shadow Charge
 Button/Name/AP_VoidZealotShadowChargeStun=Darkcoil
 Button/Name/AP_VoidZealotWhirlwind=Whirlwind
+Button/Name/AP_VoltaicShock=Voltaic Shock
 Button/Name/AP_Vulture=Build Vulture
 Button/Name/AP_VultureAutoLaunchers=Auto Launchers
 Button/Name/AP_VultureAutoRepair=Jerry-Rigged Patchup
@@ -4078,6 +4079,7 @@ Button/Tooltip/AP_VoidVoidRayBeamBounce=Prismatic Beam splits and deals damage t
 Button/Tooltip/AP_VoidZealotShadowCharge=Intercepts enemy ground units. Briefly cloaks the Centurion and allows it to move through other units.
 Button/Tooltip/AP_VoidZealotShadowChargeStun=Stuns target enemy ground unit and all nearby enemy ground units <d ref="Behavior,AP_VoidZealotShadowChargeStun,Duration" precision="1"/> seconds.</n></n><c val="#ColorAttackInfo">Massive units are slowed.</c>
 Button/Tooltip/AP_VoidZealotWhirlwind=Deals <d ref="Effect,AP_VoidZealotWhirlwindDamage,Amount/Behavior,AP_VoidZealotWhirlwind,Period"/> damage per second to all nearby enemy units. Lasts <d ref="Behavior,AP_VoidZealotWhirlwind,Duration"/> seconds.
+Button/Tooltip/AP_VoltaicShock=Unleash an electrical blast at the target point, dealing <d ref="Effect,AP_VoltaicShockDamage,Amount"/> damage to air units and <d ref="Effect,AP_VoltaicShockDamageSecondary,Amount"/> damage to enemies in the area.<n/><n/>Affected air units are grounded and unable to move for <d ref="Behavior,AP_VoltaicShock,Duration"/> seconds.
 Button/Tooltip/AP_Vulture=Fast skirmish unit. Can use the Spider Mine ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_VultureAutoLaunchers=Vulture can attack while moving
 Button/Tooltip/AP_VultureAutoRepair=Vulture regenerates life.
@@ -7394,3 +7396,12 @@ Weapon/Tip/AP_Talons=
 Weapon/Tip/AP_VoidRayChargeBeamBounce=Deals <d ref="Effect,AP_VoidRayChargeBeamBounce1Damage,Amount"/> damage to <d ref="Effect,AP_VoidRayChargeBeamBounce1Search,MaxCount"/> secondary target if not charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBounce2Damage,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounce2Damage,Amount + Effect,AP_VoidRayChargeBeamBounce2Damage,AttributeBonus[Armored]"/> vs Armored) damage to <d ref="Effect,AP_VoidRayChargeBeamBounce2Search,MaxCount"/> secondary targets if halfway charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBounce3Damage,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounce3Damage,Amount + Effect,AP_VoidRayChargeBeamBounce3Damage,AttributeBonus[Armored]"/> vs Armored) damage to <d ref="Effect,AP_VoidRayChargeBeamBounce3Search,MaxCount"/> secondary targets damage if fully charged.
 Weapon/Tip/AP_VoidRayChargeBeamBounceUpgraded=Deals <d ref="Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,Amount + Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,AttributeBonus[Armored]"/> vs Armored) damage to to secondary targets at all charge levels. Hits 1 additional target per charge level.
 Weapon/Tip/AP_VoidRayChargeBeamRange=Deals <d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge2,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge2,Amount + Effect,AP_VoidRayChargeBeamBaseDamageCharge2,AttributeBonus[Armored]"/> vs Armored) damage if halfway charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge3,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge3,Amount + Effect,AP_VoidRayChargeBeamBaseDamageCharge3,AttributeBonus[Armored]"/> vs Armored) damage if fully charged.
+
+Button/Name/AP_ArtanisPassiveSystems=Passive Systems
+Button/Name/AP_ArtanisTemperedInTwilight=Tempered in Twilight
+Button/Name/AP_ArtanisAntiAirEnable=Enable Anti-Air Weapon
+Button/Name/AP_ArtanisAntiAirDisable=Disable Anti-Air Weapon
+Button/Tooltip/AP_ArtanisPassiveSystems=Open Artanis' passive systems and weapon toggles.
+Button/Tooltip/AP_ArtanisTemperedInTwilight=Artanis restores 2 energy whenever his melee or anti-air weapon deals damage.
+Button/Tooltip/AP_ArtanisAntiAirEnable=Enable Artanis' anti-air ranged weapon.
+Button/Tooltip/AP_ArtanisAntiAirDisable=Disable Artanis' anti-air ranged weapon.

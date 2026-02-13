@@ -5130,6 +5130,31 @@
         <OperandArray value="AP_CountBehaviorArtanisTaldarimAspectCompleteOnlyAtUnit"/>
     </CRequirementOr>
 
+    <CRequirementCountUpgrade id="AP_CountUpgradeArtanisTemperedInTwilightCompleteOnly">
+        <Count Link="AP_ArtanisTemperedInTwilight" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeArtanisUnlockedAntiAirProtocolCompleteOnly">
+        <Count Link="AP_ArtanisUnlockedAntiAirProtocol" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountBehavior id="AP_CountBehaviorArtanisAirAttackDisabledCompleteOnlyAtUnit">
+        <Count Link="AP_ArtanisAirAttackDisabled" State="CompleteOnlyAtUnit"/>
+        <Flags index="IgnoreDead" value="1"/>
+    </CRequirementCountBehavior>
+    <CRequirementNot id="AP_NotCountBehaviorArtanisAirAttackDisabledCompleteOnlyAtUnit">
+        <OperandArray value="AP_CountBehaviorArtanisAirAttackDisabledCompleteOnlyAtUnit"/>
+        <Flags index="IgnoreDead" value="1"/>
+    </CRequirementNot>
+    <CRequirementAnd id="AP_AndArtanisAntiAirEnableButtonCompleteOnly">
+        <OperandArray value="AP_CountUpgradeArtanisUnlockedAntiAirProtocolCompleteOnly"/>
+        <OperandArray value="AP_CountBehaviorArtanisAirAttackDisabledCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_AndArtanisAntiAirDisableButtonCompleteOnly">
+        <OperandArray value="AP_CountUpgradeArtanisUnlockedAntiAirProtocolCompleteOnly"/>
+        <OperandArray value="AP_NotCountBehaviorArtanisAirAttackDisabledCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+
 
     <CRequirementCountUpgrade id="AP_CountUpgradeArtanisPurifierAspectUnlockedCompleteOnly">
         <Count Link="AP_ArtanisPurifierAspectUnlocked" State="CompleteOnly"/>

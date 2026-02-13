@@ -2425,6 +2425,22 @@
         <AlertIcon value="Assets\Textures\btn-commander-artanis.dds"/>
         <Hotkey value="Button/Hotkey/AP_ArtanisWeaponAspects"/>
     </CButton>
+    <CButton id="AP_ArtanisPassiveSystems">
+        <Icon value="Assets\Textures\btn-ability-protoss-adunlegacy.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-adunlegacy.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisTemperedInTwilight">
+        <Icon value="AP\Assets\Textures\btn-upgrade-protoss-artanis-spiritsfire.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-artanis-spiritsfire.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAntiAirEnable">
+        <Icon value="Assets\Textures\btn-unit-protoss-phoenix.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-phoenix.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAntiAirDisable">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-phoenixionpulsecrystals.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-phoenixionpulsecrystals.dds"/>
+    </CButton>
     <CButton id="AP_ArtanisAiurAspect">
         <Icon value="AP\Assets\Textures\ui_void_armyupgrade_factionaiur_categoryicon.dds"/>
         <AlertIcon value="AP\Assets\Textures\ui_void_armyupgrade_factionaiur_categoryicon.dds"/>

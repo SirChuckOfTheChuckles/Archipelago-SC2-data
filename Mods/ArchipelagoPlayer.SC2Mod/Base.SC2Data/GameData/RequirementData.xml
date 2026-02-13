@@ -2791,6 +2791,18 @@
     <CRequirement id="AP_HaveArtanisAnyAspectEquipped">
         <NodeArray index="Show" Link="AP_OrArtanisAnyAspectEquippedCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveArtanisTemperedInTwilight">
+        <NodeArray index="Show" Link="AP_CountUpgradeArtanisTemperedInTwilightCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveArtanisAntiAirWeaponUnlocked">
+        <NodeArray index="Show" Link="AP_CountUpgradeArtanisUnlockedAntiAirProtocolCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveArtanisAntiAirWeaponEnableButton">
+        <NodeArray index="Show" Link="AP_AndArtanisAntiAirEnableButtonCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveArtanisAntiAirWeaponDisableButton">
+        <NodeArray index="Show" Link="AP_AndArtanisAntiAirDisableButtonCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveSOADragoonRevive">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountUpgradeSOADragoonReviveCompleteOnly"/>

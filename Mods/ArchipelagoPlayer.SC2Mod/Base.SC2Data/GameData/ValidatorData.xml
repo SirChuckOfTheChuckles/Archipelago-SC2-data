@@ -37,6 +37,10 @@
         <Find value="1"/>
         <Value value="AP_HaveHotSLurker"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveArtanisTemperedInTwilight">
+        <Find value="1"/>
+        <Value value="AP_HaveArtanisTemperedInTwilight"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveHotSMutaliskViper">
         <Find value="1"/>
         <Value value="AP_HaveHotSMutaliskViper"/>

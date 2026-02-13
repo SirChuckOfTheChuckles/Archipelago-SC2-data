@@ -14658,6 +14658,7 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="AP_ArtanisWeaponAspects"/>
+        <AbilArray Link="AP_ArtanisAirAttackToggle"/>
         <AbilArray Link="AP_SuppressionPulse"/>
         <AbilArray Link="AP_ArtanisLightningDash"/>
         <AbilArray Link="AP_ArtanisAstralWind"/>
@@ -14673,6 +14674,7 @@
         <AbilArray Link="ArtanisChannel"/>
         <BehaviorArray Link="AP_ArtanisNoAspect"/>
         <BehaviorArray Link="AP_ArtanisResurgence"/>
+        <BehaviorArray Link="AP_ArtanisAirAttackDisabled"/>
         <WeaponArray Link="AP_ArtanisTwilightBlades"/>
         <WeaponArray Link="AP_ArtanisAirAttack"/>
         <CardLayouts>
@@ -14698,6 +14700,7 @@
             <LayoutButtons Face="AP_PhasePrism" Type="AbilCmd" AbilCmd="AP_PhasePrism,Execute" Row="1" Column="1"/>
             <LayoutButtons Face="ArtanisForceOfWill" Type="Passive" Row="2" Column="3"/>
             <LayoutButtons Face="AP_ArtanisWeaponAspectSwap" Type="Submenu" SubmenuCardId="WA" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_ArtanisPassiveSystems" Type="Submenu" SubmenuCardId="PS" Row="1" Column="4"/>
         </CardLayouts>
         <CardLayouts CardId="WA">
             <LayoutButtons Face="AP_ArtanisAiurAspect" Type="AbilCmd" AbilCmd="AP_ArtanisWeaponAspects,0" Row="0" Column="0"/>
@@ -14705,6 +14708,12 @@
             <LayoutButtons Face="AP_ArtanisPurifierAspect" Type="AbilCmd" AbilCmd="AP_ArtanisWeaponAspects,2" Row="0" Column="2"/>
             <LayoutButtons Face="AP_ArtanisTaldarimAspect" Type="AbilCmd" AbilCmd="AP_ArtanisWeaponAspects,3" Row="0" Column="3"/>
             <LayoutButtons Face="AP_ArtanisNoAspect" Type="AbilCmd" AbilCmd="AP_ArtanisWeaponAspects,4" Row="0" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="PS">
+            <LayoutButtons Face="AP_ArtanisTemperedInTwilight" Type="Passive" Requirements="AP_HaveArtanisTemperedInTwilight" Row="0" Column="0"/>
+            <LayoutButtons Face="AP_ArtanisAntiAirEnable" Type="AbilCmd" AbilCmd="AP_ArtanisAirAttackToggle,Off" Requirements="AP_HaveArtanisAntiAirWeaponEnableButton" Row="0" Column="1"/>
+            <LayoutButtons Face="AP_ArtanisAntiAirDisable" Type="AbilCmd" AbilCmd="AP_ArtanisAirAttackToggle,On" Requirements="AP_HaveArtanisAntiAirWeaponDisableButton" Row="0" Column="2"/>
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.425"/>
