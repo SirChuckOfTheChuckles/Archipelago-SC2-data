@@ -2793,7 +2793,7 @@
         <DisplayEffect value="AP_ArtanisAirAttackDamage"/>
         <TargetFilters value="Air,Visible;Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="4"/>
-        <Period value="1"/>
+        <Period value="0.8"/>
         <DamagePoint value="0.2"/>
         <Effect value="AP_ArtanisAirAttackSet"/>
     </CWeaponLegacy>

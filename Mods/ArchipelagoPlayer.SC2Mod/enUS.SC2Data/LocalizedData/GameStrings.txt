@@ -1138,6 +1138,10 @@ Button/Name/AP_ArtanisNoAspect=Alone
 Button/Name/AP_ArtanisPurifierAspect=Purifier Aspect
 Button/Name/AP_ArtanisTaldarimAspect=Tal'darim Aspect
 Button/Name/AP_ArtanisWeaponAspectSwap=Swap Weapon Aspects
+Button/Name/AP_ArtanisAirAttackMenu=Ranged Weapon Controls
+Button/Name/AP_ArtanisTemperedInTwilight=Tempered in Twilight
+Button/Name/AP_ArtanisAirAttackEnable=Enable Anti-Air Weapon
+Button/Name/AP_ArtanisAirAttackDisable=Disable Anti-Air Weapon
 Button/Name/AP_AscendantAbilityEfficiency=Breath of Creation
 Button/Name/AP_AscendantSacrifice=Sacrifice
 Button/Name/AP_AssaultModeMengsk=Assault Mode
@@ -2375,6 +2379,7 @@ Button/Name/AP_VoidVoidRayBeamBounce=Destruction Beam
 Button/Name/AP_VoidZealotShadowCharge=Shadow Charge
 Button/Name/AP_VoidZealotShadowChargeStun=Darkcoil
 Button/Name/AP_VoidZealotWhirlwind=Whirlwind
+Button/Name/AP_VoltaicShock=Voltaic Shock
 Button/Name/AP_Vulture=Build Vulture
 Button/Name/AP_VultureAutoLaunchers=Auto Launchers
 Button/Name/AP_VultureAutoRepair=Jerry-Rigged Patchup
@@ -2588,6 +2593,10 @@ Button/Tooltip/AP_ArtanisNoAspect=Artanis removes his current Weapon Aspect, ret
 Button/Tooltip/AP_ArtanisPurifierAspect=Switch Artanis' active aspect to <c val="f2bf16">Purifier</c>, granting him access to any unlocked bonuses and making him count as a <c val="f2bf16">Purifier</c> unit.
 Button/Tooltip/AP_ArtanisTaldarimAspect=Switch Artanis' active aspect to <c val="d40d24">Taldarim</c>, granting him access to any unlocked bonuses and making him count as a <c val="d40d24">Taldarim</c> unit.
 Button/Tooltip/AP_ArtanisWeaponAspectSwap=Swap Artanis to a different weapon aspect.
+Button/Tooltip/AP_ArtanisAirAttackMenu=Open controls for Artanis' ranged anti-air weapon and passive upgrades.
+Button/Tooltip/AP_ArtanisTemperedInTwilight=Whenever Artanis deals attack damage with either weapon, he restores 2 energy.
+Button/Tooltip/AP_ArtanisAirAttackEnable=Enable Artanis' ranged anti-air weapon.
+Button/Tooltip/AP_ArtanisAirAttackDisable=Disable Artanis' ranged anti-air weapon.
 Button/Tooltip/AP_AscendantAbilityEfficiency=Ascendant abilities cost <d ref="Upgrade,AP_AscendantAbilityEfficiency,EffectArray[0].Value"/> less energy.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_AscendantSacrifice=Reduces target friendly unit to <d ref="Effect,AP_AscendantSacrificeDamage,Amount"/> life (shields are not affected).<n/><n/>Grants the Ascendant <d ref="Effect,AP_AscendantSacrificeDamage5,LeechFraction[Energy]"/> energy for each life point reduced, up to its maximum energy.<n/><n/><c val="#ColorAttackInfo">Can only target friendly units.</c>
 Button/Tooltip/AP_AssaultModeMengsk=Transforms the Sky Fury to Assault Mode. In this mode Sky Furies move on the ground and can only attack ground targets.
@@ -4078,6 +4087,7 @@ Button/Tooltip/AP_VoidVoidRayBeamBounce=Prismatic Beam splits and deals damage t
 Button/Tooltip/AP_VoidZealotShadowCharge=Intercepts enemy ground units. Briefly cloaks the Centurion and allows it to move through other units.
 Button/Tooltip/AP_VoidZealotShadowChargeStun=Stuns target enemy ground unit and all nearby enemy ground units <d ref="Behavior,AP_VoidZealotShadowChargeStun,Duration" precision="1"/> seconds.</n></n><c val="#ColorAttackInfo">Massive units are slowed.</c>
 Button/Tooltip/AP_VoidZealotWhirlwind=Deals <d ref="Effect,AP_VoidZealotWhirlwindDamage,Amount/Behavior,AP_VoidZealotWhirlwind,Period"/> damage per second to all nearby enemy units. Lasts <d ref="Behavior,AP_VoidZealotWhirlwind,Duration"/> seconds.
+Button/Tooltip/AP_VoltaicShock=Unleash an electrical blast at the target point, dealing <d ref="Effect,AP_VoltaicShockDamage,Amount"/> damage to air units and <d ref="Effect,AP_VoltaicShockDamageSecondary,Amount"/> damage to enemies in the area.<n/><n/>Affected air units are grounded and unable to move for <d ref="Behavior,AP_VoltaicShock,Duration"/> seconds.
 Button/Tooltip/AP_Vulture=Fast skirmish unit. Can use the Spider Mine ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_VultureAutoLaunchers=Vulture can attack while moving
 Button/Tooltip/AP_VultureAutoRepair=Vulture regenerates life.

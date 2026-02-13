@@ -4582,6 +4582,7 @@
     <CEffectSet id="AP_ArtanisWeaponSet">
         <EditorCategories value=""/>
         <EffectArray value="AP_ArtanisWeaponBurst"/>
+        <EffectArray value="AP_ArtanisTemperedInTwilightEnergy"/>
     </CEffectSet>
     <CEffectCreatePersistent id="AP_ArtanisWeaponBurst">
         <EditorCategories value="Race:Protoss"/>
@@ -4607,6 +4608,11 @@
     <CEffectModifyUnit id="AP_ArtanisAstralWindCDRefund">
         <ImpactUnit Value="Caster"/>
         <Cost Abil="AP_ArtanisAstralWind,Execute" CooldownOperation="Add" CooldownTimeUse="-5.0"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_ArtanisTemperedInTwilightEnergy">
+        <ImpactUnit Value="Caster"/>
+        <ValidatorArray value="AP_HaveArtanisTemperedInTwilightValidator"/>
+        <VitalArray index="Energy" value="2"/>
     </CEffectModifyUnit>
     
     <CEffectApplyBehavior id="AP_ArtanisAiurAspect"/>
@@ -5140,6 +5146,7 @@
 
     <CEffectSet id="AP_ArtanisAirAttackSet">
         <EffectArray value="AP_ArtanisAirAttackLM"/>
+        <EffectArray value="AP_ArtanisTemperedInTwilightEnergy"/>
     </CEffectSet>
     <CEffectLaunchMissile id="AP_ArtanisAirAttackLM">
         <ImpactEffect value="AP_ArtanisAirAttackDamage"/>

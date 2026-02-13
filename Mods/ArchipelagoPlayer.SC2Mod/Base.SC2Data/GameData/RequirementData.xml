@@ -2791,6 +2791,12 @@
     <CRequirement id="AP_HaveArtanisAnyAspectEquipped">
         <NodeArray index="Show" Link="AP_OrArtanisAnyAspectEquippedCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveArtanisTemperedInTwilight">
+        <NodeArray index="Show" Link="AP_CountUpgradeArtanisTemperedInTwilightCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveArtanisAirAttackUnlocked">
+        <NodeArray index="Show" Link="AP_CountUpgradeArtanisAirAttackUnlockedCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveSOADragoonRevive">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountUpgradeSOADragoonReviveCompleteOnly"/>

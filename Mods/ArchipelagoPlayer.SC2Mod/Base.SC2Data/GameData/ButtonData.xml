@@ -2445,6 +2445,22 @@
         <Icon value="AP\Assets\Textures\btn-ability-protoss-emergencywarp-aiur.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-emergencywarp-aiur.dds"/>
     </CButton>
+    <CButton id="AP_ArtanisAirAttackMenu">
+        <Icon value="Assets\Textures\btn-ability-protoss-phoenixairweapons.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-phoenixairweapons.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisTemperedInTwilight">
+        <Icon value="Assets\Textures\BTN-Upgrade-Artanis-SingularityCharge.dds"/>
+        <AlertIcon value="Assets\Textures\BTN-Upgrade-Artanis-SingularityCharge.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAirAttackEnable">
+        <Icon value="Assets\Textures\btn-ability-protoss-phoenixairweapons.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-phoenixairweapons.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAirAttackDisable">
+        <Icon value="Assets\Textures\btn-move-holdposition.dds"/>
+        <AlertIcon value="Assets\Textures\btn-move-holdposition.dds"/>
+    </CButton>
     <CButton id="AP_ArtanisLightningDash">
         <Icon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
         <EditorCategories value="Race:Protoss"/>

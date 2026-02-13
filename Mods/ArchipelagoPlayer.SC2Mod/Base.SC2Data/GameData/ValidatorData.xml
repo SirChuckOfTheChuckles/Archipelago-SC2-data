@@ -4155,6 +4155,9 @@
     <CValidatorUnitType id="AP_IsPurifierMothershipBase">
         <Value value="AP_MothershipPurifier"/>
     </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="AP_HaveArtanisTemperedInTwilightValidator">
+        <Value value="AP_HaveArtanisTemperedInTwilight"/>
+    </CValidatorPlayerRequirement>
     <CValidatorUnitType id="AP_IsPurifierMothershipUpgraded">
         <Value value="AP_MothershipPurifierPowerSource"/>
     </CValidatorUnitType>

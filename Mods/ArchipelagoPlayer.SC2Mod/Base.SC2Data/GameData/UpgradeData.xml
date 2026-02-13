@@ -12834,6 +12834,8 @@
     <CUpgrade id="AP_ArtanisTaldarimAspectUnlocked"/>
     <CUpgrade id="AP_ArtanisTaldarimAspectActive"/>
     <CUpgrade id="AP_ArtanisTaldarimAspectPassive"/>
+    <CUpgrade id="AP_ArtanisTemperedInTwilight"/>
+    <CUpgrade id="AP_ArtanisAirAttackUnlocked"/>
 
     <CUpgrade id="AP_VoidRaySpeedUpgrade">
         <ScoreAmount value="300"/>
