@@ -2420,6 +2420,22 @@
         <Hotkey value="Button/Hotkey/AP_Feedback"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
+    <CButton id="AP_ArtanisAirAttackControls">
+        <Icon value="Assets\Textures\btn-unit-protoss-dragoon.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-dragoon.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisTemperedInTwilight">
+        <Icon value="Assets\Textures\btn-upgrade-artanis-healingpsionicstorm.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-artanis-healingpsionicstorm.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAntiAirWeaponEnable">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+    </CButton>
+    <CButton id="AP_ArtanisAntiAirWeaponDisable">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+    </CButton>
     <CButton id="AP_ArtanisWeaponAspectSwap">
         <Icon value="Assets\Textures\btn-commander-artanis.dds"/>
         <AlertIcon value="Assets\Textures\btn-commander-artanis.dds"/>

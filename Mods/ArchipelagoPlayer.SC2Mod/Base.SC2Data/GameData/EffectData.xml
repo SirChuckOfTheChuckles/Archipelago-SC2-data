@@ -4597,6 +4597,7 @@
         <EditorCategories value=""/>
         <EffectArray value="AP_ArtanisBlades"/>
         <EffectArray value="AP_ArtanisAstralWindCDRefund"/>
+        <EffectArray value="AP_TemperedInTwilightRefund"/>
     </CEffectSet>
     <CEffectDamage id="AP_ArtanisBlades" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -4826,10 +4827,17 @@
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_TemperedInTwilightRefund">
         <ImpactUnit Value="Caster"/>
+        <ValidatorArray value="AP_HaveArtanisTemperedInTwilightUpgrade"/>
         <VitalArray index="Energy">
-            <Change value="5"/>
+            <Change value="2"/>
         </VitalArray>
     </CEffectModifyUnit>
+    <CEffectModifyPlayer id="AP_ArtanisAntiAirWeaponEnable">
+        <Upgrades Upgrade="AP_ArtanisAntiAirWeaponDisabledToggle" Count="-1"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="AP_ArtanisAntiAirWeaponDisable">
+        <Upgrades Upgrade="AP_ArtanisAntiAirWeaponDisabledToggle" Count="1"/>
+    </CEffectModifyPlayer>
     <CEffectSet id="AP_VoltaicShockSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_VoltaicShockDamage"/>
@@ -5140,6 +5148,7 @@
 
     <CEffectSet id="AP_ArtanisAirAttackSet">
         <EffectArray value="AP_ArtanisAirAttackLM"/>
+        <EffectArray value="AP_TemperedInTwilightRefund"/>
     </CEffectSet>
     <CEffectLaunchMissile id="AP_ArtanisAirAttackLM">
         <ImpactEffect value="AP_ArtanisAirAttackDamage"/>

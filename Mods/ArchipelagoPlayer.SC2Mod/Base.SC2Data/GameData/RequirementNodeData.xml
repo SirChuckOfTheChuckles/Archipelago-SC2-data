@@ -5196,6 +5196,26 @@
     </CRequirementAnd>
         
 
+    <CRequirementCountUpgrade id="AP_CountUpgradeArtanisTemperedInTwilightCompleteOnly">
+        <Count Link="AP_ArtanisTemperedInTwilight" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeArtanisAntiAirWeaponUnlockedCompleteOnly">
+        <Count Link="AP_ArtanisAntiAirWeaponUnlocked" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeArtanisAntiAirWeaponDisabledToggleCompleteOnly">
+        <Count Link="AP_ArtanisAntiAirWeaponDisabledToggle" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementNot id="AP_NotCountUpgradeArtanisAntiAirWeaponDisabledToggleCompleteOnly">
+        <OperandArray index="0" value="AP_CountUpgradeArtanisAntiAirWeaponDisabledToggleCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementAnd id="AP_AndArtanisAntiAirWeaponEnabledCompleteOnly">
+        <OperandArray value="AP_CountUpgradeArtanisAntiAirWeaponUnlockedCompleteOnly"/>
+        <OperandArray value="AP_NotCountUpgradeArtanisAntiAirWeaponDisabledToggleCompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_AndArtanisAntiAirWeaponDisabledCompleteOnly">
+        <OperandArray value="AP_CountUpgradeArtanisAntiAirWeaponUnlockedCompleteOnly"/>
+        <OperandArray value="AP_CountUpgradeArtanisAntiAirWeaponDisabledToggleCompleteOnly"/>
+    </CRequirementAnd>
     <CRequirementCountUpgrade id="AP_CountUpgradeSOAFenixCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>

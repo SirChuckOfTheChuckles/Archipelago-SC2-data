@@ -12835,6 +12835,18 @@
     <CUpgrade id="AP_ArtanisTaldarimAspectActive"/>
     <CUpgrade id="AP_ArtanisTaldarimAspectPassive"/>
 
+    <CUpgrade id="AP_ArtanisTemperedInTwilight"/>
+    <CUpgrade id="AP_ArtanisAntiAirWeaponUnlocked">
+        <EffectArray Operation="Set" Reference="Weapon,AP_ArtanisAirAttack,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ArtanisAirAttack,Options[Disabled]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ArtanisAirAttack,Period" Value="0.8"/>
+        <AffectedUnitArray value="AP_ArtanisHero"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ArtanisAntiAirWeaponDisabledToggle">
+        <EffectArray Operation="Set" Reference="Weapon,AP_ArtanisAirAttack,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ArtanisAirAttack,Options[Disabled]" Value="1"/>
+        <AffectedUnitArray value="AP_ArtanisHero"/>
+    </CUpgrade>
     <CUpgrade id="AP_VoidRaySpeedUpgrade">
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>

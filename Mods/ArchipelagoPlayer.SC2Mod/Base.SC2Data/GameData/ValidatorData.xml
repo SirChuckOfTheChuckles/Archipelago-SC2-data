@@ -5366,6 +5366,9 @@
         <CombineArray value="AP_HaveDarkArchonMindControl"/>
         <CombineArray value="AP_IsParasiticDominated"/>
     </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveArtanisTemperedInTwilightUpgrade">
+        <Value value="AP_HaveArtanisTemperedInTwilight"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveSOARepairBeamAllyUpgrade">
         <WhichPlayer Value="Target"/>
         <ResultNoPlayer value="Error"/>

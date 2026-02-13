@@ -1138,6 +1138,10 @@ Button/Name/AP_ArtanisNoAspect=Alone
 Button/Name/AP_ArtanisPurifierAspect=Purifier Aspect
 Button/Name/AP_ArtanisTaldarimAspect=Tal'darim Aspect
 Button/Name/AP_ArtanisWeaponAspectSwap=Swap Weapon Aspects
+Button/Name/AP_ArtanisAirAttackControls=Anti-Air Controls
+Button/Name/AP_ArtanisTemperedInTwilight=Tempered in Twilight
+Button/Name/AP_ArtanisAntiAirWeaponEnable=Enable Anti-Air Weapon
+Button/Name/AP_ArtanisAntiAirWeaponDisable=Disable Anti-Air Weapon
 Button/Name/AP_AscendantAbilityEfficiency=Breath of Creation
 Button/Name/AP_AscendantSacrifice=Sacrifice
 Button/Name/AP_AssaultModeMengsk=Assault Mode
@@ -2589,6 +2593,10 @@ Button/Tooltip/AP_ArtanisNoAspect=Artanis removes his current Weapon Aspect, ret
 Button/Tooltip/AP_ArtanisPurifierAspect=Switch Artanis' active aspect to <c val="f2bf16">Purifier</c>, granting him access to any unlocked bonuses and making him count as a <c val="f2bf16">Purifier</c> unit.
 Button/Tooltip/AP_ArtanisTaldarimAspect=Switch Artanis' active aspect to <c val="d40d24">Taldarim</c>, granting him access to any unlocked bonuses and making him count as a <c val="d40d24">Taldarim</c> unit.
 Button/Tooltip/AP_ArtanisWeaponAspectSwap=Swap Artanis to a different weapon aspect.
+Button/Tooltip/AP_ArtanisAirAttackControls=Open anti-air controls for Artanis.
+Button/Tooltip/AP_ArtanisTemperedInTwilight=Passive: Artanis restores 2 energy whenever he deals attack damage with his melee or anti-air weapon.
+Button/Tooltip/AP_ArtanisAntiAirWeaponEnable=Enable Artanis' anti-air weapon.
+Button/Tooltip/AP_ArtanisAntiAirWeaponDisable=Disable Artanis' anti-air weapon.
 Button/Tooltip/AP_AscendantAbilityEfficiency=Ascendant abilities cost <d ref="Upgrade,AP_AscendantAbilityEfficiency,EffectArray[0].Value"/> less energy.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_AscendantSacrifice=Reduces target friendly unit to <d ref="Effect,AP_AscendantSacrificeDamage,Amount"/> life (shields are not affected).<n/><n/>Grants the Ascendant <d ref="Effect,AP_AscendantSacrificeDamage5,LeechFraction[Energy]"/> energy for each life point reduced, up to its maximum energy.<n/><n/><c val="#ColorAttackInfo">Can only target friendly units.</c>
 Button/Tooltip/AP_AssaultModeMengsk=Transforms the Sky Fury to Assault Mode. In this mode Sky Furies move on the ground and can only attack ground targets.
@@ -7396,3 +7404,6 @@ Weapon/Tip/AP_Talons=
 Weapon/Tip/AP_VoidRayChargeBeamBounce=Deals <d ref="Effect,AP_VoidRayChargeBeamBounce1Damage,Amount"/> damage to <d ref="Effect,AP_VoidRayChargeBeamBounce1Search,MaxCount"/> secondary target if not charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBounce2Damage,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounce2Damage,Amount + Effect,AP_VoidRayChargeBeamBounce2Damage,AttributeBonus[Armored]"/> vs Armored) damage to <d ref="Effect,AP_VoidRayChargeBeamBounce2Search,MaxCount"/> secondary targets if halfway charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBounce3Damage,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounce3Damage,Amount + Effect,AP_VoidRayChargeBeamBounce3Damage,AttributeBonus[Armored]"/> vs Armored) damage to <d ref="Effect,AP_VoidRayChargeBeamBounce3Search,MaxCount"/> secondary targets damage if fully charged.
 Weapon/Tip/AP_VoidRayChargeBeamBounceUpgraded=Deals <d ref="Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,Amount + Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,AttributeBonus[Armored]"/> vs Armored) damage to to secondary targets at all charge levels. Hits 1 additional target per charge level.
 Weapon/Tip/AP_VoidRayChargeBeamRange=Deals <d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge2,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge2,Amount + Effect,AP_VoidRayChargeBeamBaseDamageCharge2,AttributeBonus[Armored]"/> vs Armored) damage if halfway charged,<n/><d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge3,Amount"/> (<d ref="Effect,AP_VoidRayChargeBeamBaseDamageCharge3,Amount + Effect,AP_VoidRayChargeBeamBaseDamageCharge3,AttributeBonus[Armored]"/> vs Armored) damage if fully charged.
+
+Abil/Name/AP_ArtanisAntiAirWeaponEnable=Enable Anti-Air Weapon
+Abil/Name/AP_ArtanisAntiAirWeaponDisable=Disable Anti-Air Weapon

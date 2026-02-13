@@ -14658,6 +14658,8 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="AP_ArtanisWeaponAspects"/>
+        <AbilArray Link="AP_ArtanisAntiAirWeaponEnable"/>
+        <AbilArray Link="AP_ArtanisAntiAirWeaponDisable"/>
         <AbilArray Link="AP_SuppressionPulse"/>
         <AbilArray Link="AP_ArtanisLightningDash"/>
         <AbilArray Link="AP_ArtanisAstralWind"/>
@@ -14698,6 +14700,13 @@
             <LayoutButtons Face="AP_PhasePrism" Type="AbilCmd" AbilCmd="AP_PhasePrism,Execute" Row="1" Column="1"/>
             <LayoutButtons Face="ArtanisForceOfWill" Type="Passive" Row="2" Column="3"/>
             <LayoutButtons Face="AP_ArtanisWeaponAspectSwap" Type="Submenu" SubmenuCardId="WA" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_ArtanisAirAttackControls" Type="Submenu" SubmenuCardId="AA" Requirements="AP_HaveArtanisAntiAirWeaponUnlocked" Row="1" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="AA">
+            <LayoutButtons Face="AP_ArtanisTemperedInTwilight" Type="Passive" Requirements="AP_HaveArtanisTemperedInTwilight" Row="0" Column="0"/>
+            <LayoutButtons Face="AP_ArtanisAntiAirWeaponEnable" Type="AbilCmd" AbilCmd="AP_ArtanisAntiAirWeaponEnable,Execute" Requirements="AP_HaveArtanisAntiAirWeaponDisabled" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_ArtanisAntiAirWeaponDisable" Type="AbilCmd" AbilCmd="AP_ArtanisAntiAirWeaponDisable,Execute" Requirements="AP_HaveArtanisAntiAirWeaponEnabled" Row="1" Column="2"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <CardLayouts CardId="WA">
             <LayoutButtons Face="AP_ArtanisAiurAspect" Type="AbilCmd" AbilCmd="AP_ArtanisWeaponAspects,0" Row="0" Column="0"/>
