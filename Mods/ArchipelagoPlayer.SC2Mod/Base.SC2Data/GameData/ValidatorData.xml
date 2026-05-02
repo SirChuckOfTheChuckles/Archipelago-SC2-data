@@ -8340,4 +8340,62 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_CenturionDodge"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="AP_AvengerArmor">
+        <Find value="1"/>
+        <Value value="AP_AvengerArmor"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_AvengerCharge">
+        <Find value="1"/>
+        <Value value="AP_AvengerCharge"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_AvengerChargeTS">
+        <Type value="And"/>
+        <CombineArray value="AP_AvengerChargeValidTarget"/>
+        <CombineArray value="AP_AvengerCharge"/>
+    </CValidatorCombine>
+    <CValidatorUnitWeaponFiring id="AP_AvengerChargeTargetAttacked">
+        <WhichUnit Value="Caster"/>
+        <Weapon value="AP_AvengerWeapon"/>
+        <Find value="0"/>
+    </CValidatorUnitWeaponFiring>
+    <CValidatorCombine id="AP_AvengerChargeValidTarget">
+        <ResultFailed value="Error,/Error/AP_AvengerChargeValidTarget"/>
+        <CombineArray value="AP_DarkTemplarRecallKillMarker"/>
+        <CombineArray value="HasKills"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_BloodHunterLifeSteal">
+        <Find value="1"/>
+        <Value value="AP_BloodHunterLifeSteal"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_BloodHunterStasis">
+        <Compare value="GT"/>
+        <Behavior value="AP_DarkTemplarVoidStasisDurationDummy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="AP_BloodHunterStasisNearby">
+        <WhichLocation Value="CasterPoint"/>
+        <AreaArray Radius="6" Validator="AP_BloodHunterStasis"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Dead"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorPlayerRequirement id="AP_BloodHunterStasisUpgrade">
+        <Find value="1"/>
+        <Value value="AP_BloodHunterStasisUpgrade"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotBloodHunterStasisUpgrade">
+        <Value value="AP_BloodHunterStasisUpgrade"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_DarkTemplarRecallKillMarker">
+        <Compare value="GT"/>
+        <Behavior value="AP_DarkTemplarRecallKillMarker"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationCompareRange id="AP_AvengerChargeMaxDistance">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <WhichLocation Value="SourceUnit"/>
+        <Compare value="LT"/>
+        <Range value="8"/>
+        <Pathing value="1"/>
+        <Value Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="AP_NotVoidStasisAttackable">
+        <Behavior value="AP_DarkTemplarVoidStasisAttackable"/>
+    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

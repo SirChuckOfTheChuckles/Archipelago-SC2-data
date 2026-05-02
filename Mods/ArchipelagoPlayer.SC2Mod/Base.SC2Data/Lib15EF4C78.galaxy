@@ -7553,6 +7553,43 @@ void lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_Protoss_warpInBloodHunterResourceEfficiency
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libNtve_gf_TriggeringProgressUnitType() == "AP_DarkTemplarTaldarim"))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(EventPlayer(), "AP_BloodHunterResourceEfficiencyToggle", c_techCountCompleteOnly) > 0))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCount += 1;
+    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCount >= 5)) {
+        TriggerEnable(TriggerGetCurrent(), false);
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), "AP_BloodHunterResourceEfficiencyToggle", 0);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency_Init () {
+    lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency = TriggerCreate("lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency_Func");
+    TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency, false);
+    TriggerAddEventUnitConstructProgress(lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency, null, c_unitProgressStageStart);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: SlayerInit
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_SlayerInit_Func (bool testConds, bool runActions) {
@@ -9931,9 +9968,9 @@ void lib15EF4C78_gt_AP_Player_YggdrasilBuildingDeathSafety_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: 
+// Trigger: AP_Player_SpireMaturationBugfix
 //--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_kqphgsdmduggqges_Func (bool testConds, bool runActions) {
+bool lib15EF4C78_gt_AP_Player_SpireMaturationBugfix_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Actions
     if (!runActions) {
@@ -9945,9 +9982,9 @@ bool lib15EF4C78_gt_kqphgsdmduggqges_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_kqphgsdmduggqges_Init () {
-    lib15EF4C78_gt_kqphgsdmduggqges = TriggerCreate("lib15EF4C78_gt_kqphgsdmduggqges_Func");
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_kqphgsdmduggqges, null, AbilityCommand("AP_AutoMorphSpire", 0), c_abilMorphStageFacingEnd, false);
+void lib15EF4C78_gt_AP_Player_SpireMaturationBugfix_Init () {
+    lib15EF4C78_gt_AP_Player_SpireMaturationBugfix = TriggerCreate("lib15EF4C78_gt_AP_Player_SpireMaturationBugfix_Func");
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_SpireMaturationBugfix, null, AbilityCommand("AP_AutoMorphSpire", 0), c_abilMorphStageFacingEnd, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -10129,6 +10166,7 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_SupplicantWarpFinish_Init();
     lib15EF4C78_gt_SupplicantWarpCancel_Init();
     lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Init();
+    lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency_Init();
     lib15EF4C78_gt_SlayerInit_Init();
     lib15EF4C78_gt_CreepTumorBuild_Init();
     lib15EF4C78_gt_AP_Player_checkPrimaryTownHallPeriodic_Init();
@@ -10183,7 +10221,7 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_AP_Player_YggdrasilConsumeComplete_Init();
     lib15EF4C78_gt_AP_Player_YggdrasilDeathSafety_Init();
     lib15EF4C78_gt_AP_Player_YggdrasilBuildingDeathSafety_Init();
-    lib15EF4C78_gt_kqphgsdmduggqges_Init();
+    lib15EF4C78_gt_AP_Player_SpireMaturationBugfix_Init();
     lib15EF4C78_gt_EmitTransformerLand_Init();
     lib15EF4C78_gt_MakeHeroArtanis_Init();
     lib15EF4C78_gt_MakeHeroKerrigan_Init();
