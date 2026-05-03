@@ -48204,7 +48204,6 @@
     </CActorModel>
     <CActorModel id="AP_AvengerArmor" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_DarkTemplarRecallArmorSearch.Start" Send="Create"/>
-        <On Terms="UnitBirth.AP_DarkTemplarAiur.EditorPlaced" Send="Create"/>
         <On Terms="ActorCreation" Send="SetTintColor 25,25,25"/>
         <HostSiteOps Ops="SOpMoveUpByDot5"/>
         <Scale value="3.000000,3.000000,0.500000"/>
@@ -48213,7 +48212,6 @@
         <EditorCategories value=""/>
         <On Terms="Behavior.AP_DarkTemplarRecallArmor.On" Send="Create"/>
         <On Terms="Behavior.AP_DarkTemplarRecallArmor.Off" Send="AnimBracketStop BSD"/>
-        <On Terms="UnitBirth.*.EditorPlaced" Send="Create"/>
         <Scale value="0.050000,0.050000,0.300000"/>
         <AutoScaleFromSelectionFactor value="2.000000"/>
     </CActorModel>
@@ -48233,7 +48231,6 @@
     <CActorModel id="AP_AvengerChargeAttackspeed" parent="ModelAddition">
         <On Terms="Behavior.AP_AvengerChargeAttackspeed.On" Send="Create"/>
         <On Terms="Behavior.AP_AvengerChargeAttackspeed.Off" Send="AnimBracketStop BSD"/>
-        <On Terms="UnitBirth.AP_DarkTemplarAiur.EditorPlaced" Send="Create"/>
         <HostSiteOps Ops="SOpAttachHead"/>
     </CActorModel>
     <CActorSound id="AP_AvengerChargeSound" parent="SoundOneShot">
@@ -48247,7 +48244,6 @@
     <CActorModel id="AP_BloodHunterLifesteal" parent="ModelAddition">
         <On Terms="Effect.AP_BloodHunterLifeSteal.Start" Send="Create"/>
         <On Terms="Effect.AP_BloodHunterLifeSteal.Stop" Send="AnimBracketStop BSD"/>
-        <On Terms="UnitBirth.AP_DarkTemplarTaldarim.EditorPlaced" Send="Create"/>
         <On Terms="ActorCreation" Send="SetTintColor 255,50,25"/>
         <HostSiteOps Ops="SOpAttachCenter AP_BloodHunterLifestealRotation AP_BloodHunterLifestealOffset"/>
         <Scale value="0.600000"/>
