@@ -17344,6 +17344,7 @@
         <EffectArray Operation="Subtract" Reference="Abil,AP_WarpGateTrainRedirect,InfoArray[Train16].Charge.TimeUse" Value="30.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_GatewayTrain,InfoArray[Train16].Time" Value="35.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_GatewayTrainRedirect,InfoArray[Train16].Time" Value="35.000000"/>
+        <Icon value="AP\Assets\Textures\btn-accelerated-warp.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_BloodHunterResourceEfficiency"/>
 </Catalog>
