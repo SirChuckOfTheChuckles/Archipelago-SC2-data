@@ -17382,8 +17382,6 @@
         </Element>
         <Element Type="Category" Id="EA22691F">
             <Item Type="Trigger" Library="15EF4C78" Id="1404D477"/>
-            <Item Type="Trigger" Library="15EF4C78" Id="68990584"/>
-            <Item Type="Trigger" Library="15EF4C78" Id="E3AED1A8"/>
         </Element>
         <Element Type="Trigger" Id="1404D477">
             <Variable Type="Variable" Library="15EF4C78" Id="E657DF57"/>
@@ -17500,124 +17498,6 @@
         <Element Type="Param" Id="F6F1FCED">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="00000291"/>
             <Preset Type="PresetValue" Library="Ntve" Id="00000109"/>
-        </Element>
-        <Element Type="Trigger" Id="68990584">
-            <Event Type="FunctionCall" Library="15EF4C78" Id="42FFA1BA"/>
-            <Action Type="FunctionCall" Library="15EF4C78" Id="475B2375"/>
-        </Element>
-        <Element Type="FunctionCall" Id="42FFA1BA">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="791E7DE3"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="B6AC2D14"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="165741E8"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="191FA4AB"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="0E67F2B3"/>
-        </Element>
-        <Element Type="Param" Id="B6AC2D14">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="486B4E85"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
-        </Element>
-        <Element Type="Param" Id="165741E8">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="6F1D5C0F"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="A02B2671"/>
-        </Element>
-        <Element Type="Param" Id="191FA4AB">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="E05F3449"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="03977D39"/>
-        </Element>
-        <Element Type="Param" Id="0E67F2B3">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="1F7CADD4"/>
-            <Value>AP_AvengerCharge</Value>
-            <ValueType Type="abilcmd"/>
-        </Element>
-        <Element Type="FunctionCall" Id="475B2375">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="09840835"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="E77DDBD8"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="15BAC8C9"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="D5ADD171"/>
-        </Element>
-        <Element Type="Param" Id="E77DDBD8">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="A45406E1"/>
-            <Value>1</Value>
-            <ValueType Type="int"/>
-        </Element>
-        <Element Type="Param" Id="15BAC8C9">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="EB47C731"/>
-            <Value>AP_AvengerChargeMarker</Value>
-            <ValueType Type="gamelink"/>
-            <ValueGameType Type="Behavior"/>
-        </Element>
-        <Element Type="Param" Id="D5ADD171">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="A6600060"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="04348257"/>
-        </Element>
-        <Element Type="FunctionCall" Id="04348257">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
-        </Element>
-        <Element Type="Trigger" Id="E3AED1A8">
-            <Event Type="FunctionCall" Library="15EF4C78" Id="F3A657AA"/>
-            <Action Type="Comment" Library="15EF4C78" Id="01864516"/>
-            <Action Type="FunctionCall" Library="15EF4C78" Id="F89C92A9"/>
-        </Element>
-        <Element Type="FunctionCall" Id="F3A657AA">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="791E7DE3"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="9044E33B"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="4D2EB718"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="2D8B7DAC"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="F6B8B56E"/>
-        </Element>
-        <Element Type="Param" Id="9044E33B">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="486B4E85"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="C84C7A78"/>
-        </Element>
-        <Element Type="Param" Id="4D2EB718">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="6F1D5C0F"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="3ECA4D03"/>
-        </Element>
-        <Element Type="Param" Id="2D8B7DAC">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="E05F3449"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="03977D39"/>
-        </Element>
-        <Element Type="Param" Id="F6B8B56E">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="1F7CADD4"/>
-            <Value>AP_AvengerCharge</Value>
-            <ValueType Type="abilcmd"/>
-        </Element>
-        <Element Type="Comment" Id="01864516">
-            <Comment>
-                disables prioritizing targets with kills on auto-attack
-            </Comment>
-        </Element>
-        <Element Type="FunctionCall" Id="F89C92A9">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C47C0524"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="7C60EF31"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="C52980C1"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="A26681B3"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="3325627D"/>
-        </Element>
-        <Element Type="Param" Id="7C60EF31">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="6F19F7ED"/>
-            <Value>1</Value>
-            <ValueType Type="int"/>
-        </Element>
-        <Element Type="Param" Id="C52980C1">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="9A6B09E3"/>
-            <Value>AP_AvengerChargeMarker</Value>
-            <ValueType Type="gamelink"/>
-            <ValueGameType Type="Behavior"/>
-        </Element>
-        <Element Type="Param" Id="A26681B3">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="2E722704"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="CEDF407C"/>
-        </Element>
-        <Element Type="FunctionCall" Id="CEDF407C">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
-        </Element>
-        <Element Type="Param" Id="3325627D">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="02BBDCC1"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="F68B34D5"/>
-        </Element>
-        <Element Type="FunctionCall" Id="F68B34D5">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
         </Element>
         <Element Type="Category" Id="83A75418">
             <Item Type="Trigger" Library="15EF4C78" Id="3F58386C"/>

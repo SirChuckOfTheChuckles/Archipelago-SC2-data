@@ -8391,6 +8391,7 @@
         <CombineArray value="AP_AvengerChargeValidTarget"/>
         <CombineArray value="AP_AvengerCharge"/>
         <CombineArray value="AP_AvengerChargeEnabled"/>
+        <CombineArray value="AP_AvengerChargeAutoCastOn"/>
     </CValidatorCombine>
     <CValidatorUnitWeaponFiring id="AP_AvengerChargeTargetAttacked">
         <WhichUnit Value="Caster"/>
@@ -8438,6 +8439,15 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_AvengerChargeMarker"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitOrder id="AP_AvengerChargeAutoCastOff">
+        <AbilLink value="AP_AvengerCharge"/>
+        <CmdFlags index="SetAutoCast" value="1"/>
+        <CmdFlags index="SetAutoCastOn" value="1"/>
+    </CValidatorUnitOrder>
+    <CValidatorCombine id="AP_AvengerChargeAutoCastOn">
+        <CombineArray value="AP_AvengerChargeAutoCastOff"/>
+        <Negate value="1"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="AP_NotVoidStasisAttackable">
         <Behavior value="AP_DarkTemplarVoidStasisAttackable"/>
     </CValidatorUnitCompareBehaviorCount>
