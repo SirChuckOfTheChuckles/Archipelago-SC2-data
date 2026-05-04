@@ -11660,6 +11660,7 @@
         <BuffFlags index="Channeling" value="1"/>
         <Duration value="3.5"/>
         <Modification MoveSpeedMultiplier="2.2">
+            <BehaviorLinkDisableArray value="AP_AvengerChargeMarker"/>
             <StateFlags index="SuppressCollision" value="1"/>
         </Modification>
     </CBehaviorBuff>
@@ -11671,6 +11672,9 @@
         <BuffFlags index="Channeling" value="1"/>
         <Duration value="6"/>
         <Modification AttackSpeedMultiplier="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_AvengerChargeMarker">
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_DarkTemplarRecallArmor">
         <Alignment value="Positive"/>
@@ -11714,5 +11718,12 @@
             <BehaviorLinkDisableArray value="SalvageShared"/>
             <BehaviorLinkDisableArray value="SensorTowerRadar"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BloodHunterLifeSteal">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-alarak-rangeweapon.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="2"/>
+        <InitialEffect value="AP_BloodHunterLifeStealSet"/>
+        <FinalEffect value="AP_BloodHunterLifeStealDestroySet"/>
     </CBehaviorBuff>
 </Catalog>

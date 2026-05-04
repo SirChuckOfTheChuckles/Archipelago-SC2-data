@@ -2301,6 +2301,7 @@ Behavior/EditorPrefix/AP_BattlecruiserBonusRangeIndicator=AP -
 Behavior/EditorPrefix/AP_BattlecruiserCloak=AP -
 Behavior/EditorPrefix/AP_BattlecruiserMengskBehemothReactorIndicator=AP -
 Behavior/EditorPrefix/AP_BileDucts=AP -
+Behavior/EditorPrefix/AP_BloodHunterLifeSteal=AP - BloodHunter -
 Behavior/EditorPrefix/AP_BroodlingAttackDelay=AP -
 Behavior/EditorPrefix/AP_BroodlingFate=AP - Brood Lord -
 Behavior/EditorPrefix/AP_BunkerNotJumbo=AP -

@@ -8390,6 +8390,7 @@
         <Type value="And"/>
         <CombineArray value="AP_AvengerChargeValidTarget"/>
         <CombineArray value="AP_AvengerCharge"/>
+        <CombineArray value="AP_AvengerChargeEnabled"/>
     </CValidatorCombine>
     <CValidatorUnitWeaponFiring id="AP_AvengerChargeTargetAttacked">
         <WhichUnit Value="Caster"/>
@@ -8433,6 +8434,10 @@
         <Pathing value="1"/>
         <Value Value="TargetUnit"/>
     </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareBehaviorCount id="AP_AvengerChargeEnabled">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_AvengerChargeMarker"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_NotVoidStasisAttackable">
         <Behavior value="AP_DarkTemplarVoidStasisAttackable"/>
     </CValidatorUnitCompareBehaviorCount>

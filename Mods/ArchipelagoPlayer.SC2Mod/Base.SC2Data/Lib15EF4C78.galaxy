@@ -6174,6 +6174,46 @@ void lib15EF4C78_gt_AP_Player_AvengerRecallUnselect_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_AvengerChargeAutocastOn
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorRemove(EventUnit(), "AP_AvengerChargeMarker", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn_Init () {
+    lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn = TriggerCreate("lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn_Func");
+    TriggerAddEventUnitAbilityAutoCastChange(lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn, null, AbilityCommand("AP_AvengerCharge", 0), c_unitAbilAutoCastChangeOn, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_AvengerChargeAutocastOff
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(EventUnit(), "AP_AvengerChargeMarker", EventUnit(), 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff_Init () {
+    lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff = TriggerCreate("lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff_Func");
+    TriggerAddEventUnitAbilityAutoCastChange(lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff, null, AbilityCommand("AP_AvengerCharge", 0), c_unitAbilAutoCastChangeOff, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: AP_Player_ElderProbeWarpInHandler
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Func (bool testConds, bool runActions) {
@@ -10132,6 +10172,8 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_KerriganEconDrop_Init();
     lib15EF4C78_gt_AP_Player_SentinelRecharge_Init();
     lib15EF4C78_gt_AP_Player_AvengerRecallUnselect_Init();
+    lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOn_Init();
+    lib15EF4C78_gt_AP_Player_AvengerChargeAutocastOff_Init();
     lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Init();
     lib15EF4C78_gt_PM_SoAStatusWatch_Init();
     lib15EF4C78_gt_PM_SoAAutonomousStatusWatch_Init();

@@ -523,6 +523,7 @@ Behavior/Name/AP_BatteryOvercharge=Battery Overcharge
 Behavior/Name/AP_BattlecruiserBonusRange=Field-Assist Targeting System
 Behavior/Name/AP_BattlecruiserCloak=Cloak
 Behavior/Name/AP_BileDucts=Bile Ducts
+Behavior/Name/AP_BloodHunterLifeSteal=Essence Drain
 Behavior/Name/AP_BurstCapacitorsDamageBuff=Burst Capacitors
 Behavior/Name/AP_CarrierRepairDroneRecall=Carrier Repair Drone Recall
 Behavior/Name/AP_CenturionDodge=Quantum Dodge
@@ -859,6 +860,7 @@ Behavior/Tooltip/AP_BansheeCloak_Stukov=This unit is cloaked and will only be re
 Behavior/Tooltip/AP_BatteryOvercharge=Restoration rate increased by <d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>%. Restoring shields does not consume energy.
 Behavior/Tooltip/AP_BattlecruiserBonusRange=+<d ref="Behavior,AP_BattlecruiserBonusRange,Modification.RangedWeaponRange"/> weapon range.
 Behavior/Tooltip/AP_BattlecruiserMengskBehemothReactorIndicator=Battlecruiser special abilities require 25 less energy to cast. Pride of Augustgrad cooldown-based ability cooldowns are 20% shorter.
+Behavior/Tooltip/AP_BloodHunterLifeSteal=Recovering life and shields.
 Behavior/Tooltip/AP_CenturionDodge=The next hit will be dodged.
 Behavior/Tooltip/AP_Charging=This Zealot is charging, allowing it to quickly close the distance with its target.
 Behavior/Tooltip/AP_CleansingSmite=This unit is taking damage over time and restoring Artanis' shields.
@@ -1281,13 +1283,13 @@ Button/Name/AP_BioMechanicalHeal=Bio-Mechanical Repair
 Button/Name/AP_BioMechanicalStockpiling=Bio-Mechanical Stockpiling
 Button/Name/AP_BioMechanicalTransfusionPassive=Bio-Mechanical Transfusion
 Button/Name/AP_BioelectricPayload=Bioelectric Payload
-Button/Name/AP_BirthPygalisk=Birth Pygalisk
 Button/Name/AP_BirthAberration=Birth Aberration
 Button/Name/AP_BirthCorpser=Birth Roach
 Button/Name/AP_BirthDrone=Birth Drone
 Button/Name/AP_BirthHydralisk=Birth Hydralisk
 Button/Name/AP_BirthHydraliskImpaler=Birth Hydralisk
 Button/Name/AP_BirthHydraliskLurker=Birth Hydralisk
+Button/Name/AP_BirthPygalisk=Birth Pygalisk
 Button/Name/AP_BirthRaptor=Birth Zergling
 Button/Name/AP_BirthRoach=Birth Roach
 Button/Name/AP_BirthSwarmling=Birth Zergling
@@ -2864,13 +2866,13 @@ Button/Tooltip/AP_BioMechanicalHeal=Heals a friendly biological or mechanical un
 Button/Tooltip/AP_BioMechanicalStockpiling=Infested Factories and Starports can store 3 additional unit charges.
 Button/Tooltip/AP_BioMechanicalTransfusionPassive=Rapid Transfusion healing increased by 10 and can now target mechanical units and structures.
 Button/Tooltip/AP_BioelectricPayload=The Infested Missile Turret's main weapon deals +<d ref="Upgrade,AP_BioelectricPayload,EffectArray[0].Value"/> increased damage to mechanical targets per missile.
-Button/Tooltip/AP_BirthPygalisk=New xenotype created by Dominion scientists.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BirthAberration=Aberrations are durable units that deal heavy damage to armored targets.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_BirthCorpser=Corpser Strain<n/><n/>Assault unit. Regenerates life quickly while burrowed. Can infest the enemy with Roachlings. <n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BirthDrone=Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BirthHydralisk=High-damage ranged unit.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/AP_BirthHydraliskImpaler=Impaler Strain<n/><n/>High-damage ranged unit. Can morph into an Impaler.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/AP_BirthHydraliskLurker=Lurker Strain<n/><n/>High-damage ranged unit. Can morph into a Lurker.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
+Button/Tooltip/AP_BirthPygalisk=New xenotype created by Dominion scientists.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BirthRaptor=Raptor Strain<n/><n/>Fast melee unit. Leaps over obstacles and onto targets from range. Deals increased damage. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/AP_BirthRoach=Assault unit. Regenerates life quickly when burrowed.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BirthSwarmling=Swarmling Strain<n/><n/>Fast melee unit. Spawns in groups of three. Morphs almost instantly. Can morph into a Baneling.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
@@ -2879,8 +2881,8 @@ Button/Tooltip/AP_BirthZergling=Fast melee creature. Can morph into a Baneling.<
 Button/Tooltip/AP_Blink=Teleports the Stalker to a nearby target location. Ability can only be used once every <d ref="Abil,AP_Blink,Cost[0].Cooldown.TimeUse"/> seconds.
 Button/Tooltip/AP_BlinkShieldRestoreUpgrade=Allows the Stalker's Blink ability to restore <d ref="Effect,AP_VoidStalkerBlinkRestoreModifyUnit,VitalArray[Shields].Change*(Behavior,AP_VoidStalkerBlinkShieldRestore,Duration/Behavior,AP_VoidStalkerBlinkShieldRestore,Period)"/> shields over <d time="5"/> after use.
 Button/Tooltip/AP_BloodAmulet=Increases starting energy by 150 and maximum energy by 50.
-Button/Tooltip/AP_BloodHunterBrutalEfficiency=Doubles the Blood Hunter's attack rate.<n/><n/><c val="FFE303">War Council Upgrade.</c>
-Button/Tooltip/AP_BloodHunterLifeSteal=If a nearby enemy unit is affected by Void Stasis, Blood Hunter attacks restore up to <d ref="Effect,AP_BloodHunterLifeSteal,RechargeVitalRate * Effect,AP_BloodHunterLifeSteal,PeriodCount * Effect,AP_BloodHunterLifeSteal,PeriodicPeriod"/> life and shields over <d ref="Effect,AP_BloodHunterLifeSteal,PeriodCount * Effect,AP_BloodHunterLifeSteal,PeriodicPeriod"/> seconds.
+Button/Tooltip/AP_BloodHunterBrutalEfficiency=Bonus damage against Biological applies to all targets.<n/><n/><c val="FFE303">War Council Upgrade.</c>
+Button/Tooltip/AP_BloodHunterLifeSteal=If a nearby enemy unit is affected by Void Stasis, Blood Hunter attacks restore up to <d ref="Effect,AP_BloodHunterLifeSteal,RechargeVitalRate * Behavior,AP_BloodHunterLifeSteal,Duration"/> life and shields over <d ref="Behavior,AP_BloodHunterLifeSteal,Duration"/> seconds.
 Button/Tooltip/AP_BloodHunterResourceEfficiency=The first 5 Blood Hunters you warp in do no cost vespene gas.<n/><n/>Only works with Warp Train. Does not refresh if the warp-in is cancelled.
 Button/Tooltip/AP_BloodHunterStasisUpgrade=Increases the duration of Void Stasis by <d ref="Behavior,AP_DarkTemplarVoidStasisAttackable,Duration"/> seconds, during which the target can be attacked. Also allows casting Void Stasis on air units.
 Button/Tooltip/AP_BroodLord=Flying heavy-assault unit. Shoots Broodlings at its target. A Broodling is a small creature that can attack ground units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -3803,8 +3805,8 @@ Button/Tooltip/AP_RavagerBileDamage=Increases Corrosive Bile enemy damage by <c 
 Button/Tooltip/AP_RavagerBileRadius=Increases Corrosive Bile <c val="ffff8a">impact size</c> by <c val="ffff8a"><d ref="($UpgradeEffectArrayValue:AP_HotSRavagerBloatedBileDucts:Effect,AP_RavagerCorrosiveBileSearch,AreaArray[0].Radius$/Effect,AP_RavagerCorrosiveBileSearch,AreaArray[0].Radius-1)*100" player="0"/>%</c>, and Corrosive Bile no longer damages friendly units.
 Button/Tooltip/AP_RavagerBileRoachlings=Corrosive Bile spawns <c val="ffff8a">2 Roachlings</c> at the impact point, and Ravagers spawn <c val="ffff8a">4 Roachlings</c> on death that last <c val="ffff8a">15 seconds</c>.<n/><n/>Roachlings are now immune to Corrosive Bile.
 Button/Tooltip/AP_RavagerBonePlating=Ravagers gain <c val="ffff8a">+<d ref="Upgrade,AP_HotSRavagerBonePlating,EffectArray[0].Value"/> maximum life</c> and <c val="ffff8a">+<d ref="Upgrade,AP_HotSRavagerBonePlating,EffectArray[4].Value"/> armor</c>.
-Button/Tooltip/AP_RavagerBurrowedBombardment=Ravagers can attack while <c val="ffff8a">burrowed</c>, but can only target <c val="ffff8a">air</c> units with their burrowed attack.<n/><n/>Ravagers can use Corrosive Bile while <c val="ffff8a">burrowed</c>.
 Button/Tooltip/AP_RavagerBurrowed=Ranged artillery. Can use Corrosive Bile.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/AP_RavagerBurrowedBombardment=Ravagers can attack while <c val="ffff8a">burrowed</c>, but can only target <c val="ffff8a">air</c> units with their burrowed attack.<n/><n/>Ravagers can use Corrosive Bile while <c val="ffff8a">burrowed</c>.
 Button/Tooltip/AP_RavagerCocoon=This cocoon contains a Roach that is morphing into a Ravager.
 Button/Tooltip/AP_RavagerCorrosiveBile=Launch a missile at the target location, dealing <c val="ffff8a"><d ref="Effect,AP_RavagerCorrosiveBileEnemyDamage,Amount"/> damage</c> to enemy units and <c val="ffff8a"><d ref="Effect,AP_RavagerCorrosiveBileFriendlyDamage,Amount"/> damage</c> to friendly units in the area upon impact.<n/><n/><c val="#ColorAttackInfo">Can destroy Protoss Force Fields.</c>
 Button/Tooltip/AP_RavagerCorrosiveBileUpgrade=Launch a missile at the target location, dealing <c val="ffff8a"><d ref="Effect,AP_RavagerCorrosiveBileEnemyDamage,Amount"/></c> damage to enemy units in the area upon impact.<n/><n/><c val="#ColorAttackInfo">Can destroy Protoss Force Fields.</c>
@@ -5543,8 +5545,8 @@ Effect/Name/AP_RaptorDeathApplyBehavior=Raptor Death Apply Behavior
 Effect/Name/AP_RavagerCorrosiveBileCP=Ravager Corrosive Bile CP
 Effect/Name/AP_RavagerCorrosiveBileCursorDummy=Ravager Corrosive Bile Cursor Dummy
 Effect/Name/AP_RavagerCorrosiveBileEnemyDamage=Ravager Corrosive Bile Enemy Damage
-Effect/Name/AP_RavagerCorrosiveBileFriendlyDamage=Ravager Corrosive Bile Friendly Damage
 Effect/Name/AP_RavagerCorrosiveBileForceFieldKill=Ravager Corrosive Bile Force Field Kill
+Effect/Name/AP_RavagerCorrosiveBileFriendlyDamage=Ravager Corrosive Bile Friendly Damage
 Effect/Name/AP_RavagerCorrosiveBileLaunchDown=Ravager Corrosive Bile Launch Down
 Effect/Name/AP_RavagerCorrosiveBileLaunchSet=Ravager Corrosive Bile Launch Set
 Effect/Name/AP_RavagerCorrosiveBileLaunchUp=Ravager Corrosive Bile Launch Up
