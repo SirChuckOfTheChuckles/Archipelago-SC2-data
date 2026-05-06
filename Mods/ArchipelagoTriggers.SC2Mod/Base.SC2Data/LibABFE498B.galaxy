@@ -9563,11 +9563,7 @@ void libABFE498B_gf_AP_Triggers_Protoss_unlockBloodHunterResourceEfficiency (int
     // Automatic Variable Declarations
     // Implementation
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BloodHunterResourceEfficiency", 1);
-    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCount < 5)) {
-        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BloodHunterResourceEfficiencyToggle", 1);
-        TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency, true);
-    }
-
+    lib15EF4C78_gf_AP_Player_Protoss_activateBloodHunterResourceEfficiency(lp_player);
 }
 
 void libABFE498B_gf_AP_Triggers_Protoss_unlockImmortalFamilySingularityCharge (int lp_player) {
