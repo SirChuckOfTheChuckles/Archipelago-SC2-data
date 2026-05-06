@@ -17275,8 +17275,6 @@
     <CUpgrade id="AP_BloodHunterLifeSteal"/>
     <CUpgrade id="AP_BloodHunterResourceEfficiencyToggle">
         <EffectArray Operation="Subtract" Reference="Unit,AP_DarkTemplarTaldarim,CostResource[Vespene]" Value="125"/>
-        <EffectArray Reference="Abil,AP_GatewayTrainRedirect,InfoArray[Train17].Resource[Vespene]" Value="125"/>
-        <EffectArray Reference="Abil,AP_GatewayTrain,InfoArray[Train17].Resource[Vespene]" Value="125"/>
         <LeaderAlias value="AP_BloodHunterResourceEfficiency"/>
     </CUpgrade>
     <CUpgrade id="AP_BloodHunterStasisUpgrade">
