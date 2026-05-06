@@ -48337,7 +48337,7 @@
     <CActorModel id="AP_AvengerArmor" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_DarkTemplarRecallArmorSearch.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="SetTintColor 25,25,25"/>
-        <HostSiteOps Ops="SOpMoveUpByDot5"/>
+        <HostSiteOps Ops="AP_SOpCasterUnitStationary SOpMoveUpByDot5"/>
         <Scale value="3.000000,3.000000,0.500000"/>
     </CActorModel>
     <CActorModel id="AP_AvengerArmorBuff" parent="ModelAddition">
