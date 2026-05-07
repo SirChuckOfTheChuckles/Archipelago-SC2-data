@@ -1968,6 +1968,11 @@
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_CountUnitDarkShrineCompleteOnlyTechTreeCheat"/>
     </CRequirement>
+    <CRequirement id="AP_HaveDarkShrineResourceEfficiencyDiscount">
+        <EditorCategories value="Race:Protoss,TechType:Unit"/>
+        <NodeArray index="Use" Link="AP_CountUnitDarkShrineCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="AP_AndBloodHunterResourceEfficiencyToggle"/>
+    </CRequirement>
     <CRequirement id="AP_HaveSuperiorWarpGates">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountUpgradeSuperiorWarpGatesCompleteOnly"/>

@@ -2883,7 +2883,7 @@ Button/Tooltip/AP_BlinkShieldRestoreUpgrade=Allows the Stalker's Blink ability t
 Button/Tooltip/AP_BloodAmulet=Increases starting energy by 150 and maximum energy by 50.
 Button/Tooltip/AP_BloodHunterBrutalEfficiency=Bonus damage against Biological applies to all targets.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_BloodHunterLifeSteal=If a nearby enemy unit is affected by Void Stasis, Blood Hunter attacks restore up to <d ref="Effect,AP_BloodHunterLifeSteal,RechargeVitalRate * Behavior,AP_BloodHunterLifeSteal,Duration"/> life and shields over <d ref="Behavior,AP_BloodHunterLifeSteal,Duration"/> seconds.
-Button/Tooltip/AP_BloodHunterResourceEfficiency=The first 5 Blood Hunters warped in do not cost vespene gas.
+Button/Tooltip/AP_BloodHunterResourceEfficiency=The first 5 Blood Hunters trained or warped in do not cost vespene gas.
 Button/Tooltip/AP_BloodHunterStasisUpgrade=Increases the duration of Void Stasis by <d ref="Behavior,AP_DarkTemplarVoidStasisAttackable,Duration"/> seconds, during which the target can be attacked. Also allows casting Void Stasis on air units.
 Button/Tooltip/AP_BroodLord=Flying heavy-assault unit. Shoots Broodlings at its target. A Broodling is a small creature that can attack ground units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BroodLordCocoon=This cocoon contains a Mutalisk that is morphing into a Brood Lord.

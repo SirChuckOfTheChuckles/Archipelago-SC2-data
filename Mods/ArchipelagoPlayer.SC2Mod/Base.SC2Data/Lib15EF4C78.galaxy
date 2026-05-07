@@ -1867,6 +1867,11 @@ text lib15EF4C78_gf_PC_PerkTargetingText (string lp_campaignPerk, int lp_stage) 
 void lib15EF4C78_gf_AP_Player_Protoss_refreshBloodHunterResourceEfficiency (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
+    if ((TechTreeUpgradeCount(lp_player, "AP_BloodHunterResourceEfficiency", c_techCountCompleteOnly) <= 0)) {
+        libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BloodHunterResourceEfficiencyToggle", 0);
+        return;
+    }
+
     if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[lp_player] < 5)) {
         libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BloodHunterResourceEfficiencyToggle", 1);
     }
@@ -1878,9 +1883,14 @@ void lib15EF4C78_gf_AP_Player_Protoss_refreshBloodHunterResourceEfficiency (int 
 void lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount (int lp_player, int lp_spentDelta, int lp_queuedDelta, int lp_totalQueuedDelta) {
     // Automatic Variable Declarations
     // Implementation
+    if ((TechTreeUpgradeCount(lp_player, "AP_BloodHunterResourceEfficiency", c_techCountCompleteOnly) <= 0)) {
+        return;
+    }
+
     lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[lp_player] += lp_spentDelta;
-    lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued[lp_player] += lp_queuedDelta;
-    lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued2[lp_player] += lp_totalQueuedDelta;
+    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[lp_player] < 0)) {
+        lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[lp_player] = 0;
+    }
     lib15EF4C78_gf_AP_Player_Protoss_refreshBloodHunterResourceEfficiency(lp_player);
 }
 
@@ -1893,6 +1903,7 @@ void lib15EF4C78_gf_AP_Player_Protoss_activateBloodHunterResourceEfficiency (int
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, true);
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, true);
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterCancelResourceEfficiency, true);
+    TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterCompleteResourceEfficiency, true);
 }
 
 bool lib15EF4C78_gf_AP_Player_isTownHall (unit lp_building) {
@@ -4692,7 +4703,12 @@ bool lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Func (bool testConds, bool runAc
         return true;
     }
 
-    AP_Sticky_ShowUnitCommand(EventPlayer(), AbilityCommandGetCommand(OrderGetAbilityCommand(EventUnitOrder())), AP_Sticky_BUILDING_GATEWAY);
+    if (((OrderGetAbilityCommand(EventUnitOrder()) == AbilityCommand("AP_GatewayTrainResourceEfficiency", 0)) || (OrderGetAbilityCommand(EventUnitOrder()) == AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 0)) || (OrderGetAbilityCommand(EventUnitOrder()) == AbilityCommand("AP_WarpGateTrainResourceEfficiency", 0)) || (OrderGetAbilityCommand(EventUnitOrder()) == AbilityCommand("AP_WarpGateTrainResourceEfficiencyRedirect", 0)))) {
+        AP_Sticky_ShowUnitCommand(EventPlayer(), 16, AP_Sticky_BUILDING_GATEWAY);
+    }
+    else {
+        AP_Sticky_ShowUnitCommand(EventPlayer(), AbilityCommandGetCommand(OrderGetAbilityCommand(EventUnitOrder())), AP_Sticky_BUILDING_GATEWAY);
+    }
     return true;
 }
 
@@ -4701,6 +4717,10 @@ void lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Init () {
     lib15EF4C78_gt_AP_Player_GatewayStickyKeys = TriggerCreate("lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Func");
     TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_GatewayTrain", 255));
     TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_WarpGateTrain", 255));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_GatewayTrainResourceEfficiency", 255));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 255));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_WarpGateTrainResourceEfficiency", 255));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_GatewayStickyKeys, null, AbilityCommand("AP_WarpGateTrainResourceEfficiencyRedirect", 255));
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7603,7 +7623,10 @@ bool lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterResourceEfficiency_Func (
         return true;
     }
 
-    lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(UnitGetOwner(EventUnitProgressUnit()), 1, 1, 1);
+    if (((TechTreeUpgradeCount(UnitGetOwner(EventUnitProgressUnit()), "AP_BloodHunterResourceEfficiency", c_techCountCompleteOnly) > 0) && (lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[UnitGetOwner(EventUnitProgressUnit())] < 5))) {
+        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(UnitGetOwner(EventUnitProgressUnit()), 1, 0, 0);
+        DataTableSetInt(true, ("AP_BHREWarp_" + IntToString(UnitGetTag(EventUnitProgressUnit()))), 1);
+    }
     return true;
 }
 
@@ -7635,14 +7658,9 @@ bool lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterCancelResourceEfficiency_
         return true;
     }
 
-    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued2[EventPlayer()] > lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued[EventPlayer()])) {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 0, 0, -1);
-    }
-    else {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), -1, -1, -1);
-    }
-    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[EventPlayer()] < 5)) {
-        PlayerModifyPropertyInt(EventPlayer(), c_playerPropVespene, c_playerPropOperSubtract, 125);
+    if ((DataTableGetInt(true, ("AP_BHREWarp_" + IntToString(UnitGetTag(EventUnit())))) == 1)) {
+        DataTableSetInt(true, ("AP_BHREWarp_" + IntToString(UnitGetTag(EventUnit()))), 0);
+        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(UnitGetOwner(EventUnit()), -1, 0, 0);
     }
 
     return true;
@@ -7672,7 +7690,7 @@ bool lib15EF4C78_gt_AP_Player_Protoss_warpInBloodHunterCompleteResourceEfficienc
         return true;
     }
 
-    lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 0, -1, -1);
+    DataTableSetInt(true, ("AP_BHREWarp_" + IntToString(UnitGetTag(EventUnitProgressUnit()))), 0);
     return true;
 }
 
@@ -7693,12 +7711,7 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency_Func 
         return true;
     }
 
-    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterSpent[EventPlayer()] < 5)) {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 1, 1, 1);
-    }
-    else {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 0, 0, 1);
-    }
+    lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 1, 0, 0);
     return true;
 }
 
@@ -7706,8 +7719,8 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency_Func 
 void lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency_Init () {
     lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency = TriggerCreate("lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency_Func");
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency, false);
-    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency, null, AbilityCommand("AP_GatewayTrain", 16));
-    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency, null, AbilityCommand("AP_GatewayTrainRedirect", 16));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency, null, AbilityCommand("AP_GatewayTrainResourceEfficiency", 0));
+    TriggerAddEventUnitOrder(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterResourceEfficiency, null, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 0));
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7720,12 +7733,7 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency
         return true;
     }
 
-    if ((lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued2[EventPlayer()] > lib15EF4C78_gv_aP_Player_Protoss_BloodHunterCountQueued[EventPlayer()])) {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 0, 0, -1);
-    }
-    else {
-        lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), -1, -1, -1);
-    }
+    lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), -1, 0, 0);
     return true;
 }
 
@@ -7733,8 +7741,8 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency
 void lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency_Init () {
     lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency = TriggerCreate("lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency_Func");
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, null, AbilityCommand("AP_GatewayTrain", 16), c_unitAbilStageCancel, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, null, AbilityCommand("AP_GatewayTrainRedirect", 16), c_unitAbilStageCancel, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, null, AbilityCommand("AP_GatewayTrainResourceEfficiency", 0), c_unitAbilStageCancel, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency, null, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 0), c_unitAbilStageCancel, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -7747,7 +7755,6 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency
         return true;
     }
 
-    lib15EF4C78_gf_AP_Player_Protoss_updateBloodHunterResourceEfficiencyCount(EventPlayer(), 0, -1, -1);
     return true;
 }
 
@@ -7755,8 +7762,8 @@ bool lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency
 void lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2_Init () {
     lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2 = TriggerCreate("lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2_Func");
     TriggerEnable(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, null, AbilityCommand("AP_GatewayTrain", 16), c_unitAbilStageComplete, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, null, AbilityCommand("AP_GatewayTrainRedirect", 16), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, null, AbilityCommand("AP_GatewayTrainResourceEfficiency", 0), c_unitAbilStageComplete, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_AP_Player_Protoss_gatewayBloodHunterCancelResourceEfficiency2, null, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------

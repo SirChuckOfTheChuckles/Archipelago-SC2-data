@@ -24023,12 +24023,16 @@
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_ChampionWarpTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_ChampionWarpTrain.TargetStop" Send="AnimBracketStop BSD"/>
     </CActorModel>
@@ -24037,9 +24041,11 @@
         <On Terms="Abil.AP_StargateWarpTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_ElderProbeBuild.BuiltStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainRobotics.TargetStart" Send="Create"/>
@@ -27406,12 +27412,16 @@
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStop" Send="AnimBracketStop BSD"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStop" Send="AnimBracketStop BSD"/>
         <On Terms="Abil.AP_SuperWarpGateTrainRobotics.TargetStart" Send="Create"/>
@@ -27426,9 +27436,11 @@
         <On Terms="Abil.AP_StargateWarpTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainRobotics.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainStargate.TargetStart" Send="Create"/>
@@ -27444,12 +27456,16 @@
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStop" Send="Destroy"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStop" Send="Destroy"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStop" Send="Destroy"/>
         <On Terms="Abil.AP_SuperWarpGateTrainRobotics.TargetStart" Send="Create"/>
@@ -27468,9 +27484,11 @@
         <On Terms="Abil.AP_StargateWarpTrain.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrain.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrain.TargetStop" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiency.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStop" Send="Create"/>
+        <On Terms="Abil.AP_WarpGateTrainResourceEfficiencyRedirect.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainSystem.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainRobotics.TargetStop" Send="Create"/>
         <On Terms="Abil.AP_SuperWarpGateTrainStargate.TargetStop" Send="Create"/>

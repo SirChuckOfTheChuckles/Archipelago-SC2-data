@@ -8490,6 +8490,8 @@
         <EffectArray Reference="Abil,AP_WarpGateTrainRedirect,InfoArray[Train18].Charge.CountMax" Value="2"/>
         <EffectArray Reference="Abil,AP_WarpGateTrainRedirect,InfoArray[Train19].Charge.CountMax" Value="2"/>
         <EffectArray Reference="Abil,AP_WarpGateTrainRedirect,InfoArray[Train20].Charge.CountMax" Value="2"/>
+        <EffectArray Reference="Abil,AP_WarpGateTrainResourceEfficiency,InfoArray[Train1].Charge.CountMax" Value="2"/>
+        <EffectArray Reference="Abil,AP_WarpGateTrainResourceEfficiencyRedirect,InfoArray[Train1].Charge.CountMax" Value="2"/>
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_WarpGate"/>
     </CUpgrade>
@@ -17329,10 +17331,7 @@
     <CUpgrade id="AP_AvengerArmor"/>
     <CUpgrade id="AP_AvengerCharge"/>
     <CUpgrade id="AP_BloodHunterLifeSteal"/>
-    <CUpgrade id="AP_BloodHunterResourceEfficiencyToggle">
-        <EffectArray Operation="Subtract" Reference="Unit,AP_DarkTemplarTaldarim,CostResource[Vespene]" Value="125"/>
-        <LeaderAlias value="AP_BloodHunterResourceEfficiency"/>
-    </CUpgrade>
+    <CUpgrade id="AP_BloodHunterResourceEfficiencyToggle"/>
     <CUpgrade id="AP_BloodHunterStasisUpgrade">
         <EffectArray Reference="Behavior,AP_DarkTemplarVoidStasisDurationDummy,Duration" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DarkTemplarVoidStasis,IgnoreFilters" Value="-;Player,Ally,Heroic,Missile,UnderConstruction,Hidden,Invulnerable"/>
