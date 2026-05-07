@@ -45,10 +45,14 @@ int[AP_Sticky_NUM_UNIT_CLASSES][AP_Sticky_NUM_FACTIONS_PER_CLASS] abilityIndices
 int[AP_Sticky_NUM_GATEWAY_UNITS] gatewayTrainToUnitClass;
 int[AP_Sticky_NUM_ROBO_UNITS] roboTrainToUnitClass;
 int[AP_Sticky_NUM_STARGATE_UNITS] stargateTrainToUnitClass;
+int[AP_Sticky_NUM_UNIT_CLASSES][AP_Sticky_NUM_FACTIONS_PER_CLASS] resourceEfficiencyIndices;
 string[AP_Sticky_NUM_BUILDINGS] trainAbilNames;
 string[AP_Sticky_NUM_BUILDINGS] warpTrainAbilNames;
 
 void initLists() {
+    int unitClass = 0;
+    int factionIndex = 0;
+
     // train names
     trainAbilNames[AP_Sticky_BUILDING_GATEWAY] = "AP_GatewayTrainRedirect";
     trainAbilNames[AP_Sticky_BUILDING_ROBO] = "AP_RoboticsFacilityTrainRedirect";
@@ -174,16 +178,47 @@ void initLists() {
     abilityIndices[AP_Sticky_CLASS_SCOUT][AP_Sticky_FACTION_PURIFIER]           = 17;  // Caladrius
     abilityIndices[AP_Sticky_CLASS_SCOUT][AP_Sticky_FACTION_NERAZIM]            = 18;  // Mist Wing
     abilityIndices[AP_Sticky_CLASS_SCOUT][AP_Sticky_FACTION_TALDARIM]           = 16;  // Oppressor
+
+    for (; unitClass < AP_Sticky_NUM_UNIT_CLASSES; unitClass += 1) {
+        factionIndex = 0;
+        for (; factionIndex < AP_Sticky_NUM_FACTIONS_PER_CLASS; factionIndex += 1) {
+            resourceEfficiencyIndices[unitClass][factionIndex] = -1;
+        }
+    }
+    resourceEfficiencyIndices[AP_Sticky_CLASS_DARK_TEMPLAR][AP_Sticky_FACTION_TALDARIM] = 0; // Blood Hunter
 }
 
 int unitToAbilityIndex(unit thisUnit) {
     return 0;
 }
 
+int AP_Sticky_GatewayOrderToAbilityIndex(abilcmd command) {
+    int unitClass = 0;
+    int factionIndex = 0;
+    int resourceEfficiencyIndex = -1;
+    string ability = AbilityCommandGetAbility(command);
+    int commandIndex = AbilityCommandGetCommand(command);
+
+    if (((ability == "AP_GatewayTrainResourceEfficiency") || (ability == "AP_GatewayTrainResourceEfficiencyRedirect") || (ability == "AP_WarpGateTrainResourceEfficiency") || (ability == "AP_WarpGateTrainResourceEfficiencyRedirect"))) {
+        for (; unitClass < AP_Sticky_NUM_UNIT_CLASSES; unitClass += 1) {
+            factionIndex = 0;
+            for (; factionIndex < AP_Sticky_NUM_FACTIONS_PER_CLASS; factionIndex += 1) {
+                resourceEfficiencyIndex = resourceEfficiencyIndices[unitClass][factionIndex];
+                if (resourceEfficiencyIndex == commandIndex) {
+                    return abilityIndices[unitClass][factionIndex];
+                }
+            }
+        }
+    }
+
+    return commandIndex;
+}
+
 void AP_Sticky_ShowUnitCommand(int player, int abilIndex, int building) {
     int unitClass = -1;
     int factionIndex = 0;
     int commandIndex = -1;
+    int resourceEfficiencyIndex = -1;
 
     if (abilIndex < 0) {
         return;
@@ -208,12 +243,10 @@ void AP_Sticky_ShowUnitCommand(int player, int abilIndex, int building) {
         commandIndex = abilityIndices[unitClass][factionIndex];
         if (commandIndex >= 0) {
             TechTreeAbilityAllow(player, AbilityCommand(trainAbilNames[building], commandIndex), commandIndex == abilIndex);
-            if (building == AP_Sticky_BUILDING_GATEWAY
-                    && unitClass == AP_Sticky_CLASS_DARK_TEMPLAR
-                    && factionIndex == AP_Sticky_FACTION_TALDARIM
-            ) {
-                TechTreeAbilityAllow(player, AbilityCommand("AP_GatewayTrainResourceEfficiency", 0), commandIndex == abilIndex);
-                TechTreeAbilityAllow(player, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", 0), commandIndex == abilIndex);
+            resourceEfficiencyIndex = resourceEfficiencyIndices[unitClass][factionIndex];
+            if ((building == AP_Sticky_BUILDING_GATEWAY) && (resourceEfficiencyIndex >= 0)) {
+                TechTreeAbilityAllow(player, AbilityCommand("AP_GatewayTrainResourceEfficiency", resourceEfficiencyIndex), commandIndex == abilIndex);
+                TechTreeAbilityAllow(player, AbilityCommand("AP_GatewayTrainResourceEfficiencyRedirect", resourceEfficiencyIndex), commandIndex == abilIndex);
             }
             if (building == AP_Sticky_BUILDING_GATEWAY
                     && unitClass == AP_Sticky_CLASS_SENTRY
@@ -223,12 +256,9 @@ void AP_Sticky_ShowUnitCommand(int player, int abilIndex, int building) {
                 abilIndex = AP_HAVOC_WARP_TRAIN_INDEX;
             }
             TechTreeAbilityAllow(player, AbilityCommand(warpTrainAbilNames[building], commandIndex), commandIndex == abilIndex);
-            if (building == AP_Sticky_BUILDING_GATEWAY
-                    && unitClass == AP_Sticky_CLASS_DARK_TEMPLAR
-                    && factionIndex == AP_Sticky_FACTION_TALDARIM
-            ) {
-                TechTreeAbilityAllow(player, AbilityCommand("AP_WarpGateTrainResourceEfficiency", 0), commandIndex == abilIndex);
-                TechTreeAbilityAllow(player, AbilityCommand("AP_WarpGateTrainResourceEfficiencyRedirect", 0), commandIndex == abilIndex);
+            if ((building == AP_Sticky_BUILDING_GATEWAY) && (resourceEfficiencyIndex >= 0)) {
+                TechTreeAbilityAllow(player, AbilityCommand("AP_WarpGateTrainResourceEfficiency", resourceEfficiencyIndex), commandIndex == abilIndex);
+                TechTreeAbilityAllow(player, AbilityCommand("AP_WarpGateTrainResourceEfficiencyRedirect", resourceEfficiencyIndex), commandIndex == abilIndex);
             }
         }
     }

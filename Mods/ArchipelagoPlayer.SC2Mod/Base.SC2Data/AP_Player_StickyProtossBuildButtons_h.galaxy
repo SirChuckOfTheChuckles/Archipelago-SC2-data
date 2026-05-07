@@ -5,3 +5,5 @@ trigger gt_stickyRoboKeys;
 trigger gt_stickyStargateKeys;
 
 void initStickyBuildKeys();
+int AP_Sticky_GatewayOrderToAbilityIndex(abilcmd command);
+void AP_Sticky_ShowUnitCommand(int player, int abilIndex, int building);
