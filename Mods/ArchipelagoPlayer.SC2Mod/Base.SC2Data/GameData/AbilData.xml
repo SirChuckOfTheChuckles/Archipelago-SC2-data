@@ -8683,6 +8683,16 @@
         </InfoArray>
     </CAbilTrain>
     <CAbilTrain id="AP_GatewayTrainRedirect" parent="AP_GatewayTrain"/>
+    <CAbilTrain id="AP_GatewayTrainResourceEfficiency">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <Activity value="UI/Warping"/>
+        <InfoArray index="Train1" Time="55">
+            <Resource index="Vespene" value="-125"/>
+            <Button DefaultButtonFace="AP_DarkTemplarTaldarim" State="Restricted" Requirements="AP_HaveDarkShrineResourceEfficiencyDiscount"/>
+            <Unit value="AP_DarkTemplarTaldarim"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="AP_GatewayTrainResourceEfficiencyRedirect" parent="AP_GatewayTrainResourceEfficiency"/>
     <CAbilMorph id="AP_MorphBackToGateway">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MorphBackToGateway"/>
@@ -11859,6 +11869,23 @@
         </InfoArray>
     </CAbilWarpTrain>
     <CAbilWarpTrain id="AP_WarpGateTrainRedirect" parent="AP_WarpGateTrain"/>
+    <CAbilWarpTrain id="AP_WarpGateTrainResourceEfficiency">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
+        <InfoArray index="Train1" Time="5" Unit="AP_DarkTemplarTaldarim">
+            <Resource index="Vespene" value="-125"/>
+            <Charge Location="Unit">
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value="WarpGateTrain"/>
+                <TimeUse value="45"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Cooldown Link="WarpGateTrain" Location="Unit"/>
+            <Button DefaultButtonFace="AP_DarkTemplarTaldarim" State="Restricted" Requirements="AP_HaveDarkShrineResourceEfficiencyDiscount"/>
+        </InfoArray>
+    </CAbilWarpTrain>
+    <CAbilWarpTrain id="AP_WarpGateTrainResourceEfficiencyRedirect" parent="AP_WarpGateTrainResourceEfficiency"/>
     <CAbilTransport id="AP_OverlordTransport">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <MaxCargoCount value="8"/>
