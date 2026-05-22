@@ -30180,8 +30180,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="300"/>
-        <LifeMax value="300"/>
+        <LifeStart value="240"/>
+        <LifeMax value="240"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
         <Speed value="2.25"/>
@@ -30193,7 +30193,7 @@
         <Food value="-4"/>
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="250"/>
-        <CostResource index="Vespene" value="600"/>
+        <CostResource index="Vespene" value="400"/>
         <RepairTime value="25"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="stop"/>
@@ -30805,8 +30805,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="75"/>
-        <LifeMax value="75"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
         <Speed value="2.25"/>
@@ -30817,8 +30817,8 @@
         <Sight value="9"/>
         <Food value="-2"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="175"/>
-        <CostResource index="Vespene" value="25"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="50"/>
         <RepairTime value="20"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
