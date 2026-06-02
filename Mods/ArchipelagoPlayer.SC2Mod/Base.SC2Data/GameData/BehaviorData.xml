@@ -9897,9 +9897,17 @@
         </VeterancyLevelArray>
         <VeterancyLevelArray>
             <MinVeterancyXP value="2400"/>
+            <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxArray index="Life" value="25"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray>
+            <MinVeterancyXP value="3600"/>
             <LevelGainEffect value="AP_MarineMengskLevelUpMaxedSet"/>
             <LevelLossEffect value="AP_MarineMengskLevelUpSet"/>
-            <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
+            <RankNameSchema value="Behavior/RankName/AP_MengskRank4"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="25"/>

@@ -99,6 +99,16 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Star"/>
             <Visible val="False"/>
         </Frame>
+        
+        <Frame type="Image" name="Star4">
+            <Anchor side="Bottom" relative="$parent/Background" pos="Min" offset="9"/>
+            <Anchor side="Left" relative="$parent/Star1" pos="Mid" offset="48"/>
+            <Anchor side="Right" relative="$parent/Star1" pos="Mid" offset="48"/>
+            <Width val="22"/>
+            <Height val="21"/>
+            <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Star"/>
+            <Visible val="False"/>
+        </Frame>
 
         <Frame type="UnitStatusHealthBar" name="HealthBar" template="AP_LotV_UnitStatus/UnitStatusSegmentedHealthBarTemplate">
             <Anchor side="Top" relative="$parent/Background" pos="Min" offset="10"/>
@@ -110,11 +120,34 @@
 		<StateGroup name="RankState">
 			<DefaultState val="One"/>
 			
+			<State name="Five">
+				<When type="AnimationState" frame="HealthBar" Rank="5"/>
+				<Action type="SetProperty" frame="Star1" Visible="true"/>
+				<Action type="SetProperty" frame="Star2" Visible="true"/>
+				<Action type="SetProperty" frame="Star3" Visible="true"/>
+				<Action type="SetProperty" frame="Star4" Visible="true"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
+                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
+                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
+                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="12"/>
+                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="12"/>
+                <Action type="SetAnchor" frame="Star4" side="Left" relative="$parent/HealthBar" pos="Mid" offset="36"/>
+                <Action type="SetAnchor" frame="Star4" side="Right" relative="$parent/HealthBar" pos="Mid" offset="36"/>
+			</State>
+			
 			<State name="Max">
 				<When type="AnimationState" frame="HealthBar" Rank="4"/>
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
 				<Action type="SetProperty" frame="Star2" Visible="true"/>
 				<Action type="SetProperty" frame="Star3" Visible="true"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
+                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="24"/>
+                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="24"/>
 			</State>
 			
 			<State name="Three">
@@ -122,6 +155,7 @@
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
 				<Action type="SetProperty" frame="Star2" Visible="true"/>
 				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
                 <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
                 <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
                 <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="13"/>
@@ -133,12 +167,14 @@
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
 				<Action type="SetProperty" frame="Star2" Visible="false"/>
 				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
 			</State>
 			
 			<State name="One">
 				<Action type="SetProperty" frame="Star1" Visible="false"/>
 				<Action type="SetProperty" frame="Star2" Visible="false"/>
 				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
 			</State>
 		</StateGroup>
     </Frame>
@@ -213,6 +249,69 @@
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Marine" layer="1"/>
         </Frame>
+
+		<StateGroup name="RankState">
+			<DefaultState val="Zero"/>
+			
+			<State name="Four">
+				<When type="AnimationState" frame="HealthBar" Rank="4"/>
+				<Action type="SetProperty" frame="Star1" Visible="true"/>
+				<Action type="SetProperty" frame="Star2" Visible="true"/>
+				<Action type="SetProperty" frame="Star3" Visible="true"/>
+				<Action type="SetProperty" frame="Star4" Visible="true"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
+                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
+                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
+                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="12"/>
+                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="12"/>
+                <Action type="SetAnchor" frame="Star4" side="Left" relative="$parent/HealthBar" pos="Mid" offset="36"/>
+                <Action type="SetAnchor" frame="Star4" side="Right" relative="$parent/HealthBar" pos="Mid" offset="36"/>
+			</State>
+			
+			<State name="Three">
+				<When type="AnimationState" frame="HealthBar" Rank="3"/>
+				<Action type="SetProperty" frame="Star1" Visible="true"/>
+				<Action type="SetProperty" frame="Star2" Visible="true"/>
+				<Action type="SetProperty" frame="Star3" Visible="true"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
+                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="24"/>
+                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="24"/>
+			</State>
+			
+			<State name="Two">
+				<When type="AnimationState" frame="HealthBar" Rank="2"/>
+				<Action type="SetProperty" frame="Star1" Visible="true"/>
+				<Action type="SetProperty" frame="Star2" Visible="true"/>
+				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
+                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="13"/>
+                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="13"/>
+			</State>
+			
+			<State name="One">
+				<When type="AnimationState" frame="HealthBar" Rank="1"/>
+				<Action type="SetProperty" frame="Star1" Visible="true"/>
+				<Action type="SetProperty" frame="Star2" Visible="false"/>
+				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
+                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
+			</State>
+
+			<State name="Zero">
+				<Action type="SetProperty" frame="Star1" Visible="false"/>
+				<Action type="SetProperty" frame="Star2" Visible="false"/>
+				<Action type="SetProperty" frame="Star3" Visible="false"/>
+				<Action type="SetProperty" frame="Star4" Visible="false"/>
+			</State>
+		</StateGroup>
     </Frame>
 
     <!-- MEDIC TEMPLATE -->

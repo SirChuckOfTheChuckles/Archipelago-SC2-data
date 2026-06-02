@@ -15079,6 +15079,10 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
     </CUpgrade>
+    <CUpgrade id="AP_MarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+    </CUpgrade>
     <CUpgrade id="AP_HaveGhostMengsk"/>
     <CUpgrade id="AP_TrooperMengskWeaponDrop">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>

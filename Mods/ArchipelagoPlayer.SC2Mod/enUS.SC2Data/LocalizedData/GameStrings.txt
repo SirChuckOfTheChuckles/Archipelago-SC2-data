@@ -844,6 +844,7 @@ Behavior/RankName/AP_MengskRank0=Rank: 0
 Behavior/RankName/AP_MengskRank1=Rank: 1
 Behavior/RankName/AP_MengskRank2=Rank: 2
 Behavior/RankName/AP_MengskRank3=Rank: 3
+Behavior/RankName/AP_MengskRank4=Rank: 4
 Behavior/Tooltip/AP_250mmStrikeCannons=Target is currently stunned and unable to use any abilities.
 Behavior/Tooltip/AP_330mmBarrageCannons=Target is currently stunned and unable to use any abilities.
 Behavior/Tooltip/AP_AP_NovaArmorBlinkSuitBlinkCloaked=This unit is cloaked and will only be revealed by detectors or effects.
