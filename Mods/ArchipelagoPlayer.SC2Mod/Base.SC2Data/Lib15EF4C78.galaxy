@@ -9503,10 +9503,16 @@ void lib15EF4C78_gf_CM_Mengsk_ApplyProdigalSonVeterancy (unit lp_unit) {
 
     // Actions
     lv_xp = UnitXPGetCurrentXP(lp_unit, "AP_MengskVeterancyMarineMengsk");
+    if ((lv_xp <= 0.0)) {
+        lv_xp = UnitXPGetCurrentXP(lp_unit, null);
+    }
     UnitBehaviorAdd(lp_unit, "AP_VeterancySuppressEffects", lp_unit, 1);
+    UnitBehaviorRemove(lp_unit, "AP_MengskVeterancyMarineMengsk", 1);
     UnitBehaviorAdd(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon", lp_unit, 1);
     UnitXPSetCurrentXP(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon", lv_xp);
-    UnitBehaviorRemove(lp_unit, "AP_MengskVeterancyMarineMengsk", 1);
+    if ((lv_xp >= 450.0)) {
+        UnitAbilityAddChargeUsed(lp_unit, "AP_MarineMengskSpiderMines", "Abil/AP_MarineMengskSpiderMines", 1.0);
+    }
 
     DialogControlHookupUnitStatus(c_triggerControlTypeUnitStatusBar, "HealthBar", lp_unit);
     lv_statusframe = DialogControlLastCreated();

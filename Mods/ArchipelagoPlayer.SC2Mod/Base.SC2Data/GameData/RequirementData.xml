@@ -35,6 +35,14 @@
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeCorruptorCorruptionCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_NotHaveMarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeScourgeAmountCompleteOnly"/>

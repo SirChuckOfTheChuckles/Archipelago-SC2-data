@@ -30858,6 +30858,7 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="AP_MarineMengskSpiderMines"/>
         <BehaviorArray Link="AP_MengskVeterancyMarineMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyMarineMengskProdigalSon"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>

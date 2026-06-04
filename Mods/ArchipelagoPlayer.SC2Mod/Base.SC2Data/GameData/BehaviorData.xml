@@ -9879,6 +9879,7 @@
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarineMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <Requirements value="AP_NotHaveMarineMengskProdigalSon"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="600" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
@@ -9897,7 +9898,6 @@
         <VeterancyLevelArray>
             <MinVeterancyXP value="2400"/>
             <LevelGainEffect value="AP_MarineMengskLevelUpMaxedSet"/>
-            <LevelLossEffect value="AP_MarineMengskLevelUpSet"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
@@ -9910,6 +9910,7 @@
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarineMengskProdigalSon">
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <Requirements value="AP_HaveMarineMengskProdigalSon"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="450" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
@@ -9928,7 +9929,6 @@
         <VeterancyLevelArray>
             <MinVeterancyXP value="1800"/>
             <LevelGainEffect value="AP_MarineMengskLevelUpSet"/>
-            <LevelLossEffect value="AP_MarineMengskLevelUpSet"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
@@ -9938,7 +9938,6 @@
         <VeterancyLevelArray>
             <MinVeterancyXP value="2700"/>
             <LevelGainEffect value="AP_MarineMengskLevelUpMaxedSet"/>
-            <LevelLossEffect value="AP_MarineMengskLevelUpSet"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank4"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
