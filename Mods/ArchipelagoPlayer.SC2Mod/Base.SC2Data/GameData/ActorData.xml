@@ -1475,15 +1475,9 @@
         <BarOffset value="40"/>
         <BarWidth value="36"/>
         <GlossaryAnim value="Spell"/>
-        <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
-        </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
-        <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
-        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_GoliathBase" default="1" parent="GenericUnitBase">
         <Aliases value="_UnitLarge"/>
@@ -1534,15 +1528,9 @@
         <SoundArray index="Yes" value="AP_Medic_Yes"/>
         <SoundArray index="Attack" value="AP_Medic_Attack"/>
         <SoundArray index="Pissed" value="AP_Medic_Pissed"/>
-        <GroupIcon>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
-        </GroupIcon>
         <HeroIcon value="Assets\Textures\BTN-Unit-Terran-Medic.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\BTN-Unit-Terran-Medic.dds"/>
-        <Wireframe>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
-        </Wireframe>
     </CActorUnit>
     <CActorSimple id="AP_PsionicLiftImpactAnimBase" default="1">
         <On Terms="ActorCreation" Target="_Unit" Send="AnimClear Attack"/>
@@ -2598,6 +2586,12 @@
         <On Terms="Abil.AP_heal.SourceChannelStop" Send="AnimClear Spell"/>
         <On Terms="Abil.AP_HealPlusMech.SourceChannelStart" Send="$Spell PlayForever"/>
         <On Terms="Abil.AP_HealPlusMech.SourceChannelStop" Send="AnimClear Spell"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_MercMedic" parent="AP_MedicBase" unitName="AP_MercMedic">
         <On Terms="Behavior.AP_MercGroundDrop.Create" Send="Create AP_MercMedicDropModel"/>
@@ -2827,6 +2821,12 @@
         <On Terms="Upgrade.AP_CombatShield.Remove" Send="AnimPlay Cover Cover PlayForever"/>
         <On Terms="Upgrade.AP_CombatShield.Add" Send="AnimClear Cover"/>
         <On Terms="Upgrade.AP_CombatShield.Remove" Send="AnimPlay Cover Cover PlayForever"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_MarineAttack" parent="GenericAttack" effectAttack="AP_GaussRifle">
         <LaunchAssets Model="MarineAttackLaunch" Sound="Marine_AttackLaunch"/>
@@ -3233,6 +3233,22 @@
         <ImpactMap index="None" Sound="Reaper_D8ChargeAttackImpact"/>
     </CActorAction>
     <CActorMissile id="AP_D8ClusterBombReleaseMissile" parent="GenericAttackMissile" unitName="AP_D8ClusterBombWeapon"/>
+    <CActorSound id="AP_MarineMengskSpiderMineLobLaunch" parent="SoundOneShot">
+        <On Terms="Effect.AP_MarineMengskSpiderMineLobLaunchMissile.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSplat id="AP_MarineMengskSpiderMineLobCursorSplat" parent="TerranCursorSplat" abil="AP_MarineMengskSpiderMineLob"/>
+    <CActorRange id="AP_MarineMengskSpiderMineLobRange" parent="RangeAbil" abil="AP_MarineMengskSpiderMineLob"/>
+    <CActorMissile id="AP_MarineMengskSpiderMineLobMissile" parent="GenericAttackMissile" unitName="AP_MarineMengskSpiderMineLobWeapon"/>
+    <CActorAction id="AP_MarineMengskSpiderMineLob" parent="GenericAttack" effectImpact="AP_MarineMengskSpiderMineLobDamage" effectLaunch="AP_MarineMengskSpiderMineLobLaunchMissile">
+        <LaunchAttachQuery Methods="AP_FilterHandLeft"/>
+        <ImpactMap index="None" Sound="AP_VultureSpiderMineAttackImpact"/>
+    </CActorAction>
+    <CActorModel id="AP_MarineMengskSpiderMineLobImpact" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.AP_MarineMengskSpiderMineLobDamage.Start; At Effect" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow"/>
+        <Model value="AP_VultureSpiderMineAttackImpact"/>
+        <Scale value="1.000000"/>
+    </CActorModel>
     <CActorUnit id="AP_Hellion" parent="GenericUnitBase" unitName="AP_Hellion">
         <Aliases value="_UnitMedium"/>
         <Macros value="UnloadDropAnim"/>
@@ -31731,7 +31747,7 @@
         <BarOffset value="155"/>
         <BarWidth value="160"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Barracks-mengsk.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-building-terran-Barracksmengsk.dds"/>
         <NameOffset value="110"/>
@@ -31740,7 +31756,7 @@
         <SoundArray index="Movement" value="Barracks_Movement"/>
         <UnitIcon value="Assets\Textures\btn-building-terran-Barracksmengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Barracks-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_BarracksMengskBuild" parent="TerranBuildingBuild">
@@ -41355,9 +41371,6 @@
         <StatusBarGroups index="Enemy" value="1"/>
         <StatusBarGroups index="All" value="1"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-siegetankmengsk.dds"/>
-        <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-TankMode.dds"/>
-        </Wireframe>
         <Model value="AP_SiegeTank_Mengsk_COOP"/>
     </CActorUnit>
     <CActorAction id="AP_SiegeTankMengskAttack" parent="GenericAttack" effectAttack="AP_SiegeTankMengskDamage">
@@ -42431,10 +42444,13 @@
         <SoundArray index="Click" value="Marauder_Click"/>
         <SoundArray index="ClickError" value="Marauder_ClickError"/>
         <SoundArray index="Highlight" value="Marauder_Highlight"/>
-        <UnitIcon value="Assets\Textures\btn-unit-terran-maraudermengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-marauder-mengsk.dds"/>
+        </GroupIcon>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Marauder.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-marauder-mengsk.dds"/>
         </Wireframe>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-maraudermengsk.dds"/>
     </CActorUnit>
     <CActorAction id="AP_MarauderMengskAttack" parent="AP_MarauderAttackBase" effectImpact="AP_PunisherGrenadesMengskU" effectLaunch="AP_PunisherGrenadesMengskLM">
         <On Terms="Effect.AP_PunisherGrenadesMengskLM.Start; At Caster; !ValidateEffect AP_PunisherGrenadesResearched" Send="Create"/>
@@ -42728,9 +42744,6 @@
         <BarOffset value="50"/>
         <BarWidth value="42"/>
         <GlossaryAnim value="Stand"/>
-        <GroupIcon>
-            <Image value="Assets\Textures\wireframe-ghostfemale.dds"/>
-        </GroupIcon>
         <GroupSoundArray index="What" value="Ghost_GroupWhat"/>
         <GroupSoundArray index="Yes" value="Ghost_GroupYes"/>
         <GroupSoundArray index="Attack" value="Ghost_GroupAttack"/>
@@ -42763,8 +42776,11 @@
         <SoundArray index="ClickError" value="GhostFemale_BlackOps_ClickError"/>
         <SoundArray index="Highlight" value="GhostFemale_BlackOps_Highlight"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-ghostmengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-ghost-mengsk.dds"/>
+        </GroupIcon>
         <Wireframe>
-            <Image value="Assets\Textures\wireframe-ghostfemale.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-ghost-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_GhostMengskAttack" parent="GenericAttack" effectAttack="AP_C10CanisterRifleMengsk">
@@ -43332,6 +43348,9 @@
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskMarine_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <On Terms="Abil.AP_MarineMengskSpiderMineLob.SourcePrepStart" Send="AnimClear Cover"/>
+        <On Terms="Abil.AP_MarineMengskSpiderMineLob.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 1.500000 AsDuration"/>
+        <On Terms="AnimDone; AnimName Spell" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <On Terms="UnitDeath.AP_MarineMengsk; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <On Terms="ActorCreation" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <Model value="AP_MarineMengsk"/>
@@ -43347,6 +43366,12 @@
         </DeathCustoms>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-marine-mengsk.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\wireframe-terran-marine-mengsk.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_MarineMengskAttack" parent="GenericAttack" effectAttack="AP_GaussRifleMengskSet">
         <LaunchAssets Model="MarineAttackLaunch" Sound="Marine_AttackLaunch"/>
@@ -43822,6 +43847,12 @@
         <DeathCustoms ModelLink="AP_MedicMengskDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="None"/>
         </DeathCustoms>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-medic-mengsk.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\wireframe-terran-medic-mengsk.dds"/>
+        </Wireframe>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-medic-mengsk.dds"/>
     </CActorUnit>
     <CActorBeamSimple id="AP_MedicMengskDoubleHealBeam" parent="BeamSimpleAnimationStyleContinuous">

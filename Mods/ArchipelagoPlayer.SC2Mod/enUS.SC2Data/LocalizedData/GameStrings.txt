@@ -2303,6 +2303,7 @@ Button/Name/AP_SpectreNukeCalldown=Tac Nuke Strike
 Button/Name/AP_SpectreShadowClones=Shadow Clone
 Button/Name/AP_SpectreWeaponsFree=Weapons Free
 Button/Name/AP_SpiderMine=Deploy Spider Mine
+Button/Name/AP_MarineMengskSpiderMineLob=Spider Mine Lob
 Button/Name/AP_SpiderMineDamage=High-Explosive Munition
 Button/Name/AP_SpiderMineReplenish=Replenish Spider Mine
 Button/Name/AP_SpineCrawler=Mutate into Spine Crawler
@@ -4098,8 +4099,11 @@ Button/Tooltip/AP_SpectreNukeCalldown=Calls down a Nuclear Strike at a target lo
 Button/Tooltip/AP_SpectreShadowClones=The Spectre creates a clone of himself.  This clone can be used to draw fire away from friendly units.  The clone deals no damage and lasts <d ref="Behavior,ToshShadowCloneTimedLife,Duration"/> seconds.<n/>
 Button/Tooltip/AP_SpectreWeaponsFree=Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.
 Button/Tooltip/AP_SpiderMine=Spider Mines pursue enemy units that come in range, and detonate for heavy area damage. Buried Spider Mines can only be seen by enemy Detectors.
+Button/Tooltip/AP_MarineMengskSpiderMineLob=Launches one Spider Mine at the target location, causing it to explode on impact. Requires <c val="ffff8a">Rank 2</c> and the <c val="ffff8a">Spider Mine Lob</c> upgrade.
 Button/Tooltip/AP_SpiderMineDamage=Spider Mines do more damage when exploding
 Button/Tooltip/AP_SpiderMineReplenish=Constructs a new Spider Mine to replace those used.<n/><n/>A Vulture can only carry 3 Spider Mines at a time.
+Upgrade/Name/AP_MarineMengskSpiderMineLob=Spider Mine Lob
+Upgrade/Tooltip/AP_MarineMengskSpiderMineLob=Allows Rank 2 Son of Korhal units to launch Spider Mines at a target location, causing them to explode on impact.
 Button/Tooltip/AP_SpineCrawler=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_SpineCrawlerPassive=Spawning Pool allows you to mutate Drones into Spine Crawlers.
 Button/Tooltip/AP_SpineCrawlerRoot=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.
@@ -6408,6 +6412,7 @@ RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarauderMengskComplete
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3=Rank: 2
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4=Rank: 3
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2=Rank: 1
+RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3=Rank: 2
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4=Rank: 3
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2=Rank: 1
 RequirementNode/Tooltip/AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3=Rank: 2

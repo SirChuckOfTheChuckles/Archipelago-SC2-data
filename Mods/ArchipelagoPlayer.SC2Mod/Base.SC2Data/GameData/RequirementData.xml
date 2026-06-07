@@ -4541,6 +4541,10 @@
     <CRequirement id="AP_HaveMarineMengskVeterancyLevel2">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2"/>
     </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskSpiderMineLob">
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskSpiderMineLobCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_AndCountUpgradeMarineMengskSpiderMineLobCompleteOnlyGTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3"/>
+    </CRequirement>
     <CRequirement id="AP_HaveMarineMengskVeterancyLevel4">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4"/>
     </CRequirement>

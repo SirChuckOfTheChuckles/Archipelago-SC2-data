@@ -34,6 +34,8 @@
 <Behavior id="AP_TrooperMengskWeaponAA"/>
 <Behavior id="AP_TrooperMengskWeaponFlamethrower"/>
 <Behavior id="AP_TrooperMengskWeaponImproved"/>
+<Behavior id="AP_MengskVeterancyMarineMengsk"/>
+<Behavior id="AP_MarineMengskProdigalSonRank3Bonus"/>
 <Behavior id="AP_WraithMengskResonatingFeedbackInterference"/>
 <Behavior id="AP_GhostMorphToMale"/>
 <Behavior id="AP_GhostMorphToFemale"/>

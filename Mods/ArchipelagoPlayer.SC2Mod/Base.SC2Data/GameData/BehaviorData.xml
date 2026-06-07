@@ -9879,7 +9879,6 @@
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarineMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Requirements value="AP_NotHaveMarineMengskProdigalSon"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="600" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
@@ -9908,46 +9907,16 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="AP_MengskVeterancyMarineMengskProdigalSon">
+    <CBehaviorBuff id="AP_MarineMengskProdigalSonRank3Bonus">
+        <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Requirements value="AP_HaveMarineMengskProdigalSon"/>
-        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
-        <VeterancyLevelArray MinVeterancyXP="450" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
-            <Modification>
-                <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="25"/>
-            </Modification>
-        </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="1050" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank2">
-            <Modification>
-                <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="25"/>
-                <WeaponRange value="2"/>
-                <WeaponScanBonus value="2"/>
-            </Modification>
-        </VeterancyLevelArray>
-        <VeterancyLevelArray>
-            <MinVeterancyXP value="1800"/>
-            <LevelGainEffect value="AP_MarineMengskLevelUpSet"/>
-            <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
-            <Modification>
-                <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="25"/>
-            </Modification>
-        </VeterancyLevelArray>
-        <VeterancyLevelArray>
-            <MinVeterancyXP value="2700"/>
-            <LevelGainEffect value="AP_MarineMengskLevelUpMaxedSet"/>
-            <RankNameSchema value="Behavior/RankName/AP_MengskRank4"/>
-            <Modification>
-                <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="25"/>
-            </Modification>
-        </VeterancyLevelArray>
-        <XPFraction index="Kills" value="0"/>
-        <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
-    </CBehaviorVeterancy>
+        <Modification>
+            <StateFlags index="UnitAttrOnHeroic" value="1"/>
+            <LifeArmorBonus value="1"/>
+            <VitalMaxArray index="Life" value="25"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_WarpRelocating">
         <Alignment value="Positive"/>
         <BehaviorFlags index="Permanent" value="1"/>

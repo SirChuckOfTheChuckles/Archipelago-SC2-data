@@ -11893,6 +11893,11 @@
         <Mover value="AP_TossGrenade"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
     </CUnit>
+    <CUnit id="AP_MarineMengskSpiderMineLobWeapon" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="AP_TossGrenade"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+    </CUnit>
     <CUnit id="AP_NovaGadgetSwarmGrenadesWeapon" parent="MISSILE">
         <Race value="Terr"/>
         <Mover value="AP_TossGrenade"/>
@@ -30857,8 +30862,8 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="AP_MarineMengskSpiderMines"/>
+        <AbilArray Link="AP_MarineMengskSpiderMineLob"/>
         <BehaviorArray Link="AP_MengskVeterancyMarineMengsk"/>
-        <BehaviorArray Link="AP_MengskVeterancyMarineMengskProdigalSon"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30873,6 +30878,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AP_SpiderMine" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMines,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_MarineMengskSpiderMineLob" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMineLob,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_LeadFarmer" Type="Passive" Requirements="AP_HaveMarineMengskVeterancyLevel4" Row="1" Column="2"/>
             <LayoutButtons Face="AP_MarineMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>

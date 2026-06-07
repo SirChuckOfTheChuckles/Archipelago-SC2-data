@@ -3412,6 +3412,31 @@ void lib15EF4C78_gf_CM_Mengsk_ForceMorphTrooper (unit lp_trooper, unit lp_pickup
     libNtve_gf_SendActorMessageToUnit(lp_trooper, (("Signal " + lp_actorSignal)));
 }
 
+bool lib15EF4C78_gf_CM_Mengsk_MarineHasProdigalSon (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarineMengskProdigalSon", c_techCountCompleteOnly) >= 1);
+}
+
+bool lib15EF4C78_gf_CM_Mengsk_MarineIsRank3 (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    return (UnitXPGetCurrentLevel(lp_unit, "AP_MengskVeterancyMarineMengsk") >= 4);
+}
+
+void lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((lp_unit == null) || (UnitGetType(lp_unit) != "AP_MarineMengsk") || (lib15EF4C78_gf_CM_Mengsk_MarineHasProdigalSon(lp_unit) == false) || (lib15EF4C78_gf_CM_Mengsk_MarineIsRank3(lp_unit) == false))) {
+        return ;
+    }
+
+    if ((UnitHasBehavior(lp_unit, "AP_MarineMengskProdigalSonRank3Bonus") == false)) {
+        UnitBehaviorAdd(lp_unit, "AP_MarineMengskProdigalSonRank3Bonus", lp_unit, 1);
+    }
+
+}
+
 void lib15EF4C78_gf_RemoveUnusedStartingUnits (unitgroup lp_startingUnits, string lp_desiredFaction, bool lp_hiveUpgrade) {
     // Automatic Variable Declarations
     unitgroup autoA0E4A284_g;
@@ -9482,104 +9507,20 @@ void lib15EF4C78_gt_CM_Mengsk_VeterancyEarned_Init () {
     TriggerAddEventUnitDied(lib15EF4C78_gt_CM_Mengsk_VeterancyEarned, null);
 }
 
-void lib15EF4C78_gf_CM_Mengsk_ApplyProdigalSonVeterancy (unit lp_unit) {
-    // Variable Declarations
-    fixed lv_xp;
-    int lv_statusframe;
-
-    // Conditions
-    if ((lp_unit == null)) {
-        return;
-    }
-    if ((UnitGetType(lp_unit) != "AP_MarineMengsk")) {
-        return;
-    }
-    if ((TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarineMengskProdigalSon", c_techCountCompleteOnly) < 1)) {
-        return;
-    }
-    if ((UnitHasBehavior(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon") == true)) {
-        return;
-    }
-
-    // Actions
-    lv_xp = UnitXPGetCurrentXP(lp_unit, "AP_MengskVeterancyMarineMengsk");
-    if ((lv_xp <= 0.0)) {
-        lv_xp = UnitXPGetCurrentXP(lp_unit, null);
-    }
-    UnitBehaviorAdd(lp_unit, "AP_VeterancySuppressEffects", lp_unit, 1);
-    UnitBehaviorRemove(lp_unit, "AP_MengskVeterancyMarineMengsk", 1);
-    UnitBehaviorAdd(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon", lp_unit, 1);
-    UnitXPSetCurrentXP(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon", lv_xp);
-    if ((lv_xp >= 450.0)) {
-        UnitAbilityAddChargeUsed(lp_unit, "AP_MarineMengskSpiderMines", "Abil/AP_MarineMengskSpiderMines", 1.0);
-    }
-
-    DialogControlHookupUnitStatus(c_triggerControlTypeUnitStatusBar, "HealthBar", lp_unit);
-    lv_statusframe = DialogControlLastCreated();
-    DialogControlSetAnimationState(lv_statusframe, PlayerGroupAll(), "Rank", IntToString(UnitXPGetCurrentLevel(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon")));
-
-    if ((UnitXPGetCurrentXP(lp_unit, "AP_MengskVeterancyMarineMengskProdigalSon") < 2700.0)) {
-        UnitGroupAdd(lib15EF4C78_gv_cM_Mengsk_XPHungryUnits, lp_unit);
-    }
-    else {
-        UnitGroupRemove(lib15EF4C78_gv_cM_Mengsk_XPHungryUnits, lp_unit);
-    }
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: CM_Mengsk_ProdigalSonVeterancyUpgrade
-//--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    unitgroup auto8C1C9F1C_g;
-    int auto8C1C9F1C_u;
-    unit auto8C1C9F1C_var;
-
-    // Conditions
-    if (testConds) {
-        if (!((EventUpgradeName() == "AP_MarineMengskProdigalSon"))) {
-            return false;
-        }
-        if (!((EventUpgradeLevelDelta() >= 1))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    auto8C1C9F1C_g = UnitGroup("AP_MarineMengsk", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-    auto8C1C9F1C_u = UnitGroupCount(auto8C1C9F1C_g, c_unitCountAll);
-    for (;; auto8C1C9F1C_u -= 1) {
-        auto8C1C9F1C_var = UnitGroupUnitFromEnd(auto8C1C9F1C_g, auto8C1C9F1C_u);
-        if (auto8C1C9F1C_var == null) { break; }
-        lib15EF4C78_gf_CM_Mengsk_ApplyProdigalSonVeterancy(auto8C1C9F1C_var);
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade_Init () {
-    lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade_Func");
-    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade, c_playerAny);
-}
-
 //--------------------------------------------------------------------------------------------------
 // Trigger: CM_Mengsk_RegisterVeteranUnit
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_CM_Mengsk_RegisterVeteranUnit_Func (bool testConds, bool runActions) {
     // Variable Declarations
-    unit lv_veteranunit;
+    unit lv_veteranUnit;
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_veteranunit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    lv_veteranUnit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
 
     // Conditions
     if (testConds) {
-        if (!((UnitHasBehavior(lv_veteranunit, "AP_MengskVeteranL4Tracker") == false))) {
+        if (!((UnitHasBehavior(EventPlayerEffectUsedUnit(c_effectUnitCaster), "AP_MengskVeteranL4Tracker") == false))) {
             return false;
         }
     }
@@ -9589,8 +9530,7 @@ bool lib15EF4C78_gt_CM_Mengsk_RegisterVeteranUnit_Func (bool testConds, bool run
         return true;
     }
 
-    lib15EF4C78_gf_CM_Mengsk_ApplyProdigalSonVeterancy(lv_veteranunit);
-    UnitGroupAdd(lib15EF4C78_gv_cM_Mengsk_XPHungryUnits, lv_veteranunit);
+    UnitGroupAdd(lib15EF4C78_gv_cM_Mengsk_XPHungryUnits, lv_veteranUnit);
     return true;
 }
 
@@ -9659,6 +9599,89 @@ bool lib15EF4C78_gt_CM_Mengsk_VeteranDing_Func (bool testConds, bool runActions)
 void lib15EF4C78_gt_CM_Mengsk_VeteranDing_Init () {
     lib15EF4C78_gt_CM_Mengsk_VeteranDing = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_VeteranDing_Func");
     TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_CM_Mengsk_VeteranDing, c_playerAny, "AP_MengskVeteranLevelUpDummy");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_Mengsk_ProdigalSonMarineRank3
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(lv_unit) == "AP_MarineMengsk"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus(lv_unit);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Init () {
+    lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3 = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Func");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3, c_playerAny, "AP_MengskVeteranMaxedTrigger");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CM_Mengsk_ProdigalSonUpgrade
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unitgroup lv_unitGroup;
+    unit lv_unit;
+
+    // Automatic Variable Declarations
+    unitgroup auto60C9F39A_g;
+    int auto60C9F39A_u;
+    unit auto60C9F39A_var;
+
+    // Variable Initialization
+    lv_unitGroup = UnitGroupEmpty();
+
+    // Conditions
+    if (testConds) {
+        if (!((EventUpgradeName() == "AP_MarineMengskProdigalSon"))) {
+            return false;
+        }
+
+        if (!((EventUpgradeLevelDelta() >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_unitGroup = UnitGroup("AP_MarineMengsk", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto60C9F39A_g = lv_unitGroup;
+    auto60C9F39A_u = UnitGroupCount(auto60C9F39A_g, c_unitCountAll);
+    for (;; auto60C9F39A_u -= 1) {
+        auto60C9F39A_var = UnitGroupUnitFromEnd(auto60C9F39A_g, auto60C9F39A_u);
+        if (auto60C9F39A_var == null) { break; }
+        lv_unit = auto60C9F39A_var;
+        lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus(lv_unit);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade_Init () {
+    lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade_Func");
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade, c_playerAny);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -10506,10 +10529,11 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_MedivacShockDivisionPickup_Init();
     lib15EF4C78_gt_MedivacShockDivisionDrop_Init();
     lib15EF4C78_gt_CM_Mengsk_VeterancyEarned_Init();
-    lib15EF4C78_gt_CM_Mengsk_ProdigalSonVeterancyUpgrade_Init();
     lib15EF4C78_gt_CM_Mengsk_RegisterVeteranUnit_Init();
     lib15EF4C78_gt_CM_Mengsk_RemoveVeteranUnit_Init();
     lib15EF4C78_gt_CM_Mengsk_VeteranDing_Init();
+    lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Init();
+    lib15EF4C78_gt_CM_Mengsk_ProdigalSonUpgrade_Init();
     lib15EF4C78_gt_AP_Player_Merc_ArrayInit_Init();
     lib15EF4C78_gt_AP_Player_MercCompoundUpdateCounts_Init();
     lib15EF4C78_gt_AP_Player_MercCompoundSetupCounts_Init();

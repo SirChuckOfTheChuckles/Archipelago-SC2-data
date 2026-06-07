@@ -23,6 +23,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarineMengskProdigalSon" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarineMengskSpiderMineLobCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarineMengskSpiderMineLob" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementNot id="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly">
         <OperandArray index="0" value="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirementNot>
@@ -7421,20 +7425,20 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MengskVeterancyMarineMengsk" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="AP_CountBehaviorMengskVeterancyMarineMengskProdigalSonCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_MengskVeterancyMarineMengskProdigalSon" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
-    <CRequirementSum id="AP_SumCountBehaviorMengskVeterancyMarineMengskAnyCompleteOnlyAtUnit">
-        <OperandArray value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>
-        <OperandArray value="AP_CountBehaviorMengskVeterancyMarineMengskProdigalSonCompleteOnlyAtUnit"/>
-    </CRequirementSum>
     <CRequirementGTE id="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2">
-        <OperandArray index="0" value="AP_SumCountBehaviorMengskVeterancyMarineMengskAnyCompleteOnlyAtUnit"/>
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="2"/>
     </CRequirementGTE>
+    <CRequirementGTE id="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3">
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="3"/>
+    </CRequirementGTE>
+    <CRequirementAnd id="AP_AndCountUpgradeMarineMengskSpiderMineLobCompleteOnlyGTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3">
+        <OperandArray value="AP_CountUpgradeMarineMengskSpiderMineLobCompleteOnly"/>
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3"/>
+    </CRequirementAnd>
     <CRequirementGTE id="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4">
-        <OperandArray index="0" value="AP_SumCountBehaviorMengskVeterancyMarineMengskAnyCompleteOnlyAtUnit"/>
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
     <CRequirementAnd id="AP_AndHotSHaveSwarmlingCompleteOnlyZergMercCompoundBroodWarSelectedCompleteOnly">

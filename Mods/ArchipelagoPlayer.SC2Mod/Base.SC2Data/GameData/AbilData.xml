@@ -773,7 +773,7 @@
         <Placeholder value="SpiderMine"/>
         <Range value="2"/>
         <Cost>
-            <Charge>
+            <Charge Link="Abil/AP_MarineMengskSpiderMines">
                 <CountMax value="6"/>
                 <CountStart value="2"/>
                 <CountUse value="1"/>
@@ -782,6 +782,25 @@
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_SpiderMine" Requirements="AP_HaveMarineMengskVeterancyLevel2"/>
         <Effect index="0" value="AP_SpawnReaperSpiderMineSet"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AP_MarineMengskSpiderMineLob">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="AP_MarineMengskSpiderMineLobLaunchMissile"/>
+        <Cost>
+            <Charge Link="Abil/AP_MarineMengskSpiderMines">
+                <CountMax value="6"/>
+                <CountStart value="2"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="30"/>
+        </Cost>
+        <Range value="7"/>
+        <PrepTime value="0.361"/>
+        <CursorEffect value="AP_MarineMengskSpiderMineLobDamage"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarineMengskSpiderMineLob" Requirements="AP_HaveMarineMengskSpiderMineLob"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Alignment value="Negative"/>
     </CAbilEffectTarget>
     <CAbilSpecialize id="AP_MakeReaperSpiderMines">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>

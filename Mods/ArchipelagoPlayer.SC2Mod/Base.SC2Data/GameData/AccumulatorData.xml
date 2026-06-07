@@ -5,12 +5,30 @@
         <Parameters value="0">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageFactor"/>
         </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="AP_MarineMengskProdigalSonDamageBonus"/>
+        </Parameters>
     </CAccumulatorArithmetic>
     <CAccumulatorVeterancyLevel id="AP_BaseMengskVeterancyDamageFactor">
         <Amount value="0.75"/>
         <BonusPerLevel value="0.25"/>
         <PreviousValueFactor value="1"/>
     </CAccumulatorVeterancyLevel>
+    <CAccumulatorArithmetic id="AP_MarineMengskProdigalSonDamageBonus">
+        <Parameters value="0">
+            <AccumulatorArray value="AP_MarineMengskProdigalSonRank3BonusCount"/>
+        </Parameters>
+        <Parameters value="0">
+            <AccumulatorArray value="AP_Constant025"/>
+        </Parameters>
+        <Operation value="Multiply"/>
+    </CAccumulatorArithmetic>
+    <CAccumulatorBehavior id="AP_MarineMengskProdigalSonRank3BonusCount">
+        <Behavior value="AP_MarineMengskProdigalSonRank3Bonus"/>
+    </CAccumulatorBehavior>
+    <CAccumulatorConstant id="AP_Constant025">
+        <Amount value="0.25"/>
+    </CAccumulatorConstant>
     <CAccumulatorVeterancyLevel id="AP_250mmStrikeCannonsDamage">
         <MinAccumulation value="0"/>
         <Amount value="-5"/>

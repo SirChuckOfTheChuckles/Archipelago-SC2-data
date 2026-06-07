@@ -294,6 +294,7 @@ Button/Hotkey/AP_MarauderMengsk=D
 Button/Hotkey/AP_MarauderMengskAttackSpeedBoost=G
 Button/Hotkey/AP_Marine=A
 Button/Hotkey/AP_MarineMengsk=A
+Button/Hotkey/AP_MarineMengskSpiderMineLob=D
 Button/Hotkey/AP_Medic=E
 Button/Hotkey/AP_MedicHeal=E
 Button/Hotkey/AP_MedicMengsk=E

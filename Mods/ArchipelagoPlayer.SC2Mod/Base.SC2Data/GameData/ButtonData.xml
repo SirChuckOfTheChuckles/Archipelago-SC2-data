@@ -330,6 +330,13 @@
         <AlertIcon value="AP\Assets\Textures\btn-ability-terran-spidermine.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="AP_MarineMengskSpiderMineLob">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-spidermine.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-spidermine.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <Hotkey value="Button/Hotkey/AP_MarineMengskSpiderMineLob"/>
+        <HotkeyAlias value="AP_MarineMengskSpiderMineLob"/>
+    </CButton>
     <CButton id="AP_SpiderMineReplenish">
         <Icon value="Assets\Textures\btn-upgrade-raynor-replenishablemagazine.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-unit-terran-spidermine.dds"/>
