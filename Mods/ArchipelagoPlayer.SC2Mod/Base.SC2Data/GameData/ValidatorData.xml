@@ -25,6 +25,10 @@
         <Find value="1"/>
         <Value value="AP_HaveDisruptorPermanentCloak"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveBuildABoom">
+        <Find value="1"/>
+        <Value value="AP_HaveBuildABoom"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveHotSHaveRaptor">
         <Find value="1"/>
         <Value value="AP_HaveHotSHaveRaptor"/>

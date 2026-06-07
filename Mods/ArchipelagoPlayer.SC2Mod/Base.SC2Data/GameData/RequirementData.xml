@@ -43,6 +43,10 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveBuildABoom">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeBuildABoomCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeScourgeAmountCompleteOnly"/>

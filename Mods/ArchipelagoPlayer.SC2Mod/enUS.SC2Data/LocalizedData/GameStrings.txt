@@ -4104,6 +4104,8 @@ Button/Tooltip/AP_SpiderMineDamage=Spider Mines do more damage when exploding
 Button/Tooltip/AP_SpiderMineReplenish=Constructs a new Spider Mine to replace those used.<n/><n/>A Vulture can only carry 3 Spider Mines at a time.
 Upgrade/Name/AP_MarineMengskSpiderMineLob=Spider Mine Lob
 Upgrade/Tooltip/AP_MarineMengskSpiderMineLob=Allows Rank 2 Son of Korhal units to launch Spider Mines at a target location, causing them to explode on impact.
+Upgrade/Name/AP_BuildABoom=Build-A-Boom
+Upgrade/Tooltip/AP_BuildABoom=Sons of Korhal start with 2 additional Spider Mines and gain 1 additional Spider Mine per rank.
 Button/Tooltip/AP_SpineCrawler=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_SpineCrawlerPassive=Spawning Pool allows you to mutate Drones into Spine Crawlers.
 Button/Tooltip/AP_SpineCrawlerRoot=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.

@@ -23688,15 +23688,28 @@
         <EditorCategories value=""/>
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
+        <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
     </CEffectSet>
     <CEffectSet id="AP_MarineMengskLevelUpMaxedSet">
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
+        <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
     </CEffectSet>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddCharge">
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
         <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddBuildABoomCharge">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
+        <ValidatorArray value="AP_HaveBuildABoom"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarineMengskSpiderMinesRemoveCharge">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="1"/>
     </CEffectModifyUnit>
     <CEffectSet id="AP_WarpRelocateStartSet">
         <EditorCategories value="Race:Protoss"/>

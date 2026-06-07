@@ -774,7 +774,7 @@
         <Range value="2"/>
         <Cost>
             <Charge Link="Abil/AP_MarineMengskSpiderMines">
-                <CountMax value="6"/>
+                <CountMax value="5"/>
                 <CountStart value="2"/>
                 <CountUse value="1"/>
                 <Location value="Unit"/>
@@ -788,7 +788,7 @@
         <Effect index="0" value="AP_MarineMengskSpiderMineLobLaunchMissile"/>
         <Cost>
             <Charge Link="Abil/AP_MarineMengskSpiderMines">
-                <CountMax value="6"/>
+                <CountMax value="5"/>
                 <CountStart value="2"/>
                 <CountUse value="1"/>
                 <Location value="Unit"/>

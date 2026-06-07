@@ -43348,9 +43348,7 @@
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskMarine_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
-        <On Terms="Abil.AP_MarineMengskSpiderMineLob.SourcePrepStart" Send="AnimClear Cover"/>
         <On Terms="Abil.AP_MarineMengskSpiderMineLob.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 1.500000 AsDuration"/>
-        <On Terms="AnimDone; AnimName Spell" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <On Terms="UnitDeath.AP_MarineMengsk; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <On Terms="ActorCreation" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
         <Model value="AP_MarineMengsk"/>
@@ -43364,6 +43362,7 @@
         <DeathCustoms index="17" ModelLink="AP_MarineMengskDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="None"/>
         </DeathCustoms>
+        <PortraitModel value="AP_MarineMengskPortrait"/>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
         <GroupIcon>
@@ -43841,7 +43840,7 @@
         <On Terms="Abil.AP_IrradiateMedicMengsk.SourcePrepStart" Send="$Spell"/>
         <On Terms="Abil.AP_MedicMengskDefensiveMatrix.SourcePrepStart" Send="$Spell"/>
         <Model value="AP_MedicMengsk"/>
-        <PortraitModel value="AP_MedicPortrait"/>
+        <PortraitModel value="AP_MedicMengskPortrait"/>
         <DeathArray index="Normal" ModelLink="AP_MedicMengskDeath" SoundLink="AP_Medic_Explode"/>
         <DeathArray index="Blast" ModelLink="AP_MedicMengskDeath"/>
         <DeathCustoms ModelLink="AP_MedicMengskDeathRagdoll" Name="RagdollBasic">

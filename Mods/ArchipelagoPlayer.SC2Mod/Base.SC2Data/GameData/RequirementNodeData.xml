@@ -27,6 +27,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarineMengskSpiderMineLob" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBuildABoomCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_BuildABoom" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementNot id="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly">
         <OperandArray index="0" value="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirementNot>

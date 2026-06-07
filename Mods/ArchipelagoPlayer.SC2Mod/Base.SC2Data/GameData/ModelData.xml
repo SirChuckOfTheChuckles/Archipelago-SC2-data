@@ -20680,6 +20680,16 @@
         <ScaleMax value="0.650000,0.650000,0.650000"/>
         <ScaleMin value="0.650000,0.650000,0.650000"/>
     </CModel>
+    <CModel id="AP_MarineMengskPortrait" parent="MarinePortraitBase">
+        <Model value="AP\Assets\Units\Terran\MarineMengsk\MarineMengskPortraitNew.m3"/>
+        <Image value="Assets\Textures\Marauder_Mengsk_Coop_Portrait_Static.dds"/>
+        <Lighting value="Marauder_Deluxe_Collection_Portrait"/>
+    </CModel>
+    <CModel id="AP_MedicMengskPortrait" parent="AP_MedicPortrait">
+        <Model value="AP\Assets\Units\Terran\MedicMengsk\MedicMengskPortrait.m3"/>
+        <Image value="Assets\Textures\Marauder_Mengsk_Coop_Portrait_Static.dds"/>
+        <Lighting value="AP_FirebatPortrait"/>
+    </CModel>
     <CModel id="AP_BarracksMengskBuild" parent="BarracksBuildBase"/>
     <CModel id="AP_BarracksMengsk" parent="BarracksBase">
         <Model value="Assets\COOP\Mengsk\Buildings\Barracks_Mengsk_COOP\Barracks_Mengsk_COOP.m3"/>
@@ -21069,7 +21079,7 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_MarineMengsk" parent="MarineBase">
-        <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP-1.m3"/>
+        <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP_1.m3"/>
     </CModel>
     <CModel id="AP_MarineMengskDeath" parent="MarineDeathBase">
         <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP_Death.m3"/>

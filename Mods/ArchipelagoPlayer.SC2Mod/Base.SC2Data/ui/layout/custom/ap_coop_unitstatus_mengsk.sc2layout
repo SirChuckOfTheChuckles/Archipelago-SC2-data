@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-    
+
     <!-- SINGLE BAR TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskVeterancy_StatusFrame_SingleBar_Template">
         <Height val="70"/>
@@ -16,7 +16,7 @@
             <Height val="0"/>
             <Width val="0"/>
         </Frame>
-        
+
         <Frame type="Image" name="Background">
             <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
             <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
@@ -26,7 +26,7 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Background_SingleBar"/>
             <RenderPriority val="500"/>
         </Frame>
-        
+
         <Frame type="Image" name="Banner">
             <Anchor side="Top" relative="$parent/Background" pos="Mid" offset="-1"/>
             <Anchor side="Bottom" relative="$parent/Background" pos="Mid" offset="-1"/>
@@ -37,7 +37,7 @@
             <RenderPriority val="510"/>
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Banner"/>
         </Frame>
-        
+
         <Frame type="Image" name="UnitIconHighlight">
             <Anchor side="Top" relative="$parent/UnitIcon" pos="Mid" offset="2"/>
             <Anchor side="Bottom" relative="$parent/UnitIcon" pos="Mid" offset="2"/>
@@ -54,7 +54,7 @@
             <RenderPriority val="511"/>
             <RenderType val="{$parent/Background/@RenderType}"/>
         </Frame>
-        
+
         <Frame type="Image" name="UnitIcon">
             <Anchor side="Top" relative="$parent/Banner" pos="Mid" offset="0"/>
             <Anchor side="Bottom" relative="$parent/Banner" pos="Mid" offset="0"/>
@@ -69,7 +69,7 @@
             <AlphaLayer val="True" layer="0"/>
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Battlecruiser" layer="1"/>
         </Frame>
-        
+
         <Frame type="Image" name="Star1">
             <Anchor side="Bottom" relative="$parent/Background" pos="Min" offset="9"/>
             <Anchor side="Left" relative="$parent/Background" pos="Mid" offset="14"/>
@@ -79,7 +79,7 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Star"/>
             <Visible val="False"/>
         </Frame>
-        
+
         <Frame type="Image" name="Star2">
             <Anchor side="Bottom" relative="$parent/Background" pos="Min" offset="9"/>
             <Anchor side="Left" relative="$parent/Star1" pos="Mid" offset="-24"/>
@@ -89,7 +89,7 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Star"/>
             <Visible val="False"/>
         </Frame>
-        
+
         <Frame type="Image" name="Star3">
             <Anchor side="Bottom" relative="$parent/Background" pos="Min" offset="9"/>
             <Anchor side="Left" relative="$parent/Star1" pos="Mid" offset="24"/>
@@ -99,7 +99,7 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Star"/>
             <Visible val="False"/>
         </Frame>
-        
+
         <Frame type="Image" name="Star4">
             <Anchor side="Bottom" relative="$parent/Background" pos="Min" offset="9"/>
             <Anchor side="Left" relative="$parent/Star1" pos="Mid" offset="48"/>
@@ -116,10 +116,10 @@
             <Width val="76"/>
             <SegmentValue val="100"/>
         </Frame>
-		
+
 		<StateGroup name="RankState">
 			<DefaultState val="One"/>
-			
+
 			<State name="Five">
 				<When type="AnimationState" frame="HealthBar" Rank="5"/>
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
@@ -135,7 +135,7 @@
                 <Action type="SetAnchor" frame="Star4" side="Left" relative="$parent/HealthBar" pos="Mid" offset="36"/>
                 <Action type="SetAnchor" frame="Star4" side="Right" relative="$parent/HealthBar" pos="Mid" offset="36"/>
 			</State>
-			
+
 			<State name="Max">
 				<When type="AnimationState" frame="HealthBar" Rank="4"/>
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
@@ -149,7 +149,7 @@
                 <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="24"/>
                 <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="24"/>
 			</State>
-			
+
 			<State name="Three">
 				<When type="AnimationState" frame="HealthBar" Rank="3"/>
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
@@ -161,7 +161,7 @@
                 <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="13"/>
                 <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="13"/>
 			</State>
-			
+
 			<State name="Two">
 				<When type="AnimationState" frame="HealthBar" Rank="2"/>
 				<Action type="SetProperty" frame="Star1" Visible="true"/>
@@ -169,7 +169,7 @@
 				<Action type="SetProperty" frame="Star3" Visible="false"/>
 				<Action type="SetProperty" frame="Star4" Visible="false"/>
 			</State>
-			
+
 			<State name="One">
 				<Action type="SetProperty" frame="Star1" Visible="false"/>
 				<Action type="SetProperty" frame="Star2" Visible="false"/>
@@ -178,14 +178,14 @@
 			</State>
 		</StateGroup>
     </Frame>
-    
+
     <!-- ENERGY BAR TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskVeterancy_StatusFrame_EnergyBar_Template" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-    
+
         <Frame type="Image" name="Background">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Background_DoubleBar"/>
         </Frame>
-        
+
         <Frame type="UnitStatusEnergyBar" name="EnergyBar" template="AP_LotV_UnitStatus/UnitStatusSegmentedEnergyTemplate">
             <Anchor side="Top" relative="$parent/HealthBar" pos="Max" offset="-2"/>
             <Anchor side="Left" relative="$parent/Background" pos="Min" offset="35"/>
@@ -193,14 +193,14 @@
             <RenderType val="{$parent/Background/@RenderType}"/>
         </Frame>
     </Frame>
-    
+
     <!-- SHIELD BAR TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskVeterancy_StatusFrame_ShieldBar_Template" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-    
+
         <Frame type="Image" name="Background">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Background_DoubleBar"/>
         </Frame>
-        
+
         <Frame type="UnitStatusShieldsBar" name="ShieldBar" template="AP_LoTV_UnitStatus/UnitStatusSegmentedShieldsBarTemplate">
             <Anchor side="Top" relative="$parent/Background" pos="Min" offset="10"/>
             <Anchor side="Left" relative="$parent/Background" pos="Min" offset="35"/>
@@ -249,79 +249,6 @@
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Marine" layer="1"/>
         </Frame>
-
-		<StateGroup name="RankState">
-			<DefaultState val="Zero"/>
-			
-			<State name="Five">
-				<When type="AnimationState" frame="HealthBar" Rank="5"/>
-				<Action type="SetProperty" frame="Star1" Visible="true"/>
-				<Action type="SetProperty" frame="Star2" Visible="true"/>
-				<Action type="SetProperty" frame="Star3" Visible="true"/>
-				<Action type="SetProperty" frame="Star4" Visible="true"/>
-                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
-                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-36"/>
-                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
-                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-12"/>
-                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="12"/>
-                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="12"/>
-                <Action type="SetAnchor" frame="Star4" side="Left" relative="$parent/HealthBar" pos="Mid" offset="36"/>
-                <Action type="SetAnchor" frame="Star4" side="Right" relative="$parent/HealthBar" pos="Mid" offset="36"/>
-			</State>
-			
-			<State name="Four">
-				<When type="AnimationState" frame="HealthBar" Rank="4"/>
-				<Action type="SetProperty" frame="Star1" Visible="true"/>
-				<Action type="SetProperty" frame="Star2" Visible="true"/>
-				<Action type="SetProperty" frame="Star3" Visible="true"/>
-				<Action type="SetProperty" frame="Star4" Visible="false"/>
-                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
-                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-24"/>
-                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-                <Action type="SetAnchor" frame="Star3" side="Left" relative="$parent/HealthBar" pos="Mid" offset="24"/>
-                <Action type="SetAnchor" frame="Star3" side="Right" relative="$parent/HealthBar" pos="Mid" offset="24"/>
-			</State>
-			
-			<State name="Three">
-				<When type="AnimationState" frame="HealthBar" Rank="3"/>
-				<Action type="SetProperty" frame="Star1" Visible="true"/>
-				<Action type="SetProperty" frame="Star2" Visible="true"/>
-				<Action type="SetProperty" frame="Star3" Visible="false"/>
-				<Action type="SetProperty" frame="Star4" Visible="false"/>
-                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
-                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="-13"/>
-                <Action type="SetAnchor" frame="Star2" side="Left" relative="$parent/HealthBar" pos="Mid" offset="13"/>
-                <Action type="SetAnchor" frame="Star2" side="Right" relative="$parent/HealthBar" pos="Mid" offset="13"/>
-			</State>
-			
-			<State name="Two">
-				<When type="AnimationState" frame="HealthBar" Rank="2"/>
-				<Action type="SetProperty" frame="Star1" Visible="true"/>
-				<Action type="SetProperty" frame="Star2" Visible="false"/>
-				<Action type="SetProperty" frame="Star3" Visible="false"/>
-				<Action type="SetProperty" frame="Star4" Visible="false"/>
-                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-			</State>
-			
-			<State name="One">
-				<When type="AnimationState" frame="HealthBar" Rank="1"/>
-				<Action type="SetProperty" frame="Star1" Visible="false"/>
-				<Action type="SetProperty" frame="Star2" Visible="false"/>
-				<Action type="SetProperty" frame="Star3" Visible="false"/>
-				<Action type="SetProperty" frame="Star4" Visible="false"/>
-                <Action type="SetAnchor" frame="Star1" side="Left" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-                <Action type="SetAnchor" frame="Star1" side="Right" relative="$parent/HealthBar" pos="Mid" offset="0"/>
-			</State>
-
-			<State name="Zero">
-				<Action type="SetProperty" frame="Star1" Visible="false"/>
-				<Action type="SetProperty" frame="Star2" Visible="false"/>
-				<Action type="SetProperty" frame="Star3" Visible="false"/>
-				<Action type="SetProperty" frame="Star4" Visible="false"/>
-			</State>
-		</StateGroup>
     </Frame>
 
     <!-- MEDIC TEMPLATE -->
@@ -331,29 +258,29 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Medic" layer="1"/>
         </Frame>
     </Frame>
-    
+
     <!-- MARAUDER TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskMarauder_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Marauder" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
-    
+
     <!-- GHOST TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskGhost_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_EnergyBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Ghost" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
-    
+
     <!-- SIEGE TANK TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskSiegeTank_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_SiegeTank" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
 
     <!-- GOLIATH TEMPLATE -->
@@ -363,13 +290,13 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Goliath" layer="1"/>
         </Frame>
     </Frame>
-    
+
     <!-- MEDIVAC TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskMedivac_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_EnergyBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_SiegeTank" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
     <Frame type="UnitStatusFrame" name="MengskMedivac_StatusFrameShields" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_TripleBar_Template">
 
@@ -377,21 +304,21 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_SiegeTank" layer="1"/>
         </Frame>
     </Frame>
-    
+
     <!-- THOR TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskThor_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Thor" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
-    
+
     <!-- VIKING TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskViking_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Viking" layer="1"/>
-        </Frame> 
+        </Frame>
     </Frame>
 
     <!-- LIBERATOR TEMPLATE -->
@@ -423,10 +350,10 @@
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Banshee" layer="1"/>
         </Frame>
     </Frame>
-    
+
     <!-- BATTLECRUISER TEMPLATE -->
     <Frame type="UnitStatusFrame" name="MengskBattlecruiser_StatusFrame" template="AP_Coop_UnitStatus_Mengsk/MengskVeterancy_StatusFrame_SingleBar_Template">
-        
+
         <Frame type="Image" name="UnitIcon">
             <Texture val="@UI/AP_Coop_UnitStatus_MengskVeterancyHealthFrame_Icon_Battlecruiser" layer="1"/>
         </Frame>
