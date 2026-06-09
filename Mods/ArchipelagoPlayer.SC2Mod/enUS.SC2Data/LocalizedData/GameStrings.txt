@@ -1792,12 +1792,17 @@ Button/Name/AP_MagrailMunitionsViking=Anti-Mechanical Munition
 Button/Name/AP_Marauder=Train Marauder
 Button/Name/AP_MarauderMengsk=Train Aegis Guard
 Button/Name/AP_MarauderMengskAttackSpeedBoost=High-Grade Stimpacks
+Button/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
 Button/Name/AP_MarauderMengskCombatDiagnosis=Combat Diagnosis
+Button/Name/AP_MarauderMengskEnergizedShrapnel=Energized Shrapnel
 Button/Name/AP_MarauderMengskShield=Aegis Barrier
 Button/Name/AP_MarauderMengskSlow=Incapacitator Shells
 Button/Name/AP_Marine=Train Marine
 Button/Name/AP_MarineMengsk=Train Son of Korhal
 Button/Name/AP_MarineMengskCombatDiagnosis=Combat Diagnosis
+Button/Name/AP_MarineMengskBuildABoom=Build-A-Boom
+Button/Name/AP_MarineMengskCombatShield=Shield of the Dominion
+Button/Name/AP_MarineMengskProdigalSon=The Prodigal Son
 Button/Name/AP_MatrixOverload=Matrix Overload
 Button/Name/AP_MatrixOverloadEnergizer=Matrix Overload
 Button/Name/AP_Medic=Train Medic
@@ -3517,6 +3522,7 @@ Button/Tooltip/AP_MagrailMunitionsViking=Increases Viking's damage to mechanical
 Button/Tooltip/AP_Marauder=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengsk=Royal Guard heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengskAttackSpeedBoost=Increases attack speed by <d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>% for <d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/> seconds.
+Button/Tooltip/AP_MarauderMengskAddictiveSupplements=Increases attack speed by <d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>% for <d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/> seconds. One charge gained per rank, up to 2.
 Button/Tooltip/AP_MarauderMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Aegis Guard are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarauderMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_PunisherGrenadesMengskU,Amount"/>, <d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarauderMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MarauderMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Aegis Barrier ability.
 Button/Tooltip/AP_MarauderMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Aegis Barrier ability.</c>
@@ -3525,10 +3531,14 @@ Button/Tooltip/AP_MarauderMengskRank2Preview=<n/><c val="777777">Rank 2: Attacks
 Button/Tooltip/AP_MarauderMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the High-Grade Stimpacks ability.
 Button/Tooltip/AP_MarauderMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the High-Grade Stimpacks ability.</c>
 Button/Tooltip/AP_MarauderMengskShield=Grants the Aegis Guard a shield that absorbs <d ref="Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit"/> damage. When the shield takes fatal damage, it releases a pulse of energy that knocks back nearby ground units. This shield refreshes to full every <d ref="Behavior,AP_MarauderMengskAbsorbReapplicator,Cost.Cooldown.TimeUse"/> seconds.
-Button/Tooltip/AP_MarauderMengskSlow=<c val="ffff8a">Aegis Guard</c> attacks temporarily slow all units in target area.<n/><n/><c val="#ColorAttackInfo">Frenzied units are immune.</c>
+Button/Tooltip/AP_MarauderMengskEnergizedShrapnel=Whenever Aegis Barrier is applied, refreshed, or broken, the next Rank 2 attack fires a 360-degree shrapnel blast around the target, dealing <d ref="Effect,AP_MarauderMengskEnergizedShrapnelDamage,Amount/Effect,AP_PunisherGrenadesMengskU,Amount*100" precision="0"/>% weapon damage.
+Button/Tooltip/AP_MarauderMengskSlow=<c val="ffff8a">Aegis Guard</c> attacks slow the target by <d ref="(1-Behavior,AP_MarauderMengskShrapnelSlow,Modification.MoveSpeedMultiplier)*100" precision="0"/>% for <d ref="Behavior,AP_MarauderMengskShrapnelSlow,Duration"/> seconds.<n/><n/><c val="ffff8a">Rank 2:</c> Shrapnel also slows enemies behind the target.<n/><n/><c val="#ColorAttackInfo">Frenzied units are immune.</c>
 Button/Tooltip/AP_Marine=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengsk=Royal Guard general-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Son of Korhal are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarineMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_GaussRifleMengsk,Amount"/> (+<d ref="Effect,AP_GaussRifleMengsk,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarineMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_MarineMengskBuildABoom=Sons of Korhal start with 2 additional Spider Mines and gain 1 additional Spider Mine per rank.
+Button/Tooltip/AP_MarineMengskCombatShield=Increases the <c val="ffff8a">Son of Korhal's</c> life by <d ref="Upgrade,AP_MarineMengskCombatShield,EffectArray[0].Value"/>.
+Button/Tooltip/AP_MarineMengskProdigalSon=Rank 3 Sons of Korhal become Heroic and gain <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.VitalMaxArray[Life]"/> life, <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.LifeArmorBonus"/> armor, and <d ref="Accumulator,AP_Constant025,Amount * 100" precision="0"/>% weapon damage.
 Button/Tooltip/AP_MarineMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Spider Mines ability.
 Button/Tooltip/AP_MarineMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Spider Mines ability.</c>
 Button/Tooltip/AP_MarineMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases attack range by 2.
@@ -4104,8 +4114,20 @@ Button/Tooltip/AP_SpiderMineDamage=Spider Mines do more damage when exploding
 Button/Tooltip/AP_SpiderMineReplenish=Constructs a new Spider Mine to replace those used.<n/><n/>A Vulture can only carry 3 Spider Mines at a time.
 Upgrade/Name/AP_MarineMengskSpiderMineLob=Spider Mine Lob
 Upgrade/Tooltip/AP_MarineMengskSpiderMineLob=Allows Rank 2 Son of Korhal units to launch Spider Mines at a target location, causing them to explode on impact.
-Upgrade/Name/AP_BuildABoom=Build-A-Boom
-Upgrade/Tooltip/AP_BuildABoom=Sons of Korhal start with 2 additional Spider Mines and gain 1 additional Spider Mine per rank.
+Upgrade/Name/AP_MarineMengskProdigalSon=The Prodigal Son
+Upgrade/Tooltip/AP_MarineMengskProdigalSon=Rank 3 Sons of Korhal become Heroic and gain <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.VitalMaxArray[Life]"/> life, <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.LifeArmorBonus"/> armor, and <d ref="Accumulator,AP_Constant025,Amount * 100" precision="0"/>% weapon damage.
+Upgrade/Name/AP_MarineMengskBuildABoom=Build-A-Boom
+Upgrade/Tooltip/AP_MarineMengskBuildABoom=Sons of Korhal start with 2 additional Spider Mines and gain 1 additional Spider Mine per rank.
+Upgrade/Name/AP_MarineMengskCombatShield=Shield of the Dominion
+Upgrade/Tooltip/AP_MarineMengskCombatShield=Sons of Korhal gain <d ref="Upgrade,AP_MarineMengskCombatShield,EffectArray[0].Value"/> life.
+Upgrade/Name/AP_MarauderMengskSovereignNeosteel=Sovereign Neosteel
+Upgrade/Tooltip/AP_MarauderMengskSovereignNeosteel=The Aegis Guard gains 40 life, plus an additional 10 life per rank.
+Upgrade/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
+Upgrade/Tooltip/AP_MarauderMengskAddictiveSupplements=Unlocks a single-use Addictive Supplements ability. The Aegis Guard gains one charge at Rank 1 and a second at Rank 2.
+Upgrade/Name/AP_MarauderMengskIncapacitatorShells=Incapacitator Shells
+Upgrade/Tooltip/AP_MarauderMengskIncapacitatorShells=Aegis Guard attacks slow the target by 60% for 3 seconds. At Rank 2, shrapnel also slows enemies behind the target.
+Upgrade/Name/AP_MarauderMengskEnergizedShrapnel=Energized Shrapnel
+Upgrade/Tooltip/AP_MarauderMengskEnergizedShrapnel=Whenever Aegis Barrier is applied, refreshed, or broken, the next Rank 2 attack fires a 360-degree shrapnel blast around the target for 50% weapon damage.
 Button/Tooltip/AP_SpineCrawler=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_SpineCrawlerPassive=Spawning Pool allows you to mutate Drones into Spine Crawlers.
 Button/Tooltip/AP_SpineCrawlerRoot=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.

@@ -300,12 +300,19 @@
         <AreaArray Radius="1" Effect="AP_BansheeMengskSlow"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_MarauderMengskSlowAOE">
-        <ValidatorArray value="AP_PunisherGrenadesResearched"/>
+        <ValidatorArray value="AP_HaveMarauderMengskIncapacitatorShells"/>
         <EditorCategories value="Race:Terran"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Self,Player,Ally,Massive,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1" Effect="AP_MarauderMengskShrapnelSlowAB"/>
     </CEffectEnumArea>
+    <CEffectApplyBehavior id="AP_MarauderMengskShrapnelSlowAB">
+        <ValidatorArray value="AP_HaveMarauderMengskIncapacitatorShells"/>
+        <ValidatorArray value="NotStructure"/>
+        <ValidatorArray value="NotFrenzied"/>
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MarauderMengskShrapnelSlow"/>
+    </CEffectApplyBehavior>
     <CEffectLaunchMissile id="AP_PunisherGrenadesLM">
         <EditorCategories value="Race:Terran"/>
         <ImpactEffect value="AP_PunisherGrenadesSet"/>
@@ -23062,10 +23069,12 @@
     <CEffectSet id="AP_PunisherGrenadesMengskSet">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_PunisherGrenadesMengskU"/>
+        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
         <EffectArray value="AP_MarauderMengskShrapnelSet"/>
+        <EffectArray value="AP_MarauderMengskEnergizedShrapnelSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PunisherGrenadesMengskSlow">
-        <ValidatorArray index="0" value="AP_PunisherGrenadesResearched"/>
+        <ValidatorArray index="0" value="AP_HaveMarauderMengskIncapacitatorShells"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="NotFrenzied"/>
         <EditorCategories value="Race:Terran"/>
@@ -23082,7 +23091,7 @@
     </CEffectDamage>
     <CEffectSet id="AP_MarauderMengskAbsorbABWrapper">
         <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
-        <EffectArray value="AP_MarauderMengskAbsorbAB"/>
+        <EffectArray value="AP_MarauderMengskAbsorbAndPrimeSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbAB">
         <ValidatorArray value="AP_CasterLevelGTE2"/>
@@ -23090,12 +23099,29 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorb"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MarauderMengskEnergizedPrimeAB">
+        <ValidatorArray value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+        <ValidatorArray value="AP_CasterLevelGTE3"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_MarauderMengskAbsorbAndPrimeSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskAbsorbAB"/>
+        <EffectArray value="AP_MarauderMengskEnergizedPrimeAB"/>
+    </CEffectSet>
     <CEffectEnumArea id="AP_MarauderMengskAbsorbKnockbackSearch">
         <EditorCategories value=""/>
         <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Destructible,Buried,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1" Effect="UnitKnockbackBy3"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
+    <CEffectSet id="AP_MarauderMengskAbsorbFinalSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskAbsorbKnockbackSearch"/>
+        <EffectArray value="AP_MarauderMengskEnergizedPrimeAB"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbReapplicatorAB">
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
@@ -23105,6 +23131,11 @@
         <EditorCategories value=""/>
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MarauderMengskAbsorbABWrapper"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MarauderMengskLevelUpAddictiveSupplementsSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskLevelUpSet"/>
+        <EffectArray value="AP_MarauderMengskAddictiveSupplementsAddCharge"/>
     </CEffectSet>
     <CEffectSet id="AP_MarauderMengskLevelUpMaxedSet">
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
@@ -23124,6 +23155,7 @@
     <CEffectSet id="AP_MarauderMengskShrapnelImpactSet">
         <EditorCategories value=""/>
         <EffectArray value="AP_MarauderMengskShrapnelDamage"/>
+        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
     </CEffectSet>
     <CEffectEnumArea id="AP_MarauderMengskShrapnelSearch">
         <LaunchLocation Value="CasterUnit"/>
@@ -23134,14 +23166,57 @@
     </CEffectEnumArea>
     <CEffectSet id="AP_MarauderMengskShrapnelSet">
         <ValidatorArray value="AP_CasterLevelGTE3"/>
+        <ValidatorArray value="AP_CasterNotEnergizedPrimed"/>
         <EditorCategories value=""/>
         <EffectArray value="AP_MarauderMengskShrapnelSearch"/>
+    </CEffectSet>
+    <CEffectDamage id="AP_MarauderMengskEnergizedShrapnelDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Armored" value="1"/>
+        <ArmorReduction value="0"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="10">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+        <Death value="Eviscerate"/>
+    </CEffectDamage>
+    <CEffectSet id="AP_MarauderMengskEnergizedShrapnelImpactSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskEnergizedShrapnelDamage"/>
+        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AP_MarauderMengskEnergizedShrapnelSearch">
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Arc="360" Radius="3" Effect="AP_MarauderMengskEnergizedShrapnelImpactSet"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="AP_MarauderMengskEnergizedConsume">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="AP_MarauderMengskEnergizedShrapnelSet">
+        <ValidatorArray value="AP_CasterLevelGTE3"/>
+        <ValidatorArray value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+        <ValidatorArray value="AP_CasterHasEnergizedPrimed"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskEnergizedShrapnelSearch"/>
+        <EffectArray value="AP_MarauderMengskEnergizedConsume"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAttackSpeedBoostAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Source"/>
         <Behavior value="AP_MarauderMengskAttackSpeedBoost"/>
     </CEffectApplyBehavior>
+    <CEffectModifyUnit id="AP_MarauderMengskAddictiveSupplementsAddCharge">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarauderMengskAddictiveSupplements,Execute" ChargeCountUse="-1"/>
+        <ValidatorArray value="AP_HaveMarauderMengskAddictiveSupplements"/>
+    </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorMU">
         <EditorCategories value="Race:Terran"/>
         <Cost Behavior="AP_MarauderMengskAbsorbReapplicator" CooldownTimeUse="60"/>
@@ -23694,7 +23769,14 @@
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
+        <EffectArray value="AP_MarineMengskProdigalSonRank3BonusAB"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="AP_MarineMengskProdigalSonRank3BonusAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="AP_MarineMengskProdigalSonRank3Bonus"/>
+        <ValidatorArray value="AP_HaveMarineMengskProdigalSon"/>
+    </CEffectApplyBehavior>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddCharge">
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
@@ -23704,7 +23786,7 @@
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
         <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
-        <ValidatorArray value="AP_HaveBuildABoom"/>
+        <ValidatorArray value="AP_HaveMarineMengskBuildABoom"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesRemoveCharge">
         <EditorCategories value="Race:Zerg"/>

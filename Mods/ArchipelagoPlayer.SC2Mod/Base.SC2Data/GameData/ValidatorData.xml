@@ -25,9 +25,36 @@
         <Find value="1"/>
         <Value value="AP_HaveDisruptorPermanentCloak"/>
     </CValidatorPlayerRequirement>
-    <CValidatorPlayerRequirement id="AP_HaveBuildABoom">
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskBuildABoom">
         <Find value="1"/>
-        <Value value="AP_HaveBuildABoom"/>
+        <Value value="AP_HaveMarineMengskBuildABoom"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskProdigalSon">
+        <Find value="1"/>
+        <Value value="AP_HaveMarineMengskProdigalSon"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskCombatShield">
+        <Find value="1"/>
+        <Value value="AP_HaveMarineMengskCombatShield"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskSovereignNeosteel">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskSovereignNeosteel"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskAddictiveSupplements">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskAddictiveSupplements"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskIncapacitatorShells"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskEnergizedShrapnel">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NoMarineMengskCombatShield">
+        <Value value="AP_HaveMarineMengskCombatShield"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveHotSHaveRaptor">
         <Find value="1"/>
@@ -7536,6 +7563,16 @@
     <CValidatorUnitCompareBehaviorCount id="AP_NoMarauderMengskAbsorbReapplicator">
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasEnergizedPrimed">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterNotEnergizedPrimed">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_HasPrecursorMerc">
         <WhichUnit Value="Target"/>

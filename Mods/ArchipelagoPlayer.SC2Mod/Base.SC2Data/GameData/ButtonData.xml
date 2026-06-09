@@ -331,11 +331,26 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarineMengskSpiderMineLob">
-        <Icon value="AP\Assets\Textures\btn-ability-terran-spidermine.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-spidermine.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-spider-mine-toss.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-spider-mine-toss.dds"/>
         <EditorCategories value="Race:Terran"/>
         <Hotkey value="Button/Hotkey/AP_MarineMengskSpiderMineLob"/>
         <HotkeyAlias value="AP_MarineMengskSpiderMineLob"/>
+    </CButton>
+    <CButton id="AP_MarineMengskProdigalSon">
+        <Icon value="AP\Assets\Textures\btn-upgrade-the-prodigal-son.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-the-prodigal-son.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarineMengskBuildABoom">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-build-a-boom.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-build-a-boom.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarineMengskCombatShield">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-marine-mengsk-shield.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-marine-mengsk-shield.dds"/>
+        <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SpiderMineReplenish">
         <Icon value="Assets\Textures\btn-upgrade-raynor-replenishablemagazine.dds"/>
@@ -7450,6 +7465,16 @@
     <CButton id="AP_MarauderMengskAttackSpeedBoost">
         <Icon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarauderMengskAddictiveSupplements">
+        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarauderMengskEnergizedShrapnel">
+        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengsk">

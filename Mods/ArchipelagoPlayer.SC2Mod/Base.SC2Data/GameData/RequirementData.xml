@@ -37,15 +37,42 @@
     </CRequirement>
     <CRequirement id="AP_HaveMarineMengskProdigalSon">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
         <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_NotHaveMarineMengskProdigalSon">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Use" Link="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveBuildABoom">
+    <CRequirement id="AP_HaveMarineMengskBuildABoom">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeBuildABoomCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskCombatShield">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskSovereignNeosteel">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskAddictiveSupplements">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskEnergizedShrapnel">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>

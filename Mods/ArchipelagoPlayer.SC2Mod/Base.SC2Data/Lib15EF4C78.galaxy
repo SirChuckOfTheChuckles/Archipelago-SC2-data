@@ -3457,6 +3457,78 @@ void lib15EF4C78_gf_CM_Mengsk_ApplyBuildABoomCharges (unit lp_unit) {
     }
 }
 
+int lib15EF4C78_gf_CM_Mengsk_MarauderDisplayedRank (unit lp_unit) {
+    // Variable Declarations
+    int lv_displayedRank;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    lv_displayedRank = (UnitXPGetCurrentLevel(lp_unit, "AP_MengskVeterancyMarauderMengsk") - 1);
+    if ((lv_displayedRank < 0)) {
+        lv_displayedRank = 0;
+    }
+
+    if ((lv_displayedRank > 3)) {
+        lv_displayedRank = 3;
+    }
+
+    return lv_displayedRank;
+}
+
+void lib15EF4C78_gf_CM_Mengsk_ApplyExistingSovereignNeosteelRankBonus (unit lp_unit) {
+    // Variable Declarations
+    int lv_displayedRank;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if (((lp_unit == null) || (UnitGetType(lp_unit) != "AP_MarauderMengsk"))) {
+        return ;
+    }
+
+    UnitBehaviorRemove(lp_unit, "AP_MarauderMengskSovereignNeosteelRankBonus", c_unitBehaviorCountAll);
+    if ((TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarauderMengskSovereignNeosteel", c_techCountCompleteOnly) < 1)) {
+        return ;
+    }
+
+    lv_displayedRank = lib15EF4C78_gf_CM_Mengsk_MarauderDisplayedRank(lp_unit);
+    if ((lv_displayedRank > 0)) {
+        UnitBehaviorAdd(lp_unit, "AP_MarauderMengskSovereignNeosteelRankBonus", lp_unit, lv_displayedRank);
+    }
+}
+
+void lib15EF4C78_gf_CM_Mengsk_GrantExistingAddictiveSupplementsCharges (unit lp_unit) {
+    // Variable Declarations
+    int lv_desired;
+    int lv_index;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if (((lp_unit == null) || (UnitGetType(lp_unit) != "AP_MarauderMengsk"))) {
+        return ;
+    }
+
+    if ((TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarauderMengskAddictiveSupplements", c_techCountCompleteOnly) < 1)) {
+        return ;
+    }
+
+    lv_desired = lib15EF4C78_gf_CM_Mengsk_MarauderDisplayedRank(lp_unit);
+    if ((lv_desired > 2)) {
+        lv_desired = 2;
+    }
+
+    lv_index = 0;
+    while ((lv_index < lv_desired)) {
+        UnitCreateEffectUnit(lp_unit, "AP_MarauderMengskAddictiveSupplementsAddCharge", lp_unit);
+        lv_index = (lv_index + 1);
+    }
+}
+
 void lib15EF4C78_gf_CM_Mengsk_ForceMorphTrooper (unit lp_trooper, unit lp_pickup, string lp_morphEffect, string lp_morphBehavior, string lp_actorSignal) {
     // Automatic Variable Declarations
     // Implementation
@@ -8688,39 +8760,6 @@ void lib15EF4C78_gt_AP_Triggers_Kerrigan_HeroReviveOnBehaviorExpiry_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: CM_Mengsk_ProdigalSonMarineRank3
-//--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_unit;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_unit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitGetType(lv_unit) == "AP_MarineMengsk"))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus(lv_unit);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Init () {
-    lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3 = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Func");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3, c_playerAny, "AP_MengskVeteranMaxedTrigger");
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: CM_Mengsk_MarineMengskUpgrades
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func (bool testConds, bool runActions) {
@@ -8738,7 +8777,7 @@ bool lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func (bool testConds, bool ru
 
     // Conditions
     if (testConds) {
-        if (!(((EventUpgradeName() == "AP_MarineMengskProdigalSon") || (EventUpgradeName() == "AP_BuildABoom")))) {
+        if (!(((EventUpgradeName() == "AP_MarineMengskProdigalSon") || (EventUpgradeName() == "AP_MarineMengskBuildABoom") || (EventUpgradeName() == "AP_MarauderMengskSovereignNeosteel") || (EventUpgradeName() == "AP_MarauderMengskAddictiveSupplements")))) {
             return false;
         }
 
@@ -8752,7 +8791,13 @@ bool lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func (bool testConds, bool ru
         return true;
     }
 
-    lv_unitGroup = UnitGroup("AP_MarineMengsk", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    if (((EventUpgradeName() == "AP_MarauderMengskSovereignNeosteel") || (EventUpgradeName() == "AP_MarauderMengskAddictiveSupplements"))) {
+        lv_unitGroup = UnitGroup("AP_MarauderMengsk", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    }
+    else {
+        lv_unitGroup = UnitGroup("AP_MarineMengsk", EventPlayer(), RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    }
+
     auto60C9F39A_g = lv_unitGroup;
     auto60C9F39A_u = UnitGroupCount(auto60C9F39A_g, c_unitCountAll);
     for (;; auto60C9F39A_u -= 1) {
@@ -8763,8 +8808,20 @@ bool lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func (bool testConds, bool ru
             lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus(lv_unit);
         }
         else {
-            if ((EventUpgradeName() == "AP_BuildABoom")) {
+            if ((EventUpgradeName() == "AP_MarineMengskBuildABoom")) {
                 lib15EF4C78_gf_CM_Mengsk_ApplyBuildABoomCharges(lv_unit);
+            }
+            else {
+                if ((EventUpgradeName() == "AP_MarauderMengskSovereignNeosteel")) {
+                    lib15EF4C78_gf_CM_Mengsk_ApplyExistingSovereignNeosteelRankBonus(lv_unit);
+                }
+                else {
+                    if ((EventUpgradeName() == "AP_MarauderMengskAddictiveSupplements")) {
+                        lib15EF4C78_gf_CM_Mengsk_GrantExistingAddictiveSupplementsCharges(lv_unit);
+                    }
+
+                }
+
             }
 
         }
@@ -10549,7 +10606,6 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_AP_Player_ZS_KerriganDied_Init();
     lib15EF4C78_gt_AP_Player_onKerriganRevived_Init();
     lib15EF4C78_gt_AP_Triggers_Kerrigan_HeroReviveOnBehaviorExpiry_Init();
-    lib15EF4C78_gt_CM_Mengsk_ProdigalSonMarineRank3_Init();
     lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Init();
     lib15EF4C78_gt_AP_Player_ToggleHellionHellbat_Init();
     lib15EF4C78_gt_AP_Player_NightHawkResonatingFeedbackInterferenceEffect_Init();

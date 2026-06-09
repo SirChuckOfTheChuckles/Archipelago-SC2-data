@@ -27,9 +27,29 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarineMengskSpiderMineLob" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeBuildABoomCompleteOnly">
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_BuildABoom" State="CompleteOnly"/>
+        <Count Link="AP_MarineMengskBuildABoom" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarineMengskCombatShield" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarauderMengskSovereignNeosteel" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarauderMengskAddictiveSupplements" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarauderMengskIncapacitatorShells" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarauderMengskEnergizedShrapnel" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementNot id="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly">
         <OperandArray index="0" value="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>

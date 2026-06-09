@@ -30213,8 +30213,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="300"/>
-        <LifeMax value="300"/>
+        <LifeStart value="240"/>
+        <LifeMax value="240"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
         <Speed value="2.25"/>
@@ -30233,6 +30233,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_MarauderMengskAttackSpeedBoost"/>
+        <AbilArray Link="AP_MarauderMengskAddictiveSupplements"/>
         <BehaviorArray Link="AP_MengskVeterancyMarauderMengsk"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
@@ -30248,6 +30249,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_MarauderMengskAttackSpeedBoost" Type="AbilCmd" AbilCmd="AP_MarauderMengskAttackSpeedBoost,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_MarauderMengskAddictiveSupplements" Type="AbilCmd" AbilCmd="AP_MarauderMengskAddictiveSupplements,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_MarauderMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MarauderMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons>
@@ -30259,6 +30261,8 @@
                 <Column value="2"/>
             </LayoutButtons>
             <LayoutButtons Face="AP_MarauderMengskShield" Type="Passive" Requirements="AP_HaveMengskVeterancyMarauderMengskGELevel2" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_MarauderMengskSlow" Type="Passive" Requirements="AP_HaveMarauderMengskIncapacitatorShells" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_MarauderMengskEnergizedShrapnel" Type="Passive" Requirements="AP_HaveMarauderMengskEnergizedShrapnel" Row="1" Column="4"/>
         </CardLayouts>
         <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
@@ -30880,8 +30884,11 @@
             <LayoutButtons Face="AP_SpiderMine" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMines,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskSpiderMineLob" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMineLob,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_LeadFarmer" Type="Passive" Requirements="AP_HaveMarineMengskVeterancyLevel4" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_MarineMengskCombatShield" Type="Passive" Requirements="AP_HaveMarineMengskCombatShield" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_MarineMengskProdigalSon" Type="Passive" Requirements="AP_HaveMarineMengskProdigalSon" Row="1" Column="4"/>
             <LayoutButtons Face="AP_MarineMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AP_MarineMengskBuildABoom" Type="Passive" Requirements="AP_HaveMarineMengskBuildABoom" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>

@@ -9643,7 +9643,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="ShieldGZero"/>
         <TimeScaleSource Value="Global"/>
-        <FinalEffect value="AP_MarauderMengskAbsorbKnockbackSearch"/>
+        <FinalEffect value="AP_MarauderMengskAbsorbFinalSet"/>
         <DamageResponse>
             <Handled value="AP_MarauderMengskAbsorbReapplicatorSet"/>
             <ModifyFraction value="0"/>
@@ -9657,7 +9657,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="60"/>
-        <ExpireEffect value="AP_MarauderMengskAbsorbAB"/>
+        <ExpireEffect value="AP_MarauderMengskAbsorbAndPrimeSet"/>
         <Cost>
             <Cooldown Location="Unit" TimeUse="60"/>
         </Cost>
@@ -9674,16 +9674,16 @@
     <CBehaviorVeterancy id="AP_MengskVeterancyMarauderMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
-        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MarauderMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MarauderMengskLevelUpAddictiveSupplementsSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="75"/>
+                <VitalMaxArray index="Life" value="60"/>
             </Modification>
         </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MarauderMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank2">
+        <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MarauderMengskLevelUpAddictiveSupplementsSet" RankNameSchema="Behavior/RankName/AP_MengskRank2">
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="75"/>
+                <VitalMaxArray index="Life" value="60"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
@@ -9693,13 +9693,34 @@
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="75"/>
+                <VitalMaxArray index="Life" value="60"/>
             </Modification>
         </VeterancyLevelArray>
         <XPFraction index="Kills" value="0"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
+    <CBehaviorBuff id="AP_MarauderMengskSovereignNeosteelRankBonus">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <MaxStackCount value="3"/>
+        <Modification>
+            <VitalMaxArray index="Life" value="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MarauderMengskShrapnelSlow">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-mengsk-marauder-superconcussiveshells.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Modification MoveSpeedMultiplier="0.4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MarauderMengskEnergizedShrapnelPrimed">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <MaxStackCount value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskIrradiatePreMarker">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -9890,8 +9911,7 @@
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="25"/>
-                <WeaponRange value="2"/>
-                <WeaponScanBonus value="2"/>
+                <AdditiveAttackSpeedFactor value="0.30"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
@@ -9915,6 +9935,8 @@
             <StateFlags index="UnitAttrOnHeroic" value="1"/>
             <LifeArmorBonus value="1"/>
             <VitalMaxArray index="Life" value="25"/>
+                <WeaponRange value="2"/>
+                <WeaponScanBonus value="2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_WarpRelocating">
