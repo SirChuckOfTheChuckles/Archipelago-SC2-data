@@ -5744,6 +5744,9 @@
     <CValidatorUnitFilters id="AP_IsBiological">
         <Filters value="Biological;-"/>
     </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="AP_IsNotLight">
+        <Filters value="-;Light"/>
+    </CValidatorUnitFilters>
     <CValidatorCombine id="AP_UnitIsBiologicalOrMechanical">
         <CombineArray value="AP_IsBiological"/>
         <CombineArray value="AP_IsMechanical"/>
@@ -7606,6 +7609,38 @@
     <CValidatorUnitCompareBehaviorCount id="AP_NotHaveGhostMengskIrradiatePreMarker">
         <Behavior value="AP_GhostMengskIrradiatePreMarker"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="AP_HaveGhostMengskPhasingSuit">
+        <Find value="1"/>
+        <Value value="AP_HaveGhostMengskPhasingSuit"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveGhostMengskNemesisRounds">
+        <Find value="1"/>
+        <Value value="AP_HaveGhostMengskNemesisRounds"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasNemesisRoundsBioBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasNemesisRoundsMechBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_GhostMengskNemesisRoundsBioBonus">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterHasNemesisRoundsBioBuff"/>
+        <CombineArray value="AP_IsBiological"/>
+        <CombineArray value="AP_IsNotLight"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_GhostMengskNemesisRoundsMechBonus">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterHasNemesisRoundsMechBuff"/>
+        <CombineArray value="AP_IsMechanical"/>
+        <CombineArray value="AP_IsNotLight"/>
+    </CValidatorCombine>
     <CValidatorLocationEnumArea id="AP_GhostMengskEMPSmallMinimum3EnemyTargets">
         <ResultFailed value="CantFindEnoughTargets"/>
         <WhichLocation Value="TargetUnitOrPoint"/>

@@ -42389,7 +42389,7 @@
         <On Terms="Behavior.AP_MarauderMengskEnergizedShrapnelPrimed.Off" Send="Destroy"/>
         <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskEnergizedShrapnel" Send="SetTintColor 40,120,255"/>
         <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskEnergizedShrapnel" Send="SetScale 1.250000"/>
-        <HostSiteOps Ops="SOpAttachWeapon01"/>
+        <HostSiteOps Ops="SOpAttachWeaponRight"/>
         <Model value="AP_DiamondbackCharged"/>
     </CActorModel>
     <CActorModel id="AP_MarauderMengskEnergizedWeaponGlow2" parent="ModelAddition">
@@ -42397,7 +42397,7 @@
         <On Terms="Behavior.AP_MarauderMengskEnergizedShrapnelPrimed.Off" Send="Destroy"/>
         <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskEnergizedShrapnel" Send="SetTintColor 40,120,255"/>
         <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskEnergizedShrapnel" Send="SetScale 1.250000"/>
-        <HostSiteOps Ops="SOpAttachWeapon02"/>
+        <HostSiteOps Ops="SOpAttachWeaponLeft"/>
         <Model value="AP_DiamondbackCharged"/>
     </CActorModel>
     <CActorUnit id="AP_MarauderMengsk" parent="GenericUnitStandard" unitName="AP_MarauderMengsk">

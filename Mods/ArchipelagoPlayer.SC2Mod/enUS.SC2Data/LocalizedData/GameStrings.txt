@@ -1539,6 +1539,9 @@ Button/Name/AP_GhostMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_GhostMengskEMP=EMP Blast
 Button/Name/AP_GhostMengskEMPLongStun=EMP Blast
 Button/Name/AP_GhostMengskGuidedStrike=Sovereign Tactical Missiles
+Button/Name/AP_GhostMengskNemesisRounds=Nemesis Rounds
+Button/Name/AP_GhostMengskPhasingSuit=K'areshi Phasing Suit
+Button/Name/AP_GhostMengskPsychicEnhancers=Psychic Enhancers
 Button/Name/AP_GhostMengskIrradiate=Pyrokinetic Immolation
 Button/Name/AP_GhostMengskIrradiateBigDamage=Pyrokinetic Immolation
 Button/Name/AP_GhostMengskSuperCloak=Labyrinth Cloak
@@ -3187,6 +3190,9 @@ Button/Tooltip/AP_GhostMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do
 Button/Tooltip/AP_GhostMengskEMP=Deals <d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <d ref="Effect,AP_GhostMengskEMPStunShortAB,Duration"/> second. Cloaked units are revealed for <d ref="Behavior,AP_EMPMengskDecloak,Duration"/> seconds after being hit.
 Button/Tooltip/AP_GhostMengskEMPLongStun=Deals <d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <d ref="Effect,AP_GhostMengskEMPStunLongAB,Duration"/> seconds. Cloaked units are revealed for <d ref="Behavior,AP_EMPMengskDecloak,Duration"/> seconds after being hit.
 Button/Tooltip/AP_GhostMengskGuidedStrike=Tactical Missile Strikes no longer need to be channeled.
+Button/Tooltip/AP_GhostMengskNemesisRounds=After using Pyrokinetic Immolation, Emperor's Shadow's weapon damage bonus against Light targets also applies to Biological targets for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds. After using EMP Blast, the bonus also applies to Mechanical targets.
+Button/Tooltip/AP_GhostMengskPhasingSuit=Increases Labyrinth Cloak duration by <d ref="$UpgradeEffectArrayValue:AP_GhostMengskPhasingSuit:Behavior,AP_GhostMengskSuperCloak,Duration$"/> seconds. While cloaked, Emperor's Shadow moves <d ref="(Behavior,AP_GhostMengskPhasingSuitActive,Modification.MoveSpeedMultiplier - 1) * 100" precision="0"/>% faster and ignores unit collision.
+Button/Tooltip/AP_GhostMengskPsychicEnhancers=Reduces EMP Blast and Pyrokinetic Immolation energy costs by 25 and cooldowns by 3 seconds.
 Button/Tooltip/AP_GhostMengskIrradiate=Immolates a target Biological enemy for <d ref="Behavior,AP_GhostMengskIrradiate,Duration"/> seconds, dealing <d ref="Effect,AP_GhostMengskIrradiateSmallDamage,Amount"/> damage per second to themselves and nearby Biological enemies.
 Button/Tooltip/AP_GhostMengskIrradiateBigDamage=Immolates a target Biological enemy for <d ref="Behavior,AP_GhostMengskIrradiate,Duration"/> seconds, dealing <d ref="Effect,AP_GhostMengskIrradiateBigDamage,Amount"/> damage per second to themselves and nearby Biological enemies.
 Button/Tooltip/AP_GhostMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Labyrinth Cloak ability.

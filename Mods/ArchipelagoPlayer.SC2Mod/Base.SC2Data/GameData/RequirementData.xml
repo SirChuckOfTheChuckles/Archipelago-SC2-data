@@ -4539,6 +4539,21 @@
     <CRequirement id="AP_HaveGhostMengskEMPLongStun">
         <NodeArray index="Show" Link="AP_HaveGhostMengskEMPLongStun"/>
     </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskPsychicEnhancers">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPsychicEnhancersCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskPsychicEnhancersCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskPhasingSuit">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPhasingSuitCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskPhasingSuitCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskNemesisRounds">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_UseMengskVeterancyGhostMengskLTLevel3">
         <NodeArray index="Use" Link="AP_LTCountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit3"/>
     </CRequirement>

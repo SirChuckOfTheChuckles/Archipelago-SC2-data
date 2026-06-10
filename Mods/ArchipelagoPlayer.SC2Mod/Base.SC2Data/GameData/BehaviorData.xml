@@ -9647,7 +9647,7 @@
         <DamageResponse>
             <Handled value="AP_MarauderMengskAbsorbReapplicatorSet"/>
             <ModifyFraction value="0"/>
-            <ModifyLimit value="300"/>
+            <ModifyLimit value="200"/>
             <ModifyMinimumDamage value="1"/>
             <Chance value="1"/>
         </DamageResponse>
@@ -9669,7 +9669,7 @@
         <BehaviorCategories index="User13" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="10"/>
-        <Modification AttackSpeedMultiplier="3"/>
+        <Modification AttackSpeedMultiplier="2.25"/>
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarauderMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -9748,6 +9748,27 @@
             <StateFlags index="Undetectable" value="1"/>
             <StateFlags index="Unstoppable" value="1"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GhostMengskPhasingSuitActive">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="12"/>
+        <Modification MoveSpeedMultiplier="1.6">
+            <StateFlags index="SuppressCollision" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GhostMengskNemesisRoundsBioBuff">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="10"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GhostMengskNemesisRoundsMechBuff">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="10"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskSuperCloakController">
         <Cost>
@@ -9911,7 +9932,7 @@
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="25"/>
-                <AdditiveAttackSpeedFactor value="0.30"/>
+                <AdditiveAttackSpeedFactor value="0.25"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
@@ -10031,7 +10052,7 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
-        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+        <VeterancyLevelArray MinVeterancyXP="900" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="30"/>
@@ -10039,7 +10060,7 @@
                 <VitalRegenArray index="Energy" value="0.5"/>
             </Modification>
         </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
+        <VeterancyLevelArray MinVeterancyXP="2100" LevelGainEffect="AP_MedicMengskRank2LevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank2">
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="30"/>
@@ -10048,7 +10069,7 @@
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
-            <MinVeterancyXP value="4800"/>
+            <MinVeterancyXP value="3600"/>
             <LevelGainEffect value="AP_MengskVeteranMaxedTrigger"/>
             <LevelLossEffect value="AP_MengskVeteranTrigger"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
@@ -10062,6 +10083,31 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
+    <CBehaviorBuff id="AP_MedicMengskDefensiveMatrixBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-defensivematrix.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="20"/>
+        <DamageResponse>
+            <ClampMaximum value="0.5"/>
+            <Minimum value="0.5"/>
+            <ModifyLimit value="200"/>
+            <ModifyMinimumDamage value="1"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskRank2HealRangeBonus">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <Modification>
+            <AbilLinkSetRange index="AP_MengskMedicHeal" value="2"/>
+            <AbilLinkSetRange index="AP_MengskMedicDoubleBeamHeal" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyLiberatorMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>

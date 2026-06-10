@@ -11490,7 +11490,11 @@
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_MedicMengskDefensiveMatrix" parent="AP_ScienceVesselSCBWDefensiveMatrix">
         <Arc value="0"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel3"/>
+        <Effect index="0" value="AP_MedicMengskDefensiveMatrixSet"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel2"/>
     </CAbilEffectTarget>
     <CAbilMorph id="AP_FirebatOptimizedLogisticsMorph">
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_Firebat" Requirements="AP_HaveOptimizedLogisticsFirebat"/>
@@ -14569,9 +14573,9 @@
         <Effect index="0" value="AP_GhostMengskEMPSmallLM"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/GhostMengskEMPSmall"/>
-            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="8"/>
+            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="11"/>
         </Cost>
         <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Destructible,Stasis,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -14591,9 +14595,9 @@
         <Effect index="0" value="AP_GhostMengskEMPSmallLM"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/GhostMengskEMPSmall"/>
-            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="8"/>
+            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="11"/>
         </Cost>
         <InterruptCost>
             <Charge Link="Abil/GhostMengskEMPShortStun"/>
@@ -14619,9 +14623,9 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/Irradiate"/>
-            <Cooldown Link="Abil/Irradiate" TimeUse="5"/>
+            <Cooldown Link="Abil/Irradiate" TimeUse="8"/>
         </Cost>
         <TargetFilters value="Biological,Visible;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -14643,9 +14647,9 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/Irradiate"/>
-            <Cooldown Link="Abil/Irradiate" TimeUse="5"/>
+            <Cooldown Link="Abil/Irradiate" TimeUse="8"/>
         </Cost>
         <InterruptCost>
             <Charge Link="Abil/GhostMengskIrradiateSmallDamage"/>

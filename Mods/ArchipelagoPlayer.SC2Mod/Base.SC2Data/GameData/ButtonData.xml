@@ -7497,6 +7497,21 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="AP_GhostMengskPsychicEnhancers">
+        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskPhasingSuit">
+        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskNemesisRounds">
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="AP_GhostMengskSuperCloak">
         <Icon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
