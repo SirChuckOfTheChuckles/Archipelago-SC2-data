@@ -31050,7 +31050,7 @@
         <Sight value="10"/>
         <Food value="-3"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="175"/>
+        <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="175"/>
         <RepairTime value="25"/>
         <AttackTargetPriority value="20"/>
