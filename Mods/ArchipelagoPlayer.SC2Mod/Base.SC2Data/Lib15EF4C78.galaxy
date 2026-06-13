@@ -3468,7 +3468,7 @@ void lib15EF4C78_gf_CM_Mengsk_GrantRoyalAcademyXP (unit lp_unit) {
         return ;
     }
 
-    if ((UnitXPGetCurrentLevel(lp_unit, null) >= 1)) {
+    if ((UnitXPGetCurrentLevel(lp_unit, null) >= 2)) {
         return ;
     }
 

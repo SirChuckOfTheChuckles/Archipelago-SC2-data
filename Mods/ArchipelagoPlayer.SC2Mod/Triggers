@@ -74736,7 +74736,7 @@
         </Element>
         <Element Type="Param" Id="6D991E94">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>1</Value>
+            <Value>2</Value>
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionCall" Id="DFFFAC64">
@@ -81410,6 +81410,7 @@
             <ParameterDef Type="ParamDef" Library="Ntve" Id="6FB1C942"/>
             <Value>AP_MengskVeteranTrigger</Value>
             <ValueType Type="gamelink"/>
+            <ValueGameType Type="Effect"/>
         </Element>
         <Element Type="FunctionCall" Id="C6BA8466">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
@@ -81442,6 +81443,7 @@
             <ParameterDef Type="ParamDef" Library="Ntve" Id="D54684BD"/>
             <Value>AP_MengskVeteranL4Tracker</Value>
             <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
         </Element>
         <Element Type="Param" Id="B15DB047">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
