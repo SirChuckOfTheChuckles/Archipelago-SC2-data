@@ -797,7 +797,7 @@
         </Cost>
         <Range value="7"/>
         <PrepTime value="0.361"/>
-        <CursorEffect value="AP_MarineMengskSpiderMineLobDamage"/>
+        <CursorEffect value="AP_MarineMengskSpiderMineLobNoFriendlyDamage"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarineMengskSpiderMineLob" Requirements="AP_HaveMarineMengskSpiderMineLob"/>
         <Flags index="AllowMovement" value="1"/>
         <Alignment value="Negative"/>
@@ -1824,10 +1824,6 @@
         <AINotifyEffect value=""/>
         <CmdButtonArray index="Execute" DefaultButtonFace="Irradiate"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
-    </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_IrradiateMedicMengsk" parent="AP_Irradiate">
-        <Arc value="0"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel2"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_NanoRepair">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -11488,13 +11484,20 @@
         </CmdButtonArray>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_MedicMengskDefensiveMatrix" parent="AP_ScienceVesselSCBWDefensiveMatrix">
+    <CAbilEffectTarget id="AP_MedicMengskDefensiveMatrix">
         <Arc value="0"/>
-        <Effect index="0" value="AP_MedicMengskDefensiveMatrixSet"/>
+        <Effect index="0" value="AP_MedicMengskDefensiveMatrixAB"/>
+        <Flags index="AllowMovement" value="1"/>
         <Cost>
             <Vital index="Energy" value="50"/>
         </Cost>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel2"/>
+        <TargetFilters value="-;Self,Structure,RawResource,HarvestableResource,Item,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicMengskDefensiveMatrix" State="Restricted" Requirements="AP_HaveMedicMengskVeterancyLevel2">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="AP_MedicMengskOpticalRestoration">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -11504,7 +11507,7 @@
         <Flags index="NoDeceleration" value="1"/>
         <Flags index="Transient" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Cooldown Location="Unit" TimeUse="15"/>
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicMengskOpticalRestoration" Requirements="AP_MedicMengskOpticalRestorationResearched"/>
@@ -14531,13 +14534,13 @@
         <Flags index="Transient" value="1"/>
         <Flags index="PassengerAcquirePassengers" value="1"/>
         <Cost>
-            <Charge Link="Abil/SuperStimpackMarine"/>
-            <Cooldown Link="Abil/SuperStimpackMarine" TimeUse="30"/>
+            <Charge Link="Abil/AP_MarauderMengskAddictiveSupplements"/>
+            <Cooldown Link="Abil/AP_MarauderMengskAddictiveSupplements" Location="Unit" TimeUse="30"/>
         </Cost>
         <AutoCastRange value="5"/>
         <AutoCastValidatorArray value="AP_CasterIsFiringWeapon"/>
         <AINotifyEffect value="AP_MarauderMengskAttackSpeedBoostAB"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_ShowMarauderMengskAttackSpeedBoost">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" State="Restricted" Requirements="AP_ShowMarauderMengskAttackSpeedBoost">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
@@ -14556,7 +14559,7 @@
             </Charge>
             <Cooldown Link="Abil/AP_MarauderMengskAddictiveSupplements" Location="Unit" TimeUse="30"/>
         </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_UseMarauderMengskAddictiveSupplementsCharges">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" State="Restricted" Requirements="AP_UseMarauderMengskAddictiveSupplementsCharges">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>

@@ -7663,6 +7663,15 @@
     <CValidatorUnitCompareBehaviorCount id="AP_NotHaveGhostMengskIrradiatePreMarker">
         <Behavior value="AP_GhostMengskIrradiatePreMarker"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskPhasingSuitActive">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskPhasingSuitActive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareSpeed id="AP_GhostMengskIsMoving">
+        <Compare value="GT"/>
+        <Value value="0.125"/>
+    </CValidatorUnitCompareSpeed>
     <CValidatorPlayerRequirement id="AP_HaveGhostMengskPhasingSuit">
         <Find value="1"/>
         <Value value="AP_HaveGhostMengskPhasingSuit"/>
@@ -7671,6 +7680,33 @@
         <Find value="1"/>
         <Value value="AP_HaveGhostMengskNemesisRounds"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskNemesisRoundsBioBuff">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskNemesisRoundsMechBuff">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasGhostMengskNemesisRoundsBioBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasGhostMengskNemesisRoundsMechBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterHasGhostMengskNemesisRoundsBioBuff"/>
+        <CombineArray value="AP_CasterHasGhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorCombine>
     <CValidatorLocationEnumArea id="AP_GhostMengskEMPSmallMinimum3EnemyTargets">
         <ResultFailed value="CantFindEnoughTargets"/>
         <WhichLocation Value="TargetUnitOrPoint"/>

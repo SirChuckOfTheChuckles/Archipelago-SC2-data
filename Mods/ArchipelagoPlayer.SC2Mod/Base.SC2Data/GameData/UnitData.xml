@@ -5712,7 +5712,8 @@
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
         <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="50"/>
         <RepairTime value="65"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="BuildInProgress"/>
@@ -30888,7 +30889,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AP_SpiderMine" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMines,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_MarineMengskSpiderMines" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMines,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskSpiderMineLob" Type="AbilCmd" AbilCmd="AP_MarineMengskSpiderMineLob,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_LeadFarmer" Type="Passive" Requirements="AP_HaveMarineMengskVeterancyLevel4" Row="1" Column="2"/>
             <LayoutButtons Face="AP_MarineMengskCombatShield" Type="Passive" Requirements="AP_HaveMarineMengskCombatShield" Row="1" Column="3"/>
@@ -31060,7 +31061,6 @@
         <AbilArray Link="AP_MengskMedicHeal"/>
         <AbilArray Link="AP_MengskMedicHealLongRange"/>
         <AbilArray Link="AP_MengskMedicDoubleBeamHeal"/>
-        <AbilArray Link="AP_IrradiateMedicMengsk"/>
         <AbilArray Link="AP_MedicMengskDefensiveMatrix"/>
         <AbilArray Link="AP_MedicMengskOpticalRestoration"/>
         <BehaviorArray Link="AP_MengskVeterancyMedicMengsk"/>
@@ -31082,9 +31082,8 @@
             <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHeal,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHealLongRange,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicDoubleBeamHeal,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_IrradiateMedicMengsk" Type="AbilCmd" AbilCmd="AP_IrradiateMedicMengsk,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="AP_ScienceVesselSCBWDefensiveMatrix" Type="AbilCmd" AbilCmd="AP_MedicMengskDefensiveMatrix,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_MedicMengskOpticalRestoration" Type="AbilCmd" AbilCmd="AP_MedicMengskOpticalRestoration,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MedicMengskDefensiveMatrix" Type="AbilCmd" AbilCmd="AP_MedicMengskDefensiveMatrix,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_MedicMengskOpticalRestoration" Type="AbilCmd" AbilCmd="AP_MedicMengskOpticalRestoration,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="AP_MedicMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MedicMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_MedicMengskPhysicalTherapy" Type="Passive" Row="1" Column="2" Requirements="AP_MedicMengskPhysicalTherapyResearched"/>

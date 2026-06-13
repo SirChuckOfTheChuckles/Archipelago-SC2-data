@@ -16380,6 +16380,10 @@
         <Pitch value="-12.000000,-12.000000"/>
         <Volume value="-6.000000,-6.000000"/>
     </CSound>
+    <CSound id="AP_MedicMengskOpticalRestoration" parent="Spell">
+        <AssetArray File="Assets\Sounds\Tychus_Medic_HealingMatrix_Start_01.wav" FacialGroup=""/>
+        <Volume value="-2.000000,-2.000000"/>
+    </CSound>
     <CSound id="AP_VanguardFlareLoop" parent="Spell">
         <AssetArray File="Assets\Sounds\Abathur_Symbiote_Shield_Loop01.ogg" FacialGroup=""/>
         <DupeMuteCount value="2"/>

@@ -7395,6 +7395,7 @@
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
     <CRequirementLT id="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4">
+        <Flags index="TechTreeCheat" value="0"/>
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementLT>
@@ -7408,7 +7409,7 @@
         <OperandArray value="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
     </CRequirementAnd>
     <CRequirementNot id="AP_NotCountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly">
-        <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <OperandArray index="0" value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
     </CRequirementNot>
     <CRequirementOr id="AP_ShowMarauderMengskAttackSpeedBoost">
         <OperandArray value="AP_NotCountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>

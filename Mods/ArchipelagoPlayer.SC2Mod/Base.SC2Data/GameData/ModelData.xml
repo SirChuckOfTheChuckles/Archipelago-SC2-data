@@ -9727,8 +9727,10 @@
         <Model value="Assets\Effects\Glaze\Glaze_PhaseArmor\Glaze_PhaseArmor.m3"/>
     </CModel>
     <CModel id="AP_GhostMengskPhasingSuitTrail">
-        <Model value="Assets\Effects\Protoss\Alarak_DeadlyCharge_Trail\Alarak_DeadlyCharge_Trail.m3"/>
-        <EditorCategories value="Race:Terran"/>
+        <Model value="Assets\COOP\Mengsk\Units\Ghost_Mengsk_COOP\Ghost_Mengsk_COOP.m3"/>
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
+        <ShadowRadius value="0.000000"/>
     </CModel>
     <CModel id="AP_ArtanisExterminateGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
@@ -13567,6 +13569,13 @@
         <Radius value="2.000000"/>
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
+    <CModel id="AP_MedicMengskPhysicalTherapyShield" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Zeratul_VoidArmor_Impact\Zeratul_VoidArmor_Impact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Radius value="1.000000"/>
         <SelectionRadius value="0.555400"/>
         <ShadowRadius value="0.555400"/>
     </CModel>
@@ -20697,7 +20706,7 @@
     <CModel id="AP_MedicMengskPortrait" parent="AP_MedicPortrait">
         <Model value="AP\Assets\Units\Terran\MedicMengsk\MedicMengskPortrait.m3"/>
         <Image value="Assets\Textures\Marauder_Mengsk_Coop_Portrait_Static.dds"/>
-        <Lighting value="AP_FirebatPortrait"/>
+        <Lighting value="AP_ScienceVesselPortrait"/>
     </CModel>
     <CModel id="AP_BarracksMengskBuild" parent="BarracksBuildBase"/>
     <CModel id="AP_BarracksMengsk" parent="BarracksBase">
@@ -20754,6 +20763,18 @@
     <CModel id="AP_GhostMengskAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\GhostWeaponImpact\GhostWeaponImpact.m3"/>
         <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="AP_GhostMengskNemesisRoundsBioImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Neutral\SmokeStack_Fire_Constant_Sm\SmokeStack_Fire_Constant_Sm.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.380000,0.380000,0.380000"/>
+        <ScaleMin value="0.380000,0.380000,0.380000"/>
+    </CModel>
+    <CModel id="AP_GhostMengskNemesisRoundsMechImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.120000,0.120000,0.120000"/>
+        <ScaleMin value="0.120000,0.120000,0.120000"/>
     </CModel>
     <CModel id="AP_GhostMengskAttackLaunch" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\GhostWeaponLaunch\GhostWeaponLaunch.m3"/>

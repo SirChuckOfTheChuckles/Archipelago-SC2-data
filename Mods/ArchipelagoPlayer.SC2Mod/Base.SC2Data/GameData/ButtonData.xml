@@ -695,10 +695,6 @@
         <AlertIcon value="assets\textures\btn-upgrade-swann-irradiate.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="AP_IrradiateMedicMengsk" parent="AP_Irradiate">
-        <Hotkey value="Button/Hotkey/AP_IrradiateMedicMengsk"/>
-        <HotkeyAlias value="AP_IrradiateMedicMengsk"/>
-    </CButton>
     <CButton id="AP_NanoRepair">
         <Icon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-heal-color.dds"/>
@@ -4329,6 +4325,11 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="AP_MedicMengskDefensiveMatrix">
+        <Icon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="AP_LockOnRangeUpgrade">
         <Icon value="Assets\Textures\btn-upgrade-swann-targetingoptics.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-swann-targetingoptics.dds"/>
@@ -7631,6 +7632,11 @@
     <CButton id="AP_MarineMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarineMengskSpiderMines">
+        <Icon value="Assets\Textures\btn-upgrade-terran-spidermineex3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-spidermineex3.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarineMengsk">

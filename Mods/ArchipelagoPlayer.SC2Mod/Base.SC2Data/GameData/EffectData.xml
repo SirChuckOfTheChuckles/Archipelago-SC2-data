@@ -530,10 +530,30 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
+    <CEffectDamage id="AP_MarineMengskSpiderMineLobNoFriendlyDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="70"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.4687" Fraction="1"/>
+        <AreaArray Radius="0.7812" Fraction="0.5"/>
+        <AreaArray Radius="1.25" Fraction="0.25"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
     <CEffectLaunchMissile id="AP_MarineMengskSpiderMineLobLaunchMissile">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetPoint"/>
-        <ImpactEffect value="AP_MarineMengskSpiderMineLobDamage"/>
+        <ImpactEffect value="AP_MarineMengskSpiderMineLobNoFriendlyDamage"/>
         <AmmoUnit value="AP_MarineMengskSpiderMineLobWeapon"/>
         <ValidatorArray index="0" value="HasVision"/>
     </CEffectLaunchMissile>
@@ -15120,12 +15140,6 @@
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_MedicMengskDefensiveMatrixBuff"/>
     </CEffectApplyBehavior>
-    <CEffectSet id="AP_MedicMengskDefensiveMatrixSet">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MedicMengskDefensiveMatrixAB"/>
-        <EffectArray value="AP_ScienceVesselSCBWDefensiveMatrix@ModifyUnit"/>
-        <EffectArray value="AP_HighTemplarSCBWHallucination@KillHallucination"/>
-    </CEffectSet>
     <CEffectApplyBehavior id="AP_MedicMengskRank2HealRangeBonusAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Source"/>
@@ -15144,9 +15158,16 @@
     <CEffectEnumArea id="AP_MedicMengskOpticalRestorationSearch">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="CasterUnit"/>
-        <SearchFilters value=";Enemy,Neutral,Missile,Stasis,Dead,Hidden"/>
-        <AreaArray Radius="5" Effect="AP_RemoveAllDebuffs"/>
+        <SearchFilters value="-;Enemy,Neutral,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="5" Effect="AP_MedicMengskOpticalRestorationCleanse"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
+    <CEffectRemoveBehavior id="AP_MedicMengskOpticalRestorationCleanse">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Target"/>
+        <BehaviorAlignment value="Negative"/>
+        <Count value="4294967295"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="AP_MedicMengskOpticalRestorationCasterAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
@@ -23192,8 +23213,15 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
     </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_MarauderMengskSovereignNeosteelRankBonusRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_MarauderMengskSovereignNeosteelRankBonus"/>
+        <Count value="99"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="AP_MarauderMengskLevelUpSet">
         <EditorCategories value=""/>
+        <EffectArray value="AP_MarauderMengskSovereignNeosteelRankBonusRB"/>
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MarauderMengskAbsorbABWrapper"/>
     </CEffectSet>
@@ -23203,6 +23231,7 @@
         <EffectArray value="AP_MarauderMengskAddictiveSupplementsAddCharge"/>
     </CEffectSet>
     <CEffectSet id="AP_MarauderMengskLevelUpMaxedSet">
+        <EffectArray value="AP_MarauderMengskSovereignNeosteelRankBonusRB"/>
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarauderMengskAbsorbABWrapper"/>
     </CEffectSet>
@@ -23481,9 +23510,44 @@
         <SearchFilters value="Biological;Player,Ally,Structure,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3" Effect="AP_GhostMengskIrradiateDamageSwitch"/>
     </CEffectEnumArea>
-    <CEffectDamage id="AP_C10CanisterRifleMengsk" parent="DU_WEAP">
+    <CEffectSwitch id="AP_C10CanisterRifleMengsk">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioMechDamage"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioDamage"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsMechDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="AP_C10CanisterRifleMengskDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Light" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="15">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsBioDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Biological" value="2"/>
+        <AttributeFactor index="Light" value="2"/>
+        <Kind value="Ranged"/>
+        <Amount value="15">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsMechDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Mechanical" value="2"/>
+        <AttributeFactor index="Light" value="2"/>
+        <Kind value="Ranged"/>
+        <Amount value="15">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsBioMechDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Biological" value="2"/>
+        <AttributeFactor index="Mechanical" value="2"/>
+        <AttributeFactor index="Light" value="2"/>
         <Kind value="Ranged"/>
         <Amount value="15">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
@@ -23501,6 +23565,10 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="AP_GhostMengskNemesisRoundsMechApplySet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_GhostMengskNemesisRoundsMechAB"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_GhostMengskEMPDecloakAB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_EMPMengskDecloak"/>
@@ -23519,7 +23587,7 @@
         <ImpactLocation Value="TargetPoint"/>
         <ImpactEffect value="AP_GhostMengskEMPSmallSearch"/>
         <AmmoUnit value="AP_EMPMengskWeapon"/>
-        <LaunchEffect value="AP_GhostMengskNemesisRoundsMechAB"/>
+        <LaunchEffect value="AP_GhostMengskNemesisRoundsMechApplySet"/>
     </CEffectLaunchMissile>
     <CEffectModifyUnit id="AP_GhostMengskEMPRemoveEnergy">
         <ValidatorArray value="AP_empUTargetFilters"/>

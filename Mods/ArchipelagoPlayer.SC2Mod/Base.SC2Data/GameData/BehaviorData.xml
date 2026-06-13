@@ -9717,7 +9717,8 @@
         <Modification MoveSpeedMultiplier="0.4"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskRefractiveShrapnelPrimed">
-        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <MaxStackCount value="1"/>
     </CBehaviorBuff>
@@ -9769,10 +9770,6 @@
         <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-bio.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="10"/>
-        <Modification>
-            <DamageDealtAttributeMultiplier index="Biological" value="2"/>
-            <DamageDealtAttributeMultiplier index="Light" value="1"/>
-        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskNemesisRoundsMechBuff">
         <Alignment value="Positive"/>
@@ -9780,10 +9777,6 @@
         <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-mech.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="10"/>
-        <Modification>
-            <DamageDealtAttributeMultiplier index="Mechanical" value="2"/>
-            <DamageDealtAttributeMultiplier index="Light" value="1"/>
-        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskSuperCloakController">
         <Cost>
@@ -10123,20 +10116,19 @@
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <DisplayDuration index="Self" value="1"/>
-        <DisplayDuration index="Ally" value="1"/>
-        <Duration value="15"/>
+        <Duration value="10"/>
         <Modification>
-            <SightBonus value="5"/>
-            <Detect value="15"/>
+            <SightBonus value="4"/>
+            <Detect value="14"/>
             <DetectFilters value="-;Missile"/>
+            <StateFlags index="SuppressUnitUseLineOfSight" value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyTargetBuff">
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="0.7"/>
+        <Duration value="0.125"/>
         <Modification>
             <LifeArmorBonus value="3"/>
         </Modification>
@@ -10147,7 +10139,8 @@
         <Duration value="0.7"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyDR1">
-        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
@@ -10159,7 +10152,8 @@
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyDR2">
-        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
