@@ -47,10 +47,14 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarauderMengskIncapacitatorShells" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly">
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_MarauderMengskEnergizedShrapnel" State="CompleteOnly"/>
+        <Count Link="AP_MarauderMengskRefractiveShrapnel" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementAnd id="AP_AndCountUpgradeMarauderMengskRefractiveShrapnelCompleteOnlyGTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3">
+        <OperandArray value="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly"/>
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3"/>
+    </CRequirementAnd>
     <CRequirementNot id="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly">
         <OperandArray index="0" value="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirementNot>
@@ -386,6 +390,22 @@
     <CRequirementCountUpgrade id="AP_CountUpgradePermanentCloakBansheeCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_PermanentCloakBanshee" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMedicMengskOpticalRestorationCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MedicMengskOpticalRestoration" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMedicMengskPhysicalTherapyCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MedicMengskPhysicalTherapy" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMedicMengskHospiceCareCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MedicMengskHospiceCare" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMedicMengskRoyalAcademyDegreeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MedicMengskRoyalAcademyDegree" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeCrossSpectrumDampenersCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
@@ -7374,6 +7394,26 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
+    <CRequirementLT id="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4">
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="4"/>
+    </CRequirementLT>
+    <CRequirementAnd id="AP_UseMarauderMengskAddictiveSupplementsCharges">
+        <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
+        <OperandArray value="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_ShowMarauderMengskAddictiveSupplementsCharges">
+        <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <OperandArray value="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
+    </CRequirementAnd>
+    <CRequirementNot id="AP_NotCountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly">
+        <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+    </CRequirementNot>
+    <CRequirementOr id="AP_ShowMarauderMengskAttackSpeedBoost">
+        <OperandArray value="AP_NotCountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
+    </CRequirementOr>
     <CRequirementCountBehavior id="AP_CountBehaviorMarauderMengskAbsorbReapplicatorCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarauderMengskAbsorbReapplicator" State="CompleteOnlyAtUnit"/>
@@ -7417,9 +7457,9 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_GhostMengskGuidedStrike" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeGhostMengskPsychicEnhancersCompleteOnly">
+    <CRequirementCountUpgrade id="AP_CountUpgradeGhostMengskPsychicEnhancerCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_GhostMengskPsychicEnhancers" State="CompleteOnly"/>
+        <Count Link="AP_GhostMengskPsychicEnhancer" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementAnd id="AP_HaveGhostMengskEMPShortStun">
         <OperandArray value="AP_LTCountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit3"/>
@@ -7435,6 +7475,40 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_GhostMengskNemesisRounds" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountBehavior id="AP_CountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GhostMengskNemesisRoundsBioBuff" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="AP_CountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GhostMengskNemesisRoundsMechBuff" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementNot id="AP_NotCountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit">
+        <OperandArray index="0" value="AP_CountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementNot id="AP_NotCountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit">
+        <OperandArray index="0" value="AP_CountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit"/>
+    </CRequirementNot>
+    <CRequirementAnd id="AP_ShowGhostMengskNemesisRoundsBase">
+        <OperandArray value="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+        <OperandArray value="AP_NotCountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit"/>
+        <OperandArray value="AP_NotCountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_ShowGhostMengskNemesisRoundsBio">
+        <OperandArray value="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+        <OperandArray value="AP_CountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit"/>
+        <OperandArray value="AP_NotCountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_ShowGhostMengskNemesisRoundsMech">
+        <OperandArray value="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+        <OperandArray value="AP_NotCountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit"/>
+        <OperandArray value="AP_CountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AP_ShowGhostMengskNemesisRoundsBoth">
+        <OperandArray value="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+        <OperandArray value="AP_CountBehaviorGhostMengskNemesisRoundsBioBuffCompleteOnlyAtUnit"/>
+        <OperandArray value="AP_CountBehaviorGhostMengskNemesisRoundsMechBuffCompleteOnlyAtUnit"/>
+    </CRequirementAnd>
     <CRequirementCountUpgrade id="AP_CountUpgradeTrooperMengskWeaponDropCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_TrooperMengskWeaponDrop" State="CompleteOnly"/>
@@ -7527,6 +7601,14 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
+    <CRequirementLT id="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3">
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="3"/>
+    </CRequirementLT>
+    <CRequirementAnd id="AP_AndGTE3LT4CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit">
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+        <OperandArray value="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit4"/>
+    </CRequirementAnd>
     <CRequirementLT id="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit4">
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>

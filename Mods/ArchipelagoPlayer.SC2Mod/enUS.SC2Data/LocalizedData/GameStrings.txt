@@ -192,6 +192,7 @@ Abil/Name/AP_LocustLaunch=Locust Launch
 Abil/Name/AP_MULEGather=Gather
 Abil/Name/AP_MULERepair=Repair
 Abil/Name/AP_MakeVultureSpiderMines=Make Spider Mines
+Abil/Name/AP_MedicMengskOpticalRestoration=Optical Restoration
 Abil/Name/AP_MedivacDoubleBeamHeal=Double Beam Heal
 Abil/Name/AP_MedivacHeal=Heal
 Abil/Name/AP_MedivacTransport=Load-Unload (Medivac)
@@ -568,6 +569,7 @@ Behavior/Name/AP_GhostCloak=Cloak
 Behavior/Name/AP_GhostHoldFire=Hold Fire
 Behavior/Name/AP_GhostHoldFireB=Hold Fire
 Behavior/Name/AP_GhostMengskEMPStun=Stunned
+Behavior/Name/AP_GhostMengskGuidedStrike=Sovereign Tactical Missiles
 Behavior/Name/AP_GhostMengskIrradiate=Pyrokinetic Immolation
 Behavior/Name/AP_GhostMengskSuperCloak=Labyrinth Cloak
 Behavior/Name/AP_GhostSCBWLockdown=Lockdown
@@ -622,6 +624,8 @@ Behavior/Name/AP_MarauderMengskAbsorb=Aegis Barrier
 Behavior/Name/AP_MarauderMengskAttackSpeedBoost=High-Grade Stimpacks
 Behavior/Name/AP_MarauderMengskShrapnelSlow=Slow
 Behavior/Name/AP_MatrixOverloadTarget=Matrix Overload
+Behavior/Name/AP_MedicMengskOpticalRestorationBuff=Optical Restoration
+Behavior/Name/AP_MedicMengskPhysicalTherapyTargetBuff=Physical Therapy
 Behavior/Name/AP_MedicSCBWOpticFlare=Blind
 Behavior/Name/AP_MercAirDropDelay=Merc Air Drop Delay
 Behavior/Name/AP_MercGroundDrop=Merc Ground Drop
@@ -904,6 +908,7 @@ Behavior/Tooltip/AP_FungalGrowth=Target is affected by Fungal Growth. Target is 
 Behavior/Tooltip/AP_FusionCoreFusionReactorBuff=Target has increased energy regeneration.
 Behavior/Tooltip/AP_GhostCloak=This unit is cloaked and will only be revealed by detectors or effects.
 Behavior/Tooltip/AP_GhostHoldFireB=This unit will not attack enemy units unless ordered to do so.
+Behavior/Tooltip/AP_GhostMengskGuidedStrike=Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.
 Behavior/Tooltip/AP_GhostMengskIrradiate=Immolated unit. All biological units in or near the immolated area will take damage.
 Behavior/Tooltip/AP_GhostMengskSuperCloak=This unit is invisible and undetectable.
 Behavior/Tooltip/AP_GhostSCBWLockdown=While Lockdown is active the unit cannot attack or move. Detection is disabled.
@@ -1540,8 +1545,11 @@ Button/Name/AP_GhostMengskEMP=EMP Blast
 Button/Name/AP_GhostMengskEMPLongStun=EMP Blast
 Button/Name/AP_GhostMengskGuidedStrike=Sovereign Tactical Missiles
 Button/Name/AP_GhostMengskNemesisRounds=Nemesis Rounds
+Button/Name/AP_GhostMengskNemesisRoundsBio=Nemesis Rounds
+Button/Name/AP_GhostMengskNemesisRoundsMech=Nemesis Rounds
+Button/Name/AP_GhostMengskNemesisRoundsBoth=Nemesis Rounds
 Button/Name/AP_GhostMengskPhasingSuit=K'areshi Phasing Suit
-Button/Name/AP_GhostMengskPsychicEnhancers=Psychic Enhancers
+Button/Name/AP_GhostMengskPsychicEnhancer=Psychic Enhancers
 Button/Name/AP_GhostMengskIrradiate=Pyrokinetic Immolation
 Button/Name/AP_GhostMengskIrradiateBigDamage=Pyrokinetic Immolation
 Button/Name/AP_GhostMengskSuperCloak=Labyrinth Cloak
@@ -1797,7 +1805,7 @@ Button/Name/AP_MarauderMengsk=Train Aegis Guard
 Button/Name/AP_MarauderMengskAttackSpeedBoost=High-Grade Stimpacks
 Button/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
 Button/Name/AP_MarauderMengskCombatDiagnosis=Combat Diagnosis
-Button/Name/AP_MarauderMengskEnergizedShrapnel=Energized Shrapnel
+Button/Name/AP_MarauderMengskRefractiveShrapnel=Refractive Shrapnel
 Button/Name/AP_MarauderMengskShield=Aegis Barrier
 Button/Name/AP_MarauderMengskSlow=Incapacitator Shells
 Button/Name/AP_Marine=Train Marine
@@ -1812,6 +1820,10 @@ Button/Name/AP_Medic=Train Medic
 Button/Name/AP_MedicHeal=Heal
 Button/Name/AP_MedicMengsk=Train Field Response Theta
 Button/Name/AP_MedicMengskCombatDiagnosis=Combat Diagnosis
+Button/Name/AP_MedicMengskHospiceCare=Hospice Care
+Button/Name/AP_MedicMengskOpticalRestoration=Optical Restoration
+Button/Name/AP_MedicMengskPhysicalTherapy=Physical Therapy
+Button/Name/AP_MedicMengskRoyalAcademyDegree=Royal Academy Degree
 Button/Name/AP_MedicSCBWOpticFlare=Optical Flare
 Button/Name/AP_MedicSCBWRestoration=Restoration
 Button/Name/AP_Medivac=Build Medivac
@@ -3189,10 +3201,13 @@ Button/Tooltip/AP_GhostMengsk=Royal Guard specialist. Can use Pyrokinetic Immola
 Button/Tooltip/AP_GhostMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Emperor's Shadow are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GhostMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_GhostMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_GhostMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_C10CanisterRifleMengsk,Amount"/>, <d ref="Effect,AP_C10CanisterRifleMengsk,Amount * (1 + Effect,AP_C10CanisterRifleMengsk,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_C10CanisterRifleMengsk,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_C10CanisterRifleMengsk,Amount * (1 + Effect,AP_C10CanisterRifleMengsk,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GhostMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_GhostMengskEMP=Deals <d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <d ref="Effect,AP_GhostMengskEMPStunShortAB,Duration"/> second. Cloaked units are revealed for <d ref="Behavior,AP_EMPMengskDecloak,Duration"/> seconds after being hit.
 Button/Tooltip/AP_GhostMengskEMPLongStun=Deals <d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <d ref="Effect,AP_GhostMengskEMPStunLongAB,Duration"/> seconds. Cloaked units are revealed for <d ref="Behavior,AP_EMPMengskDecloak,Duration"/> seconds after being hit.
-Button/Tooltip/AP_GhostMengskGuidedStrike=Tactical Missile Strikes no longer need to be channeled.
-Button/Tooltip/AP_GhostMengskNemesisRounds=After using Pyrokinetic Immolation, Emperor's Shadow's weapon damage bonus against Light targets also applies to Biological targets for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds. After using EMP Blast, the bonus also applies to Mechanical targets.
-Button/Tooltip/AP_GhostMengskPhasingSuit=Increases Labyrinth Cloak duration by <d ref="$UpgradeEffectArrayValue:AP_GhostMengskPhasingSuit:Behavior,AP_GhostMengskSuperCloak,Duration$"/> seconds. While cloaked, Emperor's Shadow moves <d ref="(Behavior,AP_GhostMengskPhasingSuitActive,Modification.MoveSpeedMultiplier - 1) * 100" precision="0"/>% faster and ignores unit collision.
-Button/Tooltip/AP_GhostMengskPsychicEnhancers=Reduces EMP Blast and Pyrokinetic Immolation energy costs by 25 and cooldowns by 3 seconds.
+Button/Tooltip/AP_GhostMengskGuidedStrike=Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.
+Button/Tooltip/AP_GhostMengskNemesisRounds=After using Pyrokinetic Immolation or EMP Blast, increase the Light-damage bonus of the Emperor's Shadow weapon by 100% for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds.<n/><n/>This damage bonus also applies to Biological or Mechanical units for the duration, based on which ability was cast.
+Button/Tooltip/AP_GhostMengskNemesisRoundsBio=After using Pyrokinetic Immolation or EMP Blast, increase the Light-damage bonus of the Emperor's Shadow weapon by 100% for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds.<n/><n/>This damage bonus also applies to Biological or Mechanical units for the duration, based on which ability was cast.
+Button/Tooltip/AP_GhostMengskNemesisRoundsMech=After using Pyrokinetic Immolation or EMP Blast, increase the Light-damage bonus of the Emperor's Shadow weapon by 100% for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds.<n/><n/>This damage bonus also applies to Biological or Mechanical units for the duration, based on which ability was cast.
+Button/Tooltip/AP_GhostMengskNemesisRoundsBoth=After using Pyrokinetic Immolation or EMP Blast, increase the Light-damage bonus of the Emperor's Shadow weapon by 100% for <d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/> seconds.<n/><n/>This damage bonus also applies to Biological or Mechanical units for the duration, based on which ability was cast.
+Button/Tooltip/AP_GhostMengskPhasingSuit=Increase Labyrinth Cloak duration by <d ref="$UpgradeEffectArrayValue:AP_GhostMengskPhasingSuit:Behavior,AP_GhostMengskSuperCloak,Duration$"/> seconds.<n/><n/>Labyrinth Cloak now also grants <d ref="(Behavior,AP_GhostMengskPhasingSuitActive,Modification.MoveSpeedMultiplier - 1) * 100" precision="0"/>% movement speed and allows the Emperor's Shadow to walk through other units.
+Button/Tooltip/AP_GhostMengskPsychicEnhancer=Reduce the energy cost of EMP Blast and Pyrokinetic Immolation by 25 energy.<n/><n/>Reduce the cooldown of EMP Blast and Pyrokinetic Immolation by 3 seconds.
 Button/Tooltip/AP_GhostMengskIrradiate=Immolates a target Biological enemy for <d ref="Behavior,AP_GhostMengskIrradiate,Duration"/> seconds, dealing <d ref="Effect,AP_GhostMengskIrradiateSmallDamage,Amount"/> damage per second to themselves and nearby Biological enemies.
 Button/Tooltip/AP_GhostMengskIrradiateBigDamage=Immolates a target Biological enemy for <d ref="Behavior,AP_GhostMengskIrradiate,Duration"/> seconds, dealing <d ref="Effect,AP_GhostMengskIrradiateBigDamage,Amount"/> damage per second to themselves and nearby Biological enemies.
 Button/Tooltip/AP_GhostMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Labyrinth Cloak ability.
@@ -3528,7 +3543,7 @@ Button/Tooltip/AP_MagrailMunitionsViking=Increases Viking's damage to mechanical
 Button/Tooltip/AP_Marauder=Heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengsk=Royal Guard heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengskAttackSpeedBoost=Increases attack speed by <d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>% for <d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/> seconds.
-Button/Tooltip/AP_MarauderMengskAddictiveSupplements=Increases attack speed by <d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>% for <d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/> seconds. One charge gained per rank, up to 2.
+Button/Tooltip/AP_MarauderMengskAddictiveSupplements=Upon reaching Rank 1 and Rank 2, Aegis Guards gain one charge of High-Grade Stimpacks.<n/><n/>These stimpacks have a <d ref="Abil,AP_MarauderMengskAddictiveSupplements,Cost[0].Cooldown.TimeUse"/> second cooldown and are replaced by the standard High-Grade Stimpacks ability at Rank 3.
 Button/Tooltip/AP_MarauderMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Aegis Guard are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarauderMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_PunisherGrenadesMengskU,Amount"/>, <d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarauderMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MarauderMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Aegis Barrier ability.
 Button/Tooltip/AP_MarauderMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Aegis Barrier ability.</c>
@@ -3537,8 +3552,8 @@ Button/Tooltip/AP_MarauderMengskRank2Preview=<n/><c val="777777">Rank 2: Attacks
 Button/Tooltip/AP_MarauderMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the High-Grade Stimpacks ability.
 Button/Tooltip/AP_MarauderMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the High-Grade Stimpacks ability.</c>
 Button/Tooltip/AP_MarauderMengskShield=Grants the Aegis Guard a shield that absorbs <d ref="Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit"/> damage. When the shield takes fatal damage, it releases a pulse of energy that knocks back nearby ground units. This shield refreshes to full every <d ref="Behavior,AP_MarauderMengskAbsorbReapplicator,Cost.Cooldown.TimeUse"/> seconds.
-Button/Tooltip/AP_MarauderMengskEnergizedShrapnel=Whenever Aegis Barrier is applied, refreshed, or broken, the next Rank 2 attack fires a 360-degree shrapnel blast around the target, dealing <d ref="Effect,AP_MarauderMengskEnergizedShrapnelDamage,Amount/Effect,AP_PunisherGrenadesMengskU,Amount*100" precision="0"/>% weapon damage.
-Button/Tooltip/AP_MarauderMengskSlow=<c val="ffff8a">Aegis Guard</c> attacks slow the target by <d ref="(1-Behavior,AP_MarauderMengskShrapnelSlow,Modification.MoveSpeedMultiplier)*100" precision="0"/>% for <d ref="Behavior,AP_MarauderMengskShrapnelSlow,Duration"/> seconds.<n/><n/><c val="ffff8a">Rank 2:</c> Shrapnel also slows enemies behind the target.<n/><n/><c val="#ColorAttackInfo">Frenzied units are immune.</c>
+Button/Tooltip/AP_MarauderMengskRefractiveShrapnel=After gaining Aegis Barrier and when it is depleted, the Aegis Guard's next attack releases shrapnel in an area around its target, dealing <d ref="Effect,AP_MarauderMengskRefractiveShrapnelDamage,Amount/Effect,AP_PunisherGrenadesMengskU,Amount*100" precision="0"/>% weapon damage.<n/><n/><c val="ffff8a">Rank 2 required.</c>
+Button/Tooltip/AP_MarauderMengskSlow=Allows the Aegis Guard's attacks to slow enemy units (-<d ref="(1-Behavior,AP_MarauderMengskShrapnelSlow,Modification.MoveSpeedMultiplier)*100" precision="0"/>% movement speed for <d ref="Behavior,AP_MarauderMengskShrapnelSlow,Duration"/> seconds).<n/><n/><c val="#ColorAttackInfo">Frenzied units are immune.</c>
 Button/Tooltip/AP_Marine=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengsk=Royal Guard general-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Son of Korhal are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarineMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_GaussRifleMengsk,Amount"/> (+<d ref="Effect,AP_GaussRifleMengsk,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarineMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
@@ -3547,8 +3562,8 @@ Button/Tooltip/AP_MarineMengskCombatShield=Increases the <c val="ffff8a">Son of 
 Button/Tooltip/AP_MarineMengskProdigalSon=Rank 3 Sons of Korhal become Heroic and gain <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.VitalMaxArray[Life]"/> life, <d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.LifeArmorBonus"/> armor, and <d ref="Accumulator,AP_Constant025,Amount * 100" precision="0"/>% weapon damage.
 Button/Tooltip/AP_MarineMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Spider Mines ability.
 Button/Tooltip/AP_MarineMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Spider Mines ability.</c>
-Button/Tooltip/AP_MarineMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases attack range by 2.
-Button/Tooltip/AP_MarineMengskRank2Preview=<n/><c val="777777">Rank 2: Increases attack range by 2.</c>
+Button/Tooltip/AP_MarineMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases attack speed by <d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[2].Modification.AdditiveAttackSpeedFactor*100" precision="0"/>%.
+Button/Tooltip/AP_MarineMengskRank2Preview=<n/><c val="777777">Rank 2: Increases attack speed by <d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[2].Modification.AdditiveAttackSpeedFactor*100" precision="0"/>%.</c>
 Button/Tooltip/AP_MarineMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains Hail of Lead ability.
 Button/Tooltip/AP_MarineMengskRank3Preview=<n/><c val="777777">Rank 3: Gains Hail of Lead ability.</c>
 Button/Tooltip/AP_MasteryMengskRoyalGuardMengskRanks=<n/><n/><c val="ffff8a">This unit will also unlock new abilities or passive bonuses with each Rank.</c><n/>
@@ -3559,10 +3574,14 @@ Button/Tooltip/AP_MedicHeal=Heals a friendly biological target.<n/><n/><c val="f
 Button/Tooltip/AP_MedicHealPlusMech=Heals a friendly biological or mechanical target.<n/><n/><c val="f078ff">Heals <d ref="Effect,AP_heal,RechargeVitalRate"/> life per <d ref="Effect,AP_heal,RechargeVitalRate * Effect,AP_heal,DrainVitalCostFactor" precision="2"/> energy.</c>
 Button/Tooltip/AP_MedicMengsk=Royal Guard support trooper. Heals nearby biological units.
 Button/Tooltip/AP_MedicMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for Field Response Theta are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MedicMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_MedicMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_MedicMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Heal Rate:</c> <d ref="Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> (+<d ref="Effect,AP_MedicMengskHealL2,RechargeVitalRate - Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MedicMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
-Button/Tooltip/AP_MedicMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Irradiate ability.
-Button/Tooltip/AP_MedicMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Irradiate ability.</c>
-Button/Tooltip/AP_MedicMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Gains Defensive Matrix ability.
-Button/Tooltip/AP_MedicMengskRank2Preview=<n/><c val="777777">Rank 2: Gains Defensive Matrix ability.</c>
+Button/Tooltip/AP_MedicMengskHospiceCare=The Field Response Theta's Defensive Matrix restores <d ref="Upgrade,AP_MedicMengskHospiceCare,EffectArray[0].Value"/> life per second to units it protects.
+Button/Tooltip/AP_MedicMengskOpticalRestoration=Removes negative effects from all nearby friendly units. The Field Response Theta gains detection and +5 sight range for 15 seconds.<n/><n/><c val="f078ff">Costs 75 energy.</c>
+Button/Tooltip/AP_MedicMengskPhysicalTherapy=Grants <d ref="Behavior,AP_MedicMengskPhysicalTherapyTargetBuff,Modification.LifeArmorBonus"/> armor to units this Field Response Theta is actively healing.<n/><n/>The Field Response Theta takes 20% reduced damage for each friendly unit it is healing (up to 40%).
+Button/Tooltip/AP_MedicMengskRoyalAcademyDegree=Field Response Thetas start at Rank 1.
+Button/Tooltip/AP_MedicMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Defensive Matrix ability.
+Button/Tooltip/AP_MedicMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Defensive Matrix ability.</c>
+Button/Tooltip/AP_MedicMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Heal range increased by 2.
+Button/Tooltip/AP_MedicMengskRank2Preview=<n/><c val="777777">Rank 2: Heal range increased by 2.</c>
 Button/Tooltip/AP_MedicMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Able to heal two targets at once.
 Button/Tooltip/AP_MedicMengskRank3Preview=<n/><c val="777777">Rank 3: Able to heal two targets at once.</c>
 Button/Tooltip/AP_MedicSCBWOpticFlare=Reduces vision range of the target enemy unit. Passive <c val="ffff8a">Detection</c> is disabled.
@@ -4127,13 +4146,29 @@ Upgrade/Tooltip/AP_MarineMengskBuildABoom=Sons of Korhal start with 2 additional
 Upgrade/Name/AP_MarineMengskCombatShield=Shield of the Dominion
 Upgrade/Tooltip/AP_MarineMengskCombatShield=Sons of Korhal gain <d ref="Upgrade,AP_MarineMengskCombatShield,EffectArray[0].Value"/> life.
 Upgrade/Name/AP_MarauderMengskSovereignNeosteel=Sovereign Neosteel
-Upgrade/Tooltip/AP_MarauderMengskSovereignNeosteel=The Aegis Guard gains 40 life, plus an additional 10 life per rank.
+Upgrade/Tooltip/AP_MarauderMengskSovereignNeosteel=Aegis Guards gain +40 health, and an additional +10 health per rank.
 Upgrade/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
-Upgrade/Tooltip/AP_MarauderMengskAddictiveSupplements=Unlocks a single-use Addictive Supplements ability. The Aegis Guard gains one charge at Rank 1 and a second at Rank 2.
+Upgrade/Tooltip/AP_MarauderMengskAddictiveSupplements=Upon reaching Rank 1 and Rank 2, Aegis Guards gain one charge of High-Grade Stimpacks. These stimpacks have a 30 second cooldown and are replaced by the standard High-Grade Stimpacks ability at Rank 3.
 Upgrade/Name/AP_MarauderMengskIncapacitatorShells=Incapacitator Shells
-Upgrade/Tooltip/AP_MarauderMengskIncapacitatorShells=Aegis Guard attacks slow the target by 60% for 3 seconds. At Rank 2, shrapnel also slows enemies behind the target.
-Upgrade/Name/AP_MarauderMengskEnergizedShrapnel=Energized Shrapnel
-Upgrade/Tooltip/AP_MarauderMengskEnergizedShrapnel=Whenever Aegis Barrier is applied, refreshed, or broken, the next Rank 2 attack fires a 360-degree shrapnel blast around the target for 50% weapon damage.
+Upgrade/Tooltip/AP_MarauderMengskIncapacitatorShells=Allows the Aegis Guard's attacks to slow enemy units (-60% movement speed for 3 seconds).
+Upgrade/Name/AP_MarauderMengskRefractiveShrapnel=Refractive Shrapnel
+Upgrade/Tooltip/AP_MarauderMengskRefractiveShrapnel=After gaining Aegis Barrier and when it is depleted, the Aegis Guard's next attack releases shrapnel in an area around its target, dealing 67% weapon damage. Requires Rank 2.
+Upgrade/Name/AP_MedicMengskRoyalAcademyDegree=Royal Academy Degree
+Upgrade/Tooltip/AP_MedicMengskRoyalAcademyDegree=Field Response Thetas start at Rank 1.
+Upgrade/Name/AP_MedicMengskOpticalRestoration=Optical Restoration
+Upgrade/Tooltip/AP_MedicMengskOpticalRestoration=Field Response Thetas gain the Optical Restoration ability: removes negative effects from all nearby friendly units, and the Field Response Theta gains detection and +5 sight range for 15 seconds. Costs 75 energy, 15 second cooldown.
+Upgrade/Name/AP_MedicMengskHospiceCare=Hospice Care
+Upgrade/Tooltip/AP_MedicMengskHospiceCare=The Field Response Theta's Defensive Matrix restores <d ref="Upgrade,AP_MedicMengskHospiceCare,EffectArray[0].Value"/> life per second to units it protects.
+Upgrade/Name/AP_MedicMengskPhysicalTherapy=Physical Therapy
+Upgrade/Tooltip/AP_MedicMengskPhysicalTherapy=Field Response Thetas grant 3 armor to units they are actively healing, and take 20% reduced damage for each friendly unit they are healing (up to 40%).
+Upgrade/Name/AP_GhostMengskGuidedStrike=Sovereign Tactical Missiles
+Upgrade/Tooltip/AP_GhostMengskGuidedStrike=Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.
+Upgrade/Name/AP_GhostMengskPsychicEnhancer=Psychic Enhancers
+Upgrade/Tooltip/AP_GhostMengskPsychicEnhancer=Reduce the energy cost of EMP Blast and Pyrokinetic Immolation by 25 energy. Reduce the cooldown of EMP Blast and Pyrokinetic Immolation by 3 seconds.
+Upgrade/Name/AP_GhostMengskPhasingSuit=K'areshi Phasing Suit
+Upgrade/Tooltip/AP_GhostMengskPhasingSuit=Increase Labyrinth Cloak duration by 2 seconds. Labyrinth Cloak now also grants 60% movement speed and allows the Emperor's Shadow to walk through other units.
+Upgrade/Name/AP_GhostMengskNemesisRounds=Nemesis Rounds
+Upgrade/Tooltip/AP_GhostMengskNemesisRounds=After using Pyrokinetic Immolation or EMP Blast, increase the Light-damage bonus of the Emperor's Shadow weapon by 100% for 10 seconds. This damage bonus also applies to Biological or Mechanical units for the duration, based on which ability was cast.
 Button/Tooltip/AP_SpineCrawler=Anti-ground defensive structure. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_SpineCrawlerPassive=Spawning Pool allows you to mutate Drones into Spine Crawlers.
 Button/Tooltip/AP_SpineCrawlerRoot=Roots the Spine Crawler. A rooted Spine Crawler has the ability to attack ground units but is unable to move.

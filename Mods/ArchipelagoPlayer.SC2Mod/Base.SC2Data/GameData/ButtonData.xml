@@ -7468,13 +7468,18 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengskAddictiveSupplements">
-        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-addictive-supplements.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-addictive-supplements.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="AP_MarauderMengskEnergizedShrapnel">
-        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
+    <CButton id="AP_MarauderMengskRefractiveShrapnel">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarauderMengskSovereignNeosteel">
+        <Icon value="AP\Assets\Textures\btn-upgrade-sovereign-neosteel.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-sovereign-neosteel.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengsk">
@@ -7497,19 +7502,34 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="AP_GhostMengskPsychicEnhancers">
-        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+    <CButton id="AP_GhostMengskPsychicEnhancer">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-psychic-amplifier.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-psychic-amplifier.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GhostMengskPhasingSuit">
-        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-phasing-suit.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-phasing-suit.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GhostMengskNemesisRounds">
-        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-base.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-base.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskNemesisRoundsBio" parent="AP_GhostMengskNemesisRounds">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-bio.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-bio.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskNemesisRoundsMech" parent="AP_GhostMengskNemesisRounds">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-mech.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-mech.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskNemesisRoundsBoth" parent="AP_GhostMengskNemesisRounds">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-both.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-both.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GhostMengskSuperCloak">
@@ -7683,6 +7703,23 @@
     <CButton id="AP_MedicMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MedicMengskOpticalRestoration">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MedicMengskPhysicalTherapy">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MedicMengskHospiceCare">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-hospice-care.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MedicMengskRoyalAcademyDegree">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-royal-academy-degree.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MedicMengsk">

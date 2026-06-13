@@ -9716,7 +9716,7 @@
         <Duration value="3"/>
         <Modification MoveSpeedMultiplier="0.4"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MarauderMengskEnergizedShrapnelPrimed">
+    <CBehaviorBuff id="AP_MarauderMengskRefractiveShrapnelPrimed">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <MaxStackCount value="1"/>
@@ -9749,6 +9749,11 @@
             <StateFlags index="Unstoppable" value="1"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GhostMengskGuidedStrike">
+        <InfoIcon value="Assets\Textures\btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Requirements value="AP_HaveGhostMengskGuidedStrike"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskPhasingSuitActive">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -9761,14 +9766,24 @@
     <CBehaviorBuff id="AP_GhostMengskNemesisRoundsBioBuff">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-bio.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="10"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Biological" value="2"/>
+            <DamageDealtAttributeMultiplier index="Light" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskNemesisRoundsMechBuff">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-mech.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="10"/>
+        <Modification>
+            <DamageDealtAttributeMultiplier index="Mechanical" value="2"/>
+            <DamageDealtAttributeMultiplier index="Light" value="1"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskSuperCloakController">
         <Cost>
@@ -10103,9 +10118,56 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskOpticalRestorationBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="15"/>
         <Modification>
-            <AbilLinkSetRange index="AP_MengskMedicHeal" value="2"/>
-            <AbilLinkSetRange index="AP_MengskMedicDoubleBeamHeal" value="2"/>
+            <SightBonus value="5"/>
+            <Detect value="15"/>
+            <DetectFilters value="-;Missile"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyTargetBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="0.7"/>
+        <Modification>
+            <LifeArmorBonus value="3"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskTherapySoloHealingBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyDR1">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <DisableValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <DisableValidatorArray value="AP_MedicMengskTherapyHealingGE1"/>
+        <Modification>
+            <DamageTakenFraction index="Melee" value="-0.2"/>
+            <DamageTakenFraction index="Ranged" value="-0.2"/>
+            <DamageTakenFraction index="Splash" value="-0.2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyDR2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <DisableValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <DisableValidatorArray value="AP_MedicMengskTherapyBusyGE2"/>
+        <Modification>
+            <DamageTakenFraction index="Melee" value="-0.2"/>
+            <DamageTakenFraction index="Ranged" value="-0.2"/>
+            <DamageTakenFraction index="Splash" value="-0.2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyLiberatorMengsk">

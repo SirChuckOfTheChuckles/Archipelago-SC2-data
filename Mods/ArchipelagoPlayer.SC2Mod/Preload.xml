@@ -29,6 +29,8 @@
 <Behavior id="AP_MengskVeterancySiegeTankMengsk"/>
 <Behavior id="AP_MengskVeterancyMedivac"/>
 <Behavior id="AP_VeterancySuppressEffects"/>
+<Behavior id="AP_MengskVeterancyMarauderMengsk"/>
+<Behavior id="AP_MarauderMengskSovereignNeosteelRankBonus"/>
 <Behavior id="AP_NovaNukeArming"/>
 <Behavior id="AP_MengskNukeArming"/>
 <Behavior id="AP_TrooperMengskWeaponAA"/>
@@ -49,6 +51,7 @@
 <Effect id="AP_SOASuperShieldApply"/>
 <Effect id="AP_SOAStrafeAttackDamage"/>
 <Effect id="AP_SOATimeFreezeVisual"/>
+<Effect id="AP_MarauderMengskAddictiveSupplementsAddCharge"/>
 <Effect id="AP_TrooperMengskMorphAA"/>
 <Effect id="AP_TrooperMengskMorphFlamethrower"/>
 <Effect id="AP_TrooperMengskMorphImproved"/>

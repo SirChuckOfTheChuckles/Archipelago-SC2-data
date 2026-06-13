@@ -15083,9 +15083,9 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike.dds"/>
     </CUpgrade>
-    <CUpgrade id="AP_GhostMengskPsychicEnhancers">
+    <CUpgrade id="AP_GhostMengskPsychicEnhancer">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-psychic-amplifier.dds"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPShortStun,Cost[0].Vital[Energy]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPLongStun,Cost[0].Vital[Energy]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskIrradiateSmallDamage,Cost[0].Vital[Energy]" Value="25"/>
@@ -15097,12 +15097,12 @@
     </CUpgrade>
     <CUpgrade id="AP_GhostMengskPhasingSuit">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-supercloak.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-phasing-suit.dds"/>
         <EffectArray Operation="Add" Reference="Behavior,AP_GhostMengskSuperCloak,Duration" Value="2"/>
     </CUpgrade>
     <CUpgrade id="AP_GhostMengskNemesisRounds">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel1.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-base.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_MarineMengskProdigalSon">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
@@ -15131,7 +15131,7 @@
     </CUpgrade>
     <CUpgrade id="AP_MarauderMengskSovereignNeosteel">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-sovereign-neosteel.dds"/>
         <EffectArray Reference="Unit,AP_MarauderMengsk,LifeMax" Value="40"/>
         <EffectArray Reference="Unit,AP_MarauderMengsk,LifeStart" Value="40"/>
         <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]" Value="10"/>
@@ -15141,15 +15141,32 @@
     </CUpgrade>
     <CUpgrade id="AP_MarauderMengskAddictiveSupplements">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-addictive-supplements.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_MarauderMengskIncapacitatorShells">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-ability-mengsk-marauder-superconcussiveshells.dds"/>
     </CUpgrade>
-    <CUpgrade id="AP_MarauderMengskEnergizedShrapnel">
+    <CUpgrade id="AP_MarauderMengskRefractiveShrapnel">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskRoyalAcademyDegree">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-royal-academy-degree.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskOpticalRestoration">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskHospiceCare">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-hospice-care.dds"/>
+        <EffectArray Reference="Behavior,AP_MedicMengskDefensiveMatrixBuff,Modification.VitalRegenArray[Life]" Value="5"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskPhysicalTherapy">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_HaveGhostMengsk"/>
     <CUpgrade id="AP_TrooperMengskWeaponDrop">

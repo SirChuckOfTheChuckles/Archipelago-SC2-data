@@ -11496,6 +11496,19 @@
         </Cost>
         <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel2"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="AP_MedicMengskOpticalRestoration">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="AP_MedicMengskOpticalRestorationSet"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+            <Cooldown Location="Unit" TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicMengskOpticalRestoration" Requirements="AP_MedicMengskOpticalRestorationResearched"/>
+    </CAbilEffectInstant>
     <CAbilMorph id="AP_FirebatOptimizedLogisticsMorph">
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_Firebat" Requirements="AP_HaveOptimizedLogisticsFirebat"/>
         <Flags index="Automatic" value="1"/>
@@ -14524,7 +14537,7 @@
         <AutoCastRange value="5"/>
         <AutoCastValidatorArray value="AP_CasterIsFiringWeapon"/>
         <AINotifyEffect value="AP_MarauderMengskAttackSpeedBoostAB"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_HaveMarauderMengskVeterancyLevel4">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_ShowMarauderMengskAttackSpeedBoost">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
@@ -14535,15 +14548,15 @@
         <Flags index="Transient" value="1"/>
         <Flags index="PassengerAcquirePassengers" value="1"/>
         <Cost>
-            <Charge>
+            <Charge Link="Abil/AP_MarauderMengskAddictiveSupplements">
                 <CountMax value="2"/>
                 <CountStart value="0"/>
                 <CountUse value="1"/>
                 <Location value="Unit"/>
             </Charge>
-            <Cooldown Location="Unit" TimeUse="30"/>
+            <Cooldown Link="Abil/AP_MarauderMengskAddictiveSupplements" Location="Unit" TimeUse="30"/>
         </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAddictiveSupplements" Requirements="AP_HaveMarauderMengskAddictiveSupplements">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_UseMarauderMengskAddictiveSupplementsCharges">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
@@ -15028,11 +15041,28 @@
         <EffectArray index="Cancel" value="AP_WarpRelocateEndSet"/>
     </CAbilBuild>
     <CAbilEffectTarget id="AP_MengskMedicHeal" parent="AP_heal">
-        <Effect index="0" value="AP_MedicMengskHealSwitch"/>
-        <CmdButtonArray index="Execute" Requirements="AP_NotHaveMedicMengskDoubleBeamHeal"/>
+        <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
+        <ValidatorArray value="AP_NotMaxHP"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <CmdButtonArray index="Execute" Requirements="AP_MedicMengskHealDefaultRange"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AP_MengskMedicHealLongRange" parent="AP_heal">
+        <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
+        <Range index="0" value="4"/>
+        <AutoCastRange value="8"/>
+        <ValidatorArray value="AP_NotMaxHP"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskHealLongRange"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_MengskMedicDoubleBeamHeal" parent="AP_heal">
         <Effect index="0" value="AP_MedicMengskHealInitialSwitch"/>
+        <Range index="0" value="4"/>
+        <AutoCastRange value="8"/>
+        <ValidatorArray value="AP_NotMaxHP"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
         <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_WraithMengskResonatingFeedbackInterference">

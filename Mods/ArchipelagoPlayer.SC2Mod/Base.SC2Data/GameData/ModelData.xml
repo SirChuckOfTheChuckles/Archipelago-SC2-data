@@ -9726,6 +9726,10 @@
     <CModel id="AP_PhoenixPurifierPhaseArmorGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_PhaseArmor\Glaze_PhaseArmor.m3"/>
     </CModel>
+    <CModel id="AP_GhostMengskPhasingSuitTrail">
+        <Model value="Assets\Effects\Protoss\Alarak_DeadlyCharge_Trail\Alarak_DeadlyCharge_Trail.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="AP_ArtanisExterminateGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
     </CModel>
@@ -15054,6 +15058,11 @@
         <Model value="Assets\Effects\Protoss\Revelation\Revelation.m3"/>
         <ScaleMax value="4.000000,4.000000,4.000000"/>
         <ScaleMin value="4.000000,4.000000,4.000000"/>
+    </CModel>
+    <CModel id="AP_MedicMengskOpticalRestorationModel">
+        <Model value="Assets\Effects\Protoss\Revelation\Revelation.m3"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
     </CModel>
     <CModel id="AP_SOAGravitonBombImpactShockwave" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Protoss\SOA_TemporalField\SOA_TemporalField.m3"/>

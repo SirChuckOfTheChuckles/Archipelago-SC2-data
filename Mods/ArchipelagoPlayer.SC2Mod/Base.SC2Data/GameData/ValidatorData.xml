@@ -49,9 +49,9 @@
         <Find value="1"/>
         <Value value="AP_HaveMarauderMengskIncapacitatorShells"/>
     </CValidatorPlayerRequirement>
-    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskEnergizedShrapnel">
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskRefractiveShrapnel">
         <Find value="1"/>
-        <Value value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+        <Value value="AP_HaveMarauderMengskRefractiveShrapnel"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_NoMarineMengskCombatShield">
         <Value value="AP_HaveMarineMengskCombatShield"/>
@@ -213,7 +213,7 @@
         <CombineArray value="AP_IsDoubleBeamHealing"/>
         <CombineArray value="LifeGTZero"/>
         <CombineArray value="AP_NotMaxHP"/>
-        <CombineArray value="AP_MengskMedicHealTargetInRange"/>
+        <CombineArray value="AP_MengskMedicHealTargetInEffectiveRange"/>
         <CombineArray value="NotHidden"/>
     </CValidatorCombine>
     <CValidatorCombine id="AP_HealScanPeriodicCombine">
@@ -231,6 +231,63 @@
         <Compare value="LE"/>
         <Range value="2"/>
     </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="AP_MengskMedicHealTargetInLongRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="4"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="AP_MengskMedicHealTargetInRank2Range">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterLevelGTE3"/>
+        <CombineArray value="AP_MengskMedicHealTargetInLongRange"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MengskMedicHealTargetInEffectiveRange">
+        <Type value="Or"/>
+        <CombineArray value="AP_MengskMedicHealTargetInRange"/>
+        <CombineArray value="AP_MengskMedicHealTargetInRank2Range"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveMedicMengskPhysicalTherapy">
+        <Find value="1"/>
+        <Value value="AP_MedicMengskPhysicalTherapyResearched"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitOrderQueue id="AP_MedicMengskHealOrderActive">
+        <WhichUnit Value="Caster"/>
+        <AbilLink value="AP_MengskMedicHeal"/>
+        <Find value="1"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorLocationCompareRange id="AP_MedicMengskTherapyTargetInRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="4.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="AP_MedicMengskTherapySoloActiveCombine">
+        <Type value="And"/>
+        <CombineArray value="AP_MedicMengskHealOrderActive"/>
+        <CombineArray value="AP_MedicMengskTherapyTargetInRange"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapyBusyGE1">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedivacHealBeamBusy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapyBusyGE2">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="AP_MedivacHealBeamBusy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapySoloHealingActive">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_MedicMengskTherapyHealingGE1">
+        <Type value="Or"/>
+        <CombineArray value="AP_MedicMengskTherapyBusyGE1"/>
+        <CombineArray value="AP_MedicMengskTherapySoloHealingActive"/>
+    </CValidatorCombine>
     <CValidatorLocationCompareRange id="AP_HealTargetInRange">
         <WhichLocation Value="TargetUnit"/>
         <Compare value="LE"/>
@@ -5744,9 +5801,6 @@
     <CValidatorUnitFilters id="AP_IsBiological">
         <Filters value="Biological;-"/>
     </CValidatorUnitFilters>
-    <CValidatorUnitFilters id="AP_IsNotLight">
-        <Filters value="-;Light"/>
-    </CValidatorUnitFilters>
     <CValidatorCombine id="AP_UnitIsBiologicalOrMechanical">
         <CombineArray value="AP_IsBiological"/>
         <CombineArray value="AP_IsMechanical"/>
@@ -7571,11 +7625,11 @@
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
         <Value value="1"/>
-        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_CasterNotEnergizedPrimed">
         <WhichUnit Value="Caster"/>
-        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_HasPrecursorMerc">
         <WhichUnit Value="Target"/>
@@ -7617,30 +7671,6 @@
         <Find value="1"/>
         <Value value="AP_HaveGhostMengskNemesisRounds"/>
     </CValidatorPlayerRequirement>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasNemesisRoundsBioBuff">
-        <WhichUnit Value="Caster"/>
-        <Compare value="GE"/>
-        <Value value="1"/>
-        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasNemesisRoundsMechBuff">
-        <WhichUnit Value="Caster"/>
-        <Compare value="GE"/>
-        <Value value="1"/>
-        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorCombine id="AP_GhostMengskNemesisRoundsBioBonus">
-        <Type value="And"/>
-        <CombineArray value="AP_CasterHasNemesisRoundsBioBuff"/>
-        <CombineArray value="AP_IsBiological"/>
-        <CombineArray value="AP_IsNotLight"/>
-    </CValidatorCombine>
-    <CValidatorCombine id="AP_GhostMengskNemesisRoundsMechBonus">
-        <Type value="And"/>
-        <CombineArray value="AP_CasterHasNemesisRoundsMechBuff"/>
-        <CombineArray value="AP_IsMechanical"/>
-        <CombineArray value="AP_IsNotLight"/>
-    </CValidatorCombine>
     <CValidatorLocationEnumArea id="AP_GhostMengskEMPSmallMinimum3EnemyTargets">
         <ResultFailed value="CantFindEnoughTargets"/>
         <WhichLocation Value="TargetUnitOrPoint"/>

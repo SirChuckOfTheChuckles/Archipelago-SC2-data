@@ -15136,6 +15136,51 @@
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MedicMengskRank2HealRangeBonusAB"/>
     </CEffectSet>
+    <CEffectSet id="AP_MedicMengskOpticalRestorationSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskOpticalRestorationSearch"/>
+        <EffectArray value="AP_MedicMengskOpticalRestorationCasterAB"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AP_MedicMengskOpticalRestorationSearch">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value=";Enemy,Neutral,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="5" Effect="AP_RemoveAllDebuffs"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="AP_MedicMengskOpticalRestorationCasterAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskOpticalRestorationBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskPhysicalTherapyTargetAB">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MedicMengskPhysicalTherapyTargetBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskTherapySoloHealingAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_MedicMengskPhysicalTherapySoloTick">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
+        <EffectArray value="AP_MedicMengskTherapySoloHealingAB"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="AP_MedicMengskPhysicalTherapySoloPersistent">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <PeriodicValidator value="AP_MedicMengskTherapySoloActiveCombine"/>
+        <PeriodicEffectArray value="AP_MedicMengskPhysicalTherapySoloTick"/>
+        <PeriodicPeriodArray value="0.25"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="AP_MedicMengskHealSoloSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskHealSwitch"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapySoloPersistent"/>
+    </CEffectSet>
     <CEffectIssueOrder id="AP_FirebatOptimizedLogisticsMorph">
         <EditorCategories value="Race:Terran"/>
         <Abil value="AP_FirebatOptimizedLogisticsMorph"/>
@@ -23091,7 +23136,7 @@
         <EffectArray value="AP_PunisherGrenadesMengskU"/>
         <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
         <EffectArray value="AP_MarauderMengskShrapnelSet"/>
-        <EffectArray value="AP_MarauderMengskEnergizedShrapnelSet"/>
+        <EffectArray value="AP_MarauderMengskRefractiveShrapnelSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PunisherGrenadesMengskSlow">
         <ValidatorArray index="0" value="AP_HaveMarauderMengskIncapacitatorShells"/>
@@ -23120,11 +23165,11 @@
         <Behavior value="AP_MarauderMengskAbsorb"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="AP_MarauderMengskEnergizedPrimeAB">
-        <ValidatorArray value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+        <ValidatorArray value="AP_HaveMarauderMengskRefractiveShrapnel"/>
         <ValidatorArray value="AP_CasterLevelGTE3"/>
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
-        <Behavior value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
     </CEffectApplyBehavior>
     <CEffectSet id="AP_MarauderMengskAbsorbAndPrimeSet">
         <EditorCategories value="Race:Terran"/>
@@ -23167,7 +23212,7 @@
         <ArmorReduction value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
-        <Amount value="4">
+        <Amount value="3">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
         <Death value="Eviscerate"/>
@@ -23190,7 +23235,7 @@
         <EditorCategories value=""/>
         <EffectArray value="AP_MarauderMengskShrapnelSearch"/>
     </CEffectSet>
-    <CEffectDamage id="AP_MarauderMengskEnergizedShrapnelDamage" parent="DU_WEAP">
+    <CEffectDamage id="AP_MarauderMengskRefractiveShrapnelDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Armored" value="1"/>
         <ArmorReduction value="0"/>
@@ -23201,34 +23246,34 @@
         </Amount>
         <Death value="Eviscerate"/>
     </CEffectDamage>
-    <CEffectSet id="AP_MarauderMengskEnergizedShrapnelImpactSet">
+    <CEffectSet id="AP_MarauderMengskRefractiveShrapnelImpactSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MarauderMengskEnergizedShrapnelDamage"/>
+        <EffectArray value="AP_MarauderMengskRefractiveShrapnelDamage"/>
         <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
     </CEffectSet>
-    <CEffectEnumArea id="AP_MarauderMengskEnergizedShrapnelSearch">
+    <CEffectEnumArea id="AP_MarauderMengskRefractiveShrapnelSearch">
         <LaunchLocation Value="CasterUnit"/>
         <ImpactLocation Value="TargetUnit"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Arc="360" Radius="3" Effect="AP_MarauderMengskEnergizedShrapnelImpactSet"/>
+        <AreaArray Arc="360" Radius="3" Effect="AP_MarauderMengskRefractiveShrapnelImpactSet"/>
     </CEffectEnumArea>
     <CEffectRemoveBehavior id="AP_MarauderMengskEnergizedConsume">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
-        <BehaviorLink value="AP_MarauderMengskEnergizedShrapnelPrimed"/>
+        <BehaviorLink value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
     </CEffectRemoveBehavior>
-    <CEffectSet id="AP_MarauderMengskEnergizedShrapnelSet">
+    <CEffectSet id="AP_MarauderMengskRefractiveShrapnelSet">
         <ValidatorArray value="AP_CasterLevelGTE3"/>
-        <ValidatorArray value="AP_HaveMarauderMengskEnergizedShrapnel"/>
+        <ValidatorArray value="AP_HaveMarauderMengskRefractiveShrapnel"/>
         <ValidatorArray value="AP_CasterHasEnergizedPrimed"/>
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MarauderMengskEnergizedShrapnelSearch"/>
+        <EffectArray value="AP_MarauderMengskRefractiveShrapnelSearch"/>
         <EffectArray value="AP_MarauderMengskEnergizedConsume"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAttackSpeedBoostAB">
         <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Source"/>
+        <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAttackSpeedBoost"/>
     </CEffectApplyBehavior>
     <CEffectModifyUnit id="AP_MarauderMengskAddictiveSupplementsAddCharge">
@@ -23439,30 +23484,6 @@
     <CEffectDamage id="AP_C10CanisterRifleMengsk" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Light" value="1"/>
-        <Kind value="Ranged"/>
-        <Amount value="15">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-    </CEffectDamage>
-    <CEffectSwitch id="AP_C10CanisterRifleMengskWeaponSwitch">
-        <EditorCategories value="Race:Terran"/>
-        <CaseArray Validator="AP_GhostMengskNemesisRoundsBioBonus" Effect="AP_C10CanisterRifleMengskNemesisBio"/>
-        <CaseArray Validator="AP_GhostMengskNemesisRoundsMechBonus" Effect="AP_C10CanisterRifleMengskNemesisMech"/>
-        <CaseDefault value="AP_C10CanisterRifleMengsk"/>
-    </CEffectSwitch>
-    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisBio" parent="DU_WEAP">
-        <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Light" value="1"/>
-        <AttributeFactor index="Biological" value="1"/>
-        <Kind value="Ranged"/>
-        <Amount value="15">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-    </CEffectDamage>
-    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisMech" parent="DU_WEAP">
-        <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Light" value="1"/>
-        <AttributeFactor index="Mechanical" value="1"/>
         <Kind value="Ranged"/>
         <Amount value="15">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
@@ -24046,6 +24067,7 @@
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_MedicMengskHealModifyCasterEnergy"/>
         <EffectArray value="AP_MedicMengskHealModifyTargetLife"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
     </CEffectSet>
     <CEffectModifyUnit id="AP_MedicMengskHealModifyTargetLife">
         <EditorCategories value="Race:Terran"/>
@@ -24062,13 +24084,13 @@
         <ValidatorArray value="healCasterMinEnergy"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="CasterUnit"/>
-        <SearchFilters value="Ground,Biological,Visible;Neutral,Enemy,Air,Structure,Stasis,Dead,Hidden"/>
+        <SearchFilters value="Ground,Biological,Visible;Self,Neutral,Enemy,Air,Structure,Stasis,Dead,Hidden"/>
         <TargetSorts>
             <SortArray value="TSAlliancePassive"/>
             <SortArray value="TSLife"/>
             <SortArray value="TSDistance"/>
         </TargetSorts>
-        <AreaArray MaxCount="1" Radius="2.5" Effect="AP_MedicMengskHealTargetPersistent"/>
+        <AreaArray MaxCount="1" Radius="4.25" Effect="AP_MedicMengskHealTargetPersistent"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="AP_MedicMengskHealTargetPersistent">

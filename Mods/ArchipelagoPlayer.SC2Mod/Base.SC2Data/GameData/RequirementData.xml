@@ -64,15 +64,25 @@
         <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
         <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_ShowMarauderMengskAttackSpeedBoost">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowMarauderMengskAttackSpeedBoost"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
+    </CRequirement>
+    <CRequirement id="AP_UseMarauderMengskAddictiveSupplementsCharges">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_ShowMarauderMengskAddictiveSupplementsCharges"/>
+        <NodeArray index="Use" Link="AP_UseMarauderMengskAddictiveSupplementsCharges"/>
+    </CRequirement>
     <CRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
         <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMarauderMengskEnergizedShrapnel">
+    <CRequirement id="AP_HaveMarauderMengskRefractiveShrapnel">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskEnergizedShrapnelCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_AndCountUpgradeMarauderMengskRefractiveShrapnelCompleteOnlyGTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3"/>
     </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
@@ -4539,10 +4549,9 @@
     <CRequirement id="AP_HaveGhostMengskEMPLongStun">
         <NodeArray index="Show" Link="AP_HaveGhostMengskEMPLongStun"/>
     </CRequirement>
-    <CRequirement id="AP_HaveGhostMengskPsychicEnhancers">
+    <CRequirement id="AP_HaveGhostMengskPsychicEnhancer">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPsychicEnhancersCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskPsychicEnhancersCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPsychicEnhancerCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveGhostMengskPhasingSuit">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
@@ -4553,6 +4562,22 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
         <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBase">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBase"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBio">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBio"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsMech">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsMech"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBoth">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBoth"/>
     </CRequirement>
     <CRequirement id="AP_UseMengskVeterancyGhostMengskLTLevel3">
         <NodeArray index="Use" Link="AP_LTCountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit3"/>
@@ -4565,6 +4590,7 @@
     <CRequirement id="AP_HaveGhostMengskGuidedStrike">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskGuidedStrikeCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskGuidedStrikeCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_GhostMengskSuperCloakUse">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit2"/>
@@ -4639,6 +4665,24 @@
     </CRequirement>
     <CRequirement id="AP_HaveMedicMengskVeterancyLevel3">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskOpticalRestorationResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskOpticalRestorationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskPhysicalTherapyResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskPhysicalTherapyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHospiceCareResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskHospiceCareCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskRoyalAcademyDegreeResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskRoyalAcademyDegreeCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealDefaultRange">
+        <NodeArray index="Show" Link="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMedicMengskHealLongRange">
+        <NodeArray index="Show" Link="AP_AndGTE3LT4CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="AP_ZergMercCompoundBroodWarAndHaveSwarmling">
         <NodeArray index="Show" Link="AP_AndHotSHaveSwarmlingCompleteOnlyZergMercCompoundBroodWarSelectedCompleteOnly"/>
