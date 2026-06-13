@@ -30226,7 +30226,7 @@
         <Sight value="10"/>
         <Food value="-4"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="200"/>
+        <CostResource index="Minerals" value="225"/>
         <CostResource index="Vespene" value="350"/>
         <RepairTime value="25"/>
         <AttackTargetPriority value="20"/>
@@ -30360,7 +30360,7 @@
         <Sight value="11"/>
         <Food value="-4"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Minerals" value="275"/>
         <CostResource index="Vespene" value="475"/>
         <RepairTime value="40"/>
         <AttackTargetPriority value="20"/>
@@ -31050,7 +31050,7 @@
         <Sight value="10"/>
         <Food value="-3"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Minerals" value="175"/>
         <CostResource index="Vespene" value="175"/>
         <RepairTime value="25"/>
         <AttackTargetPriority value="20"/>
