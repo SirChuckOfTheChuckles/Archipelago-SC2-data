@@ -510,26 +510,6 @@
         <EffectArray value="AP_D8ClusterBombLM"/>
         <EffectArray value="MakePrecursor"/>
     </CEffectSet>
-    <CEffectDamage id="AP_MarineMengskSpiderMineLobDamage">
-        <EditorCategories value="Race:Terran"/>
-        <ResponseFlags index="Acquire" value="1"/>
-        <ResponseFlags index="Flee" value="1"/>
-        <ArmorReduction value="1"/>
-        <Visibility value="Visible"/>
-        <Flags index="Notification" value="1"/>
-        <Kind value="Splash"/>
-        <KindSplash value="Splash"/>
-        <Amount value="70"/>
-        <Death value="Blast"/>
-        <AreaArray Radius="0.4687" Fraction="1"/>
-        <AreaArray Radius="0.7812" Fraction="0.5"/>
-        <AreaArray Radius="1.25" Fraction="0.25"/>
-        <ExcludeArray Value="Outer"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <SearchFlags index="CallForHelp" value="1"/>
-        <SearchFlags index="OffsetByUnitRadius" value="1"/>
-    </CEffectDamage>
     <CEffectDamage id="AP_MarineMengskSpiderMineLobNoFriendlyDamage">
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Acquire" value="1"/>
@@ -23412,10 +23392,6 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="SameCliff" value="0"/>
     </CEffectDamage>
-    <CEffectSwitch id="AP_GhostMengskEMPAoESwitch">
-        <EditorCategories value=""/>
-        <CaseDefault value="AP_GhostMengskEMPSmallSearch"/>
-    </CEffectSwitch>
     <CEffectApplyBehavior id="AP_GhostMengskEMPStunLongAB">
         <EditorCategories value=""/>
         <Behavior value="AP_GhostMengskEMPStun"/>
@@ -23435,7 +23411,7 @@
         <ValidatorArray value="AP_IsMechanical"/>
         <ValidatorArray value="AP_NotMapBossOrHeroic"/>
         <EditorCategories value=""/>
-        <Marker Link="Effect/AP_GhostMengskEMPAoESwitch"/>
+        <Marker Link="Effect/AP_GhostMengskEMPSmallSearch"/>
         <CaseArray Validator="AP_CasterLevelGTE3" Effect="AP_GhostMengskEMPStunLongAB"/>
         <CaseDefault value="AP_GhostMengskEMPStunShortAB"/>
     </CEffectSwitch>
@@ -24066,7 +24042,7 @@
         <Flags index="PersistUntilDestroyed" value="1"/>
         <!--        <FinalEffect value="AP_MedivacHealIssueStopOrder"/>-->
         <PeriodicValidator value="AP_HealScanPeriodicCombine"/>
-        <PeriodicEffectArray value="AP_MedicMengskHealSearchSwitch"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealSearch"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
     <CEffectSwitch id="AP_MedicMengskHealSwitch">
@@ -24144,9 +24120,6 @@
             <Change value="1"/>
         </VitalArray>
     </CEffectModifyUnit>
-    <CEffectSwitch id="AP_MedicMengskHealSearchSwitch">
-        <CaseDefault value="AP_MedicMengskHealSearch"/>
-    </CEffectSwitch>
     <CEffectEnumArea id="AP_MedicMengskHealSearch">
         <ValidatorArray value="AP_HealBeamAvailable"/>
         <ValidatorArray value="healCasterMinEnergy"/>

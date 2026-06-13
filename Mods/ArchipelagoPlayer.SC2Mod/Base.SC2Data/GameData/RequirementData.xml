@@ -38,7 +38,6 @@
     <CRequirement id="AP_HaveMarineMengskProdigalSon">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_NotHaveMarineMengskProdigalSon">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
@@ -47,17 +46,14 @@
     <CRequirement id="AP_HaveMarineMengskBuildABoom">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMarineMengskCombatShield">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMarauderMengskSovereignNeosteel">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMarauderMengskAddictiveSupplements">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
@@ -77,7 +73,6 @@
     <CRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMarauderMengskRefractiveShrapnel">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
@@ -4556,12 +4551,10 @@
     <CRequirement id="AP_HaveGhostMengskPhasingSuit">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPhasingSuitCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskPhasingSuitCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveGhostMengskNemesisRounds">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_ShowGhostMengskNemesisRoundsBase">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
@@ -4590,7 +4583,6 @@
     <CRequirement id="AP_HaveGhostMengskGuidedStrike">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskGuidedStrikeCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeGhostMengskGuidedStrikeCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_GhostMengskSuperCloakUse">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit2"/>

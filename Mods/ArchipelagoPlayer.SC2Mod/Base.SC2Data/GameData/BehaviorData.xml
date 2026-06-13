@@ -9946,6 +9946,7 @@
         <VeterancyLevelArray>
             <MinVeterancyXP value="2400"/>
             <LevelGainEffect value="AP_MarineMengskLevelUpMaxedSet"/>
+            <LevelLossEffect value="AP_MarineMengskLevelUpSet"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
