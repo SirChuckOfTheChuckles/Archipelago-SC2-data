@@ -15104,6 +15104,27 @@
         <Range value="6"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
+    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus, replaces Night Assault) ===== -->
+    <CAbilBehavior id="AP_BansheeMengskBacklashBarrage">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOn" Requirements="AP_HaveBansheeMengskVeterancyLevel4">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOff" Requirements="">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <BehaviorArray value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CAbilBehavior>
+    <CAbilEffectTarget id="AP_BansheeMengskBarrageRangeDummy">
+        <!-- Dummy ability for the CActorRange range/cone indicator (range 8, 60deg). -->
+        <Range value="8"/>
+        <Arc value="60"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_SIStukovPlaceHordeRally">
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <Effect index="0" value="AP_SIStukovPlaceHordeRallyCP"/>

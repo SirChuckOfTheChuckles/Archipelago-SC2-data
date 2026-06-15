@@ -37,6 +37,12 @@
         <Descending value="1"/>
         <Behavior value="AP_BattlecruiserMengskYamatoTargetMarker"/>
     </CTargetSortBehaviorCount>
+    <CTargetSortValidator id="AP_TSBansheeBarrageNotRecentlyHit">
+        <Validator value="AP_BansheeBarrageNotRecentlyHit"/>
+    </CTargetSortValidator>
+    <CTargetSortValidator id="AP_TSBansheeBarrageNotCycleMarked">
+        <Validator value="AP_BansheeBarrageNotCycleMarked"/>
+    </CTargetSortValidator>
     <CTargetSortValidator id="AP_TSUnitsAndAttackingStructures">
         <Validator value="AP_UnitOrAttackingStructure"/>
     </CTargetSortValidator>

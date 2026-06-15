@@ -3794,6 +3794,7 @@
     </CEffectDamage>
     <CEffectEnumArea id="AP_DuskWingScreecherMissilesCarpetBombSearchArea">
         <ValidatorArray value="AP_ClusterWarheadsPurchased"/>
+        <ValidatorArray value="AP_CasterNotBansheeMengsk"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetPoint"/>
         <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Air,Missile,Stasis,Dead,Hidden,Invulnerable,Benign,Passive"/>
@@ -3817,6 +3818,106 @@
         <EffectArray value="AP_DuskWingBansheeDamage"/>
         <EffectArray value="AP_DuskWingScreecherMissilesCreateCarpetBombPersistent"/>
         <EffectArray value="AP_BansheeMengskSlowAOE"/>
+    </CEffectSet>
+    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
+    <!-- One tick per 0.0625s (driven by AP_BansheeMengskBacklashBarrageChannel).
+         Reset the cycle first (if everyone is marked), then aim+fire the cone. -->
+    <CEffectSet id="AP_BansheeMengskBarrageTick">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_BansheeMengskBarrageReset"/>
+        <EffectArray value="AP_BansheeMengskBarrageAimSearch"/>
+    </CEffectSet>
+    <!-- Reset: when this banshee has marked every enemy in range, strip its CycleMark from
+         all of them so a fresh round-robin cycle begins (fires on the same tick as the next shot). -->
+    <CEffectEnumArea id="AP_BansheeMengskBarrageReset">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_BansheeBarrageAllMarked"/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="8" Effect="AP_BansheeBarrageRemoveCycleMark"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="AP_BansheeBarrageRemoveCycleMark">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Target"/>
+        <BehaviorLink value="AP_BansheeBarrageCycleMark"/>
+        <Count value="99"/>
+    </CEffectRemoveBehavior>
+    <!-- Each tick: find the nearest valid target, then run the cone aimed AT it. The found unit becomes
+         ConeFire's TargetUnit, which ImpactLocation uses to orient the arc - so the cone points at the
+         target without ever touching the unit's facing (no mover fight, no spazz). MaxCount 1 = nearest. -->
+    <CEffectEnumArea id="AP_BansheeMengskBarrageAimSearch">
+        <EditorCategories value="Race:Terran"/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSDistance"/>
+        </TargetSorts>
+        <AreaArray Radius="8" MaxCount="1" Effect="AP_BansheeMengskBarrageConeFire"/>
+    </CEffectEnumArea>
+    <!-- Stage 2: 60deg cone that STARTS at the caster (LaunchLocation) and POINTS at the aim target
+         (ImpactLocation = TargetUnit, fed by AP_BansheeMengskBarrageAimSearch) - NOT the body facing.
+         CenterAtLaunch keeps the wedge anchored at the unit but aimed down the launch->impact line.
+         Same idiom as the in-mod AP_MarauderMengskShrapnelSearch (identical 59.9963 arc). Within the
+         wedge, prefer unmarked targets, then nearest not-recently-hit. -->
+    <CEffectEnumArea id="AP_BansheeMengskBarrageConeFire">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterPoint"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="AP_TSBansheeBarrageNotRecentlyHit"/>
+            <SortArray value="AP_TSBansheeBarrageNotCycleMarked"/>
+            <SortArray value="TSDistance"/>
+        </TargetSorts>
+        <AreaArray Arc="59.9963" Radius="8" MaxCount="1" Effect="AP_BansheeMengskBarrageFireSet"/>
+        <SearchFlags index="CenterAtLaunch" value="1"/>
+    </CEffectEnumArea>
+    <!-- Mark the target before launch. RecentlyHit is the hard 0.25s lockout;
+         CycleMark is only a sort preference so small packs do not wait for its duration. -->
+    <CEffectSet id="AP_BansheeMengskBarrageFireSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_BansheeBarrageValidTarget"/>
+        <EffectArray value="AP_BansheeBarrageApplyRecentlyHit"/>
+        <EffectArray value="AP_BansheeBarrageApplyCycleMark"/>
+        <EffectArray value="AP_BansheeMengskBarrageLM"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="AP_BansheeMengskBarrageLM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="AP_BansheeMengskBarrageDamage"/>
+        <AmmoUnit value="AP_DuskWingWeapon"/>
+    </CEffectLaunchMissile>
+    <!-- 20 baseline, Ranged -> the unit's veterancy DamageDealtFraction[Ranged] scales it to 35 at rank 3. -->
+    <CEffectDamage id="AP_BansheeMengskBarrageDamage" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="20"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="AP_BansheeBarrageApplyRecentlyHit">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Target"/>
+        <Behavior value="AP_BansheeBarrageRecentlyHit"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_BansheeBarrageApplyCycleMark">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Target"/>
+        <Behavior value="AP_BansheeBarrageCycleMark"/>
+    </CEffectApplyBehavior>
+    <!-- No-op effect for the hidden tracking weapon (used only to make the unit face/turn). -->
+    <CEffectDamage id="AP_BansheeMengskBarrageTrackingNoOp">
+        <EditorCategories value="Race:Terran"/>
+        <Amount value="0"/>
+    </CEffectDamage>
+    <!-- Fired by the hidden tracking weapon: snap the body's LOGICAL facing onto the tracked
+         target so the damage cone (centered on logical facing) lines up with the gimbal-rotated
+         cone visual (centered on the turret aim). Without this the two drift apart by up to the
+         weapon's half-arc once the gimbal turret is enabled. -->
+    <CEffectSet id="AP_BansheeMengskBarrageTrackingSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_BansheeMengskBarrageTrackingNoOp"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BacklashRocketsMengskMovingSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_DuskWingBansheeCreatePersistent"/>
     </CEffectSet>
     <CEffectCreatePersistent id="AP_InfestedDuskWingCreatePersistent">
         <EditorCategories value="Race:Terran"/>

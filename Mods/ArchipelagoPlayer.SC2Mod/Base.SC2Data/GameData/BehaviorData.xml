@@ -41,6 +41,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_HaveBansheePermanentCloak"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification>
             <StateFlags index="Cloak" value="1"/>
         </Modification>
@@ -345,6 +346,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_DistortionBlastersResearched"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification>
             <DamageDealtFraction index="Ranged" value="0.25"/>
         </Modification>
@@ -354,6 +356,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_HaveBansheeAdvancedOptics"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification WeaponRange="2" WeaponScanBonus="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_DistortionThrusters">
@@ -361,6 +364,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_DistortionThrustersResearched"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification MoveSpeedMultiplier="1.25" AccelerationMultiplier="1.25"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_DefensiveMatrix">
@@ -3988,6 +3992,36 @@
         <Modification>
             <VitalRegenArray index="Energy" value="-5"/>
         </Modification>
+    </CBehaviorBuff>
+    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
+    <!-- Channel buff: drains energy, disables the real weapon, enables the facing/tracking
+         weapon, and ticks the cone barrage every 0.0625s. Auto-removes when out of energy. -->
+    <CBehaviorBuff id="AP_BansheeMengskBacklashBarrageChannel">
+        <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-cloakdistortionfield-color.dds"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="hasEnergy"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="AP_BansheeMengskBarrageTick"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-30"/>
+            <!-- During the barrage: only the tracking weapon fires. Both backlash variants off; the
+                 tracking weapon (disabled by default) is enabled here so it drives the gimbal aim. -->
+            <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+            <WeaponDisableArray value="AP_BacklashRocketsMengskMoving"/>
+            <WeaponEnableArray value="AP_BansheeMengskBarrageTrackingWeapon"/>
+        </Modification>
+    </CBehaviorBuff>
+    <!-- Hidden per-caster marks. MaxStackCountPerCaster=1 so each banshee tracks its own
+         lockout/cycle independently (two overlapping barrages do not block each other). -->
+    <CBehaviorBuff id="AP_BansheeBarrageRecentlyHit">
+        <Duration value="0.25"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeBarrageCycleMark">
+        <Duration value="2"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArbiterMPCloakFieldEffect">
         <Alignment value="Positive"/>
@@ -10295,7 +10329,10 @@
     <CBehaviorVeterancy id="AP_MengskVeterancyBansheeMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
-        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
+        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0">
+            <Modification>
+            </Modification>
+        </VeterancyLevelArray>
         <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <DamageDealtFraction index="Melee" value="0.25"/>
@@ -10305,6 +10342,9 @@
                 <VitalMaxArray index="Life" value="70"/>
                 <VitalMaxArray index="Energy" value="50"/>
                 <VitalRegenArray index="Energy" value="0.5"/>
+                <!-- Rank 1 perk: fire while moving (swaps the Backlash weapon for the Moving variant) -->
+                <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+                <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
@@ -10341,6 +10381,7 @@
 <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_ClusterWarheadsPurchased"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="assets\textures\btn-upgrade-raynor-shockwavemissilebattery.dds"/>
         <Name value="Button/Name/AP_ShockwaveMissilePattern"/>
         <Tooltip value="Button/Tooltip/AP_ShockwaveMissilePattern"/>
@@ -10350,6 +10391,7 @@
          <Alignment value="Positive"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_DistortionBlastersResearched"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-cloakdistortionfield-color.dds"/>
         <Name value="Button/Name/AP_DistortionBlasters"/>
         <Tooltip value="Button/Tooltip/AP_DistortionBlasters"/>
@@ -10359,6 +10401,7 @@
 <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveBansheeShapedHull"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-shapedhull-colored.dds"/>
         <Name value="Button/Name/AP_ShapedHull"/>
         <Tooltip value="Button/Tooltip/AP_BansheeShapedHull"/>
@@ -10368,6 +10411,7 @@
         <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveBansheeAdvancedOptics"/>
+        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-detectionconedebuff.dds"/>
         <Name value="Button/Name/AP_BansheeAdvancedOptics"/>
         <Tooltip value="Button/Tooltip/AP_BansheeAdvancedOptics"/>
@@ -10400,6 +10444,15 @@
         <Modification>
             <WeaponEnableArray value="AP_SILongboltMissile"/>
             <WeaponEnableArray value="AP_AcidSporeVentsWeapon"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskMovingWeaponCheck">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_CasterIsNotBacklashBarrageAndCasterIsRank1"/>
+        <Modification>
+            <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
+            <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_PurifierMothershipShielding">

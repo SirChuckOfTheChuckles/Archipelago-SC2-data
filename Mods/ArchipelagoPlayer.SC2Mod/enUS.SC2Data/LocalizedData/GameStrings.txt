@@ -1282,6 +1282,8 @@ Button/Name/AP_BanelingSplitterlingSplitPassive=Division
 Button/Name/AP_Banshee=Build Banshee
 Button/Name/AP_BansheeAdvancedOptics=Advanced Targeting Optics
 Button/Name/AP_BansheeMengsk=Build Night Wolf
+Button/Name/AP_BansheeMengskBacklashBarrageOff=End Backlash Barrage
+Button/Name/AP_BansheeMengskBacklashBarrageOn=Start Backlash Barrage
 Button/Name/AP_BansheeMengskNightAssaultOff=End Night Assault
 Button/Name/AP_BansheeMengskNightAssaultOn=Start Night Assault
 Button/Name/AP_BansheeMengskRecharge=Recharge
@@ -2864,11 +2866,13 @@ Button/Tooltip/AP_BanelingSplitterlingSplitPassive=Splits into two smaller Banel
 Button/Tooltip/AP_Banshee=Tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BansheeAdvancedOptics=Increases Banshee attack range by 2 while cloaked.
 Button/Tooltip/AP_BansheeMengsk=Royal Guard tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/AP_BansheeMengskBacklashBarrageOff=Stops the Backlash Barrage.
+Button/Tooltip/AP_BansheeMengskBacklashBarrageOn=Toggles a rapid barrage of Backlash Rockets into a 60° cone toward the nearest enemy, cycling missiles across every enemy in the arc (each enemy can be hit up to 4 times per second).<n/><n/><c val="f078ff">Costs 50 energy to activate and drains <d ref="-1 * (Behavior,AP_BansheeMengskBacklashBarrageChannel,Modification.VitalRegenArray[Energy])" precision="0"/> energy per second.</c>
 Button/Tooltip/AP_BansheeMengskConsussionShells=Night Wolf attack temporarily slows all units in target area.<n/><n/><c val="#ColorAttackInfo">Massive units are immune.</c>
 Button/Tooltip/AP_BansheeMengskNightAssaultOff=Stops Night Assault to allow Night Wolf to regain energy.
 Button/Tooltip/AP_BansheeMengskNightAssaultOn=Cloaks friendly units near Night Wolf.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_BansheeMengskCloakField,Modification.VitalRegenArray[Energy])" precision="1"/> energy per second.</c>
-Button/Tooltip/AP_BansheeMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Recharge ability.
-Button/Tooltip/AP_BansheeMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Recharge ability.</c>
+Button/Tooltip/AP_BansheeMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Can fire while moving.
+Button/Tooltip/AP_BansheeMengskRank1Preview=<n/><c val="777777">Rank 1: Can fire while moving.</c>
 Button/Tooltip/AP_BansheeMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Gains Concussive Shells ability.
 Button/Tooltip/AP_BansheeMengskRank2Preview=<n/><c val="777777">Rank 2: Gains Concussive Shells ability.</c>
 Button/Tooltip/AP_BansheeMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains Night Assault ability.

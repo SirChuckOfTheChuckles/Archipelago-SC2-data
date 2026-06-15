@@ -2798,7 +2798,6 @@
         <Flags index="UpgradeCheat" value="0"/>
         <EffectArray Operation="Set" Reference="Abil,AP_BansheeCloak,BehaviorArray[0]" Value="AP_BansheeCloakCrossSpectrumDampeners"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,BehaviorArray[0]" Value="AP_BansheeCloakCrossSpectrumDampeners"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,BehaviorArray[0]" Value="AP_BansheeMengskCrossSpectrumDampeners"/>
         <EffectArray Operation="Set" Reference="Button,AP_CloakOnBanshee,Tooltip" Value="Button/Tooltip/AP_CloakOnBansheeUpgrade"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -2808,8 +2807,6 @@
         <EffectArray Operation="Set" Reference="Abil,AP_BansheeCloak,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,Cost[0].Vital[Energy]" Value="0"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,Cost[0].Vital[Energy]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
         <EffectArray Operation="Set" Reference="Button,AP_CloakOnBanshee,Tooltip" Value="Button/Tooltip/AP_CloakOnBansheeFree"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -7938,7 +7935,6 @@
         <EffectArray Reference="Unit,AP_Banshee,Speed" Value="1"/>
         <EffectArray Reference="Unit,AP_DuskWing,Speed" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,Speed" Value="1"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,Speed" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="AP_LaserTargetingSystemBanshee">
@@ -7958,10 +7954,6 @@
         <EffectArray Reference="Unit,AP_InfestedDuskWing,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_InfestedDuskWing,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedDuskWing,MinScanRange" Value="1"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,SightBonus[Dusk]" Value="2"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,SightBonus[Dawn]" Value="2"/>
-        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankSiegeModeProgressiveRangeIncease">
@@ -11823,19 +11815,15 @@
         <EffectArray Reference="Unit,AP_DuskWing,LifeMax" Value="100"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,LifeStart" Value="100"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,LifeMax" Value="100"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeStart" Value="100"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeMax" Value="100"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
-        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_BansheeAdvancedOptics">
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
-        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_BansheeAirstrike">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-bansheemissilestrik.dds"/>
@@ -11844,7 +11832,6 @@
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
-        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_HHVikingPiercingAttacks">
         <Icon value="Assets\Textures\btn-ability-hornerhan-viking-piercingattacks.dds"/>

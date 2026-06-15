@@ -219,6 +219,25 @@
     <CValidatorUnitType id="AP_IsAPBanshee">
         <Value value="AP_Banshee"/>
     </CValidatorUnitType>
+    <CValidatorUnitType id="AP_NotBansheeMengsk">
+        <Value value="AP_BansheeMengsk"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterNotBansheeMengsk">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_BansheeMengsk"/>
+        <Find value="0"/>
+    </CValidatorUnitType>
+    <CValidatorCombine id="AP_CasterIsNotBacklashBarrageAndCasterIsRank1">
+        <CombineArray value="AP_CasterIsNotBacklashBarrage"/>
+        <CombineArray value="AP_CasterLevelGTE2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterIsNotBacklashBarrage">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Find value="1"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_GhostHoldingFire">
         <Compare value="GT"/>
         <Behavior value="AP_GhostHoldFire"/>
@@ -7190,6 +7209,34 @@
         <Behavior value="AP_DamagedRecentlyByVoidRayPurifier"/>
         <RequireCasterUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
+    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
+    <!-- Per-caster: only counts the casting banshee's own stacks (RequireCasterUnit=Caster). -->
+    <CValidatorUnitCompareBehaviorCount id="AP_BansheeBarrageNotRecentlyHit">
+        <WhichUnit Value="Target"/>
+        <Compare value="Eq"/>
+        <Value value="0"/>
+        <Behavior value="AP_BansheeBarrageRecentlyHit"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_BansheeBarrageNotCycleMarked">
+        <WhichUnit Value="Target"/>
+        <Compare value="Eq"/>
+        <Value value="0"/>
+        <Behavior value="AP_BansheeBarrageCycleMark"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_BansheeBarrageValidTarget">
+        <Type value="And"/>
+        <CombineArray value="AP_BansheeBarrageNotRecentlyHit"/>
+    </CValidatorCombine>
+    <!-- True when this banshee has marked every enemy in range (no unmarked enemies left) -> reset the cycle. -->
+    <CValidatorLocationEnumArea id="AP_BansheeBarrageAllMarked">
+        <WhichLocation Value="CasterUnit"/>
+        <AreaArray Radius="8" Validator="AP_BansheeBarrageNotCycleMarked"/>
+        <Compare value="Eq"/>
+        <Count value="0"/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
     <CValidatorCombine id="AP_SITechLabIsDetached">
         <Type value="And"/>
         <CombineArray value="AP_SITechLabNotFactory"/>

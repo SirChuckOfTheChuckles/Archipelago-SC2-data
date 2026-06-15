@@ -12901,6 +12901,25 @@
         <Scale value="1.130000"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
+    <!-- Cone splat shown while channeling; follows the unit's facing (no LookAtCursor). -->
+    <CActorModel id="AP_BansheeMengskBarrageCone">
+        <Model value="AP_Nova_ShotGunCone"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpShadow"/>
+        <Host Subject="_Unit"/>
+        <Scale value="1.130000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <!-- Range ring: size from the dummy (range 8); shown on button hover and while channeling. -->
+    <CActorRange id="AP_BansheeMengskBarrageRange" parent="RangeAbil" abil="AP_BansheeMengskBarrageRangeDummy">
+        <On Terms="Abil.AP_BansheeMengskBacklashBarrage.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.AP_BansheeMengskBacklashBarrage.ButtonHoverOff" Send="Destroy"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+        <Abil Link="AP_BansheeMengskBacklashBarrage"/>
+    </CActorRange>
     <CActorModel id="AP_NovaWeaponHellfireShotgunBlastLaunchModel">
         <Flags index="SuppressSaveLoad" value="1"/>
         <On Terms="Effect.AP_NovaWeaponHellfireShotgunBlastSearch.Start; At Caster" Send="Create"/>
@@ -14132,6 +14151,9 @@
     </CActorModel>
     <CActorTurret id="AP_PhoenixTurret">
         <On Terms="TurretEnable.AP_Phoenix" Send="Create"/>
+    </CActorTurret>
+    <CActorTurret id="AP_BansheeMengskTurret">
+        <On Terms="TurretEnable.AP_BansheeMengsK" Send="Create"/>
     </CActorTurret>
     <CActorSiteOpBankerUnit id="AP_SOpBankerBroodLord">
         <RollInActivationAngle value="15.000000"/>
@@ -31016,6 +31038,12 @@
         <LaunchAssets Sound="Banshee_AttackLaunch2"/>
         <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
     </CActorAction>
+    <CActorAction id="AP_BansheeMengskBarrageAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarrageLM">
+        <LaunchAttachQuery Methods="AP_AMPatternDuskWingBanshee"/>
+        <Missile value="AP_DuskWingBansheeAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
     <CActorUnit id="AP_InfestedDuskWing" parent="GenericUnitStandard" unitName="AP_InfestedDuskWing">
         <Aliases value="_UnitLarge"/>
         <On Terms="ActorCreation" Send="Create AP_InfestedDuskWingInfestation"/>
@@ -44275,8 +44303,107 @@
         <Sound value="Reaper_JumpLaunch"/>
         <On Terms="Behavior.AP_SCVCliffJump.Launch" Send="Create"/>
     </CActorSound>
+    <!-- ===== AP_BansheeMengsk dedicated data-driven gimbal turret (Void Ray-style) =====
+         Replaces the generic AP_GimbalZMacro. Rotation is driven by a CActorLookAt that is ENGAGED on
+         weapon fire and DISENGAGED on a timer 1.5s after the last shot stops, so the body aims while
+         firing, holds the aim, then eases back to forward at the LookAt Rate (no instant snap on
+         target death / sharp turns). Borrows the PhotonCannon's "Turret_Right" group as an invisible
+         gimbal; the real Banshee model is mounted on it via SOpAttachTarget. Reuses shared AP_PropsHost.
+         Tuning knobs:
+           - hold delay   -> TimerSet value on WeaponStop (1.5s)
+           - return speed -> LookAt Start/Stop Rate (90 deg/s; lower = smoother/slower)
+           - model height -> SOpAttachTarget / SOpMoveDownByDot75 on GimbalSetUp
+         Note: a weapon only feeds the turret an aim target if it has Turret="AP_BansheeMengsk" in
+         UnitData. AP_BacklashRocketsMengsk currently has no turret link, so the body may not aim while
+         firing it - re-add the link there if you want it to aim during the non-moving rockets too. -->
+    <CActorEventMacro id="AP_BansheeMengskGimbalMacro">
+        <On Terms="UnitBirth" Send="Create AP_PropsHost"/>
+        <On Terms="UnitBirth" Send="Create AP_BansheeMengskGimbalModel"/>
+        <On Terms="UnitBirth" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalBirth"/>
+        <On Terms="UnitBirth" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalSetUp"/>
+        <On Terms="SupporterDestruction" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="UnitDeath" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="ActorOrphan" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="SupporterDestruction" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="UnitDeath" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="AP_PropsHost" Send="Destroy"/>
+        <Supporter Subject="_Unit"/>
+    </CActorEventMacro>
+    <CActorLookAt id="AP_BansheeMengskGimbalTurretLookAt" parent="UnitTurret">
+        <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
+        <Types Id="DefaultLookAtTurret">
+            <Start Group="Turret_Right" Weight="1" Rate="1080.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="1080.000000"/>
+        </Types>
+    </CActorLookAt>
+    <!-- Cancels the 90deg twist between the SiegeTank turret's Target node and the Banshee's model
+         forward. IsLocal=1 means it composes with the (yaw-tracking) attach instead of locking facing,
+         so the body still swivels. Up=Z keeps it level. If the body ends up 180deg backwards, flip
+         Forward to 1,0,0; if the twist is the other way, that's the same flip. -->
+    <CActorModel id="AP_BansheeMengskGimbalModel">
+        <Terms value="Cap 1"/>
+        <Aliases value="_UnitLarge"/>
+        <Aliases value="_Snapshot"/>
+        <Aliases value="_AP_BansheeMengskGimbal"/>
+        <AcceptedTransfers index="FOWColor" value="1"/>
+        <AcceptedTransfers index="FOWShader" value="1"/>
+        <AcceptedTransfers index="Status" value="1"/>
+        <On Terms="Signal.*.GimbalDeath" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.GimbalDeath" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalDeath" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalDeath" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="SupporterDestruction" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="ActorOrphan" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalBirth" Send="Create AP_BansheeMengskGimbalTurretLookAt"/>
+        <On Terms="WeaponStart.AP_BacklashRocketsMengskMoving.AttackStart" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.AP_BacklashRocketsMengskMoving.AttackStart" Send="TimerKill DelayAnim"/>
+        <On Terms="WeaponStart.AP_BansheeMengskBarrageTrackingWeapon.AttackStart" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.AP_BansheeMengskBarrageTrackingWeapon.AttackStart" Send="TimerKill DelayAnim"/>
+        <On Terms="WeaponStop.AP_BacklashRocketsMengskMoving.AttackStop" Send="TimerSet 1.500000 DelayAnim"/>
+        <On Terms="WeaponStop.AP_BansheeMengskBarrageTrackingWeapon.AttackStop" Send="TimerSet 1.500000 DelayAnim"/>
+        <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="Signal.*.GimbalBirth" Send="SetOpacity 0.000000 0.000000 GimbalOpacity"/>
+        <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps AP_PropsHost"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefSet ::Host _AP_BansheeMengskGimbal"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefSet ::HostForProps AP_PropsHost"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::HostForProps" Send="HostSiteOpsSet ::HostForProps SOpMoveDownByDot25"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="HostSiteOpsSet ::Host SOpAttachTarget"/>
+        <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps _Unit"/>
+        <HostForProps Subject="_Unit"/>
+        <!-- Borrowed turret needs a look-at-DRIVABLE named "Turret_Right" group (a real engine turret
+             with the Target attach parented under it) - that is what actually swivels the body. Phoenix
+             and SiegeTank lack one (Phoenix's turret is its whole body = TurretBody-only; SiegeTank's
+             isn't look-at-drivable), so they don't face at all. Cyclone IS the repo-confirmed drivable
+             "Turret_Right" (see AP_CycloneWeaponTurretLookAt) -> it faces. If it pitches at height
+             differences, that's the air-capable turret; flatten it or fall back to the GimbalZ/TurretBody
+             route. Tune SOpMoveDownByDot25 (above) for height; re-add AP_BansheeMengskGimbalYawFix to the
+             ::Host attach if the body comes out twisted. -->
+        <Model value="Cyclone"/>
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="0"/>
+        <AcceptedHostedPropTransfers index="CastShadows" value="0"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="0"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="ModelMaterials" value="0"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="0"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="0"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="WarpGroup" value="0"/>
+        <Supporter Subject="_Unit"/>
+    </CActorModel>
     <CActorUnit id="AP_BansheeMengsk" parent="GenericUnitStandard" unitName="AP_BansheeMengsk">
         <Aliases value="_UnitLarge"/>
+        <!-- Dedicated Void Ray-style gimbal (see AP_BansheeMengskGimbalMacro above): body aims while
+             firing, holds, then eases back ~1.5s after the last shot. Remove this line to revert. -->
+        <Macros value="AP_BansheeMengskGimbalMacro"/>
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskBanshee_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
