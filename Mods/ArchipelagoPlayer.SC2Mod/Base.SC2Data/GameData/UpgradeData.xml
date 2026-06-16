@@ -12439,6 +12439,8 @@
         <!-- Night Wolf -->
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,MinScanRange" Value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_VikingRangeDoubleUpgrade"/>
     <CUpgrade id="AP_BrynhildRangeDoubleUpgrade"/>
@@ -14619,6 +14621,7 @@
         <EffectArray Reference="Weapon,AP_WraithMengskG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_WraithMengskAG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,RateMultiplier" Value="0.15"/>
     </CUpgrade>
     <CUpgrade id="AP_FastDelivery">
         <!--EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train1].Cooldown.TimeStart" Value="0"/>

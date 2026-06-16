@@ -167,7 +167,7 @@
     <CTurret id="AP_BansheeMengsk">
         <Idle value="ResetIfMoving"/>
         <YawArc value="360"/>
-        <YawRate value="540.2968"/>
+        <YawRate value="1500"/>
         <Fidget DelayMax="30" DelayMin="10" TurnAngle="0">
             <ChanceArray index="Anim" value="50"/>
             <ChanceArray index="Idle" value="50"/>
@@ -177,7 +177,7 @@
     <CTurret id="AP_BansheeMengskBarrage">
         <Idle value="ResetIfMoving"/>
         <YawArc value="360"/>
-        <YawRate value="108.2968"/>
+        <YawRate value="500.2968"/>
         <Fidget DelayMax="30" DelayMin="10" TurnAngle="0">
             <ChanceArray index="Anim" value="50"/>
             <ChanceArray index="Idle" value="50"/>

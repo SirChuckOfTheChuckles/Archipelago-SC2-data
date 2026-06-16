@@ -511,6 +511,10 @@
         <Model value="Assets\Effects\Terran\NukeRising\NukeRising.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="AP_BansheeMengskBarrageAimTargetMarker" parent="PersistentSpellFX">
+        <Model value="Assets\UI\Cursors\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="AP_SpectreNukeTarget" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Terran\GhostLaseTarget\GhostLaseTarget.m3"/>
         <EditorCategories value="Race:Terran"/>

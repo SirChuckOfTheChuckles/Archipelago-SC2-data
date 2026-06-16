@@ -7757,7 +7757,6 @@
         <AlertIcon value="AP\Assets\Custom\Textures\btn-ability-terran-decloak-gold.dds"/>
         <HotkeySet value="AP_BansheeMengskNightAssault"/>
     </CButton>
-    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
     <CButton id="AP_BansheeMengskBacklashBarrageOn">
         <Icon value="assets\textures\btn-upgrade-raynor-shockwavemissilebattery.dds"/>
         <AlertIcon value="assets\textures\btn-upgrade-raynor-shockwavemissilebattery.dds"/>

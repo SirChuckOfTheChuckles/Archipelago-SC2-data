@@ -43,6 +43,11 @@
     <CTargetSortValidator id="AP_TSBansheeBarrageNotCycleMarked">
         <Validator value="AP_BansheeBarrageNotCycleMarked"/>
     </CTargetSortValidator>
+    <CTargetSortBehaviorCount id="AP_TSBansheeBarrageAimTarget">
+        <WhichUnit Value="Target"/>
+        <Descending value="1"/>
+        <Behavior value="AP_BansheeBarrageAimTarget"/>
+    </CTargetSortBehaviorCount>
     <CTargetSortValidator id="AP_TSUnitsAndAttackingStructures">
         <Validator value="AP_UnitOrAttackingStructure"/>
     </CTargetSortValidator>

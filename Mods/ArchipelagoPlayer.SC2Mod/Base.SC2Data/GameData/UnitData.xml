@@ -31286,8 +31286,8 @@
         <Mover value="Fly"/>
         <Speed value="2.75"/>
         <Acceleration value="3.25"/>
-        <StationaryTurningRate value="1499.9414"/>
-        <TurningRate value="1499.9414"/>
+        <StationaryTurningRate value="750.9414"/>
+        <TurningRate value="750.9414"/>
         <Sight value="10"/>
         <Height value="3.75"/>
         <VisionHeight value="4"/>
@@ -31317,7 +31317,7 @@
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
         <WeaponArray Link="AP_BacklashRocketsMengsk"/>
         <WeaponArray Link="AP_BacklashRocketsMengskMoving" Turret="AP_BansheeMengsk"/>
-        <WeaponArray Link="AP_BansheeMengskBarrageTrackingWeapon" Turret="AP_BansheeMengsk"/>
+        <WeaponArray Link="AP_BansheeMengskBarrageTrackingWeapon" Turret="AP_BansheeMengskBarrage"/>
         <LeaderAlias value="AP_BansheeMengsk"/>
         <SelectAlias value="AP_BansheeMengsk"/>
         <SubgroupAlias value="AP_BansheeMengsk"/>

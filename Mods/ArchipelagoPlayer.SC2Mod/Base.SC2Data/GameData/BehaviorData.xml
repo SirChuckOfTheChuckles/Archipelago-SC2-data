@@ -3993,9 +3993,6 @@
             <VitalRegenArray index="Energy" value="-5"/>
         </Modification>
     </CBehaviorBuff>
-    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
-    <!-- Channel buff: drains energy, disables the real weapon, enables the facing/tracking
-         weapon, and ticks the cone barrage every 0.0625s. Auto-removes when out of energy. -->
     <CBehaviorBuff id="AP_BansheeMengskBacklashBarrageChannel">
         <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-cloakdistortionfield-color.dds"/>
         <RemoveValidatorArray value="CanSpendEnergy"/>
@@ -4004,15 +4001,11 @@
         <PeriodicEffect value="AP_BansheeMengskBarrageTick"/>
         <Modification>
             <VitalRegenArray index="Energy" value="-30"/>
-            <!-- During the barrage: only the tracking weapon fires. Both backlash variants off; the
-                 tracking weapon (disabled by default) is enabled here so it drives the gimbal aim. -->
             <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
             <WeaponDisableArray value="AP_BacklashRocketsMengskMoving"/>
             <WeaponEnableArray value="AP_BansheeMengskBarrageTrackingWeapon"/>
         </Modification>
     </CBehaviorBuff>
-    <!-- Hidden per-caster marks. MaxStackCountPerCaster=1 so each banshee tracks its own
-         lockout/cycle independently (two overlapping barrages do not block each other). -->
     <CBehaviorBuff id="AP_BansheeBarrageRecentlyHit">
         <Duration value="0.25"/>
         <MaxStackCount value="99"/>
@@ -4020,6 +4013,12 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_BansheeBarrageCycleMark">
         <Duration value="2"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeBarrageAimTarget">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.1875"/>
         <MaxStackCount value="99"/>
         <MaxStackCountPerCaster value="1"/>
     </CBehaviorBuff>
@@ -10342,7 +10341,6 @@
                 <VitalMaxArray index="Life" value="70"/>
                 <VitalMaxArray index="Energy" value="50"/>
                 <VitalRegenArray index="Energy" value="0.5"/>
-                <!-- Rank 1 perk: fire while moving (swaps the Backlash weapon for the Moving variant) -->
                 <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
                 <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
             </Modification>

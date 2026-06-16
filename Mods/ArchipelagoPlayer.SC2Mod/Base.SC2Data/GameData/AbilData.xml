@@ -15099,12 +15099,9 @@
         <BehaviorArray value="AP_BansheeMengskCloakField"/>
     </CAbilBehavior>
     <CAbilEffectTarget id="AP_BansheeMengskNightAssaultDummy">
-        <!-- Dummy Ability for CActorRange -->
-        <!-- See Effect AP_BansheeMengskCloakingFieldSearch -->
         <Range value="6"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
-    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus, replaces Night Assault) ===== -->
     <CAbilBehavior id="AP_BansheeMengskBacklashBarrage">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOn" Requirements="AP_HaveBansheeMengskVeterancyLevel4">
@@ -15121,7 +15118,6 @@
         <BehaviorArray value="AP_BansheeMengskBacklashBarrageChannel"/>
     </CAbilBehavior>
     <CAbilEffectTarget id="AP_BansheeMengskBarrageRangeDummy">
-        <!-- Dummy ability for the CActorRange range/cone indicator (range 8, 60deg). -->
         <Range value="8"/>
         <Arc value="60"/>
     </CAbilEffectTarget>

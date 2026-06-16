@@ -7209,8 +7209,6 @@
         <Behavior value="AP_DamagedRecentlyByVoidRayPurifier"/>
         <RequireCasterUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
-    <!-- ===== AP_BansheeMengsk Backlash Barrage (rank-3 bonus) ===== -->
-    <!-- Per-caster: only counts the casting banshee's own stacks (RequireCasterUnit=Caster). -->
     <CValidatorUnitCompareBehaviorCount id="AP_BansheeBarrageNotRecentlyHit">
         <WhichUnit Value="Target"/>
         <Compare value="Eq"/>
@@ -7229,7 +7227,6 @@
         <Type value="And"/>
         <CombineArray value="AP_BansheeBarrageNotRecentlyHit"/>
     </CValidatorCombine>
-    <!-- True when this banshee has marked every enemy in range (no unmarked enemies left) -> reset the cycle. -->
     <CValidatorLocationEnumArea id="AP_BansheeBarrageAllMarked">
         <WhichLocation Value="CasterUnit"/>
         <AreaArray Radius="8" Validator="AP_BansheeBarrageNotCycleMarked"/>
