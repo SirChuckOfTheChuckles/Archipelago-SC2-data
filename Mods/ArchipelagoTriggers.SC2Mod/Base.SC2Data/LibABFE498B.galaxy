@@ -12853,7 +12853,6 @@ bool libABFE498B_gt_AP_HeroChoiceClicked_Func (bool testConds, bool runActions) 
         }
     }
     return true;
-    return true;
 }
 
 //--------------------------------------------------------------------------------------------------

@@ -20700,12 +20700,12 @@
     </CModel>
     <CModel id="AP_MarineMengskPortrait" parent="MarinePortraitBase">
         <Model value="AP\Assets\Units\Terran\MarineMengsk\MarineMengskPortraitNew.m3"/>
-        <Image value="Assets\Textures\Marauder_Mengsk_Coop_Portrait_Static.dds"/>
+        <Image value="AP\Assets\Textures\marinemengskportraitstatic.dds"/>
         <Lighting value="Marauder_Deluxe_Collection_Portrait"/>
     </CModel>
     <CModel id="AP_MedicMengskPortrait" parent="AP_MedicPortrait">
         <Model value="AP\Assets\Units\Terran\MedicMengsk\MedicMengskPortrait.m3"/>
-        <Image value="Assets\Textures\Marauder_Mengsk_Coop_Portrait_Static.dds"/>
+        <Image value="AP\Assets\Textures\medicmengskportraitstatic.dds"/>
         <Lighting value="AP_ScienceVesselPortrait"/>
     </CModel>
     <CModel id="AP_BarracksMengskBuild" parent="BarracksBuildBase"/>
