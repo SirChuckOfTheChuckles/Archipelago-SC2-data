@@ -12908,7 +12908,7 @@
         <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
         <HostSiteOps Ops="SOpAttachCenter SOpShadow SOp2DRotation"/>
         <Host Subject="_Unit"/>
-        <Scale value="1.500000"/>
+        <Scale value="1.300000"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
     <CActorRange id="AP_BansheeMengskBarrageRange" parent="RangeAbil" abil="AP_BansheeMengskBacklashBarrage">
@@ -12920,17 +12920,25 @@
     </CActorRange>
     <CActorBeamSimple id="AP_BansheeMengskBarrageAimTargetMarker" parent="BeamSimpleAnimationStyleContinuous">
         <On Terms="Effect.AP_BansheeBarrageApplyAimTarget.Start; At Target" Send="Create"/>
-        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Send="AnimBracketStop BSD"/>
-        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="AnimBracketStop BSD"/>
-        <On Terms="ActorCreation" Send="SetTintColor {255,0,0 1.000000} 3.000000"/>
-        <Model value="CycloneTargetingBeam"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Send="Destroy"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+        <Model value="Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Targeting"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
         <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
-        <HostLaunch Subject="_Unit" Scope="Caster"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
         <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
-        <HostImpact Subject="_Unit" Scope="Target"/>
-        <HostImpactSiteOps Ops="SOpAttachOrigin"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorBeamSimple>
+    <CActorSimple id="AP_BansheeMengskBarrageAimTargetTint">
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 255,50,50 0.125000 OneShot AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Target="_Unit" Send="ClearTintColor 0.125000 AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Send="Destroy"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="_Unit" Send="ClearTintColor 0.125000 AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+    </CActorSimple>
     <CActorModel id="AP_NovaWeaponHellfireShotgunBlastLaunchModel">
         <Flags index="SuppressSaveLoad" value="1"/>
         <On Terms="Effect.AP_NovaWeaponHellfireShotgunBlastSearch.Start; At Caster" Send="Create"/>
@@ -44339,8 +44347,8 @@
         <On Terms="TurretEnable.AP_BansheeMengskBarrage" Send="Create"/>
         <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
         <Types Id="DefaultLookAtTurret">
-            <Start Group="Turret_Right" Weight="1" Rate="720.000000"/>
-            <Stop Group="Turret_Right" Weight="1" Rate="720.000000"/>
+            <Start Group="Turret_Right" Weight="1" Rate="480.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="480.000000"/>
         </Types>
     </CActorLookAt>
     <CActorModel id="AP_BansheeMengskGimbalModel">
@@ -44371,10 +44379,10 @@
         <On Terms="TurretTarget.AP_BansheeMengsk.Set" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtEngage Continue"/>
         <On Terms="TurretTarget.AP_BansheeMengsk.Clear" Send="TimerSet 1.500000 DelayAnim"/>
         <On Terms="TurretTarget.AP_BansheeMengskBarrage.Set" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtEngage Continue"/>
-        <On Terms="TurretTarget.AP_BansheeMengskBarrage.Clear" Send="TimerSet 0.500000 DelayAnim"/>
         <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
-        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="TimerSet 0.500000 DelayAnim"/>
-        <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="TimerSet 0.250000 DelayAnimBarrage"/>
+        <On Terms="TimerExpired; TimerName DelayAnimBarrage" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtDisengage"/>
         <On Terms="Signal.*.GimbalBirth" Send="SetOpacity 0.000000 0.000000 GimbalOpacity"/>
         <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps AP_PropsHost"/>
         <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefClear ::Host"/>

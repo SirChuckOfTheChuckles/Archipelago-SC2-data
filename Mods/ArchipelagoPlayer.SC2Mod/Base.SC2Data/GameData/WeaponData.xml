@@ -4076,7 +4076,7 @@
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="8"/>
         <Arc value="0"/>
-        <ArcSlop value="0"/>
+        <ArcSlop value="15"/>
         <Period value="0.0625"/>
         <DamagePoint value="0"/>
         <Backswing value="0"/>

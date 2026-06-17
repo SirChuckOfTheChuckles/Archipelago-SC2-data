@@ -515,6 +515,7 @@
         <Model value="Assets\UI\Cursors\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Targeting" parent="RaceOneShotSpellFX" Race="Terran"/>
     <CModel id="AP_SpectreNukeTarget" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Terran\GhostLaseTarget\GhostLaseTarget.m3"/>
         <EditorCategories value="Race:Terran"/>

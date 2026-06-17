@@ -31275,8 +31275,8 @@
         <Collide index="Flying" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="280"/>
-        <LifeMax value="280"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
         <LifeArmor value="3"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
         <EnergyStart value="50"/>
@@ -31286,8 +31286,8 @@
         <Mover value="Fly"/>
         <Speed value="2.75"/>
         <Acceleration value="3.25"/>
-        <StationaryTurningRate value="750.9414"/>
-        <TurningRate value="750.9414"/>
+        <StationaryTurningRate value="1500.9414"/>
+        <TurningRate value="1500.9414"/>
         <Sight value="10"/>
         <Height value="3.75"/>
         <VisionHeight value="4"/>

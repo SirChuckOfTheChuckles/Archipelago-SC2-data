@@ -175,14 +175,9 @@
         </Fidget>
     </CTurret>
     <CTurret id="AP_BansheeMengskBarrage">
-        <Idle value="ResetIfMoving"/>
+        <Idle value="Hold"/>
         <YawArc value="360"/>
-        <YawRate value="180.2968"/>
-        <Fidget DelayMax="30" DelayMin="10" TurnAngle="0">
-            <ChanceArray index="Anim" value="50"/>
-            <ChanceArray index="Idle" value="50"/>
-            <ChanceArray index="Turn" value="0"/>
-        </Fidget>
+        <YawRate value="120.2968"/>
     </CTurret>
     <CTurret id="AP_Immortal">
         <Idle value="FollowMovement"/>

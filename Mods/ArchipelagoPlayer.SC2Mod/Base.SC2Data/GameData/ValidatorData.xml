@@ -235,7 +235,6 @@
     <CValidatorUnitCompareBehaviorCount id="AP_CasterIsNotBacklashBarrage">
         <WhichUnit Value="Caster"/>
         <Compare value="LT"/>
-        <Find value="1"/>
         <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_GhostHoldingFire">
