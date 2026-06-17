@@ -3857,6 +3857,7 @@
         </TargetSorts>
         <AreaArray Arc="59.9963" Radius="8" MaxCount="1" Effect="AP_BansheeMengskBarrageFireSet"/>
         <SearchFlags index="CenterAtLaunch" value="1"/>
+        <SearchFlags index="OffsetAreaByAngle" value="0"/>
     </CEffectEnumArea>
     <CEffectSet id="AP_BansheeMengskBarrageFireSet">
         <EditorCategories value="Race:Terran"/>

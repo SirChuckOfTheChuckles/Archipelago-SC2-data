@@ -44347,8 +44347,8 @@
         <On Terms="TurretEnable.AP_BansheeMengskBarrage" Send="Create"/>
         <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
         <Types Id="DefaultLookAtTurret">
-            <Start Group="Turret_Right" Weight="1" Rate="480.000000"/>
-            <Stop Group="Turret_Right" Weight="1" Rate="480.000000"/>
+            <Start Group="Turret_Right" Weight="1" Rate="1800.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="1800.000000"/>
         </Types>
     </CActorLookAt>
     <CActorModel id="AP_BansheeMengskGimbalModel">
