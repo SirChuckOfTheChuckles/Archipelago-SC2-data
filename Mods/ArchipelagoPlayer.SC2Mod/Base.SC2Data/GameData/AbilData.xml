@@ -15045,7 +15045,6 @@
     </CAbilBuild>
     <CAbilEffectTarget id="AP_MengskMedicHeal" parent="AP_heal">
         <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
-        <ValidatorArray value="AP_NotMaxHP"/>
         <SmartValidatorArray value="AP_NotMaxHP"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
         <CmdButtonArray index="Execute" Requirements="AP_MedicMengskHealDefaultRange"/>
@@ -15054,7 +15053,6 @@
         <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
         <Range index="0" value="4"/>
         <AutoCastRange value="8"/>
-        <ValidatorArray value="AP_NotMaxHP"/>
         <SmartValidatorArray value="AP_NotMaxHP"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
         <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskHealLongRange"/>
@@ -15063,7 +15061,6 @@
         <Effect index="0" value="AP_MedicMengskHealInitialSwitch"/>
         <Range index="0" value="4"/>
         <AutoCastRange value="8"/>
-        <ValidatorArray value="AP_NotMaxHP"/>
         <SmartValidatorArray value="AP_NotMaxHP"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
         <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>

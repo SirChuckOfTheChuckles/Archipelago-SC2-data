@@ -7473,9 +7473,9 @@
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-addictive-supplements.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="AP_MarauderMengskRefractiveShrapnel">
-        <Icon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
+    <CButton id="AP_MarauderMengskBolsteredBarrier">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-bolstered-barrier.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-bolstered-barrier.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengskSovereignNeosteel">

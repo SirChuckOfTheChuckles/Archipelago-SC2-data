@@ -15098,7 +15098,6 @@
     <CUpgrade id="AP_GhostMengskPhasingSuit">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="AP\Assets\Textures\btn-upgrade-terran-phasing-suit.dds"/>
-        <EffectArray Operation="Add" Reference="Behavior,AP_GhostMengskSuperCloak,Duration" Value="2"/>
     </CUpgrade>
     <CUpgrade id="AP_GhostMengskNemesisRounds">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
@@ -15132,11 +15131,11 @@
     <CUpgrade id="AP_MarauderMengskSovereignNeosteel">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="AP\Assets\Textures\btn-upgrade-sovereign-neosteel.dds"/>
-        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeMax" Value="40"/>
-        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeStart" Value="40"/>
-        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]" Value="10"/>
-        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[2].Modification.VitalMaxArray[Life]" Value="10"/>
-        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[3].Modification.VitalMaxArray[Life]" Value="10"/>
+        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeMax" Value="60"/>
+        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeStart" Value="60"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]" Value="15"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[2].Modification.VitalMaxArray[Life]" Value="15"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[3].Modification.VitalMaxArray[Life]" Value="15"/>
         <AffectedUnitArray value="AP_MarauderMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_MarauderMengskAddictiveSupplements">
@@ -15147,9 +15146,11 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-ability-mengsk-marauder-superconcussiveshells.dds"/>
     </CUpgrade>
-    <CUpgrade id="AP_MarauderMengskRefractiveShrapnel">
+    <CUpgrade id="AP_MarauderMengskBolsteredBarrier">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-bolstered-barrier.dds"/>
+        <EffectArray Operation="Add" Reference="Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_MarauderMengskAbsorbReapplicator,Duration" Value="10"/>
     </CUpgrade>
     <CUpgrade id="AP_MedicMengskRoyalAcademyDegree">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>

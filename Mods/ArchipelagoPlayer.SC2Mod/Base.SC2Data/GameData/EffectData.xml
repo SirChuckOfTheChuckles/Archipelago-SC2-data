@@ -23137,7 +23137,6 @@
         <EffectArray value="AP_PunisherGrenadesMengskU"/>
         <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
         <EffectArray value="AP_MarauderMengskShrapnelSet"/>
-        <EffectArray value="AP_MarauderMengskRefractiveShrapnelSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PunisherGrenadesMengskSlow">
         <ValidatorArray index="0" value="AP_HaveMarauderMengskIncapacitatorShells"/>
@@ -23156,7 +23155,7 @@
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectSet id="AP_MarauderMengskAbsorbABWrapper">
-        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
+        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicatorAny"/>
         <EffectArray value="AP_MarauderMengskAbsorbAndPrimeSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbAB">
@@ -23165,17 +23164,9 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorb"/>
     </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_MarauderMengskEnergizedPrimeAB">
-        <ValidatorArray value="AP_HaveMarauderMengskRefractiveShrapnel"/>
-        <ValidatorArray value="AP_CasterLevelGTE3"/>
-        <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Caster"/>
-        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
-    </CEffectApplyBehavior>
     <CEffectSet id="AP_MarauderMengskAbsorbAndPrimeSet">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_MarauderMengskAbsorbAB"/>
-        <EffectArray value="AP_MarauderMengskEnergizedPrimeAB"/>
     </CEffectSet>
     <CEffectEnumArea id="AP_MarauderMengskAbsorbKnockbackSearch">
         <EditorCategories value=""/>
@@ -23186,12 +23177,18 @@
     <CEffectSet id="AP_MarauderMengskAbsorbFinalSet">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_MarauderMengskAbsorbKnockbackSearch"/>
-        <EffectArray value="AP_MarauderMengskEnergizedPrimeAB"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbReapplicatorAB">
+        <ValidatorArray value="AP_NotHaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MarauderMengskAbsorbReapplicatorUpgradedAB">
+        <ValidatorArray value="AP_HaveMarauderMengskBolsteredBarrier"/>
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MarauderMengskAbsorbReapplicatorUpgraded"/>
     </CEffectApplyBehavior>
     <CEffectRemoveBehavior id="AP_MarauderMengskSovereignNeosteelRankBonusRB">
         <EditorCategories value="Race:Terran"/>
@@ -23240,45 +23237,8 @@
     </CEffectEnumArea>
     <CEffectSet id="AP_MarauderMengskShrapnelSet">
         <ValidatorArray value="AP_CasterLevelGTE3"/>
-        <ValidatorArray value="AP_CasterNotEnergizedPrimed"/>
         <EditorCategories value=""/>
         <EffectArray value="AP_MarauderMengskShrapnelSearch"/>
-    </CEffectSet>
-    <CEffectDamage id="AP_MarauderMengskRefractiveShrapnelDamage" parent="DU_WEAP">
-        <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Armored" value="1"/>
-        <ArmorReduction value="0"/>
-        <Kind value="Ranged"/>
-        <KindSplash value="Splash"/>
-        <Amount value="10">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-        <Death value="Eviscerate"/>
-    </CEffectDamage>
-    <CEffectSet id="AP_MarauderMengskRefractiveShrapnelImpactSet">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MarauderMengskRefractiveShrapnelDamage"/>
-        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
-    </CEffectSet>
-    <CEffectEnumArea id="AP_MarauderMengskRefractiveShrapnelSearch">
-        <LaunchLocation Value="CasterUnit"/>
-        <ImpactLocation Value="TargetUnit"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Arc="360" Radius="3" Effect="AP_MarauderMengskRefractiveShrapnelImpactSet"/>
-    </CEffectEnumArea>
-    <CEffectRemoveBehavior id="AP_MarauderMengskEnergizedConsume">
-        <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Caster"/>
-        <BehaviorLink value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
-    </CEffectRemoveBehavior>
-    <CEffectSet id="AP_MarauderMengskRefractiveShrapnelSet">
-        <ValidatorArray value="AP_CasterLevelGTE3"/>
-        <ValidatorArray value="AP_HaveMarauderMengskRefractiveShrapnel"/>
-        <ValidatorArray value="AP_CasterHasEnergizedPrimed"/>
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MarauderMengskRefractiveShrapnelSearch"/>
-        <EffectArray value="AP_MarauderMengskEnergizedConsume"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAttackSpeedBoostAB">
         <EditorCategories value="Race:Terran"/>
@@ -23292,15 +23252,24 @@
         <ValidatorArray value="AP_HaveMarauderMengskAddictiveSupplements"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorMU">
+        <ValidatorArray value="AP_NotHaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value="Race:Terran"/>
         <Cost Behavior="AP_MarauderMengskAbsorbReapplicator" CooldownTimeUse="60"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorUpgradedMU">
+        <ValidatorArray value="AP_HaveMarauderMengskBolsteredBarrier"/>
+        <EditorCategories value="Race:Terran"/>
+        <Cost Behavior="AP_MarauderMengskAbsorbReapplicatorUpgraded" CooldownTimeUse="50"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
     <CEffectSet id="AP_MarauderMengskAbsorbReapplicatorSet">
         <EditorCategories value="Race:Terran"/>
-        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
+        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicatorAny"/>
         <EffectArray value="AP_MarauderMengskAbsorbReapplicatorAB"/>
+        <EffectArray value="AP_MarauderMengskAbsorbReapplicatorUpgradedAB"/>
         <EffectArray value="AP_MarauderMengskAbsorbReapplicatorMU"/>
+        <EffectArray value="AP_MarauderMengskAbsorbReapplicatorUpgradedMU"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_VeterancySuppressEffectsAB">
         <Behavior value="AP_VeterancySuppressEffects"/>
@@ -23488,9 +23457,9 @@
     </CEffectEnumArea>
     <CEffectSwitch id="AP_C10CanisterRifleMengsk">
         <EditorCategories value="Race:Terran"/>
-        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioMechDamage"/>
-        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioDamage"/>
-        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsMechDamage"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioMechSwitch"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioSwitch"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsMechSwitch"/>
         <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
     </CEffectSwitch>
     <CEffectDamage id="AP_C10CanisterRifleMengskDamage" parent="DU_WEAP">
@@ -23501,34 +23470,29 @@
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
     </CEffectDamage>
-    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsBioDamage" parent="DU_WEAP">
+    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Biological" value="2"/>
-        <AttributeFactor index="Light" value="2"/>
+        <AttributeFactor index="Light" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="15">
+        <Amount value="30">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
     </CEffectDamage>
-    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsMechDamage" parent="DU_WEAP">
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsBioSwitch">
         <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Mechanical" value="2"/>
-        <AttributeFactor index="Light" value="2"/>
-        <Kind value="Ranged"/>
-        <Amount value="15">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-    </CEffectDamage>
-    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsBioMechDamage" parent="DU_WEAP">
+        <CaseArray Validator="AP_IsBiological" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsMechSwitch">
         <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Biological" value="2"/>
-        <AttributeFactor index="Mechanical" value="2"/>
-        <AttributeFactor index="Light" value="2"/>
-        <Kind value="Ranged"/>
-        <Amount value="15">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-    </CEffectDamage>
+        <CaseArray Validator="AP_IsMechanical" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsBioMechSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_IsBiologicalOrMechanical" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
     <CEffectApplyBehavior id="AP_GhostMengskNemesisRoundsBioAB">
         <ValidatorArray value="AP_HaveGhostMengskNemesisRounds"/>
         <EditorCategories value="Race:Terran"/>

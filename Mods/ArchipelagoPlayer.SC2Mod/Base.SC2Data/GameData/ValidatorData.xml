@@ -49,9 +49,12 @@
         <Find value="1"/>
         <Value value="AP_HaveMarauderMengskIncapacitatorShells"/>
     </CValidatorPlayerRequirement>
-    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskRefractiveShrapnel">
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskBolsteredBarrier">
         <Find value="1"/>
-        <Value value="AP_HaveMarauderMengskRefractiveShrapnel"/>
+        <Value value="AP_HaveMarauderMengskBolsteredBarrier"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotHaveMarauderMengskBolsteredBarrier">
+        <Value value="AP_HaveMarauderMengskBolsteredBarrier"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_NoMarineMengskCombatShield">
         <Value value="AP_HaveMarineMengskCombatShield"/>
@@ -5801,6 +5804,10 @@
     <CValidatorUnitFilters id="AP_IsBiological">
         <Filters value="Biological;-"/>
     </CValidatorUnitFilters>
+    <CValidatorCombine id="AP_IsBiologicalOrMechanical">
+        <CombineArray value="AP_IsBiological"/>
+        <CombineArray value="AP_IsMechanical"/>
+    </CValidatorCombine>
     <CValidatorCombine id="AP_UnitIsBiologicalOrMechanical">
         <CombineArray value="AP_IsBiological"/>
         <CombineArray value="AP_IsMechanical"/>
@@ -7621,16 +7628,15 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasEnergizedPrimed">
+    <CValidatorUnitCompareBehaviorCount id="AP_NoMarauderMengskAbsorbReapplicatorUpgraded">
         <WhichUnit Value="Caster"/>
-        <Compare value="GE"/>
-        <Value value="1"/>
-        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
+        <Behavior value="AP_MarauderMengskAbsorbReapplicatorUpgraded"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterNotEnergizedPrimed">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="AP_MarauderMengskRefractiveShrapnelPrimed"/>
-    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_NoMarauderMengskAbsorbReapplicatorAny">
+        <Type value="And"/>
+        <CombineArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
+        <CombineArray value="AP_NoMarauderMengskAbsorbReapplicatorUpgraded"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="AP_HasPrecursorMerc">
         <WhichUnit Value="Target"/>
         <Value value="1"/>

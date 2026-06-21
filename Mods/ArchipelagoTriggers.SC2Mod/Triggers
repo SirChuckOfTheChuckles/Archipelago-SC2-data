@@ -3524,7 +3524,7 @@
                     libABFE498B_gf_AP_Triggers_Terran_unlockFieldResponseThetaOpticalRestoration, // 19
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardIncapacitatorShells, // 20
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardAddictiveSupplements, // 21
-                    libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardRefractiveShrapnel, // 22
+                    libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardBolsteredBarrier, // 22
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardSovereignNeosteel, // 23
                     ap_triggers_PlayerConsumer_sig, // 24
                     ap_triggers_PlayerConsumer_sig, // 25
@@ -31751,7 +31751,7 @@
             <ValueGameType Type="Upgrade"/>
         </Element>
         <Element Type="FunctionDef" Id="3ABA2BC6">
-            <Identifier>AP_Triggers_Terran_unlockAegisGuardRefractiveShrapnel</Identifier>
+            <Identifier>AP_Triggers_Terran_unlockAegisGuardBolsteredBarrier</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="190269EC"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="4C4280DA"/>
@@ -31783,7 +31783,7 @@
         </Element>
         <Element Type="Param" Id="5A30138C">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_MarauderMengskRefractiveShrapnel</Value>
+            <Value>AP_MarauderMengskBolsteredBarrier</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>

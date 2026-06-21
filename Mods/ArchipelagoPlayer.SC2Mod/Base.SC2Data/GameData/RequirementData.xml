@@ -74,10 +74,9 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMarauderMengskRefractiveShrapnel">
+    <CRequirement id="AP_HaveMarauderMengskBolsteredBarrier">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly"/>
-        <NodeArray index="Use" Link="AP_AndCountUpgradeMarauderMengskRefractiveShrapnelCompleteOnlyGTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskBolsteredBarrierCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
@@ -4516,6 +4515,10 @@
     <CRequirement id="AP_HaveMarauderMengskAbsorbReapplicator">
         <EditorCategories value="TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountBehaviorMarauderMengskAbsorbReapplicatorCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskAbsorbReapplicatorUpgraded">
+        <EditorCategories value="TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountBehaviorMarauderMengskAbsorbReapplicatorUpgradedCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="AP_TrainNukeMengsk">
         <EditorCategories value="Race:Terran,TechType:Ability"/>

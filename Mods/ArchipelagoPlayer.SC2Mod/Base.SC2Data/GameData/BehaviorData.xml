@@ -9662,6 +9662,16 @@
             <Cooldown Location="Unit" TimeUse="60"/>
         </Cost>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MarauderMengskAbsorbReapplicatorUpgraded">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="50"/>
+        <ExpireEffect value="AP_MarauderMengskAbsorbAndPrimeSet"/>
+        <Cost>
+            <Cooldown Location="Unit" TimeUse="50"/>
+        </Cost>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskAttackSpeedBoost">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
@@ -9706,7 +9716,7 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
         <MaxStackCount value="3"/>
         <Modification>
-            <VitalMaxArray index="Life" value="10"/>
+            <VitalMaxArray index="Life" value="15"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskShrapnelSlow">
@@ -9715,12 +9725,6 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Duration value="3"/>
         <Modification MoveSpeedMultiplier="0.4"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MarauderMengskRefractiveShrapnelPrimed">
-        <Alignment value="Positive"/>
-        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-refractive-shrapnel.dds"/>
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <MaxStackCount value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GhostMengskIrradiatePreMarker">
         <InfoFlags index="Hidden" value="1"/>
@@ -9759,8 +9763,8 @@
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="12"/>
-        <Modification MoveSpeedMultiplier="1.6">
+        <Duration value="10"/>
+        <Modification MoveSpeedMultiplier="2.0">
             <StateFlags index="SuppressCollision" value="1"/>
         </Modification>
     </CBehaviorBuff>

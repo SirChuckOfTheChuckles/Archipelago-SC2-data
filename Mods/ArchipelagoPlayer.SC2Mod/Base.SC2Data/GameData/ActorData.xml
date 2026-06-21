@@ -42292,15 +42292,6 @@
         <ModelFlags index="AllowHitTest" value="0"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
     </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelImpact" parent="ModelAnimationStyleOneShot">
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelDamage.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <Host Subject="_Selectable"/>
-        <HostSiteOps Ops="SOpAttachCenter"/>
-        <Model value="AP_MarauderMengskShrapnelImpact"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-        <ModelFlags index="AutomateGlobalLoops" value="1"/>
-    </CActorModel>
     <CActorModel id="AP_MarauderMengskShrapnelLaunch">
         <Flags index="SuppressSaveLoad" value="1"/>
         <On Terms="Effect.AP_MarauderMengskShrapnelSearch.Start; At Target" Send="Create"/>
@@ -42310,109 +42301,8 @@
         <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted" HoldPosition="1" HoldRotation="1"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch0">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot0" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch60">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot60" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch120">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot120" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch180">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot180" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch240">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot240" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskRefractiveShrapnelLaunch300">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation" Send="$Birth"/>
-        <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <Host Subject="_Unit"/>
-        <HostSiteOps Ops="SOpAttachCenterSoft SOpForwardCasterPointInverted AP_MarauderMengskRefractiveShrapnelRot300" HoldPosition="1" HoldRotation="1"/>
-        <Model value="AP_MarauderMengskShrapnelLaunch"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-    </CActorModel>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot0">
-        <Forward value="1.000000,0.000000,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot60">
-        <Forward value="0.500000,0.866025,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot120">
-        <Forward value="-0.500000,0.866025,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot180">
-        <Forward value="-1.000000,0.000000,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot240">
-        <Forward value="-0.500000,-0.866025,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
-    <CActorSiteOpRotationExplicit id="AP_MarauderMengskRefractiveShrapnelRot300">
-        <Forward value="0.500000,-0.866025,0.000000"/>
-        <IsLocal value="1"/>
-    </CActorSiteOpRotationExplicit>
     <CActorSound id="AP_MarauderMengskShrapnelSound" parent="SoundOneShot">
         <On Terms="Effect.AP_MarauderMengskShrapnelSearch.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.AP_MarauderMengskRefractiveShrapnelSearch.Start; At Caster" Send="Create"/>
         <Sound value="AP_MarauderMengskShrapnel"/>
         <Layers>
             <Sound value="AP_Nova_HellfireShotgun_HandPump"/>
@@ -42445,22 +42335,6 @@
             <Volume value="-2.000000,-2.000000"/>
         </Layers>
     </CActorSound>
-    <CActorModel id="AP_MarauderMengskEnergizedWeaponGlow" parent="ModelAddition">
-        <On Terms="Behavior.AP_MarauderMengskRefractiveShrapnelPrimed.On" Send="Create"/>
-        <On Terms="Behavior.AP_MarauderMengskRefractiveShrapnelPrimed.Off" Send="Destroy"/>
-        <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskRefractiveShrapnel" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskRefractiveShrapnel" Send="SetScale 1.250000"/>
-        <HostSiteOps Ops="SOpAttachWeaponRight"/>
-        <Model value="AP_DiamondbackCharged"/>
-    </CActorModel>
-    <CActorModel id="AP_MarauderMengskEnergizedWeaponGlow2" parent="ModelAddition">
-        <On Terms="Behavior.AP_MarauderMengskRefractiveShrapnelPrimed.On" Send="Create"/>
-        <On Terms="Behavior.AP_MarauderMengskRefractiveShrapnelPrimed.Off" Send="Destroy"/>
-        <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskRefractiveShrapnel" Send="SetTintColor 40,120,255"/>
-        <On Terms="ActorCreation; ValidatePlayer AP_HaveMarauderMengskRefractiveShrapnel" Send="SetScale 1.250000"/>
-        <HostSiteOps Ops="SOpAttachWeaponLeft"/>
-        <Model value="AP_DiamondbackCharged"/>
-    </CActorModel>
     <CActorUnit id="AP_MarauderMengsk" parent="GenericUnitStandard" unitName="AP_MarauderMengsk">
         <Macros value="DeadAnimationMacro"/>
         <Macros value="UnloadDropAnim"/>
@@ -42647,15 +42521,6 @@
         <ImpactPhysics Name="PunisherGrenadesImpact" MatchKeys="Basic" Physics="MarauderAttackDeathForce"/>
     </CActorAction>
     <CActorMissile id="AP_MarauderMengskAttackMissile" parent="GenericAttackMissile" unitName="AP_PunisherGrenadesMengskLMWeapon"/>
-    <CActorModel id="AP_MarauderMengskEnergizedAttackMissileAttachment" parent="ModelAnimationStyleContinuous">
-        <On Terms="Effect.AP_PunisherGrenadesMengskLM.Start; At Caster; ValidateUnit AP_CasterHasEnergizedPrimed" Send="Create"/>
-        <On Terms="Effect.AP_PunisherGrenadesMengskSet.Start; FromEffectTreeDescendant" Send="Destroy"/>
-        <On Terms="ActorOrphan" Send="Destroy"/>
-        <Host Subject="_Missile"/>
-        <HostSiteOps Ops="SOpAttachCenter"/>
-        <Model value="AP_ArtanisAirAttackWeapon"/>
-        <Scale value="0.600000"/>
-    </CActorModel>
     <CActorAction id="AP_MarauderMengskUpgradedAttack" parent="MarauderAttackBase" effectImpact="AP_PunisherGrenadesMengskU" effectLaunch="AP_PunisherGrenadesMengskLM">
         <On Terms="Effect.AP_PunisherGrenadesMengskLM.Start; At Caster; ValidateEffect AP_PunisherGrenadesResearched" Send="Create"/>
         <LaunchAttachQuery Methods="AMPatternMarauder"/>

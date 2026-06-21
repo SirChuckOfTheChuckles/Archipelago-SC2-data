@@ -47,14 +47,10 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarauderMengskIncapacitatorShells" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly">
+    <CRequirementCountUpgrade id="AP_CountUpgradeMarauderMengskBolsteredBarrierCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_MarauderMengskRefractiveShrapnel" State="CompleteOnly"/>
+        <Count Link="AP_MarauderMengskBolsteredBarrier" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
-    <CRequirementAnd id="AP_AndCountUpgradeMarauderMengskRefractiveShrapnelCompleteOnlyGTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3">
-        <OperandArray value="AP_CountUpgradeMarauderMengskRefractiveShrapnelCompleteOnly"/>
-        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit3"/>
-    </CRequirementAnd>
     <CRequirementNot id="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly">
         <OperandArray index="0" value="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
     </CRequirementNot>
@@ -7418,6 +7414,10 @@
     <CRequirementCountBehavior id="AP_CountBehaviorMarauderMengskAbsorbReapplicatorCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MarauderMengskAbsorbReapplicator" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="AP_CountBehaviorMarauderMengskAbsorbReapplicatorUpgradedCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_MarauderMengskAbsorbReapplicatorUpgraded" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
     <CRequirementCountUnit id="AP_CountUnitNukeMengskCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>

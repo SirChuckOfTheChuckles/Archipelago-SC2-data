@@ -30262,9 +30262,17 @@
                 <Row value="1"/>
                 <Column value="2"/>
             </LayoutButtons>
+            <LayoutButtons>
+                <Face value="AP_MarauderMengskShield"/>
+                <Type value="Passive"/>
+                <Behavior value="AP_MarauderMengskAbsorbReapplicatorUpgraded"/>
+                <Requirements value="AP_HaveMarauderMengskAbsorbReapplicatorUpgraded"/>
+                <Row value="1"/>
+                <Column value="2"/>
+            </LayoutButtons>
             <LayoutButtons Face="AP_MarauderMengskShield" Type="Passive" Requirements="AP_HaveMengskVeterancyMarauderMengskGELevel2" Row="1" Column="2"/>
             <LayoutButtons Face="AP_MarauderMengskSlow" Type="Passive" Requirements="AP_HaveMarauderMengskIncapacitatorShells" Row="1" Column="3"/>
-            <LayoutButtons Face="AP_MarauderMengskRefractiveShrapnel" Type="Passive" Requirements="AP_HaveMarauderMengskRefractiveShrapnel" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_MarauderMengskBolsteredBarrier" Type="Passive" Requirements="AP_HaveMarauderMengskBolsteredBarrier" Row="1" Column="4"/>
             <LayoutButtons Face="AP_MarauderMengskSovereignNeosteel" Type="Passive" Requirements="AP_HaveMarauderMengskSovereignNeosteel" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="0.5625"/>
