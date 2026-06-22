@@ -797,7 +797,8 @@
         </Cost>
         <Range value="7"/>
         <PrepTime value="0.361"/>
-        <CursorEffect value="AP_MarineMengskSpiderMineLobNoFriendlyDamage"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <CursorEffect value="AP_MarineMengskSpiderMineLobDamage"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarineMengskSpiderMineLob" Requirements="AP_HaveMarineMengskSpiderMineLob"/>
         <Flags index="AllowMovement" value="1"/>
         <Alignment value="Negative"/>
@@ -15043,27 +15044,148 @@
         <EffectArray index="Finish" value="AP_WarpRelocateAssimilatorFinishSet"/>
         <EffectArray index="Cancel" value="AP_WarpRelocateEndSet"/>
     </CAbilBuild>
-    <CAbilEffectTarget id="AP_MengskMedicHeal" parent="AP_heal">
-        <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
-        <SmartValidatorArray value="AP_NotMaxHP"/>
-        <AutoCastValidatorArray value="AP_NotMaxHP"/>
-        <CmdButtonArray index="Execute" Requirements="AP_MedicMengskHealDefaultRange"/>
+    <!-- For some reason, heal-abilities have proven to be really cumbersome/buggy
+        when trying to parent off one another on units that have multiple heal abilities.
+        The following is repetitive but helps prevent the MedicMengsks from bugging
+        out with their various heal abilities
+                                                                     - Chuck  -->
+    <CAbilEffectTarget id="AP_MengskMedicHeal">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="2"/>
+        <Effect index="0" value="AP_MedicMengskHeal"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="6"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank0"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="1.5"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_MengskMedicHealLongRange" parent="AP_heal">
-        <Effect index="0" value="AP_MedicMengskHealSoloSet"/>
-        <Range index="0" value="4"/>
+    <CAbilEffectTarget id="AP_MengskMedicHealR1">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="2"/>
+        <Effect index="0" value="AP_MedicMengskHealL1"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="6"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank1"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="1.5"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AP_MengskMedicHealR2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="4"/>
+        <Effect index="0" value="AP_MedicMengskHealL2"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
         <AutoCastRange value="8"/>
-        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskHealLongRange"/>
+        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank2"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="3.5"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_MengskMedicDoubleBeamHeal" parent="AP_heal">
+    <!-- AP_MedicMengskHealR3 -->
+    <CAbilEffectTarget id="AP_MengskMedicDoubleBeamHeal">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="4"/>
         <Effect index="0" value="AP_MedicMengskHealInitialSwitch"/>
-        <Range index="0" value="4"/>
-        <AutoCastRange value="8"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
         <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="8"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="3.5"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_WraithMengskResonatingFeedbackInterference">
         <Alignment value="Negative"/>

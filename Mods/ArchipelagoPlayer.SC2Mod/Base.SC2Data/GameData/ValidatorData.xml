@@ -280,6 +280,17 @@
         <Value value="2"/>
         <Behavior value="AP_MedivacHealBeamBusy"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapySecondBeamActive">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedicMengskTherapySecondBeamActiveBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_MedicMengskTherapySecondStackActive">
+        <Type value="Or"/>
+        <CombineArray value="AP_MedicMengskTherapyBusyGE2"/>
+        <CombineArray value="AP_MedicMengskTherapySecondBeamActive"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapySoloHealingActive">
         <WhichUnit Value="Target"/>
         <Compare value="GE"/>
@@ -1316,6 +1327,7 @@
         <AbilLink value="AP_MengskMedicDoubleBeamHeal"/>
     </CValidatorUnitOrderQueue>
     <CValidatorCombine id="AP_IsDoubleBeamHealing">
+        <Type value="Or"/>
         <CombineArray value="AP_MedivacIsHealing"/>
         <CombineArray value="AP_MengskMedicDoubleBeamHeal"/>
     </CValidatorCombine>
@@ -7247,6 +7259,11 @@
     <CValidatorUnitCompareVeterancyLevel id="AP_LevelEq4">
         <Compare value="Eq"/>
         <Value value="5"/>
+    </CValidatorUnitCompareVeterancyLevel>
+    <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelEq0">
+        <WhichUnit Value="Caster"/>
+        <Compare value="Eq"/>
+        <Value value="1"/>
     </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelEq1">
         <WhichUnit Value="Caster"/>

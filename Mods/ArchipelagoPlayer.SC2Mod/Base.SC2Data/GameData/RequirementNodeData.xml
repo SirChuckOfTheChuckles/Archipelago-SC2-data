@@ -7614,6 +7614,14 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementLT>
+    <CRequirementLT id="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2">
+        <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="2"/>
+    </CRequirementLT>
+    <CRequirementAnd id="AP_AndGTE2LT3CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit">
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2"/>
+        <OperandArray value="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+    </CRequirementAnd>
     <CRequirementCountBehavior id="AP_CountBehaviorMengskVeterancyWraithMengskCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MengskVeterancyWraithMengsk" State="CompleteOnlyAtUnit"/>

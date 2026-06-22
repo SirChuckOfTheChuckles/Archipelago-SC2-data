@@ -10133,7 +10133,9 @@
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="0.125"/>
+        <Duration value="0.3125"/>
+        <Name value="Behavior/Name/AP_MedicMengskPhysicalTherapyHealBuff"/>
+        <Tooltip value="Behavior/Tooltip/AP_MedicMengskPhysicalTherapyHealBuff"/>
         <Modification>
             <LifeArmorBonus value="3"/>
         </Modification>
@@ -10141,7 +10143,19 @@
     <CBehaviorBuff id="AP_MedicMengskTherapySoloHealingBuff">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskTherapySecondBeamActiveBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="0.375"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyHealBuff">
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Modification>
+            <LifeArmorBonus value="3"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedicMengskPhysicalTherapyDR1">
         <Alignment value="Positive"/>
@@ -10162,7 +10176,7 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
-        <DisableValidatorArray value="AP_MedicMengskTherapyBusyGE2"/>
+        <DisableValidatorArray value="AP_MedicMengskTherapySecondStackActive"/>
         <Modification>
             <DamageTakenFraction index="Melee" value="-0.2"/>
             <DamageTakenFraction index="Ranged" value="-0.2"/>

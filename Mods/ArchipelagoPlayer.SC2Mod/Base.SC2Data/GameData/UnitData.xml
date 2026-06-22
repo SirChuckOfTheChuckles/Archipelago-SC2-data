@@ -31068,7 +31068,8 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_MengskMedicHeal"/>
-        <AbilArray Link="AP_MengskMedicHealLongRange"/>
+        <AbilArray Link="AP_MengskMedicHealR1"/>
+        <AbilArray Link="AP_MengskMedicHealR2"/>
         <AbilArray Link="AP_MengskMedicDoubleBeamHeal"/>
         <AbilArray Link="AP_MedicMengskDefensiveMatrix"/>
         <AbilArray Link="AP_MedicMengskOpticalRestoration"/>
@@ -31089,7 +31090,8 @@
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHeal,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHealLongRange,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHealR1,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicHealR2,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_HealMengsk" Type="AbilCmd" AbilCmd="AP_MengskMedicDoubleBeamHeal,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_MedicMengskDefensiveMatrix" Type="AbilCmd" AbilCmd="AP_MedicMengskDefensiveMatrix,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_MedicMengskOpticalRestoration" Type="AbilCmd" AbilCmd="AP_MedicMengskOpticalRestoration,Execute" Row="2" Column="2"/>

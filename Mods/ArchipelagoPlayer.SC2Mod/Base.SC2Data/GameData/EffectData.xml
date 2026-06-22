@@ -510,7 +510,7 @@
         <EffectArray value="AP_D8ClusterBombLM"/>
         <EffectArray value="MakePrecursor"/>
     </CEffectSet>
-    <CEffectDamage id="AP_MarineMengskSpiderMineLobNoFriendlyDamage">
+    <CEffectDamage id="AP_MarineMengskSpiderMineLobDamage">
         <EditorCategories value="Race:Terran"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
@@ -528,12 +528,11 @@
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Player,Ally,Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="CallForHelp" value="1"/>
-        <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="AP_MarineMengskSpiderMineLobLaunchMissile">
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="TargetPoint"/>
-        <ImpactEffect value="AP_MarineMengskSpiderMineLobNoFriendlyDamage"/>
+        <ImpactEffect value="AP_MarineMengskSpiderMineLobDamage"/>
         <AmmoUnit value="AP_MarineMengskSpiderMineLobWeapon"/>
         <ValidatorArray index="0" value="HasVision"/>
     </CEffectLaunchMissile>
@@ -15163,25 +15162,12 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MedicMengskTherapySoloHealingBuff"/>
     </CEffectApplyBehavior>
-    <CEffectSet id="AP_MedicMengskPhysicalTherapySoloTick">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
-        <EffectArray value="AP_MedicMengskTherapySoloHealingAB"/>
-    </CEffectSet>
-    <CEffectCreatePersistent id="AP_MedicMengskPhysicalTherapySoloPersistent">
+    <CEffectApplyBehavior id="AP_MedicMengskTherapySecondBeamActiveAB">
         <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
         <EditorCategories value="Race:Terran"/>
-        <WhichLocation Value="TargetUnit"/>
-        <Flags index="PersistUntilDestroyed" value="1"/>
-        <PeriodicValidator value="AP_MedicMengskTherapySoloActiveCombine"/>
-        <PeriodicEffectArray value="AP_MedicMengskPhysicalTherapySoloTick"/>
-        <PeriodicPeriodArray value="0.25"/>
-    </CEffectCreatePersistent>
-    <CEffectSet id="AP_MedicMengskHealSoloSet">
-        <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MedicMengskHealSwitch"/>
-        <EffectArray value="AP_MedicMengskPhysicalTherapySoloPersistent"/>
-    </CEffectSet>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskTherapySecondBeamActiveBuff"/>
+    </CEffectApplyBehavior>
     <CEffectIssueOrder id="AP_FirebatOptimizedLogisticsMorph">
         <EditorCategories value="Race:Terran"/>
         <Abil value="AP_FirebatOptimizedLogisticsMorph"/>
@@ -23855,7 +23841,6 @@
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Visible;Self,Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="0.75" Effect="AP_GaussRifleMengskSplashDamage"/>
-        <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectSet id="AP_GaussRifleMengskSet">
         <EffectArray value="AP_GaussRifleMengsk"/>
@@ -24009,32 +23994,98 @@
         <PeriodicEffectArray value="AP_MedicMengskHealSearch"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectSwitch id="AP_MedicMengskHealSwitch">
+    <CEffectCreateHealer id="AP_MedicMengskHeal">
         <ValidatorArray value="noMarkers"/>
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="HiddenCompareAB"/>
         <ValidatorArray value="HiddenCompareBA"/>
         <ValidatorArray value="NotVortexd"/>
-        <CaseArray Validator="AP_CasterLevelEq1" Effect="AP_MedicMengskHealL1"/>
-        <CaseArray Validator="AP_CasterLevelEq2" Effect="AP_MedicMengskHealL2"/>
-        <CaseArray Validator="AP_CasterLevelEq3" Effect="AP_MedicMengskHealL3"/>
-        <!-- L4 has double beam heal -->
-        <CaseDefault value="AP_MedicMengskHealL1"/>
-    </CEffectSwitch>
-    <CEffectCreateHealer id="AP_MedicMengskHealL1" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq1"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="12"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
-    <CEffectCreateHealer id="AP_MedicMengskHealL2" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq2"/>
+    <CEffectCreateHealer id="AP_MedicMengskHealL1">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
         <RechargeVitalRate value="15"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
-    <CEffectCreateHealer id="AP_MedicMengskHealL3" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq3"/>
+    <CEffectCreateHealer id="AP_MedicMengskHealL2">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
         <RechargeVitalRate value="18"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
+    <CEffectCreateHealer id="AP_MedicMengskHealL3">
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="21"/>
+        <Marker Link="Effect/AP_MedicMengskHeal">
+            <MatchFlags index="Link" value="1"/>
+        </Marker>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
+    </CEffectCreateHealer>
+    <CEffectSet id="AP_MedicMengskHealStartSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealApplyCasterBehavior"/>
+        <EffectArray value="AP_MedivacHealApplyTargetBehavior"/>
+        <EffectArray value="AP_MedicMengskHealTherapyOn"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MedicMengskHealStopSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealRemoveCasterBehavior"/>
+        <EffectArray value="AP_HealRemoveTargetBehavior"/>
+        <EffectArray value="AP_MedicMengskHealTherapyOff"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MedicMengskHealTherapyOn">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskTherapySoloHealingAB"/>
+        <EffectArray value="AP_MedicMengskHealTherapyTargetApply"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_MedicMengskHealTherapyTargetApply">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MedicMengskPhysicalTherapyHealBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_MedicMengskHealTherapyOff">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskHealTherapyRemoveCaster"/>
+        <EffectArray value="AP_MedicMengskHealTherapyRemoveTarget"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="AP_MedicMengskHealTherapyRemoveCaster">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="AP_MedicMengskHealTherapyRemoveTarget">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="AP_MedicMengskPhysicalTherapyHealBuff"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="AP_MedicMengskHealInitialSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MedicMengskHealTargetPersistent"/>
+        <EffectArray value="AP_MedicMengskHealL3"/>
         <EffectArray value="AP_MedicMengskHealScanPersistent"/>
     </CEffectSet>
     <CEffectSwitch id="AP_MedicMengskHealInitialSwitch">
@@ -24089,13 +24140,9 @@
         <ValidatorArray value="healCasterMinEnergy"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="CasterUnit"/>
+        <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground,Biological,Visible;Self,Neutral,Enemy,Air,Structure,Stasis,Dead,Hidden"/>
-        <TargetSorts>
-            <SortArray value="TSAlliancePassive"/>
-            <SortArray value="TSLife"/>
-            <SortArray value="TSDistance"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="4.25" Effect="AP_MedicMengskHealTargetPersistent"/>
+        <AreaArray MaxCount="1" Radius="4.5" Effect="AP_MedicMengskHealTargetPersistent"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="AP_MedicMengskHealTargetPersistent">
@@ -24103,19 +24150,35 @@
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="AP_NotMaxHP"/>
         <ValidatorArray value="AP_HealBeamAvailable"/>
-        <ValidatorArray value="noMarkers"/>
         <EditorCategories value="Race:Terran"/>
-        <Marker Link="Abil/MedivacHeal">
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="AP_MedicMengskHealDoubleSecondHeal"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealDoubleImpactDummy"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealDoubleSecondApplySet"/>
+        <PeriodicEffectArray value="AP_MedivacHealRemoveBehaviorSet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.24"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateHealer id="AP_MedicMengskHealDoubleSecondHeal">
+        <EditorCategories value="Race:Terran"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="21"/>
+        <Flags index="Channeled" value="0"/>
+        <PeriodCount value="4"/>
+        <Marker Link="Effect/AP_MedicMengskHeal">
             <MatchFlags index="Link" value="1"/>
         </Marker>
-        <WhichLocation Value="TargetUnit"/>
-        <Flags index="PersistUntilDestroyed" value="1"/>
-        <InitialEffect value="AP_MedivacHealApplyBehaviorSet"/>
-        <FinalEffect value="AP_MedivacHealRemoveBehaviorSet"/>
-        <PeriodicValidator value="AP_MedicMengskHealPeriodicCombine"/>
-        <PeriodicEffectArray value="AP_MedicMengskHealModifySet"/>
-        <PeriodicPeriodArray value="0.047619048"/>
-    </CEffectCreatePersistent>
+    </CEffectCreateHealer>
+    <CEffectModifyUnit id="AP_MedicMengskHealDoubleImpactDummy"/>
+    <CEffectSet id="AP_MedicMengskHealDoubleSecondApplySet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealApplyBehaviorSet"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
+        <EffectArray value="AP_MedicMengskTherapySecondBeamActiveAB"/>
+    </CEffectSet>
     <CEffectSet id="AP_LiberatorMengskWeaponChange">
         <EditorCategories value=""/>
         <EffectArray value="AP_LiberatorMengskWeaponClear"/>

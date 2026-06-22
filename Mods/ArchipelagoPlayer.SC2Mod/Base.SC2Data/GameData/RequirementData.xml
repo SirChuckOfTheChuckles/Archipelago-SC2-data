@@ -4673,11 +4673,17 @@
     <CRequirement id="AP_MedicMengskRoyalAcademyDegreeResearched">
         <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskRoyalAcademyDegreeCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_MedicMengskHealDefaultRange">
-        <NodeArray index="Show" Link="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+    <CRequirement id="AP_MedicMengskHealRank0">
+        <NodeArray index="Show" Link="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMedicMengskHealLongRange">
+    <CRequirement id="AP_MedicMengskHealRank1">
+        <NodeArray index="Show" Link="AP_AndGTE2LT3CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank2">
         <NodeArray index="Show" Link="AP_AndGTE3LT4CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank3">
+        <NodeArray index="Show" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit4"/>
     </CRequirement>
     <CRequirement id="AP_ZergMercCompoundBroodWarAndHaveSwarmling">
         <NodeArray index="Show" Link="AP_AndHotSHaveSwarmlingCompleteOnlyZergMercCompoundBroodWarSelectedCompleteOnly"/>
