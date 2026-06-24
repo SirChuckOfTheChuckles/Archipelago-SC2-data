@@ -23865,15 +23865,17 @@
         <ValidatorArray value="AP_HaveMarineMengskProdigalSon"/>
     </CEffectApplyBehavior>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddCharge">
+        <ValidatorArray value="AP_CasterLevelGTE2"/>
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
         <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddBuildABoomCharge">
+        <ValidatorArray value="AP_CasterLevelGTE2"/>
+        <ValidatorArray value="AP_HaveMarineMengskBuildABoom"/>
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
         <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
-        <ValidatorArray value="AP_HaveMarineMengskBuildABoom"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesRemoveCharge">
         <EditorCategories value="Race:Zerg"/>

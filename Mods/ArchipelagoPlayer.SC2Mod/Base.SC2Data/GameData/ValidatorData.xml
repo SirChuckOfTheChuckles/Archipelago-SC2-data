@@ -7214,6 +7214,11 @@
         <Compare value="GT"/>
         <Behavior value="AP_Leaping"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelGTE1">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelGTE2">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>

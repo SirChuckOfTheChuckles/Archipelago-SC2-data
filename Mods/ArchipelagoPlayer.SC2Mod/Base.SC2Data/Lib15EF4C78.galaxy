@@ -3401,22 +3401,10 @@ int lib15EF4C78_gf_AP_Player_getKerriganLevel (int lp_player) {
     return lib15EF4C78_gv_zS_KerriganLevel[lp_player];
 }
 
-bool lib15EF4C78_gf_CM_Mengsk_MarineHasProdigalSon (unit lp_unit) {
-    // Automatic Variable Declarations
-    // Implementation
-    return (TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarineMengskProdigalSon", c_techCountCompleteOnly) >= 1);
-}
-
-bool lib15EF4C78_gf_CM_Mengsk_MarineIsRank3 (unit lp_unit) {
-    // Automatic Variable Declarations
-    // Implementation
-    return (UnitXPGetCurrentLevel(lp_unit, "AP_MengskVeterancyMarineMengsk") >= 4);
-}
-
 void lib15EF4C78_gf_CM_Mengsk_UpdateProdigalSonRank3Bonus (unit lp_unit) {
     // Automatic Variable Declarations
     // Implementation
-    if (((lp_unit == null) || (UnitGetType(lp_unit) != "AP_MarineMengsk") || (lib15EF4C78_gf_CM_Mengsk_MarineHasProdigalSon(lp_unit) == false) || (lib15EF4C78_gf_CM_Mengsk_MarineIsRank3(lp_unit) == false))) {
+    if (((lp_unit == null) || (UnitGetType(lp_unit) != "AP_MarineMengsk") || (TechTreeUpgradeCount(UnitGetOwner(lp_unit), "AP_MarineMengskProdigalSon", c_techCountCompleteOnly) >= 1) || (UnitXPGetCurrentLevel(lp_unit, "AP_MengskVeterancyMarineMengsk") >= 4))) {
         return ;
     }
 
@@ -8848,7 +8836,7 @@ bool lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func (bool testConds, bool ru
 //--------------------------------------------------------------------------------------------------
 void lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Init () {
     lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades_Func");
-    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades, c_playerAny);
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_MarineMengskUpgrades, lib15EF4C78_gf_AP_GetPlayerId());
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -8895,7 +8883,7 @@ bool lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades_Func (bool testConds, bool run
 //--------------------------------------------------------------------------------------------------
 void lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades_Init () {
     lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades = TriggerCreate("lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades_Func");
-    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades, c_playerAny);
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_CM_Mengsk_MedicMengskUpgrades, lib15EF4C78_gf_AP_GetPlayerId());
 }
 
 //--------------------------------------------------------------------------------------------------

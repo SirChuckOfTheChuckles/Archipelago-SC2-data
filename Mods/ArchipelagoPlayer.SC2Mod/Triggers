@@ -73334,145 +73334,9 @@
             <Item Type="Category" Library="15EF4C78" Id="9DC98050"/>
         </Element>
         <Element Type="Category" Id="AA7B2EE8">
-            <Item Type="FunctionDef" Library="15EF4C78" Id="5E0A6CC0"/>
-            <Item Type="FunctionDef" Library="15EF4C78" Id="758A0B50"/>
             <Item Type="FunctionDef" Library="15EF4C78" Id="23631BB6"/>
             <Item Type="FunctionDef" Library="15EF4C78" Id="143751D3"/>
             <Item Type="Trigger" Library="15EF4C78" Id="D1FFF53B"/>
-        </Element>
-        <Element Type="FunctionDef" Id="5E0A6CC0">
-            <FlagCall/>
-            <ReturnType>
-                <Type Value="bool"/>
-            </ReturnType>
-            <Parameter Type="ParamDef" Library="15EF4C78" Id="0878B4A7"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="C4BE6AB3"/>
-        </Element>
-        <Element Type="ParamDef" Id="0878B4A7">
-            <Identifier>unit</Identifier>
-            <ParameterType>
-                <Type Value="unit"/>
-            </ParameterType>
-            <Default Type="Param" Library="15EF4C78" Id="BA6DD4CA"/>
-        </Element>
-        <Element Type="Param" Id="BA6DD4CA">
-            <Preset Type="PresetValue" Library="Ntve" Id="D6EA4D09"/>
-        </Element>
-        <Element Type="FunctionCall" Id="C4BE6AB3">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000097"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="2B0056F4"/>
-        </Element>
-        <Element Type="Param" Id="2B0056F4">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000488"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="A79A0284"/>
-        </Element>
-        <Element Type="FunctionCall" Id="A79A0284">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="C32FDCD0"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="39ABDBD4"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="B0D11865"/>
-        </Element>
-        <Element Type="Param" Id="C32FDCD0">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="29C9C70C"/>
-        </Element>
-        <Element Type="FunctionCall" Id="29C9C70C">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000255"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="EACD261E"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="DF33D3A4"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="9142E374"/>
-        </Element>
-        <Element Type="Param" Id="EACD261E">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="448F39DC"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="D78D6018"/>
-        </Element>
-        <Element Type="Param" Id="DF33D3A4">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000446"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="41B9EF4A"/>
-        </Element>
-        <Element Type="FunctionCall" Id="41B9EF4A">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000081"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="086E609D"/>
-        </Element>
-        <Element Type="Param" Id="086E609D">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000140"/>
-            <Parameter Type="ParamDef" Library="15EF4C78" Id="0878B4A7"/>
-        </Element>
-        <Element Type="Param" Id="9142E374">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000447"/>
-            <Value>AP_MarineMengskProdigalSon</Value>
-            <ValueType Type="gamelink"/>
-            <ValueGameType Type="Upgrade"/>
-        </Element>
-        <Element Type="Param" Id="39ABDBD4">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="B128CB9A"/>
-        </Element>
-        <Element Type="Param" Id="B0D11865">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>1</Value>
-            <ValueType Type="int"/>
-        </Element>
-        <Element Type="FunctionDef" Id="758A0B50">
-            <Identifier>CM_Mengsk_MarineIsRank3</Identifier>
-            <FlagCall/>
-            <ReturnType>
-                <Type Value="bool"/>
-            </ReturnType>
-            <Parameter Type="ParamDef" Library="15EF4C78" Id="7A9E212D"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="89BCEDBB"/>
-        </Element>
-        <Element Type="ParamDef" Id="7A9E212D">
-            <Identifier>unit</Identifier>
-            <ParameterType>
-                <Type Value="unit"/>
-            </ParameterType>
-            <Default Type="Param" Library="15EF4C78" Id="39DE2F13"/>
-        </Element>
-        <Element Type="Param" Id="39DE2F13">
-            <Preset Type="PresetValue" Library="Ntve" Id="D6EA4D09"/>
-        </Element>
-        <Element Type="FunctionCall" Id="89BCEDBB">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000097"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="CBBB7C6E"/>
-        </Element>
-        <Element Type="Param" Id="CBBB7C6E">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000488"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="52E1D840"/>
-        </Element>
-        <Element Type="FunctionCall" Id="52E1D840">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="3D3FFE67"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="0C2D559B"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="8EA81CA6"/>
-        </Element>
-        <Element Type="Param" Id="3D3FFE67">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
-            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="29D78886"/>
-        </Element>
-        <Element Type="FunctionCall" Id="29D78886">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="6C7EDC40"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="48A0BFD0"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="7C770AC4"/>
-        </Element>
-        <Element Type="Param" Id="48A0BFD0">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="EE50B5F5"/>
-            <Parameter Type="ParamDef" Library="15EF4C78" Id="7A9E212D"/>
-        </Element>
-        <Element Type="Param" Id="7C770AC4">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="74B0D02B"/>
-            <Value>AP_MengskVeterancyMarineMengsk</Value>
-            <ValueType Type="gamelink"/>
-            <ValueGameType Type="Behavior"/>
-        </Element>
-        <Element Type="Param" Id="0C2D559B">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="B128CB9A"/>
-        </Element>
-        <Element Type="Param" Id="8EA81CA6">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>4</Value>
-            <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="23631BB6">
             <Identifier>CM_Mengsk_UpdateProdigalSonRank3Bonus</Identifier>
@@ -73561,56 +73425,83 @@
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
             <Parameter Type="Param" Library="15EF4C78" Id="027BE6E5"/>
             <Parameter Type="Param" Library="15EF4C78" Id="98E751CC"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="6BF0FBF4"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="CD41BAB8"/>
         </Element>
         <Element Type="Param" Id="027BE6E5">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="1EE20CD5"/>
         </Element>
         <Element Type="FunctionCall" Id="1EE20CD5">
-            <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="5E0A6CC0"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="AD1CB1C0"/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000255"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="7DF5F5DE"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="85F2CBA2"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="FAA86CAE"/>
         </Element>
-        <Element Type="Param" Id="AD1CB1C0">
-            <ParameterDef Type="ParamDef" Library="15EF4C78" Id="0878B4A7"/>
+        <Element Type="Param" Id="7DF5F5DE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="448F39DC"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="D78D6018"/>
+        </Element>
+        <Element Type="Param" Id="85F2CBA2">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000446"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="2994AE22"/>
+        </Element>
+        <Element Type="FunctionCall" Id="2994AE22">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000081"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="1F17D625"/>
+        </Element>
+        <Element Type="Param" Id="1F17D625">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000140"/>
             <Parameter Type="ParamDef" Library="15EF4C78" Id="1AD5B3A3"/>
+        </Element>
+        <Element Type="Param" Id="FAA86CAE">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000447"/>
+            <Value>AP_MarineMengskProdigalSon</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
         </Element>
         <Element Type="Param" Id="98E751CC">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="B128CB9A"/>
         </Element>
-        <Element Type="Param" Id="6BF0FBF4">
+        <Element Type="Param" Id="CD41BAB8">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>false</Value>
-            <ValueType Type="bool"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionCall" Id="2AD0BEAE">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
             <Parameter Type="Param" Library="15EF4C78" Id="28D00AE2"/>
             <Parameter Type="Param" Library="15EF4C78" Id="4BDC4666"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="8208781E"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="21B2B403"/>
         </Element>
         <Element Type="Param" Id="28D00AE2">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
             <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="CA0DD65C"/>
         </Element>
         <Element Type="FunctionCall" Id="CA0DD65C">
-            <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="758A0B50"/>
-            <Parameter Type="Param" Library="15EF4C78" Id="A78AEA44"/>
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="6C7EDC40"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="393AC75F"/>
+            <Parameter Type="Param" Library="15EF4C78" Id="D2586076"/>
         </Element>
-        <Element Type="Param" Id="A78AEA44">
-            <ParameterDef Type="ParamDef" Library="15EF4C78" Id="7A9E212D"/>
+        <Element Type="Param" Id="393AC75F">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="EE50B5F5"/>
             <Parameter Type="ParamDef" Library="15EF4C78" Id="1AD5B3A3"/>
+        </Element>
+        <Element Type="Param" Id="D2586076">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="74B0D02B"/>
+            <Value>AP_MengskVeterancyMarineMengsk</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
         </Element>
         <Element Type="Param" Id="4BDC4666">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="B128CB9A"/>
         </Element>
-        <Element Type="Param" Id="8208781E">
+        <Element Type="Param" Id="21B2B403">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>false</Value>
-            <ValueType Type="bool"/>
+            <Value>4</Value>
+            <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionCall" Id="E2BA5421">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>
@@ -74088,7 +73979,10 @@
         </Element>
         <Element Type="Param" Id="74881C10">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="0C5438BA"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="2999701E"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="3E4DCB3C"/>
+        </Element>
+        <Element Type="FunctionCall" Id="3E4DCB3C">
+            <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="A7FF0174"/>
         </Element>
         <Element Type="FunctionCall" Id="21E1D50E">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000133"/>
@@ -74802,8 +74696,10 @@
         </Element>
         <Element Type="Param" Id="FABE6563">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="0C5438BA"/>
-            <Value>c_playerAny</Value>
-            <ValueType Type="int"/>
+            <FunctionCall Type="FunctionCall" Library="15EF4C78" Id="35C91F2A"/>
+        </Element>
+        <Element Type="FunctionCall" Id="35C91F2A">
+            <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="A7FF0174"/>
         </Element>
         <Element Type="FunctionCall" Id="B74AB80B">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
