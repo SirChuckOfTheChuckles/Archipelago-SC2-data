@@ -1,4 +1,4 @@
-AP/Error/AP_CasterLifeNotFull=Caster at full Life
+﻿AP/Error/AP_CasterLifeNotFull=Caster at full Life
 AP_Raptor=Raptor Strain
 AP_RaptorSwarmling=Raptor + Swarmling
 AP_Swarmling=Swarmling Strain
@@ -3215,7 +3215,7 @@ Button/Tooltip/AP_GhostMengskEMPLongStun=Deals <c val="ffff8a"><d ref="Effect,AP
 Button/Tooltip/AP_GhostMengskGuidedStrike=Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.
 Button/Tooltip/AP_GhostMengskIrradiate=Immolates a target Biological enemy for <c val="ffff8a"><d ref="Behavior,AP_GhostMengskIrradiate,Duration"/></c> seconds, dealing <c val="ffff8a"><d ref="Effect,AP_GhostMengskIrradiateSmallDamage,Amount"/></c> damage per second to themselves and nearby Biological enemies.
 Button/Tooltip/AP_GhostMengskIrradiateBigDamage=Immolates a target Biological enemy for <c val="ffff8a"><d ref="Behavior,AP_GhostMengskIrradiate,Duration"/></c> seconds, dealing <c val="ffff8a"><d ref="Effect,AP_GhostMengskIrradiateBigDamage,Amount"/></c> damage per second to themselves and nearby Biological enemies.
-Button/Tooltip/AP_GhostMengskNemesisRounds=After casting Pyrokinetic Immolation or EMP Blast, the Emperor's Shadow deals <c val="ffff8a">100%</c> increased damage to <c val="ffff8a">Biological</c> or <c val="ffff8a">Mechanical</c> units for <c val="ffff8a"><d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/></c> seconds, based on the ability cast.
+Button/Tooltip/AP_GhostMengskNemesisRounds=After casting Pyrokinetic Immolation or EMP Blast, the Emperor's Shadow's weapon deals <c val="ffff8a">100%</c> increased damage to <c val="ffff8a">Biological</c> or <c val="ffff8a">Mechanical</c> units for <c val="ffff8a"><d ref="Behavior,AP_GhostMengskNemesisRoundsBioBuff,Duration"/></c> seconds, based on the ability cast.
 Button/Tooltip/AP_GhostMengskPhasingSuit=Labyrinth Cloak now grants <c val="ffff8a"><d ref="(Behavior,AP_GhostMengskPhasingSuitActive,Modification.MoveSpeedMultiplier - 1) * 100" precision="0"/>%</c> movement speed and allows the Emperor's Shadow to <c val="ffff8a">walk through</c> other units.
 Button/Tooltip/AP_GhostMengskPsychicEnhancer=Reduce the energy cost of EMP Blast and Pyrokinetic Immolation by <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_GhostMengskPsychicEnhancer:Abil,AP_GhostMengskEMPShortStun,Cost[0].Vital[Energy]$"/></c> energy, and their cooldowns by <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_GhostMengskPsychicEnhancer:Abil,AP_GhostMengskEMPShortStun,Cost[0].Cooldown.TimeUse$"/></c> seconds.
 Button/Tooltip/AP_GhostMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Labyrinth Cloak ability.

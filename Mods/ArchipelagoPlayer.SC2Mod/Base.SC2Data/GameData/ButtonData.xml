@@ -7641,6 +7641,7 @@
     </CButton>
     <CButton id="AP_MarineMengsk">
         <Icon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
     </CButton>
     <CButton id="AP_WarpRelocate">
         <Icon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
@@ -7730,6 +7731,7 @@
     </CButton>
     <CButton id="AP_MedicMengsk">
         <Icon value="AP\Assets\Textures\btn-unit-terran-medic-mengsk.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-unit-terran-medic-mengsk.dds"/>
     </CButton>
     <CButton id="AP_LiberatorMengsk">
         <Icon value="AP\Assets\Textures\BTN-RoyalLiberator.dds"/>
