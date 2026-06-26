@@ -17831,15 +17831,18 @@
         <On Terms="Behavior.AP_MedicMengskOpticalRestorationBuff.Off" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetScale 0.333000"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
-        <HostSiteOps Ops="SOpAttachOverhead SOpHigherBy3"/>
+        <HostSiteOps Ops="SOpAttachOverhead AP_SOpHigherBy1"/>
     </CActorModel>
+    <CActorSiteOpLocalOffset id="AP_SOpHigherBy1">
+        <LocalOffset value="0.000000,0.000000,1.000000"/>
+    </CActorSiteOpLocalOffset>
     <CActorRange id="AP_MedicMengskOpticalRestorationCleanse@Range">
         <Range value="4.900000"/>
         <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOn" Send="Create"/>
         <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOff" Send="Destroy"/>
     </CActorRange>
     <CActorRange id="AP_MedicMengskOpticalRestorationSight@Range">
-        <Range value="13.700000"/>
+        <Range value="13.500000"/>
         <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOn" Send="Create"/>
         <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOff" Send="Destroy"/>
     </CActorRange>
@@ -42847,10 +42850,6 @@
         <VarianceWindowWalk value="1.000000"/>
         <VarianceWindowWalkOutro value="0.330000"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskCloak,On" Sound="GhostFemale_GhostFemale_043"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskEMPShortStun,Execute" Sound="GhostFemale_GhostFemale_046"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskEMPLongStun,Execute" Sound="GhostFemale_GhostFemale_046"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskNuke,Execute" Sound="GhostFemale_GhostFemale_044"/>
         <BarDistance value="34"/>
         <BarHeight value="7"/>
         <BarOffset value="50"/>

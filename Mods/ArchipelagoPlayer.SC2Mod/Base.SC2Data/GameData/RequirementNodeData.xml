@@ -7538,9 +7538,9 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="3"/>
     </CRequirementGTE>
-    <CRequirementAnd id="AP_AndCountUpgradeMarineMengskSpiderMineLobCompleteOnlyGTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3">
+    <CRequirementAnd id="AP_AndCountUpgradeMarineMengskSpiderMineLobCompleteOnlyGTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2">
         <OperandArray value="AP_CountUpgradeMarineMengskSpiderMineLobCompleteOnly"/>
-        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3"/>
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2"/>
     </CRequirementAnd>
     <CRequirementGTE id="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4">
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit"/>

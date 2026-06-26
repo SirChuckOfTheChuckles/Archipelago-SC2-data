@@ -793,7 +793,7 @@
                 <CountUse value="1"/>
                 <Location value="Unit"/>
             </Charge>
-            <Cooldown Location="Unit" TimeUse="30"/>
+            <Cooldown Location="Unit" TimeUse="20"/>
         </Cost>
         <Range value="7"/>
         <PrepTime value="0.361"/>

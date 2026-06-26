@@ -5785,7 +5785,8 @@
         <Height value="3.25"/>
         <VisionHeight value="4"/>
         <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="50"/>
         <RepairTime value="65"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="AP_BarracksMengskLand"/>
