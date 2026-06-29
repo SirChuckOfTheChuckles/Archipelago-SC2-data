@@ -10333,7 +10333,7 @@
             <Modification>
             </Modification>
         </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+        <VeterancyLevelArray MinVeterancyXP="5000" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <DamageDealtFraction index="Melee" value="0.25"/>
                 <DamageDealtFraction index="Ranged" value="0.25"/>
@@ -10453,6 +10453,14 @@
             <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
             <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskElusiveRotors">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Requirements value="AP_HaveBansheeMengskElusiveRotors"/>
+        <DisableValidatorArray value="AP_UnitIsMoving"/>
+        <DamageResponse ModifyFraction="0.75">
+            <Chance value="1"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_PurifierMothershipShielding">
         <Alignment value="Positive"/>

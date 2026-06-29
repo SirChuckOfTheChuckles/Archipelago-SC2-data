@@ -4918,6 +4918,18 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
         <TacticalAI value="DuskWingBansheeWeapon"/>
     </CUnit>
+    <CUnit id="AP_BansheeMengskBacklashWeapon" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="BacklashRocketsLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value="DuskWingBansheeWeapon"/>
+    </CUnit>
+    <CUnit id="AP_BansheeMengskPreyseekerWeapon" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="AP_BansheeMengskPreyseekerLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value="DuskWingBansheeWeapon"/>
+    </CUnit>
     <CUnit id="AP_DRBattlecruiserALMWeapon" parent="MISSILE">
         <Race value="Terr"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -31275,9 +31287,9 @@
         <Collide index="Flying" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="300"/>
-        <LifeMax value="300"/>
-        <LifeArmor value="3"/>
+        <LifeStart value="280"/>
+        <LifeMax value="280"/>
+        <LifeArmor value="4"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
         <EnergyStart value="50"/>
         <EnergyMax value="200"/>
@@ -31303,7 +31315,6 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BansheeMengskCloak"/>
-        <AbilArray Link="AP_Banshee_BlackOpsAirstrike"/>
         <AbilArray Link="AP_BansheeMengskBacklashBarrage"/>
         <AbilArray Link="AP_BansheeMengskBarrageRangeDummy"/>
         <BehaviorArray Link="AP_ScavengingSystemsMechDeath"/>
@@ -31314,6 +31325,7 @@
         <BehaviorArray Link="AP_MengskVeteranL4Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_BansheeMengskMovingWeaponCheck"/>
+        <BehaviorArray Link="AP_BansheeMengskElusiveRotors"/>
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
         <WeaponArray Link="AP_BacklashRocketsMengsk"/>
         <WeaponArray Link="AP_BacklashRocketsMengskMoving" Turret="AP_BansheeMengsk"/>
@@ -31329,7 +31341,6 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,On" Row="1" Column="0"/>
             <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,Off" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_BansheeMengsk_BlackOpsAirstrike" Type="AbilCmd" AbilCmd="AP_Banshee_BlackOpsAirstrike,Execute" Row="1" Column="1"/>
             <LayoutButtons Face="AP_BansheeMengskConsussionShells" Type="Passive" Requirements="AP_HaveBansheeMengskVeterancyLevel3" Row="1" Column="2"/>
             <LayoutButtons Face="AP_CloakOnBanshee" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,0" Row="2" Column="0"/>
             <LayoutButtons Face="CloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="1"/>

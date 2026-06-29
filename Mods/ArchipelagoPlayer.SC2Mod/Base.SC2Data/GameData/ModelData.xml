@@ -1374,6 +1374,14 @@
         <Model value="Assets\Effects\Terran\BansheeMissile\BansheeMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="AP_BansheeMengskBacklashWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\BansheeMissile\BansheeMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="AP_BansheeMengskPreyseekerWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_Viking_Coop_MissileVolley\MiraHorner_Viking_Coop_MissileVolley.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="AP_BansheeMercenaryReentry" parent="FX">
         <Model value="Assets\Effects\Terran\BansheeMercenaryReentry\BansheeMercenaryReentry.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -15374,6 +15382,12 @@
     <CModel id="AP_HHVikingRocketsAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\Badger_AttackMissile_Impact\Badger_AttackMissile_Impact.m3"/>
         <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="AP_BansheeMengskPreyseekerImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Badger_AttackMissile_Impact\Badger_AttackMissile_Impact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
     </CModel>
     <CModel id="AP_HerculesTacticalJumpPlacement">
         <Model value="Assets\Units\Terran\Hercules_TacticalJump_Placement\Hercules_TacticalJump_Placement.m3"/>

@@ -31057,11 +31057,29 @@
         <LaunchAssets Sound="Banshee_AttackLaunch2"/>
         <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
     </CActorAction>
-    <CActorAction id="AP_BansheeMengskBarrageAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarrageLM">
-        <LaunchAttachQuery Methods="AP_AMPatternDuskWingBanshee"/>
-        <Missile value="AP_DuskWingBansheeAttackMissile"/>
+    <CActorAction id="AP_BansheeMengskBacklashAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBacklashDamage" effectLaunch="AP_BansheeMengskBacklashLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBacklash"/>
+        <Missile value="AP_BansheeMengskBacklashAttackMissile"/>
         <LaunchAssets Sound="Banshee_AttackLaunch2"/>
         <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBacklashPreyseekerAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBacklashDamage" effectLaunch="AP_BansheeMengskBacklashPreyseekerLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBacklashPreyseeker"/>
+        <Missile value="AP_BansheeMengskPreyseekerAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="AP_BansheeMengskPreyseekerImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBarrageAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarrageLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBarrage"/>
+        <Missile value="AP_BansheeMengskBacklashAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBarragePreyseekerAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarragePreyseekerLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBarragePreyseeker"/>
+        <Missile value="AP_BansheeMengskPreyseekerAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="AP_BansheeMengskPreyseekerImpact" Sound="Banshee_AttackImpact2"/>
     </CActorAction>
     <CActorUnit id="AP_InfestedDuskWing" parent="GenericUnitStandard" unitName="AP_InfestedDuskWing">
         <Aliases value="_UnitLarge"/>
@@ -31124,6 +31142,10 @@
         <On Terms="UnitDeath" Send="Destroy"/>
     </CActorModel>
     <CActorMissile id="AP_DuskWingBansheeAttackMissile" parent="GenericAttackMissile" unitName="AP_DuskWingWeapon"/>
+    <CActorMissile id="AP_BansheeMengskBacklashAttackMissile" parent="GenericAttackMissile" unitName="AP_BansheeMengskBacklashWeapon"/>
+    <CActorMissile id="AP_BansheeMengskPreyseekerAttackMissile" parent="GenericAttackMissile" unitName="AP_BansheeMengskPreyseekerWeapon">
+        <Model value="AP_BansheeMengskPreyseekerWeapon"/>
+    </CActorMissile>
     <CActorModel id="AP_DuskWingBansheeCarpetBombModel" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_DuskWingScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
         <On Terms="Effect.AP_InfestedScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
@@ -31132,6 +31154,14 @@
     <CActorSound id="AP_DuskWingBansheeCarpetBombSound" parent="SoundOneShot">
         <On Terms="Effect.AP_DuskWingScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
         <On Terms="Effect.AP_InfestedScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
+        <Sound value="AP_BansheeCarpetBombImpact"/>
+    </CActorSound>
+    <CActorModel id="AP_BansheeMengskScreecherMissilesCarpetBombModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.AP_BansheeMengskShockwaveSearchArea.Start" Send="Create"/>
+        <Model value="AP_BansheeCarpetBombImpact"/>
+    </CActorModel>
+    <CActorSound id="AP_BansheeMengskScreecherMissilesCarpetBombSound" parent="SoundOneShot">
+        <On Terms="Effect.AP_BansheeMengskShockwaveSearchArea.Start" Send="Create"/>
         <Sound value="AP_BansheeCarpetBombImpact"/>
     </CActorSound>
     <CActorModel id="AP_BansheeMercenaryReentry" parent="ModelAdditionNoAnims">
@@ -44339,13 +44369,13 @@
         <On Terms="TurretEnable.AP_BansheeMengsk" Send="Create"/>
         <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
         <Types Id="DefaultLookAtTurret">
-            <Start Group="Turret_Right" Weight="1" Rate="500"/>
-            <Stop Group="Turret_Right" Weight="1" Rate="500.000000"/>
+            <Start Group="Turret_Right" Weight="1" Rate="1500.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="1500.000000"/>
         </Types>
     </CActorLookAt>
     <CActorLookAt id="AP_BansheeMengskBarrageGimbalTurretLookAt" parent="UnitTurret">
         <On Terms="TurretEnable.AP_BansheeMengskBarrage" Send="Create"/>
-        <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
+        <Supporter Subject="_AP_BansheeMengskBarrageGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
         <Types Id="DefaultLookAtTurret">
             <Start Group="Turret_Right" Weight="1" Rate="1800.000000"/>
             <Stop Group="Turret_Right" Weight="1" Rate="1800.000000"/>
@@ -44380,8 +44410,6 @@
         <On Terms="TurretTarget.AP_BansheeMengsk.Clear" Send="TimerSet 1.500000 DelayAnim"/>
         <On Terms="TurretTarget.AP_BansheeMengskBarrage.Set" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtEngage Continue"/>
         <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
-        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="TimerSet 0.250000 DelayAnimBarrage"/>
-        <On Terms="TimerExpired; TimerName DelayAnimBarrage" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
         <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtDisengage"/>
         <On Terms="Signal.*.GimbalBirth" Send="SetOpacity 0.000000 0.000000 GimbalOpacity"/>
         <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps AP_PropsHost"/>

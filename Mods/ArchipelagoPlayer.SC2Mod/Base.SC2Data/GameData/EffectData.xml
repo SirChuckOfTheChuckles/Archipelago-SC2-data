@@ -293,12 +293,6 @@
         <SearchFilters value="Ground;Self,Player,Ally,Massive,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1" Effect="AP_PunisherGrenadesSlow"/>
     </CEffectEnumArea>
-    <CEffectEnumArea id="AP_BansheeMengskSlowAOE">
-        <ValidatorArray index="0" value="AP_CasterLevelGTE3"/>
-        <EditorCategories value="Race:Terran"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Massive,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="1" Effect="AP_BansheeMengskSlow"/>
-    </CEffectEnumArea>
     <CEffectEnumArea id="AP_MarauderMengskSlowAOE">
         <ValidatorArray value="AP_PunisherGrenadesResearched"/>
         <EditorCategories value="Race:Terran"/>
@@ -324,9 +318,6 @@
         <ValidatorArray value="NotFrenzied"/>
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_Slow"/>
-    </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_BansheeMengskSlow" parent="AP_PunisherGrenadesSlow">
-        <ValidatorArray index="0" value=""/>
     </CEffectApplyBehavior>
     <CEffectDamage id="AP_PunisherGrenadesU" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
@@ -3779,9 +3770,61 @@
         <ImpactEffect value="AP_DuskWingScreecherMissilesSet"/>
         <AmmoUnit value="AP_DuskWingWeapon"/>
     </CEffectLaunchMissile>
+    <CEffectDamage id="AP_BansheeMengskBacklashDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="18"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="AP_BansheeMengskBacklashLM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="AP_BansheeMengskScreecherMissilesSet"/>
+        <AmmoUnit value="AP_BansheeMengskBacklashWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="AP_BansheeMengskBacklashCreatePersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.8"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="AP_BansheeMengskBacklashLaunchSet"/>
+        <PeriodicEffectArray value="AP_BansheeMengskBacklashLaunchSet"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="AP_BansheeMengskBacklashLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_BansheeMengskBacklashNormalLaunchSet"/>
+        <EffectArray value="AP_BansheeMengskBacklashPreyseekerLaunchSet"/>
+        <EffectArray value="AP_BansheeMengskEnergizedBacklashEnergyRestore"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskBacklashNormalLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_NotHaveBansheeMengskPreyseekerMissiles"/>
+        <EffectArray value="AP_BansheeMengskBacklashLM"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskBacklashPreyseekerLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+        <EffectArray value="AP_BansheeMengskBacklashPreyseekerLM"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="AP_BansheeMengskBacklashPreyseekerLM">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactEffect value="AP_BansheeMengskScreecherMissilesSet"/>
+        <AmmoUnit value="AP_BansheeMengskPreyseekerWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectModifyUnit id="AP_BansheeMengskEnergizedBacklashEnergyRestore">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_HaveBansheeMengskEnergizedBacklash"/>
+        <ImpactUnit Value="Caster"/>
+        <VitalArray index="Energy" Change="0.35"/>
+    </CEffectModifyUnit>
     <CEffectSet id="AP_DuskWingScreecherMissilesCarpetBombImpactSet">
         <EffectArray value="AP_DuskWingScreecherMissilesCarpetBombDamage"/>
-        <EffectArray value="AP_BansheeMengskSlow"/>
     </CEffectSet>
     <CEffectDamage id="AP_DuskWingScreecherMissilesCarpetBombDamage">
         <ValidatorArray value="noMarkers"/>
@@ -3817,8 +3860,94 @@
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_DuskWingBansheeDamage"/>
         <EffectArray value="AP_DuskWingScreecherMissilesCreateCarpetBombPersistent"/>
-        <EffectArray value="AP_BansheeMengskSlowAOE"/>
     </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskScreecherMissilesSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_BansheeMengskBacklashDamage"/>
+        <EffectArray value="AP_BansheeMengskShockwaveSet"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskShockwaveSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_HaveBansheeMengskShockwaveArtillery"/>
+        <ValidatorArray value="AP_CasterIsBansheeMengsk"/>
+        <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank0"/>
+        <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank1"/>
+        <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank2"/>
+        <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank3"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskShockwaveImpactSet">
+        <EffectArray value="AP_BansheeMengskShockwaveDamage"/>
+    </CEffectSet>
+    <CEffectDamage id="AP_BansheeMengskShockwaveDamage">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Terran"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="18"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="AP_BansheeMengskShockwaveSearchArea">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Air,Missile,Stasis,Dead,Hidden,Invulnerable,Benign,Passive"/>
+        <AreaArray Radius="0.5" Effect="AP_BansheeMengskShockwaveImpactSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="AP_BansheeMengskShockwaveCreatePersistentRank0">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_CasterLevelEq1"/>
+        <OffsetVectorStartLocation Value="TargetPoint"/>
+        <OffsetVectorEndLocation Value="CasterPoint"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="AP_BansheeMengskShockwaveSearchArea"/>
+        <PeriodicOffsetArray value="0,0.5,0"/>
+        <PeriodicOffsetArray value="0,1,0"/>
+        <PeriodicOffsetArray value="0,1.5,0"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_BansheeMengskShockwaveCreatePersistentRank1">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_CasterLevelEq2"/>
+        <OffsetVectorStartLocation Value="TargetPoint"/>
+        <OffsetVectorEndLocation Value="CasterPoint"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="AP_BansheeMengskShockwaveSearchArea"/>
+        <PeriodicOffsetArray value="0,0.5,0"/>
+        <PeriodicOffsetArray value="0,1,0"/>
+        <PeriodicOffsetArray value="0,1.5,0"/>
+        <PeriodicOffsetArray value="0,2,0"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_BansheeMengskShockwaveCreatePersistentRank2">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_CasterLevelEq3"/>
+        <OffsetVectorStartLocation Value="TargetPoint"/>
+        <OffsetVectorEndLocation Value="CasterPoint"/>
+        <PeriodCount value="5"/>
+        <PeriodicEffectArray value="AP_BansheeMengskShockwaveSearchArea"/>
+        <PeriodicOffsetArray value="0,0.5,0"/>
+        <PeriodicOffsetArray value="0,1,0"/>
+        <PeriodicOffsetArray value="0,1.5,0"/>
+        <PeriodicOffsetArray value="0,2,0"/>
+        <PeriodicOffsetArray value="0,2.5,0"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_BansheeMengskShockwaveCreatePersistentRank3">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_CasterLevelEq4"/>
+        <OffsetVectorStartLocation Value="TargetPoint"/>
+        <OffsetVectorEndLocation Value="CasterPoint"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="AP_BansheeMengskShockwaveSearchArea"/>
+        <PeriodicOffsetArray value="0,0.5,0"/>
+        <PeriodicOffsetArray value="0,1,0"/>
+        <PeriodicOffsetArray value="0,1.5,0"/>
+        <PeriodicOffsetArray value="0,2,0"/>
+        <PeriodicOffsetArray value="0,2.5,0"/>
+        <PeriodicOffsetArray value="0,3,0"/>
+        <PeriodicPeriodArray value="0.125"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="AP_BansheeMengskBarrageTick">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_BansheeMengskBarrageReset"/>
@@ -3864,13 +3993,31 @@
         <ValidatorArray value="AP_BansheeBarrageValidTarget"/>
         <EffectArray value="AP_BansheeBarrageApplyRecentlyHit"/>
         <EffectArray value="AP_BansheeBarrageApplyCycleMark"/>
+        <EffectArray value="AP_BansheeMengskBarrageNormalLaunchSet"/>
+        <EffectArray value="AP_BansheeMengskBarragePreyseekerLaunchSet"/>
+        <EffectArray value="AP_BansheeMengskEnergizedBacklashEnergyRestore"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskBarrageNormalLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_NotHaveBansheeMengskPreyseekerMissiles"/>
         <EffectArray value="AP_BansheeMengskBarrageLM"/>
+    </CEffectSet>
+    <CEffectSet id="AP_BansheeMengskBarragePreyseekerLaunchSet">
+        <EditorCategories value="Race:Terran"/>
+        <ValidatorArray value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+        <EffectArray value="AP_BansheeMengskBarragePreyseekerLM"/>
     </CEffectSet>
     <CEffectLaunchMissile id="AP_BansheeMengskBarrageLM">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterUnit"/>
         <ImpactEffect value="AP_BansheeMengskBarrageDamage"/>
-        <AmmoUnit value="AP_DuskWingWeapon"/>
+        <AmmoUnit value="AP_BansheeMengskBacklashWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="AP_BansheeMengskBarragePreyseekerLM">
+        <EditorCategories value="Race:Terran"/>
+        <LaunchLocation Value="CasterUnit"/>
+        <ImpactEffect value="AP_BansheeMengskBarrageDamage"/>
+        <AmmoUnit value="AP_BansheeMengskPreyseekerWeapon"/>
     </CEffectLaunchMissile>
     <CEffectDamage id="AP_BansheeMengskBarrageDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
@@ -3904,11 +4051,11 @@
     </CEffectSet>
     <CEffectSet id="AP_BacklashRocketsMengskSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_DuskWingBansheeCreatePersistent"/>
+        <EffectArray value="AP_BansheeMengskBacklashCreatePersistent"/>
     </CEffectSet>
     <CEffectSet id="AP_BacklashRocketsMengskMovingSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_DuskWingBansheeCreatePersistent"/>
+        <EffectArray value="AP_BansheeMengskBacklashCreatePersistent"/>
     </CEffectSet>
     <CEffectCreatePersistent id="AP_InfestedDuskWingCreatePersistent">
         <EditorCategories value="Race:Terran"/>

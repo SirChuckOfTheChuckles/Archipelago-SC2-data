@@ -4037,12 +4037,15 @@
         <EditorCategories value="Race:Terran"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
         <DisplayName value="Weapon/Name/AP_BacklashRockets"/>
-        <DisplayEffect value="AP_DuskWingBansheeDamage"/>
+        <DisplayEffect value="AP_BansheeMengskBacklashDamage"/>
         <DisplayAttackCount value="2"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <MinScanRange value="6"/>
         <Range value="6"/>
         <Period value="1.25"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
         <Effect value="AP_BacklashRocketsMengskSet"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
         <AllowedMovement value="Slowing"/>
@@ -4052,7 +4055,7 @@
         <Options index="Disabled" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
         <DisplayName value="Weapon/Name/AP_BacklashRockets"/>
-        <DisplayEffect value="AP_DuskWingBansheeDamage"/>
+        <DisplayEffect value="AP_BansheeMengskBacklashDamage"/>
         <DisplayAttackCount value="2"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
@@ -4061,8 +4064,11 @@
         <Range value="6"/>
         <Period value="1.25"/>
         <Backswing value="0"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Arc value="0"/>
         <ArcSlop value="15"/>
-        <RangeSlop value="1"/>
         <Effect value="AP_BacklashRocketsMengskMovingSet"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
         <AllowedMovement value="Moving"/>

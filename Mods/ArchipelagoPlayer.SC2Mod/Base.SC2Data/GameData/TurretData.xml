@@ -165,7 +165,7 @@
         </Fidget>
     </CTurret>
     <CTurret id="AP_BansheeMengsk">
-        <Idle value="ResetIfMoving"/>
+        <Idle value="Hold"/>
         <YawArc value="360"/>
         <YawRate value="1500"/>
         <Fidget DelayMax="30" DelayMin="10" TurnAngle="0">

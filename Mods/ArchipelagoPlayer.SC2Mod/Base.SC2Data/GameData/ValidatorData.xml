@@ -228,6 +228,26 @@
         <Value value="AP_BansheeMengsk"/>
         <Find value="0"/>
     </CValidatorUnitType>
+    <CValidatorUnitType id="AP_CasterIsBansheeMengsk">
+        <WhichUnit Value="Caster"/>
+        <Value value="AP_BansheeMengsk"/>
+    </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskPreyseekerMissiles">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotHaveBansheeMengskPreyseekerMissiles">
+        <Find value="0"/>
+        <Value value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskShockwaveArtillery">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskShockwaveArtillery"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskEnergizedBacklash">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskEnergizedBacklash"/>
+    </CValidatorPlayerRequirement>
     <CValidatorCombine id="AP_CasterIsNotBacklashBarrageAndCasterIsRank1">
         <CombineArray value="AP_CasterIsNotBacklashBarrage"/>
         <CombineArray value="AP_CasterLevelGTE2"/>
@@ -7312,6 +7332,10 @@
         <CombineArray value="AP_NoYoink"/>
     </CValidatorCombine>
     <CValidatorUnitCompareSpeed id="AP_InfestedDiamondbackIsMoving">
+        <Compare value="GT"/>
+        <Value value="0.125"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="AP_UnitIsMoving">
         <Compare value="GT"/>
         <Value value="0.125"/>
     </CValidatorUnitCompareSpeed>
