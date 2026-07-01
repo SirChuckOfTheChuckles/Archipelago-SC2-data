@@ -1312,10 +1312,10 @@
     <CAbilBehavior id="AP_BansheeMengskCloak">
         <AbilSetId value="Clok"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="On" DefaultButtonFace="AP_CloakOnBanshee">
+        <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskCloakOn">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
-        <CmdButtonArray index="Off" DefaultButtonFace="CloakOff">
+        <CmdButtonArray index="Off" DefaultButtonFace="AP_BansheeMengskCloakOff">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <Flags index="Toggle" value="1"/>
@@ -1323,7 +1323,7 @@
         <Cost>
             <Vital index="Energy" value="25"/>
         </Cost>
-        <BehaviorArray value="AP_BansheeCloak"/>
+        <BehaviorArray value="AP_BansheeMengskCloak"/>
     </CAbilBehavior>
     <CAbilEffectInstant id="AP_DefensiveMatrix">
         <AbilSetId value="dmatrix"/>
@@ -15096,40 +15096,6 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="NoDeceleration" value="1"/>
     </CAbilEffectTarget>
-    <CAbilBehavior id="AP_BansheeMengskNightAssault">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskNightAssaultOn" Requirements="AP_HaveBansheeMengskVeterancyLevel4">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <CmdButtonArray index="Off" DefaultButtonFace="AP_BansheeMengskNightAssaultOff" Requirements="">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <Flags index="Toggle" value="1"/>
-        <Flags index="Transient" value="1"/>
-        <Cost>
-            <Vital index="Energy" value="100"/>
-        </Cost>
-        <BehaviorArray value="AP_BansheeMengskCloakField"/>
-    </CAbilBehavior>
-    <CAbilEffectTarget id="AP_BansheeMengskNightAssaultDummy">
-        <Range value="6"/>
-        <Arc value="360"/>
-    </CAbilEffectTarget>
-    <CAbilBehavior id="AP_BansheeMengskBacklashBarrage">
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOn" Requirements="AP_HaveBansheeMengskVeterancyLevel4">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <CmdButtonArray index="Off" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOff" Requirements="">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <Flags index="Toggle" value="1"/>
-        <Flags index="Transient" value="1"/>
-        <Cost>
-            <Vital index="Energy" value="50"/>
-        </Cost>
-        <BehaviorArray value="AP_BansheeMengskBacklashBarrageChannel"/>
-    </CAbilBehavior>
     <CAbilEffectTarget id="AP_BansheeMengskBarrageRangeDummy">
         <Range value="8"/>
         <Arc value="60"/>

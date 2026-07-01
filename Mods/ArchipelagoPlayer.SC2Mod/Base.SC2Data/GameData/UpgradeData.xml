@@ -11844,6 +11844,8 @@
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_BansheeMengskBarrageRangeDummy,Range[0]" Value="1"/>
         <EffectArray Reference="Effect,AP_BansheeMengskBarrageReset,AreaArray[0].Radius" Value="1"/>
         <EffectArray Reference="Effect,AP_BansheeMengskBarrageAimSearch,AreaArray[0].Radius" Value="1"/>
@@ -11858,7 +11860,6 @@
         <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_BansheeMengskEnergizedBacklash">
-        <Icon value="Assets\Textures\btn-upgrade-terran-cellularreactor.dds"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
@@ -12470,6 +12471,8 @@
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,MinScanRange" Value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_VikingRangeDoubleUpgrade"/>
     <CUpgrade id="AP_BrynhildRangeDoubleUpgrade"/>
@@ -14651,6 +14654,7 @@
         <EffectArray Reference="Weapon,AP_WraithMengskAG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,RateMultiplier" Value="0.15"/>
     </CUpgrade>
     <CUpgrade id="AP_FastDelivery">
         <!--EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train1].Cooldown.TimeStart" Value="0"/>

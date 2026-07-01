@@ -3778,7 +3778,9 @@
         <Visibility value="Visible"/>
         <Flags index="Notification" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="18"/>
+        <Amount value="18">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
@@ -3885,7 +3887,9 @@
         <Visibility value="Visible"/>
         <Kind value="Splash"/>
         <KindSplash value="Splash"/>
-        <Amount value="18"/>
+        <Amount value="18">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
     </CEffectDamage>
     <CEffectEnumArea id="AP_BansheeMengskShockwaveSearchArea">
         <EditorCategories value="Race:Terran"/>
@@ -3969,11 +3973,24 @@
         <EditorCategories value="Race:Terran"/>
         <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <TargetSorts RequestCount="1">
-            <SortArray value="AP_TSBansheeBarrageAimTarget"/>
             <SortArray value="TSDistance"/>
         </TargetSorts>
-        <AreaArray Radius="8" MaxCount="1" Effect="AP_BansheeMengskBarrageConeFire"/>
+        <AreaArray Radius="8" MaxCount="1" Effect="AP_BansheeMengskBarrageAimSet"/>
     </CEffectEnumArea>
+    <CEffectSet id="AP_BansheeMengskBarrageAimSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_BansheeBarrageApplyAimTarget"/>
+        <EffectArray value="AP_BansheeMengskBarrageTurretFace"/>
+        <EffectArray value="AP_BansheeMengskBarrageConeFire"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="AP_BansheeMengskBarrageTurretFace">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Caster"/>
+        <ModifyTurret Turret="AP_BansheeMengskBarrage">
+            <Target Value="TargetUnit"/>
+            <Flags index="Tracking" value="1"/>
+        </ModifyTurret>
+    </CEffectModifyUnit>
     <CEffectEnumArea id="AP_BansheeMengskBarrageConeFire">
         <EditorCategories value="Race:Terran"/>
         <LaunchLocation Value="CasterPoint"/>
@@ -4023,6 +4040,7 @@
         <EditorCategories value="Race:Terran"/>
         <Visibility value="Visible"/>
         <Kind value="Ranged"/>
+        <AttributeBonus index="Light" value="15"/>
         <Amount value="20"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_BansheeBarrageApplyRecentlyHit">
@@ -4046,7 +4064,6 @@
     </CEffectApplyBehavior>
     <CEffectSet id="AP_BansheeMengskBarrageTrackingSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_BansheeBarrageApplyAimTarget"/>
         <EffectArray value="AP_BansheeMengskBarrageTrackingNoOp"/>
     </CEffectSet>
     <CEffectSet id="AP_BacklashRocketsMengskSet">

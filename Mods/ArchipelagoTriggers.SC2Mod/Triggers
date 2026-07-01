@@ -3526,10 +3526,10 @@
                     ap_triggers_PlayerConsumer_sig, // 21
                     ap_triggers_PlayerConsumer_sig, // 22
                     ap_triggers_PlayerConsumer_sig, // 23
-                    ap_triggers_PlayerConsumer_sig, // 24
-                    ap_triggers_PlayerConsumer_sig, // 25
-                    ap_triggers_PlayerConsumer_sig, // 26
-                    ap_triggers_PlayerConsumer_sig, // 27
+                    libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery, // 24
+                    libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles, // 25
+                    libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash, // 26
+                    libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors, // 27
                     ap_triggers_PlayerConsumer_sig, // 28
                     ap_triggers_PlayerConsumer_sig // 29
                 );
@@ -19702,6 +19702,7 @@
             <Item Type="Category" Library="ABFE498B" Id="3E09CD6B"/>
             <Item Type="Category" Library="ABFE498B" Id="EEE1B6E5"/>
             <Item Type="Category" Library="ABFE498B" Id="92776182"/>
+            <Item Type="Category" Library="ABFE498B" Id="5F7C67E5"/>
         </Element>
         <Element Type="Category" Id="5EF49186">
             <Item Type="FunctionDef" Library="ABFE498B" Id="EC36AF20"/>
@@ -31433,6 +31434,161 @@
         <Element Type="Param" Id="183AA954">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
             <Value>AP_GhostMengskEMPRounds</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="Category" Id="5F7C67E5">
+            <Identifier>NightWolf</Identifier>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="B531CCD9"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="008CDEF3"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="E7848CE9"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="6C79411B"/>
+        </Element>
+        <Element Type="FunctionDef" Id="B531CCD9">
+            <Identifier>AP_Triggers_Terran_unlockNightWolfShockwaveArtillery</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="B20F753A"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="88657B72"/>
+        </Element>
+        <Element Type="ParamDef" Id="B20F753A">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="7AA65262"/>
+        </Element>
+        <Element Type="Param" Id="7AA65262">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="88657B72">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="F8DA0BC3"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="4E8C2AD6"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="F5E75884"/>
+        </Element>
+        <Element Type="Param" Id="F8DA0BC3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="B20F753A"/>
+        </Element>
+        <Element Type="Param" Id="4E8C2AD6">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="F5E75884">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_BansheeMengskShockwaveArtillery</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="008CDEF3">
+            <Identifier>AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="80B0091E"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="679B2CF0"/>
+        </Element>
+        <Element Type="ParamDef" Id="80B0091E">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="A3E27BC0"/>
+        </Element>
+        <Element Type="Param" Id="A3E27BC0">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="679B2CF0">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="676D58B2"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="36E0B4D9"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="8209EA81"/>
+        </Element>
+        <Element Type="Param" Id="676D58B2">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="80B0091E"/>
+        </Element>
+        <Element Type="Param" Id="36E0B4D9">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="8209EA81">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_BansheeMengskPreyseekerMissiles</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="E7848CE9">
+            <Identifier>AP_Triggers_Terran_unlockNightWolfEnergizedBacklash</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="736B2C97"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="37D7E3CE"/>
+        </Element>
+        <Element Type="ParamDef" Id="736B2C97">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="51298AC7"/>
+        </Element>
+        <Element Type="Param" Id="51298AC7">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="37D7E3CE">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="0DA5795A"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="765B4A81"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="106EEA3D"/>
+        </Element>
+        <Element Type="Param" Id="0DA5795A">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="736B2C97"/>
+        </Element>
+        <Element Type="Param" Id="765B4A81">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="106EEA3D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_BansheeMengskEnergizedBacklash</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="6C79411B">
+            <Identifier>AP_Triggers_Terran_unlockNightWolfElusiveRotors</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="EF3F8745"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="4FEEC363"/>
+        </Element>
+        <Element Type="ParamDef" Id="EF3F8745">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="63FE2320"/>
+        </Element>
+        <Element Type="Param" Id="63FE2320">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="4FEEC363">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="D51CD7C1"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="3A5D2EF3"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="F1F26986"/>
+        </Element>
+        <Element Type="Param" Id="D51CD7C1">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="EF3F8745"/>
+        </Element>
+        <Element Type="Param" Id="3A5D2EF3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="F1F26986">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_BansheeMengskEnergizedBacklash</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -96195,8 +96351,6 @@
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="95E0136A"/>
             <Parameter Type="Param" Library="ABFE498B" Id="13020A92"/>
             <Parameter Type="Param" Library="ABFE498B" Id="63313F5E"/>
-            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="61ED4076"/>
-            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="8B96882E"/>
         </Element>
         <Element Type="Param" Id="13020A92">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="C20A2419"/>
@@ -96209,36 +96363,6 @@
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E048C98"/>
             <Value>0.1875</Value>
             <ValueType Type="fixed"/>
-        </Element>
-        <Element Type="FunctionCall" Id="61ED4076">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000097"/>
-            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000004"/>
-            <Parameter Type="Param" Library="ABFE498B" Id="009EEB03"/>
-        </Element>
-        <Element Type="Param" Id="009EEB03">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="00000488"/>
-            <Value>false</Value>
-            <ValueType Type="bool"/>
-        </Element>
-        <Element Type="FunctionCall" Id="8B96882E">
-            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
-            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
-            <Parameter Type="Param" Library="ABFE498B" Id="FB316673"/>
-            <Parameter Type="Param" Library="ABFE498B" Id="E5CFCE68"/>
-            <Parameter Type="Param" Library="ABFE498B" Id="584647B2"/>
-        </Element>
-        <Element Type="Param" Id="FB316673">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
-            <Variable Type="Variable" Library="ABFE498B" Id="4919DC88"/>
-        </Element>
-        <Element Type="Param" Id="E5CFCE68">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
-            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
-        </Element>
-        <Element Type="Param" Id="584647B2">
-            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
-            <Value>0</Value>
-            <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionCall" Id="1372F066">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>

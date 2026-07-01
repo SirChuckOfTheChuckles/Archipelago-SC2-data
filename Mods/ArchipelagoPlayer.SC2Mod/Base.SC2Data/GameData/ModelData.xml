@@ -515,6 +515,10 @@
         <Model value="Assets\UI\Cursors\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor\Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Cursor.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="AP_BansheeMengskBarrageHowlIcon" parent="OneShotSpellFX">
+        <Model value="Assets\COOP\Tychus\Effects\LoneWolf_Tychus_COOP\LoneWolf_Tychus_COOP.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
     <CModel id="Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Targeting" parent="RaceOneShotSpellFX" Race="Terran"/>
     <CModel id="AP_SpectreNukeTarget" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Terran\GhostLaseTarget\GhostLaseTarget.m3"/>
@@ -1379,7 +1383,7 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_BansheeMengskPreyseekerWeapon" parent="MissileFX">
-        <Model value="Assets\Effects\Terran\MiraHorner_Viking_Coop_MissileVolley\MiraHorner_Viking_Coop_MissileVolley.m3"/>
+        <Model value="Assets\Effects\Terran\MissilePodMissile\MissilePodMissile_Low.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_BansheeMercenaryReentry" parent="FX">
@@ -21159,6 +21163,12 @@
     </CModel>
     <CModel id="AP_BansheeMengsk" parent="BansheeBase">
         <Model value="AP\Assets\Units\Terran\BansheeMengsk\Banshee_Mengsk_COOP.m3"/>
+    </CModel>
+    <CModel id="AP_BansheeMengskPortrait" parent="FXAPortrait" Race="Terran">
+        <FacialController value="LocalizedData\Facial\BansheePortrait.fxa"/>
+        <Model value="AP\Assets\Portraits\Terran\BansheeMengsk\Banshee_Mengsk_RoyalGuard_Portrait.m3"/>
+        <Image value="AP\Assets\Textures\Banshee_Mengsk_Portrait_Static.dds"/>
+        <Lighting value="Banshee_Junker_Collection_Portrait"/>
     </CModel>
     <CModel id="AP_BansheeMengskDeath" parent="BansheeDeathBase">
         <Model value="AP\Assets\Units\Terran\BansheeMengsk\Banshee_Mengsk_COOP_Death.m3"/>

@@ -695,10 +695,10 @@ void libABFE498B_gf_AP_Triggers_unlockTerranArmory8 (int lp_player, int lp_bitAr
         ap_triggers_PlayerConsumer_sig, // 21
         ap_triggers_PlayerConsumer_sig, // 22
         ap_triggers_PlayerConsumer_sig, // 23
-        ap_triggers_PlayerConsumer_sig, // 24
-        ap_triggers_PlayerConsumer_sig, // 25
-        ap_triggers_PlayerConsumer_sig, // 26
-        ap_triggers_PlayerConsumer_sig, // 27
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery, // 24
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles, // 25
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash, // 26
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors, // 27
         ap_triggers_PlayerConsumer_sig, // 28
         ap_triggers_PlayerConsumer_sig // 29
     );
@@ -4835,6 +4835,30 @@ void libABFE498B_gf_AP_Triggers_Terran_unlockEmperorsShadowEMPBlast (int lp_play
     // Automatic Variable Declarations
     // Implementation
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_GhostMengskEMPRounds", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskShockwaveArtillery", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskPreyseekerMissiles", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskEnergizedBacklash", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskEnergizedBacklash", 1);
 }
 
 void libABFE498B_gf_AP_Triggers_Terran_unlockHiveMindEmulatorZerg (int lp_player) {
@@ -12768,6 +12792,7 @@ bool libABFE498B_gt_AP_HeroChoiceClicked_Func (bool testConds, bool runActions) 
 
         }
     }
+    return true;
     return true;
 }
 

@@ -31289,7 +31289,7 @@
         <Attributes index="Mechanical" value="1"/>
         <LifeStart value="280"/>
         <LifeMax value="280"/>
-        <LifeArmor value="4"/>
+        <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
         <EnergyStart value="50"/>
         <EnergyMax value="200"/>
@@ -31304,8 +31304,8 @@
         <Height value="3.75"/>
         <VisionHeight value="4"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="300"/>
-        <CostResource index="Vespene" value="300"/>
+        <CostResource index="Minerals" value="275"/>
+        <CostResource index="Vespene" value="425"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -31326,9 +31326,17 @@
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_BansheeMengskMovingWeaponCheck"/>
         <BehaviorArray Link="AP_BansheeMengskElusiveRotors"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakedSpeedRank2"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL1"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL2"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL3"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL1"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL2"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL3"/>
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
         <WeaponArray Link="AP_BacklashRocketsMengsk"/>
         <WeaponArray Link="AP_BacklashRocketsMengskMoving" Turret="AP_BansheeMengsk"/>
+        <WeaponArray Link="AP_BacklashRocketsMengskDisplay"/>
         <WeaponArray Link="AP_BansheeMengskBarrageTrackingWeapon" Turret="AP_BansheeMengskBarrage"/>
         <LeaderAlias value="AP_BansheeMengsk"/>
         <SelectAlias value="AP_BansheeMengsk"/>
@@ -31339,12 +31347,16 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,On" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,Off" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_BansheeMengskConsussionShells" Type="Passive" Requirements="AP_HaveBansheeMengskVeterancyLevel3" Row="1" Column="2"/>
-            <LayoutButtons Face="AP_CloakOnBanshee" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,0" Row="2" Column="0"/>
-            <LayoutButtons Face="CloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="1"/>
-            <LayoutButtons Face="AP_BansheeMengskVeterancy" Type="Passive" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskVeterancy" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_BansheeMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AP_BansheeMengskElusiveRotors" Type="Passive" Requirements="AP_HaveBansheeMengskElusiveRotors" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_BansheeMengskPreyseekerMissiles" Type="Passive" Requirements="AP_HaveBansheeMengskPreyseekerMissiles" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_BansheeMengskShockwaveArtillery" Type="Passive" Requirements="AP_HaveBansheeMengskShockwaveArtillery" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskEnergizedBacklash" Type="Passive" Requirements="AP_HaveBansheeMengskEnergizedBacklash" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskCloakOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,0" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_BansheeMengskCloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,On" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,Off" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>

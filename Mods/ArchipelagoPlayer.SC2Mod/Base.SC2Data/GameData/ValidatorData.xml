@@ -7771,6 +7771,14 @@
         <Value value="1"/>
         <Behavior value="AP_WraithCloak"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasBansheeMengskCloak">
+        <Value value="1"/>
+        <Behavior value="AP_BansheeMengskCloak"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasBansheeMengskBacklashBarrage">
+        <Value value="1"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareVital id="AP_TargetHasGE40Energy">
         <Compare value="GE"/>
         <Value value="40"/>
