@@ -1421,7 +1421,7 @@
         <On Terms="UnitHeightUpdate.*.Land" Send="Create Marine_Land"/>
         <Model value="Marine"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
-        <DeathArray index="Normal" ModelLink="MarineDeath" SoundLink="Marine_DeathFXBloodSpray"/>
+        <DeathArray index="Normal" ModelLink="MarineDeath" SoundLink="Marine_DeathFXBloodSpray" VoiceLink="Marine_Death"/>
         <DeathArray index="Blast" ModelLink="MarineDeathBlast"/>
         <DeathArray index="Disintegrate" ModelLink="MarineDeathAcid" SoundLink="Uni_DeathFXAcid"/>
         <DeathArray index="Eat" AnimProps="Stand" ModelLink="MarineDeathEat" SoundLink="Marine_DeathFXEat"/>
@@ -1490,6 +1490,7 @@
         <Macros value="UnloadDropAnim"/>
         <DeathActorModel value="AP_GoliathDeath"/>
         <PortraitModel value="AP_GoliathPortrait"/>
+        <DeathArray index="Normal" ModelLink="AP_GoliathDeath" SoundLink="Goliath_Explode"/>
         <StandAnimTurnTime value="4"/>
         <WalkAnimMoveSpeed value="3.6093"/>
         <BarOffset value="75"/>
@@ -2718,6 +2719,7 @@
     </CActorModel>
     <CActorSound id="AP_Medic_Death" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_Medic; PassChance 25.000000" Send="Create"/>
+        <Sound value="Medic_Death"/>
     </CActorSound>
     <CActorRange id="AP_MedicSCBWRestoration@Range" parent="RangeAbil" abil="AP_MedicSCBWOpticFlare">
         <On index="1" Terms="Abil.AP_MedicSCBWRestoration.TargetOn" Send="Create"/>
@@ -12021,23 +12023,23 @@
         <Host Subject="_Unit"/>
     </CActorSound>
     <CActorSound id="AP_NovaWeaponCanisterRifleSwapSound" parent="SoundOneShot">
-        <On Terms="Effect.AP_NovaWeaponCanisterRifleABSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.AP_NovaWeaponCanisterRifleABSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Sound value="UI_NovaEquipment_SniperRifle"/>
     </CActorSound>
     <CActorSound id="AP_NovaWeaponHellfireShotgunSwapSound" parent="SoundOneShot">
-        <On Terms="Effect.AP_NovaWeaponHellfireShotgunABSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.AP_NovaWeaponHellfireShotgunABSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Sound value="UI_NovaEquipment_Shotgun"/>
     </CActorSound>
     <CActorSound id="AP_NovaWeaponPsiBladeSwapSound" parent="SoundOneShot">
-        <On Terms="Effect.AP_NovaWeaponPsiBladeABSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.AP_NovaWeaponPsiBladeABSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Sound value="UI_NovaEquipment_Sword"/>
     </CActorSound>
     <CActorSound id="AP_NovaWeaponBlazefireBladeSwapSound" parent="SoundOneShot">
-        <On Terms="Effect.AP_NovaWeaponBlazefireBladeABSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.AP_NovaWeaponBlazefireBladeABSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Sound value="UI_NovaEquipment_BlazeFireBlade"/>
     </CActorSound>
     <CActorSound id="AP_NovaWeaponPlasmaRifleSwapSound" parent="SoundOneShot">
-        <On Terms="Effect.AP_NovaWeaponPlasmaRifleABSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.AP_NovaWeaponPlasmaRifleABSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Sound value="UI_NovaEquipment_PlasmaRifle"/>
     </CActorSound>
     <CActorModel id="AP_GeneralNovaPickup" parent="ModelAnimationStyleOneShotNoOrphan">
@@ -15627,6 +15629,10 @@
             <Image value="Assets\Textures\wireframe-protoss-darktemplar-aiur-shield03.dds"/>
         </WireframeShield>
     </CActorUnit>
+    <CActorSound id="AP_DarkTemplarAiur_Death" parent="SoundOneShot">
+        <On Terms="UnitDeath.AP_DarkTemplarAiur; PassChance 25.000000" Send="Create"/>
+        <Sound value="AP_Avenger_Death"/>
+    </CActorSound>
     <CActorModel id="AP_DarkTemplarShadowHunterJumpLaunch" parent="ModelAnimationStyleOneShot">
         <EditorCategories value=""/>
         <Model value="AP_ZeratulBlinkOut"/>
@@ -15865,6 +15871,8 @@
     </CActorModelMaterial>
     <CActorSound id="AP_DarkTemplar_Death" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_DarkTemplar; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_DarkTemplarShakuras; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_DarkTemplarTaldarim; PassChance 25.000000" Send="Create"/>
         <Sound value="DarkTemplar_Death"/>
     </CActorSound>
     <CActorSound id="AP_awrpSound" parent="SoundOneShot">
@@ -16292,7 +16300,8 @@
     </CActorModel>
     <CActorSound id="AP_HighTemplar_Death" parent="SoundOneShot">
         <On Terms="UnitDeathCustomize.AP_HighTemplar; ValidateUnit IsNotHallucination; PassChance 25.000000" Send="Create"/>
-        <On Terms="UnitDeathCustomize.AP_HighTemplarAir; ValidateUnit IsNotHallucination; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeathCustomize.AP_HighArchonTemplar; ValidateUnit IsNotHallucination; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeathCustomize.AP_HighTemplarShakuras; ValidateUnit IsNotHallucination; PassChance 25.000000" Send="Create"/>
         <Sound value="HighTemplar_Death"/>
     </CActorSound>
     <CActorSound id="AP_HighTemplarShakuras_Death" parent="SoundOneShot">
@@ -16714,7 +16723,7 @@
     </CActorSound>
     <CActorPower id="AP_Power">
         <On Terms="Behavior.AP_PowerSource.Create; !Option Model Low" Send="Create"/>
-        <On Terms="Behavior.AP_PowerSource.Destroy; !Option Model Low" Send="Destroy"/>
+        <On Terms="Behavior.AP_PowerSource.Destroy" Send="Destroy"/>
         <On Terms="Behavior.AP_PowerSourceFast.Enable; !Option Model Low" Send="Destroy"/>
         <On Terms="Behavior.AP_PowerSourceFast.Disable; !Option Model Low" Send="Create"/>
         <PowerSource value="PowerSource"/>
@@ -16722,8 +16731,8 @@
         <VisualArray value="PowerVisual"/>
     </CActorPower>
     <CActorPower id="AP_PowerLow">
-        <On Terms="Behavior.AP_PowerSource.Create; Option Model Low" Send="Create"/>
-        <On Terms="Behavior.AP_PowerSource.Destroy; Option Model Low" Send="Destroy"/>
+        <On Terms="Behavior.AP_PowerSource.Create; Option Model Low; !ValidatePlayer AP_HavePylonImproved" Send="Create"/>
+        <On Terms="Behavior.AP_PowerSource.Destroy" Send="Destroy"/>
         <On Terms="Behavior.AP_PowerSourceFast.Enable; Option Model Low" Send="Destroy"/>
         <On Terms="Behavior.AP_PowerSourceFast.Disable; Option Model Low" Send="Create"/>
         <PowerSource value="PowerSource"/>
@@ -21930,6 +21939,8 @@
         <Inherits index="Opacity" value="0"/>
         <On Terms="Behavior.AP_SOAWarpInReinforcements.On" Send="Create"/>
         <On Terms="Behavior.AP_SOAWarpInReinforcements.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_SOAWarpInReinforcementsVisuals.On" Send="Create"/>
+        <On Terms="Behavior.AP_SOAWarpInReinforcementsVisuals.Off" Send="AnimBracketStop BSD"/>
         <Host Subject="_Unit"/>
     </CActorModel>
     <CActorModel id="AP_SOAWarpInReinforcementsZealot" parent="ModelAddition">
@@ -24592,6 +24603,8 @@
         <HostOffsetSiteOps Ops="SOpAttachWeaponSoft"/>
     </CActorSiteOpHostedOffset>
     <CActorRange id="AP_SOAMothershipBlinkRange" parent="RangeAbil" abil="AP_SOAMothershipBlink">
+        <Abil Link=""/>
+        <Range value="10.000000"/>
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
     <CActorModel id="AP_ProtossGuideVisualQuadRedLaunch" parent="GuideVisualQuadModel">
@@ -25779,20 +25792,20 @@
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrism; MorphTo AP_WarpPrismPhasing" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing; MorphTo AP_WarpPrism" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing; MorphTo AP_WarpPrism" Send="AnimPlay Work Work,End 0 0.000000"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing; MorphTo AP_WarpPrism; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarim"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundMedium"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
-        <On Terms="Behavior.WarpInEffect15.On; !ValidateUnit AP_NoDarkProtoss" Send="ModelSwap WarpPrismWarpIn"/>
-        <On Terms="Behavior.WarpInEffect15.On; !ValidateUnit AP_NoDarkProtoss" Send="$Birth"/>
-        <On Terms="Behavior.WarpInEffect15.Off; !ValidateUnit AP_NoDarkProtoss" Send="ModelSwap WarpPrism"/>
-        <On Terms="Behavior.WarpInEffect15.Off; !ValidateUnit AP_NoDarkProtoss" Send="AnimBaselineStart"/>
         <On Terms="Upgrade.DarkProtoss.Add" Send="ModelSwap DarkWarpPrism"/>
         <On Terms="UnitBirth; ValidateUnit AP_NoDarkProtoss" Send="ModelSwap AP_DarkWarpPrism"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing; MorphTo AP_WarpPrism; ValidateUnit AP_NoDarkProtoss" Send="ModelSwap DarkWarpPrism"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_NoDarkProtoss" Send="DeathCustomize DarkProtoss"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_WarpPrism_Land"/>
-        <On Terms="Behavior.WarpInEffect15.On" Send="ModelSwap WarpPrismWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On; !ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap WarpPrismWarpIn"/>
+        <On Terms="Behavior.WarpInEffect15.On; ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarimWarpIn"/>
         <On Terms="Behavior.WarpInEffect15.On" Send="$Birth"/>
-        <On Terms="Behavior.WarpInEffect15.Off" Send="ModelSwap WarpPrism"/>
+        <On Terms="Behavior.WarpInEffect15.Off; !ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap WarpPrism"/>
+        <On Terms="Behavior.WarpInEffect15.Off; ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarim"/>
+        <On Terms="Behavior.WarpInEffect15.Off; ValidateUnit AP_NoDarkProtoss" Send="ModelSwap DarkWarpPrism"/>
         <On Terms="Behavior.WarpInEffect15.Off" Send="AnimBaselineStart"/>
         <On Terms="Upgrade.AP_DarkProtoss.Add" Send="DeathCustomsEnablePhysics 0"/>
         <On Terms="UnitBirth; ValidateUnit AP_NoDarkProtoss" Send="DeathCustomsEnablePhysics 0"/>
@@ -25802,12 +25815,15 @@
         <On Terms="Upgrade.AP_PurifierProtoss.Add" Send="TextureSelectById PurifierHackDiffuse"/>
         <On Terms="Signal.*.PurifierHack" Send="TextureSelectById PurifierHackDiffuse"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_IsTerrazineShadow" Send="DeathCustomize Hallucination"/>
-        <On Terms="Behavior.WarpInEffect15.Off; ValidateUnit AP_NoDarkProtoss" Send="ModelSwap DarkWarpPrism"/>
+        <On Terms="UnitBirth; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarim"/>
+        <On Terms="Upgrade.AP_WarpPrismPhaseBlaster.Add" Send="ModelSwap AP_WarpPrismTaldarim"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="DeathCustomize Taldarim"/>
         <Model value="WarpPrism"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <BuildModel value="WarpPrismWarpIn"/>
         <DeathArray index="Normal" ModelLink="WarpPrismDeath" SoundLink="WarpPrism_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
+        <DeathCustoms ModelLink="AP_WarpPrismTaldarimDeath" SoundLink="WarpPrism_Explode" Name="Taldarim"/>
         <DeathCustoms ModelLink="DarkWarpPrismDeath" Name="DarkProtoss"/>
         <DeathCustoms>
             <ActorModel value="WarpPrismDeathRagdoll"/>
@@ -25863,6 +25879,7 @@
         <Macros value="PhysicsDeathsVoidAir"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing; MorphTo AP_WarpPrism" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrism; MorphTo AP_WarpPrismPhasing" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrism; MorphTo AP_WarpPrismPhasing; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarim"/>
         <On Terms="UnitBirth.AP_WarpPrismPhasing" Send="AnimBracketStart Phasing Work,Start Work Work,End Instant"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_WarpPrismPhasing" Send="AnimBracketStart Phasing Work,Start Work Work,End"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_WarpPrism" Send="AnimBracketStop Phasing"/>
@@ -25881,12 +25898,17 @@
         <On Terms="Upgrade.AP_PurifierProtoss.Add" Send="TextureSelectById PurifierHackDiffuse"/>
         <On Terms="Signal.*.PurifierHack" Send="TextureSelectById PurifierHackDiffuse"/>
         <On Terms="UnitDeathCustomize; ValidateUnit AP_IsTerrazineShadow" Send="DeathCustomize Hallucination"/>
+        <On Terms="UnitBirth; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="ModelSwap AP_WarpPrismTaldarim"/>
+        <On Terms="Upgrade.AP_WarpPrismPhaseBlaster.Add" Send="ModelSwap AP_WarpPrismTaldarim"/>
+        <On Terms="Upgrade.AP_WarpPrismPhaseBlaster.Add; Selected" Send="Create AP_WarpPrismPhasingWeaponRange"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit AP_HaveWarpPrismPhaseBlaster" Send="DeathCustomize Taldarim"/>
         <Model value="WarpPrism"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <BuildModel value="WarpPrism"/>
         <DeathArray index="Normal" ModelLink="WarpPrismOpenDeath" SoundLink="WarpPrism_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathMedium" Name="Hallucination"/>
         <DeathCustoms ModelLink="DarkWarpPrismOpenDeath" Name="DarkProtoss"/>
+        <DeathCustoms ModelLink="AP_WarpPrismTaldarimPhasingDeath" SoundLink="WarpPrism_Explode" Name="Taldarim"/>
         <DeathCustoms ModelLink="WarpPrismPhasingDeathRagdoll" Name="RagdollBasic" PhysicsMatchKeysOrdered="BasicAir,Basic">
             <BodySquibs Name="Basic" Model="ProtossRobotSquibDeathRagdoll"/>
         </DeathCustoms>
@@ -25931,14 +25953,14 @@
     </CActorSound>
     <CActorPower id="AP_WarpPrismPower">
         <On Terms="Behavior.AP_WarpPrismPowerSource.Create; !Option Model Low; !ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Create"/>
-        <On Terms="Behavior.AP_WarpPrismPowerSource.Destroy; !Option Model Low; !ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Destroy"/>
+        <On Terms="Behavior.AP_WarpPrismPowerSource.Destroy" Send="Destroy"/>
         <On Terms="Upgrade.AP_WarpPrismWarConfiguration.Add" Send="Destroy"/>
         <VisualArray value="WarpPrismUnpoweredVisual"/>
         <VisualArray value="WarpPrismPowerVisual"/>
     </CActorPower>
     <CActorPower id="AP_WarpPrismPowerLow">
         <On Terms="Behavior.AP_WarpPrismPowerSource.Create; Option Model Low; !ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Create"/>
-        <On Terms="Behavior.AP_WarpPrismPowerSource.Destroy; Option Model Low; !ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Destroy"/>
+        <On Terms="Behavior.AP_WarpPrismPowerSource.Destroy" Send="Destroy"/>
         <On Terms="Upgrade.AP_WarpPrismWarConfiguration.Add" Send="Destroy"/>
         <PowerSource value="AP_WarpPrismPowerSource"/>
         <VisualArray value="WarpPrismUnpoweredVisualLow"/>
@@ -25946,24 +25968,85 @@
     </CActorPower>
     <CActorPower id="AP_WarpPrismPowerUpgraded">
         <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Create; !Option Model Low; ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Create"/>
-        <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Destroy; !Option Model Low; ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Destroy"/>
+        <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Destroy" Send="Destroy"/>
         <On Terms="Upgrade.AP_WarpPrismWarConfiguration.Add; !Option Model Low; ValidateUnit AP_IsAPWarpPrismPhasing" Send="Create"/>
         <PowerSource value="AP_WarpPrismPowerSourceUpgraded"/>
-        <VisualArray value="UnpoweredVisual"/>
-        <VisualArray value="PowerVisual"/>
+        <VisualArray value="AP_WarpPrismUnpoweredVisualUpgrade"/>
+        <VisualArray value="AP_WarpPrismPowerVisualUpgrade"/>
     </CActorPower>
+    <CActorSplat id="AP_WarpPrismPowerVisualUpgrade">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+        <Model value="PowerVisual"/>
+    </CActorSplat>
+    <CActorSplat id="AP_WarpPrismUnpoweredVisualUpgrade">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+        <Model value="UnpoweredVisual"/>
+    </CActorSplat>
     <CActorPower id="AP_WarpPrismPowerLowUpgraded">
         <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Create; Option Model Low; ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Create"/>
-        <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Destroy; Option Model Low; ValidateUnit AP_HaveWarpPrismWarConfiguration" Send="Destroy"/>
+        <On Terms="Behavior.AP_WarpPrismPowerSourceUpgraded.Destroy" Send="Destroy"/>
         <On Terms="Upgrade.AP_WarpPrismWarConfiguration.Add; Option Model Low; ValidateUnit AP_IsAPWarpPrismPhasing" Send="Create"/>
         <PowerSource value="AP_WarpPrismPowerSourceUpgraded"/>
-        <VisualArray value="AP_UnpoweredVisualLow"/>
-        <VisualArray value="AP_PowerVisualLow"/>
+        <VisualArray value="AP_WarpPrismUnpoweredVisualLowUpgrade"/>
+        <VisualArray value="AP_WarpPrismPowerVisualLowUpgrade"/>
     </CActorPower>
+    <CActorRange id="AP_WarpPrismPowerVisualLowUpgrade">
+        <Behavior value="AP_WarpPrismPowerSourceUpgraded"/>
+        <Icon value="Assets\Textures\PylonLowRingSplat.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
+    <CActorRange id="AP_WarpPrismUnpoweredVisualLowUpgrade">
+        <Behavior value="AP_WarpPrismPowerSourceUpgraded"/>
+        <Icon value="Assets\Textures\PylonLowRingSplatGrey.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
+    <CActorPower id="AP_PylonPowerLowUpgrade">
+        <On Terms="Behavior.AP_PylonImprovedPowerSource.Create; Option Model Low; ValidatePlayer AP_HavePylonImproved" Send="Create"/>
+        <On Terms="Behavior.AP_PylonImprovedPowerSource.Destroy" Send="Destroy"/>
+        <On Terms="Upgrade.AP_PylonImproved.Add; Option Model Low" Send="Create"/>
+        <PowerSource value="AP_PylonImprovedPowerSource"/>
+        <VisualArray value="AP_PylonUnpoweredVisualLowUpgrade"/>
+        <VisualArray value="AP_PylonPowerVisualLowUpgrade"/>
+    </CActorPower>
+    <CActorRange id="AP_PylonPowerVisualLowUpgrade">
+        <Behavior value="AP_PylonImprovedPowerSource"/>
+        <Icon value="Assets\Textures\PylonLowRingSplat.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
+    <CActorRange id="AP_PylonUnpoweredVisualLowUpgrade">
+        <Behavior value="AP_PylonImprovedPowerSource"/>
+        <Icon value="Assets\Textures\PylonLowRingSplatGrey.dds"/>
+        <IconArcLength value="0.750000"/>
+    </CActorRange>
     <CActorTurret id="AP_WarpPrismPhasingRotateTurret">
         <On Terms="TurretEnable.AP_WarpPrismPhasingRotate" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing" Send="Destroy"/>
     </CActorTurret>
+    <CActorRange id="AP_WarpPrismPhasingWeaponRange">
+        <Weapon value="AP_WarpPrismTaldarimDeployedWeapon"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_WarpPrismPhasing; Selected; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_WarpPrismPhasing" Send="Destroy"/>
+        <On Terms="SelectionLocalUpdate.AP_WarpPrismPhasing.Start; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.AP_WarpPrismPhasing.StartEditorGround; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.AP_WarpPrismPhasing.StartEditorFlyer; ValidatePlayer AP_HaveWarpPrismPhaseBlaster" Send="Create"/>
+        <On Terms="SelectionLocalUpdate.AP_WarpPrismPhasing.Stop" Send="Destroy"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+    </CActorRange>
+    <!--                                                                                         -->
+    <!-- Supplicant ............................................................................ -->
+    <!--                                                                                         -->
     <CActorUnit id="AP_Supplicant" parent="GenericUnitStandard" unitName="AP_Supplicant">
         <Macros value="PhysicsDeathsSwarmGround"/>
         <Macros value="PhysicsDeathsVoidGround"/>
@@ -29441,7 +29524,7 @@
         <On Terms="UnitBirth.AP_PygaliskBurrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant"/>
         <On Terms="AbilMorph.*.Cancel; MorphFrom AP_Pygalisk; MorphTo AP_PygaliskBurrowed" Send="AnimClear Burrow"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_Pygalisk; MorphFrom AP_PygaliskBurrowed" Send="AnimBracketStop Burrow"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_Pyaglisk; MorphFrom AP_PygaliskBurrowed" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_Pygalisk; MorphFrom AP_PygaliskBurrowed" Send="AnimClear Burrow"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_Pygalisk; MorphFrom AP_PygaliskBurrowed" Send="TerrainSquibActivateGroup RippleStandard"/>
         <On Terms="AbilMorph.*.Start; AbilKey BurrowDown" Send="Create BurrowDownMedium"/>
         <On Terms="WeaponStart.AP_Pygalisk.AttackStart" Send="AnimBracketStart Attack Attack"/>
@@ -29465,8 +29548,6 @@
         <Wireframe>
             <Image value="Assets\Textures\wireframe-collection-primal-ultralisk.dds"/>
         </Wireframe>
-        <SoundArray index="Birth" value="UltraliskBirth"/>
-        <SoundArray index="Help" value="Ultralisk_Help"/>
         <SoundArray index="Ready" value="AP_Pygalisk_Ready"/>
         <SoundArray index="What" value="AP_Pygalisk_What"/>
         <SoundArray index="Yes" value="AP_Pygalisk_Yes"/>
@@ -38563,17 +38644,17 @@
     <CActorModel id="AP_ArtanisBladeWaltzEndSearchModel" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_ArtanisBladeWaltzEndSearch.Start" Send="Create"/>
         <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="Create UI_MP_ZealotPsiBladeOn"/>
+        <On Terms="ActorCreation" Send="Create AP_ArtanisWeaponSwapSound"/>
         <On Terms="ActorCreation" Send="SetScale 1.5"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter SOpForwardNorth"/>
         <Model value="AP_VoidZealotWhirlwindSearchModel"/>
     </CActorModel>
-    <CActorSound id="UI_MP_ZealotPsiBladeOn" parent="SoundOneShot">
-        <On Terms="Effect.AP_ArtanisAiurAspectSet.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.AP_ArtanisNerazimAspectSet.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.AP_ArtanisPurifierAspectSet.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.AP_ArtanisTaldarimAspectSet.Start; At Caster" Send="Create"/>
+    <CActorSound id="AP_ArtanisWeaponSwapSound" parent="SoundOneShot">
+        <On Terms="Effect.AP_ArtanisAiurAspectSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
+        <On Terms="Effect.AP_ArtanisNerazimAspectSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
+        <On Terms="Effect.AP_ArtanisPurifierAspectSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
+        <On Terms="Effect.AP_ArtanisTaldarimAspectSet.Start; At Caster; ValidateUnit AP_NotSuppressingSwapSound" Send="Create"/>
         <Host Subject="_Selectable"/>
         <Sound value="UI_MP_ZealotPsiBladeOn"/>
     </CActorSound>
@@ -47641,6 +47722,15 @@
         <EditorModel value="Sphere"/>
         <PlacementModel value="Invisible"/>
         <HighlightTooltip value="Unit/Name/Bogus"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <StatusBarFlags index="Custom" value="0"/>
     </CActorUnit>
     <CActorUnit id="AP_SuperWarpGateSystem" parent="ProtossBuildingEx" unitName="AP_SuperWarpGateSystem">
         <Macros value="ProtossBuildingPowerUp"/>

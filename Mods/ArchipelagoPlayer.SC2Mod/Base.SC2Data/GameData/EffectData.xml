@@ -13040,6 +13040,7 @@
     </CEffectApplyBehavior>
     <CEffectTeleport id="AP_SOAMothershipBlinkTeleport">
         <EditorCategories value="Race:Protoss"/>
+        <Range value="10"/>
         <WhichUnit Value="Source"/>
         <TargetLocation Value="TargetPoint"/>
     </CEffectTeleport>
@@ -18340,9 +18341,10 @@
     </CEffectApplyBehavior>
     <CEffectSet id="AP_SOAWarpInReinforcementsInitialSet">
         <EditorCategories value="Race:Protoss"/>
+        <!-- Changed to be handled in triggers -->
         <!--EffectArray value="SOAWarpInReinforcementsCreatePowerUnit"/-->
-        <EffectArray value="AP_SOAWarpInReinforcements"/>
-        <EffectArray value="AP_SOAProxyPylonVisualAB"/>
+        <!--EffectArray value="AP_SOAWarpInReinforcements"/-->
+        <!--EffectArray value="AP_SOAProxyPylonVisualAB"/-->
     </CEffectSet>
     <CEffectCreatePersistent id="AP_SOAWarpInReinforcements">
         <EditorCategories value="Race:Protoss"/>
@@ -24510,7 +24512,7 @@
         <InitialEffect value="AP_KerriganVoidCoopCrushingGripWaveSearch"/>
         <PeriodicEffectArray value="AP_KerriganVoidCoopCrushingGripWaveSearch"/>
         <PeriodicPeriodArray value="0.0625"/>
-        <PeriodCount value="14"/>
+        <PeriodCount value="12"/>
         <WhichLocation Value="SourceUnit"/>
         <TimeScaleSource Value="Caster"/>
     </CEffectCreatePersistent>
@@ -24652,7 +24654,7 @@
     </CEffectEnumArea>
     <CEffectDamage id="AP_PsionicLiftDamageCoop">
         <SearchFlags index="CallForHelp" value="0"/>
-        <Amount value="100"/>
+        <Amount value="50"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_ZergStructureRapidRegenAB">
         <EditorCategories value="Race:Zerg"/>

@@ -1090,6 +1090,7 @@
         <EffectArray Reference="Effect,AP_OracleWeaponDamage,AttributeBonus[Light]" Value="1"/>
         <!-- Warp Prism -->
         <EffectArray Reference="Weapon,AP_WarpPrismTaldarimWeapon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_WarpPrismTaldarimWeaponDamage,Amount" Value="1"/>
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseProtossAirArmors">
@@ -1982,6 +1983,7 @@
         <EffectArray Reference="Effect,AP_AcidSalivaU,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_RoachUMelee,Amount" Value="2"/>
         <EffectArray Reference="Weapon,AP_RavagerWeapon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_RavagerWeaponDamage,Amount" Value="2"/>
         <EffectArray Reference="Weapon,AP_PrimalIgniterCone,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_PrimalIgniterAttackDamage,Amount" Value="3"/>
@@ -8732,6 +8734,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
@@ -8770,6 +8773,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
@@ -8808,6 +8812,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
@@ -8845,6 +8850,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
@@ -8882,6 +8888,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifier,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
@@ -9998,7 +10005,7 @@
         <EffectArray Operation="Subtract" Reference="Abil,AP_K5DropPods,Cost[0].Cooldown.TimeUse" Value="60.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_K5Leviathan,Cost[0].Cooldown.TimeUse" Value="60.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_KerriganVoidCoopEconDrop,Cost[0].Cooldown.TimeUse" Value="24.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AP_KerriganVoidCoopCrushingGripWave,Cost[0].Cooldown.TimeUse" Value="36.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_KerriganVoidCoopCrushingGripWave,Cost[0].Cooldown.TimeUse" Value="60.000000"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_PrimalSlash,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_PsiStrikeWalk,Cost[0].Vital[Energy]" Value="10"/>
         <EffectArray Operation="Subtract" Reference="Abil,AP_SpawnBanelings,Cost[0].Vital[Energy]" Value="10"/>
@@ -10981,6 +10988,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSalivaAir,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RavagerWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrimalIgniterCone,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TyrannozorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,LocustMP,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>-->
@@ -11036,6 +11044,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSalivaAir,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RavagerWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrimalIgniterCone,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TyrannozorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,LocustMP,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>-->
@@ -11091,6 +11100,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSaliva,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSalivaAir,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RavagerWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrimalIgniterCone,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TyrannozorMissileLaunchers,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,LocustMP,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>-->
@@ -11146,6 +11156,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSaliva,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSalivaAir,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RavagerWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrimalIgniterCone,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TyrannozorMissileLaunchers,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level4.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,LocustMP,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>-->
@@ -11201,6 +11212,7 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSaliva,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MercRoachAcidSalivaAir,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RavagerWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_RavagerBurrowedBombardmentWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrimalIgniterCone,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_TyrannozorMissileLaunchers,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,LocustMP,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>-->
@@ -13086,6 +13098,21 @@
     <CUpgrade id="AP_WarpPrismPhaseBlaster">
         <EffectArray Operation="Subtract" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Options[Disabled]" Value="1"/>
         <EffectArray Operation="Subtract" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Options[Hidden]" Value="1"/>
+        <!-- Visuals -->
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,UnitIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,HeroIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_WarpPrism,Icon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_WarpPrism,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_TransportMode,Icon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_TransportMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,UnitIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,HeroIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,Icon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,PlacementModel" Value="AP_WarpPrismTaldarim"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,BuildModel" Value="AP_WarpPrismTaldarimWarpIn"/>
         <AffectedUnitArray value="AP_WarpPrismPhasing"/>
         <AffectedUnitArray value="AP_WarpPrism"/>
     </CUpgrade>
@@ -13752,6 +13779,8 @@
         <EffectArray Reference="Unit,AP_HiveQueen,EnergyStart" Value="25"/>
         <EffectArray Reference="Unit,AP_HiveQueen,EnergyMax" Value="50"/>
         <EffectArray Reference="Behavior,AP_QueenOnCreep,Modification.VitalRegenArray[Energy]" Value="0.5625"/>
+        <EffectArray Reference="Unit,AP_HiveQueenBurrowed,EnergyStart" Value="25"/>
+        <EffectArray Reference="Unit,AP_HiveQueenBurrowed,EnergyMax" Value="50"/>
         <AffectedUnitArray value="AP_HiveQueen"/>
         <AffectedUnitArray value="AP_HiveQueenBurrowed"/>
     </CUpgrade>

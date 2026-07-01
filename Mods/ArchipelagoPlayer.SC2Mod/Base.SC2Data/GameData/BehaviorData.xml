@@ -2165,6 +2165,7 @@
         <Period value="0.0625"/>
         <PeriodicEffect value="AP_NovaPsiStrikeTargetSearch"/>
         <FinalEffect value="AP_NovaPsiStrikeWalkStopSet"/>
+        <Modification MoveSpeedMinimum="17"/>
         <Modification MoveSpeedMultiplier="7">
             <StateFlags index="SuppressCollision" value="1"/>
             <StateFlags index="Uncommandable" value="1"/>
@@ -2193,6 +2194,11 @@
     <CBehaviorBuff id="AP_ArtanisAspectAutoEquip" parent="AP_ArtanisAspectBuff">
         <Period value="0.25"/>
         <PeriodicEffect value="AP_ArtanisAspectAutoEquipCheck"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_SuppressSwapSoundBuff">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisForceOfWill">
         <InfoFlags index="Hidden" value="1"/>
@@ -6576,6 +6582,7 @@
         <Period value="0.0625"/>
         <PeriodicEffect value="AP_PsiStrikeTargetSearch"/>
         <FinalEffect value="AP_PsiStrikeWalkStopSet"/>
+        <Modification MoveSpeedMinimum="9"/>
         <Modification MoveSpeedMultiplier="3">
             <StateFlags index="SuppressCollision" value="1"/>
             <StateFlags index="Uncommandable" value="1"/>
@@ -8300,6 +8307,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="1"/>
         <DamageResponse Chance="1" Fatal="1" Handled="AP_NovaPlasmaPuddle"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_NovaWeaponPlasmaKillSmall">
         <BehaviorFlags index="Permanent" value="1"/>
@@ -8308,6 +8316,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="1"/>
         <DamageResponse Chance="1" Fatal="1" Handled="AP_NovaPlasmaPuddleSmall"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_NovaWeaponPlasmaKillLarge">
         <BehaviorFlags index="Permanent" value="1"/>
@@ -8316,6 +8325,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="1"/>
         <DamageResponse Chance="1" Fatal="1" Handled="AP_NovaPlasmaPuddleLarge"/>
+        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GrapplePullTentacle">
         <InfoFlags index="Hidden" value="1"/>
@@ -11860,5 +11870,10 @@
     <CBehaviorBuff id="AP_Haste">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="AP_CasterNotFighting"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_SOAWarpInReinforcementsVisuals">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Duration value="5"/>
     </CBehaviorBuff>
 </Catalog>
