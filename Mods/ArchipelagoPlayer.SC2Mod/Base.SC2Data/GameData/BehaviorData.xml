@@ -41,7 +41,6 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_HaveBansheePermanentCloak"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification>
             <StateFlags index="Cloak" value="1"/>
         </Modification>
@@ -381,7 +380,6 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_DistortionBlastersResearched"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification>
             <DamageDealtFraction index="Ranged" value="0.25"/>
         </Modification>
@@ -391,7 +389,6 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_HaveBansheeAdvancedOptics"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification WeaponRange="2" WeaponScanBonus="2"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_DistortionThrusters">
@@ -399,7 +396,6 @@
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_DistortionThrustersResearched"/>
         <DisableValidatorArray value="AP_IsCloaked"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <Modification MoveSpeedMultiplier="1.25" AccelerationMultiplier="1.25"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_DefensiveMatrix">
@@ -4087,7 +4083,6 @@
         <InfoIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="NotMothership"/>
-        <DisableValidatorArray value="AP_NotBansheeMengskCloakField"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5"/>
         <Modification>
@@ -10437,7 +10432,6 @@
 <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_ClusterWarheadsPurchased"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="assets\textures\btn-upgrade-raynor-shockwavemissilebattery.dds"/>
         <Name value="Button/Name/AP_ShockwaveMissilePattern"/>
         <Tooltip value="Button/Tooltip/AP_ShockwaveMissilePattern"/>
@@ -10447,7 +10441,6 @@
          <Alignment value="Positive"/>
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_DistortionBlastersResearched"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-cloakdistortionfield-color.dds"/>
         <Name value="Button/Name/AP_DistortionBlasters"/>
         <Tooltip value="Button/Tooltip/AP_DistortionBlasters"/>
@@ -10457,7 +10450,6 @@
 <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveBansheeShapedHull"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="AP\Assets\Textures\btn-techupgrade-terran-shapedhull-colored.dds"/>
         <Name value="Button/Name/AP_ShapedHull"/>
         <Tooltip value="Button/Tooltip/AP_BansheeShapedHull"/>
@@ -10467,7 +10459,6 @@
         <!--        <Alignment value="Positive"/>-->
         <BehaviorFlags index="Permanent" value="1"/>
         <DisableValidatorArray value="AP_HaveBansheeAdvancedOptics"/>
-        <DisableValidatorArray value="AP_NotBansheeMengsk"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-detectionconedebuff.dds"/>
         <Name value="Button/Name/AP_BansheeAdvancedOptics"/>
         <Tooltip value="Button/Tooltip/AP_BansheeAdvancedOptics"/>

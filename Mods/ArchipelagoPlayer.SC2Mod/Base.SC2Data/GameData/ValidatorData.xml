@@ -219,15 +219,6 @@
     <CValidatorUnitType id="AP_IsAPBanshee">
         <Value value="AP_Banshee"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="AP_NotBansheeMengsk">
-        <Value value="AP_BansheeMengsk"/>
-        <Find value="0"/>
-    </CValidatorUnitType>
-    <CValidatorUnitType id="AP_CasterNotBansheeMengsk">
-        <WhichUnit Value="Caster"/>
-        <Value value="AP_BansheeMengsk"/>
-        <Find value="0"/>
-    </CValidatorUnitType>
     <CValidatorUnitType id="AP_CasterIsBansheeMengsk">
         <WhichUnit Value="Caster"/>
         <Value value="AP_BansheeMengsk"/>

@@ -31588,7 +31588,7 @@
         </Element>
         <Element Type="Param" Id="F1F26986">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_BansheeMengskEnergizedBacklash</Value>
+            <Value>AP_BansheeMengskElusiveRotors</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>

@@ -4858,7 +4858,7 @@ void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash (int lp_
 void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
-    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskEnergizedBacklash", 1);
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskElusiveRotors", 1);
 }
 
 void libABFE498B_gf_AP_Triggers_Terran_unlockHiveMindEmulatorZerg (int lp_player) {
