@@ -4669,12 +4669,13 @@
     </CAbilEffectTarget>
     <CAbilEffectInstant id="AP_CleansingSmite">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Effect index="0" value="AP_CleansingSmiteSearch"/>
+        <Effect index="0" value="AP_CleansingSmiteInitialSet"/>
         <Cost>
             <Vital index="Energy" value="50"/>
             <Cooldown TimeUse="10"/>
         </Cost>
         <CastIntroTime value="0.25"/>
+        <UninterruptibleArray index="Cast" value="1"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_CleansingSmite" Requirements="AP_HaveArtanisPurifierAspectSelectedActive"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="AP_ArtanisAstralWind">
@@ -4707,8 +4708,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Effect index="0" value="AP_PhasePrismSet"/>
         <Cost>
-            <Vital index="Energy" value="30"/>
-            <Cooldown TimeUse="7"/>
+            <Cooldown TimeUse="11"/>
         </Cost>
         <Range value="7"/>
         <TargetFilters value="Visible;Self,Player,Ally,Neutral,Structure,Heroic,Missile,Stasis,Dead,Invulnerable"/>

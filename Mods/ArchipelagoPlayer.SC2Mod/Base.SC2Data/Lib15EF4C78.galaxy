@@ -5212,20 +5212,7 @@ bool lib15EF4C78_gt_TassadarsTeachingsEffects_Func (bool testConds, bool runActi
         return true;
     }
 
-    if (((EventPlayerEffectUsed() == "AP_ArtanisLightningDashDamage") || (EventPlayerEffectUsed() == "AP_SuppressionPulseDamage") || (EventPlayerEffectUsed() == "AP_ArtanisBladeWaltzEndDamage") || (EventPlayerEffectUsed() == "AP_ArtanisBladeWaltzDamage"))) {
-        PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveDamage", EventPlayerEffectUsedUnitImpact());
-    }
-    else {
-        if ((EventPlayerEffectUsed() == "AP_VoltaicShockDamageSet")) {
-            PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveDamage", EventPlayerEffectUsedUnit(c_effectUnitTarget));
-        }
-        else {
-            if ((EventPlayerEffectUsed() == "AP_ArtanisCharge")) {
-                UnitBehaviorAddPlayer(EventPlayerEffectUsedUnit(c_effectUnitCaster), "AP_ArtanisAiurAspectPassiveCharged", lib15EF4C78_gf_AP_GetPlayerId(), 1);
-            }
-
-        }
-    }
+    PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveDamage", EventPlayerEffectUsedUnitImpact());
     return true;
 }
 
@@ -5234,10 +5221,10 @@ void lib15EF4C78_gt_TassadarsTeachingsEffects_Init () {
     lib15EF4C78_gt_TassadarsTeachingsEffects = TriggerCreate("lib15EF4C78_gt_TassadarsTeachingsEffects_Func");
     TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisLightningDashDamage");
     TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_SuppressionPulseDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_VoltaicShockDamageSet");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisBladeWaltzEndDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisBladeWaltzDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisCharge");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_VoltaicShockDamage");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_VoltaicShockDamageAir");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisBlades");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAirAttackDamage");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5261,26 +5248,6 @@ bool lib15EF4C78_gt_TassadarsTeachingsAbilities_Func (bool testConds, bool runAc
         return true;
     }
 
-    if ((EventUnitAbility() == AbilityCommand("AP_ArtanisAstralWind", 0))) {
-        PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveSearchAstralWind", EventUnit());
-    }
-    else {
-        if ((EventUnitAbility() == AbilityCommand("AP_PhasePrismSwap", 0))) {
-            Wait(0.0625, c_timeGame);
-            PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveSearchPhasePrism", EventUnit());
-        }
-        else {
-            if ((EventUnitAbility() == AbilityCommand("AP_PhasePrism", 0))) {
-                PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveSearchPhasePrism", EventUnitTargetUnit());
-            }
-            else {
-                if ((EventUnitAbility() == AbilityCommand("AP_StrengthInUnity", 0))) {
-                    PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveSearchStrengthInUnity", EventUnit());
-                }
-
-            }
-        }
-    }
     return true;
 }
 
@@ -5351,13 +5318,22 @@ void lib15EF4C78_gt_ShadowSliceReset_Init () {
 // Trigger: PhasePrismAcquireTarget
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_PhasePrismAcquireTarget_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    point lv_artanisPosition;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_artanisPosition = UnitGetPosition(EventUnit());
+
     // Actions
     if (!runActions) {
         return true;
     }
 
     lib15EF4C78_gv_phasePrismTarget = EventUnitTargetUnit();
+    UnitSetPosition(EventUnit(), UnitGetPosition(lib15EF4C78_gv_phasePrismTarget), true);
+    UnitSetPosition(lib15EF4C78_gv_phasePrismTarget, lv_artanisPosition, true);
+    UnitBehaviorAdd(EventUnit(), "AP_PhasePrismDelay", EventUnit(), 1);
     return true;
 }
 

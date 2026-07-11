@@ -2189,13 +2189,13 @@
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_CleansingSmite">
-        <Alignment value="Negative"/>
+        <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
         <Duration value="5"/>
         <Period value="0.1"/>
-        <InitialEffect value="AP_CleansingSmiteDOT"/>
-        <PeriodicEffect value="AP_CleansingSmiteDOT"/>
+        <PeriodicEffect value="AP_CleansingSmiteAuraSearch"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisPurifierSolarBombardmentPassive">
         <Alignment value="Positive"/>
@@ -2412,6 +2412,14 @@
         <ExpireEffect value="AP_PhasePrismSearch"/>
         <Duration value="0.0625"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_PhasePrismDamageReduction">
+        <Alignment value="Positive"/>
+        <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <Duration value="5"/>
+        <DamageResponse Chance="1" ModifyFraction="0.6"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisBladeWaltzDamaged">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -2495,10 +2503,8 @@
         <Alignment value="Negative"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <Duration value="5"/>
-        <InitialEffect value="AP_PhasePrismSearch"/>
+        <BehaviorCategories index="Stun" value="1"/>
         <Modification>
-            <StateFlags index="Invulnerable" value="1"/>
-            <StateFlags index="Stasis" value="1"/>
             <StateFlags index="Stun" value="1"/>
             <AbilClassDisableArray index="CAbilAttack" value="1"/>
             <BehaviorLinkDisableArray value="Detector6"/>

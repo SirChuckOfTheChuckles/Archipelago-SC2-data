@@ -532,7 +532,8 @@ Behavior/Name/AP_BurstCapacitorsDamageBuff=Burst Capacitors
 Behavior/Name/AP_CarrierRepairDroneRecall=Carrier Repair Drone Recall
 Behavior/Name/AP_CenturionDodge=Quantum Dodge
 Behavior/Name/AP_Charging=Charging
-Behavior/Name/AP_CleansingSmite=Burning
+Behavior/Name/AP_CleansingSmite=Cleansing Smite
+Behavior/Name/AP_PhasePrismDamageReduction=Phase Prism
 Behavior/Name/AP_Contaminated=Contaminated
 Behavior/Name/AP_Corruption=Corruption
 Behavior/Name/AP_CorruptorAcidSplash=Acid Splash
@@ -661,7 +662,7 @@ Behavior/Name/AP_PersonalCloakingFree=Cloak
 Behavior/Name/AP_PersonalDefensiveMatrix=Ionic Force Field
 Behavior/Name/AP_PhaseBlinkDamage=Overcharged
 Behavior/Name/AP_PhasePrismPullStun=Pulled
-Behavior/Name/AP_PhasePrismStun=In Stasis
+Behavior/Name/AP_PhasePrismStun=Stunned
 Behavior/Name/AP_PhotonOverchage=Photon Overcharge
 Behavior/Name/AP_PlanetCracker=Planet Cracker
 Behavior/Name/AP_PlanetCrackerChargeUp=Planet Cracker Charging
@@ -877,7 +878,8 @@ Behavior/Tooltip/AP_BattlecruiserMengskBehemothReactorIndicator=Battlecruiser sp
 Behavior/Tooltip/AP_BloodHunterLifeSteal=Recovering life and shields.
 Behavior/Tooltip/AP_CenturionDodge=The next hit will be dodged.
 Behavior/Tooltip/AP_Charging=This Zealot is charging, allowing it to quickly close the distance with its target.
-Behavior/Tooltip/AP_CleansingSmite=This unit is taking damage over time and restoring Artanis' shields.
+Behavior/Tooltip/AP_CleansingSmite=Artanis is burning nearby enemies and restoring shields.
+Behavior/Tooltip/AP_PhasePrismDamageReduction=Artanis is taking reduced damage.
 Behavior/Tooltip/AP_Contaminated=This structure is unable to train new units or research upgrades.
 Behavior/Tooltip/AP_Corruption=This unit takes 20% extra damage.
 Behavior/Tooltip/AP_CorruptorAcidSplash=This unit is coated in acid. It takes reduced damage.
@@ -984,7 +986,7 @@ Behavior/Tooltip/AP_PersonalCloakingFree=This unit is cloaked and will only be r
 Behavior/Tooltip/AP_PersonalDefensiveMatrix=Nova is absorbing a portion of the damage dealt to her.
 Behavior/Tooltip/AP_PhaseBlinkDamage=This unit's next attack will be improved.
 Behavior/Tooltip/AP_PhasePrismPullStun=This unit is being pulled by Phase Prism.
-Behavior/Tooltip/AP_PhasePrismStun=This unit is in stasis and can be swapped with Artanis.
+Behavior/Tooltip/AP_PhasePrismStun=This unit is stunned.
 Behavior/Tooltip/AP_PlanetCracker=Firing the Planet Cracker and is unable to perform any other actions.
 Behavior/Tooltip/AP_PlanetCrackerChargeUp=Preparing for planetary annihilation...
 Behavior/Tooltip/AP_PowerRedirectionCaster=Redirecting power, cannot perform any other actions.
@@ -2799,7 +2801,7 @@ Button/Tooltip/AP_Armory=Contains weapon and armor upgrades for Factory and Star
 Button/Tooltip/AP_ArtanisAirAttackDisable=Disable Artanis' <c val="#ColorTooltipNumber">anti-air</c> attack.
 Button/Tooltip/AP_ArtanisAirAttackEnable=Enable Artanis' <c val="#ColorTooltipNumber">anti-air</c> attack.
 Button/Tooltip/AP_ArtanisAiurAspect=Switch Artanis' active aspect to <c val="#AP_ColorAiur">Aiur</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorAiur">Aiur</c> unit.
-Button/Tooltip/AP_ArtanisAiurAspectPassive=While <c val="#AP_ColorAiur">Aiur</c> Aspect is active, Artanis' abilities deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/></c> additional damage to enemies in their area of effect.<n/><n/>When Artanis Charges, his next attack deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/> damage</c> to other enemies near his target.
+Button/Tooltip/AP_ArtanisAiurAspectPassive=While <c val="#AP_ColorAiur">Aiur</c> Aspect is active, Artanis' attacks and non-aspect damaging abilities call down lightning that deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/> damage</c>.
 Button/Tooltip/AP_ArtanisAstralWind=Heals Artanis <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Shields].Change"/> shields</c> and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Life].Change"/> life</c>, and heals other nearby friendly units for <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Shields].Change"/> shields</c> and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Life].Change"/> life</c>.<n/><n/>Cooldown reduced by <c val="#ColorTooltipNumber">6 seconds</c> whenever Artanis attacks.
 Button/Tooltip/AP_ArtanisBladeWaltz=Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/> damage</c> to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/> damage</c> to enemies near the end of the dash.
 Button/Tooltip/AP_ArtanisBladeWaltzPassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ArtanisBladeWaltz,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ArtanisBladeWaltz,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/> damage</c> to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/> damage</c> to enemies near the end of the dash.
@@ -2990,8 +2992,8 @@ Button/Tooltip/AP_Charge=Intercepts enemy ground units.
 Button/Tooltip/AP_ChargePredator=Intercepts enemy ground units. The first attack after charging applies a slow to surrounding enemy units.
 Button/Tooltip/AP_ChitinousPlating=Increases Ultralisk armor by 2.
 Button/Tooltip/AP_ChronoBoostEfficiency=The effect of Chrono Boost is doubled.
-Button/Tooltip/AP_CleansingSmite=Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, dealing an additional <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration / Behavior,AP_CleansingSmite,Period"/> damage</c> over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>The damage over time <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">75%</c> of the damage done.
-Button/Tooltip/AP_CleansingSmitePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, dealing an additional <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration / Behavior,AP_CleansingSmite,Period"/> damage</c> over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>The damage over time <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">75%</c> of the damage done.
+Button/Tooltip/AP_CleansingSmite=Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, then burn nearby enemies around Artanis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>Cleansing Smite <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">50%</c> of the damage done.
+Button/Tooltip/AP_CleansingSmitePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, then burn nearby enemies around Artanis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>Cleansing Smite <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">50%</c> of the damage done.
 Button/Tooltip/AP_CliffJumper=This unit can jump up and down cliffs.
 Button/Tooltip/AP_CliffWalk=This unit can walk up and down cliffs.
 Button/Tooltip/AP_CloakOnBanshee=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_BansheeCloak,Modification.VitalRegenArray[2] + Unit,AP_Banshee,EnergyRegenRate)" precision="1"/> energy per second.</c>
@@ -3759,7 +3761,7 @@ Button/Tooltip/AP_PermanentlyCloakedSpectre=Spectre is permanently cloaked.
 Button/Tooltip/AP_PermanentlyCloakedStasis=The Stasis Ward is permanently cloaked.
 Button/Tooltip/AP_PersonalDefensiveMatrix=Provides Nova with a shield that reduces incoming damage to a maximum of <d ref="Behavior,AP_PersonalDefensiveMatrix,DamageResponse.ClampMaximum"/> until <d ref="Behavior,AP_PersonalDefensiveMatrix,Modification.VitalMaxArray[Shields]"/> total damage is absorbed. Shield lasts for <d time="10"/>.
 Button/Tooltip/AP_PhaseBlaster=Warp Prisms are equipped with a Phase Blaster weapon to attack ground and air targets. In phasing mode, the Phase Blaster gains <c val="#ColorTooltipNumber">+<d ref="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Range - Weapon,AP_WarpPrismTaldarimWeapon,Range"/></c> <c val="#ColorTooltipAttribute">range</c> and <c val="#ColorTooltipNumber"><d ref="Weapon,AP_WarpPrismTaldarimWeapon,Period / Weapon,AP_WarpPrismTaldarimDeployedWeapon,Period * 100 - 100"/>%</c> increased <c val="#ColorTooltipAttribute">attack speed</c>.
-Button/Tooltip/AP_PhasePrism=Place target unit in stasis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/> seconds, pulling</c> all nearby enemy units to that unit's location.<n/><n/>This ability can be <c val="#ColorTooltipNumber">recast</c> to have Artanis <c val="#ColorTooltipNumber">swap places</c> with the unit in stasis, <c val="#ColorTooltipNumber">pulling in</c> nearby enemy units to Artanis after the swap.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
+Button/Tooltip/AP_PhasePrism=Stun target unit for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/> seconds</c>, automatically swap places with it, then <c val="#ColorTooltipNumber">pull in</c> nearby enemy units to Artanis.<n/><n/>After the swap, Artanis gains <c val="#ColorTooltipNumber">40% damage reduction</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismDamageReduction,Duration"/> seconds</c>.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
 Button/Tooltip/AP_PhasePrismRecast=Swap Artanis with the unit in stasis, and pull in all nearby enemy units to Artanis. Does not work across massive distances.
 Button/Tooltip/AP_PhasingMode=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
 Button/Tooltip/AP_PhoenixAiur=Aiur Faction<n/>Air superiority starfighter. Can use Graviton Beam.<n/><n/><c val="ffff8a">Can attack air units.</c>

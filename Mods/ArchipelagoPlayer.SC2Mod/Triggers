@@ -6498,7 +6498,7 @@
         </Element>
         <Element Type="Param" Id="038E5C4D">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="3F2584C8"/>
-            <Value>AP_PhasePrismSwap</Value>
+            <Value>AP_PhasePrism</Value>
             <ValueType Type="abilcmd"/>
         </Element>
         <Element Type="FunctionCall" Id="8815196D">

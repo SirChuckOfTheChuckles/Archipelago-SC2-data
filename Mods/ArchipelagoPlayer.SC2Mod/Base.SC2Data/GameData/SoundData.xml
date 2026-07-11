@@ -7313,6 +7313,10 @@
         <Volume value="-5.000000,-5.000000"/>
         <EditorCategories value="Race:Protoss"/>
     </CSound>
+    <CSound id="AP_ArtanisBladeWaltzEndSound">
+        <AssetArray File="Assets\Sounds\UI_Glue_PsiBladeOn.ogg" FacialGroup=""/>
+        <Volume value="-6.000000,-6.000000"/>
+    </CSound>
     <CSound id="AP_ArtanisVoid_Attack" parent="ProtossAck_Void">
         <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\ArtanisVoid_Attack00.ogg" FacialGroup=""/>
         <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\ArtanisVoid_Attack01.ogg" FacialGroup=""/>

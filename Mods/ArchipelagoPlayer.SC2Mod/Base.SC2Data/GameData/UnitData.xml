@@ -14924,7 +14924,6 @@
         <AbilArray Link="AP_ShadowSlice"/>
         <AbilArray Link="AP_VoltaicShock"/>
         <AbilArray Link="AP_ArtanisBladeWaltz"/>
-        <AbilArray Link="AP_PhasePrismSwap"/>
         <AbilArray Link="AP_PhasePrism"/>
         <AbilArray Link="AP_CleansingSmite"/>
         <AbilArray Link="AP_Exterminate"/>
@@ -14945,7 +14944,6 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_ArtanisLightningDash" Type="AbilCmd" AbilCmd="AP_ArtanisLightningDash,Execute" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_PhasePrismRecast" Type="AbilCmd" AbilCmd="AP_PhasePrismSwap,Execute" Row="1" Column="1"/>
             <LayoutButtons Face="AP_PhasePrism" Type="AbilCmd" AbilCmd="AP_PhasePrism,Execute" Row="1" Column="1"/>
             <LayoutButtons Face="AP_SuppressionPulse" Type="AbilCmd" AbilCmd="AP_SuppressionPulse,Execute" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ArtanisAstralWind" Type="AbilCmd" AbilCmd="AP_ArtanisAstralWind,Execute" Row="1" Column="2"/>

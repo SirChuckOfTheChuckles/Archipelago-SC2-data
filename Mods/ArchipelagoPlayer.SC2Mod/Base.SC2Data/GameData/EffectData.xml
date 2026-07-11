@@ -4691,6 +4691,10 @@
         <EditorCategories value="Race:Protoss"/>
         <BehaviorLink value="AP_ArtanisAspectAutoEquip"/>
     </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="AP_CleansingSmiteRB">
+        <EditorCategories value="Race:Protoss"/>
+        <BehaviorLink value="AP_CleansingSmite"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="AP_ArtanisAspectClearAll">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_ArtanisAiurAspectRB"/>
@@ -4700,6 +4704,8 @@
         <EffectArray value="AP_ArtanisNoAspectRB"/>
         <EffectArray value="AP_ArtanisAspectAutoEquipRB"/>
         <EffectArray value="AP_RaszagalsRhythmRB"/>
+        <EffectArray value="AP_ArtanisAiurAspectPassiveChargedRB"/>
+        <EffectArray value="AP_CleansingSmiteRB"/>
     </CEffectSet>
     <CEffectSet id="AP_ArtanisAiurAspectSet">
         <EditorCategories value="Race:Protoss"/>
@@ -4792,7 +4798,7 @@
         <AreaArray MaxCount="1" Radius="5" Effect="AP_ShadowSliceImpactSet"/>
     </CEffectEnumArea>
     <CEffectDamage id="AP_ShadowSliceDamage">
-        <Amount value="175"/>
+        <Amount value="180"/>
         <Death value="Eviscerate"/>
     </CEffectDamage>
     <CEffectTeleport id="AP_ShadowSliceReturnTeleportFromAnchor">
@@ -5232,29 +5238,42 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable"/>
-        <AreaArray Radius="2" Effect="AP_CleansingSmiteSet"/>
+        <AreaArray Radius="2.2" Effect="AP_CleansingSmiteSet"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
+    <CEffectSet id="AP_CleansingSmiteInitialSet">
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="AP_CleansingSmiteAB"/>
+        <EffectArray value="AP_CleansingSmiteSearch"/>
+    </CEffectSet>
     <CEffectSet id="AP_CleansingSmiteSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_CleansingSmiteDamage"/>
-        <EffectArray value="AP_CleansingSmiteAB"/>
     </CEffectSet>
     <CEffectDamage id="AP_CleansingSmiteDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
         <Amount value="50"/>
+        <LeechFraction index="Shields" value="0.5"/>
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_CleansingSmiteAB">
         <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
         <Behavior value="AP_CleansingSmite"/>
     </CEffectApplyBehavior>
+    <CEffectEnumArea id="AP_CleansingSmiteAuraSearch">
+        <EditorCategories value="Race:Protoss"/>
+        <ImpactLocation Value="SourceUnit"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable"/>
+        <AreaArray Radius="2.2" Effect="AP_CleansingSmiteDOT"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
     <CEffectDamage id="AP_CleansingSmiteDOT" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
         <Amount value="1"/>
-        <LeechFraction index="Shields" value="0.75"/>
+        <LeechFraction index="Shields" value="0.5"/>
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectSet id="AP_ArtanisBladeWaltz">
@@ -5339,8 +5358,7 @@
     <CEffectSet id="AP_PhasePrismSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_PhasePrismAB"/>
-        <EffectArray value="AP_PhasePrismCooldown"/>
-        <EffectArray value="AP_PhasePrismRecastCasterAB"/>
+        <EffectArray value="AP_PhasePrismDamageReductionAB"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PhasePrismAB">
         <EditorCategories value="Race:Protoss"/>
@@ -5350,6 +5368,11 @@
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_PhasePrismRecast"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_PhasePrismDamageReductionAB">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_PhasePrismDamageReduction"/>
     </CEffectApplyBehavior>
     <CEffectRemoveBehavior id="AP_PhasePrismRecastRB">
         <EditorCategories value="Race:Protoss"/>
@@ -15119,7 +15142,6 @@
         <EditorCategories value="Race:Protoss"/>
         <ValidatorArray value="AP_CasterHasArtanisAiurAspectPassiveCharged"/>
         <ValidatorArray value="AP_HasArtanisAiurAspectBehaviorAndPassive"/>
-        <EffectArray value="AP_ArtanisAiurAspectPassiveSearchCharge"/>
         <EffectArray value="AP_ArtanisAiurAspectPassiveChargedRB"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="AP_ArtanisAiurAspectPassiveChargedRB">

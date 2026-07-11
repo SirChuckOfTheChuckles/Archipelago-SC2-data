@@ -3700,6 +3700,14 @@
         <Model value="Assets\Effects\Zerg\Kerrigan_Celestial_Beam_Charge\Kerrigan_Celestial_Beam_Charge.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
+    <CModel id="AP_ArtanisHeroCleansingSmiteAura" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_ArtanisHeroCleansingSmiteGlaze" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Fire_WorldSpace\Glaze_Fire_WorldSpace.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="AP_ArtanisBladeWaltzEndShockwave" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Terran\PredatorImpactShockwave\PredatorImpactShockwave.m3"/>
         <EditorCategories value="Race:Protoss"/>
