@@ -4422,11 +4422,6 @@
         <Compare value="Eq"/>
         <Vital value="Shields"/>
     </CValidatorUnitCompareVital>
-    <CValidatorCombine id="AP_IsPurifierUnitOrNoShields">
-        <Type value="Or"/>
-        <CombineArray value="AP_IsPurifierUnit"/>
-        <CombineArray value="AP_ShieldsEqual0"/>
-    </CValidatorCombine>
     <CValidatorCombine id="AP_IsNotTaldarimUnit">
         <Negate value="1"/>
         <CombineArray value="AP_IsTaldarimUnit"/>
@@ -4459,14 +4454,6 @@
         <CombineArray value="AP_IsCarrierAiur"/>
         <CombineArray value="AP_IsCarrierPurifier"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareBehaviorCount id="AP_UnitInTimeFieldTaldarim">
-        <WhichUnit Value="Target"/>
-        <Behavior value="AP_TimeFieldTaldarim"/>
-        <Value value="1"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_NotTimeFieldTaldarimConfusion">
-        <Behavior value="AP_TimeFieldTaldarimConfusion"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_NotInterceptorHidden">
         <Behavior value="AP_InterceptorHidden"/>
     </CValidatorUnitCompareBehaviorCount>

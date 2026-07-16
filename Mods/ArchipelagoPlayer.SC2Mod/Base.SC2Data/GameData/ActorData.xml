@@ -17550,8 +17550,6 @@
     <CActorModel id="AP_DarkArchonConfusionModel" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.AP_DarkArchonConfusion.On" Send="Create"/>
         <On Terms="Behavior.AP_DarkArchonConfusion.Off" Send="Destroy"/>
-        <On Terms="Behavior.AP_TimeFieldTaldarimConfusion.On" Send="Create"/>
-        <On Terms="Behavior.AP_TimeFieldTaldarimConfusion.Off" Send="Destroy"/>
         <On Terms="Behavior.AP_Exterminate.On" Send="Create"/>
         <On Terms="Behavior.AP_Exterminate.Off" Send="Destroy"/>
         <On Terms="Behavior.AP_ExterminateCharging.On" Send="Create"/>
@@ -38550,7 +38548,7 @@
         <Model value="AP_VoidZealotWhirlwindSearchModel"/>
     </CActorModel>
     <CActorSound id="AP_ArtanisBladeWaltzEndSound" parent="SoundOneShot">
-        <On Terms="ActorCreation" Send="TimerSet 0.750000 StopSound"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.60000 StopSound"/>
         <On Terms="TimerExpired; TimerName StopSound" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <Sound value="AP_ArtanisBladeWaltzEndSound"/>

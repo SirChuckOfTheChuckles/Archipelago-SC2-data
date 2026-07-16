@@ -5661,25 +5661,17 @@
         <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_IsNotFriendly"/>
-        <DisableValidatorArray value="AP_NotTimeFieldTaldarimConfusion"/>
         <Duration value="0.125"/>
-        <Modification AttackSpeedMultiplier="0.30"/>
+        <Modification MoveSpeedMultiplier="0.25"/>
+        <Modification AttackSpeedMultiplier="0.25"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_TimeFieldTaldarimConfusion">
-        <Alignment value="Negative"/>
-        <InfoIcon value="Assets\Textures\btn-ability-protoss-confusion.dds"/>
+    <CBehaviorBuff id="AP_TimeFieldTaldarimFriendly">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-timewarp.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="3"/>
-        <Period value="1"/>
-        <DisableValidatorArray value="AP_NotHeroic"/>
-        <InitialEffect value="AP_DarkArchonConfusionStopInitialSet"/>
-        <PeriodicEffect value="AP_DarkArchonConfusionAttackSearch"/>
-        <ExpireEffect value="AP_DarkArchonConfusionEndSet"/>
-        <Modification AttackSpeedMultiplier="1.70"/>
-        <Modification>
-            <StateFlags index="Passive" value="1"/>
-            <StateFlags index="IgnorePlayerAlliedFlags" value="1"/>
-        </Modification>
+        <Duration value="0.125"/>
+        <Modification MoveSpeedMultiplier="1.60"/>
+        <Modification AttackSpeedMultiplier="1.60"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_TimeFieldDecelerationBuff">
         <InfoFlags index="Hidden" value="1"/>
