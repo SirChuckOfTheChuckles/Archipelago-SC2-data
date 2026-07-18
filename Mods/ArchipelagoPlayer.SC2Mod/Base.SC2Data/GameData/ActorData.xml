@@ -38743,10 +38743,10 @@
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
     </CActorModel>
-    <CActorModel id="AP_ArtanisShieldOverloadModel" parent="ModelAnimationStyleContinuous">
-        <On Terms="ActorOrphan" Send="Destroy"/>
-        <ModelFlags index="AllowHitTest" value="0"/>
-        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    <CActorModel id="AP_ArtanisShieldOverloadModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="Visibility" value="1"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
     </CActorModel>
     <CActorRange id="AP_StrengthInUnityRange">
         <On Terms="Abil.AP_StrengthInUnity.ButtonHoverOn" Send="Create"/>

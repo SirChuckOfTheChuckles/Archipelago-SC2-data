@@ -22456,8 +22456,8 @@
         <Model value="Assets\Effects\Protoss\Protoss_Generic_WarpOut_MP_Stand\Protoss_Generic_WarpOut_MP_Stand.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_ArtanisShieldOverloadModel" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Protoss\Karax_UnityBarrier_Tall\Karax_UnityBarrier_Tall.m3"/>
+    <CModel id="AP_ArtanisShieldOverloadModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\PlasmaSurgeImpact\PlasmaSurgeImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="AP_ArtanisAiurAspectPassiveLightningBolt" parent="ImpactFX">

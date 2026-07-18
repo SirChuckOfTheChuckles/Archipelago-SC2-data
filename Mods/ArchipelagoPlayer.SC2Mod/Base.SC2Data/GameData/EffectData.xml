@@ -4714,12 +4714,20 @@
     </CEffectRemoveBehavior>
     <CEffectSet id="AP_ArtanisAspectClearAll">
         <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="AP_ArtanisAspectClearAspects"/>
+        <EffectArray value="AP_ArtanisAspectClearBuffs"/>
+    </CEffectSet>
+    <CEffectSet id="AP_ArtanisAspectClearAspects">
+        <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_ArtanisAiurAspectRB"/>
         <EffectArray value="AP_ArtanisNerazimAspectRB"/>
         <EffectArray value="AP_ArtanisPurifierAspectRB"/>
         <EffectArray value="AP_ArtanisTaldarimAspectRB"/>
         <EffectArray value="AP_ArtanisNoAspectRB"/>
         <EffectArray value="AP_ArtanisAspectAutoEquipRB"/>
+    </CEffectSet>
+    <CEffectSet id="AP_ArtanisAspectClearBuffs">
+        <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_RaszagalsRhythmRB"/>
         <EffectArray value="AP_ArtanisAiurAspectPassiveChargedRB"/>
         <EffectArray value="AP_CleansingSmiteRB"/>

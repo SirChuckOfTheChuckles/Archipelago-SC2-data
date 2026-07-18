@@ -5254,13 +5254,13 @@ bool lib15EF4C78_gt_PhasePrismAcquireTarget_Func (bool testConds, bool runAction
 
     // Automatic Variable Declarations
     // Variable Initialization
-    lv_artanisPosition = UnitGetPosition(EventUnit());
 
     // Actions
     if (!runActions) {
         return true;
     }
 
+    lv_artanisPosition = UnitGetPosition(EventUnit());
     lib15EF4C78_gv_phasePrismTarget = EventUnitTargetUnit();
     UnitSetPosition(EventUnit(), UnitGetPosition(lib15EF4C78_gv_phasePrismTarget), true);
     UnitSetPosition(lib15EF4C78_gv_phasePrismTarget, lv_artanisPosition, true);
@@ -5302,20 +5302,25 @@ bool lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Func (bool testConds, bool ru
         return true;
     }
 
-    lv_deltaEnergy = EventUnitPropertyChangeFixed();
-    if ((lv_deltaEnergy < 0.0)) {
-        lv_spent = (-1.0 * lv_deltaEnergy);
-        lv_newShields = MinF((UnitGetPropertyFixed(EventUnit(), c_unitPropShields, c_unitPropCurrent) + lv_spent), UnitGetPropertyFixed(EventUnit(), c_unitPropShieldsMax, c_unitPropCurrent));
-        UnitSetPropertyFixed(EventUnit(), c_unitPropShields, lv_newShields);
-    }
-
+    lv_spent = libNtve_gf_CostOfAbility(AbilityCommandGetAbility(EventUnitAbility()), "Energy");
+    lv_newShields = MinF((UnitGetPropertyFixed(EventUnit(), c_unitPropShields, c_unitPropCurrent) + lv_spent), UnitGetPropertyFixed(EventUnit(), c_unitPropShieldsMax, c_unitPropCurrent));
+    UnitSetPropertyFixed(EventUnit(), c_unitPropShields, lv_newShields);
+    libNtve_gf_SendActorMessageToUnit(EventUnit(), libNtve_gf_Create("AP_ArtanisShieldOverloadModel", ""));
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
 void lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Init () {
     lib15EF4C78_gt_TassadarsTenacityEnergyRestore = TriggerCreate("lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Func");
-    TriggerAddEventUnitProperty(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, c_unitPropEnergy);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ArtanisBladeWaltz", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ShadowSlice", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_CleansingSmite", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_Exterminate", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ExterminateAir", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_VoltaicShock", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_SuppressionPulse", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ArtanisLightningDash", 0), c_abilEffectStageFinish, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5346,16 +5351,13 @@ bool lib15EF4C78_gt_RaszagalsRhythmBuff_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void lib15EF4C78_gt_RaszagalsRhythmBuff_Init () {
     lib15EF4C78_gt_RaszagalsRhythmBuff = TriggerCreate("lib15EF4C78_gt_RaszagalsRhythmBuff_Func");
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisBladeWaltz", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ShadowSlice", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_CleansingSmite", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_Exterminate", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_VoltaicShock", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_PhasePrism", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_SuppressionPulse", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisLightningDash", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_StrengthInUnity", 0), c_abilEffectStageCast, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ShadowSlice", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_VoltaicShock", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_PhasePrism", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_SuppressionPulse", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisLightningDash", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_StrengthInUnity", 0), c_abilEffectStageFinish, false);
     TriggerAddEventUnitBehaviorChange(lib15EF4C78_gt_RaszagalsRhythmBuff, null, "AP_ArtanisCharging", c_unitBehaviorChangeActivate);
 }
 
@@ -5375,8 +5377,8 @@ bool lib15EF4C78_gt_ArtanisBladeWaltz_Func (bool testConds, bool runActions) {
     int lv_i;
 
     // Automatic Variable Declarations
-    const int auto6ADD9560_ae = 5;
-    const int auto6ADD9560_ai = 1;
+    const int autoC41A2C1D_ae = 5;
+    const int autoC41A2C1D_ai = 1;
 
     // Variable Initialization
     lv_k = UnitGetPosition(EventUnit());
@@ -5407,6 +5409,7 @@ bool lib15EF4C78_gt_ArtanisBladeWaltz_Func (bool testConds, bool runActions) {
     UnitBehaviorAdd(EventUnit(), "AP_ArtanisBladeWaltzWalkSpeed", EventUnit(), 1);
     if ((lv_goodPositionFound == true)) {
         UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("move", 0), lv_t3), c_orderQueueReplace);
+        UnitIssueOrder(EventUnit(), OrderTargetingPoint(AbilityCommand("move", 0), lv_finalT), c_orderQueueAddToEnd);
     }
     else {
         lv_t3 = lv_finalT;
@@ -5414,8 +5417,8 @@ bool lib15EF4C78_gt_ArtanisBladeWaltz_Func (bool testConds, bool runActions) {
     }
     Wait(0.1875, c_timeGame);
     lv_i = 1;
-    for ( ; ( (auto6ADD9560_ai >= 0 && lv_i <= auto6ADD9560_ae) || (auto6ADD9560_ai < 0 && lv_i >= auto6ADD9560_ae) ) ; lv_i += auto6ADD9560_ai ) {
-        if ((DistanceBetweenPoints(UnitGetPosition(EventUnit()), lv_t3) <= 0.4)) {
+    for ( ; ( (autoC41A2C1D_ai >= 0 && lv_i <= autoC41A2C1D_ae) || (autoC41A2C1D_ai < 0 && lv_i >= autoC41A2C1D_ae) ) ; lv_i += autoC41A2C1D_ai ) {
+        if ((DistanceBetweenPoints(UnitGetPosition(EventUnit()), lv_finalT) <= 0.4)) {
             UnitBehaviorRemove(EventUnit(), "AP_ArtanisBladeWaltzWalkSpeed", 1);
             break;
         }

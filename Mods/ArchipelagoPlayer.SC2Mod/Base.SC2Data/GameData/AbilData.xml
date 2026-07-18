@@ -4663,7 +4663,8 @@
             <Cooldown TimeUse="10"/>
         </Cost>
         <Range value="7"/>
-        <CastIntroTime value="0.1"/>
+        <CastIntroTime value="0.125"/>
+        <UninterruptibleArray index="Cast" value="1"/>
         <CursorEffect value="AP_VoltaicShockDamageSearch"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_VoltaicShock" Requirements="AP_HaveArtanisVoltaicShock"/>
     </CAbilEffectTarget>

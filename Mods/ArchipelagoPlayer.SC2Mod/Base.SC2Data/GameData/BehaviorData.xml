@@ -2233,17 +2233,18 @@
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-exterminate.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="2.5"/>
+        <Duration value="1.25"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ExterminateCharging">
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-exterminate.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="AP_ArtanisChargeTargetAttacked"/>
-        <Duration value="2.5"/>
+        <Duration value="1.25"/>
         <FinalEffect value="AP_ExterminateAB"/>
-        <Modification MoveSpeedMultiplier="6.8">
+        <Modification MoveSpeedMultiplier="8">
             <AbilLinkDisableArray value="AP_ArtanisCharge"/>
+            <StateFlags index="Uncommandable" value="1"/>
             <StateFlags index="SuppressCollision" value="1"/>
         </Modification>
     </CBehaviorBuff>
@@ -2434,7 +2435,7 @@
         <Period value="0.0625"/>
         <PeriodicEffect value="AP_ArtanisBladeWaltzTargetSearch"/>
         <FinalEffect value="AP_ArtanisBladeWaltzWalkStopSet"/>
-        <Modification MoveSpeedMultiplier="7">
+        <Modification MoveSpeedMultiplier="7.05">
             <StateFlags index="SuppressAttack" value="1"/>
             <StateFlags index="SuppressCollision" value="1"/>
             <StateFlags index="Uncommandable" value="1"/>
