@@ -22610,10 +22610,10 @@
         <On Terms="ActorCreation" Send="TimerSet 4.000000 AP_AstralRestorationSound4"/>
         <On Terms="ActorCreation" Send="TimerSet 6.000000 AP_AstralRestorationSound6"/>
         <On Terms="ActorCreation" Send="TimerSet 8.000000 AP_AstralRestorationSound8"/>
-        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound2" Send="Create AP_ArtanisAstralWindSound"/>
-        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound4" Send="Create AP_ArtanisAstralWindSound"/>
-        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound6" Send="Create AP_ArtanisAstralWindSound"/>
-        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound8" Send="Create AP_ArtanisAstralWindSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound2" Send="Create AP_AstralRestorationSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound4" Send="Create AP_AstralRestorationSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound6" Send="Create AP_AstralRestorationSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound8" Send="Create AP_AstralRestorationSound"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="AP_AstralRestoration"/>
         <Host Subject="_Selectable"/>
@@ -38616,7 +38616,7 @@
     </CActorModel>
     <CActorModel id="AP_ArtanisHeroCleansingSmiteAura" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.AP_CleansingSmite.On" Send="Create"/>
-        <On Terms="Behavior.AP_CleansingSmite.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_CleansingSmite.Off" Send="Destroy"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="ActorCreation" Send="SetScale 1.44000"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.50000"/>
