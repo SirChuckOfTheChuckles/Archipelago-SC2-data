@@ -7299,13 +7299,6 @@
         <Volume value="-4.400000,-4.400000"/>
         <EditorCategories value="Race:Protoss"/>
     </CSound>
-    <CSound id="AP_PhasePrismRecast" parent="Spell">
-        <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\Artanis_RepositioningMatrix_Pull01.wav" FacialGroup=""/>
-        <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\Artanis_RepositioningMatrix_Pull02.wav" FacialGroup=""/>
-        <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\Artanis_RepositioningMatrix_Pull03.wav" FacialGroup=""/>
-        <Volume value="-9.000000,-9.000000"/>
-        <EditorCategories value="Race:Protoss"/>
-    </CSound>
     <CSound id="AP_BladeWaltz" parent="Spell">
         <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\Artanis_PowerStrike_Whoosh1_01.wav" FacialGroup=""/>
         <AssetArray File="AP\Assets\Sounds\Protoss\ArtanisVoid\Artanis_PowerStrike_Whoosh1_02.wav" FacialGroup=""/>
@@ -8554,6 +8547,14 @@
         <AssetArray File="Assets\Sounds\Colossus_Explode_Small_03.wav" FacialGroup=""/>
         <AssetArray File="Assets\Sounds\Colossus_Explode_Small_04.wav" FacialGroup=""/>
         <Pitch value="0.000000,0.500000"/>
+    </CSound>
+    <CSound id="AP_CleansingSmiteFireLoop" parent="Spell">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\Protoss_FireLarge_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireLarge_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Protoss_FireLarge_03.wav" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Volume value="-7.200000,-7.200000"/>
     </CSound>
     <CSound id="AP_StrengthInUnityCallout" parent="Combat">
         <EditorCategories value="Race:Protoss"/>

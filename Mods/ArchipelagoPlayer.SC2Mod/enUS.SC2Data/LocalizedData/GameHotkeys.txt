@@ -388,7 +388,6 @@ Button/Hotkey/AP_ParasiticBomb=R
 Button/Hotkey/AP_PerditionTurret=P
 Button/Hotkey/AP_PersonalDefensiveMatrix=R
 Button/Hotkey/AP_PhasePrism=R
-Button/Hotkey/AP_PhasePrismRecast=R
 Button/Hotkey/AP_PhasingMode=E
 Button/Hotkey/AP_PhoenixAiurGravitonBeam=G
 Button/Hotkey/AP_PhoenixHallucination=X

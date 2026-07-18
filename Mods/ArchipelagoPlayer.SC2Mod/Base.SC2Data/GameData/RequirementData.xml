@@ -1407,9 +1407,6 @@
     <CRequirement id="AP_HaveArtanisAirAttack">
         <NodeArray index="Show" Link="AP_CountUpgradeArtanisAirAttackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HavePhasePrismRecastBehavior">
-        <NodeArray index="Show" Link="AP_CountBehaviorPhasePrismRecastCompleteOnlyAtUnit"/>
-    </CRequirement>
     <CRequirement id="AP_HaveSuperStimpackNova">
         <NodeArray index="Show" Link="AP_CountUpgradeSuperStimpackNovaCompleteOnly"/>
     </CRequirement>
@@ -2618,6 +2615,9 @@
     </CRequirement>
     <CRequirement id="AP_CanInstallAstralRestoration">
         <NodeArray index="Show" Link="AP_AndCanInstallAstralRestorationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveAstralRestorationKnown">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAstralRestorationCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_AstralRestorationCooldown">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>

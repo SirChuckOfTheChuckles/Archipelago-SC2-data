@@ -5192,75 +5192,6 @@ void lib15EF4C78_gt_TechReactorswaptoAP_Starport_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Tassadar's Teachings Effects
-//--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_TassadarsTeachingsEffects_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitHasBehavior2(EventPlayerEffectUsedUnit(c_effectUnitCaster), "AP_ArtanisAiurAspect") == true))) {
-            return false;
-        }
-
-        if (!((TechTreeUpgradeCount(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassive", c_techCountQueuedOrBetter) == 1))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    PlayerCreateEffectUnit(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassiveDamage", EventPlayerEffectUsedUnitImpact());
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_TassadarsTeachingsEffects_Init () {
-    lib15EF4C78_gt_TassadarsTeachingsEffects = TriggerCreate("lib15EF4C78_gt_TassadarsTeachingsEffects_Func");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisLightningDashDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_SuppressionPulseDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_VoltaicShockDamage");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_VoltaicShockDamageAir");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisBlades");
-    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_TassadarsTeachingsEffects, lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAirAttackDamage");
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Tassadar's Teachings Abilities Self
-//--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_TassadarsTeachingsAbilities_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Conditions
-    if (testConds) {
-        if (!((UnitHasBehavior2(EventUnit(), "AP_ArtanisAiurAspect") == true))) {
-            return false;
-        }
-
-        if (!((TechTreeUpgradeCount(lib15EF4C78_gf_AP_GetPlayerId(), "AP_ArtanisAiurAspectPassive", c_techCountQueuedOrBetter) == 1))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_TassadarsTeachingsAbilities_Init () {
-    lib15EF4C78_gt_TassadarsTeachingsAbilities = TriggerCreate("lib15EF4C78_gt_TassadarsTeachingsAbilities_Func");
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTeachingsAbilities, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTeachingsAbilities, null, AbilityCommand("AP_StrengthInUnity", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTeachingsAbilities, null, AbilityCommand("AP_PhasePrismSwap", 0), c_unitAbilStageExecute, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTeachingsAbilities, null, AbilityCommand("AP_PhasePrism", 0), c_unitAbilStageComplete, false);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Shadow Slice Height
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_ShadowSliceHeight_Func (bool testConds, bool runActions) {
@@ -5344,37 +5275,6 @@ void lib15EF4C78_gt_PhasePrismAcquireTarget_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: PhasePrismSwap
-//--------------------------------------------------------------------------------------------------
-bool lib15EF4C78_gt_PhasePrismSwap_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    point lv_artanisPosition;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_artanisPosition = UnitGetPosition(EventUnit());
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((DistanceBetweenPoints(UnitGetPosition(EventUnit()), UnitGetPosition(lib15EF4C78_gv_phasePrismTarget)) <= 40.0)) {
-        UnitSetPosition(EventUnit(), UnitGetPosition(lib15EF4C78_gv_phasePrismTarget), true);
-        UnitSetPosition(lib15EF4C78_gv_phasePrismTarget, lv_artanisPosition, true);
-        UnitBehaviorAdd(EventUnit(), "AP_PhasePrismDelay", EventUnit(), 1);
-    }
-
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void lib15EF4C78_gt_PhasePrismSwap_Init () {
-    lib15EF4C78_gt_PhasePrismSwap = TriggerCreate("lib15EF4C78_gt_PhasePrismSwap_Func");
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_PhasePrismSwap, null, AbilityCommand("AP_PhasePrismSwap", 0), c_abilEffectStageCast, false);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Shield Overload
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Func (bool testConds, bool runActions) {
@@ -5452,7 +5352,6 @@ void lib15EF4C78_gt_RaszagalsRhythmBuff_Init () {
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_Exterminate", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_VoltaicShock", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_PhasePrism", 0), c_abilEffectStageCast, false);
-    TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_PhasePrismSwap", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_SuppressionPulse", 0), c_abilEffectStageCast, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_RaszagalsRhythmBuff, null, AbilityCommand("AP_ArtanisLightningDash", 0), c_abilEffectStageCast, false);
@@ -10235,12 +10134,9 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_TechReactorswaptoAP_Barracks_Init();
     lib15EF4C78_gt_TechReactorswaptoAP_Factory_Init();
     lib15EF4C78_gt_TechReactorswaptoAP_Starport_Init();
-    lib15EF4C78_gt_TassadarsTeachingsEffects_Init();
-    lib15EF4C78_gt_TassadarsTeachingsAbilities_Init();
     lib15EF4C78_gt_ShadowSliceHeight_Init();
     lib15EF4C78_gt_ShadowSliceReset_Init();
     lib15EF4C78_gt_PhasePrismAcquireTarget_Init();
-    lib15EF4C78_gt_PhasePrismSwap_Init();
     lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Init();
     lib15EF4C78_gt_RaszagalsRhythmBuff_Init();
     lib15EF4C78_gt_ArtanisBladeWaltz_Init();

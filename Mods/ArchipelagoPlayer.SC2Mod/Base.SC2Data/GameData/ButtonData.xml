@@ -39,8 +39,8 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_CleansingSmitePassive">
-        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_ExterminatePassive">
@@ -2622,14 +2622,9 @@
         <AlertIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_PhasePrismRecast">
-        <Icon value="AP\Assets\Textures\btn-ability-phase-prism-recast.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-ability-phase-prism-recast.dds"/>
-        <EditorCategories value="Race:Protoss"/>
-    </CButton>
     <CButton id="AP_CleansingSmite">
-        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_VoltaicShock">
@@ -3098,7 +3093,7 @@
     </CButton>
     <CButton id="AP_MothershipMassRecallInstall" parent="AP_MothershipCoreMassRecall">
         <Hotkey value="Button/Hotkey/AP_MothershipUtility3"/>
-        <Tooltip value="Button/Tooltip/AP_MothershipNexusRecallInstall"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipMassRecallInstall"/>
         <Name value="Button/Name/AP_MothershipMassRecallInstall"/>
     </CButton>
     <CButton id="AP_InterceptorMothershipTaldarim">
@@ -3198,7 +3193,7 @@
         <Icon value="Assets\Textures\btn-ability-protoss-feedbackaoe-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-feedbackaoe-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TooltipAppender Validator="AP_CanInstallAiurMothershipFeedback" Text="Button/Tooltip/AP_AppendAiurMothershipFeedback"/>
+        <TooltipAppender Validator="AP_ShowAiurMothershipFeedbackAstralRestorationAppend" Text="Button/Tooltip/AP_AppendAiurMothershipFeedback"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary3"/>
     </CButton>
     <CButton id="AP_AiurMothershipFeedbackInstall" parent="AP_AiurMothershipFeedback">

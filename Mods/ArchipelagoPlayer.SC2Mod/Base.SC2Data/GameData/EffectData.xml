@@ -4650,6 +4650,7 @@
     <CEffectSet id="AP_RaszagalsRhythmConsumeSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_RaszagalsRhythmEnergyRestore"/>
+        <EffectArray value="AP_RaszagalsRhythmCDRefund"/>
         <EffectArray value="AP_RaszagalsRhythmRB"/>
     </CEffectSet>
     <CEffectRemoveBehavior id="AP_RaszagalsRhythmRB">
@@ -4661,6 +4662,21 @@
         <ValidatorArray value="AP_HasRaszagalsRhythm"/>
         <ImpactUnit Value="Caster"/>
         <VitalArray index="Energy" Change="10"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_RaszagalsRhythmCDRefund">
+        <ValidatorArray value="AP_HasRaszagalsRhythmAndNerazimAspect"/>
+        <ImpactUnit Value="Caster"/>
+        <Cost Abil="AP_ArtanisCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_ShadowSlice,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_ArtanisLightningDash,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_CleansingSmite,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_PhasePrism,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_ArtanisBladeWaltz,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_Exterminate,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_StrengthInUnity,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_ArtanisAstralWind,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_SuppressionPulse,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
+        <Cost Abil="AP_VoltaicShock,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
     </CEffectModifyUnit>
     <CEffectApplyBehavior id="AP_ArtanisAiurAspect"/>
     <CEffectApplyBehavior id="AP_ArtanisNerazimAspect"/>
@@ -4693,6 +4709,7 @@
     </CEffectRemoveBehavior>
     <CEffectRemoveBehavior id="AP_CleansingSmiteRB">
         <EditorCategories value="Race:Protoss"/>
+        <WhichUnit Value="Caster"/>
         <BehaviorLink value="AP_CleansingSmite"/>
     </CEffectRemoveBehavior>
     <CEffectSet id="AP_ArtanisAspectClearAll">
@@ -4798,6 +4815,7 @@
         <AreaArray MaxCount="1" Radius="5" Effect="AP_ShadowSliceImpactSet"/>
     </CEffectEnumArea>
     <CEffectDamage id="AP_ShadowSliceDamage">
+        <ResponseFlags index="Flee" value="1"/>
         <Amount value="180"/>
         <Death value="Eviscerate"/>
     </CEffectDamage>
@@ -4932,13 +4950,13 @@
     <CEffectCreatePersistent id="AP_SuppressionPulseCreatePersistent">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="SourceUnit"/>
-        <PeriodCount value="5"/>
+        <PeriodCount value="4"/>
         <PeriodicEffectArray value="AP_SuppressionPulseSearchArea"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
     <CEffectEnumArea id="AP_SuppressionPulseSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <AreaArray Radius="3" RadiusBonus="0.6" Effect="AP_SuppressionPulseWaveHitSet"/>
+        <AreaArray Radius="1.2" RadiusBonus="1.2" Effect="AP_SuppressionPulseWaveHitSet"/>
         <SearchFilters value="-;Player,Ally,Neutral,Structure,Stasis,Hidden,Invulnerable,Unstoppable"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_VoltaicShock"/>
@@ -4963,10 +4981,6 @@
         <Kind value="Spell"/>
         <Amount value="20"/>
     </CEffectDamage>
-    <CEffectSet id="AP_PhasePrismDelaySet">
-        <EditorCategories value="Race:Protoss"/>
-        <EffectArray value="AP_PhasePrismRecastRB"/>
-    </CEffectSet>
     <CEffectSet id="AP_ArtanisResurgenceSet">
         <EffectArray value="AP_ArtanisResurgenceInvulnerableAB"/>
         <EffectArray value="AP_ArtanisResurgenceDisableAB"/>
@@ -5350,35 +5364,20 @@
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
     </CEffectApplyBehavior>
-    <CEffectModifyUnit id="AP_PhasePrismCooldown">
-        <EditorCategories value="Race:Terran"/>
-        <ImpactUnit Value="Caster"/>
-        <Cost Abil="AP_PhasePrismSwap,Execute" CooldownOperation="Max" CooldownTimeUse="0.5"/>
-    </CEffectModifyUnit>
     <CEffectSet id="AP_PhasePrismSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_PhasePrismAB"/>
-        <EffectArray value="AP_PhasePrismDamageReductionAB"/>
+        <EffectArray value="AP_PhasePrismTemporaryShieldsAB"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PhasePrismAB">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_PhasePrismStun"/>
     </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_PhasePrismRecastCasterAB">
+    <CEffectApplyBehavior id="AP_PhasePrismTemporaryShieldsAB">
         <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Caster"/>
-        <Behavior value="AP_PhasePrismRecast"/>
+        <Behavior value="AP_PhasePrismTemporaryShields"/>
     </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_PhasePrismDamageReductionAB">
-        <EditorCategories value="Race:Protoss"/>
-        <WhichUnit Value="Caster"/>
-        <Behavior value="AP_PhasePrismDamageReduction"/>
-    </CEffectApplyBehavior>
-    <CEffectRemoveBehavior id="AP_PhasePrismRecastRB">
-        <EditorCategories value="Race:Protoss"/>
-        <WhichUnit Value="Caster"/>
-        <BehaviorLink value="AP_PhasePrismRecast"/>
-    </CEffectRemoveBehavior>
     <CEffectEnumArea id="AP_PhasePrismSearch">
         <EditorCategories value="Race:Protoss"/>
         <SearchFilters value="-;Self,Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable,Heroic,Structure"/>
@@ -5480,7 +5479,7 @@
     </CEffectEnumArea>
     <CEffectDamage id="AP_ArtanisPurifierSolarBombardmentDamage">
         <EditorCategories value="Race:Protoss"/>
-        <Amount value="25"/>
+        <Amount value="20"/>
         <ResponseFlags index="Flee" value="1"/>
     </CEffectDamage>
     <CEffectSet id="AP_AcidSalivaSet">
@@ -11340,7 +11339,9 @@
     <CEffectDamage id="AP_ArtanisAiurAspectPassiveDamage">
         <EditorCategories value="Race:Protoss"/>
         <Visibility value="Hidden"/>
-        <Amount value="10"/>
+        <Kind value="Spell"/>
+        <Amount value="12"/>
+        <Death value="Electrocute"/>
     </CEffectDamage>
     <CEffectEnumArea id="AP_ArtanisAiurAspectPassiveSearch">
         <EditorCategories value="Race:Protoss"/>
@@ -13067,7 +13068,7 @@
         <AreaArray>
             <Arc value="360"/>
             <MaxCount value="3"/>
-            <Radius value="7.5"/>
+            <Radius value="7.3"/>
             <Effect value="AP_PurifierMothershipBeamSet"/>
         </AreaArray>
         <SearchFlags index="CenterAtLaunch" value="1"/>
@@ -13076,17 +13077,17 @@
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponSearch1BonusRange" parent="AP_PurifierMothershipWeaponSearch">
         <AreaArray index="0">
-            <Radius value="8.5"/>
+            <Radius value="8.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponSearch2BonusRange" parent="AP_PurifierMothershipWeaponSearch">
         <AreaArray index="0">
-            <Radius value="9.5"/>
+            <Radius value="9.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponSearch3BonusRange" parent="AP_PurifierMothershipWeaponSearch">
         <AreaArray index="0">
-            <Radius value="10.5"/>
+            <Radius value="10.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch" parent="AP_PurifierMothershipWeaponSearch">
@@ -13096,17 +13097,17 @@
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch1BonusRange" parent="AP_PurifierMothershipWeaponOverloadSearch">
         <AreaArray index="0">
-            <Radius value="8.5"/>
+            <Radius value="8.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch2BonusRange" parent="AP_PurifierMothershipWeaponOverloadSearch">
         <AreaArray index="0">
-            <Radius value="9.5"/>
+            <Radius value="9.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_PurifierMothershipWeaponOverloadSearch3BonusRange" parent="AP_PurifierMothershipWeaponOverloadSearch">
         <AreaArray index="0">
-            <Radius value="10.5"/>
+            <Radius value="10.3"/>
         </AreaArray>
     </CEffectEnumArea>
     <CEffectSet id="AP_RevitalizeShieldsSet">
@@ -13355,8 +13356,8 @@
     </CEffectLaunchMissile>
     <CEffectModifyUnit id="AP_TaldarimMothershipDeathHealMU">
         <EditorCategories value=""/>
-        <VitalArray index="Life" Change="15"/>
-        <VitalArray index="Shields" Change="30"/>
+        <VitalArray index="Life" Change="20"/>
+        <VitalArray index="Shields" Change="40"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>
     <CEffectLaunchMissile id="AP_TaldarimMothershipDeathHealTaldarimLM">
@@ -13367,8 +13368,8 @@
     </CEffectLaunchMissile>
     <CEffectModifyUnit id="AP_TaldarimMothershipDeathHealTaldarimMU">
         <EditorCategories value=""/>
-        <VitalArray index="Life" Change="30"/>
-        <VitalArray index="Shields" Change="30"/>
+        <VitalArray index="Life" Change="40"/>
+        <VitalArray index="Shields" Change="40"/>
         <VitalArray index="Energy" Change="1"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>

@@ -3577,6 +3577,15 @@
         <Find value="1"/>
         <Value value="AP_CanInstallAiurMothershipFeedback"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveAstralRestorationKnown">
+        <Find value="1"/>
+        <Value value="AP_HaveAstralRestorationKnown"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_ShowAiurMothershipFeedbackAstralRestorationAppend">
+        <Type value="And"/>
+        <CombineArray value="AP_CanInstallAiurMothershipFeedback"/>
+        <CombineArray value="AP_HaveAstralRestorationKnown"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="AP_HaveAiurMothershipFeedback">
         <Find value="1"/>
         <Value value="AP_HaveAiurMothershipFeedback"/>
@@ -4567,6 +4576,11 @@
         <Value value="1"/>
         <Behavior value="AP_RaszagalsRhythm"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_HasRaszagalsRhythmAndNerazimAspect">
+        <Type value="And"/>
+        <CombineArray value="AP_HasRaszagalsRhythm"/>
+        <CombineArray value="AP_HasArtanisNerazimAspectBehavior"/>
+    </CValidatorCombine>
     <CValidatorUnitOrderQueue id="AP_SentryIsRepairing">
         <AbilLink value="AP_VoidSentryShieldRepairDouble"/>
     </CValidatorUnitOrderQueue>

@@ -2151,7 +2151,13 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_ArtanisAiurAspect" parent="AP_ArtanisAspectBuff"/>
+    <CBehaviorBuff id="AP_ArtanisAiurAspect" parent="AP_ArtanisAspectBuff">
+        <DamageResponse Handled="AP_ArtanisAiurAspectPassiveDamage" Location="Attacker">
+            <ExcludeEffectArray value="AP_ArtanisAiurAspectPassiveDamage"/>
+            <ValidatorArray value="AP_HasArtanisAiurAspectBehaviorAndPassive"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisNerazimAspect" parent="AP_ArtanisAspectBuff"/>
     <CBehaviorBuff id="AP_ArtanisPurifierAspect" parent="AP_ArtanisAspectBuff"/>
     <CBehaviorBuff id="AP_ArtanisTaldarimAspect" parent="AP_ArtanisAspectBuff"/>
@@ -2190,7 +2196,7 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_CleansingSmite">
         <Alignment value="Positive"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <InfoIcon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisplayDuration index="Self" value="1"/>
         <Duration value="5"/>
@@ -2399,12 +2405,6 @@
         </Modification>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-resurgence.dds"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_PhasePrismRecast">
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism-recast.dds"/>
-        <DisplayDuration index="Self" value="1"/>
-        <Duration value="4.75"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="AP_PhasePrismDelay">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -2412,13 +2412,15 @@
         <ExpireEffect value="AP_PhasePrismSearch"/>
         <Duration value="0.0625"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_PhasePrismDamageReduction">
+    <CBehaviorBuff id="AP_PhasePrismTemporaryShields">
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <DisplayDuration index="Self" value="1"/>
+        <RemoveValidatorArray value="hasShields"/>
         <Duration value="5"/>
-        <DamageResponse Chance="1" ModifyFraction="0.6"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="250"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisBladeWaltzDamaged">
         <InfoFlags index="Hidden" value="1"/>
@@ -3499,7 +3501,7 @@
         <InfoIcon value="Assets\Textures\btn-ability-protoss-veilofshadowsvorazun.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Requirements value="AP_HaveArtanisNerazimAspectSelectedPassive"/>
-        <Duration value="5"/>
+        <Duration value="10"/>
         <Modification>
             <DamageDealtUnscaled index="Melee" value="25"/>
             <DamageDealtUnscaled index="Ranged" value="25"/>

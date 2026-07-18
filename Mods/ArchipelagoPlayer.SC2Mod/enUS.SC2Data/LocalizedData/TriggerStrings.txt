@@ -733,7 +733,6 @@ Trigger/Name/lib_15EF4C78_F3047808=CM_Mengsk_RemoveVeteranUnit
 Trigger/Name/lib_15EF4C78_F469511D=Shield Overload
 Trigger/Name/lib_15EF4C78_F4AE9CC2=CU_HeroMouseHoverText
 Trigger/Name/lib_15EF4C78_F4EC915E=AP_Player_onKerriganRevived
-Trigger/Name/lib_15EF4C78_F5ABCAB4=PhasePrismSwap
 Trigger/Name/lib_15EF4C78_F62F3836=Tech Reactor swap to AP_Barracks
 Trigger/Name/lib_15EF4C78_F6978327=AP_Player_NightHawkResonatingFeedbackInterferenceEffect
 Trigger/Name/lib_15EF4C78_F891874A=MedivacShockDivisionPickup

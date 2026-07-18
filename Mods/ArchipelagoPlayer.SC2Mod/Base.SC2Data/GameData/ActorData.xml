@@ -2735,6 +2735,8 @@
         <Inherits index="Visibility" value="1"/>
         <On Terms="Effect.AP_MedicSCBWRestoration@Set.Start; At Target" Send="Create"/>
         <On Terms="Effect.AP_AiurMothershipShieldRestore.Start; At Target" Send="Create"/>
+        <On Terms="Effect.AP_AiurMothershipShieldRestore.Start; At Target" Send="SetScale 0.50000"/>
+        <On Terms="Effect.AP_AiurMothershipShieldRestore.Start; At Target" Send="SetOpacity 0.50000"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead" HoldRotation="1"/>
         <Model value="AP_MedicSCBWRestoration@Impact"/>
@@ -18338,6 +18340,8 @@
         <Sound value="Sentry_GuardianShieldLaunch"/>
     </CActorSound>
     <CActorSound id="AP_GuardianShieldSoundLoop" parent="SoundContinuous">
+        <On Terms="Behavior.AP_OverloadWeaponSystems.On" Send="Create"/>
+        <On Terms="Behavior.AP_OverloadWeaponSystems.Off" Send="Destroy"/>
         <Sound value="Sentry_GuardianShieldLoop"/>
     </CActorSound>
     <CActorSound id="AP_GuardianShieldSoundDeath" parent="SoundOneShot">
@@ -22602,6 +22606,14 @@
         <On Terms="Behavior.AP_AstralRestorationCaster.Off" Send="Destroy"/>
         <On Terms="ActorCreation" Send="$Birth PlayForever,ForceLooping"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.450000"/>
+        <On Terms="ActorCreation" Send="TimerSet 2.000000 AP_AstralRestorationSound2"/>
+        <On Terms="ActorCreation" Send="TimerSet 4.000000 AP_AstralRestorationSound4"/>
+        <On Terms="ActorCreation" Send="TimerSet 6.000000 AP_AstralRestorationSound6"/>
+        <On Terms="ActorCreation" Send="TimerSet 8.000000 AP_AstralRestorationSound8"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound2" Send="Create AP_ArtanisAstralWindSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound4" Send="Create AP_ArtanisAstralWindSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound6" Send="Create AP_ArtanisAstralWindSound"/>
+        <On Terms="TimerExpired; TimerName AP_AstralRestorationSound8" Send="Create AP_ArtanisAstralWindSound"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="AP_AstralRestoration"/>
         <Host Subject="_Selectable"/>
@@ -27861,6 +27873,8 @@
         <On Terms="Behavior.AP_RavenScramblerMissile.Off" Send="Destroy"/>
         <On Terms="Behavior.AP_RavenScramblerMissileCarrier.On" Send="Create"/>
         <On Terms="Behavior.AP_RavenScramblerMissileCarrier.Off" Send="Destroy"/>
+        <On Terms="Behavior.AP_OverloadWeaponSystemsStun.On" Send="Create"/>
+        <On Terms="Behavior.AP_OverloadWeaponSystemsStun.Off" Send="Destroy"/>
         <Sound value="AP_Raven_ScramblerMissileLoop"/>
     </CActorSound>
     <CActorAction id="AP_PointDefenseDroneRelease" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="AP_PointDefenseDroneReleaseLaunchMissile">
@@ -38462,11 +38476,6 @@
         <On Terms="Abil.AP_PhasePrism.SourceCastStart" Send="Create"/>
         <Host Subject="_Selectable"/>
     </CActorSound>
-    <CActorSound id="AP_PhasePrismRecastSound" parent="SoundOneShot">
-        <Sound value="AP_PhasePrismRecast"/>
-        <On Terms="Abil.AP_PhasePrismSwap.SourceCastStart" Send="Create"/>
-        <Host Subject="_Selectable"/>
-    </CActorSound>
     <CActorSiteOpLocalOffset id="AP_PhasePrismModelOffset">
         <LocalOffset value="0.000000,0.000000,0.500000"/>
     </CActorSiteOpLocalOffset>
@@ -38487,6 +38496,8 @@
         <On Terms="Behavior.AP_PhasePrismStun.Off" Send="Destroy"/>
     </CActorSimple>
     <CActorModel id="AP_PhasePrismImpact" parent="ModelAddition">
+        <On Terms="Behavior.AP_PhasePrismStun.On" Send="Create"/>
+        <On Terms="Behavior.AP_PhasePrismStun.Off" Send="Destroy"/>
         <CreepHeightClass value="Small"/>
         <HostSiteOps Ops="SOpAttachOrigin AP_PhasePrismModelOffset"/>
         <AutoScaleFactor value="1.000000"/>
@@ -38607,7 +38618,7 @@
         <On Terms="Behavior.AP_CleansingSmite.On" Send="Create"/>
         <On Terms="Behavior.AP_CleansingSmite.Off" Send="AnimBracketStop BSD"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="SetScale 1.40000"/>
+        <On Terms="ActorCreation" Send="SetScale 1.44000"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.50000"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter AP_CleansingSmiteAuraOffset"/>
@@ -38622,6 +38633,15 @@
         <On Terms="Behavior.AP_CleansingSmite.Off" Send="Destroy"/>
         <Model value="AP_ArtanisHeroCleansingSmiteGlaze"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModelMaterial>
+    <CActorModelMaterial id="AP_ArtanisPhasePrismTemporaryShieldsGlaze" parent="GlazeParent">
+        <On Terms="Behavior.AP_PhasePrismTemporaryShields.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
+        <On Terms="UnitBirth" Send="ModelMaterialApplyTo ::Main"/>
+        <On Terms="Behavior.AP_PhasePrismTemporaryShields.Off" Send="ModelMaterialRemoveFrom ::Main"/>
+        <On Terms="Behavior.AP_PhasePrismTemporaryShields.Off" Send="Destroy"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <Model value="AP_GlazeSuperShield"/>
     </CActorModelMaterial>
     <CActorModel id="AP_ArtanisAiurAspectPassiveLightningBolt" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_ArtanisAiurAspectPassiveDamage.Start; At Target" Send="Create"/>
@@ -38647,6 +38667,13 @@
         <Range value="2.3100"/>
     </CActorRange>
     <CActorSound id="AP_CleansingSmiteSound" parent="SoundOneShot">
+        <Host Subject="_Selectable"/>
+    </CActorSound>
+    <CActorSound id="AP_CleansingSmiteFireLoopSound" parent="SoundContinuous">
+        <On Terms="Behavior.AP_CleansingSmite.On" Send="Create"/>
+        <On Terms="Behavior.AP_CleansingSmite.Off" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Sound value="AP_CleansingSmiteFireLoop"/>
         <Host Subject="_Selectable"/>
     </CActorSound>
     <CActorSite id="AP_ArtanisMeleeVoidAttackImpactSite" parent="GenericAttackImpactSite"/>

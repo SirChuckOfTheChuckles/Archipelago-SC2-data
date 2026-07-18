@@ -4708,21 +4708,13 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Effect index="0" value="AP_PhasePrismSet"/>
         <Cost>
-            <Cooldown TimeUse="11"/>
+            <Cooldown TimeUse="15"/>
         </Cost>
         <Range value="7"/>
         <TargetFilters value="Visible;Self,Player,Ally,Neutral,Structure,Heroic,Missile,Stasis,Dead,Invulnerable"/>
         <CursorEffect value="AP_PhasePrismSearch"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_PhasePrism" Requirements="AP_HaveArtanisPhasePrism"/>
     </CAbilEffectTarget>
-    <CAbilEffectInstant id="AP_PhasePrismSwap">
-        <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
-        <Effect index="0" value="AP_PhasePrismDelaySet"/>
-        <Cost>
-            <Cooldown TimeUse="1"/>
-        </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_PhasePrismRecast" Requirements="AP_HavePhasePrismRecastBehavior"/>
-    </CAbilEffectInstant>
     <CAbilEffectTarget id="AP_ArtanisLightningDash">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="AP_ArtanisLightningDash"/>

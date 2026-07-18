@@ -2778,10 +2778,6 @@
         <Count Link="AP_ArtanisPhasePrism" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountBehavior id="AP_CountBehaviorPhasePrismRecastCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_PhasePrismRecast" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="AP_CountBehaviorEnableArtanisAirAttackSwapCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_EnableArtanisAirAttackSwap" State="CompleteOnlyAtUnit"/>
