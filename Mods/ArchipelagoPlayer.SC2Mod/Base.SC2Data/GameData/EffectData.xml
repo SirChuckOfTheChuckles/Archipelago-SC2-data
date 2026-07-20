@@ -3877,7 +3877,6 @@
     <CEffectSet id="AP_BansheeMengskShockwaveSet">
         <EditorCategories value="Race:Terran"/>
         <ValidatorArray value="AP_HaveBansheeMengskShockwaveArtillery"/>
-        <ValidatorArray value="AP_CasterIsBansheeMengsk"/>
         <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank0"/>
         <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank1"/>
         <EffectArray value="AP_BansheeMengskShockwaveCreatePersistentRank2"/>

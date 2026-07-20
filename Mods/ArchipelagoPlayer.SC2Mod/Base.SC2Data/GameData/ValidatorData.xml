@@ -222,10 +222,6 @@
     <CValidatorUnitType id="AP_IsAPBanshee">
         <Value value="AP_Banshee"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="AP_CasterIsBansheeMengsk">
-        <WhichUnit Value="Caster"/>
-        <Value value="AP_BansheeMengsk"/>
-    </CValidatorUnitType>
     <CValidatorPlayerRequirement id="AP_HaveBansheeMengskPreyseekerMissiles">
         <Find value="1"/>
         <Value value="AP_HaveBansheeMengskPreyseekerMissiles"/>

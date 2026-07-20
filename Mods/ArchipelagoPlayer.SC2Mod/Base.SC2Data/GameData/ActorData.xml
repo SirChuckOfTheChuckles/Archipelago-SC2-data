@@ -12939,9 +12939,9 @@
         <On Terms="UnitDeath" Send="Destroy"/>
         <Model value="Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Targeting"/>
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
-        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>   <!-- Banshee = buff's caster -->
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
         <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
-        <HostImpact Subject="_Unit" Actor="Find"/>                   <!-- buff holder = the target -->
+        <HostImpact Subject="_Unit" Actor="Find"/>
         <HostImpactSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorBeamSimple>
