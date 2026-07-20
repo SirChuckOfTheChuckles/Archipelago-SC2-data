@@ -9969,8 +9969,8 @@
             <StateFlags index="UnitAttrOnHeroic" value="1"/>
             <LifeArmorBonus value="1"/>
             <VitalMaxArray index="Life" value="25"/>
-                <WeaponRange value="2"/>
-                <WeaponScanBonus value="2"/>
+                <WeaponRange value="1"/>
+                <WeaponScanBonus value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_WarpRelocating">

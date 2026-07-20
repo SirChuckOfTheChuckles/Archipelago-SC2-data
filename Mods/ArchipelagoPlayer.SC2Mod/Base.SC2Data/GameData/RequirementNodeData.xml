@@ -7395,11 +7395,6 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementLT>
-    <CRequirementAnd id="AP_UseMarauderMengskAddictiveSupplementsCharges">
-        <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
-        <OperandArray value="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
-        <OperandArray value="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
-    </CRequirementAnd>
     <CRequirementAnd id="AP_ShowMarauderMengskAddictiveSupplementsCharges">
         <OperandArray value="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
         <OperandArray value="AP_LTCountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>

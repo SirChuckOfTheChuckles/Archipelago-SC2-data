@@ -214,6 +214,8 @@
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.33"/>
         <RechargeVitalRate value="9"/>
+        <InitialEffect value="AP_MedivacHealApplyTargetBehavior"/>
+        <FinalEffect value="AP_HealRemoveTargetBehavior"/>
     </CEffectCreateHealer>
     <CEffectCreateHealer id="AP_MercMedicHeal" parent="AP_heal">
         <DrainVitalCostFactor value="0.25"/>
@@ -24035,6 +24037,7 @@
         <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
     <CEffectCreateHealer id="AP_MedicMengskHealL3">
+        <ValidatorArray value="noMarkers"/>
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="HiddenCompareAB"/>
         <ValidatorArray value="HiddenCompareBA"/>
@@ -24043,9 +24046,6 @@
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.25"/>
         <RechargeVitalRate value="21"/>
-        <Marker Link="Effect/AP_MedicMengskHeal">
-            <MatchFlags index="Link" value="1"/>
-        </Marker>
         <InitialEffect value="AP_MedicMengskHealStartSet"/>
         <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
@@ -24170,7 +24170,7 @@
         <RechargeVitalRate value="21"/>
         <Flags index="Channeled" value="0"/>
         <PeriodCount value="4"/>
-        <Marker Link="Effect/AP_MedicMengskHeal">
+        <Marker Link="Abil/MedivacHeal">
             <MatchFlags index="Link" value="1"/>
         </Marker>
     </CEffectCreateHealer>

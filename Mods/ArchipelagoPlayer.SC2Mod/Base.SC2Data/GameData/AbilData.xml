@@ -15073,7 +15073,7 @@
         <AutoCastRange value="6"/>
         <AutoCastValidatorArray value="healCasterMinEnergy"/>
         <AutoCastValidatorArray value="NotWarpingIn"/>
-        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <Marker Link="Abil/MedivacHeal"/>
         <AINotifyEffect value="MedivacHeal"/>
         <UseMarkerArray index="Approach" value="0"/>
         <UseMarkerArray index="Prep" value="0"/>
@@ -15108,7 +15108,7 @@
         <AutoCastValidatorArray value="healCasterMinEnergy"/>
         <AutoCastValidatorArray value="NotWarpingIn"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
-        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <Marker Link="Abil/MedivacHeal"/>
         <AINotifyEffect value="MedivacHeal"/>
         <UseMarkerArray index="Approach" value="0"/>
         <UseMarkerArray index="Prep" value="0"/>
@@ -15143,7 +15143,7 @@
         <AutoCastValidatorArray value="healCasterMinEnergy"/>
         <AutoCastValidatorArray value="NotWarpingIn"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
-        <Marker Link="Effect/AP_MedicMengskHeal"/>
+        <Marker Link="Abil/MedivacHeal"/>
         <AINotifyEffect value="MedivacHeal"/>
         <UseMarkerArray index="Approach" value="0"/>
         <UseMarkerArray index="Prep" value="0"/>
@@ -15179,6 +15179,7 @@
         <AutoCastValidatorArray value="healCasterMinEnergy"/>
         <AutoCastValidatorArray value="NotWarpingIn"/>
         <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <Marker Link="Abil/MedivacHeal"/>
         <AINotifyEffect value="MedivacHeal"/>
         <UseMarkerArray index="Approach" value="0"/>
         <UseMarkerArray index="Prep" value="0"/>

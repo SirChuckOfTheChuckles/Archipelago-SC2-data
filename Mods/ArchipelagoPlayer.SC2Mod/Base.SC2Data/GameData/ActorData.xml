@@ -28299,8 +28299,8 @@
     <CActorModel id="AP_MedicMengskPhysicalTherapyDR1Shield" parent="ModelAddition">
         <Inherits index="TintColor" value="0"/>
         <Inherits index="Opacity" value="0"/>
-        <On Terms="Behavior.AP_MedivacHealBeamBusy.On; ValidatePlayer AP_HaveMedicMengskPhysicalTherapy" Send="Create"/>
-        <On Terms="Behavior.AP_MedivacHealBeamBusy.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyDR1.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyDR1.Off" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <AutoScaleFactor value="1.200000"/>
         <Model value="AP_MedicMengskPhysicalTherapyShield"/>
