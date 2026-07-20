@@ -24364,12 +24364,6 @@
         <Behavior value="AP_GuardianPrimordialFury"/>
         <ValidatorArray value="AP_HaveGuardianPrimordialFury"/>
     </CEffectApplyBehavior>
-    <CEffectModifyUnit id="AP_BansheeMengskRecharge">
-        <ValidatorArray value="EnergyNotFull"/>
-        <VitalArray index="Energy">
-            <Change value="50"/>
-        </VitalArray>
-    </CEffectModifyUnit>
     <CEffectCreatePersistent id="AP_SILongboltMissile">
         <EditorCategories value="Race:Terran"/>
         <PeriodCount value="2"/>

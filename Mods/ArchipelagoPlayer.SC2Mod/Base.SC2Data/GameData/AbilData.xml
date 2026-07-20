@@ -15094,20 +15094,21 @@
         <Flags index="Transient" value="1"/>
         <BehaviorArray value="AP_WidowMineStructureOn"/>
     </CAbilBehavior>
-    <CAbilEffectTarget id="AP_BansheeMengskRecharge">
+    <CAbilBehavior id="AP_BansheeMengskBacklashBarrage">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <TargetFilters value="CanHaveEnergy,Visible;Self,Neutral,Enemy,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
-        <Range value="7"/>
+        <CmdButtonArray index="On" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOn" Requirements="AP_HaveBansheeMengskVeterancyLevel4">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Off" DefaultButtonFace="AP_BansheeMengskBacklashBarrageOff" Requirements="">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="Toggle" value="1"/>
+        <Flags index="Transient" value="1"/>
         <Cost>
             <Vital index="Energy" value="50"/>
         </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_BansheeMengskRecharge" Requirements="AP_HaveBansheeMengskVeterancyLevel2"/>
-        <FinishTime value="0.8"/>
-        <UninterruptibleArray index="Finish" value="1"/>
-        <CastIntroTime value="0.2"/>
-        <Flags index="AllowMovement" value="1"/>
-        <Flags index="NoDeceleration" value="1"/>
-    </CAbilEffectTarget>
+        <BehaviorArray value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CAbilBehavior>
     <CAbilEffectTarget id="AP_BansheeMengskBarrageRangeDummy">
         <Range value="8"/>
         <Arc value="60"/>

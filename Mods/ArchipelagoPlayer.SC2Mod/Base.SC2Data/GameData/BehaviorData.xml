@@ -10393,10 +10393,7 @@
     <CBehaviorVeterancy id="AP_MengskVeterancyBansheeMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
-        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0">
-            <Modification>
-            </Modification>
-        </VeterancyLevelArray>
+        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="1800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <LifeArmorBonus value="1"/>

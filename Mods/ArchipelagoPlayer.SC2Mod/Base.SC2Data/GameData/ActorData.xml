@@ -44505,7 +44505,8 @@
         <On Terms="Signal.*.GimbalBirth" Send="Create AP_BansheeMengskBarrageGimbalTurretLookAt"/>
         <On Terms="TurretTarget.AP_BansheeMengsk.Set" Send="TimerKill DelayAnim"/>
         <On Terms="TurretTarget.AP_BansheeMengsk.Set" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtEngage Continue"/>
-        <On Terms="TurretTarget.AP_BansheeMengsk.Clear" Send="TimerSet 1.500000 DelayAnim"/>
+        <On Terms="TurretTarget.AP_BansheeMengsk.Clear" Send="TimerSet 1.375000 DelayAnim"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
         <On Terms="TurretTarget.AP_BansheeMengskBarrage.Set" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtEngage Continue"/>
         <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
         <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtDisengage"/>
