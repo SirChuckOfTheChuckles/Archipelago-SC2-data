@@ -604,6 +604,7 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         }
         lib5BD4895D_gf_AP_Core_Util_FixPlayerMaxSupplyAfterRaceSwap(gv_pLAYER01_USER);
     }
+    libABFE498B_gf_AP_Triggers_startNoBuild(gv_pLAYER01_USER);
     return true;
 }
 
@@ -1551,7 +1552,6 @@ bool gt_StartGameStage1_Func (bool testConds, bool runActions) {
     SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "TTychus04MusicIntro", c_soundtrackCueAny, c_soundtrackIndexAny, false);
     PlayerPauseAllCooldowns(gv_pLAYER01_USER, true);
     PlayerPauseAllCharges(gv_pLAYER01_USER, true);
-    libABFE498B_gf_AP_Triggers_startNoBuild(gv_pLAYER01_USER);
     AICampaignStart(gv_pLAYER03_PROTOSS);
     TriggerEnable(gt_PingDetectorCannon, true);
     Wait(2.0, c_timeGame);
