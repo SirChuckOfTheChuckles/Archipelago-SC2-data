@@ -6650,6 +6650,21 @@
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-siegetank-flyingtankarmament.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
+    <CButton id="AP_SiegeTankMengskSmartServos">
+        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_SiegeTankMengskNapalmRounds">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
+        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_SiegeTankMengskImprovedTankMode">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
     <CButton id="AP_ReaperKineticFoam">
         <Icon value="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -7667,6 +7682,26 @@
     <CButton id="AP_GoliathMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GoliathMengskMoebiusDefenseMatrix">
+        <Icon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GoliathMengskJumpJetsMKII">
+        <Icon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GoliathMengskParalysisInducers">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GoliathMengskAresClassTargetingAddon">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengsk">

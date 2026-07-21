@@ -3964,7 +3964,6 @@
         <Name value="Weapon/Name/AP_GoliathAUpgraded"/>
         <DisplayName value="Weapon/Name/AP_GoliathAUpgraded"/>
         <Options index="Hidden" value="1"/>
-        <Options index="Disabled" value="1"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Options index="LinkedCooldown" value="0"/>
@@ -3976,6 +3975,10 @@
         <Arc value="29.9926"/>
         <Period value="1.5"/>
         <Effect value="AP_GoliathMengskA"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_GoliathMengskADisplayUpgraded" parent="AP_GoliathMengskAUpgraded">
+        <Options index="Hidden" value="0"/>
+        <Effect value=""/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_GoliathMengskG" parent="AP_GoliathG">
         <Name value="Weapon/Name/AP_GoliathMengskG"/>
@@ -3993,7 +3996,6 @@
         <Name value="Weapon/Name/AP_GoliathMengskG"/>
         <DisplayName value="Weapon/Name/AP_GoliathMengskG"/>
         <Options index="Hidden" value="1"/>
-        <Options index="Disabled" value="1"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Options index="LinkedCooldown" value="0"/>
@@ -4004,6 +4006,10 @@
         <Arc value="29.9926"/>
         <Period value="1.5"/>
         <Effect value="AP_GoliathMengskG"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_GoliathMengskGDisplayUpgraded" parent="AP_GoliathMengskGUpgraded">
+        <Options index="Hidden" value="0"/>
+        <Effect value=""/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_LiberatorMengskAGWeapon" parent="AP_LiberatorAGWeapon">
         <DisplayEffect value="AP_LiberatorMengskAGDamage"/>

@@ -1495,9 +1495,6 @@
         <WalkAnimMoveSpeed value="3.6093"/>
         <BarOffset value="75"/>
         <BarWidth value="66"/>
-        <GroupIcon>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath.dds"/>
-        </GroupIcon>
         <GroupSoundArray index="Birth" value="AP_Goliath_Birth"/>
         <GroupSoundArray index="Ready" value="AP_Goliath_Ready"/>
         <GroupSoundArray index="Help" value="AP_Goliath_Help"/>
@@ -1514,9 +1511,6 @@
         <HeroIcon value="Assets\Textures\btn-unit-terran-goliath.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-goliath.dds"/>
-        <Wireframe>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath.dds"/>
-        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_MedicBase" default="1" parent="GenericUnitStandard">
         <Aliases value="_UnitSmall"/>
@@ -3483,6 +3477,12 @@
         <On Terms="Behavior.AP_GoliathCliffJump.LandDown" Send="AnimPlay AP_Jump Unload,End"/>
         <On Terms="Behavior.AP_GoliathCliffJump.LandUpDone" Send="AnimClear AP_Jump 1.000000"/>
         <On Terms="Behavior.AP_GoliathCliffJump.LandDownDone" Send="AnimClear AP_Jump 1.000000"/>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath.dds"/>
+        </Wireframe>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath.dds"/>
+        </GroupIcon>
     </CActorUnit>
     <CActorModel id="AP_GoliathDeath" parent="UnitDeathModel">
         <AcceptedTransfers index="Textures" value="1"/>
@@ -41660,10 +41660,10 @@
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankMengsk" Send="Destroy"/>
     </CActorTurret>
     <CActorSound id="AP_SiegeTankMengskUnsiegeMorphSound" parent="SoundOneShot">
-        <On Terms="AbilMorph.*.Start; MorphTo AP_SiegeTankMengsk; !ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_SiegeTankMengsk; !ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
     </CActorSound>
     <CActorSound id="AP_SiegeTankMengskUnsiegeMorphFastSound" parent="SoundOneShot">
-        <On Terms="AbilMorph.*.Start; MorphTo AP_SiegeTankMengsk; ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_SiegeTankMengsk; ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
     </CActorSound>
     <CActorModel id="AP_SiegeTankMengskSiegedTransitDeath">
         <On Terms="ActorCreation" Send="$Death"/>
@@ -41672,12 +41672,12 @@
         <Model value="TerranLargeUnitDeath"/>
     </CActorModel>
     <CActorSound id="AP_SiegeTankMengskSiegeMorphSound" parent="SoundOneShot">
-        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSieged; !ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
-        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSiegedTransportable; !ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
+        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSieged; !ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
+        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSiegedTransportable; !ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
     </CActorSound>
     <CActorSound id="AP_SiegeTankMengskSiegeMorphFastSound" parent="SoundOneShot">
-        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSieged; ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
-        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSiegedTransportable; ValidateUnit AP_HaveMultiTaskMAFServosSiegeTank" Send="Create"/>
+        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSieged; ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
+        <On Terms="AbilMorph.AP_SiegeModeMengsk.Start; MorphTo AP_SiegeTankMengskSiegedTransportable; ValidateUnit AP_HaveEitherSiegeTankSmartServos" Send="Create"/>
     </CActorSound>
     <CActorUnit id="AP_SiegeTankMengskMorph" parent="GenericUnitBaseMorphTransition" unitName="AP_TankModeMorphModel">
         <Aliases value="_UnitLarge"/>
@@ -41775,6 +41775,30 @@
         <DamageMap index="Shield" Sound="AP_SiegeTankMengskSiegedAttackDamageShield" ModelReaction="AP_SiegeTankMengskSiegedAttackDamageReactionShield"/>
         <DamageModel value="AP_SiegeTankMengskAttackImprovedAoEDamageModel"/>
         <ShieldFlashType value="Full"/>
+    </CActorAction>
+    <CActorModel id="AP_SiegeTankMengskNapalmRounds" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsCP.Start" Send="Create"/>
+        <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsCP.Stop" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.650000"/>
+        <HostSiteOps Ops="SOpShadow" HoldPosition="1"/>
+        <Model value="AP_SiegeTankMengskNapalmRounds"/>
+        <Scale value="2.500000"/>
+    </CActorModel>
+    <CActorModel id="AP_SiegeTankMengskNapalmRoundsImproved" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsImprovedCP.Start" Send="Create"/>
+        <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsImprovedCP.Stop" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.650000"/>
+        <HostSiteOps Ops="SOpShadow" HoldPosition="1"/>
+        <Model value="AP_SiegeTankMengskNapalmRounds"/>
+        <Scale value="3.500000"/>
+    </CActorModel>
+    <CActorAction id="AP_SiegeTankMengskTankModeSplashAttack" parent="GenericAttack" effectAttack="AP_SiegeTankMengskTankModeSplash">
+        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
+        <ImpactMap index="None" Model="AP_SiegeTankMengskTankModeSplashImpact"/>
+    </CActorAction>
+    <CActorAction id="AP_SiegeTankMengskTankModeImprovedSplashAttack" parent="GenericAttack" effectAttack="AP_SiegeTankMengskTankModeImprovedSplash">
+        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
+        <ImpactMap index="None" Model="AP_SiegeTankMengskTankModeSplashImpact"/>
     </CActorAction>
     <CActorAction id="AP_SiegeTankMengskSiegedAttackImprovedAoEDirected" parent="GenericAttack" effectAttack="AP_SiegeTankMengskSiegedDirected">
         <LaunchAssets Model="AP_SiegeTankMengskSiegedAttackDirectedLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
@@ -43721,6 +43745,7 @@
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskGoliath_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <On Terms="Upgrade.AP_GoliathMengskMoebiusDefenseMatrix.Add" Send="Create ShieldImpact"/>
         <On Terms="WeaponStart.AP_GoliathMengskG.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="WeaponStop.AP_GoliathMengskG.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="WeaponStart.AP_GoliathMengskA.AttackStart" Send="AnimBracketStart Spell Spell"/>
@@ -43749,13 +43774,23 @@
         <On Terms="Behavior.AP_GoliathCliffJump.LandDown" Send="AnimPlay AP_Jump Unload,End"/>
         <On Terms="Behavior.AP_GoliathCliffJump.LandUpDone" Send="AnimClear AP_Jump 1.000000"/>
         <On Terms="Behavior.AP_GoliathCliffJump.LandDownDone" Send="AnimClear AP_Jump 1.000000"/>
-        <On Terms="Behavior.AP_GoliathCliffJump.Launch" Send="Create AP_GoliathMengskJumpJet"/>
         <On Terms="WeaponStart.AP_GoliathMengskGUpgraded.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="WeaponStop.AP_GoliathMengskGUpgraded.AttackStop" Send="AnimBracketStop Attack"/>
         <Model value="AP_GoliathMengsk"/>
         <DeathActorModel value="AP_GoliathMengskDeath"/>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath-mengsk.dds"/>
+        </Wireframe>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath-mengsk.dds"/>
+        </GroupIcon>
+        <WireframeShield>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath-mengsk-shield01.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath-mengsk-shield02.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-goliath-mengsk-shield03.dds"/>
+        </WireframeShield>
     </CActorUnit>
     <CActorModel id="AP_GoliathMengskDeath" parent="UnitDeathModel">
         <AcceptedTransfers index="Textures" value="1"/>

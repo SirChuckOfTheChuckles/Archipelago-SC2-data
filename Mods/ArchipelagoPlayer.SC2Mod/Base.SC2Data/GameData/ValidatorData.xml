@@ -6569,6 +6569,18 @@
         <Find value="1"/>
         <Value value="AP_HaveSiegeTankTransportHook"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveSiegeTankMengskSmartServos">
+        <Find value="1"/>
+        <Value value="AP_HaveSiegeTankMengskSmartServos"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_HaveEitherSiegeTankSmartServos">
+        <CombineArray value="AP_HaveMultiTaskMAFServosSiegeTank"/>
+        <CombineArray value="AP_HaveSiegeTankMengskSmartServos"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveSiegeTankMengskImprovedTankMode">
+        <Find value="1"/>
+        <Value value="AP_HaveSiegeTankMengskImprovedTankMode"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveSiegeTankEnhancedCombustionEngines">
         <Find value="1"/>
         <Value value="AP_HaveSiegeTankEnhancedCombustionEngines"/>
@@ -7676,6 +7688,23 @@
     <CValidatorUnitType id="AP_IsGoliathMengsk">
         <Value value="AP_GoliathMengsk"/>
     </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="AP_HaveGoliathMengskMoebiusDefenseMatrix">
+        <Find value="1"/>
+        <Value value="AP_HaveGoliathMengskMoebiusDefenseMatrix"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareVeterancyLevel id="AP_GoliathMengskBelowRank2">
+        <Compare value="LT"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareVeterancyLevel>
+    <CValidatorUnitCompareVeterancyLevel id="AP_GoliathMengskRank2OrHigher">
+        <Compare value="GE"/>
+        <Value value="3"/>
+    </CValidatorUnitCompareVeterancyLevel>
+    <CValidatorPlayerRequirement id="AP_HaveGoliathMengskParalysisInducers">
+        <WhichPlayer Value="Caster"/>
+        <Find value="1"/>
+        <Value value="AP_HaveGoliathMengskParalysisInducers"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveAdaptiveMedPacks">
         <Find value="1"/>
         <Value value="AP_HaveAdaptiveMedPacks"/>

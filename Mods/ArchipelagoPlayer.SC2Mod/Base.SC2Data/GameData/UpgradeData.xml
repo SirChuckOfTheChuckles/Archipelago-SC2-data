@@ -12451,12 +12451,16 @@
         <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,MinScanRange" Value="1"/>
         <!-- Emperor's Guardian -->
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeapon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeaponAA,Range" Value="1"/>
@@ -13918,10 +13922,34 @@
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeMode,InfoArray[0].Unit" Value="AP_SiegeTankSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeBreakerSiege,InfoArray[0].Unit" Value="AP_SiegeBreakerSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_InfestedSiegeBreakerSiege,InfoArray[0].Unit" Value="AP_InfestedSiegeBreakerSiegedTransportable"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].Unit" Value="AP_SiegeTankMengskSiegedTransportable"/>
     </CUpgrade>
     <CUpgrade id="AP_MedivacSiegeTankAirlift">
-        <EffectArray Operation="Subtract" Reference="Weapon,AP_MedivacSiegeTankAirlift,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,Options[Hidden]" Value="1"/>
         <AffectedUnitArray value="AP_Medivac"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskSmartServos">
+        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="4"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
+        <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskNapalmRounds">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
+        <EffectArray Operation="Set" Reference="Effect,AP_SiegeTankMengskSiegedSet,EffectArray[3]" Value="AP_SiegeTankMengskNapalmRounds"/>
+        <EffectArray Operation="Set" Reference="Effect,AP_SiegeTankMengskSiegedImprovedAoESet,EffectArray[3]" Value="AP_SiegeTankMengskNapalmRounds"/>
+        <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskImprovedTankMode">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_SiegeTankMengsk,Effect" Value="AP_SiegeTankMengskImprovedTankModeSet"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_ResourceEfficiencyReaper">
         <EffectArray Operation="Subtract" Reference="Unit,AP_Reaper,CostResource[Vespene]" Value="50"/>
@@ -17359,5 +17387,25 @@
         <Icon value="Assets\Textures\btn-ability-hornerhan-salvagebonus.dds"/>
         <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Vespene]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Minerals]" Value="25"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskMoebiusDefenseMatrix">
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="50"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="50"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldRegenRate" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskJumpJetsMKII">
+        <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,Mover" Value="CliffJumper"/>
+        <EffectArray Reference="Abil,AP_GoliathMengskJump,Range[0]" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskParalysisInducers"/>
+    <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="3"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="3"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,Range" Value="3"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,MinScanRange" Value="3"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,MinScanRange" Value="1"/>
     </CUpgrade>
 </Catalog>

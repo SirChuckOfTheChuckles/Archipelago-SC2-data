@@ -22837,6 +22837,64 @@
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
+    <CEffectSwitch id="AP_SiegeTankMengskNapalmRounds">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskNapalmRoundsImprovedCP"/>
+        <CaseDefault value="AP_SiegeTankMengskNapalmRoundsCP"/>
+    </CEffectSwitch>
+    <CEffectCreatePersistent id="AP_SiegeTankMengskNapalmRoundsCP">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetPoint"/>
+        <PeriodCount value="6"/>
+        <PeriodicEffectArray value="AP_SiegeTankMengskNapalmRoundsSearch"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_SiegeTankMengskNapalmRoundsImprovedCP" parent="AP_SiegeTankMengskNapalmRoundsCP">
+        <PeriodicEffectArray index="0" value="AP_SiegeTankMengskNapalmRoundsImprovedSearch"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="AP_SiegeTankMengskNapalmRoundsSearch">
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <EditorCategories value="Race:Terran"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="1.25" Effect="AP_ThermalLancesFireBeamDamage"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="AP_SiegeTankMengskNapalmRoundsImprovedSearch" parent="AP_SiegeTankMengskNapalmRoundsSearch">
+        <AreaArray index="0" Radius="1.75"/>
+    </CEffectEnumArea>
+    <CEffectSet id="AP_SiegeTankMengskImprovedTankModeSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_SiegeTankMengskDamage"/>
+        <EffectArray value="AP_SiegeTankMengskTankModeSplashSwitch"/>
+        <EffectArray value="AP_SiegeTankMengskTankModeStunSwitch"/>
+    </CEffectSet>
+    <CEffectSwitch id="AP_SiegeTankMengskTankModeSplashSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskTankModeImprovedSplash"/>
+        <CaseDefault value="AP_SiegeTankMengskTankModeSplash"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="AP_SiegeTankMengskTankModeStunSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskSiegedImprovedAoEStunSearch"/>
+        <CaseDefault value="AP_SiegeTankMengskSiegedStunSearch"/>
+    </CEffectSwitch>
+    <CEffectDamage id="AP_SiegeTankMengskTankModeSplash" parent="DU_WEAP_SPLASH">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Armored" value="0.6"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="5">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+        <Death value="Blast"/>
+        <AreaArray Radius="1.25" Fraction="1"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="AP_SiegeTankMengskTankModeImprovedSplash" parent="AP_SiegeTankMengskTankModeSplash">
+        <AreaArray index="0" Radius="1.75"/>
+    </CEffectDamage>
     <CEffectModifyUnit id="AP_DeploySpiderMinesMengskAddCharge">
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
@@ -23769,19 +23827,20 @@
     <CEffectDamage id="AP_GoliathMengskAU" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Armored" value="1"/>
-        <Amount value="11">
+        <Amount value="12">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
     </CEffectDamage>
     <CEffectSet id="AP_GoliathMengskAULockdownSet">
         <EffectArray value="AP_GoliathMengskAU"/>
         <EffectArray value="AP_GoliathMengskLockdownAB"/>
+        <EffectArray value="AP_GoliathMengskParalysisInducersAB"/>
     </CEffectSet>
     <CEffectDamage id="AP_GoliathMengskG" parent="DU_WEAP">
         <ValidatorArray value="CasterIsNotHidden"/>
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
-        <Amount value="20">
+        <Amount value="24">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
     </CEffectDamage>
@@ -23791,6 +23850,16 @@
         <ValidatorArray value="AP_CasterLevelEq4"/>
         <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
         <ValidatorArray value="AP_IsMechanical"/>
+        <ValidatorArray value="NotStructure"/>
+        <ValidatorArray value="AP_NoPreventKnockback"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_GoliathMengskParalysisInducersAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_NovaUnitLockdown"/>
+        <ValidatorArray value="AP_CasterLevelEq4"/>
+        <ValidatorArray value="AP_HaveGoliathMengskParalysisInducers"/>
+        <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
+        <ValidatorArray value="AP_IsBiological"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="AP_NoPreventKnockback"/>
     </CEffectApplyBehavior>

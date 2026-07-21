@@ -6627,6 +6627,18 @@
         <Count Link="AP_MedivacSiegeTankAirlift" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSiegeTankMengskSmartServosCompleteOnly">
+        <Count Link="AP_SiegeTankMengskSmartServos" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSiegeTankMengskNapalmRoundsCompleteOnly">
+        <Count Link="AP_SiegeTankMengskNapalmRounds" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly">
+        <Count Link="AP_SiegeTankMengskImprovedTankMode" State="CompleteOnly"/>
+        <Flags index="TechTreeCheat" value="0"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeResourceEfficiencyReaperCompleteOnly">
         <Count Link="AP_ResourceEfficiencyReaper" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
@@ -7303,6 +7315,10 @@
         <OperandArray value="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
         <OperandArray value="AP_CountUpgradeNotPossibleSiegeModeCompleteOnly"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AP_AndGTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly">
+        <OperandArray value="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
+        <OperandArray value="AP_CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly"/>
+    </CRequirementAnd>
     <CRequirementCountUpgrade id="AP_CountUpgradeWarpRelocateCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_WarpRelocateLevel1" State="CompleteOnly"/>
@@ -7442,6 +7458,22 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancyGoliathMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="4"/>
     </CRequirementGTE>
+    <CRequirementCountUpgrade id="AP_CountUpgradeGoliathMengskMoebiusDefenseMatrixCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GoliathMengskMoebiusDefenseMatrix" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeGoliathMengskJumpJetsMKIICompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GoliathMengskJumpJetsMKII" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeGoliathMengskParalysisInducersCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GoliathMengskParalysisInducers" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeGoliathMengskAresClassTargetingAddonCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_GoliathMengskAresClassTargetingAddon" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeStalwartLatticedShieldsCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_StalwartLatticedShields" State="CompleteOnly"/>

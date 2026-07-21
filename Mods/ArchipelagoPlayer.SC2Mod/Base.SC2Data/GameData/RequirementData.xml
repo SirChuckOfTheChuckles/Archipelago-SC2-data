@@ -3961,6 +3961,15 @@
     <CRequirement id="AP_HaveMedivacSiegeTankAirlift">
         <NodeArray index="Show" Link="AP_CountUpgradeMedivacSiegeTankAirliftCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveSiegeTankMengskSmartServos">
+        <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankMengskSmartServosCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveSiegeTankMengskNapalmRounds">
+        <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankMengskNapalmRoundsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveSiegeTankMengskImprovedTankMode">
+        <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveResourceEfficiencyReaper">
         <NodeArray index="Show" Link="AP_CountUpgradeResourceEfficiencyReaperCompleteOnly"/>
     </CRequirement>
@@ -4444,7 +4453,7 @@
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
     </CRequirement>
     <CRequirement id="AP_HaveMengskVeterancySiegeTankMengskGELevel2TankMode">
-        <NodeArray index="Use" Link="AP_AndGTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2CountUpgradeNotPossibleSiegeModeCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_AndGTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_ThorMengskSiegedTargetIncreasedRange">
         <NodeArray index="Show" Link="AP_GTECountBehaviorMengskVeterancyThorMengskCompleteOnlyAtUnit2"/>
@@ -4564,6 +4573,20 @@
     </CRequirement>
     <CRequirement id="AP_HaveGoliathMengskVeterancyLevel4">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGoliathMengskCompleteOnlyAtUnit4"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGoliathMengskMoebiusDefenseMatrix">
+        <NodeArray index="Show" Link="AP_CountUpgradeGoliathMengskMoebiusDefenseMatrixCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGoliathMengskJumpJetsMKII">
+        <NodeArray index="Show" Link="AP_CountUpgradeGoliathMengskJumpJetsMKIICompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGoliathMengskParalysisInducers">
+        <NodeArray index="Show" Link="AP_CountUpgradeGoliathMengskParalysisInducersCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGoliathMengskCompleteOnlyAtUnit4"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGoliathMengskAresClassTargetingAddon">
+        <NodeArray index="Show" Link="AP_CountUpgradeGoliathMengskAresClassTargetingAddonCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGoliathMengskCompleteOnlyAtUnit3"/>
     </CRequirement>
     <CRequirement id="AP_HaveMedicMengskDoubleBeamHeal">
         <NodeArray index="Show" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit4"/>

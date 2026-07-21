@@ -8151,25 +8151,16 @@
     <CBehaviorBuff id="AP_MedivacSiegeTankAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <WeaponEnableArray value="AP_MedivacSiegeTankAirlift"/>
-        </Modification>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedivacMercSiegeTankAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <WeaponEnableArray value="AP_MedivacMercSiegeTankAirlift"/>
-        </Modification>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedivacInfestedSiegeBreakerAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <WeaponEnableArray value="AP_MedivacInfestedSiegeBreakerAirlift"/>
-        </Modification>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MedivacMengskSiegeTankAirlift">
@@ -9951,41 +9942,58 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
-        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+        <VeterancyLevelArray MinVeterancyXP="1500" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="50"/>
+                <VitalMaxArray index="Life" value="60"/>
+                <VitalRegenArray index="Shields" value="2"/>
             </Modification>
         </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
+        <VeterancyLevelArray MinVeterancyXP="3500" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="50"/>
-                <!-- Level 2 perk: Multi-Target System -->
-                <WeaponEnableArray value="AP_GoliathMengskAUpgraded"/>
-                <WeaponEnableArray value="AP_GoliathMengskGUpgraded"/>
-                <WeaponDisableArray value="AP_GoliathMengskA"/>
-                <WeaponDisableArray value="AP_GoliathMengskG"/>
+                <VitalMaxArray index="Life" value="60"/>
+                <VitalRegenArray index="Shields" value="2"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
-            <MinVeterancyXP value="4800"/>
+            <MinVeterancyXP value="6000"/>
             <LevelGainEffect value="AP_MengskVeteranMaxedTrigger"/>
             <LevelLossEffect value="AP_MengskVeteranTrigger"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
                 <LifeArmorBonus value="1"/>
-                <VitalMaxArray index="Life" value="50"/>
-                <!-- Level 2 perk: Multi-Target System -->
-                <WeaponEnableArray value="AP_GoliathMengskAUpgraded"/>
-                <WeaponEnableArray value="AP_GoliathMengskGUpgraded"/>
-                <WeaponDisableArray value="AP_GoliathMengskA"/>
-                <WeaponDisableArray value="AP_GoliathMengskG"/>
+                <VitalMaxArray index="Life" value="60"/>
+                <VitalRegenArray index="Shields" value="2"/>
             </Modification>
         </VeterancyLevelArray>
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
+    <CBehaviorBuff id="AP_GoliathMengskBaseWeapons">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_GoliathMengskBelowRank2"/>
+        <Modification>
+            <WeaponArray Link="AP_GoliathMengskA" Turret="AP_Goliath"/>
+            <WeaponArray Link="AP_GoliathMengskG" Turret="AP_Goliath"/>
+            <WeaponArray Link="AP_GoliathMengskADisplay"/>
+            <WeaponArray Link="AP_GoliathMengskGDisplay"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GoliathMengskRank2Weapons">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_GoliathMengskRank2OrHigher"/>
+        <Modification>
+            <WeaponArray Link="AP_GoliathMengskAUpgraded" Turret="FreeRotate"/>
+            <WeaponArray Link="AP_GoliathMengskGUpgraded" Turret="AP_Goliath"/>
+            <WeaponArray Link="AP_GoliathMengskADisplayUpgraded"/>
+            <WeaponArray Link="AP_GoliathMengskGDisplayUpgraded"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_NovaUnitLockdown">
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
