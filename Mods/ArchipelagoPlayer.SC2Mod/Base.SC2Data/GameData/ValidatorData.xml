@@ -6573,6 +6573,10 @@
         <Find value="1"/>
         <Value value="AP_HaveSiegeTankMengskSmartServos"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveSiegeTankMengskNapalmRounds">
+        <Find value="1"/>
+        <Value value="AP_HaveSiegeTankMengskNapalmRounds"/>
+    </CValidatorPlayerRequirement>
     <CValidatorCombine id="AP_HaveEitherSiegeTankSmartServos">
         <CombineArray value="AP_HaveMultiTaskMAFServosSiegeTank"/>
         <CombineArray value="AP_HaveSiegeTankMengskSmartServos"/>
@@ -7133,6 +7137,12 @@
         <Compare value="GE"/>
         <Value value="3"/>
     </CValidatorUnitCompareVeterancyLevel>
+    <CValidatorUnitCompareBehaviorCount id="AP_NoSiegeTankMengskSiegedStunImmunity">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="1"/>
+        <Behavior value="AP_SiegeTankMengskStunImmunity"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelGTE3">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>

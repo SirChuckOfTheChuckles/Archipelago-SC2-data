@@ -13942,8 +13942,6 @@
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankMengskNapalmRounds">
         <Icon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
-        <EffectArray Operation="Set" Reference="Effect,AP_SiegeTankMengskSiegedSet,EffectArray[3]" Value="AP_SiegeTankMengskNapalmRounds"/>
-        <EffectArray Operation="Set" Reference="Effect,AP_SiegeTankMengskSiegedImprovedAoESet,EffectArray[3]" Value="AP_SiegeTankMengskNapalmRounds"/>
         <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankMengskImprovedTankMode">
@@ -17396,6 +17394,7 @@
     <CUpgrade id="AP_GoliathMengskJumpJetsMKII">
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,Mover" Value="CliffJumper"/>
         <EffectArray Reference="Abil,AP_GoliathMengskJump,Range[0]" Value="3"/>
+        <EffectArray Reference="Actor,AP_GoliathMengskJump_Range,Range" Value="3.000000"/>
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskParalysisInducers"/>
     <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">

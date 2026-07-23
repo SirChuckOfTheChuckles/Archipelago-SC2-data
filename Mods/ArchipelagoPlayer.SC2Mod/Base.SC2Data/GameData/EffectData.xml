@@ -22652,6 +22652,7 @@
         <EffectArray value="AP_SiegeTankMengskSiegedDirected"/>
         <EffectArray value="AP_SiegeTankMengskSiegedImprovedAoEBlast"/>
         <EffectArray value="AP_SiegeTankMengskSiegedImprovedAoEStunSearch"/>
+        <EffectArray value="AP_SiegeTankMengskNapalmRounds"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_SiegeTankMengskSiegedSlowHeroicAB">
         <ValidatorArray index="0" value="AP_IsHeroic"/>
@@ -22764,7 +22765,7 @@
         <KindSplash value="Splash"/>
         <Amount value="40"/>
         <Death value="Blast"/>
-        <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="Air;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
@@ -22826,6 +22827,7 @@
         <EffectArray value="AP_SiegeTankMengskSiegedDirected"/>
         <EffectArray value="AP_SiegeTankMengskSiegedBlast"/>
         <EffectArray value="AP_SiegeTankMengskSiegedStunSearch"/>
+        <EffectArray value="AP_SiegeTankMengskNapalmRounds"/>
     </CEffectSet>
     <CEffectModifyUnit id="AP_90mmCannonsMengskLookAt"/>
     <CEffectDamage id="AP_SiegeTankMengskDamage" parent="DU_WEAP">
@@ -22838,6 +22840,7 @@
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectSwitch id="AP_SiegeTankMengskNapalmRounds">
+        <ValidatorArray value="AP_HaveSiegeTankMengskNapalmRounds"/>
         <EditorCategories value="Race:Terran"/>
         <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskNapalmRoundsImprovedCP"/>
         <CaseDefault value="AP_SiegeTankMengskNapalmRoundsCP"/>
@@ -22864,7 +22867,6 @@
     </CEffectEnumArea>
     <CEffectSet id="AP_SiegeTankMengskImprovedTankModeSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_SiegeTankMengskDamage"/>
         <EffectArray value="AP_SiegeTankMengskTankModeSplashSwitch"/>
         <EffectArray value="AP_SiegeTankMengskTankModeStunSwitch"/>
     </CEffectSet>
@@ -22878,16 +22880,10 @@
         <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskSiegedImprovedAoEStunSearch"/>
         <CaseDefault value="AP_SiegeTankMengskSiegedStunSearch"/>
     </CEffectSwitch>
-    <CEffectDamage id="AP_SiegeTankMengskTankModeSplash" parent="DU_WEAP_SPLASH">
+    <CEffectDamage id="AP_SiegeTankMengskTankModeSplash" parent="AP_SiegeTankMengskDamage">
         <EditorCategories value="Race:Terran"/>
-        <AttributeFactor index="Armored" value="0.6"/>
-        <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
-        <Amount value="5">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-        <Death value="Blast"/>
-        <AreaArray Radius="1.25" Fraction="1"/>
+        <AreaArray Radius="1.25" Fraction="0.2"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="CallForHelp" value="1"/>

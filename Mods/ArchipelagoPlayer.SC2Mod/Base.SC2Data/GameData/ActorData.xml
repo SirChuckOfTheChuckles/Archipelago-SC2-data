@@ -8766,8 +8766,8 @@
     <CActorRange id="AP_SiegeTankMengskBlink_Range" parent="RangeAbil" abil="AP_SiegeTankMengskBlink">
         <Abil Link="AP_BlinkDummy"/>
     </CActorRange>
-    <CActorRange id="AP_GoliathMengskJump_Range" parent="RangeAbil" abil="AP_GoliathMengskJump">
-        <Abil Link="AP_BlinkDummy"/>
+    <CActorRange id="AP_GoliathMengskJumpRange" parent="RangeAbil" abil="AP_GoliathMengskJump">
+        <Range value="9.000000"/>
     </CActorRange>
     <CActorUnit id="AP_Baneling" parent="AP_BanelingBase" unitName="AP_Baneling">
         <On Terms="AbilMorph.*.Finish; MorphTo AP_Baneling; MorphFrom AP_BanelingCocoon" Send="Create"/>
@@ -41793,12 +41793,18 @@
         <Scale value="3.500000"/>
     </CActorModel>
     <CActorAction id="AP_SiegeTankMengskTankModeSplashAttack" parent="GenericAttack" effectAttack="AP_SiegeTankMengskTankModeSplash">
-        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
-        <ImpactMap index="None" Model="AP_SiegeTankMengskTankModeSplashImpact"/>
+        <LaunchAttachQuery Methods="AMPatternRollingStripe"/>
+        <LaunchAssets Model="AP_SiegeTankMengskAttackLaunch" Sound="SiegeTank_AttackLaunch"/>
+        <ImpactMap index="None" Model="AP_SiegeTankMengskAttackImpact" Sound="SiegeTank_AttackImpact"/>
+        <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
+        <ShieldFlashType value="None"/>
     </CActorAction>
     <CActorAction id="AP_SiegeTankMengskTankModeImprovedSplashAttack" parent="GenericAttack" effectAttack="AP_SiegeTankMengskTankModeImprovedSplash">
-        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
-        <ImpactMap index="None" Model="AP_SiegeTankMengskTankModeSplashImpact"/>
+        <LaunchAttachQuery Methods="AMPatternRollingStripe"/>
+        <LaunchAssets Model="AP_SiegeTankMengskAttackLaunch" Sound="SiegeTank_AttackLaunch"/>
+        <ImpactMap index="None" Model="AP_SiegeTankMengskAttackImpact" Sound="SiegeTank_AttackImpact"/>
+        <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
+        <ShieldFlashType value="None"/>
     </CActorAction>
     <CActorAction id="AP_SiegeTankMengskSiegedAttackImprovedAoEDirected" parent="GenericAttack" effectAttack="AP_SiegeTankMengskSiegedDirected">
         <LaunchAssets Model="AP_SiegeTankMengskSiegedAttackDirectedLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
@@ -43746,6 +43752,17 @@
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
         <On Terms="Upgrade.AP_GoliathMengskMoebiusDefenseMatrix.Add" Send="Create ShieldImpact"/>
+        <On Terms="ActorCreation; ValidateUnit CasterShieldsGE1" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="ActorCreation; ValidateUnit CasterShieldsGE1" Send="StatusSet ShieldCover 1"/>
+        <On Terms="ActorCreation; ValidateUnit CasterShieldsGE1" Send="TimerSet 0.100000 ShieldCoverCheck"/>
+        <On Terms="Upgrade.AP_GoliathMengskMoebiusDefenseMatrix.Add; ValidateUnit CasterShieldsGE1" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="Upgrade.AP_GoliathMengskMoebiusDefenseMatrix.Add; ValidateUnit CasterShieldsGE1" Send="StatusSet ShieldCover 1"/>
+        <On Terms="Upgrade.AP_GoliathMengskMoebiusDefenseMatrix.Add" Send="TimerSet 0.100000 ShieldCoverCheck"/>
+        <On Terms="TimerExpired; TimerName ShieldCoverCheck; ValidateUnit CasterShieldsGE1; IsStatus ShieldCover 0" Send="AnimBracketStart Cover Cover,Start Cover Cover,End"/>
+        <On Terms="TimerExpired; TimerName ShieldCoverCheck; ValidateUnit CasterShieldsGE1; IsStatus ShieldCover 0" Send="StatusSet ShieldCover 1"/>
+        <On Terms="TimerExpired; TimerName ShieldCoverCheck; ValidateUnit CasterShieldsLT1; IsStatus ShieldCover 1" Send="AnimBracketStop Cover"/>
+        <On Terms="TimerExpired; TimerName ShieldCoverCheck; ValidateUnit CasterShieldsLT1; IsStatus ShieldCover 1" Send="StatusSet ShieldCover 0"/>
+        <On Terms="TimerExpired; TimerName ShieldCoverCheck" Send="TimerSet 0.100000 ShieldCoverCheck"/>
         <On Terms="WeaponStart.AP_GoliathMengskG.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="WeaponStop.AP_GoliathMengskG.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="WeaponStart.AP_GoliathMengskA.AttackStart" Send="AnimBracketStart Spell Spell"/>
