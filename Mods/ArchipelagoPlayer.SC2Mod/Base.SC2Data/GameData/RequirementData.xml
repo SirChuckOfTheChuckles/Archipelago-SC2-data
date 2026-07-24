@@ -4464,6 +4464,15 @@
     <CRequirement id="AP_HaveThorMengskArmorAura">
         <NodeArray index="Show" Link="AP_CountUpgradeThorMengskArmorAuraCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveThorMengskSmartServos">
+        <NodeArray index="Show" Link="AP_CountUpgradeThorMengskSmartServosCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveThorMengskHammerOfTheLaw">
+        <NodeArray index="Show" Link="AP_CountUpgradeThorMengskHammerOfTheLawCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveThorMengskInfernoBlitz">
+        <NodeArray index="Show" Link="AP_CountUpgradeThorMengskInfernoBlitzCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveMengskVeterancyMarauderMengskGELevel2">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
     </CRequirement>

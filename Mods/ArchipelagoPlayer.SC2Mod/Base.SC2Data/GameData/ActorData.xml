@@ -1105,10 +1105,8 @@
         <On Terms="UnitDeath" Target="::actor.AP_Thor" Send="Signal Dead"/>
         <On Terms="UnitDeath" Target="::actor.AP_MercThor" Send="Signal Dead"/>
         <On Terms="AbilTransport.AP_MedivacTransport.TransportLoad; AbilTransport AP_ThorMengsk" Send="Create AP_ThorMengskTransit"/>
-        <On Terms="AbilTransport.AP_MedivacTransport.TransportLoad; AbilTransport AP_ThorMengskAP" Send="Create AP_ThorMengskTransit"/>
         <On Terms="Signal.*.ThorTransit" Send="RefSetFromMsg ::actor.AP_ThorMengsk ::Sender"/>
         <On Terms="AbilTransport.AP_MedivacTransport.PassengerKilled; AbilTransport AP_ThorMengsk" Target="::actor.AP_ThorMengsk" Send="Signal Dead"/>
-        <On Terms="AbilTransport.AP_MedivacTransport.PassengerKilled; AbilTransport AP_ThorMengskAP" Target="::actor.AP_ThorMengsk" Send="Signal Dead"/>
         <On Terms="UnitDeath" Target="::actor.AP_ThorMengsk" Send="Signal Dead"/>
         <On Terms="ActorCreation; !ScopeContains AP_SiegeTankLoadTransit" Send="Create AP_SiegeTankLoadTransit"/>
         <On Terms="ActorCreation" Send="Attach _Turret1 {Center 0} AP_SiegeTankLoadSOpOffset"/>
@@ -1340,10 +1338,24 @@
         <On Terms="WeaponStop.AP_JavelinMissileLaunchersMengsk.AttackStop" Send="TimerSet 2.500000 CoverDelay"/>
         <On Terms="TimerExpired; TimerName CoverDelay" Send="AnimClear Cover"/>
         <On Terms="TimerExpired; TimerName CoverDelay" Send="AnimPlay CoverStand Cover,Stand PlayForever"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation GE 20.000000; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation LE -20.000000; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Inferior"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetDistance LE 1.000000; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Spell,B"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack"/>
+        <!-- 0.831 / 0.331 = 2.510574; restore normal speed when the weapon effect starts at the new damage point. -->
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation GE 20.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation LE -20.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetDistance LE 1.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
+        <On Terms="Effect.AP_ThorsHammerMengsk.Start; At Caster; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimSetTimeScale Attack 1.000000"/>
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
         <On Terms="AbilTransport.*.CargoUnload" Send="AnimPlay Unload Spell,A 0 0.000000"/>
@@ -1352,24 +1364,6 @@
         <On Terms="ModelEvent; ModelEventName SquibStartLeft" Send="Create ThorLeftCheerSquib"/>
         <On Terms="ModelEvent; ModelEventName SquibStartRight" Send="Create ThorRightCheerSquib"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_ThorMengskTransitLandSound"/>
-        <On Terms="ActorCreation" Send="StatusSet WeaponNext 0"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster" Send="AnimPlay SpellD Spell,D"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster" Send="StatusIncrement WeaponNext"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 4" Send="StatusSet WeaponNext 0"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 0" Send="AnimClear Attack3"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 0" Send="AnimPlay Attack4 Spell,C,02"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 1" Send="AnimClear Attack4"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 1" Send="AnimPlay Attack1 Spell,C,01"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 2" Send="AnimClear Attack1"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 2" Send="AnimPlay Attack2 Spell,C,03"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 3" Send="AnimClear Attack2"/>
-        <On Terms="Effect.AP_LanceMissileLaunchersMengskDamage.Start; At Caster; IsStatus WeaponNext 3" Send="AnimPlay Attack3 Spell,C,00"/>
-        <On Terms="UnitBirth.AP_ThorMengskAP" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengsk" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thor.dds"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengskAP" Send="SetWireframe 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
-        <On Terms="UnitBirth.AP_ThorMengskAP" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengsk" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thor.dds"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengskAP" Send="SetGroupIcon 0 Assets\Textures\wireframe-terran-thorhighimpact.dds"/>
         <On Terms="Upgrade.AP_ThorMengskArmorAura.Add; !ScopeContains AP_ThorMengskArmorAuraRange" Send="Create AP_ThorMengskArmorAuraRange"/>
         <On Terms="ActorCreation; ValidateUnit AP_HaveThorMengskArmorAura; !ScopeContains AP_ThorMengskArmorAuraRange" Send="Create AP_ThorMengskArmorAuraRange"/>
     </CActorUnit>
@@ -41978,14 +41972,14 @@
         <Inherits index="TeamColor" value="1"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
-        <On Terms="ActorCreation; !ValidateCreationEffect AP_HaveMultiTaskMAFServosThor" Send="AnimBracketStart BSD Birth Stand Death"/>
-        <On Terms="ActorCreation; ValidateCreationEffect AP_HaveMultiTaskMAFServosThor" Send="AnimBracketStart BSD Birth Stand Death 0 1.000000 AsDuration"/>
-        <On Terms="Effect.ThorMengskSiegeTargetLargeAoEDelayCP.Start" Send="Create"/>
-        <On Terms="Effect.ThorMengskSiegeTargetLargeAoEDelayCP.Stop" Send="Destroy"/>
+        <On Terms="ActorCreation; !ValidateCreationEffect AP_HaveThorMengskSmartServos" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation; ValidateCreationEffect AP_HaveThorMengskSmartServos" Send="AnimBracketStart BSD Birth Stand Death 0 0.750000 AsDuration"/>
+        <On Terms="Effect.AP_ThorMengskSiegeTargetLargeAoEDelayCP.Start" Send="Create"/>
+        <On Terms="Effect.AP_ThorMengskSiegeTargetLargeAoEDelayCP.Stop" Send="Destroy"/>
         <HostForProps Subject="_Unit" Scope="Caster"/>
         <HostSiteOps Ops="SOpTargetPoint SOpShadowSyncGround"/>
         <ScopeBearingsTracking value="ForceOff"/>
-        <Model value="ThorMengskSiegeTargetedBirthSearchIndicator"/>
+        <Model value="AP_ThorMengskSiegeTargetedBirthSearchIndicator"/>
         <Scale value="1.500000"/>
     </CActorModel>
     <CActorSplat id="AP_ThorMengskSiegeTargetedCursorSplat" parent="CursorSplat" abil="AP_ThorMengskSiegeTargeted"/>
@@ -42011,8 +42005,8 @@
         <Inherits index="TeamColor" value="1"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
-        <On Terms="ActorCreation; !ValidateCreationEffect AP_HaveMultiTaskMAFServosThor" Send="AnimBracketStart BSD Birth Stand Death"/>
-        <On Terms="ActorCreation; ValidateCreationEffect AP_HaveMultiTaskMAFServosThor" Send="AnimBracketStart BSD Birth Stand Death 0 1.000000 AsDuration"/>
+        <On Terms="ActorCreation; !ValidateCreationEffect AP_HaveThorMengskSmartServos" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation; ValidateCreationEffect AP_HaveThorMengskSmartServos" Send="AnimBracketStart BSD Birth Stand Death 0 0.750000 AsDuration"/>
         <On Terms="Effect.AP_ThorMengskSiegeTargetDelayCP.Start" Send="Create"/>
         <On Terms="Effect.AP_ThorMengskSiegeTargetDelayCP.Stop" Send="Destroy"/>
         <HostForProps Subject="_Unit" Scope="Caster"/>
@@ -42024,11 +42018,10 @@
         <IconArcLength value="3.250000"/>
     </CActorRange>
     <CActorSound id="AP_ThorMengskSiegeSound" parent="SoundOneShot">
-        <On Terms="Abil.AP_ThorMengskSiege.Start; !ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
+        <On Terms="Abil.AP_ThorMengskSiege.Start; !ValidateUnit AP_HaveThorMengskSmartServos" Send="Create"/>
     </CActorSound>
     <CActorSound id="AP_ThorMengskSiegeFastSound" parent="SoundOneShot">
-        <On Terms="Abil.AP_ThorMengskSiege.Start; ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
-        <On Terms="Abil.AP_ThorMengskWreckage.Start" Send="Create"/>
+        <On Terms="Abil.AP_ThorMengskSiege.Start; ValidateUnit AP_HaveThorMengskSmartServos" Send="Create"/>
     </CActorSound>
     <CActorModel id="AP_ThorMengskSiegeTargetedLargeAoESearchIndicator">
         <Inherits index="TeamColor" value="1"/>
@@ -42042,20 +42035,11 @@
         <Model value="AP_ThorMengskSiegeTargetedSearchIndicator"/>
         <Scale value="1.500000"/>
     </CActorModel>
-    <CActorSimple id="AP_ThorMengskRebornSoundTimer">
-        <On Terms="Abil.AP_ThorMengskReborn.Start" Send="Create"/>
-        <On Terms="Abil.AP_ThorMengskRebornFree.Start" Send="Create"/>
-        <On Terms="ActorCreation" Send="TimerSet 9 DelayDestroy"/>
-        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Create AP_ThorMengskUnsiegeSound"/>
-        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
-    </CActorSimple>
     <CActorSound id="AP_ThorMengskUnsiegeSound" parent="SoundOneShot">
-        <On Terms="Abil.AP_ThorMengskUnsiege.Start; !ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
-        <On Terms="Abil.AP_ThorMengskUnsiegeAPMode.Start; !ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
+        <On Terms="Abil.AP_ThorMengskUnsiege.Start; !ValidateUnit AP_HaveThorMengskSmartServos" Send="Create"/>
     </CActorSound>
     <CActorSound id="AP_ThorMengskUnsiegeFastSound" parent="SoundOneShot">
-        <On Terms="Abil.AP_ThorMengskUnsiege.Start; ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
-        <On Terms="Abil.AP_ThorMengskUnsiegeAPMode.Start; ValidateUnit AP_HaveMultiTaskMAFServosThor" Send="Create"/>
+        <On Terms="Abil.AP_ThorMengskUnsiege.Start; ValidateUnit AP_HaveThorMengskSmartServos" Send="Create"/>
     </CActorSound>
     <CActorAction id="AP_ThorMengskSiegedAirAttack" parent="GenericAttack" effectImpact="AP_ThorMengskSiegedDamage" effectLaunch="AP_ThorMengskSiegedLM">
         <LaunchAttachQuery Methods="AP_FilterWeapon01Thru04 AP_ThorMengskPattern"/>
@@ -42073,14 +42057,8 @@
         <Baselines index="Stand" AnimProps="Stand" BlendIn="-1.000000" BlendOut="-1.000000"/>
         <Baselines index="Walk" AnimProps="Walk" BlendIn="-1.000000" BlendOut="-1.000000"/>
         <On Terms="ActorCreation" Send="$Birth 0 0.000000"/>
-        <On Terms="UnitBirth.AP_ThorMengskAP" Send="Create"/>
-        <On Terms="UnitBirth.AP_ThorMengskAP" Send="AnimBracketStart Morph IGNORE Morph,Stand Morph,End"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengsk; MorphFrom AP_ThorMengskSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged" Send="Destroy"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengskAP; MorphFrom AP_ThorMengskSieged" Send="Create"/>
-        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskAP; MorphTo AP_ThorMengskSieged" Send="Destroy"/>
-        <On Terms="AbilMorph.*.Start; MorphTo AP_ThorMengskAP; MorphFrom AP_ThorMengsk" Send="AnimBracketStart Morph Morph Morph,Stand Morph,End"/>
-        <On Terms="AbilMorph.*.Start; MorphTo AP_ThorMengsk; MorphFrom AP_ThorMengskAP" Send="AnimBracketStop Morph"/>
         <DeathArray index="Normal" ModelLink="AP_ThorMengskDeath"/>
     </CActorUnit>
     <CActorUnit id="AP_ThorMengskSieged" parent="AP_ThorMengskBase" unitName="AP_ThorMengskSieged">
@@ -42097,9 +42075,11 @@
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverStand Cover,Stand PlayForever 0.000000"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged" Send="Create"/>
-        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged" Send="AnimPlay Morph Work,Stand,Start PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged; !ValidateUnit AP_HaveThorMengskSmartServos" Send="AnimPlay Morph Work,Stand,Start PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged; ValidateUnit AP_HaveThorMengskSmartServos" Send="AnimPlay Morph Work,Stand,Start PlayForever,NonLooping 0.000000 0.000000 0.750000 AsDuration"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskSieged; MorphTo AP_ThorMengsk" Send="Create"/>
-        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskSieged; MorphTo AP_ThorMengsk" Send="AnimPlay Morph Work,Stand,End PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskSieged; MorphTo AP_ThorMengsk; !ValidateUnit AP_HaveThorMengskSmartServos" Send="AnimPlay Morph Work,Stand,End PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskSieged; MorphTo AP_ThorMengsk; ValidateUnit AP_HaveThorMengskSmartServos" Send="AnimPlay Morph Work,Stand,End PlayForever,NonLooping 0.000000 0.000000 0.750000 AsDuration"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_ThorMengskSieged; MorphTo AP_ThorMengsk" Send="Destroy"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged" Send="Destroy"/>
         <On Terms="Upgrade.AP_ThorMengskArmorAura.Add; !ScopeContains AP_ThorMengskArmorAuraRange" Send="Create AP_ThorMengskArmorAuraRange"/>
@@ -42230,7 +42210,6 @@
         <On Terms="ActorCreation" Send="AnimPlay Start Stand,Work,Start"/>
         <On Terms="AnimDone; AnimName Start" Send="AnimPlay Work Stand,Work PlayForever"/>
         <On Terms="AbilTransport.AP_MedivacTransport.TransportUnload; AbilTransport AP_ThorMengsk" Send="Destroy"/>
-        <On Terms="AbilTransport.AP_MedivacTransport.TransportUnload; AbilTransport AP_ThorMengskAP" Send="Destroy"/>
         <On Terms="Signal.*.Dead" Send="Create AP_ThorMengskTransitDeath"/>
         <On Terms="Signal.*.Dead" Send="Destroy"/>
         <Host Subject="::Creator"/>
@@ -42246,16 +42225,6 @@
         <Sound value="AP_ThorMengskTransitLand"/>
         <Layers Sound="AP_SiegeTank_Land_RockDebris"/>
     </CActorSound>
-    <CActorAction id="AP_ThorMengskAALanceAttack" parent="GenericAttack" effectAttack="AP_LanceMissileLaunchersMengskDamage">
-        <LaunchAttachQuery Methods="AMFilterWeaponSetA2 AP_AMPatternThorMengskAALance"/>
-        <LaunchAssets Model="" Sound=""/>
-        <DamageMap index="None" Sound=""/>
-        <AcquisitionYawHalfArc value="10.000000"/>
-        <AcquisitionPitchHalfArc value="15.000000"/>
-        <AccuracyHalfArc value="5.000000"/>
-        <ImpactMap index="None" Model="ThorAAAttackImpactLance" Sound="250mmStrikeCannonsSound"/>
-        <ImpactPhysics Name="JavelinImpact" MatchKeys="Basic" Physics="ThorAAAttackForce"/>
-    </CActorAction>
     <CActorRange id="AP_ThorMengskArmorAuraRange">
         <Range value="5"/>
         <On Terms="SelectionLocalUpdate.*.Start" Send="SetVisibility 1"/>
@@ -42263,24 +42232,6 @@
         <On Terms="ActorCreation; !Selected" Send="SetVisibility"/>
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
-    <CActorSound id="AP_ThorWrecakgeLoopSound" parent="SoundContinuous">
-        <Sound value="AP_Thor_ImmortalityProtocolWeldLoop"/>
-    </CActorSound>
-    <CActorModel id="AP_ThorWrecakgeOverlayModel" parent="ModelAnimationStyleContinuous">
-        <On Terms="AbilMorph.AP_ThorMengskAPWreckage.Start; !ScopeContains AP_ThorWrecakgeOverlayModel" Send="Create"/>
-        <On Terms="AbilMorph.*.Start; !ScopeContains AP_ThorWrecakgeOverlayModel; MorphTo AP_ThorMengskWreckage" Send="Create"/>
-        <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskWreckage" Send="Destroy"/>
-        <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 127,127,127 0.5 OneShot AP_ThorWrecakgeOverlayModel"/>
-        <On Terms="ActorDestruction" Target="_Unit" Send="ClearTintColor 3 AP_ThorWrecakgeOverlayModel"/>
-        <On Terms="ActorCreation" Send="SetVisibility"/>
-        <Model value="RavenScramblerMissileBehavior"/>
-        <HostSiteOps Ops="SOpAttachCenter" HoldRotation="1"/>
-        <Host Subject="_Selectable"/>
-        <Inherits index="BaseModelScale" value="1"/>
-        <Inherits index="Scale" value="1"/>
-        <Inherits index="Visibility" value="1"/>
-        <AutoScaleFactor value="1.000000"/>
-    </CActorModel>
     <CActorUnit id="BroodLord">
         <!-- Override -->
         <!-- Part of infinite Broodling fix -->

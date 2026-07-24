@@ -22935,9 +22935,21 @@
     <CEffectLaunchMissile id="AP_ThorMengskSiegedLM">
         <ValidatorArray index="0" value="AP_ThorMengskSiegeTarget"/>
         <EditorCategories value="Race:Zerg"/>
+        <LaunchEffect value="AP_ThorMengskInfernoBlitzAB"/>
         <ImpactEffect value="AP_ThorMengskSiegedDamage"/>
         <AmmoUnit value="AP_ThorMengskSiegedWeapon"/>
     </CEffectLaunchMissile>
+    <CEffectApplyBehavior id="AP_ThorMengskInfernoBlitzAB">
+        <ValidatorArray value="AP_HaveThorMengskInfernoBlitz"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_ThorMengskInfernoBlitzStack"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_ThorMengskInfernoBlitzRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_ThorMengskInfernoBlitzStack"/>
+    </CEffectRemoveBehavior>
     <CEffectDamage id="AP_ThorsHammerMengskDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
@@ -22995,9 +23007,14 @@
         <AreaArray Radius="5" Effect="AP_ThorMengskArmorAuraTargetAB"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_ThorMengskArmorAuraTargetAB">
-        <ValidatorArray value="AP_UnitNotCollideWithColossus"/>
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_ThorMengskArmorAuraTarget"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="AP_ThorMengskArmorAuraSiegedSearch" parent="AP_ThorMengskArmorAuraSearch">
+        <AreaArray index="0" Effect="AP_ThorMengskArmorAuraSiegedTargetAB"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="AP_ThorMengskArmorAuraSiegedTargetAB" parent="AP_ThorMengskArmorAuraTargetAB">
+        <Behavior value="AP_ThorMengskArmorAuraSiegedTarget"/>
     </CEffectApplyBehavior>
     <CEffectIssueOrder id="AP_ThorMengskSiegeOrder">
         <EditorCategories value=""/>
@@ -23006,17 +23023,6 @@
         <Player Value="Creator"/>
         <Target Value="CasterUnit"/>
     </CEffectIssueOrder>
-    <CEffectIssueOrder id="AP_ThorMengskNormalModeFollowedBySiegeOrder">
-        <EditorCategories value=""/>
-        <WhichUnit Value="Caster"/>
-        <Abil value="AP_ThorMengskNormalModeFollowedBySiege"/>
-        <Player Value="Creator"/>
-        <Target Value="CasterUnit"/>
-    </CEffectIssueOrder>
-    <CEffectSet id="AP_ThorMengskNormalModeFollowedBySiegeOrderSet">
-        <EffectArray value="AP_ThorMengskSiegeMorphingAB"/>
-        <EffectArray value="AP_ThorMengskNormalModeFollowedBySiegeOrder"/>
-    </CEffectSet>
     <CEffectApplyBehavior id="AP_ThorMengskSiegeTargetAB">
         <EditorCategories value=""/>
         <Behavior value="AP_ThorMengskSiegeTarget"/>
@@ -23044,22 +23050,18 @@
         <PeriodicPeriodArray value="0"/>
         <PeriodicPeriodArray value="3"/>
         <PeriodicValidator value="CasterNotDead"/>
-        <PeriodicEffectArray value="AP_ThorMengskSiegeOrderSwitch"/>
+        <PeriodicEffectArray value="AP_ThorMengskSiegeOrder"/>
         <PeriodicEffectArray value="AP_ThorMengskSiegeTargetCP"/>
     </CEffectCreatePersistent>
     <CEffectCreatePersistent id="AP_ThorMengskSiegeTargetLargeAoEDelayCP">
         <EditorCategories value=""/>
         <PeriodCount value="2"/>
         <PeriodicValidator value="CasterNotDead"/>
-        <PeriodicEffectArray value="AP_ThorMengskSiegeOrderSwitch"/>
+        <PeriodicEffectArray value="AP_ThorMengskSiegeOrder"/>
         <PeriodicEffectArray value="AP_ThorMengskSiegeTargetLargeAoECP"/>
         <PeriodicPeriodArray value="0"/>
         <PeriodicPeriodArray value="3"/>
     </CEffectCreatePersistent>
-    <CEffectSwitch id="AP_ThorMengskSiegeOrderSwitch">
-        <CaseArray Validator="AP_CasterThorMengskAP" Effect="AP_ThorMengskNormalModeFollowedBySiegeOrderSet"/>
-        <CaseDefault value="AP_ThorMengskSiegeOrder"/>
-    </CEffectSwitch>
     <CEffectEnumArea id="AP_ThorMengskSiegeTargetSearch">
         <EditorCategories value=""/>
         <SearchFilters value="Visible;Self,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
@@ -23070,36 +23072,6 @@
         <SearchFilters value="Air,Visible;Self,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="6" Effect="AP_ThorMengskSiegeTargetAB"/>
     </CEffectEnumArea>
-    <CEffectDamage id="AP_LanceMissileLaunchersMengskDamage" parent="DU_WEAP_SPLASH">
-        <EditorCategories value="Race:Terran"/>
-        <Kind value="Ranged"/>
-        <KindSplash value="Splash"/>
-        <AttributeBonus index="Massive" value="10"/>
-        <Amount value="40">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
-        </Amount>
-        <Death value="Blast"/>
-        <ValidatorArray value="AP_TargetIsNotGroundOrNotInThorGroundRange"/>
-        <SearchFilters value="Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-    </CEffectDamage>
-    <CEffectIssueOrder id="AP_ThorMengskContinueMorphingToAP">
-        <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Caster"/>
-        <Abil value="AP_ThorMengskAPModeFromSiegeStage2"/>
-        <Player Value="Creator"/>
-        <Target Value="CasterUnit"/>
-    </CEffectIssueOrder>
-    <CEffectApplyBehavior id="AP_ThorMengskSiegeMorphingAB">
-        <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Caster"/>
-        <Behavior value="AP_ThorMengskSiegeMorphing"/>
-    </CEffectApplyBehavior>
-    <CEffectRemoveBehavior id="AP_ThorMengskSiegeMorphingRB">
-        <EditorCategories value="Race:Zerg"/>
-        <WhichUnit Value="Caster"/>
-        <BehaviorLink value="AP_ThorMengskSiegeMorphing"/>
-    </CEffectRemoveBehavior>
     <CEffectLaunchMissile id="AP_PunisherGrenadesMengskLM">
         <EditorCategories value="Race:Terran"/>
         <ImpactEffect value="AP_PunisherGrenadesMengskSet"/>

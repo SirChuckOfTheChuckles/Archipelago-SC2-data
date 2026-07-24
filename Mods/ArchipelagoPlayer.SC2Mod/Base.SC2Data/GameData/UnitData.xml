@@ -29863,8 +29863,8 @@
         <Sight value="11"/>
         <Food value="-8"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="600"/>
-        <CostResource index="Vespene" value="600"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="550"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="attack"/>
@@ -29874,11 +29874,11 @@
         <AbilArray Link="AP_ThorMengskSiegeTargeted"/>
         <AbilArray Link="AP_ThorMengskSiegeTargetedIncreasedRange"/>
         <AbilArray Link="AP_ThorMengskSiegeTargetedLargeAoE"/>
-        <AbilArray Link="AP_ThorMengskAPModeFromSiegeStage2"/>
-        <AbilArray Link="AP_ThorMengskWreckage"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
         <BehaviorArray Link="AP_ThorMengskArmorAura"/>
+        <BehaviorArray Link="AP_ThorMengskHammerOfTheLawRange"/>
+        <BehaviorArray Link="AP_ThorMengskHammerOfTheLawAttackSpeed"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -29895,9 +29895,12 @@
             <LayoutButtons Face="AP_ThorMengskSiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargetedLargeAoE,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_ThorMengskSiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargetedIncreasedRange,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_ThorMengskSiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargeted,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_ThorMengskAPMode,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_ThorMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_ThorMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AP_ThorMengskArmorAura" Type="Passive" Requirements="AP_HaveThorMengskArmorAura" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_HaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_HaveThorMengskInfernoBlitz" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -29912,124 +29915,6 @@
         <GlossaryPriority value="140"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <HotkeyCategory value="Unit/Category/AP_TerranUnitsGround"/>
-        <AIEvaluateAlias value="Thor"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="10"/>
-            <ChanceArray index="Idle" value="90"/>
-        </Fidget>
-        <TauntDuration index="Cheer" value="5"/>
-        <TauntDuration index="Dance" value="5"/>
-        <ReviveInfoBase>
-            <Charge Link="Thor/Revive"/>
-            <Cooldown Link="Thor/Revive"/>
-        </ReviveInfoBase>
-    </CUnit>
-    <!-- Note: This unit is currently unused -->
-    <CUnit id="AP_ThorMengskAP">
-        <Name value="Unit/Name/AP_ThorMengsk"/>
-        <DeathRevealRadius value="3"/>
-        <Facing value="135"/>
-        <Race value="Terr"/>
-        <Mob value="Multiplayer"/>
-        <FlagArray index="PreventDestroy" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <FlagArray index="TurnBeforeMove" value="1"/>
-        <FlagArray index="ArmySelect" value="1"/>
-        <PlaneArray index="Ground" value="1"/>
-        <Collide index="Ground" value="1"/>
-        <Collide index="Colossus" value="1"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <Attributes index="Massive" value="1"/>
-        <LifeStart value="600"/>
-        <LifeMax value="600"/>
-        <LifeArmor value="3"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
-        <Speed value="1.875"/>
-        <Acceleration value="1000"/>
-        <LateralAcceleration value="46.0625"/>
-        <TurningRate value="360"/>
-        <Sight value="11"/>
-        <Food value="-8"/>
-        <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="600"/>
-        <CostResource index="Vespene" value="600"/>
-        <RepairTime value="60"/>
-        <AttackTargetPriority value="20"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="AP_ThorMengskSiegeTargeted"/>
-        <AbilArray Link="AP_ThorMengskSiegeTargetedIncreasedRange"/>
-        <AbilArray Link="AP_ThorMengskSiegeTargetedLargeAoE"/>
-        <AbilArray Link="AP_250mmStrikeCannons"/>
-        <AbilArray Link="AP_330mmBarrageCannons"/>
-        <AbilArray Link="AP_330mmBarrageCannonsTargetUnit"/>
-        <AbilArray Link="AP_ThorMengskNormalMode"/>
-        <AbilArray Link="AP_ThorMengskNormalModeFollowedBySiege"/>
-        <AbilArray Link="AP_TacNukeStrikeThor"/>
-        <AbilArray Link="AP_ThorMengskAPWreckage"/>
-        <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
-        <BehaviorArray Link="AP_ThorMengskArmorAura"/>
-        <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
-        <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
-        <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
-        <BehaviorArray Link="AP_MengskVeteranL4Tracker"/>
-        <BehaviorArray Link="AP_NovaMultiTaskMAFServosThorIndicator"/>
-        <BehaviorArray Link="AP_ThorMengskAPDontDie"/>
-        <WeaponArray Link="AP_LanceMissileLaunchersMengsk"/>
-        <WeaponArray Link="AP_ThorsHammerMengsk"/>
-        <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
-        <CardLayouts>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AP_250mmStrikeCannonsMengsk" Type="AbilCmd" AbilCmd="AP_250mmStrikeCannons,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_330mmBarrageCannonsMengsk" Type="AbilCmd" AbilCmd="AP_330mmBarrageCannons,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_330mmBarrageCannonsMengskTargetUnit" Type="AbilCmd" AbilCmd="AP_330mmBarrageCannonsTargetUnit,0" Row="2" Column="1"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_250mmStrikeCannons,1" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_330mmBarrageCannons,1" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_330mmBarrageCannonsTargetUnit,1" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_ThorMengskNormalMode,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_TacNukeStrikeThor,1" Row="2" Column="4"/>
-            <LayoutButtons Face="AP_ThorMengskUnsiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargetedLargeAoE,Execute" Row="1" Column="1"/>
-            <LayoutButtons Face="AP_ThorMengskUnsiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargetedIncreasedRange,Execute" Row="1" Column="1"/>
-            <LayoutButtons Face="AP_ThorMengskUnsiege" Type="AbilCmd" AbilCmd="AP_ThorMengskSiegeTargeted,Execute" Row="1" Column="1"/>
-            <LayoutButtons Face="AP_NukeCalldown" Type="AbilCmd" AbilCmd="AP_TacNukeStrikeThor,0" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_ThorMengskVeterancy" Type="Passive" Row="2" Column="4"/>
-<!--            <LayoutButtons Face="AP_ThorMengskArmorAura" Type="Passive" Requirements="AP_HaveThorMengskArmorAura" Row="1" Column="2"/>-->
-            <LayoutButtons>
-                <Face value="AP_ImmortalityProtocol"/>
-                <Type value="Passive"/>
-                <AbilCmd value="255"/>
-                <Requirements value="AP_UseImmortailityProtocol"/>
-                <Row value="1"/>
-                <Column value="2"/>
-            </LayoutButtons>
-            <LayoutButtons Face="AP_ExplosiveMode" Type="AbilCmd" AbilCmd="AP_ThorMengskNormalMode,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_LaserTargetingSystem" Type="Passive" Requirements="AP_HaveLaserTargetingSystemThor" Row="1" Column="3"/>
-            <LayoutButtons Face="AP_ThorRapidReload" Type="Passive" Requirements="AP_HaveThorRapidReload" Row="1" Column="4"/>
-        </CardLayouts>
-        <Radius value="1"/>
-        <SeparationRadius value="1"/>
-        <InnerRadius value="1"/>
-        <CargoSize value="8"/>
-        <ScoreResult value="BuildOrder"/>
-        <SubgroupPriority value="35"/>
-        <MinimapRadius value="1"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Thor"/>
-        <TacticalAIThink value="AIThinkThor"/>
-        <GlossaryPriority value="140"/>
-        <GlossaryAlias value="AP_ThorMengsk"/>
-        <LeaderAlias value="AP_ThorMengsk"/>
-        <HotkeyAlias value="AP_ThorMengsk"/>
-        <SelectAlias value="AP_ThorMengsk"/>
-        <SubgroupAlias value="AP_ThorMengsk"/>
         <AIEvaluateAlias value="Thor"/>
         <Fidget>
             <ChanceArray index="Anim" value="10"/>
@@ -30071,18 +29956,18 @@
         <Sight value="11"/>
         <Food value="-8"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="600"/>
-        <CostResource index="Vespene" value="600"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="550"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_ThorMengskUnsiege"/>
-        <AbilArray Link="AP_ThorMengskUnsiegeAPMode"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
         <BehaviorArray Link="AP_ThorMengskSiegeAttackRate"/>
+        <BehaviorArray Link="AP_ThorMengskArmorAuraSieged"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30098,6 +29983,10 @@
             <LayoutButtons Face="AP_ExplosiveMode" Type="AbilCmd" AbilCmd="AP_ThorMengskUnsiege,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_ThorMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_ThorMengskSiegedCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AP_ThorMengskArmorAura" Type="Passive" Requirements="AP_HaveThorMengskArmorAura" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_HaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_HaveThorMengskInfernoBlitz" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -30117,74 +30006,6 @@
         <GlossaryAlias value="AP_ThorMengsk"/>
         <GlossaryPriority value="140"/>
         <AIEvaluateAlias value="Thor"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="10"/>
-            <ChanceArray index="Idle" value="90"/>
-        </Fidget>
-        <TauntDuration index="Cheer" value="5"/>
-        <TauntDuration index="Dance" value="5"/>
-        <ReviveInfoBase>
-            <Charge Link="Thor/Revive"/>
-            <Cooldown Link="Thor/Revive"/>
-        </ReviveInfoBase>
-    </CUnit>
-    <CUnit id="AP_ThorMengskWreckage">
-        <DeathRevealRadius value="3"/>
-        <Facing value="135"/>
-        <Race value="Terr"/>
-        <Mob value="Multiplayer"/>
-        <FlagArray index="Turnable" value="0"/>
-        <FlagArray index="Movable" value="0"/>
-        <FlagArray index="PreventDestroy" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <FlagArray index="TurnBeforeMove" value="1"/>
-        <FlagArray index="ArmySelect" value="1"/>
-        <PlaneArray index="Ground" value="1"/>
-        <Collide index="Ground" value="1"/>
-        <Collide index="Colossus" value="1"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <Attributes index="Massive" value="1"/>
-        <LifeStart value="600"/>
-        <LifeMax value="600"/>
-        <LifeArmor value="3"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
-        <Speed value="1.875"/>
-        <Acceleration value="1000"/>
-        <LateralAcceleration value="46.0625"/>
-        <TurningRate value="360"/>
-        <Sight value="11"/>
-        <Food value="-8"/>
-        <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="600"/>
-        <RepairTime value="60"/>
-        <AttackTargetPriority value="18"/>
-        <DamageDealtXP value="1"/>
-        <DamageTakenXP value="1"/>
-        <KillXP value="160"/>
-        <AbilArray Link="AP_ThorMengskReborn"/>
-        <AbilArray Link="AP_ThorMengskRebornFree"/>
-        <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
-        <WeaponArray Link="AP_ThorsHammerMengsk"/>
-        <CardLayouts>
-            <LayoutButtons Face="AP_ImmortalityProtocol" Type="AbilCmd" AbilCmd="AP_ThorMengskRebornFree,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_ImmortalityProtocol" Type="AbilCmd" AbilCmd="AP_ThorMengskReborn,Execute" Row="2" Column="0"/>
-        </CardLayouts>
-        <Radius value="1.375"/>
-        <SeparationRadius value="1"/>
-        <InnerRadius value="0.8125"/>
-        <CargoSize value="8"/>
-        <ScoreMake value="500"/>
-        <ScoreKill value="500"/>
-        <ScoreResult value="BuildOrder"/>
-        <SubgroupPriority value="2"/>
-        <MinimapRadius value="1"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAIThink value="AIThinkThor"/>
-        <HotkeyAlias value="AP_ThorMengsk"/>
-        <HotkeyCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="10"/>
             <ChanceArray index="Idle" value="90"/>

@@ -9575,7 +9575,36 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="AP_CasterLevelGTE4"/>
-        <Modification AttackSpeedMultiplier="1.33"/>
+        <Modification AdditiveAttackSpeedFactor="0.33"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskInfernoBlitzStack">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="30"/>
+        <Duration value="6"/>
+        <Modification AdditiveAttackSpeedFactor="0.03"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskHammerOfTheLawRange">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_HaveThorMengskHammerOfTheLaw"/>
+        <DisableValidatorArray value="AP_CasterLevelGTE2"/>
+        <DisableValidatorArray value="AP_CasterLevelLT4"/>
+        <Modification>
+            <WeaponArray Link="AP_ThorsHammerMengskHammerOfTheLawRank1"/>
+            <WeaponDisableArray value="AP_ThorsHammerMengsk"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskHammerOfTheLawAttackSpeed">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_HaveThorMengskHammerOfTheLaw"/>
+        <DisableValidatorArray value="AP_CasterLevelGTE4"/>
+        <Modification>
+            <WeaponArray Link="AP_ThorsHammerMengskHammerOfTheLawRank3"/>
+            <WeaponDisableArray value="AP_ThorsHammerMengsk"/>
+        </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ThorMengskSiegeTarget">
         <InfoFlags index="Hidden" value="1"/>
@@ -9587,7 +9616,7 @@
     <CBehaviorBuff id="AP_ThorMengskArmorAura">
         <BehaviorFlags index="Permanent" value="1"/>
         <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units,Race:Zerg"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <DisableValidatorArray value="AP_HaveThorMengskArmorAura"/>
         <Period value="0.25"/>
         <PeriodicEffect value="AP_ThorMengskArmorAuraSearch"/>
@@ -9596,9 +9625,24 @@
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-mengsk-thor-bigboycover.dds"/>
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <DisableValidatorArray value="AP_NotHaveThorMengskArmorAuraSiegedTarget"/>
+        <MaxStackCount value="1"/>
         <Duration value="0.375"/>
         <Modification>
-            <LifeArmorBonus value="3"/>
+            <LifeArmorBonus value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskArmorAuraSieged" parent="AP_ThorMengskArmorAura">
+        <PeriodicEffect value="AP_ThorMengskArmorAuraSiegedSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskArmorAuraSiegedTarget">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-mengsk-thor-bigboycover.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
+        <MaxStackCount value="1"/>
+        <Duration value="0.375"/>
+        <Modification>
+            <LifeArmorBonus value="2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyThorMengsk">
@@ -9630,21 +9674,6 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorBuff id="AP_ThorMengskSiegeMorphing">
-        <BehaviorFlags index="Permanent" value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <Duration value="10"/>
-        <Period value="0.05"/>
-        <PeriodicEffect value="AP_ThorMengskSiegeOrder"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_NovaMultiTaskMAFServosThorIndicator">
-        <!-- Indicator of passive upgrade - full command card -->
-        <BehaviorFlags index="Permanent" value="1"/>
-        <DisableValidatorArray value="AP_HaveMultiTaskMAFServosThor"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
-        <Name value="Button/Name/AP_NovaMultiTaskMAFServos"/>
-        <Tooltip value="Button/Tooltip/AP_NovaMultiTaskMAFServos"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskAbsorb">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>

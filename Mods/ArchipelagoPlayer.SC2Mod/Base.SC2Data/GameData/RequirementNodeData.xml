@@ -7339,6 +7339,18 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_ThorMengskArmorAura" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeThorMengskSmartServosCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_ThorMengskSmartServos" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeThorMengskHammerOfTheLawCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_ThorMengskHammerOfTheLaw" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeThorMengskInfernoBlitzCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_ThorMengskInfernoBlitz" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountBehavior id="AP_CountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MengskVeterancyMarauderMengsk" State="CompleteOnlyAtUnit"/>

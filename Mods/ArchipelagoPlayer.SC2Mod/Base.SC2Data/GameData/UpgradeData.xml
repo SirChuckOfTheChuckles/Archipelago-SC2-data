@@ -3614,8 +3614,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="0.601500"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="3.000000"/>
@@ -3732,8 +3730,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="2"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="3.000000"/>
@@ -3851,8 +3847,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="10"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="2"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="2"/>
@@ -11981,8 +11975,6 @@
         <EffectArray Reference="Weapon,AP_MercThorsHammer,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_ThorMengsk,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengsk,SightBonus[Dawn]" Value="2"/>
-        <EffectArray Reference="Unit,AP_ThorMengskAP,SightBonus[Dusk]" Value="2"/>
-        <EffectArray Reference="Unit,AP_ThorMengskAP,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengskSieged,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengskSieged,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,Range" Value="1"/>
@@ -11991,8 +11983,10 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
@@ -12439,8 +12433,10 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
@@ -14551,12 +14547,8 @@
         <!-- Blackhammer -->
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengsk,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengsk,LifeStart" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskAP,LifeMax" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskAP,LifeStart" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeStart" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskWreckage,LifeMax" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskWreckage,LifeStart" Value="1.2001"/>
         <!-- Bulwark Company -->
         <EffectArray Operation="Multiply" Reference="Unit,AP_GoliathMengsk,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_GoliathMengsk,LifeStart" Value="1.2001"/>
@@ -14676,7 +14668,8 @@
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_PunisherGrenadesMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_C10CanisterRifleMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_TrooperMengsk,RateMultiplier" Value="0.15"/>
@@ -15130,11 +15123,30 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-ability-mengsk-thor-bigboycover.dds"/>
         <AffectedUnitArray value="AP_ThorMengsk"/>
-        <AffectedUnitArray value="AP_ThorMengskAP"/>
         <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
-    <CUpgrade id="AP_ThorMengskArmorAuraL2">
-        <EffectArray Reference="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus" Value="2"/>
+    <CUpgrade id="AP_ThorMengskSmartServos">
+        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskSiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskUnsiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetDelayCP,PeriodicPeriodArray[1]" Value="4"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetLargeAoEDelayCP,PeriodicPeriodArray[1]" Value="4"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengsk"/>
+        <AffectedUnitArray value="AP_ThorMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ThorMengskHammerOfTheLaw">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengsk,DamagePoint" Value="0.331"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,DamagePoint" Value="0.331"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,DamagePoint" Value="0.331"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ThorMengskInfernoBlitz">
+        <Icon value="Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleNukeArmed"/>
     <CUpgrade id="AP_UnfriendlyNukeIndicator">

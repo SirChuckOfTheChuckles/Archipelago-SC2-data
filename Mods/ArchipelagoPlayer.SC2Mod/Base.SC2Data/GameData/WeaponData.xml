@@ -3853,19 +3853,14 @@
         <Backswing value="0.25"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_LanceMissileLaunchersMengsk">
-        <EditorCategories value="Race:Terran"/>
-        <!--Options index="Disabled" value="1"/-->
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <DisplayEffect value="AP_LanceMissileLaunchersMengskDamage"/>
-        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AcquirePrioritization value="ByAngle"/>
-        <Range value="11"/>
-        <Arc value="5.625"/>
-        <Period value="1.28"/>
-        <LegacyOptions index="KeepChanneling" value="1"/>
-        <Effect value="AP_LanceMissileLaunchersMengskDamage"/>
-        <!--Effect value="LanceMissileLaunchersLaunchMissile"/-->
+    <CWeaponLegacy id="AP_ThorsHammerMengskHammerOfTheLawRank1" parent="AP_ThorsHammerMengsk">
+        <MinScanRange value="9.5"/>
+        <Range value="9"/>
+        <DamagePoint value="0.331"/>
+        <Effect value="AP_ThorsHammerMengsk"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_ThorsHammerMengskHammerOfTheLawRank3" parent="AP_ThorsHammerMengskHammerOfTheLawRank1">
+        <RateMultiplier value="1.33"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_PunisherGrenadesMengsk">
         <EditorCategories value="Race:Terran"/>

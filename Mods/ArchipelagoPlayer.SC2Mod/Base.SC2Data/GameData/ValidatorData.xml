@@ -7515,29 +7515,18 @@
         <Find value="1"/>
         <Value value="AP_HaveImprovedSiegeMode"/>
     </CValidatorPlayerRequirement>
-    <CValidatorUnitType id="AP_IsAPThorMengskBaseMode">
-        <Value value="AP_ThorMengsk"/>
-    </CValidatorUnitType>
     <CValidatorUnitType id="AP_CasterThorMengskSieged">
         <WhichUnit Value="Caster"/>
         <Value value="AP_ThorMengskSieged"/>
     </CValidatorUnitType>
-    <CValidatorCombine id="AP_ThorMengskSiegedOrMorphing">
-        <CombineArray value="AP_CasterThorMengskSieged"/>
-        <CombineArray value="AP_CasterHasThorMengskSiegeMorphing"/>
-    </CValidatorCombine>
-    <CValidatorUnitType id="AP_CasterThorMengskAP">
-        <WhichUnit Value="Caster"/>
-        <Value value="AP_ThorMengskAP"/>
-    </CValidatorUnitType>
     <CValidatorCombine id="AP_CasterThorMengskSiegedNotDead">
         <Type value="And"/>
-        <CombineArray value="AP_ThorMengskSiegedOrMorphing"/>
+        <CombineArray value="AP_CasterThorMengskSieged"/>
         <CombineArray value="CasterNotDead"/>
     </CValidatorCombine>
     <CValidatorCombine id="AP_CasterThorMengskSiegedSmallAoE">
         <Type value="And"/>
-        <CombineArray value="AP_ThorMengskSiegedOrMorphing"/>
+        <CombineArray value="AP_CasterThorMengskSieged"/>
         <CombineArray value="CasterNotDead"/>
         <CombineArray value="AP_CasterLevelLT3"/>
     </CValidatorCombine>
@@ -7551,15 +7540,25 @@
         <Behavior value="AP_ThorMengskSiegeTarget"/>
         <RequireOriginPlayer Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasThorMengskSiegeMorphing">
-        <WhichUnit Value="Caster"/>
-        <Value value="1"/>
-        <Behavior value="AP_ThorMengskSiegeMorphing"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorPlayerRequirement id="AP_HaveThorMengskArmorAura">
         <Find value="1"/>
         <Value value="AP_HaveThorMengskArmorAura"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveThorMengskSmartServos">
+        <Find value="1"/>
+        <Value value="AP_HaveThorMengskSmartServos"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveThorMengskHammerOfTheLaw">
+        <Find value="1"/>
+        <Value value="AP_HaveThorMengskHammerOfTheLaw"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveThorMengskInfernoBlitz">
+        <Find value="1"/>
+        <Value value="AP_HaveThorMengskInfernoBlitz"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_NotHaveThorMengskArmorAuraSiegedTarget">
+        <Behavior value="AP_ThorMengskArmorAuraSiegedTarget"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_NoMarauderMengskAbsorbReapplicator">
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
