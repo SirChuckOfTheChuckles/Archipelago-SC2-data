@@ -2212,8 +2212,8 @@ Button/Name/AP_WidowMine=Arachnomine bauen /// Build Widow Mine
 Button/Name/AP_WidowMineAttack=Angreifen /// Attack
 Button/Name/AP_WidowMineBioSplash=Wächterraketen /// Sentinel Missiles
 Button/Name/AP_WidowMineBurrow=Mine aktivieren /// Activate Mine
-Button/Name/AP_WidowMineConcealment=Verbergen /// Concealment
 Button/Name/AP_WidowMineDemolitionArmaments=Sprengstoffladung /// Demolition Payload
+Button/Name/AP_WidowMineLingeringConcealment=Verbergen /// Concealment
 Button/Name/AP_WidowMineUnburrow=Mine deaktivieren /// Deactivate Mine
 Button/Name/AP_WildMutation=Wilde Mutation /// Wild Mutation
 Button/Name/AP_Wraith=Raumjäger bauen /// Build Wraith
@@ -3839,8 +3839,8 @@ Button/Tooltip/AP_WidowMine=Robotische Mine. Schießt im eingegrabenen Zustand R
 Button/Tooltip/AP_WidowMineAttack=Greift jede gegnerische Einheit in der Nähe an. /// Attacks any nearby enemy unit.
 Button/Tooltip/AP_WidowMineBioSplash=Greift mit Raketen gegnerische Boden- und Lufteinheiten an, die zu nahe kommen. Die Raketen fügen ihrem Hauptziel <d ref="Effect,AP_WidowMineExplodeDirect,Amount"/> (+<d ref="Effect,AP_WidowMineExplodeDirect,ShieldBonus"/> gegen Schilde) Schaden und in der Nähe befindlichen Einheiten <d ref="Effect,AP_WidowMineExplodeSplash,Amount"/> (+<d ref="Effect,AP_WidowMineExplodeSplash,ShieldBonus"/> gegen Schilde) Flächenschaden zu.<n/><n/><c val="#ColorAttackInfo">Abklingzeit: <d ref="Abil,AP_WidowMineAttack,Cost[0].Cooldown[0].TimeUse[0]"/> Sek.</c> /// Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <d ref="Effect,WidowMineExplodeDirect,Amount"/> (+35 vs. shields) damage to their primary target, and <d ref="Effect,WidowMineExplodeSplash,Amount"/> (+<d ref="Effect,WidowMineExplodeSplashShields,VitalBonus[Shields]"/> vs. shields) splash damage to units nearby.<n/><n/><c val="#ColorAttackInfo">Cooldown: <d ref="Abil,WidowMineAttack,Cost[0].Cooldown[0].TimeUse[0]"/> seconds.</c>
 Button/Tooltip/AP_WidowMineBurrow=Gräbt die Arachnomine ein und macht sie scharf. Kann sich im aktivierten Zustand nicht bewegen. /// Burrows the Widow Mine and readies its weapon. Cannot move while activated.
-Button/Tooltip/AP_WidowMineConcealment=Diese Einheit wird beim Nachladen nicht mehr aufgedeckt. /// This unit is no longer revealed while reloading.
 Button/Tooltip/AP_WidowMineDemolitionArmaments=Erlaubt Arachnominen Gebäude anzugreifen. /// Allows Widow Mines to attack buildings.
+Button/Tooltip/AP_WidowMineLingeringConcealment=Diese Einheit wird beim Nachladen nicht mehr aufgedeckt. /// This unit is no longer revealed while reloading.
 Button/Tooltip/AP_WidowMineUnburrow=Gräbt die Arachnomine aus und deaktiviert die Waffensysteme, sodass sie sich bewegen kann. /// Unburrows the Widow Mine and deactivates its weapon, allowing it to move.
 Button/Tooltip/AP_WildMutation=Verbündete Zerg-Bodeneinheiten im Zielgebiet erhalten +<d ref="Behavior,AP_WildMutation,Modification.VitalMaxArray[1]"/> max. Trefferpunkte und ihre Angriffsgeschwindigkeit wird um <d ref="(Behavior,AP_WildMutation,Modification.AttackSpeedMultiplier - 1) * 100"/>% erhöht. Hält <d ref="Behavior,AP_WildMutation,Duration"/> Sek. lang an.<n/><n/><c val="ffff8a">Heroische Einheiten erhalten diesen Bonus nicht.</c>
 Button/Tooltip/AP_Wraith=Äußerst mobile Flugeinheit. Hervorragend für präzise Angriffe geeignet.<n/><n/><c val="ffff8a">Kann Boden- und Lufteinheiten angreifen.</c> /// Highly mobile flying unit. Excellent at surgical strikes.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
@@ -6476,7 +6476,6 @@ Upgrade/Name/AP_ImmortalBarrier=Unsterblicher - Barriere
 Upgrade/Name/AP_ImmortalRevive=Wiederbelebung für Unsterbliche
 Upgrade/Name/AP_ImpalerRounds=Pfähler-Projektile /// Impaler Rounds
 Upgrade/Name/AP_ImpalingStrike=Pfählender Schlag /// Impaling Strike
-Upgrade/Name/AP_ImprovedConcealment=Tarnung /// Concealment
 Upgrade/Name/AP_JackhammerConcussionGrenades=Schockmunition /// Concussive Shells
 Upgrade/Name/AP_JuggernautPlating=Gefechtspanzerung /// Juggernaut Plating
 Upgrade/Name/AP_K5Apocalypse=K5 - Apokalypse /// K5 Apocalypse
@@ -6761,6 +6760,7 @@ Upgrade/Name/AP_VoidRayBeamCanCharge=Phasengleiter - Strahl, kann aufladen
 Upgrade/Name/AP_VoidStalkerBlinkShieldRestore=Void - Hetzer - Transitaufladung
 Upgrade/Name/AP_VoidStoryUnitGlobalUpgrade=Void - Story-Einheit, globales Upgrade
 Upgrade/Name/AP_VultureAutoRepair=Automatische Reparatur /// Auto-Repair
+Upgrade/Name/AP_WidowMineLinergingConcealment=Tarnung /// Concealment
 Upgrade/Name/AP_WraithCloak=Raumjägertarnung /// Wraith Cloak
 Upgrade/Name/AP_YamatoCannon=Yamato-Kanone /// Yamato Cannon
 Upgrade/Name/AP_ZergBurrowMove=Fortbewegung im Eingegrabenen Zustand für Zerg /// Zerg Burrow Move
