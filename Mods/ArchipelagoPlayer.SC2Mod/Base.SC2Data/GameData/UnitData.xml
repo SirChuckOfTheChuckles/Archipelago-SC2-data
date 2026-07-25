@@ -30371,7 +30371,7 @@
         <Food value="-4"/>
         <CostCategory value="Army"/>
         <CostResource index="Minerals" value="275"/>
-        <CostResource index="Vespene" value="475"/>
+        <CostResource index="Vespene" value="450"/>
         <RepairTime value="40"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="stop"/>
