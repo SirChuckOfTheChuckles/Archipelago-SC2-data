@@ -622,7 +622,7 @@
     </CAbilEffectInstant>
     <CAbilAugment id="AP_MagrailMunitionsMarauder">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MagrailMunitions" Requirements="AP_MagrailMunitionsMarauder"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MagrailMunitionsMarauder" Requirements="AP_MagrailMunitionsMarauder"/>
         <Flags index="AutoCast" value="1"/>
         <Flags index="AutoCastOn" value="1"/>
         <AbilCmd value="attack,Execute"/>
@@ -2186,7 +2186,7 @@
         <Flags index="ReExecutable" value="1"/>
         <Flags index="Smart" value="1"/>
         <Cost>
-            <Cooldown TimeUse="40"/>
+            <Cooldown TimeUse="25"/>
         </Cost>
         <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="5"/>
@@ -2220,13 +2220,13 @@
         <Flags index="SuppressMovement" value="1"/>
         <InfoArray Unit="AP_WidowMineBurrowed" RandomDelayMax="0.25">
             <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.125"/>
+                <DurationArray index="Duration" value="2"/>
             </SectionArray>
             <SectionArray index="Collide">
                 <DurationArray index="Delay" value="0.6806"/>
             </SectionArray>
             <SectionArray index="Stats">
-                <DurationArray index="Delay" value="3.125"/>
+                <DurationArray index="Delay" value="2"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
@@ -2241,13 +2241,13 @@
         <Flags index="SuppressMovement" value="1"/>
         <InfoArray Unit="AP_WidowMine" RandomDelayMax="0.25">
             <SectionArray index="Actor">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
             <SectionArray index="Mover">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
             <SectionArray index="Stats">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
@@ -6391,13 +6391,14 @@
         <Cost>
             <Cooldown TimeUse="30"/>
         </Cost>
-        <TargetFilters value="Ground,Visible;Self,Neutral,Massive,Structure,Heroic,Destructible,Invulnerable"/>
+        <TargetFilters value="Ground,Visible;Self,Neutral,Heroic,Destructible,Invulnerable"/>
         <Range value="4"/>
         <RangeSlop value="4"/>
         <AutoCastFilters value="Ground,Visible;Self,Player,Ally,Neutral"/>
         <AutoCastRange value="4"/>
         <AutoCastValidatorArray value="IsNotEgg"/>
         <AutoCastValidatorArray value="AP_IsNotLarva"/>
+        <AutoCastValidatorArray value="AP_PhoenixGravitonBuildingAutocastCheck"/>
         <CancelableArray index="Channel" value="1"/>
         <UninterruptibleArray index="Channel" value="1"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_GravitonBeamVoidCampaign">
@@ -6408,7 +6409,7 @@
         </CmdButtonArray>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_GravitonBeamMirage" parent="AP_GravitonBeamVoidCampaign">
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_GravitonBeamVoidCampaign" Requirements="AP_HaveMirageGravitonBeam">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MirageGravitonBeam" Requirements="AP_HaveMirageGravitonBeam">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectTarget>
@@ -11393,7 +11394,7 @@
         <Cost>
             <Vital index="Energy" value="100"/>
         </Cost>
-        <TargetFilters value="Mechanical,Visible;Self,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="Mechanical,Visible;Self,Structure,Heroic,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="9"/>
         <CastIntroTime value="0.25"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_GhostSCBWLockdown" Requirements="AP_GhostSCBWLockdown">
@@ -16752,5 +16753,30 @@
         <Effect index="0" value="AP_HealpackLarge"/>
         <AutoCastValidatorArray value="AP_HealpackLargeAutocast"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_HealpackLarge" Requirements="AP_HellionHealNoStim"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AP_MirageEternalDuty">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Location value="Player"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeStart="10" TimeUse="30000"/>
+        </Cost>
+        <AutoCastRange value="1"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MirageEternalDuty" Requirements="AP_MirageEternalDuty"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AP_SkirmisherAttackspeed">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="AP_SkirmisherAttackspeedAB"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Cooldown TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_SkirmisherAttackspeed" Requirements="AP_SkirmisherAttackspeed"/>
     </CAbilEffectInstant>
 </Catalog>

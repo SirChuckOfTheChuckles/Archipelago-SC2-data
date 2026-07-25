@@ -1032,8 +1032,16 @@
         <EffectArray Reference="Effect,AP_IonCannonsULeft,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_IonCannonsURight,Amount" Value="1"/>
         <EffectArray Reference="Weapon,AP_IonCannons,Level" Value="1"/>
-        <EffectArray Reference="Weapon,AP_IonCannonsTaldarim,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_IonCannonsU,Amount" Value="1"/>
+        <!-- Mirage -->
+        <EffectArray Reference="Effect,AP_MirageAttackLeftU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_MirageAttackRightU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,AP_MirageAttack,Level" Value="1"/>
+        <EffectArray Reference="Effect,AP_MirageAttackU,Amount" Value="1"/>
+        <!-- Skirmisher -->
+        <EffectArray Reference="Effect,AP_SkirmisherAttackLeftU,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_SkirmisherAttackRightU,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,AP_IonCannonsTaldarim,Level" Value="1"/>
         <!-- Scout -->
         <EffectArray Reference="Weapon,AP_ScoutMPGround,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_ScoutMPGround,Amount" Value="1"/>
@@ -3141,14 +3149,20 @@
         <Race value="Terr"/>
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="2.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="1.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="1.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Collide]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Stats].DurationArray[Collide]" Value="0.500000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_WidowMine"/>
         <AffectedUnitArray value="AP_WidowMineBurrowed"/>
     </CUpgrade>
-    <CUpgrade id="AP_ImprovedConcealment">
+    <CUpgrade id="AP_WidowMineLingeringConcealment">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Abils].EffectArray[Start]" Value="AP_WidowMineLingeringCloakSet"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Abils].EffectArray[Finish]" Value="AP_WidowMineLingeringCloakSet"/>
     </CUpgrade>
     <CUpgrade id="AP_ArmorPiercingRockets">
         <Flags index="TechTreeCheat" value="1"/>
@@ -8048,8 +8062,8 @@
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleWidowMineBurrowed"/>
     <CUpgrade id="AP_HHWidowMineDeathBlossom">
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineAttack,Cost[0].Cooldown.TimeUse" Value="20.000000"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,AP_WidowMineAnimationController,Duration" Value="20.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineAttack,Cost[0].Cooldown.TimeUse" Value="17.000000"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_WidowMineAnimationController,Duration" Value="17.000000"/>
         <AffectedUnitArray value="AP_WidowMine"/>
         <AffectedUnitArray value="AP_WidowMineBurrowed"/>
         <Icon value="Assets\Textures\btn-ability-hornerhan-widowmine-deathblossom.dds"/>
@@ -8716,6 +8730,7 @@
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannonsTaldarim,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MirageAttack,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_InterceptorBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,MothershipBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>-->
@@ -8755,6 +8770,7 @@
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannonsTaldarim,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MirageAttack,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_InterceptorBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,MothershipBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>-->
@@ -8794,6 +8810,7 @@
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannons,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannonsTaldarim,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MirageAttack,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrismaticBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_InterceptorBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,MothershipBeam,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>-->
@@ -8832,6 +8849,7 @@
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannons,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannonsTaldarim,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MirageAttack,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrismaticBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_InterceptorBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,MothershipBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>-->
@@ -8870,6 +8888,7 @@
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannons,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_IonCannonsTaldarim,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MirageAttack,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_PrismaticBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_InterceptorBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <!--        <EffectArray Operation="Set" Reference="Weapon,MothershipBeam,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>-->
@@ -12722,8 +12741,6 @@
     <CUpgrade id="AP_AnionPulseCrystals">
         <EffectArray Reference="Weapon,AP_IonCannons,Range" Value="2"/>
         <EffectArray Reference="Weapon,AP_IonCannons,MinScanRange" Value="2"/>
-        <EffectArray Reference="Weapon,AP_IonCannonsTaldarim,Range" Value="2"/>
-        <EffectArray Reference="Weapon,AP_IonCannonsTaldarim,MinScanRange" Value="2"/>
         <AffectedUnitArray value="Phoenix"/>
     </CUpgrade>
     <CUpgrade id="AP_CorsairPermanentCloak">
@@ -16996,7 +17013,7 @@
         <EffectArray Operation="Set" Reference="Abil,AP_CarrierPurifierHangar,InfoArray[Ammo1].Button.Requirements" Value="AP_ArmCarrierPurifierBomberUpgraded"/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
-    <CUpgrade id="AP_CorruptorAcidSplash">
+    <CUpgrade id="AP_CorruptorSporefall">
         <EffectArray Operation="Set" Reference="Effect,AP_ParasiteSpore_LaunchMissile,ImpactEffect" Value="AP_ParasiteSporeGroundPersistent"/>
     </CUpgrade>
     <CUpgrade id="AP_BunkerIgnoreSupply">
@@ -17311,5 +17328,42 @@
     </CUpgrade>
     <CUpgrade id="AP_Hellion">
         <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[13].Flags[AutoCast]" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MirageDetector">
+        <EffectArray Reference="Weapon,AP_MirageAttack,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_MirageAttack,Range" Value="1"/>
+        <EffectArray Reference="Unit,AP_PhoenixPurifier,Sight" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MirageIllusion"/>
+    <CUpgrade id="AP_MirageEternalDuty"/>
+    <CUpgrade id="AP_MirageCloak"/>
+    <CUpgrade id="AP_PhoenixGravitonBuilding"/>
+    <CUpgrade id="AP_PhoenixGravitonChain"/>
+    <CUpgrade id="AP_PhoenixShield">
+        <EffectArray Reference="Unit,AP_PhoenixAiur,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_PhoenixAiur,ShieldsMax" Value="80"/>
+        <EffectArray Reference="Unit,AP_PhoenixAiur,ShieldsStart" Value="80"/>
+    </CUpgrade>
+    <CUpgrade id="AP_PhoenixAcceleratedWarp">
+        <EffectArray Operation="Subtract" Reference="Abil,AP_StargateTrain,InfoArray[Train1].Time" Value="21.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_StargateTrainRedirect,InfoArray[Train1].Time" Value="21.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_StargateWarpTrain,InfoArray[Train1].Charge.TimeUse" Value="17.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_StargateWarpTrainRedirect,InfoArray[Train1].Charge.TimeUse" Value="17.000000"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MiragePhaseAlignment">
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_VoidPhoenixPhasingArmor,DamageResponse.Cost.Cooldown.TimeUse" Value="1.000000"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SkirmisherAttackspeed"/>
+    <CUpgrade id="AP_SkirmisherHP">
+        <EffectArray Reference="Unit,AP_PhoenixTaldarim,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_PhoenixTaldarim,LifeStart" Value="80"/>
+        <EffectArray Reference="Unit,AP_PhoenixTaldarim,LifeMax" Value="80"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SkirmisherLifesteal"/>
+    <CUpgrade id="AP_SkirmisherSuicide"/>
+    <CUpgrade id="AP_SkirmisherResourceEfficiency">
+        <Icon value="Assets\Textures\btn-ability-hornerhan-salvagebonus.dds"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Vespene]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Minerals]" Value="25"/>
     </CUpgrade>
 </Catalog>
