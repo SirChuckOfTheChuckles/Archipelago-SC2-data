@@ -46442,12 +46442,12 @@
         <PlacementModel value="AP_ElderProbe"/>
         <PortraitModel value="AP_ElderProbePortrait"/>
         <GroupIcon>
-            <Image index="0" value="AP\Assets\Textures\wireframe-protoss-elderprobe.dds.dds"/>
+            <Image index="0" value="AP\Assets\Textures\wireframe-protoss-elderprobe.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
         <UnitIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
         <Wireframe>
-            <Image index="0" value="AP\Assets\Textures\wireframe-protoss-elderprobe.dds.dds"/>
+            <Image index="0" value="AP\Assets\Textures\wireframe-protoss-elderprobe.dds"/>
         </Wireframe>
         <WireframeShield>
             <Image index="0" value="AP\Assets\Textures\wireframe-protoss-elderprobe-shield01.dds"/>

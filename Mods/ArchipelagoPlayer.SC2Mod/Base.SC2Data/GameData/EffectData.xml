@@ -13019,6 +13019,7 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="CasterUnit"/>
         <ValidatorArray value="AP_HaveAiurMothershipShieldRestore"/>
+        <ValidatorArray value="AP_EnemyTarget"/>
         <SearchFilters value="Visible;Enemy,Missile,Stasis,Dead,Invulnerable"/>
         <TargetSorts>
             <SortArray value="TSShieldsFraction"/>
@@ -19922,22 +19923,22 @@
     </CEffectCreatePersistent>
     <CEffectEnumArea id="AP_TimeFieldAiurSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="4.8" Effect="AP_TimeFieldAiurApplyBehaviorSet"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_TimeFieldPurifierSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Neutral,Enemy,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="4.8" Effect="AP_TimeFieldPurifierApplyBehavior"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_TimeFieldAiurCoreSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3.2" Effect="AP_TimeFieldAiurApplyBehaviorSet"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_TimeFieldPurifierCoreSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Neutral,Enemy,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3.2" Effect="AP_TimeFieldPurifierApplyBehavior"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_TimeFieldAiurApplyBehavior">
@@ -19966,7 +19967,7 @@
     </CEffectCreatePersistent>
     <CEffectEnumArea id="AP_TimeFieldTaldarimSearchArea">
         <EditorCategories value="Race:Protoss"/>
-        <SearchFilters value="-;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="5.2" Effect="AP_TimeFieldTaldarimApplyBehavior"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_TimeFieldTaldarimApplyBehavior">
@@ -20105,7 +20106,7 @@
     <CEffectEnumArea id="AP_PurifierMothershipAttackSpeedBoostSearch">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="CasterUnit"/>
-        <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
+        <SearchFilters value="-;Self,Neutral,Enemy,Missile,Dead,Hidden"/>
         <AreaArray Radius="6" Effect="AP_PurifierMothershipAttackSpeedBoostSet"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>

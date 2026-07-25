@@ -2421,11 +2421,10 @@
         <Alignment value="Positive"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <RemoveValidatorArray value="hasShields"/>
         <Duration value="5"/>
-        <Modification>
-            <VitalMaxArray index="Shields" value="250"/>
-        </Modification>
+        <DamageResponse ModifyFraction="0" ModifyLimit="250" ModifyMinimumDamage="1">
+            <Chance value="1"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisBladeWaltzDamaged">
         <InfoFlags index="Hidden" value="1"/>

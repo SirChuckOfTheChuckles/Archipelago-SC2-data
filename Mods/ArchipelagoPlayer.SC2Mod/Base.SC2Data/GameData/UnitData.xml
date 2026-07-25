@@ -22415,6 +22415,7 @@
         </CardLayouts>
         <CardLayouts CardId="MA">
             <LayoutButtons Face="AP_MothershipRepairDrones" Type="Passive" Requirements="AP_HaveMothershipHangarAiurInstalled" Row="0" Column="0"/>
+            <LayoutButtons Face="AP_MothershipRepairDrones" Type="AbilCmd" AbilCmd="AP_MothershipAiurHangar,0" Requirements="AP_NeverShow" Row="0" Column="0"/>
             <LayoutButtons Face="AP_MothershipRepairDronesInstall" Type="AbilCmd" AbilCmd="AP_MothershipAiurAuxiliaryOneTimeInstall,3" Row="0" Column="0"/>
             <LayoutButtons Face="AP_AiurMothershipShieldRestore" Type="Passive" Requirements="AP_HaveAiurMothershipShieldRestore" Row="0" Column="1"/>
             <LayoutButtons Face="AP_AiurMothershipShieldRestoreInstall" Type="AbilCmd" AbilCmd="AP_MothershipAiurAuxiliaryOneTimeInstall,1" Row="0" Column="1"/>
@@ -22543,6 +22544,7 @@
         </CardLayouts>
         <CardLayouts CardId="MA">
             <LayoutButtons Face="AP_MothershipChronoDrones" Type="Passive" Requirements="AP_HaveMothershipHangarPurifierInstalled" Row="0" Column="0"/>
+            <LayoutButtons Face="AP_MothershipChronoDrones" Type="AbilCmd" AbilCmd="AP_MothershipPurifierHangar,0" Requirements="AP_NeverShow" Row="0" Column="0"/>
             <LayoutButtons Face="AP_MothershipChronoDronesInstall" Type="AbilCmd" AbilCmd="AP_MothershipPurifierAuxiliaryOneTimeInstall,3" Row="0" Column="0"/>
             <LayoutButtons Face="AP_PurifierMothershipDebuff" Type="Passive" Requirements="AP_HavePurifierMothershipDebuff" Row="0" Column="1"/>
             <LayoutButtons Face="AP_PurifierMothershipDebuffInstall" Type="AbilCmd" AbilCmd="AP_MothershipPurifierAuxiliaryOneTimeInstall,0" Row="0" Column="1"/>

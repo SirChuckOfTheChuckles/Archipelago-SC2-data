@@ -38,4 +38,16 @@
         <Voice value="Ready"/>
         <Peripheral value="MorphComplete"/>
     </CAlert>
+    <CAlert id="AP_MothershipRepairDroneComplete">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
+    <CAlert id="AP_MothershipChronoDroneComplete">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
+    <CAlert id="AP_ElderProbeComplete">
+        <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
 </Catalog>

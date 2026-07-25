@@ -4284,7 +4284,7 @@
         <CombineArray value="AP_IsDisruptor"/>
         <CombineArray value="AP_IsPurifierMothershipCore"/>
         <CombineArray value="AP_IsPurifierMothership"/>
-        <CombineArray value="AP_IsArtanisPurifier"/>
+        <CombineArray value="AP_TargetHasArtanisPurifierAspect"/>
     </CValidatorCombine>
     <CValidatorUnitType id="AP_IsSentryTaldarim">
         <Value value="AP_Monitor"/>
@@ -4329,7 +4329,7 @@
         <CombineArray value="AP_IsPhoenixTaldarim"/>
         <CombineArray value="AP_IsCarrierTaldarim"/>
         <CombineArray value="AP_IsTaldarimMothership"/>
-        <CombineArray value="AP_IsArtanisTaldarim"/>
+        <CombineArray value="AP_TargetHasArtanisTaldarimAspect"/>
     </CValidatorCombine>
     <CValidatorUnitType id="AP_IsZealotShakuras">
         <Value value="AP_ZealotShakuras"/>
@@ -4367,7 +4367,7 @@
         <CombineArray value="AP_IsDarkArchon"/>
         <CombineArray value="AP_IsOracle"/>
         <CombineArray value="AP_IsCorsairMP"/>
-        <CombineArray value="AP_IsArtanisNerazim"/>
+        <CombineArray value="AP_TargetHasArtanisNerazimAspect"/>
     </CValidatorCombine>
     <CValidatorUnitType id="AP_IsZealotAiur">
         <Value value="AP_ZealotAiur"/>
@@ -4421,7 +4421,7 @@
         <CombineArray value="AP_IsCarrierAiur"/>
         <CombineArray value="AP_IsAiurMothership"/>
         <CombineArray value="AP_IsAiurMothershipCore"/>
-        <CombineArray value="AP_IsArtanisAiur"/>
+        <CombineArray value="AP_TargetHasArtanisAiurAspect"/>
     </CValidatorCombine>
     <CValidatorUnitCompareVital id="AP_ShieldsEqual0">
         <Compare value="Eq"/>
@@ -4544,6 +4544,26 @@
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_HasArtanisTaldarimAspectBehavior">
         <WhichUnit Value="Caster"/>
+        <Value value="1"/>
+        <Behavior value="AP_ArtanisTaldarimAspect"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_TargetHasArtanisAiurAspect">
+        <WhichUnit Value="Target"/>
+        <Value value="1"/>
+        <Behavior value="AP_ArtanisAiurAspect"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_TargetHasArtanisNerazimAspect">
+        <WhichUnit Value="Target"/>
+        <Value value="1"/>
+        <Behavior value="AP_ArtanisNerazimAspect"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_TargetHasArtanisPurifierAspect">
+        <WhichUnit Value="Target"/>
+        <Value value="1"/>
+        <Behavior value="AP_ArtanisPurifierAspect"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_TargetHasArtanisTaldarimAspect">
+        <WhichUnit Value="Target"/>
         <Value value="1"/>
         <Behavior value="AP_ArtanisTaldarimAspect"/>
     </CValidatorUnitCompareBehaviorCount>

@@ -8233,6 +8233,7 @@
     </CButton>
     <CButton id="AP_ElderProbes">
         <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
     </CButton>
     <CButton id="AP_ElderProbePowerOn">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-elderprobepoweron.dds"/>
@@ -8253,6 +8254,7 @@
     </CButton>
     <CButton id="AP_ReconstructElderProbe">
         <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
     </CButton>
     <CButton id="AP_StalkerPurifierReconstruction">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-stalkerpurifier-reconstruction.dds"/>

@@ -8127,6 +8127,7 @@
             <Flags index="AutoBuildOn" value="1"/>
             <Flags index="External" value="1"/>
         </InfoArray>
+        <Alert value="AP_MothershipChronoDroneComplete"/>
         <EffectArray index="Create" value="AP_CarrierRepairDroneRecall"/>
         <ExternalAngle value="-135"/>
         <ExternalAngle value="135"/>
@@ -8148,6 +8149,7 @@
             <Flags index="AutoBuildOn" value="1"/>
             <Flags index="External" value="1"/>
         </InfoArray>
+        <Alert value="AP_MothershipRepairDroneComplete"/>
         <EffectArray index="Create" value="AP_CarrierRepairDroneRecall"/>
         <ExternalAngle value="180"/>
         <ExternalAngle value="90"/>
@@ -15685,6 +15687,7 @@
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <FlagArray index="PeonDisableCollision" value="1"/>
         <FlagArray index="PeonMaintained" value="0"/>
+        <Alert value="AP_ElderProbeComplete"/>
         <InfoArray index="Build1" Unit="AP_ElderProbe" Time="5">
             <Button DefaultButtonFace="AP_ElderProbes"/>
         </InfoArray>
@@ -15743,6 +15746,7 @@
     </CAbilWarpTrain>
     <CAbilWarpTrain id="AP_ElderProbeWarpinBackground">
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <Alert value="AP_ElderProbeComplete"/>
         <InfoArray index="Train1" Time="5" Unit="AP_ElderProbe">
             <Charge>
                 <Location value="Unit"/>
@@ -16196,7 +16200,7 @@
         <InfoArray index="1" Time="5" Unit="AP_Probe">
             <Button DefaultButtonFace="AP_ProbeWarpin"/>
         </InfoArray>
-        <InfoArray index="2" Time="5" Unit="AP_ElderProbe">
+        <InfoArray index="2" Time="5" Alert="AP_ElderProbeComplete" Unit="AP_ElderProbe">
             <Button DefaultButtonFace="AP_ElderProbes"/>
         </InfoArray>
         <Flags index="IgnoreUnitCost" value="1"/>

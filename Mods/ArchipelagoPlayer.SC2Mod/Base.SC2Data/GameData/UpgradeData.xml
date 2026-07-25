@@ -16039,6 +16039,7 @@
         <EffectArray Reference="Effect,AP_ScoutTaldarimGroundWeaponDamage,AttributeBonus[Armored]" Value="3"/>
         <EffectArray Operation="Set" Reference="Effect,AP_ScoutTaldarimVulcanBlasterPersistent,PeriodicEffectArray[0]" Value="AP_ScoutTaldarimVulcanBlasterSearchStructure"/>
         <EffectArray Reference="Effect,AP_ScoutTaldarimGroundWeaponDamageUpgrade,AttributeBonus[Armored]" Value="3"/>
+        <EffectArray Operation="Set" Reference="Button,AP_ScoutTaldarimVulcanBlaster,Tooltip" Value="Button/Tooltip/AP_ScoutTaldarimVulcanBlasterUpgrade"/>
         <EditorCategories value="Race:Protoss"/>
     </CUpgrade>
     <CUpgrade id="AP_ScoutTaldarimImprovedMissiles">
