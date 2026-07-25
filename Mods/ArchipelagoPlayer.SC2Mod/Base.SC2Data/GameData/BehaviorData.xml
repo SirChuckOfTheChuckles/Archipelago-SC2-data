@@ -2249,6 +2249,7 @@
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArtanisLightningDashStun">
+        <Alignment value="Negative"/>
         <Duration value="1.25"/>
         <Modification>
             <StateFlags index="Stun" value="1"/>
@@ -2256,10 +2257,16 @@
         <InfoIcon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
         <BehaviorCategories index="Stun" value="1"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ArtanisLightningDashSlowHeroic">
+        <Alignment value="Negative"/>
+        <Duration value="1.25"/>
+        <Modification MoveSpeedMultiplier="0.5"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-lightningdash.dds"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_StrengthInUnity">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <DisplayDuration index="Self" value="1"/>
-        <Duration value="15"/>
+        <Duration value="18"/>
         <Period value="0.0625"/>
         <PeriodicEffect value="AP_StrengthInUnityInitialSearchSet"/>
         <InfoIcon value="AP\Assets\Textures\btn-ability-protoss-strength-in-unity.dds"/>

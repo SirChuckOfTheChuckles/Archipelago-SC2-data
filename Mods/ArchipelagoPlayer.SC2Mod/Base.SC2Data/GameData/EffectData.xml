@@ -5098,10 +5098,19 @@
     <CEffectEnumArea id="AP_ArtanisLightningDashStunSearch">
         <ImpactLocation Value="CasterUnit"/>
         <SearchFilters value="Ground;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Invulnerable"/>
-        <AreaArray Radius="1.5" Effect="AP_ArtanisLightningDashStun"/>
+        <AreaArray Radius="1.5" Effect="AP_ArtanisLightningDashCrowdControlSet"/>
     </CEffectEnumArea>
+    <CEffectSet id="AP_ArtanisLightningDashCrowdControlSet">
+        <EffectArray value="AP_ArtanisLightningDashStun"/>
+        <EffectArray value="AP_ArtanisLightningDashSlowHeroic"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_ArtanisLightningDashStun">
+        <ValidatorArray value="AP_NotHeroic"/>
         <Behavior value="AP_ArtanisLightningDashStun"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_ArtanisLightningDashSlowHeroic">
+        <ValidatorArray value="AP_IsHeroic"/>
+        <Behavior value="AP_ArtanisLightningDashSlowHeroic"/>
     </CEffectApplyBehavior>
     <CEffectEnumArea id="AP_ArtanisLightningDashSearch">
         <ImpactLocation Value="CasterUnit"/>
@@ -5131,13 +5140,13 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffAiurArtanisAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffAiurArtanisAB"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_StrengthInUnitySearchAiur">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffAiurAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffAiurAB"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_StrengthInUnityBuffAiurAB">
         <EditorCategories value="Race:Protoss"/>
@@ -5153,13 +5162,13 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffNerazimArtanisAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffNerazimArtanisAB"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_StrengthInUnitySearchNerazim">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffNerazimAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffNerazimAB"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_StrengthInUnityBuffNerazimAB">
         <EditorCategories value="Race:Protoss"/>
@@ -5175,13 +5184,13 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffPurifierArtanisAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffPurifierArtanisAB"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_StrengthInUnitySearchPurifier">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffPurifierAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffPurifierAB"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_StrengthInUnityBuffPurifierAB">
         <EditorCategories value="Race:Protoss"/>
@@ -5200,13 +5209,13 @@
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffTaldarimArtanisAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffTaldarimArtanisAB"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_StrengthInUnitySearchTaldarim">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
         <SearchFilters value="-;Self,Neutral,Enemy,Structure,Missile,Dead"/>
-        <AreaArray Radius="10" Effect="AP_StrengthInUnityBuffTaldarimAB"/>
+        <AreaArray Radius="11" Effect="AP_StrengthInUnityBuffTaldarimAB"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_StrengthInUnityBuffTaldarimAB">
         <EditorCategories value="Race:Protoss"/>
@@ -5359,7 +5368,7 @@
     <CEffectEnumArea id="AP_ArtanisBladeWaltzEndSearch">
         <EditorCategories value="Race:Protoss"/>
         <ImpactLocation Value="SourceUnit"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1.85" Effect="AP_ArtanisBladeWaltzEndDamage"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>

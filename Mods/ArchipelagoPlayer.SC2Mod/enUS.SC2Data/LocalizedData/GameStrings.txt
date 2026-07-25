@@ -512,6 +512,7 @@ Behavior/Name/AP_AnnihilatorCloak=Shadow Path
 Behavior/Name/AP_ArbiterMPCloakFieldEffect=Cloaking Field
 Behavior/Name/AP_ArbiterMPStasisField=Stasis Field
 Behavior/Name/AP_ArtanisCharging=Charging
+Behavior/Name/AP_ArtanisLightningDashSlowHeroic=Slowed
 Behavior/Name/AP_ArtanisLightningDashStun=Stunned
 Behavior/Name/AP_ArtanisResurgenceDisable=Resurged
 Behavior/Name/AP_ArtanisResurgenceInvulnerable=Resurging
@@ -861,6 +862,7 @@ Behavior/Tooltip/AP_AnnihilatorAirAttack=Can attack air units.
 Behavior/Tooltip/AP_AnnihilatorCloak=This unit is cloaked and has increased movement speed.
 Behavior/Tooltip/AP_ArbiterMPCloakFieldEffect=This unit is cloaked unless revealed by <c val="FFE303">Detectors</c> or effects.
 Behavior/Tooltip/AP_ArtanisCharging=Artanis is charging, allowing him to quickly close the distance with his target.
+Behavior/Tooltip/AP_ArtanisLightningDashSlowHeroic=Movement speed reduced by <d ref="(1 - Behavior,AP_ArtanisLightningDashSlowHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_ArtanisLightningDashStun=This unit is stunned.
 Behavior/Tooltip/AP_ArtanisResurgenceDisable=Artanis is unable to benefit from Resurgence.
 Behavior/Tooltip/AP_ArtanisResurgenceInvulnerable="But none of us are ever truly alone."
@@ -2805,7 +2807,7 @@ Button/Tooltip/AP_ArtanisBladeWaltzPassive=Energy Cost: <c val="#ColorTooltipNum
 Button/Tooltip/AP_ArtanisCharge=Intercepts enemy units.
 Button/Tooltip/AP_ArtanisForceOfWillPassive=Artanis gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisForceOfWill,EffectArray[1].Value"/></c> maximum life and <c val="#ColorTooltipNumber"><d ref="(Upgrade,AP_ArtanisForceOfWill,EffectArray[2].Value - 1) * 100" precision="0"/>%</c> increased life and shield regeneration.<n/><n/>While Artanis is at <c val="#ColorTooltipNumber">maximum life</c>, his life regeneration instead restores shields.
 Button/Tooltip/AP_ArtanisHero=Hierarch of the Daelaam. Can choose various factions to gain bonus abilities and passives.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_ArtanisLightningDash=Artanis <c val="#ColorTooltipNumber">dashes</c> to the target location dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisLightningDashDamage,Amount"/></c> damage to nearby enemies on impact and <c val="#ColorTooltipNumber">stunning</c> them for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisLightningDashStun,Duration" precision="2"/></c> seconds.
+Button/Tooltip/AP_ArtanisLightningDash=Artanis <c val="#ColorTooltipNumber">dashes</c> to the target location, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisLightningDashDamage,Amount"/></c> damage to nearby enemies on impact and <c val="#ColorTooltipNumber">stunning</c> them for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisLightningDashStun,Duration" precision="2"/></c> seconds.<n/><n/><c val="#ColorTooltipNumber">Heroic units are slowed instead.</c>
 Button/Tooltip/AP_ArtanisNerazimAspect=Switch Artanis' active aspect to <c val="#AP_ColorNerazim">Nerazim</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorNerazim">Nerazim</c> unit.
 Button/Tooltip/AP_ArtanisNerazimAspectPassive=While <c val="#AP_ColorNerazim">Nerazim</c> Aspect is active, Artanis' abilities empower his next attack, causing it to deal <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_RaszagalsRhythm,Modification.DamageDealtUnscaled[Melee]"/></c> damage per strike, restore <c val="#ColorTooltipNumber"><d ref="Effect,AP_RaszagalsRhythmEnergyRestore,VitalArray[Energy].Change"/></c> energy, and reduce his ability cooldowns by <c val="#ColorTooltipNumber">1</c> second.
 Button/Tooltip/AP_ArtanisNoAspect=Artanis removes his current Weapon Aspect, returning to his base form.
@@ -3752,7 +3754,7 @@ Button/Tooltip/AP_PermanentlyCloakedSpectre=Spectre is permanently cloaked.
 Button/Tooltip/AP_PermanentlyCloakedStasis=The Stasis Ward is permanently cloaked.
 Button/Tooltip/AP_PersonalDefensiveMatrix=Provides Nova with a shield that reduces incoming damage to a maximum of <d ref="Behavior,AP_PersonalDefensiveMatrix,DamageResponse.ClampMaximum"/> until <d ref="Behavior,AP_PersonalDefensiveMatrix,Modification.VitalMaxArray[Shields]"/> total damage is absorbed. Shield lasts for <d time="10"/>.
 Button/Tooltip/AP_PhaseBlaster=Warp Prisms are equipped with a Phase Blaster weapon to attack ground and air targets. In phasing mode, the Phase Blaster gains <c val="#ColorTooltipNumber">+<d ref="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Range - Weapon,AP_WarpPrismTaldarimWeapon,Range"/></c> <c val="#ColorTooltipAttribute">range</c> and <c val="#ColorTooltipNumber"><d ref="Weapon,AP_WarpPrismTaldarimWeapon,Period / Weapon,AP_WarpPrismTaldarimDeployedWeapon,Period * 100 - 100"/>%</c> increased <c val="#ColorTooltipAttribute">attack speed</c>.
-Button/Tooltip/AP_PhasePrism=Stun target unit for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/></c> seconds, automatically swap places with it, then <c val="#ColorTooltipNumber">pull in</c> nearby enemy units to Artanis.<n/><n/>After the swap, Artanis gains <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,Modification.VitalMaxArray[Shields]"/></c> temporary shields for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,Duration"/></c> seconds.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
+Button/Tooltip/AP_PhasePrism=Stun target unit for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/></c> seconds, automatically <c val="#ColorTooltipNumber">swap</c> places with it, then <c val="#ColorTooltipNumber">pull in</c> nearby enemy units to Artanis.<n/><n/>After the swap, Artanis gains <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,Modification.VitalMaxArray[Shields]"/></c> temporary shields for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,Duration"/></c> seconds.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
 Button/Tooltip/AP_PhasingMode=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
 Button/Tooltip/AP_PhoenixAiur=Aiur Faction<n/>Air superiority starfighter. Can use Graviton Beam.<n/><n/><c val="ffff8a">Can attack air units.</c>
 Button/Tooltip/AP_PhoenixAiurDoubleGraviton=Aiur Faction<n/>Air superiority starfighter. Can use Graviton Beam on two enemy units simultaneously.<n/><n/><c val="ffff8a">Can attack air units.</c>

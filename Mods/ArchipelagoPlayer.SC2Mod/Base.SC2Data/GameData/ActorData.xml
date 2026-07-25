@@ -38400,7 +38400,7 @@
         <ModelFlags index="AutomateGlobalLoops" value="1"/>
     </CActorModelMaterial>
     <CActorModel id="AP_StrengthInUnityAura" parent="ModelAnimationStyleContinuous">
-        <On Terms="ActorCreation" Send="SetScale 0.85000"/>
+        <On Terms="ActorCreation" Send="SetScale 0.9300"/>
         <On Terms="Behavior.AP_StrengthInUnity.On" Send="Create"/>
         <On Terms="Behavior.AP_StrengthInUnity.Off" Send="Destroy"/>
         <HostSiteOps Ops="SOpShadow" HoldRotation="1"/>
@@ -38752,7 +38752,7 @@
         <On Terms="Abil.AP_StrengthInUnity.ButtonHoverOn" Send="Create"/>
         <On Terms="Abil.AP_StrengthInUnity.ButtonHoverOff" Send="Destroy"/>
         <Flags index="SuppressSaveLoad" value="1"/>
-        <Range value="9.600000"/>
+        <Range value="10.60000"/>
     </CActorRange>
     <CActorMissile id="AP_ArtanisHero" parent="GenericUnitStandard" unitName="AP_ArtanisHero">
         <Aliases value="_MissileHybrids"/>

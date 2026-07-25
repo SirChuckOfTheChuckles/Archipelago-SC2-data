@@ -14888,14 +14888,14 @@
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
-        <LifeArmor value="1"/>
+        <LifeArmor value="2"/>
         <LifeRegenRate value="1.5"/>
         <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
-        <ShieldsStart value="200"/>
-        <ShieldsMax value="200"/>
+        <ShieldsStart value="225"/>
+        <ShieldsMax value="225"/>
         <ShieldRegenDelay value="4"/>
-        <ShieldRegenRate value="5"/>
-        <ShieldArmor value="1"/>
+        <ShieldRegenRate value="6"/>
+        <ShieldArmor value="2"/>
         <EnergyStart value="150"/>
         <EnergyMax value="150"/>
         <EnergyRegenRate value="2.5"/>
