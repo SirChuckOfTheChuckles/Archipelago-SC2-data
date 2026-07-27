@@ -746,6 +746,7 @@ Behavior/Name/AP_SentryReclamation=Reclamation
 Behavior/Name/AP_ShadowCharging=Shadow Charging
 Behavior/Name/AP_SiegeTankMengskSlowHeroic=Shock and Awe
 Behavior/Name/AP_SiegeTankMengskStun=Shock and Awe
+Behavior/Name/AP_SiegeTankMengskTransportHookIndicator=Transport Hook
 Behavior/Name/AP_SkirmisherAttackspeed=Terrazine Injectors
 Behavior/Name/AP_Slow=Slow
 Behavior/Name/AP_SoASuperShield=Shield Overcharge
@@ -1052,6 +1053,7 @@ Behavior/Tooltip/AP_SensorTowerRangeBuff=This structure has increased attack ran
 Behavior/Tooltip/AP_SentryReclamation=This unit is temporarily under Karax's control. It will self-destruct once this effect expires.
 Behavior/Tooltip/AP_SiegeTankMengskSlowHeroic=Target's movement speed is reduced for a short period of time.
 Behavior/Tooltip/AP_SiegeTankMengskStun=Target is stunned.
+Behavior/Tooltip/AP_SiegeTankMengskTransportHookIndicator=Can be picked up by a Medivac to fire from it.
 Behavior/Tooltip/AP_SkirmisherAttackspeed=This unit has modified attack speed  and loses life over time.
 Behavior/Tooltip/AP_Slow=Target's movement speed is reduced for a short period of time.
 Behavior/Tooltip/AP_SoASuperShield=This unit or structure is absorbing damage.
@@ -1821,7 +1823,7 @@ Button/Name/AP_MedivacExpandedHull=Expanded Hull
 Button/Name/AP_MedivacPermanentCloak=Permanently Cloaked
 Button/Name/AP_MedivacRapidReignitionSystem=Rapid Reignition System
 Button/Name/AP_MedivacShield=Scatter Veil
-Button/Name/AP_MedivacSiegeTankAirlift=Armament Stabilizers
+Button/Name/AP_SiegeTankMengskAirlift=Armament Stabilizers
 Button/Name/AP_MedivacSpeedBoost=Ignite Afterburners
 Button/Name/AP_MercCompound=Build Merc Compound
 Button/Name/AP_MercInfantry=Infantry Mercs
@@ -3585,7 +3587,7 @@ Button/Tooltip/AP_MedivacExpandedHull=Increases Medivac's cargo space by 4.
 Button/Tooltip/AP_MedivacPermanentCloak=The Medivac is permanently cloaked.
 Button/Tooltip/AP_MedivacRapidReignitionSystem=Slightly increases Medivac movement speed. Ignite Afterburners cooldown is reduced by 7 seconds.
 Button/Tooltip/AP_MedivacShield=Provides Medivacs with a shield that absorbs <d ref="$UpgradeEffectArrayValue:AP_MedivacShield:Unit,AP_Medivac,ShieldsMax$"/> damage.
-Button/Tooltip/AP_MedivacSiegeTankAirlift=Allows a Shock Division in Siege Mode to attack air units while loaded in a Medivac. Its carried attack is 50% slower than its normal sieged attack.
+Button/Tooltip/AP_SiegeTankMengskAirlift=Allows a Shock Division in Siege Mode to attack air units while loaded in a Medivac. Its carried attack is 50% slower than its normal sieged attack.
 Button/Tooltip/AP_MedivacSpeedBoost=Increases the Medivac's movement speed by 70% for <d time="8"/>.
 Button/Tooltip/AP_MercCompound=Trains Mercenary units.
 Button/Tooltip/AP_MercInfantry=Show available <c val="ffff8a">Infantry</c> type units.
@@ -7756,6 +7758,7 @@ Weapon/Name/AP_SentryBot=Defender Cannon
 Weapon/Name/AP_ShrikeTurret=Shrike Turret
 Weapon/Name/AP_SiegeBreaker=90mm Cannons
 Weapon/Name/AP_SiegeTankMengsk=90mm Cannons
+Weapon/Name/AP_SiegeTankMengskAirlift=Crucio Shock Cannon
 Weapon/Name/AP_SiegeTankMengskSieged=Crucio Shock Cannon
 Weapon/Name/AP_SlaynMissileTurret=Particle Cannon
 Weapon/Name/AP_SolariteReaper=Psi Blades
@@ -7831,7 +7834,7 @@ Weapon/Tip/AP_Impaler=<c val="#ColorAttackInfo">Must be burrowed to attack.</c>
 Weapon/Tip/AP_LocustFlyingLaunch=<c val="#ColorAttackInfo">Must be rooted or burrowed to attack.</c>
 Weapon/Tip/AP_LocustLaunch=<c val="#ColorAttackInfo">Must be rooted or burrowed to attack.</c>
 Weapon/Tip/AP_Lurker=<c val="#ColorAttackInfo">Must be burrowed to attack.</c>
-Weapon/Tip/AP_MedivacSiegeTankAirlift=Requires a loaded Shock Division in Siege Mode.<n/><n/>Targets air units and attacks 50% slower than the Shock Division's normal sieged attack. Damage and splash scale with the carried Shock Division's rank.
+Weapon/Tip/AP_SiegeTankMengskAirlift=Requires a loaded Shock Division in Siege Mode.<n/><n/>Targets air units and attacks 50% slower than the Shock Division's normal sieged attack. Damage and splash scale with the carried Shock Division's rank.
 Weapon/Tip/AP_NovaWeaponBlazefireBlade=Deals <d ref="Effect,AP_NovaWeaponBlazefireBladeDamageCloaked,Amount - Effect,AP_NovaWeaponBlazefireBladeDamageUncloaked,Amount"/> extra damage if Nova is cloaked
 Weapon/Tip/AP_PrismaticBeam=Deals <d ref="Effect,AP_PrismaticBeamMUx2,Amount"/> (<d ref="Effect,AP_PrismaticBeamMUx2,Amount + Effect,AP_PrismaticBeamMUx2,AttributeBonus[Armored]"/> vs Armored) damage if halfway charged,<n/><d ref="Effect,AP_PrismaticBeamMUx3,Amount"/> (<d ref="Effect,AP_PrismaticBeamMUx3,Amount + Effect,AP_PrismaticBeamMUx3,AttributeBonus[Armored]"/> vs Armored) damage if fully charged.
 Weapon/Tip/AP_PurifierMothershipWeapon=Deals damage to up to <d ref="Effect,AP_PurifierMothershipWeaponSearch,AreaArray[0].MaxCount + 1"/> targets within range of the Purifier Mothership.

@@ -7697,6 +7697,11 @@
     <CValidatorUnitType id="AP_IsGoliathMengsk">
         <Value value="AP_GoliathMengsk"/>
     </CValidatorUnitType>
+    <CValidatorLocationVision id="AP_GoliathMengskJumpTargetVision">
+        <ResultFailed value="CantFindPlacementLocation"/>
+        <WhichLocation Value="TargetPoint"/>
+        <WhichPlayer Value="Caster"/>
+    </CValidatorLocationVision>
     <CValidatorPlayerRequirement id="AP_HaveGoliathMengskMoebiusDefenseMatrix">
         <Find value="1"/>
         <Value value="AP_HaveGoliathMengskMoebiusDefenseMatrix"/>

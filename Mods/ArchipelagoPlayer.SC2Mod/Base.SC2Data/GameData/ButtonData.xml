@@ -6645,7 +6645,7 @@
         <AlertIcon value="Assets\Textures\btn-ability-tychus-medivac.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_MedivacSiegeTankAirlift">
+    <CButton id="AP_SiegeTankMengskAirlift">
         <Icon value="Assets\Textures\btn-ability-mengsk-siegetank-flyingtankarmament.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-siegetank-flyingtankarmament.dds"/>
         <EditorCategories value="Race:Terran"/>
@@ -6656,13 +6656,13 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskNapalmRounds">
-        <Icon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
-        <AlertIcon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-lava-strike.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-lava-strike.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskImprovedTankMode">
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-retrofitted-cannons.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-retrofitted-cannons.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ReaperKineticFoam">
@@ -7485,8 +7485,8 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ThorMengskHammerOfTheLaw">
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-hammer-of-the-law.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-hammer-of-the-law.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ThorMengskInfernoBlitz">
@@ -7701,23 +7701,23 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengskMoebiusDefenseMatrix">
-        <Icon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-defense-protocol.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-defense-protocol.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengskJumpJetsMKII">
-        <Icon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengskParalysisInducers">
-        <Icon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengskAresClassTargetingAddon">
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengsk">

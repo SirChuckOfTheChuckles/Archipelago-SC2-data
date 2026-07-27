@@ -20163,9 +20163,11 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_SiegeTankMengskNapalmRounds" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Protoss\Colossus_FireBeam_GroundFire\Colossus_FireBeam_GroundFire.m3"/>
+        <Model value="Assets\Effects\Neutral\GroundFire_Coop\GroundFire_Coop.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Occlusion value="Show"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
     </CModel>
     <CModel id="AP_SiegeTankMengskTankModeSplashImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\Griffin_BombRun_Impact_COOP\Griffin_BombRun_Impact_COOP.m3"/>
@@ -21096,7 +21098,7 @@
         <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP_DeathFire.m3"/>
     </CModel>
     <CModel id="AP_GoliathMengsk" parent="AP_Goliath">
-        <Model value="marinemengskstuff\Factory\Goliath_Mengsk_COOP_7.m3"/>
+        <Model value="AP\Assets\Units\Terran\GoliathMengsk\Goliath_Mengsk_COOP.m3"/>
         <TextureDeclares index="0" removed="1"/>
         <Variations index="0" removed="1"/>
         <AttachProps Id="Ref_Origin" SquibType="Shield" RadiusShield="2.500000">

@@ -3958,8 +3958,8 @@
     <CRequirement id="AP_HaveSiegeTankTransportHook">
         <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankTransportHookCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveMedivacSiegeTankAirlift">
-        <NodeArray index="Show" Link="AP_CountUpgradeMedivacSiegeTankAirliftCompleteOnly"/>
+    <CRequirement id="AP_HaveSiegeTankMengskAirlift">
+        <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankMengskAirliftCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveSiegeTankMengskSmartServos">
         <NodeArray index="Show" Link="AP_CountUpgradeSiegeTankMengskSmartServosCompleteOnly"/>

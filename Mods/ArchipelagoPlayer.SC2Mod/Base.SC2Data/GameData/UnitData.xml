@@ -1704,7 +1704,7 @@
         <WeaponArray Link="AP_MedivacSiegeTankAirlift" Turret="AP_MedivacSiegeTankAirliftTurret"/>
         <WeaponArray Link="AP_MedivacMercSiegeTankAirlift" Turret="AP_MedivacMercSiegeTankAirliftTurret"/>
         <WeaponArray Link="AP_MedivacInfestedSiegeBreakerAirlift" Turret="AP_MedivacMercSiegeTankAirliftTurret"/>
-        <WeaponArray Link="AP_MedivacMengskSiegeTankAirlift" Turret="AP_MedivacMengskSiegeTankAirliftTurret"/>
+        <WeaponArray Link="AP_SiegeTankMengskAirlift" Turret="AP_SiegeTankMengskAirliftTurret"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1722,7 +1722,7 @@
             <LayoutButtons Face="AP_MedivacExpandedHull" Type="Passive" Requirements="AP_ExpandedHullResearched" Row="1" Column="2"/>
             <LayoutButtons Face="AP_MedivacShield" Type="Passive" Requirements="AP_HaveMedivacShield" Row="1" Column="3"/>
             <LayoutButtons Face="AP_MedivacPermanentCloak" Type="Passive" Requirements="AP_HaveMedivacPermanentCloak" Row="1" Column="4"/>
-            <LayoutButtons Face="AP_MedivacSiegeTankAirlift" Type="Passive" Requirements="AP_HaveMedivacSiegeTankAirlift" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_SiegeTankMengskAirlift" Type="Passive" Requirements="AP_HaveSiegeTankMengskAirlift" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>
@@ -29717,7 +29717,7 @@
             <LayoutButtons Face="AP_SiegeTankMengskStun" Type="Passive" Requirements="AP_HaveMengskVeterancySiegeTankMengskGELevel2TankMode" Row="1" Column="2"/>
             <LayoutButtons Face="AP_SiegeTankMengskImprovedTankMode" Type="Passive" Requirements="AP_HaveSiegeTankMengskImprovedTankMode" Row="1" Column="4"/>
             <LayoutButtons Face="AP_SiegeTankMengskSmartServos" Type="Passive" Requirements="AP_HaveSiegeTankMengskSmartServos" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_MedivacSiegeTankAirlift" Type="Passive" Requirements="AP_HaveMedivacSiegeTankAirlift" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_SiegeTankMengskAirlift" Type="Passive" Requirements="AP_HaveSiegeTankMengskAirlift" Row="2" Column="3"/>
             <LayoutButtons Face="AP_SiegeTankMengskNapalmRounds" Type="Passive" Requirements="AP_HaveSiegeTankMengskNapalmRounds" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
@@ -29798,7 +29798,7 @@
             <LayoutButtons Face="AP_SiegeTankMengskStun" Type="Passive" Requirements="AP_HaveMengskVeterancySiegeTankMengskGELevel2" Row="1" Column="2"/>
             <LayoutButtons Face="AP_SiegeTankMengskImprovedTankMode" Type="Passive" Requirements="AP_HaveSiegeTankMengskImprovedTankMode" Row="1" Column="4"/>
             <LayoutButtons Face="AP_SiegeTankMengskSmartServos" Type="Passive" Requirements="AP_HaveSiegeTankMengskSmartServos" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_MedivacSiegeTankAirlift" Type="Passive" Requirements="AP_HaveMedivacSiegeTankAirlift" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_SiegeTankMengskAirlift" Type="Passive" Requirements="AP_HaveSiegeTankMengskAirlift" Row="2" Column="3"/>
             <LayoutButtons Face="AP_SiegeTankMengskNapalmRounds" Type="Passive" Requirements="AP_HaveSiegeTankMengskNapalmRounds" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
@@ -29833,7 +29833,7 @@
     </CUnit>
     <CUnit id="AP_SiegeTankMengskSiegedTransportable" parent="AP_SiegeTankMengskSieged">
         <AbilArray index="3" Link=""/>
-        <BehaviorArray Link="AP_SiegeTankTransportHookIndicator"/>
+        <BehaviorArray Link="AP_SiegeTankMengskTransportHookIndicator"/>
         <CargoSize value="8"/>
     </CUnit>
     <CUnit id="AP_ThorMengsk">
@@ -30802,12 +30802,12 @@
             <LayoutButtons Face="AP_GoliathMengskJump" Type="AbilCmd" AbilCmd="AP_GoliathMengskJump,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_GoliathMengskMultilock" Type="Passive" Requirements="AP_HaveGoliathMengskVeterancyLevel3" Row="1" Column="2"/>
             <LayoutButtons Face="AP_NovaUnitLockdown" Type="Passive" Requirements="AP_HaveGoliathMengskVeterancyLevel4" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_GoliathMengskParalysisInducers" Type="Passive" Requirements="AP_HaveGoliathMengskParalysisInducers" Row="1" Column="4"/>
             <LayoutButtons Face="AP_GoliathMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_GoliathMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskMoebiusDefenseMatrix" Type="Passive" Requirements="AP_HaveGoliathMengskMoebiusDefenseMatrix" Row="2" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskJumpJetsMKII" Type="Passive" Requirements="AP_HaveGoliathMengskJumpJetsMKII" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_GoliathMengskParalysisInducers" Type="Passive" Requirements="AP_HaveGoliathMengskParalysisInducers" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_GoliathMengskAresClassTargetingAddon" Type="Passive" Requirements="AP_HaveGoliathMengskAresClassTargetingAddon" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_GoliathMengskAresClassTargetingAddon" Type="Passive" Requirements="AP_HaveGoliathMengskAresClassTargetingAddon" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.6875"/>
         <InnerRadius value="0.5"/>

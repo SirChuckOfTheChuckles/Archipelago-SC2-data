@@ -1782,6 +1782,7 @@
     </CBehaviorBuff>
     <CBehaviorJump id="AP_GoliathCliffJump">
         <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <TriggerHeightDeltaMin value="1.5"/>
         <TriggerHeightDeltaMax value="4.5"/>
@@ -8148,6 +8149,7 @@
         <Name value="Button/Name/AP_SiegeTankTransportHook"/>
         <Tooltip value="Button/Tooltip/AP_SiegeTankTransportHook"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_SiegeTankMengskTransportHookIndicator" parent="AP_SiegeTankTransportHookIndicator"/>
     <CBehaviorBuff id="AP_MedivacSiegeTankAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -8163,11 +8165,11 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MedivacMengskSiegeTankAirlift">
+    <CBehaviorBuff id="AP_SiegeTankMengskAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
-            <WeaponEnableArray value="AP_MedivacMengskSiegeTankAirlift"/>
+            <WeaponEnableArray value="AP_SiegeTankMengskAirlift"/>
         </Modification>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorBuff>
@@ -9982,14 +9984,14 @@
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="60"/>
-                <VitalRegenArray index="Shields" value="2"/>
+                <VitalRegenArray index="Shields" value="1"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray MinVeterancyXP="3500" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="60"/>
-                <VitalRegenArray index="Shields" value="2"/>
+                <VitalRegenArray index="Shields" value="1"/>
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
@@ -10000,7 +10002,7 @@
             <Modification>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="60"/>
-                <VitalRegenArray index="Shields" value="2"/>
+                <VitalRegenArray index="Shields" value="1"/>
             </Modification>
         </VeterancyLevelArray>
         <BehaviorFlags index="Permanent" value="1"/>

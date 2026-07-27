@@ -11458,6 +11458,7 @@
     </CEffectTeleport>
     <CEffectCreateUnit id="AP_GoliathMengskJump">
         <ValidatorArray value="AP_CasterNotFungalGrowthed"/>
+        <ValidatorArray value="AP_GoliathMengskJumpTargetVision"/>
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetPoint"/>
         <CreateFlags index="Birth" value="0"/>
@@ -22674,13 +22675,13 @@
         <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Destructible,Item,Stasis,Dead,Invulnerable"/>
         <AreaArray Radius="1.75" Effect="AP_SiegeTankMengskSiegedStunSet"/>
     </CEffectEnumArea>
-    <CEffectEnumArea id="AP_MedivacMengskSiegeTankAirliftStunSearch">
+    <CEffectEnumArea id="AP_SiegeTankMengskAirliftStunSearch">
         <ValidatorArray value="AP_CasterLevelGTE2"/>
         <EditorCategories value=""/>
         <SearchFilters value="Air;Player,Ally,Neutral,Structure,Missile,Destructible,Item,Stasis,Dead,Invulnerable"/>
         <AreaArray Radius="1.25" Effect="AP_SiegeTankMengskSiegedStunSet"/>
     </CEffectEnumArea>
-    <CEffectEnumArea id="AP_MedivacMengskSiegeTankAirliftImprovedAoEStunSearch" parent="AP_MedivacMengskSiegeTankAirliftStunSearch">
+    <CEffectEnumArea id="AP_SiegeTankMengskAirliftImprovedAoEStunSearch" parent="AP_SiegeTankMengskAirliftStunSearch">
         <AreaArray index="0" Radius="1.75"/>
     </CEffectEnumArea>
     <CEffectSet id="AP_SiegeTankMengskSiegedStunSet">
@@ -22695,22 +22696,22 @@
         <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskSiegedImprovedAoESet"/>
         <CaseDefault value="AP_SiegeTankMengskSiegedSet"/>
     </CEffectSwitch>
-    <CEffectSwitch id="AP_MedivacMengskSiegeTankAirliftSwitch">
+    <CEffectSwitch id="AP_SiegeTankMengskAirliftSwitch">
         <EditorCategories value=""/>
-        <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_MedivacMengskSiegeTankAirliftImprovedAoESet"/>
-        <CaseDefault value="AP_MedivacMengskSiegeTankAirliftSet"/>
+        <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskAirliftImprovedAoESet"/>
+        <CaseDefault value="AP_SiegeTankMengskAirliftSet"/>
     </CEffectSwitch>
-    <CEffectSet id="AP_MedivacMengskSiegeTankAirliftImprovedAoESet">
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftDirected"/>
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftImprovedAoEBlast"/>
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftImprovedAoEStunSearch"/>
+    <CEffectSet id="AP_SiegeTankMengskAirliftImprovedAoESet">
+        <EffectArray value="AP_SiegeTankMengskAirliftDirected"/>
+        <EffectArray value="AP_SiegeTankMengskAirliftImprovedAoEBlast"/>
+        <EffectArray value="AP_SiegeTankMengskAirliftImprovedAoEStunSearch"/>
     </CEffectSet>
-    <CEffectSet id="AP_MedivacMengskSiegeTankAirliftSet">
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftDirected"/>
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftBlast"/>
-        <EffectArray value="AP_MedivacMengskSiegeTankAirliftStunSearch"/>
+    <CEffectSet id="AP_SiegeTankMengskAirliftSet">
+        <EffectArray value="AP_SiegeTankMengskAirliftDirected"/>
+        <EffectArray value="AP_SiegeTankMengskAirliftBlast"/>
+        <EffectArray value="AP_SiegeTankMengskAirliftStunSearch"/>
     </CEffectSet>
-    <CEffectDamage id="AP_MedivacMengskSiegeTankAirliftImprovedAoEBlast">
+    <CEffectDamage id="AP_SiegeTankMengskAirliftImprovedAoEBlast">
         <ValidatorArray value="TargetRadiusSmall"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/CrucioShockCannonBlast"/>
@@ -22731,7 +22732,7 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
     </CEffectDamage>
-    <CEffectDamage id="AP_MedivacMengskSiegeTankAirliftBlast">
+    <CEffectDamage id="AP_SiegeTankMengskAirliftBlast">
         <ValidatorArray value="TargetRadiusSmall"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/CrucioShockCannonBlast"/>
@@ -22752,7 +22753,7 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetAreaByAngle" value="1"/>
     </CEffectDamage>
-    <CEffectDamage id="AP_MedivacMengskSiegeTankAirliftDirected">
+    <CEffectDamage id="AP_SiegeTankMengskAirliftDirected">
         <ValidatorArray value="TargetRadiusLarge"/>
         <EditorCategories value="Race:Terran"/>
         <Marker Link="Effect/CrucioShockCannonDirected"/>

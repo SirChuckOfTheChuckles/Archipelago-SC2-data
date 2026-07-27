@@ -12421,11 +12421,11 @@
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,MinScanRange" Value="1"/>
         <!-- Blackhammer -->
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,MinScanRange" Value="1"/>
@@ -13920,8 +13920,8 @@
         <EffectArray Operation="Set" Reference="Abil,AP_InfestedSiegeBreakerSiege,InfoArray[0].Unit" Value="AP_InfestedSiegeBreakerSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].Unit" Value="AP_SiegeTankMengskSiegedTransportable"/>
     </CUpgrade>
-    <CUpgrade id="AP_MedivacSiegeTankAirlift">
-        <EffectArray Operation="Subtract" Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,Options[Hidden]" Value="1"/>
+    <CUpgrade id="AP_SiegeTankMengskAirlift">
+        <EffectArray Operation="Subtract" Reference="Weapon,AP_SiegeTankMengskAirlift,Options[Hidden]" Value="1"/>
         <AffectedUnitArray value="AP_Medivac"/>
         <AffectedUnitArray value="AP_SiegeTankMengsk"/>
     </CUpgrade>
@@ -14664,7 +14664,7 @@
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,RateMultiplier" Value="0.15"/>
@@ -15136,7 +15136,7 @@
         <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
     <CUpgrade id="AP_ThorMengskHammerOfTheLaw">
-        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-hammer-of-the-law.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengsk,DamagePoint" Value="0.331"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,DamagePoint" Value="0.331"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,DamagePoint" Value="0.331"/>
@@ -17399,17 +17399,23 @@
         <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Minerals]" Value="25"/>
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskMoebiusDefenseMatrix">
-        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="50"/>
-        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="50"/>
-        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldRegenRate" Value="2"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-defense-protocol.dds"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="75"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="75"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldRegenRate" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_GoliathMengsk,CustomUnitStatusFrame" Value="AP_Coop_UnitStatus_Mengsk/MengskGoliath_StatusFrameShields"/>
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskJumpJetsMKII">
+        <Icon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,Mover" Value="CliffJumper"/>
         <EffectArray Reference="Abil,AP_GoliathMengskJump,Range[0]" Value="3"/>
         <EffectArray Reference="Actor,AP_GoliathMengskJump_Range,Range" Value="3.000000"/>
     </CUpgrade>
-    <CUpgrade id="AP_GoliathMengskParalysisInducers"/>
+    <CUpgrade id="AP_GoliathMengskParalysisInducers">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
+    </CUpgrade>
     <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="3"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="3"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,Range" Value="3"/>

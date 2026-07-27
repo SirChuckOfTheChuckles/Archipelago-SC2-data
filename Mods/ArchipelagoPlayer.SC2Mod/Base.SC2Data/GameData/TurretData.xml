@@ -270,7 +270,7 @@
         <YawStart value="-180"/>
         <YawRate value="360"/>
     </CTurret>
-    <CTurret id="AP_MedivacMengskSiegeTankAirliftTurret" parent="FreeRotate">
+    <CTurret id="AP_SiegeTankMengskAirliftTurret" parent="FreeRotate">
         <YawStart value="-180"/>
         <YawRate value="360"/>
     </CTurret>

@@ -6623,8 +6623,8 @@
         <Count Link="AP_SiegeTankTransportHook" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeMedivacSiegeTankAirliftCompleteOnly">
-        <Count Link="AP_MedivacSiegeTankAirlift" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSiegeTankMengskAirliftCompleteOnly">
+        <Count Link="AP_SiegeTankMengskAirlift" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeSiegeTankMengskSmartServosCompleteOnly">
