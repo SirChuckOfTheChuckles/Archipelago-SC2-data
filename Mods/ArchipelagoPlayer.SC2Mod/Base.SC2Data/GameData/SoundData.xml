@@ -6276,7 +6276,7 @@
         <Pitch value="-2.000000,2.000000"/>
         <Volume value="-9.000000,-9.000000"/>
     </CSound>
-    <CSound id="AP_AiurMothershipAttackLaunch" parent="Combat">
+    <CSound id="AP_MothershipAiurAttackLaunch" parent="Combat">
         <EditorCategories value="Race:Protoss"/>
         <AssetArray File="Assets\Sounds\Protoss\Mothership\Mothership_BeamAttackLaunch0.wav" FacialGroup=""/>
         <AssetArray File="Assets\Sounds\Protoss\Mothership\Mothership_BeamAttackLaunch1.wav" FacialGroup=""/>
@@ -16305,13 +16305,13 @@
         <DupeDestroyCount value="10"/>
         <DupeMuteCount value="5"/>
     </CSound>
-    <CSound id="AP_TaldarimMothershipDeathHeal">
+    <CSound id="AP_MothershipTaldarimDeathHeal">
         <DupeDestroyCount value="3"/>
         <DupeMaximumMethod value="Replace"/>
         <DupeMuteCount value="2"/>
         <Volume value="-6.000000,-4.000000"/>
     </CSound>
-    <CSound id="AP_TaldarimMothershipDeathHealMissile">
+    <CSound id="AP_MothershipTaldarimDeathHealMissile">
         <DupeDestroyCount value="3"/>
         <DupeMaximumMethod value="Replace"/>
         <DupeMuteCount value="3"/>

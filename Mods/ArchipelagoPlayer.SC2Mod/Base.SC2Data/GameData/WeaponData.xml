@@ -2472,7 +2472,7 @@
         <Effect value="AP_SOAMothershipv4BeamSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_TaldarimMothershipFastAttackWeapon">
+    <CWeaponLegacy id="AP_MothershipTaldarimFastAttackWeapon">
         <EditorCategories value="Race:Protoss"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
@@ -2487,7 +2487,7 @@
         <Effect value="AP_SOAMothershipv4FastBeamSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_PurifierMothershipWeapon">
+    <CWeaponLegacy id="AP_MothershipPurifierWeapon">
         <EditorCategories value="Race:Protoss"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
         <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
@@ -2496,30 +2496,30 @@
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
-        <DisplayEffect value="AP_PurifierMothershipBeamDamage"/>
+        <DisplayEffect value="AP_MothershipPurifierBeamDamage"/>
         <DisplayAttackCount value="6"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="7"/>
         <Arc value="360"/>
         <Period value="2.21"/>
         <DamagePoint value="0"/>
-        <Effect value="AP_PurifierMothershipWeaponSet"/>
+        <Effect value="AP_MothershipPurifierWeaponSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_AiurMothershipWeapon">
+    <CWeaponLegacy id="AP_MothershipAiurWeapon">
         <EditorCategories value="Race:Protoss"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
-        <DisplayEffect value="AP_AiurMothershipBeamDamage"/>
+        <DisplayEffect value="AP_MothershipAiurBeamDamage"/>
         <DisplayAttackCount value="6"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="7"/>
         <Arc value="360"/>
         <Period value="2.21"/>
         <DamagePoint value="0"/>
-        <Effect value="AP_AiurMothershipBeamSet"/>
+        <Effect value="AP_MothershipAiurBeamSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_MothershipCorePurifierWeapon">
