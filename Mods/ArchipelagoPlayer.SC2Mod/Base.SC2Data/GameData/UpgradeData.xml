@@ -13011,10 +13011,8 @@
         <AffectedUnitArray value="AP_ArtanisHero"/>
     </CUpgrade>
     <CUpgrade id="AP_ArtanisValorOfTheFirstborn">
-        <EffectArray Reference="Effect,AP_ArtanisBlades,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisAirAttackDamage,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisTaldarimAspectNearbyDamageGround,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisTaldarimAspectNearbyDamageAir,LeechFraction[Shields]" Value="0.33"/>
+        <EffectArray Reference="Effect,AP_ArtanisBlades,LeechFraction[Shields]" Value="0.50"/>
+        <EffectArray Reference="Effect,AP_ArtanisAirAttackDamage,LeechFraction[Shields]" Value="0.50"/>
         <EffectArray Reference="Weapon,AP_ArtanisTwilightBlades,RateMultiplier" Value="0.20"/>
         <EffectArray Reference="Weapon,AP_ArtanisAirAttack,RateMultiplier" Value="0.20"/>
         <AffectedUnitArray value="AP_ArtanisHero"/>

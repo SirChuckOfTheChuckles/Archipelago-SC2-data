@@ -2223,6 +2223,8 @@
         <Modification AttackSpeedMultiplier="2">
             <DamageDealtUnscaled index="Melee" value="15"/>
             <DamageDealtUnscaled index="Ranged" value="15"/>
+            <LifeArmorBonus value="2"/>
+            <ShieldArmorBonus value="2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_ExterminateTarget">

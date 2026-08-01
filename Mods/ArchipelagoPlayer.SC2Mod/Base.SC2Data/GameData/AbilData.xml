@@ -4684,7 +4684,7 @@
         <Flags index="Transient" value="1"/>
         <Cost>
             <Vital index="Energy" value="50"/>
-            <Cooldown TimeUse="120"/>
+            <Cooldown TimeUse="80"/>
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_ArtanisAstralWind" Requirements="AP_HaveArtanisAstralWind"/>
     </CAbilEffectInstant>
@@ -4736,7 +4736,6 @@
         <Flags index="RequireTargetVision" value="0"/>
         <Cost>
             <Vital index="Energy" value="50"/>
-            <Cooldown TimeUse="5"/>
         </Cost>
         <Range value="500"/>
         <Arc value="360"/>

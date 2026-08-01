@@ -4666,7 +4666,7 @@
     <CEffectModifyUnit id="AP_ArtanisAstralWindCDRefund">
         <ValidatorArray value="AP_EnemyTarget"/>
         <ImpactUnit Value="Caster"/>
-        <Cost Abil="AP_ArtanisAstralWind,Execute" CooldownOperation="Add" CooldownTimeUse="-6.0"/>
+        <Cost Abil="AP_ArtanisAstralWind,Execute" CooldownOperation="Add" CooldownTimeUse="-4.0"/>
     </CEffectModifyUnit>
     <CEffectSet id="AP_RaszagalsRhythmConsumeSet">
         <EditorCategories value="Race:Protoss"/>
@@ -5306,7 +5306,7 @@
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
         <Amount value="50"/>
-        <LeechFraction index="Shields" value="0.5"/>
+        <LeechFraction index="Shields" value="0.4"/>
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_CleansingSmiteAB">
@@ -5325,7 +5325,7 @@
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
         <Amount value="1"/>
-        <LeechFraction index="Shields" value="0.5"/>
+        <LeechFraction index="Shields" value="0.4"/>
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectSet id="AP_ArtanisBladeWaltz">
@@ -5344,7 +5344,7 @@
         <ImpactLocation Value="TargetUnit"/>
         <ArmorReduction value="0"/>
         <Kind value="Spell"/>
-        <Amount value="50"/>
+        <Amount value="45"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_ArtanisBladeWaltzDamageAB">
         <ValidatorArray value="AP_EnemyTarget"/>
@@ -5396,7 +5396,7 @@
     <CEffectDamage id="AP_ArtanisBladeWaltzEndDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
-        <Amount value="50"/>
+        <Amount value="45"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_ArtanisBladeWaltzWalkStopStun">
         <EditorCategories value="Race:Protoss"/>
