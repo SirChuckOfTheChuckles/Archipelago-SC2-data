@@ -22257,7 +22257,6 @@
             <LayoutButtons Face="AP_MothershipTaldarimIntegratedPower" Type="Passive" Requirements="AP_HaveMothershipTaldarimIntegratedPower" Row="1" Column="2"/>
             <LayoutButtons Face="AP_FrontloadedPower" Type="Passive" Row="1" Column="3"/>
             <LayoutButtons Face="AP_InterceptorMothershipTaldarim" Type="AbilCmd" AbilCmd="AP_MothershipTaldarimHangar,0" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_HangarInstallTaldarim" Type="AbilCmd" AbilCmd="AP_MothershipAuxiliaryOneTimeInstall,3" Row="2" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_HangarQueue5,0" Row="2" Column="4"/>
             <LayoutButtons Face="AP_VoidSentryBlackHole" Type="AbilCmd" AbilCmd="AP_VoidSentryBlackHole,0" Row="2" Column="0"/>
@@ -22275,7 +22274,6 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <CardLayouts CardId="MA">
-            <LayoutButtons Face="AP_InterceptorMothershipTaldarim" Type="AbilCmd" AbilCmd="AP_MothershipTaldarimHangar,0" Row="0" Column="0"/>
             <LayoutButtons Face="AP_HangarInstallTaldarim" Type="AbilCmd" AbilCmd="AP_MothershipTaldarimAuxiliaryOneTimeInstall,3" Row="0" Column="0"/>
             <LayoutButtons Face="AP_TaldarimMothershipFastAttack" Type="Passive" Requirements="AP_HaveTaldarimMothershipFastAttack" Row="0" Column="1"/>
             <LayoutButtons Face="AP_TaldarimMothershipFastAttackInstall" Type="AbilCmd" AbilCmd="AP_MothershipTaldarimAuxiliaryOneTimeInstall,1" Row="0" Column="1"/>
@@ -22397,7 +22395,6 @@
             <LayoutButtons Face="AP_TimeFieldAiur" Type="AbilCmd" AbilCmd="AP_TimeFieldAiur,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_RevitalizeShields" Type="AbilCmd" AbilCmd="AP_RevitalizeShields,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_BatteryOvercharge" Type="AbilCmd" AbilCmd="AP_BatteryOverchargeUpgrade,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="AP_HangarInstallAiur" Type="AbilCmd" AbilCmd="AP_MothershipAiurAuxiliaryOneTimeInstall,5" Row="2" Column="3"/>
             <LayoutButtons Face="AP_MothershipCoreNexusRecall" Type="AbilCmd" AbilCmd="AP_MothershipNexusRecall,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_MothershipCoreMassRecall" Type="AbilCmd" AbilCmd="AP_MothershipMassRecall,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_CloakingFieldMothership" Type="Passive" Row="2" Column="2"/>
@@ -22524,7 +22521,6 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_PurifierMothershipBlackHole" Type="AbilCmd" AbilCmd="AP_PurifierMothershipBlackHole,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_TimeFieldPurifier" Type="AbilCmd" AbilCmd="AP_TimeFieldPurifier,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_HangarInstallPurifier" Type="AbilCmd" AbilCmd="AP_MothershipAuxAP_HaveAiurMothershipEnergyRegenAuraiaryOneTimeInstall,4" Row="2" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_HangarQueue5,0" Row="2" Column="4"/>
             <LayoutButtons Face="AP_MothershipCoreMassRecall" Type="AbilCmd" AbilCmd="AP_MothershipMassRecall,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_PlanetCracker" Type="AbilCmd" AbilCmd="AP_PlanetCracker,0" Row="2" Column="1"/>

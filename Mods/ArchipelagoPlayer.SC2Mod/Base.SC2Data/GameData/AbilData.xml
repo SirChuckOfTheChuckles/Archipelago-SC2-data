@@ -7533,6 +7533,7 @@
             <Cooldown Link="Abil/AP_SOAMothershipBlink" TimeUse="120"/>
         </Cost>
         <Range index="0" value="500"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_WormholeTransit"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_SOAMothershipLineAttack">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -7827,7 +7828,7 @@
         <TargetFilters value="Visible;Self,Neutral,Enemy,Heroic,Missile,Item,Uncommandable,Stasis,Dead,Hidden"/>
         <Range value="8"/>
         <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_VoidSentryChronoBeam"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_PowerRedirection"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_PowerRedirectionUpgrade">
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -7839,7 +7840,7 @@
         <TargetFilters value="Visible;Self,Neutral,Enemy,Heroic,Missile,Item,Uncommandable,Stasis,Dead,Hidden"/>
         <Range value="8"/>
         <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_VoidSentryChronoBeam" Requirements="AP_HavePowerRedirectionInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_PowerRedirectionUpgrade" Requirements="AP_HavePowerRedirectionInstalled"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_RevitalizeShields">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -7889,7 +7890,7 @@
             <Vital index="Energy" value="100"/>
             <Cooldown TimeUse="240"/>
         </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_VoidRayTaldarim" Requirements="AP_HaveSummonDeathFleetInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_SummonDeathFleet" Requirements="AP_HaveSummonDeathFleetInstalled"/>
     </CAbilEffectInstant>
     <CAbilBehavior id="AP_ArtanisAirAttackSwap">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -7921,22 +7922,22 @@
         <InfoArray index="Research1" Time="0" Upgrade="AP_AiurMothershipFeedback">
             <Resource index="Minerals" value="25"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_AiurMothershipFeedback" State="Restricted" Requirements="AP_CanInstallAiurMothershipFeedback"/>
+            <Button DefaultButtonFace="AP_AiurMothershipFeedbackInstall" State="Restricted" Requirements="AP_CanInstallAiurMothershipFeedback"/>
         </InfoArray>
         <InfoArray index="Research2" Time="0" Upgrade="AP_AiurMothershipShieldRestore">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="0"/>
-            <Button DefaultButtonFace="AP_AiurMothershipShieldRestore" State="Restricted" Requirements="AP_CanInstallAiurMothershipShieldRestore"/>
+            <Button DefaultButtonFace="AP_AiurMothershipShieldRestoreInstall" State="Restricted" Requirements="AP_CanInstallAiurMothershipShieldRestore"/>
         </InfoArray>
         <InfoArray index="Research3" Time="0" Upgrade="AP_AiurMothershipEnergyRegenAura">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_AiurMothershipEnergyRegenAura" State="Restricted" Requirements="AP_CanInstallAiurMothershipEnergyRegenAura"/>
+            <Button DefaultButtonFace="AP_AiurMothershipEnergyRegenAuraInstall" State="Restricted" Requirements="AP_CanInstallAiurMothershipEnergyRegenAura"/>
         </InfoArray>
         <InfoArray index="Research4" Time="0" Upgrade="AP_MothershipAiurHangar">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_InterceptorMothershipAiur" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
+            <Button DefaultButtonFace="AP_MothershipRepairDronesInstall" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
         </InfoArray>
     </CAbilResearch>
     <CAbilResearch id="AP_MothershipPurifierAuxiliaryOneTimeInstall">
@@ -7944,22 +7945,22 @@
         <InfoArray index="Research1" Time="0" Upgrade="AP_PurifierMothershipDebuff">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="75"/>
-            <Button DefaultButtonFace="AP_PurifierMothershipDebuff" State="Restricted" Requirements="AP_CanInstallPurifierMothershipDebuff"/>
+            <Button DefaultButtonFace="AP_PurifierMothershipDebuffInstall" State="Restricted" Requirements="AP_CanInstallPurifierMothershipDebuff"/>
         </InfoArray>
         <InfoArray index="Research2" Time="0" Upgrade="AP_PurifierMothershipShielding">
             <Resource index="Minerals" value="125"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_PurifierMothershipShielding" State="Restricted" Requirements="AP_CanInstallPurifierMothershipShielding"/>
+            <Button DefaultButtonFace="AP_PurifierMothershipShieldingInstall" State="Restricted" Requirements="AP_CanInstallPurifierMothershipShielding"/>
         </InfoArray>
         <InfoArray index="Research3" Time="0" Upgrade="AP_PurifierMothershipAttackSpeedBoost">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="AP_PurifierMothershipAttackSpeedBoost" State="Restricted" Requirements="AP_CanInstallPurifierMothershipAttackSpeedBoost"/>
+            <Button DefaultButtonFace="AP_PurifierMothershipAttackSpeedBoostInstall" State="Restricted" Requirements="AP_CanInstallPurifierMothershipAttackSpeedBoost"/>
         </InfoArray>
         <InfoArray index="Research4" Time="0" Upgrade="AP_MothershipPurifierHangar">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_InterceptorMothershipPurifier" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
+            <Button DefaultButtonFace="AP_MothershipChronoDronesInstall" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
         </InfoArray>
     </CAbilResearch>
     <CAbilResearch id="AP_MothershipTaldarimAuxiliaryOneTimeInstall">
@@ -7967,22 +7968,22 @@
         <InfoArray index="Research1" Time="0" Upgrade="AP_TaldarimMothershipGroundSlow">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="75"/>
-            <Button DefaultButtonFace="AP_TaldarimMothershipGroundSlow" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipGroundSlow"/>
+            <Button DefaultButtonFace="AP_TaldarimMothershipGroundSlowInstall" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipGroundSlow"/>
         </InfoArray>
         <InfoArray index="Research2" Time="0" Upgrade="AP_TaldarimMothershipFastAttack">
             <Resource index="Minerals" value="125"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_TaldarimMothershipFastAttack" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipFastAttack"/>
+            <Button DefaultButtonFace="AP_TaldarimMothershipFastAttackInstall" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipFastAttack"/>
         </InfoArray>
         <InfoArray index="Research3" Time="0" Upgrade="AP_TaldarimMothershipDeathHeal">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_TaldarimMothershipDeathHeal" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipDeathHeal"/>
+            <Button DefaultButtonFace="AP_TaldarimMothershipDeathHealInstall" State="Restricted" Requirements="AP_CanInstallTaldarimMothershipDeathHeal"/>
         </InfoArray>
         <InfoArray index="Research4" Time="0" Upgrade="AP_MothershipTaldarimHangar">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_InterceptorInstall" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
+            <Button DefaultButtonFace="AP_HangarInstallTaldarim" State="Restricted" Requirements="AP_HaveMothershipHangarUpgrade"/>
         </InfoArray>
     </CAbilResearch>
     <CAbilSpecialize id="AP_PurifierMothershipInstalls">
@@ -7990,28 +7991,28 @@
         <InfoArray index="Specialize1" Time="0" Effect="AP_OverloadWeaponSystemsInstallSet">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_OverloadWeaponSystems" Requirements="AP_CanInstallOverloadWeaponSystems"/>
+            <Button DefaultButtonFace="AP_OverloadWeaponSystemsInstall" Requirements="AP_CanInstallOverloadWeaponSystems"/>
         </InfoArray>
         <InfoArray index="Specialize2" Time="0" Effect="AP_PowerRedirectionInstallSet">
-            <Button DefaultButtonFace="AP_PowerRedirection" Requirements="AP_CanInstallPowerRedirection"/>
+            <Button DefaultButtonFace="AP_PowerRedirectionInstall" Requirements="AP_CanInstallPowerRedirection"/>
         </InfoArray>
         <InfoArray index="Specialize3" Time="0" Effect="AP_PlanetCrackerInstallSet">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="AP_PlanetCracker" Requirements="AP_CanInstallPlanetCracker"/>
+            <Button DefaultButtonFace="AP_PlanetCrackerInstall" Requirements="AP_CanInstallPlanetCracker"/>
         </InfoArray>
         <InfoArray index="Specialize4" Time="0" Effect="AP_BlackHoleInstallSet">
-            <Button DefaultButtonFace="AP_MothershipBlackHole" Requirements="AP_CanInstallBlackHole"/>
+            <Button DefaultButtonFace="AP_MothershipPurifierBlackHoleInstall" Requirements="AP_CanInstallBlackHole"/>
         </InfoArray>
         <InfoArray index="Specialize5" Time="0" Effect="AP_TimeFieldInstallSet">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_TimeField" Requirements="AP_CanInstallTimeField"/>
+            <Button DefaultButtonFace="AP_TimeFieldPurifierInstall" Requirements="AP_CanInstallTimeField"/>
         </InfoArray>
         <InfoArray index="Specialize6" Time="0" Effect="AP_WormholeModuleInstallSet">
             <Resource index="Minerals" value="25"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_MassRecall" Requirements="AP_CanInstallWormholeModule"/>
+            <Button DefaultButtonFace="AP_MothershipMassRecallInstall" Requirements="AP_CanInstallWormholeModule"/>
         </InfoArray>
     </CAbilSpecialize>
     <CAbilSpecialize id="AP_AiurMothershipInstalls">
@@ -8019,28 +8020,28 @@
         <InfoArray index="Specialize1" Time="0" Effect="AP_RevitalizeShieldsInstallSet">
             <Resource index="Minerals" value="25"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_RevitalizeShields" Requirements="AP_CanInstallRevitalizeShields"/>
+            <Button DefaultButtonFace="AP_RevitalizeShieldsInstall" Requirements="AP_CanInstallRevitalizeShields"/>
         </InfoArray>
         <InfoArray index="Specialize2" Time="0" Effect="AP_BatteryOverchargeInstallSet">
-            <Button DefaultButtonFace="AP_BatteryOvercharge" Requirements="AP_CanInstallBatteryOvercharge"/>
+            <Button DefaultButtonFace="AP_BatteryOverchargeInstall" Requirements="AP_CanInstallBatteryOvercharge"/>
         </InfoArray>
         <InfoArray index="Specialize3" Time="0" Effect="AP_AstralRestorationInstallSet">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="75"/>
-            <Button DefaultButtonFace="AP_AstralRestoration" Requirements="AP_CanInstallAstralRestoration"/>
+            <Button DefaultButtonFace="AP_AstralRestorationInstall" Requirements="AP_CanInstallAstralRestoration"/>
         </InfoArray>
         <InfoArray index="Specialize4" Time="0" Effect="AP_BlackHoleInstallSet">
-            <Button DefaultButtonFace="AP_MothershipBlackHole" Requirements="AP_CanInstallBlackHole"/>
+            <Button DefaultButtonFace="AP_MothershipAiurBlackHoleInstall" Requirements="AP_CanInstallBlackHole"/>
         </InfoArray>
         <InfoArray index="Specialize5" Time="0" Effect="AP_TimeFieldInstallSet">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_TimeField" Requirements="AP_CanInstallTimeField"/>
+            <Button DefaultButtonFace="AP_TimeFieldAiurInstall" Requirements="AP_CanInstallTimeField"/>
         </InfoArray>
         <InfoArray index="Specialize6" Time="0" Effect="AP_WormholeModuleInstallSet">
             <Resource index="Minerals" value="25"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_NexusRecall" Requirements="AP_CanInstallWormholeModule"/>
+            <Button DefaultButtonFace="AP_MothershipNexusRecallInstall" Requirements="AP_CanInstallWormholeModule"/>
         </InfoArray>
     </CAbilSpecialize>
     <CAbilSpecialize id="AP_TaldarimMothershipInstalls">
@@ -8051,20 +8052,20 @@
         <InfoArray index="Specialize2" Time="0" Effect="AP_SummonDeathFleetInstallSet">
             <Resource index="Minerals" value="125"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_SummonDeathFleet" Requirements="AP_CanInstallSummonDeathFleet"/>
+            <Button DefaultButtonFace="AP_SummonDeathFleetInstall" Requirements="AP_CanInstallSummonDeathFleet"/>
         </InfoArray>
         <InfoArray index="Specialize3" Time="0" Effect="AP_BlackHoleInstallSet">
-            <Button DefaultButtonFace="AP_MothershipBlackHole" Requirements="AP_CanInstallBlackHole"/>
+            <Button DefaultButtonFace="AP_VoidSentryBlackHoleInstall" Requirements="AP_CanInstallBlackHole"/>
         </InfoArray>
         <InfoArray index="Specialize4" Time="0" Effect="AP_TimeFieldInstallSet">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="AP_TimeField" Requirements="AP_CanInstallTimeField"/>
+            <Button DefaultButtonFace="AP_TimeFieldTaldarimInstall" Requirements="AP_CanInstallTimeField"/>
         </InfoArray>
         <InfoArray index="Specialize5" Time="0" Effect="AP_WormholeModuleInstallSet">
             <Resource index="Minerals" value="75"/>
             <Resource index="Vespene" value="25"/>
-            <Button DefaultButtonFace="AP_WormholeTransit" Requirements="AP_CanInstallWormholeModule"/>
+            <Button DefaultButtonFace="AP_WormholeTransitInstall" Requirements="AP_CanInstallWormholeModule"/>
         </InfoArray>
     </CAbilSpecialize>
     <CAbilEffectTarget id="AP_PlanetCracker">
@@ -8094,7 +8095,7 @@
         <InfoArray index="Ammo1" Time="8" CountStart="8" Manage="Recall" Unit="AP_InterceptorTaldarim">
             <Charge Link="CarrierInterceptor" Location="Unit"/>
             <Cooldown Link="CarrierTrainInterceptor" TimeUse="0.01"/>
-            <Button DefaultButtonFace="Interceptor" Requirements="AP_HaveMothershipHangarTaldarimInstalled">
+            <Button DefaultButtonFace="AP_InterceptorMothershipTaldarim" Requirements="AP_HaveMothershipHangarTaldarimInstalled">
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Flags index="AutoBuild" value="1"/>
@@ -8120,7 +8121,7 @@
         <InfoArray index="Ammo1" Time="0" CountStart="0" Manage="Recall" Unit="AP_ChronoDrone">
             <Charge HideCount="1" Link="ChronoDrone" Location="Unit"/>
             <Cooldown Link="Abil/##id##"/>
-            <Button DefaultButtonFace="AP_RepairDrones" Requirements="AP_HaveMothershipHangarPurifierInstalled">
+            <Button DefaultButtonFace="AP_MothershipChronoDrones" Requirements="AP_HaveMothershipHangarPurifierInstalled">
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Flags index="AutoBuild" value="1"/>
@@ -8142,7 +8143,7 @@
         <InfoArray index="Ammo1" Time="0" CountStart="0" Manage="Recall" Unit="AP_MothershipRepairDrone">
             <Charge HideCount="1" Link="RepairDrone" Location="Unit"/>
             <Cooldown Link="Abil/##id##"/>
-            <Button DefaultButtonFace="AP_RepairDrones" Requirements="AP_HaveMothershipHangarAiurInstalled">
+            <Button DefaultButtonFace="AP_MothershipRepairDrones" Requirements="AP_HaveMothershipHangarAiurInstalled">
                 <Flags index="ToSelection" value="1"/>
             </Button>
             <Flags index="AutoBuild" value="1"/>
@@ -8168,7 +8169,7 @@
         <CursorEffect value="AP_TimeFieldAiurSearchArea"/>
         <AINotifyEffect value="AP_TimeFieldAiurCreatePersistent"/>
         <Range value="9"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeField" Requirements="AP_HaveTimeFieldInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeFieldAiur" Requirements="AP_HaveTimeFieldInstalled"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_TimeFieldPurifier">
@@ -8182,7 +8183,7 @@
         </Cost>
         <CursorEffect value="AP_TimeFieldPurifierSearchArea"/>
         <Range value="9"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeField" Requirements="AP_HaveTimeFieldInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeFieldPurifier" Requirements="AP_HaveTimeFieldInstalled"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_TimeFieldAiurCore">
@@ -8197,7 +8198,7 @@
         <CursorEffect value="AP_TimeFieldAiurCoreSearchArea"/>
         <AINotifyEffect value="AP_TimeFieldAiurCoreCreatePersistent"/>
         <Range value="9"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeField"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeFieldAiurCore"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_TimeFieldPurifierCore">
@@ -8211,7 +8212,7 @@
         </Cost>
         <CursorEffect value="AP_TimeFieldPurifierCoreSearchArea"/>
         <Range value="9"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeField"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_TimeFieldPurifierCore"/>
         <Arc value="360"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_TimeFieldTaldarim">
@@ -8240,7 +8241,7 @@
         <Arc value="360"/>
         <CursorEffect value="AP_MothershipMassRecallSearch"/>
         <AINotifyEffect value=""/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ArbiterMPRecall"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipCoreMassRecall"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_MothershipCoreNexusRecall">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -8268,7 +8269,7 @@
             <Cooldown TimeUse="15"/>
         </Cost>
         <CursorEffect value="AP_MothershipNexusRecallSearch"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipNexusRecall" Requirements="AP_HaveWormholeModuleInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipCoreNexusRecall" Requirements="AP_HaveWormholeModuleInstalled"/>
         <TargetFilters value="-;Ally,Neutral,Enemy"/>
         <Flags index="AllowMovement" value="1"/>
     </CAbilEffectTarget>
@@ -8283,11 +8284,11 @@
         <Arc value="360"/>
         <CursorEffect value="AP_MothershipMassRecallSearch"/>
         <AINotifyEffect value=""/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ArbiterMPRecall" Requirements="AP_HaveWormholeModuleInstalled"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipCoreMassRecall" Requirements="AP_HaveWormholeModuleInstalled"/>
     </CAbilEffectTarget>
     <CAbilMorph id="AP_MorphToMothershipAiur">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MorphToMothershipAiur" Requirements="AP_HaveFleetBeacon"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipAiur" Requirements="AP_HaveFleetBeacon"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="AP_CancelMothershipMorph"/>
         <Flags index="DisableAbils" value="1"/>
         <Flags index="FastBuild" value="1"/>
@@ -8315,7 +8316,7 @@
         <Alert value="AP_MothershipComplete"/>
     </CAbilMorph>
     <CAbilMorph id="AP_MorphToMothershipPurifier" parent="AP_MorphToMothershipAiur">
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MorphToMothershipPurifier" Requirements="AP_HaveFleetBeacon"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MothershipPurifier" Requirements="AP_HaveFleetBeacon"/>
         <InfoArray index="0" Score="1" Unit="AP_MothershipPurifier">
             <SectionArray index="Abils">
                 <DurationArray index="Delay" value="110"/>
@@ -10994,10 +10995,12 @@
     <CAbilEffectTarget id="AP_AiurMothershipBlackHole" parent="AP_VoidSentryBlackHole">
         <Effect index="0" value="AP_AiurMothershipBlackHolePersistent"/>
         <CursorEffect index="0" value="AP_AiurMothershipBlackHoleSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_AiurMothershipBlackHole"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_PurifierMothershipBlackHole" parent="AP_VoidSentryBlackHole">
         <Effect index="0" value="AP_PurifierMothershipBlackHolePersistent"/>
         <CursorEffect index="0" value="AP_PurifierMothershipBlackHoleSearch"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_PurifierMothershipBlackHole"/>
     </CAbilEffectTarget>
     <CAbilMorph id="AP_TransportMode">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:MorphsandBurrows"/>
