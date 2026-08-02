@@ -4018,12 +4018,12 @@ Button/Tooltip/AP_ScourgePassive=This building enables you to morph Scourge.
 Button/Tooltip/AP_ScourgeSpawn=Spawn a Scourge for free, until you control 6 spawned Scourges.
 Button/Tooltip/AP_ScourgeSpawnUpgrade=Spawn 2 Scourges for free, until you control 6 spawned Scourges.
 Button/Tooltip/AP_ScourgeSplashUpgrade=Scourge deal splash damage.
-Button/Tooltip/AP_Scout=Versatile high-speed fighter.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_Scout=Aiur Faction<n/>Versatile high-speed fighter.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutAdvancedPhotonBlasters=Improves Photon Blaster weapon damage.
 Button/Tooltip/AP_ScoutApialSensors=<c val="ffff8a">Scouts</c> gain increased sight range.
 Button/Tooltip/AP_ScoutExpeditionaryHull=<c val="ffff8a">Scouts</c> gain +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,ShieldsMax$"/> shields, +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,LifeMax$"/> health, and +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,ShieldArmor$"/> shield armor.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_ScoutGraviticThrusters=<c val="ffff8a">Scouts</c> and its variants gain increased movement speed.
-Button/Tooltip/AP_ScoutNerazim=Nerazim Scout variant. Specialized stealth fighter.<n/>Has Cloak, Phantom Dash and Pilot (Transport) abilities.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_ScoutNerazim=Nerazim Faction<n/>Specialized stealth fighter. Has Cloak and Phantom Dash abilities.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutNerazimCloak=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_ScoutNerazimCloak,Modification.VitalRegenArray[2] + Unit,AP_ScoutNerazim,EnergyRegenRate)" precision="1"/> energy per second.</c>
 Button/Tooltip/AP_ScoutNerazimCloakUpgrade=The Mist Wing is undetectable on activating cloak for 5 seconds. Cloak no longer drains energy while active.
 Button/Tooltip/AP_ScoutNerazimDecloak=Decloaks the selected unit, making it visible to enemies.
@@ -4032,14 +4032,14 @@ Button/Tooltip/AP_ScoutNerazimPhantomDash=Dash forward to quickly close distance
 Button/Tooltip/AP_ScoutNerazimPilot=Load a unit to co-pilot the Mist Wing. A pilot provides +2 damage to all weapons, 10% attack speed and +1 armor for life and shields.<n/><n/><c val="#ColorAttackInfo">Can load 1 pilot at a time.</c>
 Button/Tooltip/AP_ScoutNerazimPilotUnload=Unload your pilot. It will be cloaked for 5 seconds after unloading.</n></n>A pilot provides +2 damage to all weapons, 10% attack speed and +1 armor for life and shields.<n/><n/><c val="#ColorAttackInfo">Can load 1 pilot at a time.</c>
 Button/Tooltip/AP_ScoutNerazimWeaponRange=<c val="ffff8a">Mist Wings</c> gain +3 air attack range and +1 ground attack range.
-Button/Tooltip/AP_ScoutPurifier=Purifier Scout variant. Specialized air-to-air fighter. Has no ground attack, anti-air missiles that can be upgraded to hit multiple targets.<n/>Has the Corona Beam ability.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/AP_ScoutPurifier=Purifier Faction<n/>Specialized air-to-air fighter with no ground attack. Has the Corona Beam ability.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/AP_ScoutPurifierCoronaBeam=Channels a beam on the target unit, draining up to 100 of your shield and dealing up to 200 damage over 4 seconds. <n/>Deactivates if you run out of shields.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutPurifierSideMissiles=Solarite Missiles fire up to 4 additional missiles at nearby enemies, 2 at each side of the Caladrius. The side missiles cannot hit your main attack target, and enemies can only be hit by one side missile at a time.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/AP_ScoutPurifierSolariteReactor=If your shields fall below 20, recover 80 shields over 2 seconds.This effect cannot occur more than once every 40 seconds.
 Button/Tooltip/AP_ScoutPurifierSolariteReactorCooldown=Solarite Reactor cannot restore shields at this time.
 Button/Tooltip/AP_ScoutPurifierStructureTargeting=Allows Solarite Missiles to target ground structures. Side missiles will not hit structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground structures.</c>
 Button/Tooltip/AP_ScoutPurifierWeaponRange=<c val="ffff8a">Caladrius</c> gain +3 attack range.
-Button/Tooltip/AP_ScoutTaldarim=Tal'Darim Scout variant. Specialized air-to-ground fighter. Has weaker antimatter missiles, but a stronger photon blaster.<n/>Has the Vulcan Blaster ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_ScoutTaldarim=Tal'darim Faction<n/>Specialized air-to-ground fighter. Has a weak anti-air attack, but a stronger anti-ground attack.<n/>Has the Vulcan Blaster ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutTaldarimAdvancedPhotonBlasters=Improves Photon Blaster weapon damage and Vulcan Blaster damage.
 Button/Tooltip/AP_ScoutTaldarimArmorMeltingBlasters=Twin Photon Blasters gain +3 damage against armored targets. Vulcan Blasters can attack buildings.
 Button/Tooltip/AP_ScoutTaldarimVulcanBlaster=The Oppressor slows down to activate powerful air to ground weapons. Cannot hit structures. <n/>Disables air to air missiles.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>

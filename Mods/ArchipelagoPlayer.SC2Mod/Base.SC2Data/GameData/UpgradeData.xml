@@ -13103,6 +13103,8 @@
         <EffectArray Operation="Set" Reference="Button,AP_TransportMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,UnitIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,HeroIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,PortraitModel" Value="WarpPrism_Taldarim_Portrait"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,PortraitModel" Value="WarpPrism_Taldarim_Portrait"/>
         <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,Icon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,PlacementModel" Value="AP_WarpPrismTaldarim"/>
@@ -13354,6 +13356,7 @@
         <EffectArray Reference="Effect,AP_HighArchonPsiStormSearch,AreaArray[0].Radius" Value="0.8"/>
         <EffectArray Reference="Abil,AP_HighArchonPsiStormArchon,Range[0]" Value="2"/>
         <EffectArray Reference="Abil,AP_HighArchonPsiStorm,Range[0]" Value="2"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_HighArchonPsiStormModel,Scale" Value="1.300000"/>
     </CUpgrade>
     <CUpgrade id="AP_HighArchon">
         <!-- Handled via behaviors now

@@ -2592,7 +2592,7 @@
         <On Terms="Effect.AP_PsiStormShakurasPersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_PsiStormShakurasPersistent.Stop" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpShadow"/>
-        <Scale value="1.300000"/>
+        <Scale value="1.000000"/>
     </CActorModel>
     <CActorUnit id="AP_Medic" parent="AP_MedicBase" unitName="AP_Medic">
         <On Terms="Abil.AP_heal.SourceChannelStart" Send="$Spell PlayForever"/>
@@ -8050,7 +8050,7 @@
         <Macros value="TerrainSquibAnimations"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_Adept_Land"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_Templar_LandSweetener"/>
-        <On Terms="Abil.AdeptPhaseShift.SourceCastStart; !UnitWalking" Send="$Spell"/>
+        <On Terms="Abil.AP_AdeptPhaseShift.SourceCastStart; !UnitWalking" Send="$Spell"/>
         <On Terms="Behavior.Hallucination.On" Send="Create HallucinationBirthSoundSmall"/>
         <On Terms="UnitDeathCustomize; ValidateUnit IsHallucination" Send="DeathCustomize Hallucination"/>
         <On Terms="Effect.AP_AdeptPhaseShiftTeleport.Stop" Send="Create AP_AdeptSpiritIn"/>
@@ -8241,6 +8241,10 @@
         <HostSiteOps Ops="SOpAttachOrigin"/>
         <Model value="AdeptSpiritIn"/>
     </CActorModel>
+    <CActorSound id="AP_PsionicTransferLaunch" parent="SoundOneShot">
+        <On Terms="Abil.AP_AdeptPhaseShift.SourceCastStart" Send="Create"/>
+        <Sound value="Adept_PsionicTransferLaunch"/>
+    </CActorSound>
     <CActorSound id="AP_AdeptSpiritInSound" parent="SoundOneShot">
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
@@ -15878,7 +15882,7 @@
         <On Terms="Effect.AP_HighArchonPsiStormPersistent.Start" Send="Create"/>
         <On Terms="Effect.AP_HighArchonPsiStormPersistent.Stop" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpShadow"/>
-        <Scale value="1.300000"/>
+        <Scale value="1.000000"/>
     </CActorModel>
     <CActorSound id="AP_HighArchonPsiStormSound" parent="SoundContinuous">
         <On Terms="Effect.AP_HighArchonPsiStormPersistent.Start" Send="Create"/>
@@ -16092,7 +16096,7 @@
         <On Terms="Effect.AP_PsiStormShakurasPersistent.Stop" Send="AnimBracketStop BSD"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Model value="HighTemplarPsiStormModel"/>
-        <Scale value="1.300000"/>
+        <Scale value="1.000000"/>
     </CActorModel>
     <CActorSound id="AP_HighTemplarPsiStormSound" parent="SoundContinuous">
         <On Terms="Effect.AP_PsiStormPersistent.Start" Send="Create"/>
