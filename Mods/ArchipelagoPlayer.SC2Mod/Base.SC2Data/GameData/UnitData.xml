@@ -22639,9 +22639,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_MothershipAiur" Type="AbilCmd" AbilCmd="AP_MorphToMothershipAiur,Execute" Row="1" Column="0"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_MorphToMothershipAiur,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="AP_TimeFieldAiurCore" Type="AbilCmd" AbilCmd="AP_TimeFieldAiurCore,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_TimeFieldAiurCore" Type="AbilCmd" AbilCmd="AP_TimeFieldAiurCore,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="AP_BatteryOvercharge" Type="AbilCmd" AbilCmd="AP_BatteryOvercharge,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="AP_MothershipCoreNexusRecall" Type="AbilCmd" AbilCmd="AP_MothershipCoreNexusRecall,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_MothershipCoreNexusRecall" Type="AbilCmd" AbilCmd="AP_MothershipCoreNexusRecall,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>
@@ -22721,9 +22721,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_MothershipPurifier" Type="AbilCmd" AbilCmd="AP_MorphToMothershipPurifier,Execute" Row="1" Column="0"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_MorphToMothershipPurifier,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="AP_TimeFieldPurifierCore" Type="AbilCmd" AbilCmd="AP_TimeFieldPurifierCore,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_TimeFieldPurifierCore" Type="AbilCmd" AbilCmd="AP_TimeFieldPurifierCore,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="AP_PowerRedirection" Type="AbilCmd" AbilCmd="AP_PowerRedirection,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="AP_MothershipCoreMassRecall" Type="AbilCmd" AbilCmd="AP_MothershipCoreMassRecall,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_MothershipCoreMassRecall" Type="AbilCmd" AbilCmd="AP_MothershipCoreMassRecall,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>

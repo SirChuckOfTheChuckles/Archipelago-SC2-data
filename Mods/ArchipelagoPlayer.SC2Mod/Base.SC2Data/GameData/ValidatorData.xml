@@ -2438,11 +2438,6 @@
         <Compare value="GT"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasArtanisAiurAspectPassiveCharged">
-        <WhichUnit Value="Caster"/>
-        <Value value="1"/>
-        <Behavior value="AP_ArtanisAiurAspectPassiveCharged"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorCombine id="AP_TempShieldsNotEmptyOrNoTempShields">
         <CombineArray value="hasShields"/>
         <CombineArray value="AP_CasterMaxShieldEQ0"/>

@@ -5308,11 +5308,6 @@
         <RemoveValidatorArray value="AP_CasterNotHasArtanisLightningDash"/>
         <Tooltip value="Behavior/Tooltip/AP_ArtanisCharging"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_ArtanisAiurAspectPassiveCharged">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Duration value="4.0000"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ScopophobiaTarget">
         <InfoIcon value="Assets\Textures\btn-upgrade-afaidofthedark.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
