@@ -8682,6 +8682,7 @@
         <On Terms="Effect.AP_VoidStalkerBlinkMultiple.Start; At Source" Send="Create"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
     <CActorModel id="AP_BlinkMultipleStopModel" parent="ModelAnimationStyleOneShot">
         <InheritType value="OneShot"/>
