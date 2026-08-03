@@ -50,4 +50,9 @@
         <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
         <Peripheral value="TrainComplete"/>
     </CAlert>
+    <CAlert id="AP_SupplicantWarpComplete">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-supplicant.dds"/>
+        <Sound value="AP_ZealotAlarak_Ready"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
 </Catalog>

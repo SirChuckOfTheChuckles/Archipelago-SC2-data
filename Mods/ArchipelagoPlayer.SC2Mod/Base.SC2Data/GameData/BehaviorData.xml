@@ -2424,7 +2424,7 @@
         <InfoIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <Duration value="5"/>
-        <DamageResponse ModifyFraction="0" ModifyLimit="250" ModifyMinimumDamage="1">
+        <DamageResponse ModifyFraction="0" ModifyLimit="300" ModifyMinimumDamage="1">
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>

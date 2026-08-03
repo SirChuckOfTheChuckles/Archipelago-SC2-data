@@ -4689,10 +4689,7 @@
         <Cost Abil="AP_ArtanisCharge,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_ShadowSlice,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_ArtanisLightningDash,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
-        <Cost Abil="AP_CleansingSmite,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_PhasePrism,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
-        <Cost Abil="AP_ArtanisBladeWaltz,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
-        <Cost Abil="AP_Exterminate,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_StrengthInUnity,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_ArtanisAstralWind,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>
         <Cost Abil="AP_SuppressionPulse,Execute" CooldownOperation="Add" CooldownTimeUse="-1.0"/>

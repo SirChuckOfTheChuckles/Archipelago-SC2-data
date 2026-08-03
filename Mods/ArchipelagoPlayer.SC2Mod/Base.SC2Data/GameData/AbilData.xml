@@ -4709,6 +4709,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
         <Effect index="0" value="AP_PhasePrismSet"/>
         <Cost>
+            <Vital index="Energy" value="25"/>
             <Cooldown TimeUse="15"/>
         </Cost>
         <Range value="7"/>
@@ -11050,8 +11051,9 @@
         <MaxAttackSpeedMultiplier value="128"/>
     </CAbilAttack>
     <CAbilWarpTrain id="AP_WarpGateTrainSupplicantTrue">
+        <Alert value="AP_SupplicantWarpComplete"/>
         <InfoArray index="Train12" Time="5" Unit="AP_Supplicant">
-            <Button DefaultButtonFace="AP_WarpInSupplicantHidden">
+            <Button DefaultButtonFace="AP_WarpInSupplicant">
                 <Flags index="IgnoreUser" value="1"/>
             </Button>
         </InfoArray>
