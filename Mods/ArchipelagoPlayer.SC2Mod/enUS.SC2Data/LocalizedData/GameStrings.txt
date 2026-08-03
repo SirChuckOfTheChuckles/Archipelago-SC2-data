@@ -492,6 +492,7 @@ Abil/Name/MercCompoundResearch=Research
 Abil/Name/que5CancelToSelection2=Queue (5) (Cancel To Selection)
 Actor/AddonIndicator/AP_TechLab=T
 Actor/AddonIndicator/AP_TechReactor=TR
+Alert/Text/AP_ArtanisReviveComplete=Revival complete.
 Alert/Text/AP_ElderProbeComplete=Elder Probe complete.
 Alert/Text/AP_MothershipComplete=Mothership complete.
 Alert/Text/AP_MothershipChronoDroneComplete=Drone complete.
