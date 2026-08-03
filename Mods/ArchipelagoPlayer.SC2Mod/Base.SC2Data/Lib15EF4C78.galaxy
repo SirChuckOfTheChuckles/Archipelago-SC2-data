@@ -5440,6 +5440,7 @@ void lib15EF4C78_gt_TassadarsTenacityEnergyRestore_Init () {
     TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ArtanisAstralWind", 0), c_abilEffectStageFinish, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_SuppressionPulse", 0), c_abilEffectStageFinish, false);
     TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_ArtanisLightningDash", 0), c_abilEffectStageFinish, false);
+    TriggerAddEventUnitAbility(lib15EF4C78_gt_TassadarsTenacityEnergyRestore, null, AbilityCommand("AP_PhasePrism", 0), c_abilEffectStageFinish, false);
 }
 
 //--------------------------------------------------------------------------------------------------
