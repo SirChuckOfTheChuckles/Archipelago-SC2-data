@@ -4683,7 +4683,7 @@
         <CaseArray Validator="TargetIsAir" Effect="AP_ArtanisTaldarimAspectNearbyDamageAir"/>
         <CaseDefault value="AP_ArtanisTaldarimAspectNearbyDamageGround"/>
     </CEffectSwitch>
-    <CEffectDamage id="AP_ArtanisTaldarimAspectNearbyDamageGround" parent="DU_WEAP">
+    <CEffectDamage id="AP_ArtanisTaldarimAspectNearbyDamageGround">
         <EditorCategories value="Race:Protoss"/>
         <Kind value="Spell"/>
         <Amount value="7"/>
