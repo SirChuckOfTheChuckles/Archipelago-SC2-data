@@ -7941,6 +7941,10 @@
         <Value value="1"/>
         <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_NotBansheeMengskBacklashBarrage">
+        <Value value="0"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareVital id="AP_TargetHasGE40Energy">
         <Compare value="GE"/>
         <Value value="40"/>

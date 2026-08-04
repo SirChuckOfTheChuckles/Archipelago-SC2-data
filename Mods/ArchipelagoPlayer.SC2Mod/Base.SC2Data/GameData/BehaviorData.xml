@@ -313,6 +313,7 @@
         <RemoveValidatorArray value="CanSpendEnergy"/>
         <RemoveValidatorArray value="hasEnergy"/>
         <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
         <Modification>
             <StateFlags index="Cloak" value="1"/>
             <VitalRegenArray index="Energy" value="-2.025"/>
@@ -323,6 +324,7 @@
         <DisableValidatorArray value="AP_LevelEq2"/>
         <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
         <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
         <Modification>
             <VitalRegenArray index="Energy" value="-0.5"/>
         </Modification>
@@ -332,6 +334,7 @@
         <DisableValidatorArray value="AP_LevelEq3"/>
         <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
         <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
         <Modification>
             <VitalRegenArray index="Energy" value="-1"/>
         </Modification>
@@ -341,6 +344,7 @@
         <DisableValidatorArray value="AP_LevelEq4"/>
         <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
         <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
         <Modification>
             <VitalRegenArray index="Energy" value="-1.5"/>
         </Modification>

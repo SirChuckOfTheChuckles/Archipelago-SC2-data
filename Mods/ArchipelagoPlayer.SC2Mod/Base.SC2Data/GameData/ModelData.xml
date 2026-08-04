@@ -21227,6 +21227,7 @@
     </CModel>
     <CModel id="AP_BansheeMengsk" parent="BansheeBase">
         <Model value="AP\Assets\Units\Terran\BansheeMengsk\Banshee_Mengsk_COOP.m3"/>
+        <AttachProps Id="Ref_Center" SquibType="Metal" RadiusTarget="1.000000"/>
     </CModel>
     <CModel id="AP_BansheeMengskPortrait" parent="FXAPortrait" Race="Terran">
         <FacialController value="LocalizedData\Facial\BansheePortrait.fxa"/>
