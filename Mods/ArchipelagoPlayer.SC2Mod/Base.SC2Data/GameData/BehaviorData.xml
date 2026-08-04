@@ -2440,6 +2440,7 @@
         <Period value="0.0625"/>
         <PeriodicEffect value="AP_ArtanisBladeWaltzTargetSearch"/>
         <FinalEffect value="AP_ArtanisBladeWaltzWalkStopSet"/>
+        <Modification MoveSpeedMinimum="20.5"/>
         <Modification MoveSpeedMultiplier="7.05">
             <StateFlags index="SuppressAttack" value="1"/>
             <StateFlags index="SuppressCollision" value="1"/>
