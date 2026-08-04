@@ -221,6 +221,8 @@
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.33"/>
         <RechargeVitalRate value="9"/>
+        <InitialEffect value="AP_MedivacHealApplyTargetBehavior"/>
+        <FinalEffect value="AP_HealRemoveTargetBehavior"/>
     </CEffectCreateHealer>
     <CEffectCreateHealer id="AP_MercMedicHeal" parent="AP_heal">
         <DrainVitalCostFactor value="0.25"/>
@@ -301,12 +303,19 @@
         <AreaArray Radius="1" Effect="AP_PunisherGrenadesSlow"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_MarauderMengskSlowAOE">
-        <ValidatorArray value="AP_PunisherGrenadesResearched"/>
+        <ValidatorArray value="AP_HaveMarauderMengskIncapacitatorShells"/>
         <EditorCategories value="Race:Terran"/>
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Ground;Self,Player,Ally,Massive,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1" Effect="AP_MarauderMengskShrapnelSlowAB"/>
     </CEffectEnumArea>
+    <CEffectApplyBehavior id="AP_MarauderMengskShrapnelSlowAB">
+        <ValidatorArray value="AP_HaveMarauderMengskIncapacitatorShells"/>
+        <ValidatorArray value="NotStructure"/>
+        <ValidatorArray value="NotFrenzied"/>
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MarauderMengskShrapnelSlow"/>
+    </CEffectApplyBehavior>
     <CEffectLaunchMissile id="AP_PunisherGrenadesLM">
         <EditorCategories value="Race:Terran"/>
         <ImpactEffect value="AP_PunisherGrenadesSet"/>
@@ -501,6 +510,32 @@
         <EffectArray value="AP_D8ClusterBombLM"/>
         <EffectArray value="MakePrecursor"/>
     </CEffectSet>
+    <CEffectDamage id="AP_MarineMengskSpiderMineLobDamage">
+        <EditorCategories value="Race:Terran"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Visibility value="Visible"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Splash"/>
+        <KindSplash value="Splash"/>
+        <Amount value="70"/>
+        <Death value="Blast"/>
+        <AreaArray Radius="0.4687" Fraction="1"/>
+        <AreaArray Radius="0.7812" Fraction="0.5"/>
+        <AreaArray Radius="1.25" Fraction="0.25"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Self,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectDamage>
+    <CEffectLaunchMissile id="AP_MarineMengskSpiderMineLobLaunchMissile">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="AP_MarineMengskSpiderMineLobDamage"/>
+        <AmmoUnit value="AP_MarineMengskSpiderMineLobWeapon"/>
+        <ValidatorArray index="0" value="HasVision"/>
+    </CEffectLaunchMissile>
     <CEffectSet id="AP_SpawnReaperSpiderMineSet">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_SpawnSpiderMine"/>
@@ -2998,6 +3033,19 @@
         <CaseArray Validator="TargetIsAir" Effect="AP_WidowMineLMAir"/>
         <CaseDefault value="AP_WidowMineLM"/>
     </CEffectSwitch>
+    <CEffectSet id="AP_WidowMineLingeringCloakSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_WidowMineLingeringCloakRB"/>
+        <EffectArray value="AP_WidowMineLingeringCloakAB"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_WidowMineLingeringCloakAB">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_WidowMineLingeringCloak"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_WidowMineLingeringCloakRB">
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_WidowMineLingeringCloak"/>
+    </CEffectRemoveBehavior>
     <CEffectModifyUnit id="AP_WidowMineTargetingBeamDummy"/>
     <CEffectDamage id="AP_MineDroneCountdownDamageDummy" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
@@ -15353,6 +15401,59 @@
         <EffectArray value="AP_HighTemplarSCBWHallucination@KillHallucination"/>
         <!--<EffectArray value="ScienceVesselSCBWDefensiveMatrix@RBDummy"/>-->
     </CEffectSet>
+    <CEffectApplyBehavior id="AP_MedicMengskDefensiveMatrixAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MedicMengskDefensiveMatrixBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskRank2HealRangeBonusAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="AP_MedicMengskRank2HealRangeBonus"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_MedicMengskRank2LevelUpSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
+        <EffectArray value="AP_MedicMengskRank2HealRangeBonusAB"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MedicMengskOpticalRestorationSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskOpticalRestorationSearch"/>
+        <EffectArray value="AP_MedicMengskOpticalRestorationCasterAB"/>
+    </CEffectSet>
+    <CEffectEnumArea id="AP_MedicMengskOpticalRestorationSearch">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactLocation Value="CasterUnit"/>
+        <SearchFilters value="-;Enemy,Neutral,Missile,Stasis,Dead,Hidden"/>
+        <AreaArray Radius="5" Effect="AP_MedicMengskOpticalRestorationCleanse"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+    <CEffectRemoveBehavior id="AP_MedicMengskOpticalRestorationCleanse">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Target"/>
+        <BehaviorAlignment value="Negative"/>
+        <Count value="4294967295"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskOpticalRestorationCasterAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskOpticalRestorationBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskPhysicalTherapyTargetAB">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MedicMengskPhysicalTherapyTargetBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskTherapySoloHealingAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MedicMengskTherapySecondBeamActiveAB">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MedicMengskTherapySecondBeamActiveBuff"/>
+    </CEffectApplyBehavior>
     <CEffectIssueOrder id="AP_FirebatOptimizedLogisticsMorph">
         <EditorCategories value="Race:Terran"/>
         <Abil value="AP_FirebatOptimizedLogisticsMorph"/>
@@ -16812,18 +16913,23 @@
         <Marker Link="AP_ChainReaction">
             <MatchFlags index="Link" value="1"/>
         </Marker>
-        <EffectArray value="AP_ChainReaction1Delay"/>
+        <EffectArray value="AP_ChainReactionUD"/>
         <EffectArray value="AP_K5InfestBroodlings"/>
         <EffectArray value="AP_KerriganPrimalRageSwitch"/>
         <EffectArray value="AP_ChainReaction1Damage"/>
         <EffectArray value="AP_ChainReactionMarker"/>
     </CEffectSet>
+    <CEffectUserData id="AP_ChainReactionUD">
+        <ValidatorArray value="AP_HasK5ChainLightningUpgrade"/>
+        <ValidateMax value="4"/>
+        <EffectSuccess value="AP_ChainReaction1Delay"/>
+        <TargetLocationType value="Unit"/>
+    </CEffectUserData>
     <CEffectDamage id="AP_ChainReaction1Damage" parent="DU_WEAP">
         <Marker Link="AP_ChainReaction"/>
         <Amount value="20"/>
     </CEffectDamage>
     <CEffectCreatePersistent id="AP_ChainReaction1Delay">
-        <ValidatorArray value="AP_HasK5ChainLightningUpgrade"/>
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="AP_ChainReaction"/>
         <WhichLocation Value="TargetUnit"/>
@@ -16845,103 +16951,12 @@
         <ValidatorArray value="AP_NotHaveChainReactionMarker"/>
         <EditorCategories value="Race:Zerg"/>
         <Marker Link="AP_ChainReaction"/>
-        <EffectArray value="AP_ChainReaction2Delay"/>
+        <EffectArray value="AP_ChainReactionUD"/>
         <EffectArray value="AP_K5InfestBroodlings"/>
         <EffectArray value="AP_ChainReaction2Damage"/>
         <EffectArray value="AP_ChainReactionMarker"/>
     </CEffectSet>
     <CEffectDamage id="AP_ChainReaction2Damage" parent="DU_WEAP">
-        <Marker Link="AP_ChainReaction"/>
-        <Amount value="10"/>
-    </CEffectDamage>
-    <CEffectCreatePersistent id="AP_ChainReaction2Delay">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <WhichLocation Value="TargetUnit"/>
-        <ExpireDelay value="0.125"/>
-        <FinalEffect value="AP_ChainReactionSearchForNewTarget2"/>
-    </CEffectCreatePersistent>
-    <CEffectEnumArea id="AP_ChainReactionSearchForNewTarget2">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <ImpactLocation Effect="AP_ChainReaction2Delay" Value="TargetPoint"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
-        <TargetSorts>
-            <SortArray value="TSDistanceToTarget"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="4" Effect="AP_ChainReaction3"/>
-    </CEffectEnumArea>
-    <CEffectSet id="AP_ChainReaction3">
-        <ValidatorArray value="AP_NotHaveChainReactionMarker"/>
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <EffectArray value="AP_ChainReaction3Delay"/>
-        <EffectArray value="AP_K5InfestBroodlings"/>
-        <EffectArray value="AP_ChainReaction3Damage"/>
-        <EffectArray value="AP_ChainReactionMarker"/>
-    </CEffectSet>
-    <CEffectDamage id="AP_ChainReaction3Damage" parent="DU_WEAP">
-        <Marker Link="AP_ChainReaction"/>
-        <Amount value="10"/>
-    </CEffectDamage>
-    <CEffectCreatePersistent id="AP_ChainReaction3Delay">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <WhichLocation Value="TargetUnit"/>
-        <ExpireDelay value="0.125"/>
-        <FinalEffect value="AP_ChainReaction3SearchForNewTarget"/>
-    </CEffectCreatePersistent>
-    <CEffectEnumArea id="AP_ChainReaction3SearchForNewTarget">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <ImpactLocation Effect="AP_ChainReaction3Delay" Value="TargetPoint"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
-        <TargetSorts>
-            <SortArray value="TSDistanceToTarget"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="4" Effect="AP_ChainReaction4"/>
-    </CEffectEnumArea>
-    <CEffectSet id="AP_ChainReaction4">
-        <ValidatorArray value="AP_NotHaveChainReactionMarker"/>
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <EffectArray value="AP_ChainReaction4Delay"/>
-        <EffectArray value="AP_K5InfestBroodlings"/>
-        <EffectArray value="AP_ChainReaction4Damage"/>
-        <EffectArray value="AP_ChainReactionMarker"/>
-    </CEffectSet>
-    <CEffectDamage id="AP_ChainReaction4Damage" parent="DU_WEAP">
-        <Marker Link="AP_ChainReaction"/>
-        <Amount value="10"/>
-    </CEffectDamage>
-    <CEffectCreatePersistent id="AP_ChainReaction4Delay">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <WhichLocation Value="TargetUnit"/>
-        <ExpireDelay value="0.125"/>
-        <FinalEffect value="AP_ChainReaction4SearchForNewTarget"/>
-    </CEffectCreatePersistent>
-    <CEffectEnumArea id="AP_ChainReaction4SearchForNewTarget">
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <ImpactLocation Effect="ChainReaction4Delay" Value="TargetPoint"/>
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
-        <TargetSorts>
-            <SortArray value="TSDistanceToTarget"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="4" Effect="AP_ChainReaction5"/>
-    </CEffectEnumArea>
-    <CEffectSet id="AP_ChainReaction5">
-        <ValidatorArray value="AP_NotHaveChainReactionMarker"/>
-        <EditorCategories value="Race:Zerg"/>
-        <Marker Link="AP_ChainReaction"/>
-        <EffectArray value="AP_K5InfestBroodlings"/>
-        <EffectArray value="AP_ChainReaction5Damage"/>
-    </CEffectSet>
-    <CEffectDamage id="AP_ChainReaction5Damage" parent="DU_WEAP">
         <Marker Link="AP_ChainReaction"/>
         <Amount value="10"/>
     </CEffectDamage>
@@ -17598,16 +17613,6 @@
         <EffectArray value="AP_KerriganAbilityEfficiency"/>
         <EffectArray value="AP_WildMutationSearch"/>
         <TargetLocationType value="Point"/>
-    </CEffectSet>
-    <CEffectSet id="AP_ChainReaction1Melee">
-        <EditorCategories value="Race:Zerg"/>
-        <EffectArray value="AP_ChainReaction1Delay"/>
-        <EffectArray value="AP_KerriganPrimalRageSwitch"/>
-        <EffectArray value="AP_K5InfestBroodlings"/>
-        <EffectArray value="AP_ChainReaction1Damage"/>
-        <Marker Link="AP_ChainReaction">
-            <MatchFlags index="Link" value="1"/>
-        </Marker>
     </CEffectSet>
     <CEffectEnumArea id="AP_PsionicLiftDummySearch">
         <EditorCategories value="Race:Zerg"/>
@@ -23307,10 +23312,11 @@
     <CEffectSet id="AP_PunisherGrenadesMengskSet">
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_PunisherGrenadesMengskU"/>
+        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
         <EffectArray value="AP_MarauderMengskShrapnelSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_PunisherGrenadesMengskSlow">
-        <ValidatorArray index="0" value="AP_PunisherGrenadesResearched"/>
+        <ValidatorArray index="0" value="AP_HaveMarauderMengskIncapacitatorShells"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="NotFrenzied"/>
         <EditorCategories value="Race:Terran"/>
@@ -23320,14 +23326,14 @@
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Armored" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="20">
+        <Amount value="15">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
     <CEffectSet id="AP_MarauderMengskAbsorbABWrapper">
-        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
-        <EffectArray value="AP_MarauderMengskAbsorbAB"/>
+        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicatorAny"/>
+        <EffectArray value="AP_MarauderMengskAbsorbAndPrimeSet"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbAB">
         <ValidatorArray value="AP_CasterLevelGTE2"/>
@@ -23335,23 +23341,51 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorb"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="AP_MarauderMengskAbsorbAndPrimeSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskAbsorbAB"/>
+    </CEffectSet>
     <CEffectEnumArea id="AP_MarauderMengskAbsorbKnockbackSearch">
         <EditorCategories value=""/>
         <SearchFilters value="Ground;Player,Ally,Neutral,Structure,Missile,Destructible,Buried,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="1" Effect="UnitKnockbackBy3"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
+    <CEffectSet id="AP_MarauderMengskAbsorbFinalSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskAbsorbKnockbackSearch"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAbsorbReapplicatorAB">
+        <ValidatorArray value="AP_NotHaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value=""/>
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_MarauderMengskAbsorbReapplicatorUpgradedAB">
+        <ValidatorArray value="AP_HaveMarauderMengskBolsteredBarrier"/>
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MarauderMengskAbsorbReapplicatorUpgraded"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_MarauderMengskSovereignNeosteelRankBonusRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_MarauderMengskSovereignNeosteelRankBonus"/>
+        <Count value="99"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="AP_MarauderMengskLevelUpSet">
         <EditorCategories value=""/>
+        <EffectArray value="AP_MarauderMengskSovereignNeosteelRankBonusRB"/>
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MarauderMengskAbsorbABWrapper"/>
     </CEffectSet>
+    <CEffectSet id="AP_MarauderMengskLevelUpAddictiveSupplementsSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MarauderMengskLevelUpSet"/>
+        <EffectArray value="AP_MarauderMengskAddictiveSupplementsAddCharge"/>
+    </CEffectSet>
     <CEffectSet id="AP_MarauderMengskLevelUpMaxedSet">
+        <EffectArray value="AP_MarauderMengskSovereignNeosteelRankBonusRB"/>
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarauderMengskAbsorbABWrapper"/>
     </CEffectSet>
@@ -23361,7 +23395,7 @@
         <ArmorReduction value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
-        <Amount value="4">
+        <Amount value="3">
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
         <Death value="Eviscerate"/>
@@ -23369,6 +23403,7 @@
     <CEffectSet id="AP_MarauderMengskShrapnelImpactSet">
         <EditorCategories value=""/>
         <EffectArray value="AP_MarauderMengskShrapnelDamage"/>
+        <EffectArray value="AP_PunisherGrenadesMengskSlow"/>
     </CEffectSet>
     <CEffectEnumArea id="AP_MarauderMengskShrapnelSearch">
         <LaunchLocation Value="CasterUnit"/>
@@ -23384,19 +23419,34 @@
     </CEffectSet>
     <CEffectApplyBehavior id="AP_MarauderMengskAttackSpeedBoostAB">
         <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Source"/>
+        <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAttackSpeedBoost"/>
     </CEffectApplyBehavior>
+    <CEffectModifyUnit id="AP_MarauderMengskAddictiveSupplementsAddCharge">
+        <EditorCategories value="Race:Terran"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarauderMengskAddictiveSupplements,Execute" ChargeCountUse="-1"/>
+        <ValidatorArray value="AP_HaveMarauderMengskAddictiveSupplements"/>
+    </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorMU">
+        <ValidatorArray value="AP_NotHaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value="Race:Terran"/>
         <Cost Behavior="AP_MarauderMengskAbsorbReapplicator" CooldownTimeUse="60"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorUpgradedMU">
+        <ValidatorArray value="AP_HaveMarauderMengskBolsteredBarrier"/>
+        <EditorCategories value="Race:Terran"/>
+        <Cost Behavior="AP_MarauderMengskAbsorbReapplicatorUpgraded" CooldownTimeUse="50"/>
+        <ImpactUnit Value="Caster"/>
+    </CEffectModifyUnit>
     <CEffectSet id="AP_MarauderMengskAbsorbReapplicatorSet">
         <EditorCategories value="Race:Terran"/>
-        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
+        <ValidatorArray value="AP_NoMarauderMengskAbsorbReapplicatorAny"/>
         <EffectArray value="AP_MarauderMengskAbsorbReapplicatorAB"/>
+        <EffectArray value="AP_MarauderMengskAbsorbReapplicatorUpgradedAB"/>
         <EffectArray value="AP_MarauderMengskAbsorbReapplicatorMU"/>
+        <EffectArray value="AP_MarauderMengskAbsorbReapplicatorUpgradedMU"/>
     </CEffectSet>
     <CEffectApplyBehavior id="AP_VeterancySuppressEffectsAB">
         <Behavior value="AP_VeterancySuppressEffects"/>
@@ -23460,11 +23510,22 @@
         <ImpactLocation Value="SourceUnit"/>
         <Flags index="Kill" value="1"/>
     </CEffectDamage>
-    <CEffectApplyBehavior id="AP_GhostMengskSuperCloakAB">
+    <CEffectApplyBehavior id="AP_GhostMengskSuperCloakBaseAB">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Source"/>
         <Behavior value="AP_GhostMengskSuperCloak"/>
     </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_GhostMengskPhasingSuitActiveAB">
+        <ValidatorArray value="AP_HaveGhostMengskPhasingSuit"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="AP_GhostMengskPhasingSuitActive"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_GhostMengskSuperCloakAB">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_GhostMengskSuperCloakBaseAB"/>
+        <EffectArray value="AP_GhostMengskPhasingSuitActiveAB"/>
+    </CEffectSet>
     <CEffectDamage id="AP_GhostMengskEMPFeedbackDamage">
         <ValidatorArray value="AP_CasterLevelGTE4"/>
         <EditorCategories value="Race:Terran"/>
@@ -23477,10 +23538,6 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="SameCliff" value="0"/>
     </CEffectDamage>
-    <CEffectSwitch id="AP_GhostMengskEMPAoESwitch">
-        <EditorCategories value=""/>
-        <CaseDefault value="AP_GhostMengskEMPSmallSearch"/>
-    </CEffectSwitch>
     <CEffectApplyBehavior id="AP_GhostMengskEMPStunLongAB">
         <EditorCategories value=""/>
         <Behavior value="AP_GhostMengskEMPStun"/>
@@ -23500,7 +23557,7 @@
         <ValidatorArray value="AP_IsMechanical"/>
         <ValidatorArray value="AP_NotMapBossOrHeroic"/>
         <EditorCategories value=""/>
-        <Marker Link="Effect/AP_GhostMengskEMPAoESwitch"/>
+        <Marker Link="Effect/AP_GhostMengskEMPSmallSearch"/>
         <CaseArray Validator="AP_CasterLevelGTE3" Effect="AP_GhostMengskEMPStunLongAB"/>
         <CaseDefault value="AP_GhostMengskEMPStunShortAB"/>
     </CEffectSwitch>
@@ -23508,9 +23565,14 @@
         <EditorCategories value=""/>
         <ImpactEffect value="AP_GhostMengskIrradiateAB"/>
         <AmmoUnit value="AP_GhostMengskIrradiateWeapon"/>
-        <LaunchEffect value="AP_GhostMengskIrradiatePreMarkerAB"/>
+        <LaunchEffect value="AP_GhostMengskIrradiateLaunchEffectSet"/>
         <FinishEffect value="AP_GhostMengskIrradiatePreMarkerRB"/>
     </CEffectLaunchMissile>
+    <CEffectSet id="AP_GhostMengskIrradiateLaunchEffectSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_GhostMengskIrradiatePreMarkerAB"/>
+        <EffectArray value="AP_GhostMengskNemesisRoundsBioAB"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_GhostMengskIrradiatePreMarkerAB">
         <EditorCategories value=""/>
         <Behavior value="AP_GhostMengskIrradiatePreMarker"/>
@@ -23570,7 +23632,14 @@
         <SearchFilters value="Biological;Player,Ally,Structure,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="3" Effect="AP_GhostMengskIrradiateDamageSwitch"/>
     </CEffectEnumArea>
-    <CEffectDamage id="AP_C10CanisterRifleMengsk" parent="DU_WEAP">
+    <CEffectSwitch id="AP_C10CanisterRifleMengsk">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioMechSwitch"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsBioBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsBioSwitch"/>
+        <CaseArray Validator="AP_CasterHasGhostMengskNemesisRoundsMechBuff" Effect="AP_C10CanisterRifleMengskNemesisRoundsMechSwitch"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="AP_C10CanisterRifleMengskDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Light" value="1"/>
         <Kind value="Ranged"/>
@@ -23578,6 +23647,45 @@
             <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
         </Amount>
     </CEffectDamage>
+    <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <AttributeFactor index="Light" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="30">
+            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        </Amount>
+    </CEffectDamage>
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsBioSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_IsBiological" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsMechSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_IsMechanical" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsBioMechSwitch">
+        <EditorCategories value="Race:Terran"/>
+        <CaseArray Validator="AP_IsBiologicalOrMechanical" Effect="AP_C10CanisterRifleMengskNemesisRoundsDamage"/>
+        <CaseDefault value="AP_C10CanisterRifleMengskDamage"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="AP_GhostMengskNemesisRoundsBioAB">
+        <ValidatorArray value="AP_HaveGhostMengskNemesisRounds"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_GhostMengskNemesisRoundsMechAB">
+        <ValidatorArray value="AP_HaveGhostMengskNemesisRounds"/>
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_GhostMengskNemesisRoundsMechApplySet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_GhostMengskNemesisRoundsMechAB"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="AP_GhostMengskEMPDecloakAB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_EMPMengskDecloak"/>
@@ -23596,6 +23704,7 @@
         <ImpactLocation Value="TargetPoint"/>
         <ImpactEffect value="AP_GhostMengskEMPSmallSearch"/>
         <AmmoUnit value="AP_EMPMengskWeapon"/>
+        <LaunchEffect value="AP_GhostMengskNemesisRoundsMechApplySet"/>
     </CEffectLaunchMissile>
     <CEffectModifyUnit id="AP_GhostMengskEMPRemoveEnergy">
         <ValidatorArray value="AP_empUTargetFilters"/>
@@ -23923,7 +24032,6 @@
         <ExcludeArray Value="Target"/>
         <SearchFilters value="Visible;Self,Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <AreaArray Radius="0.75" Effect="AP_GaussRifleMengskSplashDamage"/>
-        <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectSet id="AP_GaussRifleMengskSet">
         <EffectArray value="AP_GaussRifleMengsk"/>
@@ -23933,15 +24041,37 @@
         <EditorCategories value=""/>
         <EffectArray value="AP_MengskVeteranLevelUpDummy"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
+        <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
     </CEffectSet>
     <CEffectSet id="AP_MarineMengskLevelUpMaxedSet">
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
+        <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
+        <EffectArray value="AP_MarineMengskProdigalSonRank3BonusAB"/>
     </CEffectSet>
+    <CEffectApplyBehavior id="AP_MarineMengskProdigalSonRank3BonusAB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="AP_MarineMengskProdigalSonRank3Bonus"/>
+        <ValidatorArray value="AP_HaveMarineMengskProdigalSon"/>
+    </CEffectApplyBehavior>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddCharge">
+        <ValidatorArray value="AP_CasterLevelGTE2"/>
         <EditorCategories value="Race:Zerg"/>
         <ImpactUnit Value="Source"/>
         <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddBuildABoomCharge">
+        <ValidatorArray value="AP_CasterLevelGTE2"/>
+        <ValidatorArray value="AP_HaveMarineMengskBuildABoom"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="-1"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AP_MarineMengskSpiderMinesRemoveCharge">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactUnit Value="Source"/>
+        <Cost Abil="AP_MarineMengskSpiderMines,Execute" ChargeCountUse="1"/>
     </CEffectModifyUnit>
     <CEffectSet id="AP_WarpRelocateStartSet">
         <EditorCategories value="Race:Protoss"/>
@@ -24054,35 +24184,99 @@
         <Flags index="PersistUntilDestroyed" value="1"/>
         <!--        <FinalEffect value="AP_MedivacHealIssueStopOrder"/>-->
         <PeriodicValidator value="AP_HealScanPeriodicCombine"/>
-        <PeriodicEffectArray value="AP_MedicMengskHealSearchSwitch"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealSearch"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectSwitch id="AP_MedicMengskHealSwitch">
+    <CEffectCreateHealer id="AP_MedicMengskHeal">
         <ValidatorArray value="noMarkers"/>
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="HiddenCompareAB"/>
         <ValidatorArray value="HiddenCompareBA"/>
         <ValidatorArray value="NotVortexd"/>
-        <CaseArray Validator="AP_CasterLevelEq1" Effect="AP_MedicMengskHealL1"/>
-        <CaseArray Validator="AP_CasterLevelEq2" Effect="AP_MedicMengskHealL2"/>
-        <CaseArray Validator="AP_CasterLevelEq3" Effect="AP_MedicMengskHealL3"/>
-        <!-- L4 has double beam heal -->
-        <CaseDefault value="AP_MedicMengskHealL1"/>
-    </CEffectSwitch>
-    <CEffectCreateHealer id="AP_MedicMengskHealL1" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq1"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="12"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
-    <CEffectCreateHealer id="AP_MedicMengskHealL2" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq2"/>
+    <CEffectCreateHealer id="AP_MedicMengskHealL1">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
         <RechargeVitalRate value="15"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
-    <CEffectCreateHealer id="AP_MedicMengskHealL3" parent="AP_MercMedicHeal">
-        <ValidatorArray value="AP_CasterLevelEq3"/>
+    <CEffectCreateHealer id="AP_MedicMengskHealL2">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
         <RechargeVitalRate value="18"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
+    <CEffectCreateHealer id="AP_MedicMengskHealL3">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="HiddenCompareAB"/>
+        <ValidatorArray value="HiddenCompareBA"/>
+        <ValidatorArray value="NotVortexd"/>
+        <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="21"/>
+        <InitialEffect value="AP_MedicMengskHealStartSet"/>
+        <FinalEffect value="AP_MedicMengskHealStopSet"/>
+    </CEffectCreateHealer>
+    <CEffectSet id="AP_MedicMengskHealStartSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealApplyCasterBehavior"/>
+        <EffectArray value="AP_MedivacHealApplyTargetBehavior"/>
+        <EffectArray value="AP_MedicMengskHealTherapyOn"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MedicMengskHealStopSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealRemoveCasterBehavior"/>
+        <EffectArray value="AP_HealRemoveTargetBehavior"/>
+        <EffectArray value="AP_MedicMengskHealTherapyOff"/>
+    </CEffectSet>
+    <CEffectSet id="AP_MedicMengskHealTherapyOn">
+        <ValidatorArray value="AP_HaveMedicMengskPhysicalTherapy"/>
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskTherapySoloHealingAB"/>
+        <EffectArray value="AP_MedicMengskHealTherapyTargetApply"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_MedicMengskHealTherapyTargetApply">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_MedicMengskPhysicalTherapyHealBuff"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_MedicMengskHealTherapyOff">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedicMengskHealTherapyRemoveCaster"/>
+        <EffectArray value="AP_MedicMengskHealTherapyRemoveTarget"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="AP_MedicMengskHealTherapyRemoveCaster">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="AP_MedicMengskHealTherapyRemoveTarget">
+        <EditorCategories value="Race:Terran"/>
+        <BehaviorLink value="AP_MedicMengskPhysicalTherapyHealBuff"/>
+    </CEffectRemoveBehavior>
     <CEffectSet id="AP_MedicMengskHealInitialSet">
         <EditorCategories value="Race:Terran"/>
-        <EffectArray value="AP_MedicMengskHealTargetPersistent"/>
+        <EffectArray value="AP_MedicMengskHealL3"/>
         <EffectArray value="AP_MedicMengskHealScanPersistent"/>
     </CEffectSet>
     <CEffectSwitch id="AP_MedicMengskHealInitialSwitch">
@@ -24123,6 +24317,7 @@
         <EditorCategories value="Race:Terran"/>
         <EffectArray value="AP_MedicMengskHealModifyCasterEnergy"/>
         <EffectArray value="AP_MedicMengskHealModifyTargetLife"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
     </CEffectSet>
     <CEffectModifyUnit id="AP_MedicMengskHealModifyTargetLife">
         <EditorCategories value="Race:Terran"/>
@@ -24131,21 +24326,14 @@
             <Change value="1"/>
         </VitalArray>
     </CEffectModifyUnit>
-    <CEffectSwitch id="AP_MedicMengskHealSearchSwitch">
-        <CaseDefault value="AP_MedicMengskHealSearch"/>
-    </CEffectSwitch>
     <CEffectEnumArea id="AP_MedicMengskHealSearch">
         <ValidatorArray value="AP_HealBeamAvailable"/>
         <ValidatorArray value="healCasterMinEnergy"/>
         <EditorCategories value="Race:Terran"/>
         <ImpactLocation Value="CasterUnit"/>
-        <SearchFilters value="Ground,Biological,Visible;Neutral,Enemy,Air,Structure,Stasis,Dead,Hidden"/>
-        <TargetSorts>
-            <SortArray value="TSAlliancePassive"/>
-            <SortArray value="TSLife"/>
-            <SortArray value="TSDistance"/>
-        </TargetSorts>
-        <AreaArray MaxCount="1" Radius="2.5" Effect="AP_MedicMengskHealTargetPersistent"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground,Biological,Visible;Self,Neutral,Enemy,Air,Structure,Stasis,Dead,Hidden"/>
+        <AreaArray MaxCount="1" Radius="4.5" Effect="AP_MedicMengskHealTargetPersistent"/>
         <MaxCount value="1"/>
     </CEffectEnumArea>
     <CEffectCreatePersistent id="AP_MedicMengskHealTargetPersistent">
@@ -24153,19 +24341,35 @@
         <ValidatorArray value="NotWarpingIn"/>
         <ValidatorArray value="AP_NotMaxHP"/>
         <ValidatorArray value="AP_HealBeamAvailable"/>
-        <ValidatorArray value="noMarkers"/>
         <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="TargetUnit"/>
+        <InitialEffect value="AP_MedicMengskHealDoubleSecondHeal"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealDoubleImpactDummy"/>
+        <PeriodicEffectArray value="AP_MedicMengskHealDoubleSecondApplySet"/>
+        <PeriodicEffectArray value="AP_MedivacHealRemoveBehaviorSet"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.24"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateHealer id="AP_MedicMengskHealDoubleSecondHeal">
+        <EditorCategories value="Race:Terran"/>
+        <DrainVital value="Energy"/>
+        <DrainVitalCostFactor value="0.25"/>
+        <RechargeVitalRate value="21"/>
+        <Flags index="Channeled" value="0"/>
+        <PeriodCount value="4"/>
         <Marker Link="Abil/MedivacHeal">
             <MatchFlags index="Link" value="1"/>
         </Marker>
-        <WhichLocation Value="TargetUnit"/>
-        <Flags index="PersistUntilDestroyed" value="1"/>
-        <InitialEffect value="AP_MedivacHealApplyBehaviorSet"/>
-        <FinalEffect value="AP_MedivacHealRemoveBehaviorSet"/>
-        <PeriodicValidator value="AP_MedicMengskHealPeriodicCombine"/>
-        <PeriodicEffectArray value="AP_MedicMengskHealModifySet"/>
-        <PeriodicPeriodArray value="0.047619048"/>
-    </CEffectCreatePersistent>
+    </CEffectCreateHealer>
+    <CEffectModifyUnit id="AP_MedicMengskHealDoubleImpactDummy"/>
+    <CEffectSet id="AP_MedicMengskHealDoubleSecondApplySet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="AP_MedivacHealApplyBehaviorSet"/>
+        <EffectArray value="AP_MedicMengskPhysicalTherapyTargetAB"/>
+        <EffectArray value="AP_MedicMengskTherapySecondBeamActiveAB"/>
+    </CEffectSet>
     <CEffectSet id="AP_LiberatorMengskWeaponChange">
         <EditorCategories value=""/>
         <EffectArray value="AP_LiberatorMengskWeaponClear"/>
@@ -26852,11 +27056,6 @@
         <BehaviorLink value="AP_CarrierPurifierBomberCount"/>
         <WhichUnit Value="Caster"/>
     </CEffectRemoveBehavior>
-    <CEffectApplyBehavior id="AP_ParasiteSporeGroundAB">
-        <ValidatorArray index="0" value="FriendlyTarget"/>
-        <EditorCategories value=""/>
-        <Behavior value="AP_CorruptorAcidSplash"/>
-    </CEffectApplyBehavior>
     <CEffectCreateUnit id="AP_ParasiteSporeGroundCreate">
         <EditorCategories value=""/>
         <WhichLocation Value="TargetPoint"/>
@@ -26906,7 +27105,6 @@
         <WhichLocation Value="TargetUnitOrPoint"/>
         <PeriodCount value="2"/>
         <!--disable friendly fire behavior-->
-        <!--PeriodicEffectArray value="AP_ParasiteSporeGroundAB"/-->
         <PeriodicEffectArray value="AP_ParasiteSpore_Damage"/>
         <PeriodicEffectArray value="AP_ParasiteSporeGroundCreate"/>
         <PeriodicOffsetArray value="0,0,0"/>

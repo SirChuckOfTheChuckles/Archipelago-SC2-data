@@ -35,6 +35,51 @@
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeCorruptorCorruptionCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskProdigalSonCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4"/>
+    </CRequirement>
+    <CRequirement id="AP_NotHaveMarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AP_NotCountUpgradeMarineMengskProdigalSonCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskBuildABoom">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskBuildABoomCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskCombatShield">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskCombatShieldCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskSovereignNeosteel">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskSovereignNeosteelCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskAddictiveSupplements">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskAddictiveSupplementsCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowMarauderMengskAttackSpeedBoost">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowMarauderMengskAttackSpeedBoost"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit4"/>
+    </CRequirement>
+    <CRequirement id="AP_UseMarauderMengskAddictiveSupplementsCharges">
+        <EditorCategories value="Race:Terran,TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_ShowMarauderMengskAddictiveSupplementsCharges"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskIncapacitatorShellsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskBolsteredBarrier">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMarauderMengskBolsteredBarrierCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarauderMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
     <CRequirement id="AP_HaveHotSScourgeAmount">
         <EditorCategories value="Race:Zerg,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeScourgeAmountCompleteOnly"/>
@@ -572,14 +617,9 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeDrillClawsCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveWidowMineImprovedConcealment">
+    <CRequirement id="AP_HaveWidowMineLingeringConcealment">
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeImprovedConcealmentCompleteOnly"/>
-    </CRequirement>
-    <CRequirement id="AP_HaveWidowMineImprovedConcealmentUnburrowed">
-        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
-        <NodeArray index="Use" Link="AP_NotPossibleWidowMineBurrowedCompleteOnly"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeImprovedConcealmentCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeWidowMineLingeringConcealmentCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_WidowMineArmed">
         <EditorCategories value="Race:Zerg,TechType:Unit"/>
@@ -4484,6 +4524,10 @@
         <EditorCategories value="TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountBehaviorMarauderMengskAbsorbReapplicatorCompleteOnlyAtUnit"/>
     </CRequirement>
+    <CRequirement id="AP_HaveMarauderMengskAbsorbReapplicatorUpgraded">
+        <EditorCategories value="TechType:Ability"/>
+        <NodeArray index="Show" Link="AP_CountBehaviorMarauderMengskAbsorbReapplicatorUpgradedCompleteOnlyAtUnit"/>
+    </CRequirement>
     <CRequirement id="AP_TrainNukeMengsk">
         <EditorCategories value="Race:Terran,TechType:Ability"/>
         <NodeArray index="Use" Link="AP_NotCountUnitNukeMengskQueuedOrBetterAtUnit"/>
@@ -4510,6 +4554,35 @@
     </CRequirement>
     <CRequirement id="AP_HaveGhostMengskEMPLongStun">
         <NodeArray index="Show" Link="AP_HaveGhostMengskEMPLongStun"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskPsychicEnhancer">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPsychicEnhancerCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskPhasingSuit">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskPhasingSuitCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveGhostMengskNemesisRounds">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeGhostMengskNemesisRoundsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBase">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBase"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBio">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBio"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsMech">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsMech"/>
+    </CRequirement>
+    <CRequirement id="AP_ShowGhostMengskNemesisRoundsBoth">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_ShowGhostMengskNemesisRoundsBoth"/>
     </CRequirement>
     <CRequirement id="AP_UseMengskVeterancyGhostMengskLTLevel3">
         <NodeArray index="Use" Link="AP_LTCountBehaviorMengskVeterancyGhostMengskCompleteOnlyAtUnit3"/>
@@ -4543,6 +4616,10 @@
     </CRequirement>
     <CRequirement id="AP_HaveMarineMengskVeterancyLevel2">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveMarineMengskSpiderMineLob">
+        <NodeArray index="Show" Link="AP_CountUpgradeMarineMengskSpiderMineLobCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_AndCountUpgradeMarineMengskSpiderMineLobCompleteOnlyGTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit3"/>
     </CRequirement>
     <CRequirement id="AP_HaveMarineMengskVeterancyLevel4">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMarineMengskCompleteOnlyAtUnit4"/>
@@ -4592,6 +4669,31 @@
     </CRequirement>
     <CRequirement id="AP_HaveMedicMengskVeterancyLevel3">
         <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit3"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskOpticalRestorationResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskOpticalRestorationCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskPhysicalTherapyResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskPhysicalTherapyCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHospiceCareResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskHospiceCareCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskRoyalAcademyDegreeResearched">
+        <NodeArray index="Show" Link="AP_CountUpgradeMedicMengskRoyalAcademyDegreeCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank0">
+        <NodeArray index="Show" Link="AP_LTCountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit2"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank1">
+        <NodeArray index="Show" Link="AP_AndGTE2LT3CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank2">
+        <NodeArray index="Show" Link="AP_AndGTE3LT4CountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit"/>
+    </CRequirement>
+    <CRequirement id="AP_MedicMengskHealRank3">
+        <NodeArray index="Show" Link="AP_GTECountBehaviorMengskVeterancyMedicMengskCompleteOnlyAtUnit4"/>
     </CRequirement>
     <CRequirement id="AP_ZergMercCompoundBroodWarAndHaveSwarmling">
         <NodeArray index="Show" Link="AP_AndHotSHaveSwarmlingCompleteOnlyZergMercCompoundBroodWarSelectedCompleteOnly"/>
@@ -5079,8 +5181,8 @@
     <CRequirement id="AP_HaveOracleGround">
         <NodeArray index="Show" Link="AP_OracleGround"/>
     </CRequirement>
-    <CRequirement id="AP_HaveCorruptorAcidSplash">
-        <NodeArray index="Show" Link="AP_CorruptorAcidSplash"/>
+    <CRequirement id="AP_HaveCorruptorSporefall">
+        <NodeArray index="Show" Link="AP_CorruptorSporefall"/>
     </CRequirement>
     <CRequirement id="AP_HaveBunkerIgnoreSupply">
         <NodeArray index="Show" Link="AP_BunkerIgnoreSupply"/>

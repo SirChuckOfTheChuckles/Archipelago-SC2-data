@@ -15500,6 +15500,16 @@
         <Spread value="20.000000"/>
         <Volume value="-20.000000,-20.000000"/>
     </CSound>
+    <CSound id="AP_MarineMengskSpiderMineLobLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing2.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Attacks\Zerg_AttackLaunchSmallSwing3.wav"/>
+        <DupeDestroyCount value="5"/>
+        <Pitch value="-3.000000,-2.000000"/>
+        <Volume value="-13.000000,-12.000000"/>
+    </CSound>
     <CSound id="AP_Trooper_Mengsk_Weapon_Birth" parent="Spell">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\UI_Rewind01.wav" FacialGroup=""/>
@@ -16394,6 +16404,10 @@
         <AssetArray File="Assets\Sounds\Tychus_Medic_HealingMatrix_AOE_03.wav" FacialGroup=""/>
         <Pitch value="-12.000000,-12.000000"/>
         <Volume value="-6.000000,-6.000000"/>
+    </CSound>
+    <CSound id="AP_MedicMengskOpticalRestoration" parent="Spell">
+        <AssetArray File="Assets\Sounds\Tychus_Medic_HealingMatrix_Start_01.wav" FacialGroup=""/>
+        <Volume value="-7.000000,-7.000000"/>
     </CSound>
     <CSound id="AP_VanguardFlareLoop" parent="Spell">
         <AssetArray File="Assets\Sounds\Abathur_Symbiote_Shield_Loop01.ogg" FacialGroup=""/>

@@ -773,8 +773,8 @@
         <Placeholder value="SpiderMine"/>
         <Range value="2"/>
         <Cost>
-            <Charge>
-                <CountMax value="6"/>
+            <Charge Link="Abil/AP_MarineMengskSpiderMines">
+                <CountMax value="5"/>
                 <CountStart value="2"/>
                 <CountUse value="1"/>
                 <Location value="Unit"/>
@@ -782,6 +782,26 @@
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_SpiderMine" Requirements="AP_HaveMarineMengskVeterancyLevel2"/>
         <Effect index="0" value="AP_SpawnReaperSpiderMineSet"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AP_MarineMengskSpiderMineLob">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="AP_MarineMengskSpiderMineLobLaunchMissile"/>
+        <Cost>
+            <Charge Link="Abil/AP_MarineMengskSpiderMines">
+                <CountMax value="5"/>
+                <CountStart value="2"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit" TimeUse="30"/>
+        </Cost>
+        <Range value="7"/>
+        <PrepTime value="0.361"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <CursorEffect value="AP_MarineMengskSpiderMineLobDamage"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarineMengskSpiderMineLob" Requirements="AP_HaveMarineMengskSpiderMineLob"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Alignment value="Negative"/>
     </CAbilEffectTarget>
     <CAbilSpecialize id="AP_MakeReaperSpiderMines">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -1819,10 +1839,6 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="Irradiate"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_IrradiateMedicMengsk" parent="AP_Irradiate">
-        <Arc value="0"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel2"/>
-    </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_NanoRepair">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Flags index="AllowMovement" value="1"/>
@@ -2199,7 +2215,7 @@
         <Flags index="ReExecutable" value="1"/>
         <Flags index="Smart" value="1"/>
         <Cost>
-            <Cooldown TimeUse="40"/>
+            <Cooldown TimeUse="25"/>
         </Cost>
         <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="5"/>
@@ -2233,13 +2249,13 @@
         <Flags index="SuppressMovement" value="1"/>
         <InfoArray Unit="AP_WidowMineBurrowed" RandomDelayMax="0.25">
             <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.125"/>
+                <DurationArray index="Duration" value="2"/>
             </SectionArray>
             <SectionArray index="Collide">
                 <DurationArray index="Delay" value="0.6806"/>
             </SectionArray>
             <SectionArray index="Stats">
-                <DurationArray index="Delay" value="3.125"/>
+                <DurationArray index="Delay" value="2"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
@@ -2254,13 +2270,13 @@
         <Flags index="SuppressMovement" value="1"/>
         <InfoArray Unit="AP_WidowMine" RandomDelayMax="0.25">
             <SectionArray index="Actor">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
             <SectionArray index="Mover">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
             <SectionArray index="Stats">
-                <DurationArray index="Duration" value="1.125"/>
+                <DurationArray index="Duration" value="1.0"/>
             </SectionArray>
         </InfoArray>
     </CAbilMorph>
@@ -11495,10 +11511,34 @@
         </CmdButtonArray>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_MedicMengskDefensiveMatrix" parent="AP_ScienceVesselSCBWDefensiveMatrix">
+    <CAbilEffectTarget id="AP_MedicMengskDefensiveMatrix">
         <Arc value="0"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskVeterancyLevel3"/>
+        <Effect index="0" value="AP_MedicMengskDefensiveMatrixAB"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="50"/>
+        </Cost>
+        <TargetFilters value="-;Self,Structure,RawResource,HarvestableResource,Item,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicMengskDefensiveMatrix" State="Restricted" Requirements="AP_HaveMedicMengskVeterancyLevel2">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="AP_MedicMengskOpticalRestoration">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="AP_MedicMengskOpticalRestorationSet"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="Transient" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="100"/>
+            <Cooldown Location="Unit" TimeUse="15"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicMengskOpticalRestoration" Requirements="AP_MedicMengskOpticalRestorationResearched"/>
+    </CAbilEffectInstant>
     <CAbilMorph id="AP_FirebatOptimizedLogisticsMorph">
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_Firebat" Requirements="AP_HaveOptimizedLogisticsFirebat"/>
         <Flags index="Automatic" value="1"/>
@@ -14521,13 +14561,32 @@
         <Flags index="Transient" value="1"/>
         <Flags index="PassengerAcquirePassengers" value="1"/>
         <Cost>
-            <Charge Link="Abil/SuperStimpackMarine"/>
-            <Cooldown Link="Abil/SuperStimpackMarine" TimeUse="30"/>
+            <Charge Link="Abil/AP_MarauderMengskAddictiveSupplements"/>
+            <Cooldown Link="Abil/AP_MarauderMengskAddictiveSupplements" Location="Unit" TimeUse="30"/>
         </Cost>
         <AutoCastRange value="5"/>
         <AutoCastValidatorArray value="AP_CasterIsFiringWeapon"/>
         <AINotifyEffect value="AP_MarauderMengskAttackSpeedBoostAB"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" Requirements="AP_HaveMarauderMengskVeterancyLevel4">
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" State="Restricted" Requirements="AP_ShowMarauderMengskAttackSpeedBoost">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="AP_MarauderMengskAddictiveSupplements">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <InfoTooltipPriority value="1"/>
+        <Effect index="0" value="AP_MarauderMengskAttackSpeedBoostAB"/>
+        <Flags index="Transient" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <Cost>
+            <Charge Link="Abil/AP_MarauderMengskAddictiveSupplements">
+                <CountMax value="2"/>
+                <CountStart value="0"/>
+                <CountUse value="1"/>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Link="Abil/AP_MarauderMengskAddictiveSupplements" Location="Unit" TimeUse="30"/>
+        </Cost>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MarauderMengskAttackSpeedBoost" State="Restricted" Requirements="AP_UseMarauderMengskAddictiveSupplementsCharges">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
@@ -14557,9 +14616,9 @@
         <Effect index="0" value="AP_GhostMengskEMPSmallLM"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/GhostMengskEMPSmall"/>
-            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="8"/>
+            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="11"/>
         </Cost>
         <TargetFilters value="Visible;Player,Ally,Neutral,Missile,Destructible,Stasis,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -14579,9 +14638,9 @@
         <Effect index="0" value="AP_GhostMengskEMPSmallLM"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/GhostMengskEMPSmall"/>
-            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="8"/>
+            <Cooldown Link="Abil/GhostMengskEMPSmall" TimeUse="11"/>
         </Cost>
         <InterruptCost>
             <Charge Link="Abil/GhostMengskEMPShortStun"/>
@@ -14607,9 +14666,9 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/Irradiate"/>
-            <Cooldown Link="Abil/Irradiate" TimeUse="5"/>
+            <Cooldown Link="Abil/Irradiate" TimeUse="8"/>
         </Cost>
         <TargetFilters value="Biological,Visible;Player,Ally,Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
@@ -14631,9 +14690,9 @@
         <Flags index="AllowMovement" value="1"/>
         <Flags index="AutoCast" value="1"/>
         <Cost>
-            <Vital index="Energy" value="75"/>
+            <Vital index="Energy" value="100"/>
             <Charge Link="Abil/Irradiate"/>
-            <Cooldown Link="Abil/Irradiate" TimeUse="5"/>
+            <Cooldown Link="Abil/Irradiate" TimeUse="8"/>
         </Cost>
         <InterruptCost>
             <Charge Link="Abil/GhostMengskIrradiateSmallDamage"/>
@@ -15011,13 +15070,149 @@
         <EffectArray index="Finish" value="AP_WarpRelocateAssimilatorFinishSet"/>
         <EffectArray index="Cancel" value="AP_WarpRelocateEndSet"/>
     </CAbilBuild>
-    <CAbilEffectTarget id="AP_MengskMedicHeal" parent="AP_heal">
-        <Effect index="0" value="AP_MedicMengskHealSwitch"/>
-        <CmdButtonArray index="Execute" Requirements="AP_NotHaveMedicMengskDoubleBeamHeal"/>
+    <!-- For some reason, heal-abilities have proven to be really cumbersome/buggy
+        when trying to parent off one another on units that have multiple heal abilities.
+        The following is repetitive but helps prevent the MedicMengsks from bugging
+        out with their various heal abilities
+                                                                     - Chuck  -->
+    <CAbilEffectTarget id="AP_MengskMedicHeal">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="2"/>
+        <Effect index="0" value="AP_MedicMengskHeal"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="6"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <Marker Link="Abil/MedivacHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank0"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="1.5"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_MengskMedicDoubleBeamHeal" parent="AP_heal">
+    <CAbilEffectTarget id="AP_MengskMedicHealR1">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="2"/>
+        <Effect index="0" value="AP_MedicMengskHealL1"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="6"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <Marker Link="Abil/MedivacHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank1"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="1.5"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="AP_MengskMedicHealR2">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="4"/>
+        <Effect index="0" value="AP_MedicMengskHealL2"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="8"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <Marker Link="Abil/MedivacHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_MedicMengskHealRank2"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="3.5"/>
+    </CAbilEffectTarget>
+    <!-- AP_MedicMengskHealR3 -->
+    <CAbilEffectTarget id="AP_MengskMedicDoubleBeamHeal">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="Smart" value="1"/>
+        <Flags index="PassengerAcquirePassengers" value="1"/>
+        <TargetFilters value="Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>
+        <TargetSorts RequestCount="1">
+            <SortArray value="TSAlliancePassive"/>
+            <SortArray value="TSDistance"/>
+            <SortArray value="TSLifeFraction"/>
+        </TargetSorts>
+        <Range value="4"/>
         <Effect index="0" value="AP_MedicMengskHealInitialSwitch"/>
-        <CmdButtonArray index="Execute" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>
+        <SmartValidatorArray value="healSmartTargetFilters"/>
+        <SmartValidatorArray value="NotWarpingIn"/>
+        <SmartValidatorArray value="AP_NotMaxHP"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Visible;Neutral,Enemy"/>
+        <AutoCastRange value="8"/>
+        <AutoCastValidatorArray value="healCasterMinEnergy"/>
+        <AutoCastValidatorArray value="NotWarpingIn"/>
+        <AutoCastValidatorArray value="AP_NotMaxHP"/>
+        <Marker Link="Abil/MedivacHeal"/>
+        <AINotifyEffect value="MedivacHeal"/>
+        <UseMarkerArray index="Approach" value="0"/>
+        <UseMarkerArray index="Prep" value="0"/>
+        <DefaultError value="RequiresHealTarget"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_MedicHeal" Requirements="AP_HaveMedicMengskDoubleBeamHeal"/>
+        <AcquireAttackers value="1"/>
+        <FollowRange value="3.5"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_WraithMengskResonatingFeedbackInterference">
         <Alignment value="Negative"/>

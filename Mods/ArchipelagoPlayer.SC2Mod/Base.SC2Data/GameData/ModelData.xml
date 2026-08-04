@@ -2830,6 +2830,18 @@
         <Model value="Assets\Effects\Terran\AutoTurretPodMissile\AutoTurretPodMissile.m3"/>
         <EditorCategories value="Race:Terran"/>
     </CModel>
+    <CModel id="AP_MarineMengskSpiderMineLobImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TerranLargeUnitDeath\TerranLargeUnitDeath.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="AP_MarineMengskSpiderMineLobWeapon" parent="MissileFX">
+        <Model value="Assets\Units\Terran\SpiderMine\SpiderMine.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
     <CModel id="AP_DeploySpiderMinesMissile" parent="MissileFX">
         <Model value="Assets\Units\Terran\SpiderMine\SpiderMine.m3"/>
         <EditorCategories value="Race:Terran"/>
@@ -9731,6 +9743,12 @@
     <CModel id="AP_PhoenixPurifierPhaseArmorGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_PhaseArmor\Glaze_PhaseArmor.m3"/>
     </CModel>
+    <CModel id="AP_GhostMengskPhasingSuitTrail">
+        <Model value="Assets\COOP\Mengsk\Units\Ghost_Mengsk_COOP\Ghost_Mengsk_COOP.m3"/>
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
+        <ShadowRadius value="0.000000"/>
+    </CModel>
     <CModel id="AP_ArtanisExterminateGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
     </CModel>
@@ -13583,6 +13601,13 @@
         <SelectionRadius value="0.555400"/>
         <ShadowRadius value="0.555400"/>
     </CModel>
+    <CModel id="AP_MedicMengskPhysicalTherapyShield" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Zeratul_VoidArmor_Impact\Zeratul_VoidArmor_Impact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <Radius value="1.000000"/>
+        <SelectionRadius value="0.555400"/>
+        <ShadowRadius value="0.555400"/>
+    </CModel>
     <CModel id="AP_AutomatedAssimilator" parent="Building" Race="Protoss">
         <Model value="Assets\Buildings\Protoss\Assimilator\Assimilator.m3"/>
         <Radius value="1.500000"/>
@@ -15071,6 +15096,11 @@
         <Model value="Assets\Effects\Protoss\Revelation\Revelation.m3"/>
         <ScaleMax value="4.000000,4.000000,4.000000"/>
         <ScaleMin value="4.000000,4.000000,4.000000"/>
+    </CModel>
+    <CModel id="AP_MedicMengskOpticalRestorationModel">
+        <Model value="Assets\Effects\Protoss\Revelation\Revelation.m3"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
     </CModel>
     <CModel id="AP_SOAGravitonBombImpactShockwave" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Protoss\SOA_TemporalField\SOA_TemporalField.m3"/>
@@ -20703,6 +20733,16 @@
         <ScaleMax value="0.650000,0.650000,0.650000"/>
         <ScaleMin value="0.650000,0.650000,0.650000"/>
     </CModel>
+    <CModel id="AP_MarineMengskPortrait" parent="MarinePortraitBase">
+        <Model value="AP\Assets\Units\Terran\MarineMengsk\MarineMengskPortraitNew.m3"/>
+        <Image value="AP\Assets\Textures\marinemengskportraitstatic.dds"/>
+        <Lighting value="Marauder_Deluxe_Collection_Portrait"/>
+    </CModel>
+    <CModel id="AP_MedicMengskPortrait" parent="AP_MedicPortrait">
+        <Model value="AP\Assets\Units\Terran\MedicMengsk\MedicMengskPortrait.m3"/>
+        <Image value="AP\Assets\Textures\medicmengskportraitstatic.dds"/>
+        <Lighting value="AP_ScienceVesselPortrait"/>
+    </CModel>
     <CModel id="AP_BarracksMengskBuild" parent="BarracksBuildBase"/>
     <CModel id="AP_BarracksMengsk" parent="BarracksBase">
         <Model value="Assets\COOP\Mengsk\Buildings\Barracks_Mengsk_COOP\Barracks_Mengsk_COOP.m3"/>
@@ -20758,6 +20798,18 @@
     <CModel id="AP_GhostMengskAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\GhostWeaponImpact\GhostWeaponImpact.m3"/>
         <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="AP_GhostMengskNemesisRoundsBioImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Neutral\SmokeStack_Fire_Constant_Sm\SmokeStack_Fire_Constant_Sm.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.380000,0.380000,0.380000"/>
+        <ScaleMin value="0.380000,0.380000,0.380000"/>
+    </CModel>
+    <CModel id="AP_GhostMengskNemesisRoundsMechImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.120000,0.120000,0.120000"/>
+        <ScaleMin value="0.120000,0.120000,0.120000"/>
     </CModel>
     <CModel id="AP_GhostMengskAttackLaunch" parent="LaunchFX">
         <Model value="Assets\Effects\Terran\GhostWeaponLaunch\GhostWeaponLaunch.m3"/>
@@ -21092,7 +21144,7 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_MarineMengsk" parent="MarineBase">
-        <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP.m3"/>
+        <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP_1.m3"/>
     </CModel>
     <CModel id="AP_MarineMengskDeath" parent="MarineDeathBase">
         <Model value="AP\Assets\Units\Terran\MarineMengsk\Marine_Mengsk_COOP_Death.m3"/>
@@ -22579,5 +22631,12 @@
     </CModel>
     <CModel id="AP_SkirmisherSuicideImpact">
         <Model value="Assets\Effects\Protoss\Alarak_Attack_Beam_Strong_Impact\Alarak_Attack_Beam_Strong_Impact.m3"/>
+    </CModel>
+    <CModel id="AP_GlazeShadow" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Corrupted_TangentSpace\Glaze_Corrupted_TangentSpace.m3"/>
+        <Priority value="32"/>
+    </CModel>
+    <CModel id="AP_ShadowDeathModel">
+        <Model value="Assets\Units\Neutral\VoidUnit_Death\VoidUnit_Death.m3"/>
     </CModel>
 </Catalog>
