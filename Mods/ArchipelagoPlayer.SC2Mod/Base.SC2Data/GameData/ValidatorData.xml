@@ -25,6 +25,40 @@
         <Find value="1"/>
         <Value value="AP_HaveDisruptorPermanentCloak"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskBuildABoom">
+        <Find value="1"/>
+        <Value value="AP_HaveMarineMengskBuildABoom"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskProdigalSon">
+        <Find value="1"/>
+        <Value value="AP_HaveMarineMengskProdigalSon"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarineMengskCombatShield">
+        <Find value="1"/>
+        <Value value="AP_HaveMarineMengskCombatShield"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskSovereignNeosteel">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskSovereignNeosteel"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskAddictiveSupplements">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskAddictiveSupplements"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskIncapacitatorShells">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskIncapacitatorShells"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveMarauderMengskBolsteredBarrier">
+        <Find value="1"/>
+        <Value value="AP_HaveMarauderMengskBolsteredBarrier"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotHaveMarauderMengskBolsteredBarrier">
+        <Value value="AP_HaveMarauderMengskBolsteredBarrier"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NoMarineMengskCombatShield">
+        <Value value="AP_HaveMarineMengskCombatShield"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveHotSHaveRaptor">
         <Find value="1"/>
         <Value value="AP_HaveHotSHaveRaptor"/>
@@ -185,7 +219,7 @@
         <CombineArray value="AP_IsDoubleBeamHealing"/>
         <CombineArray value="LifeGTZero"/>
         <CombineArray value="AP_NotMaxHP"/>
-        <CombineArray value="AP_MengskMedicHealTargetInRange"/>
+        <CombineArray value="AP_MengskMedicHealTargetInEffectiveRange"/>
         <CombineArray value="NotHidden"/>
     </CValidatorCombine>
     <CValidatorCombine id="AP_HealScanPeriodicCombine">
@@ -203,6 +237,74 @@
         <Compare value="LE"/>
         <Range value="2"/>
     </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="AP_MengskMedicHealTargetInLongRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="4"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="AP_MengskMedicHealTargetInRank2Range">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterLevelGTE3"/>
+        <CombineArray value="AP_MengskMedicHealTargetInLongRange"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MengskMedicHealTargetInEffectiveRange">
+        <Type value="Or"/>
+        <CombineArray value="AP_MengskMedicHealTargetInRange"/>
+        <CombineArray value="AP_MengskMedicHealTargetInRank2Range"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveMedicMengskPhysicalTherapy">
+        <Find value="1"/>
+        <Value value="AP_MedicMengskPhysicalTherapyResearched"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitOrderQueue id="AP_MedicMengskHealOrderActive">
+        <WhichUnit Value="Caster"/>
+        <AbilLink value="AP_MengskMedicHeal"/>
+        <Find value="1"/>
+    </CValidatorUnitOrderQueue>
+    <CValidatorLocationCompareRange id="AP_MedicMengskTherapyTargetInRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="4.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="AP_MedicMengskTherapySoloActiveCombine">
+        <Type value="And"/>
+        <CombineArray value="AP_MedicMengskHealOrderActive"/>
+        <CombineArray value="AP_MedicMengskTherapyTargetInRange"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapyBusyGE1">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedivacHealBeamBusy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapyBusyGE2">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="AP_MedivacHealBeamBusy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapySecondBeamActive">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedicMengskTherapySecondBeamActiveBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_MedicMengskTherapySecondStackActive">
+        <Type value="Or"/>
+        <CombineArray value="AP_MedicMengskTherapyBusyGE2"/>
+        <CombineArray value="AP_MedicMengskTherapySecondBeamActive"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_MedicMengskTherapySoloHealingActive">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_MedicMengskTherapySoloHealingBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_MedicMengskTherapyHealingGE1">
+        <Type value="Or"/>
+        <CombineArray value="AP_MedicMengskTherapyBusyGE1"/>
+        <CombineArray value="AP_MedicMengskTherapySoloHealingActive"/>
+    </CValidatorCombine>
     <CValidatorLocationCompareRange id="AP_HealTargetInRange">
         <WhichLocation Value="TargetUnit"/>
         <Compare value="LE"/>
@@ -265,7 +367,7 @@
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="AP_HaveWidowMineImprovedConcealmentUpgrade">
         <Find value="1"/>
-        <Value value="AP_HaveWidowMineImprovedConcealment"/>
+        <Value value="AP_HaveWidowMineLingeringConcealment"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveCycloneLockOnDamageUpgrade">
         <ResultNoPlayer value="Error"/>
@@ -1228,6 +1330,7 @@
         <AbilLink value="AP_MengskMedicDoubleBeamHeal"/>
     </CValidatorUnitOrderQueue>
     <CValidatorCombine id="AP_IsDoubleBeamHealing">
+        <Type value="Or"/>
         <CombineArray value="AP_MedivacIsHealing"/>
         <CombineArray value="AP_MengskMedicDoubleBeamHeal"/>
     </CValidatorCombine>
@@ -1477,10 +1580,6 @@
     <CValidatorCombine id="AP_IsWidowMineOrWidowMineBurrowed">
         <CombineArray value="AP_IsWidowMine"/>
         <CombineArray value="AP_IsWidowMineBurrowed"/>
-    </CValidatorCombine>
-    <CValidatorCombine id="AP_NotHaveWidowMineImprovedConcealmentUpgrade">
-        <CombineArray value="AP_HaveWidowMineImprovedConcealmentUpgrade"/>
-        <Negate value="1"/>
     </CValidatorCombine>
     <CValidatorPlayerRequirement id="AP_NeosteelFrameNotPurchased">
         <Find value="1"/>
@@ -5721,6 +5820,10 @@
     <CValidatorUnitFilters id="AP_IsBiological">
         <Filters value="Biological;-"/>
     </CValidatorUnitFilters>
+    <CValidatorCombine id="AP_IsBiologicalOrMechanical">
+        <CombineArray value="AP_IsBiological"/>
+        <CombineArray value="AP_IsMechanical"/>
+    </CValidatorCombine>
     <CValidatorCombine id="AP_UnitIsBiologicalOrMechanical">
         <CombineArray value="AP_IsBiological"/>
         <CombineArray value="AP_IsMechanical"/>
@@ -7132,6 +7235,11 @@
         <Compare value="GT"/>
         <Behavior value="AP_Leaping"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelGTE1">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="2"/>
+    </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelGTE2">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
@@ -7183,6 +7291,11 @@
     <CValidatorUnitCompareVeterancyLevel id="AP_LevelEq4">
         <Compare value="Eq"/>
         <Value value="5"/>
+    </CValidatorUnitCompareVeterancyLevel>
+    <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelEq0">
+        <WhichUnit Value="Caster"/>
+        <Compare value="Eq"/>
+        <Value value="1"/>
     </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="AP_CasterLevelEq1">
         <WhichUnit Value="Caster"/>
@@ -7563,6 +7676,15 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_MarauderMengskAbsorbReapplicator"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_NoMarauderMengskAbsorbReapplicatorUpgraded">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_MarauderMengskAbsorbReapplicatorUpgraded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_NoMarauderMengskAbsorbReapplicatorAny">
+        <Type value="And"/>
+        <CombineArray value="AP_NoMarauderMengskAbsorbReapplicator"/>
+        <CombineArray value="AP_NoMarauderMengskAbsorbReapplicatorUpgraded"/>
+    </CValidatorCombine>
     <CValidatorUnitCompareBehaviorCount id="AP_HasPrecursorMerc">
         <WhichUnit Value="Target"/>
         <Value value="1"/>
@@ -7595,6 +7717,50 @@
     <CValidatorUnitCompareBehaviorCount id="AP_NotHaveGhostMengskIrradiatePreMarker">
         <Behavior value="AP_GhostMengskIrradiatePreMarker"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskPhasingSuitActive">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskPhasingSuitActive"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareSpeed id="AP_GhostMengskIsMoving">
+        <Compare value="GT"/>
+        <Value value="0.125"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorPlayerRequirement id="AP_HaveGhostMengskPhasingSuit">
+        <Find value="1"/>
+        <Value value="AP_HaveGhostMengskPhasingSuit"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveGhostMengskNemesisRounds">
+        <Find value="1"/>
+        <Value value="AP_HaveGhostMengskNemesisRounds"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskNemesisRoundsBioBuff">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasGhostMengskNemesisRoundsMechBuff">
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasGhostMengskNemesisRoundsBioBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsBioBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterHasGhostMengskNemesisRoundsMechBuff">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="AP_GhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_CasterHasGhostMengskNemesisRoundsBioAndMechBuff">
+        <Type value="And"/>
+        <CombineArray value="AP_CasterHasGhostMengskNemesisRoundsBioBuff"/>
+        <CombineArray value="AP_CasterHasGhostMengskNemesisRoundsMechBuff"/>
+    </CValidatorCombine>
     <CValidatorLocationEnumArea id="AP_GhostMengskEMPSmallMinimum3EnemyTargets">
         <ResultFailed value="CantFindEnoughTargets"/>
         <WhichLocation Value="TargetUnitOrPoint"/>

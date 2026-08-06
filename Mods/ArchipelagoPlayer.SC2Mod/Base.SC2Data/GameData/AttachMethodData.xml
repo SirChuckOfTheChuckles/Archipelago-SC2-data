@@ -181,6 +181,10 @@
         <Keys Keyword="Forearm"/>
         <Keys Keyword="Right"/>
     </CAttachMethodFilter>
+    <CAttachMethodFilter id="AP_FilterHandLeft">
+        <Keys Keyword="Hand"/>
+        <Keys Keyword="Left"/>
+    </CAttachMethodFilter>
     <CAttachMethodPattern id="AP_AMPatternThorMengskAA">
         <Keyword value="Weapon"/>
         <Driver value="AP_JavelinMissileLaunchersMengskLM"/>

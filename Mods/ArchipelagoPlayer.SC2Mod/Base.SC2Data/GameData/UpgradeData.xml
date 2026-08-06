@@ -2109,9 +2109,6 @@
         <EffectArray Reference="Weapon,AP_K5Ranged,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_ChainReaction1Damage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_ChainReaction2Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,AP_ChainReaction3Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,AP_ChainReaction4Damage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,AP_ChainReaction5Damage,Amount" Value="1"/>
         <!-- Infested Marine -->
         <EffectArray Reference="Effect,AP_SIInfestedMarine,Amount" Value="1"/>
         <EffectArray Reference="Weapon,AP_SIInfestedMarine,Level" Value="1"/>
@@ -2518,6 +2515,10 @@
         <EffectArray Operation="Multiply" Reference="Effect,AP_VultureSpiderMinesDamage,AreaArray[1].Radius" Value="1.33"/>
         <EffectArray Operation="Multiply" Reference="Effect,AP_VultureSpiderMinesDamage,AreaArray[2].Radius" Value="1.33"/>
         <EffectArray Operation="Multiply" Reference="Effect,AP_VultureSpiderMinesDamage,AreaArray[0].Radius" Value="1.33"/>
+        <EffectArray Operation="Multiply" Reference="Effect,AP_MarineMengskSpiderMineLobDamage,AreaArray[1].Radius" Value="1.33"/>
+        <EffectArray Operation="Multiply" Reference="Effect,AP_MarineMengskSpiderMineLobDamage,AreaArray[2].Radius" Value="1.33"/>
+        <EffectArray Operation="Multiply" Reference="Effect,AP_MarineMengskSpiderMineLobDamage,AreaArray[0].Radius" Value="1.33"/>
+        <EffectArray Operation="Multiply" Reference="Actor,AP_MarineMengskSpiderMineLobImpact,Scale" Value="1.27"/>
         <EffectArray Operation="Multiply" Reference="Abil,AP_SpiderMineUnburrowRangeDummy,Range[0]" Value="1.33"/>
         <EffectArray Operation="Multiply" Reference="Abil,AP_VultureSpiderMineUnburrow,AutoCastRange" Value="1.33"/>
         <EffectArray Operation="Multiply" Reference="Abil,AP_VultureSpiderMineBurrow,AutoCastRange" Value="1.3"/>
@@ -3149,14 +3150,20 @@
         <Race value="Terr"/>
         <ScoreAmount value="300"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="2.000000"/>
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="2.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="1.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="1.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineBurrow,InfoArray[0].SectionArray[Stats].DurationArray[Collide]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="0.500000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Stats].DurationArray[Collide]" Value="0.500000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_WidowMine"/>
         <AffectedUnitArray value="AP_WidowMineBurrowed"/>
     </CUpgrade>
-    <CUpgrade id="AP_ImprovedConcealment">
+    <CUpgrade id="AP_WidowMineLingeringConcealment">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Abils].EffectArray[Start]" Value="AP_WidowMineLingeringCloakSet"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_WidowMineUnburrow,InfoArray[0].SectionArray[Abils].EffectArray[Finish]" Value="AP_WidowMineLingeringCloakSet"/>
     </CUpgrade>
     <CUpgrade id="AP_ArmorPiercingRockets">
         <Flags index="TechTreeCheat" value="1"/>
@@ -8050,8 +8057,8 @@
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleWidowMineBurrowed"/>
     <CUpgrade id="AP_HHWidowMineDeathBlossom">
-        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineAttack,Cost[0].Cooldown.TimeUse" Value="20.000000"/>
-        <EffectArray Operation="Subtract" Reference="Behavior,AP_WidowMineAnimationController,Duration" Value="20.000000"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_WidowMineAttack,Cost[0].Cooldown.TimeUse" Value="17.000000"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_WidowMineAnimationController,Duration" Value="17.000000"/>
         <AffectedUnitArray value="AP_WidowMine"/>
         <AffectedUnitArray value="AP_WidowMineBurrowed"/>
         <Icon value="Assets\Textures\btn-ability-hornerhan-widowmine-deathblossom.dds"/>
@@ -8217,6 +8224,7 @@
     </CUpgrade>
     <CUpgrade id="AP_SpiderMineDamage">
         <EffectArray Reference="Effect,AP_VultureSpiderMinesDamage,Amount" Value="55"/>
+        <EffectArray Reference="Effect,AP_MarineMengskSpiderMineLobDamage,Amount" Value="55"/>
     </CUpgrade>
     <CUpgrade id="AP_ScienceVesselSCBWEMPShockwaveResearch">
         <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
@@ -15156,9 +15164,91 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-upgrade-mengsk-ghostacademy-guidedtacticalstrike.dds"/>
     </CUpgrade>
-    <CUpgrade id="AP_GhostMengskEMPRounds">
+    <CUpgrade id="AP_GhostMengskPsychicEnhancer">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-        <Icon value="Assets\Textures\btn-ability-mengsk-ghost-staticempblast.dds"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-psychic-amplifier.dds"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPShortStun,Cost[0].Vital[Energy]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPLongStun,Cost[0].Vital[Energy]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskIrradiateSmallDamage,Cost[0].Vital[Energy]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskIrradiateBigDamage,Cost[0].Vital[Energy]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPShortStun,Cost[0].Cooldown.TimeUse" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskEMPLongStun,Cost[0].Cooldown.TimeUse" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskIrradiateSmallDamage,Cost[0].Cooldown.TimeUse" Value="3"/>
+        <EffectArray Operation="Subtract" Reference="Abil,AP_GhostMengskIrradiateBigDamage,Cost[0].Cooldown.TimeUse" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GhostMengskPhasingSuit">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-phasing-suit.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GhostMengskNemesisRounds">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-nemesis-rounds-base.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarineMengskProdigalSon">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-the-prodigal-son.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarineMengskSpiderMineLob">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-spider-mine-toss.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarineMengskBuildABoom">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-build-a-boom.dds"/>
+        <EffectArray Reference="Abil,AP_MarineMengskSpiderMines,Cost[0].Charge.CountStart" Value="2"/>
+        <EffectArray Reference="Abil,AP_MarineMengskSpiderMines,Cost[0].Charge.CountMax" Value="5"/>
+        <EffectArray Reference="Abil,AP_MarineMengskSpiderMineLob,Cost[0].Charge.CountStart" Value="2"/>
+        <EffectArray Reference="Abil,AP_MarineMengskSpiderMineLob,Cost[0].Charge.CountMax" Value="5"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarineMengskCombatShield">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-marine-mengsk-shield.dds"/>
+        <EffectArray Reference="Unit,AP_MarineMengsk,LifeMax" Value="25"/>
+        <EffectArray Reference="Unit,AP_MarineMengsk,LifeStart" Value="25"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_MarineMengsk,GroupIcon.Image[0]" Value="AP\Assets\Textures\wireframe-terran-marine-mengsk-shield.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_MarineMengsk,Wireframe.Image[0]" Value="AP\Assets\Textures\wireframe-terran-marine-mengsk-shield.dds"/>
+        <AffectedUnitArray value="AP_MarineMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarauderMengskSovereignNeosteel">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-sovereign-neosteel.dds"/>
+        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeMax" Value="60"/>
+        <EffectArray Reference="Unit,AP_MarauderMengsk,LifeStart" Value="60"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]" Value="15"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[2].Modification.VitalMaxArray[Life]" Value="15"/>
+        <EffectArray Reference="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[3].Modification.VitalMaxArray[Life]" Value="15"/>
+        <AffectedUnitArray value="AP_MarauderMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarauderMengskAddictiveSupplements">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-addictive-supplements.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarauderMengskIncapacitatorShells">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="Assets\Textures\btn-ability-mengsk-marauder-superconcussiveshells.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MarauderMengskBolsteredBarrier">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-bolstered-barrier.dds"/>
+        <EffectArray Operation="Add" Reference="Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_MarauderMengskAbsorbReapplicator,Duration" Value="10"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskRoyalAcademyDegree">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-royal-academy-degree.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskOpticalRestoration">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskHospiceCare">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-hospice-care.dds"/>
+        <EffectArray Reference="Behavior,AP_MedicMengskDefensiveMatrixBuff,Modification.VitalRegenArray[Life]" Value="5"/>
+    </CUpgrade>
+    <CUpgrade id="AP_MedicMengskPhysicalTherapy">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-physical-therapy.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_HaveGhostMengsk"/>
     <CUpgrade id="AP_TrooperMengskWeaponDrop">
@@ -17045,7 +17135,7 @@
         <EffectArray Operation="Set" Reference="Abil,AP_CarrierPurifierHangar,InfoArray[Ammo1].Button.Requirements" Value="AP_ArmCarrierPurifierBomberUpgraded"/>
         <EditorCategories value="UpgradeType:Talents"/>
     </CUpgrade>
-    <CUpgrade id="AP_CorruptorAcidSplash">
+    <CUpgrade id="AP_CorruptorSporefall">
         <EffectArray Operation="Set" Reference="Effect,AP_ParasiteSpore_LaunchMissile,ImpactEffect" Value="AP_ParasiteSporeGroundPersistent"/>
     </CUpgrade>
     <CUpgrade id="AP_BunkerIgnoreSupply">
@@ -17424,5 +17514,8 @@
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,MinScanRange" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BiggerAttackWaves">
+        <MaxLevel value="5"/>
     </CUpgrade>
 </Catalog>

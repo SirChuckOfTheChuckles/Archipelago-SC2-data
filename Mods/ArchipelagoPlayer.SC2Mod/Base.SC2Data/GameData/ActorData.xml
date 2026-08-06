@@ -1469,15 +1469,9 @@
         <BarOffset value="40"/>
         <BarWidth value="36"/>
         <GlossaryAnim value="Spell"/>
-        <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
-        </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-marine.dds"/>
-        <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
-        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_GoliathBase" default="1" parent="GenericUnitBase">
         <Aliases value="_UnitLarge"/>
@@ -1523,15 +1517,9 @@
         <SoundArray index="Yes" value="AP_Medic_Yes"/>
         <SoundArray index="Attack" value="AP_Medic_Attack"/>
         <SoundArray index="Pissed" value="AP_Medic_Pissed"/>
-        <GroupIcon>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
-        </GroupIcon>
         <HeroIcon value="Assets\Textures\BTN-Unit-Terran-Medic.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
         <UnitIcon value="Assets\Textures\BTN-Unit-Terran-Medic.dds"/>
-        <Wireframe>
-            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
-        </Wireframe>
     </CActorUnit>
     <CActorSimple id="AP_PsionicLiftImpactAnimBase" default="1">
         <On Terms="ActorCreation" Target="_Unit" Send="AnimClear Attack"/>
@@ -2587,6 +2575,12 @@
         <On Terms="Abil.AP_heal.SourceChannelStop" Send="AnimClear Spell"/>
         <On Terms="Abil.AP_HealPlusMech.SourceChannelStart" Send="$Spell PlayForever"/>
         <On Terms="Abil.AP_HealPlusMech.SourceChannelStop" Send="AnimClear Spell"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-medic.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_MercMedic" parent="AP_MedicBase" unitName="AP_MercMedic">
         <On Terms="Behavior.AP_MercGroundDrop.Create" Send="Create AP_MercMedicDropModel"/>
@@ -2677,6 +2671,8 @@
         <On Terms="Effect.AP_heal.TargetStop" Send="Destroy"/>
         <On Terms="Effect.AP_MercMedicHeal.TargetStart" Send="Create"/>
         <On Terms="Effect.AP_MercMedicHeal.TargetStop" Send="Destroy"/>
+        <On Terms="Effect.AP_MedicMengskHeal.TargetStart" Send="Create"/>
+        <On Terms="Effect.AP_MedicMengskHeal.TargetStop" Send="Destroy"/>
         <On Terms="Effect.AP_MedicMengskHealL1.TargetStart" Send="Create"/>
         <On Terms="Effect.AP_MedicMengskHealL1.TargetStop" Send="Destroy"/>
         <On Terms="Effect.AP_MedicMengskHealL2.TargetStart" Send="Create"/>
@@ -2695,6 +2691,8 @@
         <On Terms="Effect.AP_heal.TargetStop; At Target" Send="Destroy"/>
         <On Terms="Effect.AP_MercMedicHeal.TargetStart; At Target" Send="Create"/>
         <On Terms="Effect.AP_MercMedicHeal.TargetStop; At Target" Send="Destroy"/>
+        <On Terms="Effect.AP_MedicMengskHeal.TargetStart; At Target" Send="Create"/>
+        <On Terms="Effect.AP_MedicMengskHeal.TargetStop; At Target" Send="Destroy"/>
         <On Terms="Effect.AP_MedicMengskHealL1.TargetStart; At Target" Send="Create"/>
         <On Terms="Effect.AP_MedicMengskHealL1.TargetStop; At Target" Send="Destroy"/>
         <On Terms="Effect.AP_MedicMengskHealL2.TargetStart; At Target" Send="Create"/>
@@ -2722,6 +2720,7 @@
         <Inherits index="CloakEffect" value="1"/>
         <Inherits index="Visibility" value="1"/>
         <On Terms="Effect.AP_MedicSCBWRestoration@Set.Start; At Target" Send="Create"/>
+        <On Terms="Effect.AP_MedicMengskOpticalRestorationCleanse.Start; At Target" Send="Create"/>
         <On Terms="Effect.AP_AiurMothershipShieldRestore.Start; At Target" Send="Create"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead" HoldRotation="1"/>
@@ -2817,6 +2816,12 @@
         <On Terms="Upgrade.AP_CombatShield.Remove" Send="AnimPlay Cover Cover PlayForever"/>
         <On Terms="Upgrade.AP_CombatShield.Add" Send="AnimClear Cover"/>
         <On Terms="Upgrade.AP_CombatShield.Remove" Send="AnimPlay Cover Cover PlayForever"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-Marine.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_MarineAttack" parent="GenericAttack" effectAttack="AP_GaussRifle">
         <LaunchAssets Model="MarineAttackLaunch" Sound="Marine_AttackLaunch"/>
@@ -2921,6 +2926,12 @@
         <On Terms="Abil.AP_MercMedicHealPlusMech.TargetChannelStop" Send="Destroy"/>
         <On Terms="Abil.AP_MengskMedicHeal.TargetChannelStart" Send="Create"/>
         <On Terms="Abil.AP_MengskMedicHeal.TargetChannelStop" Send="Destroy"/>
+        <On Terms="Abil.AP_MengskMedicHealR1.TargetChannelStart" Send="Create"/>
+        <On Terms="Abil.AP_MengskMedicHealR1.TargetChannelStop" Send="Destroy"/>
+        <On Terms="Abil.AP_MengskMedicHealR2.TargetChannelStart" Send="Create"/>
+        <On Terms="Abil.AP_MengskMedicHealR2.TargetChannelStop" Send="Destroy"/>
+        <On Terms="Abil.AP_MengskMedicDoubleBeamHeal.TargetChannelStart" Send="Create"/>
+        <On Terms="Abil.AP_MengskMedicDoubleBeamHeal.TargetChannelStop" Send="Destroy"/>
         <On Terms="Abil.AP_InfestedMedicMercHeal.TargetChannelStart" Send="Create"/>
         <On Terms="Abil.AP_InfestedMedicMercHeal.TargetChannelStop" Send="Destroy"/>
         <On Terms="Abil.AP_InfestedMedicMercHealPlusMech.TargetChannelStart" Send="Create"/>
@@ -3223,6 +3234,22 @@
         <ImpactMap index="None" Sound="Reaper_D8ChargeAttackImpact"/>
     </CActorAction>
     <CActorMissile id="AP_D8ClusterBombReleaseMissile" parent="GenericAttackMissile" unitName="AP_D8ClusterBombWeapon"/>
+    <CActorSound id="AP_MarineMengskSpiderMineLobLaunch" parent="SoundOneShot">
+        <On Terms="Effect.AP_MarineMengskSpiderMineLobLaunchMissile.Start" Send="Create"/>
+    </CActorSound>
+    <CActorSplat id="AP_MarineMengskSpiderMineLobCursorSplat" parent="TerranCursorSplat" abil="AP_MarineMengskSpiderMineLob"/>
+    <CActorRange id="AP_MarineMengskSpiderMineLobRange" parent="RangeAbil" abil="AP_MarineMengskSpiderMineLob"/>
+    <CActorMissile id="AP_MarineMengskSpiderMineLobMissile" parent="GenericAttackMissile" unitName="AP_MarineMengskSpiderMineLobWeapon"/>
+    <CActorAction id="AP_MarineMengskSpiderMineLob" parent="GenericAttack" effectImpact="AP_MarineMengskSpiderMineLobDamage" effectLaunch="AP_MarineMengskSpiderMineLobLaunchMissile">
+        <LaunchAttachQuery Methods="AP_FilterHandLeft"/>
+        <ImpactMap index="None" Sound="AP_VultureSpiderMineAttackImpact"/>
+    </CActorAction>
+    <CActorModel id="AP_MarineMengskSpiderMineLobImpact" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.AP_MarineMengskSpiderMineLobDamage.Start; At Effect" Send="Create"/>
+        <HostSiteOps Ops="SOpTargetPoint SOpShadow"/>
+        <Model value="AP_VultureSpiderMineAttackImpact"/>
+        <Scale value="0.950000"/>
+    </CActorModel>
     <CActorUnit id="AP_Hellion" parent="GenericUnitBase" unitName="AP_Hellion">
         <Aliases value="_UnitMedium"/>
         <Macros value="UnloadDropAnim"/>
@@ -9098,68 +9125,17 @@
         <On Terms="ActorCreation" Send="TimerSet 2.000000 Die"/>
         <On Terms="TimerExpired; TimerName Die" Send="Destroy"/>
     </CActorSiteMover>
-    <CActorSite id="AP_ChainReaction1ImpactSite" parent="GenericAttackImpactSite"/>
-    <CActorSite id="AP_ChainReaction2ImpactSite" parent="GenericAttackImpactSite"/>
-    <CActorSite id="AP_ChainReaction3ImpactSite" parent="GenericAttackImpactSite"/>
-    <CActorSite id="AP_ChainReaction4ImpactSite" parent="GenericAttackImpactSite"/>
-    <CActorSite id="AP_ChainReaction5ImpactSite" parent="GenericAttackImpactSite"/>
     <CActorAction id="AP_ChainReaction2Attack" parent="GenericAttack" effectAttack="AP_ChainReaction2Damage">
-        <LaunchRequest Subject="AP_ChainReaction1ImpactSite" Actor="Find"/>
+        <LaunchRequest Subject="_ImpactGuide"/>
+        <Beam value="AP_ChainReactionAttackBeam"/>
         <BeamScope value="Caster"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
-        <ImpactSite value="AP_ChainReaction2ImpactSite"/>
         <ImpactMap index="None" Sound="AP_Kerrigan_BeamSecondary_AttackImpact"/>
     </CActorAction>
-    <CActorBeamSimple id="AP_ChainReaction2AttackBeam">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
-        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
-        <Model value="AP_KerriganEnergyAttack"/>
-    </CActorBeamSimple>
-    <CActorAction id="AP_ChainReaction3Attack" parent="GenericAttack" effectAttack="AP_ChainReaction3Damage">
-        <LaunchRequest Subject="AP_ChainReaction2ImpactSite" Actor="Find"/>
-        <BeamScope value="Caster"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
-        <ImpactSite value="AP_ChainReaction3ImpactSite"/>
-        <ImpactMap index="None" Sound="AP_Kerrigan_BeamSecondary_AttackImpact"/>
-    </CActorAction>
-    <CActorBeamSimple id="AP_ChainReaction3AttackBeam">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
-        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
-        <Model value="AP_KerriganEnergyAttack"/>
-    </CActorBeamSimple>
-    <CActorAction id="AP_ChainReaction4Attack" parent="GenericAttack" effectAttack="AP_ChainReaction4Damage">
-        <LaunchRequest Subject="ChainReaction3ImpactSite" Actor="Find"/>
-        <BeamScope value="Caster"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
-        <ImpactSite value="AP_ChainReaction4ImpactSite"/>
-        <ImpactMap index="None" Sound="AP_Kerrigan_BeamSecondary_AttackImpact"/>
-    </CActorAction>
-    <CActorBeamSimple id="AP_ChainReaction4AttackBeam">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
-        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
-        <Model value="AP_KerriganEnergyAttack"/>
-    </CActorBeamSimple>
-    <CActorAction id="AP_ChainReaction5Attack" parent="GenericAttack" effectAttack="AP_ChainReaction5Damage">
-        <LaunchRequest Subject="ChainReaction4ImpactSite" Actor="Find"/>
-        <BeamScope value="Caster"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
-        <ImpactSite value="AP_ChainReaction5ImpactSite"/>
-        <ImpactMap index="None" Sound="AP_Kerrigan_BeamSecondary_AttackImpact"/>
-    </CActorAction>
-    <CActorBeamSimple id="AP_ChainReaction5AttackBeam">
-        <Flags index="SuppressSaveLoad" value="1"/>
-        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
-        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
-        <Model value="AP_KerriganEnergyAttack"/>
-    </CActorBeamSimple>
     <CActorAction id="AP_ChainReactionAttack" parent="GenericAttack" effectAttack="AP_ChainReaction1Damage">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <BeamScope value="Caster"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance"/>
-        <ImpactSite value="AP_ChainReaction1ImpactSite"/>
         <ImpactPhysics Name="AP_ChainReactionAttackForce" MatchKeys="Basic" Physics="ChainReactionAttackForce"/>
     </CActorAction>
     <CActorBeamSimple id="AP_ChainReactionAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
@@ -17794,6 +17770,40 @@
     <CActorSiteOpLocalOffset id="AP_OracleRevelationOffSet">
         <LocalOffset value="0.000000,0.000000,0.500000"/>
     </CActorSiteOpLocalOffset>
+    <CActorModel id="AP_MedicMengskOpticalRestorationModel" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value="Race:Terran"/>
+        <On Terms="Effect.AP_MedicMengskOpticalRestorationSearch.Start" Send="Create"/>
+        <On Terms="ActorCreation" Send="TimerSet 1.500000 DelayDeath"/>
+        <On Terms="TimerExpired; TimerName DelayDeath" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow AP_OracleRevelationOffSet"/>
+        <Model value="AP_MedicMengskOpticalRestorationModel"/>
+    </CActorModel>
+    <CActorSound id="AP_MedicMengskOpticalRestorationSound" parent="SoundOneShot">
+        <On Terms="Effect.AP_MedicMengskOpticalRestorationSet.Start; At Caster" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="AP_MedicMengskOpticalRestoration"/>
+    </CActorSound>
+    <CActorModel id="AP_MedicMengskOpticalRestorationDrone" parent="ModelAddition">
+        <Model value="PointDefenseDrone"/>
+        <On Terms="Behavior.AP_MedicMengskOpticalRestorationBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskOpticalRestorationBuff.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetScale 0.333000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000"/>
+        <HostSiteOps Ops="SOpAttachOverhead AP_SOpHigherBy1"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="AP_SOpHigherBy1">
+        <LocalOffset value="0.000000,0.000000,1.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorRange id="AP_MedicMengskOpticalRestorationCleanse@Range">
+        <Range value="4.900000"/>
+        <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOff" Send="Destroy"/>
+    </CActorRange>
+    <CActorRange id="AP_MedicMengskOpticalRestorationSight@Range">
+        <Range value="13.500000"/>
+        <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.AP_MedicMengskOpticalRestoration.ButtonHoverOff" Send="Destroy"/>
+    </CActorRange>
     <CActorRange id="AP_OracleRevelationRange" parent="RangeAbil" abil="AP_OracleRevelation">
         <Icon value="Assets\Textures\RadarIcon2.dds"/>
         <IconArcLength value="3.250000"/>
@@ -23461,6 +23471,7 @@
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpShadow"/>
         <Model value="AP_SOAMatrixOverloadPowerSplat"/>
+        <Terms value="Cap 1"/>
     </CActorModel>
     <CActorUnit id="AP_Stargate" parent="ProtossBuildingEx" unitName="AP_Stargate">
         <Aliases value="_UnitHuge"/>
@@ -28057,7 +28068,6 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
     </CActorModel>
     <CActorRange id="AP_IrradiateRange" parent="RangeAbil" abil="AP_Irradiate"/>
-    <CActorRange id="AP_IrradiateMedicMengskRange" parent="RangeAbil" abil="AP_IrradiateMedicMengsk"/>
     <CActorBeamSimple id="AP_NanoRepairBeamRev1" parent="BeamSimpleAnimationStyleContinuous">
         <Inherits index="Visibility" value="1"/>
         <On Terms="Effect.AP_NanoRepair.TargetStart" Send="Create"/>
@@ -28285,6 +28295,8 @@
     <CActorSound id="AP_ScienceVesselSCBWDefensiveMatrix@Birth" parent="SoundOneShot">
         <On Terms="Behavior.AP_ScienceVesselSCBWDefensiveMatrix.On" Send="Create"/>
         <On Terms="Behavior.AP_ScienceVesselSCBWDefensiveMatrix.Off" Send="Destroy"/>
+        <On Terms="Behavior.AP_MedicMengskDefensiveMatrixBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskDefensiveMatrixBuff.Off" Send="Destroy"/>
     </CActorSound>
     <CActorRange id="AP_ScienceVesselSCBWDefensiveMatrix@Range" parent="RangeAbil" abil="AP_ScienceVesselSCBWDefensiveMatrix"/>
     <CActorRange id="AP_MedicMengskDefensiveMatrix@Range" parent="RangeAbil" abil="AP_MedicMengskDefensiveMatrix"/>
@@ -28295,6 +28307,8 @@
         <Inherits index="TintColor" value="0"/>
         <On Terms="Behavior.AP_ScienceVesselSCBWDefensiveMatrix.On" Send="Create"/>
         <On Terms="Behavior.AP_ScienceVesselSCBWDefensiveMatrix.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_MedicMengskDefensiveMatrixBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskDefensiveMatrixBuff.Off" Send="AnimBracketStop BSD"/>
         <On Terms="ActorCreation; ValidateUnit IsColossus" Send="SetScale 1.000000,1.000000,3.000000"/>
         <On Terms="ActorCreation; ValidateUnit IsVoidRay" Send="SetScale 1.200000,1.600000,1.200000"/>
         <On Terms="ActorCreation; ValidateUnit IsBattlecruiser" Send="SetScale 1.200000,1.500000,1.000000"/>
@@ -28304,8 +28318,29 @@
         <HostSiteOps Ops="SOpAttachCenter"/>
         <AutoScaleFactor value="1.500000"/>
     </CActorModel>
+    <CActorModel id="AP_MedicMengskPhysicalTherapyTargetShield" parent="ModelAddition">
+        <Inherits index="TintColor" value="0"/>
+        <Inherits index="Opacity" value="0"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyTargetBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyTargetBuff.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyHealBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyHealBuff.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.200000"/>
+        <Model value="AP_MedicMengskPhysicalTherapyShield"/>
+    </CActorModel>
+    <CActorModel id="AP_MedicMengskPhysicalTherapyDR1Shield" parent="ModelAddition">
+        <Inherits index="TintColor" value="0"/>
+        <Inherits index="Opacity" value="0"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyDR1.On" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskPhysicalTherapyDR1.Off" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.200000"/>
+        <Model value="AP_MedicMengskPhysicalTherapyShield"/>
+    </CActorModel>
     <CActorSound id="AP_ScienceVesselSCBWDefensiveMatrix@Death" parent="SoundOneShot">
         <On Terms="Behavior.AP_ScienceVesselSCBWDefensiveMatrix.Off" Send="Create"/>
+        <On Terms="Behavior.AP_MedicMengskDefensiveMatrixBuff.Off" Send="Create"/>
     </CActorSound>
     <CActorUnit id="AP_Predator" parent="GenericUnitStandard" unitName="AP_Predator">
         <Aliases value="_UnitMedium"/>
@@ -31812,7 +31847,7 @@
         <BarOffset value="155"/>
         <BarWidth value="160"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Barracks-mengsk.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-building-terran-Barracksmengsk.dds"/>
         <NameOffset value="110"/>
@@ -31821,7 +31856,7 @@
         <SoundArray index="Movement" value="Barracks_Movement"/>
         <UnitIcon value="Assets\Textures\btn-building-terran-Barracksmengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Barracks.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Barracks-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_BarracksMengskBuild" parent="TerranBuildingBuild">
@@ -42265,6 +42300,7 @@
     </CActorSound>
     <CActorSound id="AP_MarauderMengskAttackSpeedBoostSound" parent="SoundOneShot">
         <On Terms="Abil.AP_MarauderMengskAttackSpeedBoost.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.AP_MarauderMengskAddictiveSupplements.SourceCastStart" Send="Create"/>
         <Sound value="AP_MarauderMengskAttackSpeedBoost"/>
     </CActorSound>
     <CActorModel id="AP_MarauderMengskAttackSpeedBoostEnd" parent="ModelAnimationStyleOneShot">
@@ -42276,11 +42312,13 @@
     <CActorModel id="AP_MarauderMengskAttackSpeedBoostStart" parent="ModelAnimationStyleOneShot">
         <Inherits index="CloakEffect" value="1"/>
         <On Terms="Abil.AP_MarauderMengskAttackSpeedBoost.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.AP_MarauderMengskAddictiveSupplements.SourceCastStart" Send="Create"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead"/>
     </CActorModel>
     <CActorModel id="AP_MarauderMengskShrapnelImpact" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_MarauderMengskShrapnelDamage.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation; ValidateEffect AP_HaveMarauderMengskIncapacitatorShells" Send="SetTintColor 12,32,255"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <ModelFlags index="AllowHitTest" value="0"/>
@@ -42289,6 +42327,7 @@
     <CActorModel id="AP_MarauderMengskShrapnelLaunch">
         <Flags index="SuppressSaveLoad" value="1"/>
         <On Terms="Effect.AP_MarauderMengskShrapnelSearch.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation; ValidateEffect AP_HaveMarauderMengskIncapacitatorShells" Send="SetTintColor 60,32,255"/>
         <On Terms="ActorCreation" Send="$Birth"/>
         <On Terms="AnimDone; AnimName Birth" Send="Destroy"/>
         <Host Subject="_Unit"/>
@@ -42499,16 +42538,19 @@
         <SoundArray index="Click" value="Marauder_Click"/>
         <SoundArray index="ClickError" value="Marauder_ClickError"/>
         <SoundArray index="Highlight" value="Marauder_Highlight"/>
-        <UnitIcon value="Assets\Textures\btn-unit-terran-maraudermengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-marauder-mengsk.dds"/>
+        </GroupIcon>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Marauder.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-marauder-mengsk.dds"/>
         </Wireframe>
+        <UnitIcon value="Assets\Textures\btn-unit-terran-maraudermengsk.dds"/>
     </CActorUnit>
     <CActorAction id="AP_MarauderMengskAttack" parent="AP_MarauderAttackBase" effectImpact="AP_PunisherGrenadesMengskU" effectLaunch="AP_PunisherGrenadesMengskLM">
         <On Terms="Effect.AP_PunisherGrenadesMengskLM.Start; At Caster; !ValidateEffect AP_PunisherGrenadesResearched" Send="Create"/>
         <LaunchAttachQuery Methods="AMPatternMarauder"/>
         <Missile value="AP_MarauderMengskAttackMissile"/>
-        <ImpactMap index="None" Model="AP_MarauderMengskBaseAttackImpact"/>
+        <ImpactMap index="None" Model=""/>
         <ImpactPhysics Name="PunisherGrenadesImpact" MatchKeys="Basic" Physics="MarauderAttackDeathForce"/>
     </CActorAction>
     <CActorMissile id="AP_MarauderMengskAttackMissile" parent="GenericAttackMissile" unitName="AP_PunisherGrenadesMengskLMWeapon"/>
@@ -42517,9 +42559,19 @@
         <LaunchAttachQuery Methods="AMPatternMarauder"/>
         <LaunchAssets Model="AP_MarauderMengskAttackLaunch"/>
         <Missile value="AP_MarauderMengskAttackMissile"/>
-        <ImpactMap index="None" Model="AP_MarauderMengskUpgradedAttackImpact"/>
+        <ImpactMap index="None" Model=""/>
         <ImpactPhysics Name="AP_PunisherGrenadesMengskImpact" MatchKeys="Basic" Physics="AP_MarauderMengskAttackDeathForce"/>
     </CActorAction>
+    <CActorModel id="AP_MarauderMengskAttackImpactFX" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.AP_PunisherGrenadesMengskU.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation; ValidateEffect AP_PunisherGrenadesResearched" Send="ModelSwap AP_MarauderMengskUpgradedAttackImpact"/>
+        <On Terms="ActorCreation; ValidateEffect AP_HaveMarauderMengskIncapacitatorShells" Send="SetTintColor 160,32,240"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Model value="AP_MarauderMengskBaseAttackImpact"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
     <CActorAction id="AP_GhostMengskIrradiateAttack" parent="GenericAttack" effectImpact="AP_GhostMengskIrradiateAB" effectLaunch="AP_GhostMengskIrradiateLM">
         <Missile value="GhostMengskIrradiateWeapon"/>
         <LaunchAttachQuery Methods="AMFilterHead"/>
@@ -42559,6 +42611,27 @@
         <HostSiteOps Ops="SOpAttachOrigin"/>
         <Sound value="AP_Raven_CloakOn"/>
     </CActorSound>
+    <CActorModel id="AP_GhostMengskPhasingSuitTrail" parent="ModelAnimationStyleOneShotNoOrphan">
+        <AcceptedHostedPropTransfers index="CastShadows" value="0"/>
+        <Model value="AP_GhostMengskPhasingSuitTrail"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary AP_GhostMengskPhasingSuitTrailOffset SOp2DRotation"/>
+        <Remove Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death ContentPlayOnce"/>
+        <On Terms="ActorCreation" Send="SetCastShadows"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart Lifetime {} Walk {} Instant"/>
+        <On Terms="ActorCreation" Send="SetTintColor {160,64,255 10.000000}"/>
+        <On Terms="ActorCreation" Send="SetScale .9000000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.000000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.220000 0.040000"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.050000 TrailDecay"/>
+        <On Terms="TimerExpired; TimerName TrailDecay" Send="SetOpacity 0.000000 0.290000"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.500000 TrailLife"/>
+        <On Terms="TimerExpired; TimerName TrailLife" Send="Destroy"/>
+        <Scale value="1.000000"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="AP_GhostMengskPhasingSuitTrailOffset">
+        <LocalOffset value="0.000000,0.00000,0.150000"/>
+    </CActorSiteOpLocalOffset>
     <CActorSplat id="AP_GhostMengskEMPSmallLongStunCursorSplat" parent="TerranCursorSplat" abil="AP_GhostMengskEMPLongStun"/>
     <CActorSound id="AP_GhostMengskIrradiate_Off_AS" parent="SoundOneShot">
         <On Terms="Behavior.AP_GhostMengskIrradiate.Off" Send="Create"/>
@@ -42650,6 +42723,14 @@
         <On Terms="Abil.AP_GhostMengskNuke.SourceFinishStart" Send="AnimPlay SpellC Spell,C"/>
         <On Terms="Abil.AP_GhostMengskNuke.SourceFinishStop" Send="AnimClear SpellC"/>
         <On Terms="UnitMovementUpdate.*.Walk; AnimPlaying SpellC" Send="AnimClear SpellC"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.200000 Shadow"/>
+        <On Terms="TimerExpired; TimerName Shadow; IsStatus ShadowCreate 1; !ModelIsLowQuality" Send="Create AP_GhostMengskPhasingSuitTrail"/>
+        <On Terms="TimerExpired; TimerName Shadow" Send="TimerSet 0.200000 Shadow"/>
+        <On Terms="Behavior.AP_GhostMengskPhasingSuitActive.On; ValidateUnit AP_GhostMengskIsMoving" Send="StatusSet ShadowCreate 1"/>
+        <On Terms="Behavior.AP_GhostMengskPhasingSuitActive.Off" Send="StatusSet ShadowCreate 0"/>
+        <On Terms="UnitMovementUpdate.*.Stand" Send="StatusSet ShadowCreate 0"/>
+        <On Terms="UnitMovementUpdate.*.Walk; ValidateUnit AP_HasGhostMengskPhasingSuitActive" Send="StatusSet ShadowCreate 1"/>
+        <On Terms="ActorCreation" Send="StatusSet ShadowCreate 0"/>
         <On Terms="Abil.AP_GhostMengskEMPShortStun.SourceCastStart" Send="AnimPlay SpellC Spell,C 0 0.000000 0.300000"/>
         <On Terms="Abil.AP_GhostMengskEMPLongStun.SourceCastStart" Send="AnimPlay SpellC Spell,C 0 0.000000 0.300000"/>
         <On Terms="Abil.AP_GhostSCBWLockdown.SourceCastStart" Send="AnimBaselineStop"/>
@@ -42787,18 +42868,11 @@
         <VarianceWindowWalk value="1.000000"/>
         <VarianceWindowWalkOutro value="0.330000"/>
         <WalkAnimMoveSpeed value="2.25"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskCloak,On" Sound="GhostFemale_GhostFemale_043"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskEMPShortStun,Execute" Sound="GhostFemale_GhostFemale_046"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskEMPLongStun,Execute" Sound="GhostFemale_GhostFemale_046"/>
-        <AbilSoundArray AbilCmd="AP_GhostMengskNuke,Execute" Sound="GhostFemale_GhostFemale_044"/>
         <BarDistance value="34"/>
         <BarHeight value="7"/>
         <BarOffset value="50"/>
         <BarWidth value="42"/>
         <GlossaryAnim value="Stand"/>
-        <GroupIcon>
-            <Image value="Assets\Textures\wireframe-ghostfemale.dds"/>
-        </GroupIcon>
         <GroupSoundArray index="What" value="Ghost_GroupWhat"/>
         <GroupSoundArray index="Yes" value="Ghost_GroupYes"/>
         <GroupSoundArray index="Attack" value="Ghost_GroupAttack"/>
@@ -42831,8 +42905,11 @@
         <SoundArray index="ClickError" value="GhostFemale_BlackOps_ClickError"/>
         <SoundArray index="Highlight" value="GhostFemale_BlackOps_Highlight"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-ghostmengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-ghost-mengsk.dds"/>
+        </GroupIcon>
         <Wireframe>
-            <Image value="Assets\Textures\wireframe-ghostfemale.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-ghost-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_GhostMengskAttack" parent="GenericAttack" effectAttack="AP_C10CanisterRifleMengsk">
@@ -42845,6 +42922,24 @@
         <AcquisitionPitchHalfArc value="15.000000"/>
         <AccuracyHalfArc value="5.000000"/>
     </CActorAction>
+    <CActorModel id="AP_GhostMengskNemesisRoundsBioImpact" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.AP_GhostMengskNemesisRoundsBioBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_GhostMengskNemesisRoundsBioBuff.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="AP_GhostMengskNemesisRoundsBioImpact"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="AP_GhostMengskNemesisRoundsMechImpact" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.AP_GhostMengskNemesisRoundsMechBuff.On" Send="Create"/>
+        <On Terms="Behavior.AP_GhostMengskNemesisRoundsMechBuff.Off" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="AP_GhostMengskNemesisRoundsMechImpact"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
     <CActorAction id="AP_GhostMengskEMPAttack" parent="GenericAttack" effectImpact="AP_GhostMengskEMPSmallSearch" effectLaunch="AP_GhostMengskEMPSmallLM">
         <On Terms="Effect.AP_GhostMengskEMPDamage.Start; At Caster" Send="ActionDamage"/>
         <LaunchAssets Sound="Ghost_EMPAttackLaunch"/>
@@ -43400,8 +43495,12 @@
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskMarine_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <On Terms="Abil.AP_MarineMengskSpiderMineLob.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 1.500000 AsDuration"/>
         <On Terms="UnitDeath.AP_MarineMengsk; AnimPlaying Cover" Target="_DeathModel" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
-        <On Terms="ActorCreation" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidatePlayer AP_NoMarineMengskCombatShield" Send="AnimPlay Cover Cover PlayForever 0.000000"/>
+        <On Terms="Upgrade.AP_MarineMengskCombatShield.Add" Send="AnimClear Cover"/>
+        <On Terms="Upgrade.AP_MarineMengskCombatShield.Remove" Send="AnimPlay Cover Cover PlayForever"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Spell"/>
         <Model value="AP_MarineMengsk"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
         <DeathArray index="Normal" ModelLink="AP_MarineMengskDeath" SoundLink="Marine_DeathFXBloodSpray"/>
@@ -43413,8 +43512,15 @@
         <DeathCustoms index="17" ModelLink="AP_MarineMengskDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="None"/>
         </DeathCustoms>
+        <PortraitModel value="AP_MarineMengskPortrait"/>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-marine-mengsk.dds"/>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-marine-mengsk.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\wireframe-terran-marine-mengsk.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_MarineMengskAttack" parent="GenericAttack" effectAttack="AP_GaussRifleMengskSet">
         <LaunchAssets Model="MarineAttackLaunch" Sound="Marine_AttackLaunch"/>
@@ -43901,55 +44007,49 @@
         <On Terms="ActorCreation" Send="SetScale 1.100000"/>
         <On Terms="Abil.AP_MengskMedicHeal.SourceChannelStart" Send="$Spell PlayForever"/>
         <On Terms="Abil.AP_MengskMedicHeal.SourceChannelStop" Send="AnimClear Spell"/>
+        <On Terms="Abil.AP_MengskMedicHealR1.SourceChannelStart" Send="$Spell PlayForever"/>
+        <On Terms="Abil.AP_MengskMedicHealR1.SourceChannelStop" Send="AnimClear Spell"/>
+        <On Terms="Abil.AP_MengskMedicHealR2.SourceChannelStart" Send="$Spell PlayForever"/>
+        <On Terms="Abil.AP_MengskMedicHealR2.SourceChannelStop" Send="AnimClear Spell"/>
         <On Terms="Abil.AP_MengskMedicDoubleBeamHeal.SourceChannelStart" Send="$Spell PlayForever"/>
         <On Terms="Abil.AP_MengskMedicDoubleBeamHeal.SourceChannelStop" Send="AnimClear Spell"/>
-        <On Terms="Abil.AP_IrradiateMedicMengsk.SourcePrepStart" Send="$Spell"/>
         <On Terms="Abil.AP_MedicMengskDefensiveMatrix.SourcePrepStart" Send="$Spell"/>
         <Model value="AP_MedicMengsk"/>
-        <PortraitModel value="AP_MedicPortrait"/>
+        <PortraitModel value="AP_MedicMengskPortrait"/>
         <DeathArray index="Normal" ModelLink="AP_MedicMengskDeath" SoundLink="AP_Medic_Explode"/>
         <DeathArray index="Blast" ModelLink="AP_MedicMengskDeath"/>
         <DeathCustoms ModelLink="AP_MedicMengskDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="None"/>
         </DeathCustoms>
+        <GroupIcon>
+            <Image value="AP\Assets\Textures\wireframe-terran-medic-mengsk.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="AP\Assets\Textures\wireframe-terran-medic-mengsk.dds"/>
+        </Wireframe>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-medic-mengsk.dds"/>
     </CActorUnit>
-    <CActorBeamSimple id="AP_MedicMengskDoubleHealBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <On Terms="ActorCreation" Target="::scope.AP_MedicMengskHealLaunch" Send="StatusIncrement Beams"/>
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Stop" Send="Destroy"/>
-        <On Terms="ActorDestruction" Target="::scope.AP_MedicMengskHealLaunch" Send="StatusDecrement Beams"/>
+    <CActorAction id="AP_MedicMengskDoubleHealBeamAction" parent="GenericAttack" effectAttack="AP_MedicMengskHealDoubleImpactDummy">
+        <BeamScope value="Caster"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <ImpactSiteOps Ops="SOpAttachCenter"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+        <ShieldFlashType value="None"/>
+        <Beam value="AP_MedicMengskDoubleHealBeam"/>
+    </CActorAction>
+    <CActorBeamSimple id="AP_MedicMengskDoubleHealBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <On Terms="ActorCreation" Send="TimerSet 0.500000 Beam"/>
+        <On Terms="TimerExpired; TimerName Beam" Send="Destroy"/>
         <Model value="AP_MedicHealBeam"/>
-        <HostLaunch Subject="::scope.AP_MedicMengskHealLaunch"/>
-        <HostImpact Subject="::Creator"/>
     </CActorBeamSimple>
-    <CActorSite id="AP_MedicMengskDoubleHealBeamImpactSite" parent="SiteCenter">
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Start; At Target" Send="Create"/>
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Stop" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="RefSetFromRequest ::scope.AP_MedicMengskHealLaunch AP_MedicMengskDoubleHealBeamLaunchSite Caster Find"/>
-        <On Terms="ActorCreation" Send="Create AP_MedicMengskDoubleHealBeam"/>
-    </CActorSite>
-    <CActorModel id="AP_MedicMengskDoubleHealModel">
+    <CActorModel id="AP_MedicMengskDoubleHealModel" parent="ModelAnimationStyleOneShot">
         <On Terms="ActorCreation" Send="$Birth PlayForever"/>
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Start; At Target" Send="Create"/>
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.AP_MedicMengskHealDoubleSecondHeal.TargetStart; At Target" Send="Create"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOverhead"/>
         <Model value="MedicHealModel"/>
     </CActorModel>
-    <CActorSound id="AP_MedicMengskDoubleHealSound" parent="SoundContinuous">
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Start; At Target" Send="Create"/>
-        <On Terms="ActorCreation" Send="Create AP_MedicHealSoundStart"/>
-        <On Terms="ActorDestruction" Send="Create AP_MedicHealSoundStop"/>
-        <On Terms="Effect.AP_MedicMengskHealTargetPersistent.Stop" Send="Destroy"/>
-        <Host Subject="_Selectable"/>
-        <HostSiteOps Ops="SOpAttachOverhead"/>
-        <Sound value="AP_Medic_Heal"/>
-    </CActorSound>
-    <CActorSite id="AP_MedicMengskDoubleHealBeamLaunchSite" parent="SiteWeapon">
-        <On Terms="Abil.AP_MengskMedicDoubleBeamHeal.SourceChannelStart" Send="Create"/>
-        <On Terms="StatusOff.*.Beams" Send="Destroy"/>
-    </CActorSite>
     <CActorUnit id="AP_LiberatorMengsk" parent="GenericUnitBase" unitName="AP_LiberatorMengsk">
         <Aliases value="_UnitLarge"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
@@ -48458,7 +48558,7 @@
         <On Terms="Behavior.AP_NovaNukeArming.Off" Send="StatusDecrement Queuing"/>
         <On Terms="Behavior.AP_MengskNukeArming.On" Send="StatusIncrement Queuing"/>
         <On Terms="Behavior.AP_MengskNukeArming.Off" Send="StatusDecrement Queuing"/>
-        <DeathArray index="Normal" ModelLink="GhostAcademyDeath"/>
+        <DeathArray index="Normal" ModelLink="TerranBuildingDeath" SoundLink="GhostAcademy_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="GhostAcademy_Explode"/>
         <PlacementModel value="GhostAcademyPlacement"/>
         <PortraitModel value="GhostAcademyPortrait"/>
@@ -48643,5 +48743,24 @@
     <CActorModel id="AP_PhoenixTaldarimDeathModel" parent="UnitDeathModel">
         <EditorCategories value=""/>
         <On Terms="Effect.AP_SkirmisherSuicideLM.Start" Send="SetVisibility"/>
+    </CActorModel>
+    <CActorModelMaterial id="AP_GlazeShadow" parent="GlazeParent">
+        <On Terms="Behavior.AP_VoidShade.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="ModelMaterialApplyTo ::Main"/>
+        <On Terms="Behavior.AP_VoidShade.Off" Send="Destroy"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModelMaterial>
+    <CActorSimple id="AP_ShadowDeathHandler">
+        <On Terms="Behavior.AP_VoidShade.On; ValidateUnit NotStructure" Send="Create"/>
+        <On Terms="UnitDeathCustomize" Target="_Unit" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize" Send="TimerSet 0.100000 Delay"/>
+        <On Terms="TimerExpired; TimerName Delay" Target="_Unit" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize" Send="TimerSet 0.200000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize" Send="Create AP_ShadowDeathModel"/>
+    </CActorSimple>
+    <CActorModel id="AP_ShadowDeathModel" parent="ModelAnimationStyleOneShotNoOrphan">
+        <EditorCategories value=""/>
+        <AutoScaleFactor value="0.300000"/>
     </CActorModel>
 </Catalog>
