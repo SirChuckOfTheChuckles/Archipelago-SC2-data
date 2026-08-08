@@ -305,9 +305,48 @@
             <VitalRegenArray index="Energy" value="-1.4765"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AP_BansheeMengskCloak" parent="AP_BansheeCloak">
+    <CBehaviorBuff id="AP_BansheeMengskCloak">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="hasEnergy"/>
+        <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
         <Modification>
-            <VitalRegenArray index="Energy" value="-0.9"/>
+            <StateFlags index="Cloak" value="1"/>
+            <VitalRegenArray index="Energy" value="-2.025"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskCloakEnergyDrainL1">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq2"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
+        <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskCloakEnergyDrainL2">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq3"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
+        <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskCloakEnergyDrainL3">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq4"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskCloak"/>
+        <DisableValidatorArray value="AP_NotArbiterMPCloakFieldEffect"/>
+        <DisableValidatorArray value="AP_NotBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-1.5"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_BansheeCloakCrossSpectrumDampeners">
@@ -3992,12 +4031,68 @@
             <VitalRegenArray index="Energy" value="-5"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskBacklashBarrageChannel">
+        <InfoIcon value="AP\Assets\Textures\btn-ability-terran-apocalypse-now.dds"/>
+        <RemoveValidatorArray value="CanSpendEnergy"/>
+        <RemoveValidatorArray value="hasEnergy"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="AP_BansheeMengskBarrageTick"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <VitalRegenArray index="Energy" value="-26.125"/>
+            <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+            <WeaponDisableArray value="AP_BacklashRocketsMengskMoving"/>
+            <WeaponEnableArray value="AP_BansheeMengskBarrageTrackingWeapon"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskBarrageEnergyDrainL1">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq2"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskBarrageEnergyDrainL2">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq3"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskBarrageEnergyDrainL3">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="AP_LevelEq4"/>
+        <DisableValidatorArray value="AP_HasBansheeMengskBacklashBarrage"/>
+        <Modification>
+            <VitalRegenArray index="Energy" value="-1.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeBarrageRecentlyHit">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.25"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeBarrageCycleMark">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="2"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeBarrageAimTarget">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.1875"/>
+        <MaxStackCount value="99"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ArbiterMPCloakFieldEffect">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-protoss-cloakfield.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="NotMothership"/>
-        <DisableValidatorArray value="AP_NotBansheeMengskCloakField"/>
         <TimeScaleSource Value="Global"/>
         <Duration value="0.5"/>
         <Modification>
@@ -10444,22 +10539,18 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
-        <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+        <VeterancyLevelArray MinVeterancyXP="1800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
             <Modification>
-                <DamageDealtFraction index="Melee" value="0.25"/>
-                <DamageDealtFraction index="Ranged" value="0.25"/>
-                <DamageDealtFraction index="Splash" value="0.25"/>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="70"/>
                 <VitalMaxArray index="Energy" value="50"/>
                 <VitalRegenArray index="Energy" value="0.5"/>
+                <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+                <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
             </Modification>
         </VeterancyLevelArray>
-        <VeterancyLevelArray MinVeterancyXP="2800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
+        <VeterancyLevelArray MinVeterancyXP="4200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
             <Modification>
-                <DamageDealtFraction index="Melee" value="0.25"/>
-                <DamageDealtFraction index="Ranged" value="0.25"/>
-                <DamageDealtFraction index="Splash" value="0.25"/>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="70"/>
                 <VitalMaxArray index="Energy" value="50"/>
@@ -10467,14 +10558,11 @@
             </Modification>
         </VeterancyLevelArray>
         <VeterancyLevelArray>
-            <MinVeterancyXP value="4800"/>
+            <MinVeterancyXP value="7200"/>
             <LevelGainEffect value="AP_MengskVeteranMaxedTrigger"/>
             <LevelLossEffect value="AP_MengskVeteranTrigger"/>
             <RankNameSchema value="Behavior/RankName/AP_MengskRank3"/>
             <Modification>
-                <DamageDealtFraction index="Melee" value="0.25"/>
-                <DamageDealtFraction index="Ranged" value="0.25"/>
-                <DamageDealtFraction index="Splash" value="0.25"/>
                 <LifeArmorBonus value="1"/>
                 <VitalMaxArray index="Life" value="70"/>
                 <VitalMaxArray index="Energy" value="50"/>
@@ -10484,6 +10572,13 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
+    <CBehaviorBuff id="AP_BansheeMengskCloakedSpeedRank2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_CasterLevelGTE3"/>
+        <DisableValidatorArray value="AP_IsCloaked"/>
+        <Modification AttackSpeedMultiplier="1.25" MoveSpeedMultiplier="1.25"/>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ShockwaveMissilePatternIndicator">
         <!-- Indicator of passive upgrade - full command card -->
 <!--        <Alignment value="Positive"/>-->
@@ -10549,6 +10644,26 @@
             <WeaponEnableArray value="AP_SILongboltMissile"/>
             <WeaponEnableArray value="AP_AcidSporeVentsWeapon"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskMovingWeaponCheck">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_CasterIsNotBacklashBarrageAndCasterIsRank1"/>
+        <Modification>
+            <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
+            <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskElusiveRotors">
+        <Name value="Button/Name/AP_BansheeMengskElusiveRotors"/>
+        <Tooltip value="Button/Tooltip/AP_BansheeMengskElusiveRotors"/>
+        <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-evasive-rotors.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Requirements value="AP_HaveBansheeMengskElusiveRotors"/>
+        <DisableValidatorArray value="AP_UnitIsMoving"/>
+        <DamageResponse ModifyFraction="0.7">
+            <Chance value="1"/>
+        </DamageResponse>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_PurifierMothershipShielding">
         <Alignment value="Positive"/>

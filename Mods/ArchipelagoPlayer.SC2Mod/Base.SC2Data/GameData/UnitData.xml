@@ -4922,6 +4922,18 @@
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
         <TacticalAI value="DuskWingBansheeWeapon"/>
     </CUnit>
+    <CUnit id="AP_BansheeMengskBacklashWeapon" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="BacklashRocketsLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value="DuskWingBansheeWeapon"/>
+    </CUnit>
+    <CUnit id="AP_BansheeMengskPreyseekerWeapon" parent="MISSILE">
+        <Race value="Terr"/>
+        <Mover value="AP_BansheeMengskPreyseekerLMWeapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Campaign"/>
+        <TacticalAI value="DuskWingBansheeWeapon"/>
+    </CUnit>
     <CUnit id="AP_DRBattlecruiserALMWeapon" parent="MISSILE">
         <Race value="Terr"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
@@ -31304,44 +31316,107 @@
         <Race value="PZrg"/>
         <EditorCategories value="ObjectType:Other,ObjectFamily:FactionPrimal"/>
     </CUnit>
-    <CUnit id="AP_BansheeMengsk" parent="AP_Banshee">
+    <CUnit id="AP_BansheeMengsk">
+        <DeathRevealRadius value="3"/>
         <Name value="Unit/Name/AP_BansheeMengsk"/>
+        <Race value="Terr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
         <LifeStart value="280"/>
         <LifeMax value="280"/>
+        <LifeArmor value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <EnergyStart value="50"/>
+        <EnergyMax value="200"/>
         <Food value="-5"/>
         <EnergyRegenRate value="1.125"/>
-        <CostResource index="Minerals" value="300"/>
-        <CostResource index="Vespene" value="300"/>
-        <AbilArray index="3" Link="AP_BansheeMengskCloak"/>
-        <AbilArray Link="AP_BansheeMengskRecharge"/>
-        <AbilArray Link="AP_BansheeMengskNightAssault"/>
+        <Mover value="Fly"/>
+        <Speed value="2.75"/>
+        <Acceleration value="3.25"/>
+        <StationaryTurningRate value="1500.9414"/>
+        <TurningRate value="1500.9414"/>
+        <Sight value="10"/>
+        <Height value="3.75"/>
+        <VisionHeight value="4"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="275"/>
+        <CostResource index="Vespene" value="425"/>
+        <RepairTime value="60"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="50"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="AP_BansheeMengskCloak"/>
+        <AbilArray Link="AP_BansheeMengskBacklashBarrage"/>
+        <AbilArray Link="AP_BansheeMengskBarrageRangeDummy"/>
+        <BehaviorArray Link="AP_ScavengingSystemsMechDeath"/>
         <BehaviorArray Link="AP_MengskVeterancyBansheeMengsk"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL4Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_ShockwaveMissilePatternIndicator"/>
-        <BehaviorArray Link="AP_DistortionBlastersIndicator"/>
-        <BehaviorArray Link="AP_BansheeShapedHullIndicator"/>
-        <BehaviorArray Link="AP_BansheeAdvancedOpticsIndicator"/>
+        <BehaviorArray Link="AP_BansheeMengskMovingWeaponCheck"/>
+        <BehaviorArray Link="AP_BansheeMengskElusiveRotors"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakedSpeedRank2"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL1"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL2"/>
+        <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL3"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL1"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL2"/>
+        <BehaviorArray Link="AP_BansheeMengskBarrageEnergyDrainL3"/>
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
-        <WeaponArray index="0" Link="AP_BacklashRocketsMengsk"/>
+        <WeaponArray Link="AP_BacklashRocketsMengsk"/>
+        <WeaponArray Link="AP_BacklashRocketsMengskMoving" Turret="AP_BansheeMengsk"/>
+        <WeaponArray Link="AP_BacklashRocketsMengskDisplay"/>
+        <WeaponArray Link="AP_BansheeMengskBarrageTrackingWeapon" Turret="AP_BansheeMengskBarrage"/>
         <LeaderAlias value="AP_BansheeMengsk"/>
         <SelectAlias value="AP_BansheeMengsk"/>
         <SubgroupAlias value="AP_BansheeMengsk"/>
-        <CardLayouts index="0">
-            <LayoutButtons index="5" AbilCmd="AP_BansheeMengskCloak,0"/>
-            <LayoutButtons index="6" AbilCmd="AP_BansheeMengskCloak,1"/>
-            <LayoutButtons index="7" Face="AP_BansheeMengsk_BlackOpsAirstrike"/>
-            <LayoutButtons index="8" Face="AP_BansheeMengskNightAssaultOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskNightAssault,On" Requirements=""/>
-            <LayoutButtons index="9" Row="2"/>
-            <LayoutButtons index="10" Row="2"/>
-            <LayoutButtons index="13" Face="AP_BansheeMengskConsussionShells" Requirements="AP_HaveBansheeMengskVeterancyLevel3"/>
-            <LayoutButtons index="14" Face="AP_BansheeMengskRecharge" Type="AbilCmd" AbilCmd="AP_BansheeMengskRecharge,Execute" Requirements=""/>
-            <LayoutButtons index="15" Face="AP_BansheeMengskVeterancy" Requirements=""/>
-            <LayoutButtons Face="AP_BansheeMengskNightAssaultOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskNightAssault,Off" Row="1" Column="1"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskVeterancy" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_BansheeMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AP_BansheeMengskElusiveRotors" Type="Passive" Requirements="AP_HaveBansheeMengskElusiveRotors" Row="1" Column="2"/>
+            <LayoutButtons Face="AP_BansheeMengskPreyseekerMissiles" Type="Passive" Requirements="AP_HaveBansheeMengskPreyseekerMissiles" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_BansheeMengskShockwaveArtillery" Type="Passive" Requirements="AP_HaveBansheeMengskShockwaveArtillery" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskEnergizedBacklash" Type="Passive" Requirements="AP_HaveBansheeMengskEnergizedBacklash" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskCloakOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,0" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_BansheeMengskCloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,On" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,Off" Row="2" Column="3"/>
         </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="22"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+        <TacticalAI value="Banshee"/>
+        <GlossaryCategory value="Unit/Category/AP_TerranUnitsAir"/>
+        <GlossaryPriority value="210"/>
+        <GlossaryStrongArray value="Ultralisk"/>
+        <GlossaryStrongArray value="Colossus"/>
+        <GlossaryStrongArray value="SiegeTank"/>
+        <GlossaryWeakArray value="PhotonCannon"/>
+        <GlossaryWeakArray value="MissileTurret"/>
+        <GlossaryWeakArray value="Marine"/>
+        <HotkeyCategory value="Unit/Category/AP_TerranUnitsAir"/>
         <HotkeyAlias value="AP_BansheeMengsk"/>
         <GlossaryAlias value="AP_BansheeMengsk"/>
     </CUnit>

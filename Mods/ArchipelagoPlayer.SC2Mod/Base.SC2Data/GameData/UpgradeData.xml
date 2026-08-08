@@ -2809,7 +2809,6 @@
         <Flags index="UpgradeCheat" value="0"/>
         <EffectArray Operation="Set" Reference="Abil,AP_BansheeCloak,BehaviorArray[0]" Value="AP_BansheeCloakCrossSpectrumDampeners"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,BehaviorArray[0]" Value="AP_BansheeCloakCrossSpectrumDampeners"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,BehaviorArray[0]" Value="AP_BansheeMengskCrossSpectrumDampeners"/>
         <EffectArray Operation="Set" Reference="Button,AP_CloakOnBanshee,Tooltip" Value="Button/Tooltip/AP_CloakOnBansheeUpgrade"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -2819,8 +2818,6 @@
         <EffectArray Operation="Set" Reference="Abil,AP_BansheeCloak,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,Cost[0].Vital[Energy]" Value="0"/>
         <EffectArray Operation="Set" Reference="Abil,AP_DuskWingBansheeCloakingField,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,Cost[0].Vital[Energy]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BansheeMengskCloak,BehaviorArray[0]" Value="AP_BansheeCloakFree"/>
         <EffectArray Operation="Set" Reference="Button,AP_CloakOnBanshee,Tooltip" Value="Button/Tooltip/AP_CloakOnBansheeFree"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -7955,7 +7952,6 @@
         <EffectArray Reference="Unit,AP_Banshee,Speed" Value="1"/>
         <EffectArray Reference="Unit,AP_DuskWing,Speed" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,Speed" Value="1"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,Speed" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="AP_LaserTargetingSystemBanshee">
@@ -7975,10 +7971,6 @@
         <EffectArray Reference="Unit,AP_InfestedDuskWing,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_InfestedDuskWing,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedDuskWing,MinScanRange" Value="1"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,SightBonus[Dusk]" Value="2"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,SightBonus[Dawn]" Value="2"/>
-        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankSiegeModeProgressiveRangeIncease">
@@ -11856,19 +11848,15 @@
         <EffectArray Reference="Unit,AP_DuskWing,LifeMax" Value="100"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,LifeStart" Value="100"/>
         <EffectArray Reference="Unit,AP_InfestedDuskWing,LifeMax" Value="100"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeStart" Value="100"/>
-        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeMax" Value="100"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
-        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_BansheeAdvancedOptics">
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
-        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_BansheeAirstrike">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-bansheemissilestrik.dds"/>
@@ -11877,6 +11865,35 @@
         <AffectedUnitArray value="AP_Banshee"/>
         <AffectedUnitArray value="AP_DuskWing"/>
         <AffectedUnitArray value="AP_InfestedDuskWing"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BansheeMengskElusiveRotors">
+        <Icon value="Assets\Textures\btn-upgrade-terran-hyperflightrotors.dds"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_BansheeMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BansheeMengskPreyseekerMissiles">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-bansheemissilestrik.dds"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,MinScanRange" Value="1"/>
+        <EffectArray Reference="Abil,AP_BansheeMengskBarrageRangeDummy,Range[0]" Value="1"/>
+        <EffectArray Reference="Effect,AP_BansheeMengskBarrageReset,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Effect,AP_BansheeMengskBarrageAimSearch,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Effect,AP_BansheeMengskBarrageConeFire,AreaArray[0].Radius" Value="1"/>
+        <EffectArray Reference="Validator,AP_BansheeBarrageAllMarked,AreaArray[0].Radius" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_BansheeMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BansheeMengskShockwaveArtillery">
+        <Icon value="assets\textures\btn-upgrade-raynor-shockwavemissilebattery.dds"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_BansheeMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BansheeMengskEnergizedBacklash">
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_HHVikingPiercingAttacks">
@@ -12485,6 +12502,10 @@
         <!-- Night Wolf -->
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,MinScanRange" Value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_VikingRangeDoubleUpgrade"/>
     <CUpgrade id="AP_BrynhildRangeDoubleUpgrade"/>
@@ -14680,6 +14701,8 @@
         <EffectArray Reference="Weapon,AP_WraithMengskG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_WraithMengskAG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,RateMultiplier" Value="0.15"/>
     </CUpgrade>
     <CUpgrade id="AP_FastDelivery">
         <!--EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train1].Cooldown.TimeStart" Value="0"/>

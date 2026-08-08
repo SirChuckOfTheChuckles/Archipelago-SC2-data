@@ -3100,6 +3100,22 @@
         <EditorCategories value="Race:Terran,TechType:Upgrade"/>
         <NodeArray index="Show" Link="AP_CountUpgradeBansheeAirstrikeCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveBansheeMengskElusiveRotors">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeBansheeMengskElusiveRotorsCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveBansheeMengskPreyseekerMissiles">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeBansheeMengskPreyseekerMissilesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveBansheeMengskShockwaveArtillery">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeBansheeMengskShockwaveArtilleryCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveBansheeMengskEnergizedBacklash">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeBansheeMengskEnergizedBacklashCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_HaveHHVikingPiercingAttack">
         <NodeArray index="Show" Link="AP_CountUpgradeHHVikingPiercingAttacksCompleteOnly"/>
     </CRequirement>
