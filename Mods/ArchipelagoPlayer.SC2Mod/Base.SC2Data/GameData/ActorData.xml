@@ -44669,6 +44669,7 @@
         <SoundArray index="Attack" value="Banshee_Attack"/>
         <SoundArray index="Pissed" value="Banshee_Pissed"/>
         <SoundArray index="Movement" value="Banshee_Movement"/>
+        <AbilSoundArray AbilCmd="AP_BansheeMengskBacklashBarrage,On" Sound="AP_BansheeMengskBarrageQuote"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
         <Wireframe>
             <Image value="AP\Assets\Textures\Wireframe-Terran-Banshee-mengsk.dds"/>

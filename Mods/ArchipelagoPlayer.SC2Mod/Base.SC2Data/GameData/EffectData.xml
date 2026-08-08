@@ -4089,7 +4089,7 @@
         <ImpactEffect value="AP_BansheeMengskBarrageDamage"/>
         <AmmoUnit value="AP_BansheeMengskPreyseekerWeapon"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="AP_BansheeMengskBarrageDamage" parent="DU_WEAP_MISSILE">
+    <CEffectDamage id="AP_BansheeMengskBarrageDamage">
         <EditorCategories value="Race:Terran"/>
         <Visibility value="Visible"/>
         <Kind value="Ranged"/>

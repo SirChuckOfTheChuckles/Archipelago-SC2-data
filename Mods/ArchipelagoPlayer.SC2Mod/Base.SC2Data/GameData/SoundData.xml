@@ -10873,6 +10873,9 @@
     <CSound id="AP_BansheeMengskBarrageHowl" parent="Spell">
         <AssetArray File="Assets\Sounds\Night_WolfHowl_01.wav" Volume="-8.000000,-8.000000" FacialGroup=""/>
     </CSound>
+    <CSound id="AP_BansheeMengskBarrageQuote" parent="Spell">
+        <AssetArray File="LocalizedData\Sounds\TerranUnitVO\Banshee\Banshee_Attack05.ogg" FacialGroup=""/>
+    </CSound>
     <CSound id="AP_SOA_Orbital_Strike_MissilePre_Impact2" parent="Spell">
         <AssetArray File="AP\Assets\Sounds\SOA_OrbitalStrike_PreImpact01_1ch.wav" FacialGroup=""/>
         <AssetArray File="AP\Assets\Sounds\SOA_OrbitalStrike_PreImpact02_1ch.wav" FacialGroup=""/>
