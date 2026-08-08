@@ -1291,7 +1291,7 @@
         <BarWidth value="140"/>
         <GlossaryAnim value="Stand"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Thor.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-thor-mengsk.dds"/>
         </GroupIcon>
         <GroupSoundArray index="What" value="Thor_GroupWhat"/>
         <GroupSoundArray index="Yes" value="Thor_GroupYes"/>
@@ -1325,7 +1325,7 @@
         <SoundArray index="Highlight" value="Thor_Highlight"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-thormengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Thor.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-thor-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorUnit default="1" id="AP_ThorMengskBase" parent="AP_ThorMengskBaseNoEvents">
@@ -41247,7 +41247,7 @@
         <BarWidth value="102"/>
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskSiegeTank_StatusFrame"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode-mengsk.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
         <HighlightTooltip value="Unit/Name/AP_SiegeTankMengsk"/>
@@ -41261,7 +41261,7 @@
         <StatusBarOn index="Custom" value="1"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-siegetanksiegemode.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode-mengsk.dds"/>
         </Wireframe>
         <StatusBarFlags index="Shields" value="0"/>
         <StatusBarFlags index="Life" value="0"/>
@@ -41646,7 +41646,7 @@
         <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
         <GlossaryAnim value="Stand"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode-mengsk.dds"/>
         </GroupIcon>
         <GroupSoundArray index="What" value="SiegeTankSieged_GroupWhat"/>
         <GroupSoundArray index="Yes" value="SiegeTankSieged_GroupYes"/>
@@ -41680,7 +41680,7 @@
         <SoundArray index="Highlight" value="SiegeTankSieged_Highlight"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-siegetankmengsksieged.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-SiegeTank-SiegeMode-mengsk.dds"/>
         </Wireframe>
         <Model value="AP_SiegeTank_Mengsk_COOP_Sieged"/>
     </CActorUnit>
@@ -42176,7 +42176,7 @@
         <ModelFlags index="OutlineEmitter" value="1"/>
         <PortraitModel value="AP_ThorMengskPortrait"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Thor.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-thor-mengsk-overwatch.dds"/>
         </GroupIcon>
         <GroupSoundArray index="What" value="Thor_GroupWhat"/>
         <GroupSoundArray index="Yes" value="Thor_GroupYes"/>
@@ -42219,7 +42219,7 @@
         </StatusColors>
         <UnitIcon value="Assets\Textures\btn-unit-terran-thormengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Thor.dds"/>
+            <Image value="AP\Assets\Textures\wireframe-terran-thor-mengsk-overwatch.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorAction id="AP_ThorMengskAAAttack" parent="GenericAttack" effectImpact="AP_JavelinMissileLaunchersMengskDamage" effectLaunch="AP_JavelinMissileLaunchersMengskLM">
