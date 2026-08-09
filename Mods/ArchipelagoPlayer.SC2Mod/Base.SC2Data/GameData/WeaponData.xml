@@ -2772,6 +2772,7 @@
         <Name value="Weapon/Name/AP_SolariteReaperUpgraded"/>
         <DisplayName value="Weapon/Name/AP_SolariteReaperUpgraded"/>
         <DisplayEffect value="AP_ZealotAiurWeapon"/>
+        <DisplayAttackCount value="1"/>
         <Effect value="AP_ZealotAiurWeaponCleaveSet"/>
         <Options index="Hidden" value="1"/>
         <Options index="Disabled" value="1"/>

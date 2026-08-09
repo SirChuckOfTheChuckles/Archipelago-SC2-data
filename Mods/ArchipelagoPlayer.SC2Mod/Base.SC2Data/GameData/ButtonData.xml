@@ -3262,6 +3262,12 @@
         <Hotkey value="Button/Hotkey/AP_HangarInstallTaldarim"/>
         <HotkeyAlias value="AP_HangarInstallTaldarim"/>
     </CButton>
+    <CButton id="AP_HangarTaldarim">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Tooltip value="Button/Tooltip/AP_HangarInstallTaldarim"/>
+    </CButton>
     <CButton id="AP_CloakingFieldMothership">
         <Icon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>

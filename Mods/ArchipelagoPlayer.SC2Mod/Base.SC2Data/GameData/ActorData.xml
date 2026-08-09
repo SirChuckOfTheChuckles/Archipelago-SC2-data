@@ -38667,7 +38667,7 @@
         <On Terms="ActorCreation" Send="SetScale 1.44000"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.50000"/>
         <Host Subject="_Selectable"/>
-        <HostSiteOps Ops="SOpAttachCenter AP_CleansingSmiteAuraOffset"/>
+        <HostSiteOps Ops="SOpAttachCenter AP_CleansingSmiteAuraOffset" HoldRotation="1"/>
         <Model value="AP_ArtanisHeroCleansingSmiteAura"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
