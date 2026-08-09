@@ -996,7 +996,7 @@
     </CButton>
     <CButton id="AP_AutomatedRefinery">
         <Icon value="AP\Assets\Textures\btn-building-terran-refineryautomated.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-building-terran-refinery.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-building-terran-refineryautomated.dds"/>
         <Hotkey value="Button/Hotkey/Refinery"/>
         <EditorCategories value="Race:Terran"/>
         <HotkeyAlias value="Refinery"/>
