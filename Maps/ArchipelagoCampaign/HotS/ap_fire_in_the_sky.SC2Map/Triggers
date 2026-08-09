@@ -356,7 +356,7 @@
     </Element>
     <Element Type="Param" Id="C233BF57">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>Prot</Value>
+        <Value>Terr</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Race"/>
     </Element>
@@ -557,6 +557,7 @@
     <Element Type="FunctionCall" Id="216BC956">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000005"/>
+        <FunctionCall Type="FunctionCall" Id="5FC373E3"/>
         <FunctionCall Type="FunctionCall" Id="6E5CA56F"/>
         <FunctionCall Type="FunctionCall" Id="0E9B4578"/>
         <FunctionCall Type="FunctionCall" Id="7A603D45"/>
@@ -570,6 +571,21 @@
         <FunctionCall Type="FunctionCall" Id="8881E97B"/>
         <FunctionCall Type="FunctionCall" Id="6D2805D7"/>
         <FunctionCall Type="FunctionCall" Id="525D14A7"/>
+    </Element>
+    <Element Type="FunctionCall" Id="5FC373E3">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000242"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000004"/>
+        <Parameter Type="Param" Id="565E2A32"/>
+        <Parameter Type="Param" Id="3633948C"/>
+    </Element>
+    <Element Type="Param" Id="565E2A32">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000419"/>
+        <Value>0.0625</Value>
+        <ValueType Type="fixed"/>
+    </Element>
+    <Element Type="Param" Id="3633948C">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000420"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000013"/>
     </Element>
     <Element Type="FunctionCall" Id="6E5CA56F">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>
@@ -2904,6 +2920,7 @@
         <Action Type="Comment" Id="E0AD939D"/>
         <Action Type="Comment" Id="1E1403C8"/>
         <Action Type="Comment" Id="A86401F8"/>
+        <Action Type="FunctionCall" Id="A57E312C"/>
         <Action Type="FunctionCall" Id="93EC811D"/>
         <Action Type="FunctionCall" Id="2A773AFB"/>
         <Action Type="FunctionCall" Id="C07D6324"/>
@@ -2962,6 +2979,42 @@
         <Comment>
             Initialization
         </Comment>
+    </Element>
+    <Element Type="FunctionCall" Id="A57E312C">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="D8A9F49F"/>
+        <Parameter Type="Param" Id="F1A8EF33"/>
+        <Parameter Type="Param" Id="9E70514F"/>
+        <Parameter Type="Param" Id="25019457"/>
+        <Parameter Type="Param" Id="5C690A90"/>
+        <Parameter Type="Param" Id="A630AE28"/>
+        <Parameter Type="Param" Id="0C787CE3"/>
+    </Element>
+    <Element Type="Param" Id="F1A8EF33">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="672FA3A3"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000547"/>
+    </Element>
+    <Element Type="Param" Id="9E70514F">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="40A35254"/>
+        <Value>0</Value>
+        <ValueType Type="fixed"/>
+    </Element>
+    <Element Type="Param" Id="25019457">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="BA72E931"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="80AEE9D1"/>
+    </Element>
+    <Element Type="Param" Id="5C690A90">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="5872348A"/>
+        <Value>0,0,0,0</Value>
+        <ValueType Type="color"/>
+    </Element>
+    <Element Type="Param" Id="A630AE28">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="16DD371C"/>
+        <Value>0.0</Value>
+        <ValueType Type="fixed"/>
+    </Element>
+    <Element Type="Param" Id="0C787CE3">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="D61CE1DE"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="00000068"/>
     </Element>
     <Element Type="FunctionCall" Id="93EC811D">
         <Disabled/>

@@ -31115,7 +31115,7 @@
         <CargoSize value="1"/>
         <ScoreMake value="125"/>
         <ScoreKill value="250"/>
-        <SubgroupPriority value="7"/>
+        <SubgroupPriority value="44"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>

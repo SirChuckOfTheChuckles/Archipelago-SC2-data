@@ -863,7 +863,7 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
     }
 
     if ((lib5BD4895D_gv_aP_Core_testMode == true)) {
-        libABFE498B_gv_aP_Triggers_Option_overridePlayerRace = "Prot";
+        libABFE498B_gv_aP_Triggers_Option_overridePlayerRace = "Terr";
         libABFE498B_gv_aP_Triggers_skipCutscenes = true;
         libABFE498B_gv_aP_Triggers_DebugMode = true;
         libABFE498B_gf_AP_Triggers_setDifficulty("B");
@@ -881,6 +881,7 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         libABFE498B_gv_aP_Triggers_skipCutscenes = true;
         lib15EF4C78_gf_RemoveUnusedStartingUnits(UnitGroupFromId(7), libABFE498B_gv_aP_Triggers_Option_overridePlayerRace, true);
         if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Terr")) {
+            Wait(0.0625, c_timeGame);
             PlayerSetRace(gv_pLAYER_01_USER, "Terr");
             lib5BD4895D_gf_AP_Core_MapConfig_setPlayerFaction(gv_pLAYER_01_USER, lib5BD4895D_gv_aP_Core_Faction_RAYNORS_RAIDERS);
             autoF1EF6E7F_g = UnitGroup("AP_DrakkenMiniLaserDrill", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
@@ -1417,6 +1418,7 @@ bool gt_Initialization_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    CinematicFade(false, 0.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, false);
     TriggerExecute(gt_Init01Technology, true, true);
     TriggerExecute(gt_Init03aScourgeNests, true, true);
     TriggerExecute(gt_Init04MusicSound, true, true);
