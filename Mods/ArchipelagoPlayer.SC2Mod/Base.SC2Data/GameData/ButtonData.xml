@@ -6674,8 +6674,8 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskSmartServos">
-        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskNapalmRounds">
@@ -7503,8 +7503,8 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ThorMengskSmartServos">
-        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ThorMengskHammerOfTheLaw">

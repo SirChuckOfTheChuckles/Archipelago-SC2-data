@@ -22851,6 +22851,12 @@
         <CaseArray Validator="AP_CasterLevelGTE4" Effect="AP_SiegeTankMengskNapalmRoundsImprovedCP"/>
         <CaseDefault value="AP_SiegeTankMengskNapalmRoundsCP"/>
     </CEffectSwitch>
+    <CEffectDamage id="AP_SiegeTankMengskNapalmRoundsDamage">
+        <EditorCategories value="Race:Terran"/>
+        <Visibility value="Hidden"/>
+        <Death value="Fire"/>
+        <Amount value="8"/>
+    </CEffectDamage>
     <CEffectCreatePersistent id="AP_SiegeTankMengskNapalmRoundsCP">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetPoint"/>
@@ -22865,7 +22871,7 @@
         <AINotifyFlags index="HurtEnemy" value="1"/>
         <EditorCategories value="Race:Terran"/>
         <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="1.25" Effect="AP_ThermalLancesFireBeamDamage"/>
+        <AreaArray Radius="1.25" Effect="AP_SiegeTankMengskNapalmRoundsDamage"/>
         <SearchFlags index="CallForHelp" value="1"/>
     </CEffectEnumArea>
     <CEffectEnumArea id="AP_SiegeTankMengskNapalmRoundsImprovedSearch" parent="AP_SiegeTankMengskNapalmRoundsSearch">

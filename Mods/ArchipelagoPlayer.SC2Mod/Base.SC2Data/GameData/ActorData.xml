@@ -4341,15 +4341,6 @@
         <RollOutDuration value="1.200000"/>
         <RollMax value="10.000000"/>
     </CActorSiteOpBankerUnit>
-    <CActorTurret id="AP_MedivacSiegeTankAirliftTurret">
-        <On Terms="TurretEnable.AP_MedivacSiegeTankAirliftTurret" Send="Create"/>
-        <TurretBody Subject="AP_SiegeTankLoadTransit"/>
-        <Aliases />
-    </CActorTurret>
-    <CActorTurret id="AP_MedivacMercSiegeTankAirliftTurret">
-        <On Terms="TurretEnable.AP_MedivacMercSiegeTankAirliftTurret" Send="Create"/>
-        <TurretBody Subject="AP_SiegeBreakerLoadTransit"/>
-    </CActorTurret>
     <CActorTurret id="AP_SiegeTankMengskAirliftTurret">
         <On Terms="TurretEnable.AP_SiegeTankMengskAirliftTurret" Send="Create"/>
         <TurretBody Subject="AP_SiegeTankMengskSiegedTransit"/>
@@ -30535,7 +30526,6 @@
         <HostSiteOps Ops="SOpAttachCenter AP_SiegeBreakerLoadSOpOffset"/>
         <On Terms="ActorCreation" Target="::Creator" Send="Signal AP_SiegeBreakerLoadTransit"/>
         <On Terms="ActorCreation" Send="AnimPlay Start Stand,Work,Start"/>
-        <On Terms="ActorCreation" Send="Create AP_MedivacMercSiegeTankAirliftTurret"/>
         <On Terms="AnimDone; AnimName Start" Send="AnimPlay Work Stand,Work PlayForever"/>
         <On Terms="ActorCreation" Send="SetVisibility"/>
         <On Terms="AbilTransport.AP_MedivacTransport.TransportLoad; AbilTransport AP_SiegeBreakerSiegedTransportable" Send="SetVisibility 1"/>
@@ -42277,7 +42267,6 @@
         <On Terms="SelectionLocalUpdate.*.Start" Send="SetVisibility 1"/>
         <On Terms="SelectionLocalUpdate.*.Stop" Send="SetVisibility"/>
         <On Terms="ActorCreation; !Selected" Send="SetVisibility"/>
-        <Icon value="Assets\Textures\RadarIcon2.dds"/>
     </CActorRange>
     <CActorUnit id="BroodLord">
         <!-- Override -->

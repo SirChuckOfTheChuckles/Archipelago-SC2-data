@@ -1701,9 +1701,6 @@
         <BehaviorArray Link="AP_MedivacPermanentCloak"/>
         <BehaviorArray Link="AP_MedivacRapidReignitionSystemIndicator"/>
         <BehaviorArray Link="AP_SiegeTankMengskRangeBonus"/>
-        <WeaponArray Link="AP_MedivacSiegeTankAirlift" Turret="AP_MedivacSiegeTankAirliftTurret"/>
-        <WeaponArray Link="AP_MedivacMercSiegeTankAirlift" Turret="AP_MedivacMercSiegeTankAirliftTurret"/>
-        <WeaponArray Link="AP_MedivacInfestedSiegeBreakerAirlift" Turret="AP_MedivacMercSiegeTankAirliftTurret"/>
         <WeaponArray Link="AP_SiegeTankMengskAirlift" Turret="AP_SiegeTankMengskAirliftTurret"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -29986,7 +29983,7 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AP_ExplosiveMode" Type="AbilCmd" AbilCmd="AP_ThorMengskUnsiege,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_ThorMengskUnsiege" Type="AbilCmd" AbilCmd="AP_ThorMengskUnsiege,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="AP_ThorMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_ThorMengskSiegedCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_ThorMengskArmorAura" Type="Passive" Requirements="AP_HaveThorMengskArmorAura" Row="1" Column="2"/>

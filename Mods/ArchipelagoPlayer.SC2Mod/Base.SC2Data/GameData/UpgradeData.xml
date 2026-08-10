@@ -663,7 +663,6 @@
         <EffectArray Reference="Effect,AP_CrucioShockCannonDummy,Amount" Value="5.000000"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonFriendlyDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonEnemyDamage,Amount" Value="5"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftBlast,Amount" Value="5.000000"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftDirected,Amount" Value="5.000000"/>
         <!--  Hellion -->
@@ -706,7 +705,6 @@
         <EffectArray Reference="Effect,AP_ArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftBlast,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!-- Predator -->
@@ -742,7 +740,6 @@
         <EffectArray Reference="Weapon,AP_MercLanceMissileLaunchers,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,RateMultiplier" Value="0.05"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_HellionTank,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_Diamondback,RateMultiplier" Value="0.05"/>
@@ -758,7 +755,6 @@
         <EffectArray Reference="Weapon,AP_SpartanCompanyAUpgraded,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,RateMultiplier" Value="0.05"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_Predator,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_TyphoonMissilePod,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_WarHound,RateMultiplier" Value="0.05"/>
@@ -2099,7 +2095,6 @@
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftBlast,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!--  Hunter Killer -->
@@ -5491,7 +5486,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <LeaderLevel value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel2" parent="AP_BaseTerranVehicleWeapons">
@@ -5525,7 +5519,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <LeaderLevel value="2"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel3" parent="AP_BaseTerranVehicleWeapons">
@@ -5559,7 +5552,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <LeaderLevel value="3"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel4" parent="AP_BaseTerranVehicleWeapons">
@@ -5593,7 +5585,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <LeaderLevel value="4"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel5" parent="AP_BaseTerranVehicleWeapons">
@@ -5627,7 +5618,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <LeaderLevel value="5"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel1" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
@@ -5661,7 +5651,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel2" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel2"/>
@@ -5694,7 +5683,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel3" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel3"/>
@@ -5727,7 +5715,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel4" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel4"/>
@@ -5760,7 +5747,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <LeaderLevel value="4"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel5" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
@@ -5794,7 +5780,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <LeaderLevel value="5"/>
     </CUpgrade>
     <CUpgrade id="AP_UltraCapacitors">
@@ -7992,10 +7977,8 @@
         <EffectArray Reference="Unit,AP_SiegeTankSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_SiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_SiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_SiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -8004,10 +7987,8 @@
         <EffectArray Reference="Unit,AP_SiegeBreakerSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -8016,10 +7997,8 @@
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -12247,8 +12226,6 @@
         <EffectArray Reference="Weapon,AP_90mmCannons,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange1,Range" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange2,Range" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange3,Range" Value="1"/>
@@ -12342,8 +12319,6 @@
         <EffectArray Reference="Weapon,AP_SiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,MinScanRange" Value="1"/>
         <!-- Merc Goliath -->
         <EffectArray Reference="Weapon,AP_SpartanCompanyA,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SpartanCompanyA,MinScanRange" Value="1"/>
@@ -12413,8 +12388,6 @@
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,MinScanRange" Value="1"/>
         <!-- Pride of Augustgrad -->
         <EffectArray Reference="Weapon,AP_ATXLaserBatteryMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ATXLaserBatteryMengsk,MinScanRange" Value="1"/>
@@ -12455,20 +12428,12 @@
         <!-- Bulwark Company -->
         <EffectArray Reference="Weapon,AP_GoliathMengskA,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskA,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,MinScanRange" Value="1"/>
         <!-- Emperor's Guardian -->
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeapon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeaponAA,Range" Value="1"/>
@@ -13938,13 +13903,13 @@
         <AffectedUnitArray value="AP_SiegeTankMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankMengskSmartServos">
-        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="4"/>
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="3"/>
         <AffectedUnitArray value="AP_SiegeTankMengsk"/>
         <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
     </CUpgrade>
@@ -14590,7 +14555,6 @@
         <EffectArray Reference="Weapon,AP_SpartanCompanyAUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithA,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithAG,RateMultiplier" Value="0.15"/>
@@ -14639,7 +14603,6 @@
         <EffectArray Reference="Weapon,AP_LanceMissileLaunchers,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_HellionTank,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_Diamondback,RateMultiplier" Value="0.15"/>
@@ -14691,10 +14654,8 @@
         <EffectArray Reference="Weapon,AP_TrooperMengskFlamethrower,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GaussRifleMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskA,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeapon,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeaponAA,RateMultiplier" Value="0.15"/>
@@ -15139,11 +15100,11 @@
         <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
     <CUpgrade id="AP_ThorMengskSmartServos">
-        <Icon value="Assets\Textures\btn-upgrade-terran-transformationservos.dds"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskSiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskUnsiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetDelayCP,PeriodicPeriodArray[1]" Value="4"/>
-        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetLargeAoEDelayCP,PeriodicPeriodArray[1]" Value="4"/>
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskSiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskUnsiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetDelayCP,PeriodicPeriodArray[1]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetLargeAoEDelayCP,PeriodicPeriodArray[1]" Value="3"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_ThorMengsk"/>
         <AffectedUnitArray value="AP_ThorMengskSieged"/>
@@ -17493,8 +17454,8 @@
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskMoebiusDefenseMatrix">
         <Icon value="AP\Assets\Textures\btn-upgrade-defense-protocol.dds"/>
-        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="75"/>
-        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="75"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="60"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="60"/>
         <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldRegenRate" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,AP_GoliathMengsk,CustomUnitStatusFrame" Value="AP_Coop_UnitStatus_Mengsk/MengskGoliath_StatusFrameShields"/>
     </CUpgrade>
@@ -17509,14 +17470,10 @@
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">
         <Icon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="3"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="3"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,Range" Value="3"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplayUpgraded,MinScanRange" Value="3"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="2"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="2"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplayUpgraded,MinScanRange" Value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_BiggerAttackWaves">
         <MaxLevel value="5"/>

@@ -8138,21 +8138,6 @@
         <Tooltip value="Button/Tooltip/AP_SiegeTankTransportHook"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_SiegeTankMengskTransportHookIndicator" parent="AP_SiegeTankTransportHookIndicator"/>
-    <CBehaviorBuff id="AP_MedivacSiegeTankAirlift">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <BehaviorFlags index="EnabledWhileDead" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MedivacMercSiegeTankAirlift">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <BehaviorFlags index="EnabledWhileDead" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="AP_MedivacInfestedSiegeBreakerAirlift">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <BehaviorFlags index="EnabledWhileDead" value="1"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="AP_SiegeTankMengskAirlift">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -10079,8 +10064,6 @@
         <Modification>
             <WeaponArray Link="AP_GoliathMengskA" Turret="AP_Goliath"/>
             <WeaponArray Link="AP_GoliathMengskG" Turret="AP_Goliath"/>
-            <WeaponArray Link="AP_GoliathMengskADisplay"/>
-            <WeaponArray Link="AP_GoliathMengskGDisplay"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_GoliathMengskRank2Weapons">
@@ -10091,8 +10074,6 @@
         <Modification>
             <WeaponArray Link="AP_GoliathMengskAUpgraded" Turret="FreeRotate"/>
             <WeaponArray Link="AP_GoliathMengskGUpgraded" Turret="AP_Goliath"/>
-            <WeaponArray Link="AP_GoliathMengskADisplayUpgraded"/>
-            <WeaponArray Link="AP_GoliathMengskGDisplayUpgraded"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_NovaUnitLockdown">
