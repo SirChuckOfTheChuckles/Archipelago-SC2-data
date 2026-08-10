@@ -11991,6 +11991,8 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
@@ -12441,6 +12443,8 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
@@ -14676,6 +14680,7 @@
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_PunisherGrenadesMengsk,RateMultiplier" Value="0.15"/>
@@ -15145,9 +15150,7 @@
     </CUpgrade>
     <CUpgrade id="AP_ThorMengskHammerOfTheLaw">
         <Icon value="AP\Assets\Textures\btn-upgrade-hammer-of-the-law.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengsk,DamagePoint" Value="0.331"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,DamagePoint" Value="0.331"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,DamagePoint" Value="0.331"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengsk,Options[Hidden]" Value="1"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_ThorMengsk"/>
     </CUpgrade>

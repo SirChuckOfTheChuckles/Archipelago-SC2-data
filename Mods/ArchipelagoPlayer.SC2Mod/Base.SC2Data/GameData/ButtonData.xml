@@ -7513,10 +7513,9 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_ThorMengskInfernoBlitz">
-        <Icon value="Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds"/>
+        <Icon value="Assets\Textures\btn-ability-stetmann-corruptormissilebarrage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-stetmann-corruptormissilebarrage.dds"/>
         <EditorCategories value="Race:Terran"/>
-        <ChargeText value="Button/ChargeText/AP_ThorMengskInfernoBlitz"/>
     </CButton>
     <CButton id="AP_MarauderMengskShield">
         <Icon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>

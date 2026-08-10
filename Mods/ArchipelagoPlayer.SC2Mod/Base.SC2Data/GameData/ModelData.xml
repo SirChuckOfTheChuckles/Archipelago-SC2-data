@@ -20304,9 +20304,9 @@
         </Events>
     </CModel>
     <CModel id="AP_SiegeTankMengskPortrait" parent="SiegeTankPortraitBase">
-        <Model value="Assets\Portraits\Terran\SiegeTankPortrait\SiegeTankPortrait.m3"/>
-        <Image value="Assets\Textures\SiegeTankPortrait_Static.dds"/>
-        <Lighting value="SiegeTankPortrait"/>
+        <Model value="AP\Assets\Units\Terran\SiegeTankMengsk\Siegetank_mengsk_collection_portrait.m3"/>
+        <Image value="AP\Assets\Textures\siegetank_mengsk_collection_portrait_static.dds"/>
+        <Lighting value="Banshee_Junker_Collection_Portrait"/>
     </CModel>
     <CModel id="AP_SiegeTankMengskSiegedAttackDamage" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\FireImpact\FireImpact.m3"/>
@@ -20583,9 +20583,9 @@
         <EditorCategories value="Race:Terran"/>
     </CModel>
     <CModel id="AP_ThorMengskPortrait" parent="ThorPortraitBase">
-        <Model value="Assets\Portraits\Terran\ThorPortrait\ThorPortrait.m3"/>
-        <Image value="Assets\Textures\ThorPortrait_Static.dds"/>
-        <Lighting value="ThorPortrait"/>
+        <Model value="AP\Assets\Units\Terran\ThorMengsk\Thor_Mengsk_Collection_Portrait.m3"/>
+        <Image value="AP\Assets\Textures\thor_mengsk_collection_portrait_static.dds"/>
+        <Lighting value="Thor_Umojan_Portrait"/>
     </CModel>
     <CModel id="AP_ThorMengskSiegedAirAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\WidowMineAirImpact\WidowMineAirImpact.m3"/>
@@ -21156,6 +21156,11 @@
         <AttachProps Id="Ref_Origin" SquibType="Shield" RadiusShield="2.500000">
             <Keys index="Shield" value="1"/>
         </AttachProps>
+    </CModel>
+    <CModel id="AP_GoliathMengskPortrait" parent="AP_GoliathPortrait">
+        <Model value="AP\Assets\Units\Terran\GoliathMengsk\GoliathMengskPortrait.m3"/>
+        <Image value="AP\Assets\Textures\goliath_mengsk_portrait_static.dds"/>
+        <Lighting value="MarinePortrait"/>
     </CModel>
     <CModel id="AP_GoliathMengskDeath" parent="AP_GoliathDeath">
         <Model value="AP\Assets\Units\Terran\GoliathMengsk\Goliath_Mengsk_COOP_Death.m3"/>

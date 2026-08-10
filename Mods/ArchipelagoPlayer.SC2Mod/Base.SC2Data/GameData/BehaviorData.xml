@@ -9575,6 +9575,16 @@
         <Duration value="6"/>
         <Modification AdditiveAttackSpeedFactor="0.03"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_ThorMengskHammerOfTheLawBase">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_HaveThorMengskHammerOfTheLaw"/>
+        <DisableValidatorArray value="AP_CasterLevelLT2"/>
+        <Modification>
+            <WeaponArray Link="AP_ThorsHammerMengskHammerOfTheLawRank0"/>
+            <WeaponDisableArray value="AP_ThorsHammerMengsk"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_ThorMengskHammerOfTheLawRange">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>

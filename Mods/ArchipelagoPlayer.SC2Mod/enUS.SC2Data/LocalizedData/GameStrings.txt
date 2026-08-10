@@ -1162,7 +1162,6 @@ Button/ChargeText/AP_FastDelivery=<d ref="$BehaviorStackCount:AP_FastDelivery1$+
 Button/ChargeText/AP_SIBunkerMarinesinBunker=<d ref="$BehaviorStackCount:AP_StukovInfestedBunkerMarines$"/>
 Button/ChargeText/AP_StukovInfestedSiegeTankAmmo=<d ref="$BehaviorStackCount:AP_StukovInfestedSiegeTankAmmo$"/>
 Button/ChargeText/AP_TradeCharge=<d ref="$BehaviorStackCount:AP_TradeCharge$"/>
-Button/ChargeText/AP_ThorMengskInfernoBlitz=<d ref="$BehaviorStackCount:AP_ThorMengskInfernoBlitzStack$"/>
 Button/EditorPrefix/AP_CenturionCloak=AP - Centurion -
 Button/EditorPrefix/AP_CenturionDodge=AP - Centurion -
 Button/EditorPrefix/AP_ChronoBoostEfficiency=AP - Nexus -

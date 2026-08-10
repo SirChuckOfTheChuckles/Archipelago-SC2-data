@@ -1342,19 +1342,19 @@
         <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation LE -20.000000; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Inferior"/>
         <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetDistance LE 1.000000; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Spell,B"/>
         <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; !ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack"/>
-        <!-- 0.831 / 0.331 = 2.510574; restore normal speed when the weapon effect starts at the new damage point. -->
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation GE 20.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetElevation LE -20.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; WeaponTargetDistance LE 1.000000; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengsk.AttackStart; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.51 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.51 AsTimeScale"/>
+        <!-- See Respective Weapons in WeaponData.xml -->
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
+        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
         <On Terms="Effect.AP_ThorsHammerMengsk.Start; At Caster; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimSetTimeScale Attack 1.000000"/>
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
@@ -42095,14 +42095,26 @@
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengsk; MorphFrom AP_ThorMengskSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengsk; MorphTo AP_ThorMengskSieged" Send="Destroy"/>
         <DeathArray index="Normal" ModelLink="AP_ThorMengskDeath"/>
+        <GroupIcon>
+            <Image index="0" value="AP\Assets\Textures\wireframe-terran-thor-mengsk.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="AP\Assets\Textures\wireframe-terran-thor-mengsk.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_ThorMengskSieged" parent="AP_ThorMengskBase" unitName="AP_ThorMengskSieged">
         <On Terms="ActorCreation" Send="AnimBracketStart Work IGNORE Work,Stand IGNORE Instant"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ThorMengskSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ThorMengskSieged" Send="Destroy"/>
         <DeathCustoms index="6" ActorModel="" ModelLink="" Name="RagdollBasic"/>
+        <GroupIcon>
+            <Image index="0" value="AP\Assets\Textures\wireframe-terran-thor-mengsk-overwatch.dds"/>
+        </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-unit-terran-thormengsksieged.dds"/>
         <UnitIcon value="Assets\Textures\btn-unit-terran-thormengsksieged.dds"/>
+        <Wireframe>
+            <Image index="0" value="AP\Assets\Textures\wireframe-terran-thor-mengsk-overwatch.dds"/>
+        </Wireframe>
     </CActorUnit>
     <CActorUnit id="AP_ThorMengskMorph" parent="GenericUnitBaseMorphTransition" unitName="AP_ThorMengskMorph">
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskThor_StatusFrame"/>
@@ -43852,6 +43864,7 @@
         <On Terms="WeaponStop.AP_GoliathMengskGUpgraded.AttackStop" Send="AnimBracketStop Attack"/>
         <Model value="AP_GoliathMengsk"/>
         <DeathActorModel value="AP_GoliathMengskDeath"/>
+        <PortraitModel value="AP_GoliathMengskPortrait"/>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
         <Wireframe>

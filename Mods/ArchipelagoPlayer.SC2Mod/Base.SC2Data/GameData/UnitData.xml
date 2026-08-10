@@ -29882,6 +29882,7 @@
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
         <BehaviorArray Link="AP_ThorMengskArmorAura"/>
+        <BehaviorArray Link="AP_ThorMengskHammerOfTheLawBase"/>
         <BehaviorArray Link="AP_ThorMengskHammerOfTheLawRange"/>
         <BehaviorArray Link="AP_ThorMengskHammerOfTheLawAttackSpeed"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
