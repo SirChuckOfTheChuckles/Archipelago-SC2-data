@@ -2940,7 +2940,7 @@
         <Race value="Terr"/>
         <LifeStart value="5"/>
         <LifeMax value="5"/>
-        <Mover value="HunterSeekerMissile"/>
+        <Mover value="AP_HunterSeekerMissile"/>
         <BehaviorArray Link="AP_SeekerMissileTimeout"/>
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
     </CUnit>

@@ -8836,6 +8836,12 @@
     <CValidatorUnitType id="AP_IsSensorTower">
         <Value value="SensorTower"/>
     </CValidatorUnitType>
+    <CValidatorUnitType id="AP_IsPsiDisruptor">
+        <Value value="PsiDisruptor"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="AP_IsInfestedMissileTurret">
+        <Value value="InfestedMissileTurret"/>
+    </CValidatorUnitType>
     <CValidatorCombine id="AP_PhoenixGravitonBuildingWhitelist">
         <CombineArray value="IsMissileTurret"/>
         <CombineArray value="IsSpineCrawler"/>
@@ -8844,6 +8850,8 @@
         <CombineArray value="IsAutoTurret"/>
         <CombineArray value="AP_IsPerditionTurret"/>
         <CombineArray value="AP_IsSensorTower"/>
+        <CombineArray value="AP_IsPsiDisruptor"/>
+        <CombineArray value="AP_IsInfestedMissileTurret"/>
     </CValidatorCombine>
     <CValidatorCombine id="AP_PhoenixGravitonBuildingAutocastWhitelist">
         <CombineArray value="IsMissileTurret"/>
