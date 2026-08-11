@@ -477,6 +477,18 @@
         <HotkeySet value="Cloak"/>
         <Universal value="1"/>
     </CButton>
+    <CButton id="AP_BansheeMengskCloakOn" parent="AP_CloakOnBanshee">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-cloak-color-red.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-cloak-color-red.dds"/>
+        <Name value="Button/Name/AP_BansheeMengskCloakOn"/>
+        <Tooltip value="Button/Tooltip/AP_BansheeMengskCloakOn"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskCloakOff" parent="CloakOff">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-decloak-color-red.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-decloak-color-red.dds"/>
+        <Name value="Button/Name/AP_BansheeMengskCloakOff"/>
+        <Tooltip value="Button/Tooltip/AP_BansheeMengskCloakOff"/>
+    </CButton>
     <CButton id="AP_DefensiveMatrix">
         <Icon value="assets\textures\btn-upgrade-swann-defensivematrix.dds"/>
         <AlertIcon value="assets\textures\btn-upgrade-swann-defensivematrix.dds"/>
@@ -7464,11 +7476,17 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_SiegeTankMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskSiegedCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_SiegeTankMengskSiegedCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskStun">
         <Icon value="Assets\Textures\btn-ability-mengsk-siegetank-shockandawe.dds"/>
@@ -7505,11 +7523,17 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_ThorMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_ThorMengskSiegedCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_ThorMengskSiegedCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_ThorMengsk">
         <Icon value="Assets\Textures\btn-unit-terran-thormengsk.dds"/>
@@ -7543,6 +7567,9 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_MarauderMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_MarauderMengskAttackSpeedBoost">
         <Icon value="Assets\Textures\btn-ability-mengsk-marauder-royalstimpack.dds"/>
@@ -7660,6 +7687,9 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_GhostMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_NukeCalldownMengsk">
         <Icon value="Assets\Textures\btn-ability-mengsk-ghost-tacticalmissilestrike.dds"/>
@@ -7714,6 +7744,9 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_MarineMengskSpiderMines">
         <Icon value="Assets\Textures\btn-upgrade-terran-spidermineex3.dds"/>
@@ -7776,6 +7809,9 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_GoliathMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_GoliathMengsk">
         <Icon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
@@ -7792,6 +7828,9 @@
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
         <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_MedicMengskCombatDiagnosis"/>
     </CButton>
     <CButton id="AP_MedicMengskOpticalRestoration">
         <Icon value="AP\Assets\Textures\btn-ability-terran-optical-restoration.dds"/>
@@ -7920,15 +7959,15 @@
         <AlertIcon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
         <Icon value="Assets\Textures\btn-ability-protoss-shieldrecharge.dds"/>
     </CButton>
-    <CButton id="AP_BansheeMengskNightAssaultOn">
-        <Icon value="AP\Assets\Custom\Textures\btn-ability-terran-cloak-gold.dds"/>
-        <AlertIcon value="AP\Assets\Custom\Textures\btn-ability-terran-cloak-gold.dds"/>
-        <HotkeySet value="AP_BansheeMengskNightAssault"/>
+    <CButton id="AP_BansheeMengskBacklashBarrageOn">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-apocalypse-now.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-apocalypse-now.dds"/>
+        <Hotkey value="Button/Hotkey/AP_BansheeMengskBacklashBarrageOn"/>
     </CButton>
-    <CButton id="AP_BansheeMengskNightAssaultOff">
-        <Icon value="AP\Assets\Custom\Textures\btn-ability-terran-decloak-gold.dds"/>
-        <AlertIcon value="AP\Assets\Custom\Textures\btn-ability-terran-decloak-gold.dds"/>
-        <HotkeySet value="AP_BansheeMengskNightAssault"/>
+    <CButton id="AP_BansheeMengskBacklashBarrageOff">
+        <Icon value="AP\Assets\Textures\btn-ability-terran-apocalypse-now-cancel.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-terran-apocalypse-now-cancel.dds"/>
+        <Hotkey value="Button/Hotkey/AP_BansheeMengskBacklashBarrageOff"/>
     </CButton>
     <CButton id="AP_BansheeMengskVeterancy" parent="AP_RoyalGuardMengsk">
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_BansheeMengskRank1Preview"/>
@@ -7938,12 +7977,33 @@
         <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_BansheeMengskRank3Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_BansheeMengskRank3"/>
     </CButton>
-    <CButton id="AP_BansheeMengskConsussionShells" parent="AP_JackhammerConcussionGrenade">
-        <Tooltip value="Button/Tooltip/AP_BansheeMengskConsussionShells"/>
-    </CButton>
     <CButton id="AP_BansheeMengsk">
         <Icon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskCombatDiagnosis">
+        <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <Name value="Button/Name/AP_MengskCombatDiagnosis"/>
+        <Tooltip value="Button/Tooltip/AP_MengskCombatDiagnosis"/>
+        <TooltipAppender Text="Button/Tooltip/AP_BansheeMengskCombatDiagnosis"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskElusiveRotors">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-evasive-rotors.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-evasive-rotors.dds"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskPreyseekerMissiles">
+        <Icon value="Assets\Textures\btn-upgrade-terran-recalibratedexplosives.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-recalibratedexplosives.dds"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskShockwaveArtillery">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-shockwave-artillery.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-shockwave-artillery.dds"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskEnergizedBacklash">
+        <Icon value="Assets\Textures\btn-upgrade-stetmann-corruptormissileaoe.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-stetmann-corruptormissileaoe.dds"/>
     </CButton>
     <CButton id="AP_BioelectricPayload">
         <Icon value="Assets\Textures\btn-ability-zeratul-immortal-forcecannon.dds"/>

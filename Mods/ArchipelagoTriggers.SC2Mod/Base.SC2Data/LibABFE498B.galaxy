@@ -205,7 +205,7 @@ void libABFE498B_gf_AP_Triggers_setDifficulty (string lp_difficultyChar) {
 void libABFE498B_gf_AP_Triggers_setKerriganOptions (int lp_bitArrayValue) {
     // Automatic Variable Declarations
     // Implementation
-    libABFE498B_gv_aP_Triggers_Option_KerriganPresence = ModI(lp_bitArrayValue, 4);
+    libABFE498B_gv_aP_Triggers_Option_KerriganPresence = 1;
     libABFE498B_gv_aP_Triggers_Option_KerriganPrimalStatusByMap = (ModI((lp_bitArrayValue / 4), 2) == 1);
 }
 
@@ -698,10 +698,10 @@ void libABFE498B_gf_AP_Triggers_unlockTerranArmory8 (int lp_player, int lp_bitAr
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardAddictiveSupplements, // 21
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardBolsteredBarrier, // 22
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardSovereignNeosteel, // 23
-        ap_triggers_PlayerConsumer_sig, // 24
-        ap_triggers_PlayerConsumer_sig, // 25
-        ap_triggers_PlayerConsumer_sig, // 26
-        ap_triggers_PlayerConsumer_sig, // 27
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery, // 24
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles, // 25
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash, // 26
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors, // 27
         ap_triggers_PlayerConsumer_sig, // 28
         ap_triggers_PlayerConsumer_sig // 29
     );
@@ -4926,6 +4926,30 @@ void libABFE498B_gf_AP_Triggers_Terran_unlockEmperorsShadowNemesisRounds (int lp
     // Automatic Variable Declarations
     // Implementation
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_GhostMengskNemesisRounds", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskShockwaveArtillery", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskPreyseekerMissiles", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskEnergizedBacklash", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskElusiveRotors", 1);
 }
 
 void libABFE498B_gf_AP_Triggers_Terran_unlockHiveMindEmulatorZerg (int lp_player) {
@@ -12307,8 +12331,6 @@ unit libABFE498B_gf_AP_Triggers_VoidDuplicate_prepareUnit (unit lp_u) {
     if ((libABFE498B_gf_AP_Triggers_VoidDuplicate_checkTracker(lv_index, libABFE498B_gv_aP_Triggers_VoidDuplicate_Threshold) == true)) {
         UnitCreate(1, lv_type, 0, lv_p, UnitGetPosition(lv_u), UnitGetFacing(lv_u));
         lv_new = UnitLastCreated();
-        UnitSetPropertyFixed(lv_new, c_unitPropLife, UnitGetPropertyFixed(lv_u, c_unitPropLife, c_unitPropCurrent));
-        UnitSetPropertyFixed(lv_new, c_unitPropShields, UnitGetPropertyFixed(lv_u, c_unitPropShields, c_unitPropCurrent));
         UnitSetPropertyFixed(lv_new, c_unitPropEnergy, UnitGetPropertyFixed(lv_u, c_unitPropEnergy, c_unitPropCurrent));
         libNtve_gf_CreateActorAtPoint("AP_ShadowDeathModel", UnitGetPosition(lv_new));
         UnitBehaviorAdd(lv_new, "AP_VoidShade", lv_new, 1);
@@ -13131,6 +13153,7 @@ bool libABFE498B_gt_AP_HeroChoiceClicked_Func (bool testConds, bool runActions) 
         }
     }
     return true;
+    return true;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -13225,8 +13248,6 @@ bool libABFE498B_gt_AP_Triggers_VoidDuplicate_sendWave_Func (bool testConds, boo
         if ((libABFE498B_gf_AP_Triggers_VoidDuplicate_checkTracker(lv_index, libABFE498B_gv_aP_Triggers_VoidDuplicate_Threshold) == true)) {
             UnitCreate(1, lv_type, 0, lv_p, UnitGetPosition(lv_u), UnitGetFacing(lv_u));
             lv_new = UnitLastCreated();
-            UnitSetPropertyFixed(lv_new, c_unitPropLife, UnitGetPropertyFixed(lv_u, c_unitPropLife, c_unitPropCurrent));
-            UnitSetPropertyFixed(lv_new, c_unitPropShields, UnitGetPropertyFixed(lv_u, c_unitPropShields, c_unitPropCurrent));
             UnitSetPropertyFixed(lv_new, c_unitPropEnergy, UnitGetPropertyFixed(lv_u, c_unitPropEnergy, c_unitPropCurrent));
             libNtve_gf_CreateActorAtPoint("AP_ShadowDeathModel", UnitGetPosition(lv_new));
             UnitBehaviorAdd(lv_new, "AP_VoidShade", lv_new, 1);
@@ -13527,13 +13548,19 @@ void libABFE498B_gt_AP_Triggers_Debug_clearQueue_Init () {
 // Trigger: AP_Triggers_Debug_skipTransmissions
 //--------------------------------------------------------------------------------------------------
 bool libABFE498B_gt_AP_Triggers_Debug_skipTransmissions_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_duration;
+
     // Automatic Variable Declarations
-    const int auto014580F1_n = 10;
+    int auto014580F1_n;
     int auto014580F1_i;
+
+    // Variable Initialization
+    lv_duration = StringToInt(StringWord(EventChatMessage(false), 2));
 
     // Conditions
     if (testConds) {
-        if (!((libABFE498B_gv_aP_Triggers_DebugMode == true))) {
+        if (!(((StringWord(EventChatMessage(false), 1) == "-s") || (StringWord(EventChatMessage(false), 1) == "-skip")))) {
             return false;
         }
     }
@@ -13543,10 +13570,27 @@ bool libABFE498B_gt_AP_Triggers_Debug_skipTransmissions_Func (bool testConds, bo
         return true;
     }
 
-    TriggerDebugOutput(1, (StringExternal("Param/Value/lib_ABFE498B_C2E7DE3B")), true);
+    if ((StringLength(StringWord(EventChatMessage(false), 2)) > 0)) {
+        lv_duration = StringToInt(StringWord(EventChatMessage(false), 2));
+    }
+    else {
+        lv_duration = 1;
+    }
+    if ((lv_duration <= 0)) {
+        lv_duration = 1;
+    }
+
+    if ((lv_duration <= 1)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/lib_ABFE498B_DA8707A1"), true);
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_ABFE498B_E40987BD", "A", IntToText(lv_duration));
+        TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_ABFE498B_E40987BD"), true);
+    }
+    auto014580F1_n = (8*FixedToInt(lv_duration));
     for (auto014580F1_i = 1; auto014580F1_i <= auto014580F1_n; auto014580F1_i += 1) {
         TransmissionClearAll();
-        Wait(0.1, c_timeReal);
+        Wait(0.125, c_timeReal);
     }
     return true;
 }
@@ -13554,8 +13598,8 @@ bool libABFE498B_gt_AP_Triggers_Debug_skipTransmissions_Func (bool testConds, bo
 //--------------------------------------------------------------------------------------------------
 void libABFE498B_gt_AP_Triggers_Debug_skipTransmissions_Init () {
     libABFE498B_gt_AP_Triggers_Debug_skipTransmissions = TriggerCreate("libABFE498B_gt_AP_Triggers_Debug_skipTransmissions_Func");
-    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_Debug_skipTransmissions, c_playerAny, "-skip", true);
-    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_Debug_skipTransmissions, c_playerAny, "-s", true);
+    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_Debug_skipTransmissions, c_playerAny, "-skip", false);
+    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_Debug_skipTransmissions, c_playerAny, "-s", false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -14214,6 +14258,113 @@ void libABFE498B_gt_AP_Triggers_Debug_ArtanisAspectsActive_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: AP_Triggers_InitMusic
+//--------------------------------------------------------------------------------------------------
+bool libABFE498B_gt_AP_Triggers_InitMusic_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libABFE498B_gv_aP_Triggers_Soundtrack[1] = "Music_TerrLow_All";
+    libABFE498B_gv_aP_Triggers_RaceNames[1] = StringExternal("Param/Value/lib_ABFE498B_08043E1F");
+    libABFE498B_gv_aP_Triggers_Soundtrack[2] = "Music_ZergLow_All";
+    libABFE498B_gv_aP_Triggers_RaceNames[2] = StringExternal("Param/Value/lib_ABFE498B_0DD88F24");
+    libABFE498B_gv_aP_Triggers_Soundtrack[3] = "Music_ProtLow_All";
+    libABFE498B_gv_aP_Triggers_RaceNames[3] = StringExternal("Param/Value/lib_ABFE498B_F19217AF");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libABFE498B_gt_AP_Triggers_InitMusic_Init () {
+    libABFE498B_gt_AP_Triggers_InitMusic = TriggerCreate("libABFE498B_gt_AP_Triggers_InitMusic_Func");
+    TriggerAddEventMapInit(libABFE498B_gt_AP_Triggers_InitMusic);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Triggers_ChangeMusic
+//--------------------------------------------------------------------------------------------------
+bool libABFE498B_gt_AP_Triggers_ChangeMusic_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_track;
+    int lv_race;
+    string lv_music;
+    text lv_text1;
+    text lv_text2;
+
+    // Automatic Variable Declarations
+    string auto7EE59BFF_val;
+
+    // Variable Initialization
+
+    // Conditions
+    if (testConds) {
+        if (!(((StringWord(EventChatMessage(false), 1) == "-m") || (StringWord(EventChatMessage(false), 1) == "-music")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, true);
+    if ((StringLength(StringWord(EventChatMessage(false), 2)) > 0)) {
+        lv_track = StringToInt(StringWord(EventChatMessage(false), 2));
+    }
+    else {
+        lv_track = 0;
+    }
+    if ((StringLength(StringWord(EventChatMessage(false), 3)) > 0)) {
+        lv_race = StringToInt(StringWord(EventChatMessage(false), 3));
+    }
+    else {
+        lv_race = 0;
+    }
+    if ((lv_track <= 0)) {
+        lv_text1 = StringExternal("Param/Value/lib_ABFE498B_0BC9D81C");
+        lv_track = c_soundtrackIndexAny;
+    }
+    else {
+        TextExpressionSetToken("Param/Expression/lib_ABFE498B_8683CB8E", "A", IntToText(lv_track));
+        lv_text1 = TextExpressionAssemble("Param/Expression/lib_ABFE498B_8683CB8E");
+        lv_track -= 1;
+    }
+    if (((lv_race <= 0) || (lv_race > 3))) {
+        auto7EE59BFF_val = PlayerRace(EventPlayer());
+        if (auto7EE59BFF_val == "Terr") {
+            lv_race = 1;
+        }
+        else if (auto7EE59BFF_val == "Zerg") {
+            lv_race = 2;
+        }
+        else if (auto7EE59BFF_val == "Prot") {
+            lv_race = 3;
+        }
+        else {
+        }
+    }
+
+    lv_music = libABFE498B_gv_aP_Triggers_Soundtrack[lv_race];
+    lv_text2 = libABFE498B_gv_aP_Triggers_RaceNames[lv_race];
+    TextExpressionSetToken("Param/Expression/lib_ABFE498B_E115F994", "A", lv_text1);
+    TextExpressionSetToken("Param/Expression/lib_ABFE498B_E115F994", "B", lv_text2);
+    TriggerDebugOutput(1, TextExpressionAssemble("Param/Expression/lib_ABFE498B_E115F994"), true);
+    Wait(1.0, c_timeReal);
+    SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, lv_music, c_soundtrackCueAny, lv_track, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libABFE498B_gt_AP_Triggers_ChangeMusic_Init () {
+    libABFE498B_gt_AP_Triggers_ChangeMusic = TriggerCreate("libABFE498B_gt_AP_Triggers_ChangeMusic_Func");
+    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_ChangeMusic, c_playerAny, "-music", false);
+    TriggerAddEventChatMessage(libABFE498B_gt_AP_Triggers_ChangeMusic, c_playerAny, "-m", false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: AP_Triggers_tradeStructureBuilt
 //--------------------------------------------------------------------------------------------------
 bool libABFE498B_gt_AP_Triggers_tradeStructureBuilt_Func (bool testConds, bool runActions) {
@@ -14682,6 +14833,8 @@ void libABFE498B_InitTriggers () {
     libABFE498B_gt_AP_Triggers_Debug_ArtanisAspectsBoth_Init();
     libABFE498B_gt_AP_Triggers_Debug_ArtanisAspectsPassive_Init();
     libABFE498B_gt_AP_Triggers_Debug_ArtanisAspectsActive_Init();
+    libABFE498B_gt_AP_Triggers_InitMusic_Init();
+    libABFE498B_gt_AP_Triggers_ChangeMusic_Init();
     libABFE498B_gt_AP_Triggers_tradeStructureBuilt_Init();
     libABFE498B_gt_AP_Triggers_InitSoA_Init();
     libABFE498B_gt_AP_Triggers_SoAWarpInReinforcementsSetup_Init();

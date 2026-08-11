@@ -324,6 +324,31 @@
     <CValidatorUnitType id="AP_IsAPBanshee">
         <Value value="AP_Banshee"/>
     </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskPreyseekerMissiles">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_NotHaveBansheeMengskPreyseekerMissiles">
+        <Find value="0"/>
+        <Value value="AP_HaveBansheeMengskPreyseekerMissiles"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskShockwaveArtillery">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskShockwaveArtillery"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskEnergizedBacklash">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskEnergizedBacklash"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_CasterIsNotBacklashBarrageAndCasterIsRank1">
+        <CombineArray value="AP_CasterIsNotBacklashBarrage"/>
+        <CombineArray value="AP_CasterLevelGTE2"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="AP_CasterIsNotBacklashBarrage">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="AP_GhostHoldingFire">
         <Compare value="GT"/>
         <Behavior value="AP_GhostHoldFire"/>
@@ -7328,6 +7353,31 @@
         <Behavior value="AP_DamagedRecentlyByVoidRayPurifier"/>
         <RequireCasterUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_BansheeBarrageNotRecentlyHit">
+        <WhichUnit Value="Target"/>
+        <Compare value="Eq"/>
+        <Value value="0"/>
+        <Behavior value="AP_BansheeBarrageRecentlyHit"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_BansheeBarrageNotCycleMarked">
+        <WhichUnit Value="Target"/>
+        <Compare value="Eq"/>
+        <Value value="0"/>
+        <Behavior value="AP_BansheeBarrageCycleMark"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="AP_BansheeBarrageValidTarget">
+        <Type value="And"/>
+        <CombineArray value="AP_BansheeBarrageNotRecentlyHit"/>
+    </CValidatorCombine>
+    <CValidatorLocationEnumArea id="AP_BansheeBarrageAllMarked">
+        <WhichLocation Value="CasterUnit"/>
+        <AreaArray Radius="8" Validator="AP_BansheeBarrageNotCycleMarked"/>
+        <Compare value="Eq"/>
+        <Count value="0"/>
+        <SearchFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
     <CValidatorCombine id="AP_SITechLabIsDetached">
         <Type value="And"/>
         <CombineArray value="AP_SITechLabNotFactory"/>
@@ -7407,6 +7457,10 @@
         <CombineArray value="AP_NoYoink"/>
     </CValidatorCombine>
     <CValidatorUnitCompareSpeed id="AP_InfestedDiamondbackIsMoving">
+        <Compare value="GT"/>
+        <Value value="0.125"/>
+    </CValidatorUnitCompareSpeed>
+    <CValidatorUnitCompareSpeed id="AP_UnitIsMoving">
         <Compare value="GT"/>
         <Value value="0.125"/>
     </CValidatorUnitCompareSpeed>
@@ -7894,6 +7948,18 @@
     <CValidatorUnitCompareBehaviorCount id="AP_HasWraithCloak">
         <Value value="1"/>
         <Behavior value="AP_WraithCloak"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasBansheeMengskCloak">
+        <Value value="1"/>
+        <Behavior value="AP_BansheeMengskCloak"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_HasBansheeMengskBacklashBarrage">
+        <Value value="1"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AP_NotBansheeMengskBacklashBarrage">
+        <Value value="0"/>
+        <Behavior value="AP_BansheeMengskBacklashBarrageChannel"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareVital id="AP_TargetHasGE40Energy">
         <Compare value="GE"/>
@@ -8971,4 +9037,9 @@
         <CombineArray value="AP_CasterIsMarauder"/>
         <CombineArray value="AP_CasterIsHammerSecurity"/>
     </CValidatorCombine>
+    <CValidatorLocationCompareRange id="AP_ImmortalThornsRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="15"/>
+    </CValidatorLocationCompareRange>
 </Catalog>

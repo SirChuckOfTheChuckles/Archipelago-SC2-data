@@ -863,7 +863,7 @@ void gf_handleUnitGarrisonEnter (unit lp_enteredUnit) {
     // Variable Initialization
 
     // Implementation
-    if ((libNCMI_gf_GameIsOver() == false) && (libNCMI_gf_PlayerInCinematicModeCampaign() == false) && (TriggerIsEnabled(TriggerGetCurrent()) == true) && (lp_enteredUnit != gv_nova) && (UnitFilterMatch(lp_enteredUnit, gv_pLAYER_01_USER, UnitFilter((1 << c_targetFilterGround), 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterWorker) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterHallucination - 32)) | (1 << (c_targetFilterSummoned - 32)))) == true) && (UnitHasBehavior(lp_enteredUnit, "AP_HallucinationTimedLife") == false) && (UnitHasBehavior(lp_enteredUnit, "AP_HighTemplarSCBWHallucination@TimedLife") == false) && (gv_currentStage == 1)) {
+    if ((libNCMI_gf_GameIsOver() == false) && (libNCMI_gf_PlayerInCinematicModeCampaign() == false) && (TriggerIsEnabled(TriggerGetCurrent()) == true) && (lp_enteredUnit != gv_nova) && (UnitFilterMatch(lp_enteredUnit, gv_pLAYER_01_USER, UnitFilter((1 << c_targetFilterGround), 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterWorker) | (1 << c_targetFilterMissile) | (1 << c_targetFilterUncommandable), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterHallucination - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterSummoned - 32)))) == true) && (UnitHasBehavior(lp_enteredUnit, "AP_HallucinationTimedLife") == false) && (UnitHasBehavior(lp_enteredUnit, "AP_HighTemplarSCBWHallucination@TimedLife") == false) && (gv_currentStage == 1)) {
         autoA03C75C1_ae = gv_s1_GarrisonSpotsCount;
         lv_iter = 1;
         for ( ; ( (autoA03C75C1_ai >= 0 && lv_iter <= autoA03C75C1_ae) || (autoA03C75C1_ai < 0 && lv_iter >= autoA03C75C1_ae) ) ; lv_iter += autoA03C75C1_ai ) {
@@ -1612,10 +1612,11 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         libABFE498B_gv_aP_Triggers_Option_overridePlayerRace = "Zerg";
         libABFE498B_gv_aP_Triggers_skipCutscenes = true;
         libABFE498B_gv_aP_Triggers_DebugMode = true;
-        libABFE498B_gv_aP_Triggers_Option_HeroPresence = 0;
+        libABFE498B_gv_aP_Triggers_Option_HeroPresence = 2;
         libABFE498B_gf_AP_Triggers_setDifficulty("B");
         libABFE498B_gf_AP_Triggers_setGameSpeed("5");
         libABFE498B_gf_AP_Triggers_Debug_Tech(lib5BD4895D_gf_AP_Core_getUser(), 2);
+        libABFE498B_gf_AP_Triggers_Zerg_SwarmQueenDeepTunnel(1);
         TriggerExecute(libABFE498B_gv_aP_Triggers_onDifficultyBrutal, true, false);
     }
 
@@ -2756,6 +2757,10 @@ void gt_DebugIntro_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_DebugStage2FindIntel_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    unitgroup auto2F8948D4_g;
+    int auto2F8948D4_u;
+    unit auto2F8948D4_var;
+
     // Conditions
     if (testConds) {
         if (!((libABFE498B_gv_aP_Triggers_DebugMode == true))) {
@@ -2782,7 +2787,16 @@ bool gt_DebugStage2FindIntel_Func (bool testConds, bool runActions) {
 
     TriggerDebugOutput(1, StringExternal("Param/Value/2440A812"), true);
     TriggerEnable(TriggerGetCurrent(), false);
+    TriggerExecute(gt_ObjectiveFillGarrisonsCreate, true, true);
     TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, true);
+    libABFE498B_gf_AP_Triggers_Debug_reviveKerrigan(EventPlayer());
+    auto2F8948D4_g = libABFE498B_gv_aP_Triggers_HeroUnits;
+    auto2F8948D4_u = UnitGroupCount(auto2F8948D4_g, c_unitCountAll);
+    for (;; auto2F8948D4_u -= 1) {
+        auto2F8948D4_var = UnitGroupUnitFromEnd(auto2F8948D4_g, auto2F8948D4_u);
+        if (auto2F8948D4_var == null) { break; }
+        libABFE498B_gf_AP_Triggers_Debug_reviveHero(auto2F8948D4_var);
+    }
     TriggerExecute(gt_S1GarrisonsAllFilledUp, true, true);
     return true;
 }
@@ -2799,6 +2813,9 @@ void gt_DebugStage2FindIntel_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_DebugStage3CatchStationOfficer_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    unitgroup auto92A3FE42_g;
+    int auto92A3FE42_u;
+    unit auto92A3FE42_var;
     unitgroup auto5BFC4F4B_g;
     int auto5BFC4F4B_u;
     unit auto5BFC4F4B_var;
@@ -2837,6 +2854,17 @@ bool gt_DebugStage3CatchStationOfficer_Func (bool testConds, bool runActions) {
     TriggerDebugOutput(1, StringExternal("Param/Value/0FC28238"), true);
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerEnable(gt_DebugStage2FindIntel, false);
+    TriggerExecute(gt_ObjectiveFillGarrisonsCreate, true, true);
+    TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, true);
+    TriggerExecute(gt_ObjectiveReachCommunicationsHubCreate, true, true);
+    libABFE498B_gf_AP_Triggers_Debug_reviveKerrigan(EventPlayer());
+    auto92A3FE42_g = libABFE498B_gv_aP_Triggers_HeroUnits;
+    auto92A3FE42_u = UnitGroupCount(auto92A3FE42_g, c_unitCountAll);
+    for (;; auto92A3FE42_u -= 1) {
+        auto92A3FE42_var = UnitGroupUnitFromEnd(auto92A3FE42_g, auto92A3FE42_u);
+        if (auto92A3FE42_var == null) { break; }
+        libABFE498B_gf_AP_Triggers_Debug_reviveHero(auto92A3FE42_var);
+    }
     gv_currentStage = 2;
     SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryAmbience, "Ambience_TarsonisCityUnderground_Quad", c_soundtrackCueAny, c_soundtrackIndexAny, true);
     auto5BFC4F4B_g = UnitGroup(null, c_playerAny, RegionFromId(7), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32))), 0);
@@ -2844,7 +2872,7 @@ bool gt_DebugStage3CatchStationOfficer_Func (bool testConds, bool runActions) {
     for (;; auto5BFC4F4B_u -= 1) {
         auto5BFC4F4B_var = UnitGroupUnitFromEnd(auto5BFC4F4B_g, auto5BFC4F4B_u);
         if (auto5BFC4F4B_var == null) { break; }
-        if ((auto5BFC4F4B_var != gv_nova)) {
+        if ((auto5BFC4F4B_var != gv_nova) && (UnitGroupHasUnit(libABFE498B_gv_aP_Triggers_HeroUnits, auto5BFC4F4B_var) == false)) {
             UnitRemove(auto5BFC4F4B_var);
         }
 
@@ -2860,23 +2888,15 @@ bool gt_DebugStage3CatchStationOfficer_Func (bool testConds, bool runActions) {
     libNtve_gf_ShowHideDoodadsInRegion(true, RegionFromId(13), "ScientistCorpseGory");
     libNtve_gf_ShowHideDoodadsInRegion(true, RegionFromId(13), "ColonistCorpse");
     libNtve_gf_ShowHideDoodadsInRegion(true, RegionFromId(13), "BloodSplats");
-    UnitAbilityEnable(gv_nova, "NovaNukeTimer", false);
     GameSetLighting(gv_lighting_Stage02, 0.0);
     RegionPlayableMapSet(RegionEntireMap());
     UnitSetPosition(gv_nova, PointWithOffset(PointFromId(794), -2.0, -2.0), false);
     Wait(0.0625, c_timeGame);
     CameraPan(gv_pLAYER_01_USER, UnitGetPosition(gv_nova), 0.0, -1, 10.0, false);
-    libNovC_gf_UnequipNovaEquipmentForSlot("EQPSlotSuit");
-    libNovC_gf_EnableDisableNovaEquipment(true, "EQPSuitItem1");
-    libNovC_gf_UnequipNovaEquipmentForSlot("EQPSlotHelmet");
-    libNovC_gf_EnableDisableNovaEquipment(true, "EQPHelmetItem1");
-    libNovC_gf_UnequipNovaEquipmentForSlot("EQPSlotGadget");
-    libNovC_gf_EnableDisableNovaEquipment(true, "EQPGadgetItem4");
-    libNovC_gf_UnequipNovaEquipmentForSlot("EQPSlotWeapon");
-    libNovC_gf_EnableDisableNovaEquipment(true, "EQPWeaponItem3");
-    TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "NovaWeaponMinScanRangeZero", 1);
-    UnitAbilityEnable(gv_nova, "NovaPsiStrike", true);
-    UnitAbilityShow(gv_nova, "NovaPsiStrike", true);
+    TriggerExecute(gt_ObjectiveFillGarrisonsComplete, true, true);
+    lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_ALL_GARRISONS);
+    TriggerExecute(gt_S1CleanUpSection01, true, true);
+    TriggerExecute(gt_S2CleanUpSection02, true, true);
     TriggerExecute(gt_S2NovaEntersBeaconIntelQ, false, true);
     return true;
 }
@@ -4477,6 +4497,10 @@ void gt_S1GarrisonFilledQ_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_S1GarrisonsAllFilledUp_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    unitgroup auto6232D8B6_g;
+    int auto6232D8B6_u;
+    unit auto6232D8B6_var;
+
     // Conditions
     if (testConds) {
         if (!((libNCMI_gf_GameIsOver() == false))) {
@@ -4500,7 +4524,15 @@ bool gt_S1GarrisonsAllFilledUp_Func (bool testConds, bool runActions) {
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, false);
     TriggerExecute(gt_ObjectiveFillGarrisonsComplete, true, true);
-    libNtve_gf_ChangeUnitDamage(gv_nova, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
+    libABFE498B_gf_AP_Triggers_Debug_reviveKerrigan(gv_pLAYER_01_USER);
+    auto6232D8B6_g = libABFE498B_gv_aP_Triggers_HeroUnits;
+    auto6232D8B6_u = UnitGroupCount(auto6232D8B6_g, c_unitCountAll);
+    for (;; auto6232D8B6_u -= 1) {
+        auto6232D8B6_var = UnitGroupUnitFromEnd(auto6232D8B6_g, auto6232D8B6_u);
+        if (auto6232D8B6_var == null) { break; }
+        libABFE498B_gf_AP_Triggers_Debug_reviveHero(auto6232D8B6_var);
+        libNtve_gf_ChangeUnitDamage(auto6232D8B6_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
+    }
     if ((gv_achievement_PlayerSupplyExceeded35 == false) && (libLotv_gf_DifficultyValueInt2(0, 0, 1, 1) == 1)) {
     }
 
@@ -11743,6 +11775,9 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
     unitgroup auto48A69EC5_g;
     int auto48A69EC5_u;
     unit auto48A69EC5_var;
+    unitgroup autoF23E3B77_g;
+    int autoF23E3B77_u;
+    unit autoF23E3B77_var;
     playergroup auto4544C4E9_g;
     unitgroup autoA3F09016_g;
     int autoA3F09016_u;
@@ -11788,8 +11823,14 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
     VisExploreArea(gv_pLAYER_01_USER, RegionEntireMap(), false, false);
     RegionPlayableMapSet(RegionFromId(8));
     TriggerEnable(gt_VictoryStatDOMKills, true);
-    UnitIssueOrder(gv_nova, Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
-    libNtve_gf_ChangeUnitDamage(gv_nova, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full);
+    autoF23E3B77_g = libABFE498B_gv_aP_Triggers_HeroUnits;
+    autoF23E3B77_u = UnitGroupCount(autoF23E3B77_g, c_unitCountAll);
+    for (;; autoF23E3B77_u -= 1) {
+        autoF23E3B77_var = UnitGroupUnitFromEnd(autoF23E3B77_g, autoF23E3B77_u);
+        if (autoF23E3B77_var == null) { break; }
+        UnitIssueOrder(autoF23E3B77_var, Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
+        libNtve_gf_ChangeUnitDamage(autoF23E3B77_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Full);
+    }
     if ((gv_cinematicCompleted == false)) {
         UnitSetPosition(gv_nova, PointFromId(163), false);
         UnitIssueOrder(gv_nova, OrderTargetingPoint(AbilityCommand("move", 4), PointWithOffsetPolar(PointFromId(163), 1.0, PointGetFacing(PointFromId(163)))), c_orderQueueAddToEnd);
