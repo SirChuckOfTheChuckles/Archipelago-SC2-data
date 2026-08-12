@@ -217,6 +217,7 @@
 <Unit id="AP_Queen"/>
 <Unit id="AP_SpawningPool"/>
 <Unit id="AP_InfestationPit"/>
+<Unit id="AP_RoachWarren"/>
 <Unit id="AP_ZergMercenaryCompound"/>
 <Unit id="AP_PrimalIgniter"/>
 </Preload>
