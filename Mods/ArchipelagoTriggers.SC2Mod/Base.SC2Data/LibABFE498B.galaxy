@@ -698,10 +698,10 @@ void libABFE498B_gf_AP_Triggers_unlockTerranArmory8 (int lp_player, int lp_bitAr
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardAddictiveSupplements, // 21
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardBolsteredBarrier, // 22
         libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardSovereignNeosteel, // 23
-        ap_triggers_PlayerConsumer_sig, // 24
-        ap_triggers_PlayerConsumer_sig, // 25
-        ap_triggers_PlayerConsumer_sig, // 26
-        ap_triggers_PlayerConsumer_sig, // 27
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery, // 24
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles, // 25
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash, // 26
+        libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors, // 27
         ap_triggers_PlayerConsumer_sig, // 28
         ap_triggers_PlayerConsumer_sig // 29
     );
@@ -4966,6 +4966,30 @@ void libABFE498B_gf_AP_Triggers_Terran_unlockEmperorsShadowNemesisRounds (int lp
     // Automatic Variable Declarations
     // Implementation
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_GhostMengskNemesisRounds", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfShockwaveArtillery (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskShockwaveArtillery", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfPreyseekerMissiles (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskPreyseekerMissiles", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfEnergizedBacklash (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskEnergizedBacklash", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskElusiveRotors", 1);
 }
 
 void libABFE498B_gf_AP_Triggers_Terran_unlockHiveMindEmulatorZerg (int lp_player) {
@@ -12347,8 +12371,6 @@ unit libABFE498B_gf_AP_Triggers_VoidDuplicate_prepareUnit (unit lp_u) {
     if ((libABFE498B_gf_AP_Triggers_VoidDuplicate_checkTracker(lv_index, libABFE498B_gv_aP_Triggers_VoidDuplicate_Threshold) == true)) {
         UnitCreate(1, lv_type, 0, lv_p, UnitGetPosition(lv_u), UnitGetFacing(lv_u));
         lv_new = UnitLastCreated();
-        UnitSetPropertyFixed(lv_new, c_unitPropLife, UnitGetPropertyFixed(lv_u, c_unitPropLife, c_unitPropCurrent));
-        UnitSetPropertyFixed(lv_new, c_unitPropShields, UnitGetPropertyFixed(lv_u, c_unitPropShields, c_unitPropCurrent));
         UnitSetPropertyFixed(lv_new, c_unitPropEnergy, UnitGetPropertyFixed(lv_u, c_unitPropEnergy, c_unitPropCurrent));
         libNtve_gf_CreateActorAtPoint("AP_ShadowDeathModel", UnitGetPosition(lv_new));
         UnitBehaviorAdd(lv_new, "AP_VoidShade", lv_new, 1);
@@ -13171,6 +13193,7 @@ bool libABFE498B_gt_AP_HeroChoiceClicked_Func (bool testConds, bool runActions) 
         }
     }
     return true;
+    return true;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -13265,8 +13288,6 @@ bool libABFE498B_gt_AP_Triggers_VoidDuplicate_sendWave_Func (bool testConds, boo
         if ((libABFE498B_gf_AP_Triggers_VoidDuplicate_checkTracker(lv_index, libABFE498B_gv_aP_Triggers_VoidDuplicate_Threshold) == true)) {
             UnitCreate(1, lv_type, 0, lv_p, UnitGetPosition(lv_u), UnitGetFacing(lv_u));
             lv_new = UnitLastCreated();
-            UnitSetPropertyFixed(lv_new, c_unitPropLife, UnitGetPropertyFixed(lv_u, c_unitPropLife, c_unitPropCurrent));
-            UnitSetPropertyFixed(lv_new, c_unitPropShields, UnitGetPropertyFixed(lv_u, c_unitPropShields, c_unitPropCurrent));
             UnitSetPropertyFixed(lv_new, c_unitPropEnergy, UnitGetPropertyFixed(lv_u, c_unitPropEnergy, c_unitPropCurrent));
             libNtve_gf_CreateActorAtPoint("AP_ShadowDeathModel", UnitGetPosition(lv_new));
             UnitBehaviorAdd(lv_new, "AP_VoidShade", lv_new, 1);

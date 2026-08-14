@@ -4870,6 +4870,7 @@
     <CActorSound id="AP_Banshee_CloakOff" parent="SoundOneShot">
         <Terms value="ValidateUnit NotCloakedAndNotDead"/>
         <On Terms="Behavior.AP_BansheeCloak.Off" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskCloak.Off" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.Off" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloakFree.Off" Send="Create"/>
         <Sound value="Banshee_CloakOff"/>
@@ -4877,6 +4878,7 @@
     <CActorSound id="AP_Banshee_CloakOn" parent="SoundOneShot">
         <Terms value="ValidateUnit NotCloaked"/>
         <On Terms="Behavior.AP_BansheeCloak.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskCloak.On" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.On" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloakFree.On" Send="Create"/>
         <Sound value="Banshee_CloakOn"/>
@@ -6089,7 +6091,7 @@
         <BarOffset value="155"/>
         <BarWidth value="160"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Starport.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Starport-mengsk.dds"/>
         </GroupIcon>
         <HeroIcon value="Assets\Textures\btn-building-terran-Starportmengsk.dds"/>
         <NameOffset value="110"/>
@@ -6098,7 +6100,7 @@
         <SoundArray index="Movement" value="Starport_Movement"/>
         <UnitIcon value="Assets\Textures\btn-building-terran-Starportmengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Starport.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Starport-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorModel id="AP_StarportMengskBuild" parent="TerranBuildingBuild">
@@ -8871,6 +8873,8 @@
     <CActorSound id="AP_BanelingCocoonBirth" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Finish; MorphTo AP_BanelingCocoon; MorphFrom AP_Zergling" Send="Create"/>
         <On Terms="AbilMorph.*.Cancel; MorphTo AP_BanelingCocoon; MorphFrom AP_Zergling" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_FourBanelingsCocoon; MorphFrom AP_Morphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Cancel; MorphTo AP_FourBanelingsCocoon; MorphFrom AP_Morphling" Send="Destroy"/>
         <Sound value="BanelingEgg_Creation"/>
     </CActorSound>
     <CActorModel id="AP_BanelingCocoonDeath">
@@ -12864,6 +12868,56 @@
         <Scale value="1.130000"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
+    <CActorModel id="AP_BansheeMengskBarrageCone">
+        <Model value="AP_Nova_ShotGunCone"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation; ValidatePlayer AP_HaveBansheeMengskPreyseekerMissiles" Send="SetScale 1.507500"/>
+        <HostSiteOps Ops="SOpAttachCenter SOpShadow SOp2DRotation"/>
+        <Host Subject="_Unit"/>
+        <Scale value="1.340000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="AP_BansheeMengskBarrageHowlIcon" parent="ModelAnimationStyleOneShot">
+        <Model value="AP_BansheeMengskBarrageHowlIcon"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOverhead SOpMoveUpByDot5"/>
+        <Scale value="2.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorSound id="AP_BansheeMengskBarrageHowlSound" parent="SoundOneShot">
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Send="Create"/>
+        <Sound value="AP_BansheeMengskBarrageHowl"/>
+    </CActorSound>
+    <CActorRange id="AP_BansheeMengskBarrageRange" parent="RangeAbil" abil="AP_BansheeMengskBacklashBarrage">
+        <On Terms="Abil.AP_BansheeMengskBacklashBarrage.ButtonHoverOn" Send="Create"/>
+        <On Terms="Abil.AP_BansheeMengskBacklashBarrage.ButtonHoverOff" Send="Destroy"/>
+        <Abil Link="AP_BansheeMengskBarrageRangeDummy"/>
+    </CActorRange>
+    <CActorBeamSimple id="AP_BansheeMengskBarrageAimTargetMarker" parent="BeamSimpleAnimationStyleContinuous">
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Send="Destroy"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+        <Model value="Hybrid_ProtossAdvanced_Experimented_MoebiusSeeker_Targeting"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="_Unit" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorBeamSimple>
+    <CActorSimple id="AP_BansheeMengskBarrageAimTargetTint">
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.On" Send="Create"/>
+        <On Terms="ActorCreation" Target="_Unit" Send="SetTintColor 255,50,50 0.125000 OneShot AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Target="_Unit" Send="ClearTintColor 0.125000 AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeBarrageAimTarget.Off" Send="Destroy"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="_Unit" Send="ClearTintColor 0.125000 AP_BansheeBarrageAimTarget"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Send="Destroy"/>
+        <On Terms="UnitDeath" Target="_Unit" Send="ClearTintColor 0.000000 AP_BansheeBarrageAimTarget"/>
+        <On Terms="UnitDeath" Send="Destroy"/>
+    </CActorSimple>
     <CActorModel id="AP_NovaWeaponHellfireShotgunBlastLaunchModel">
         <Flags index="SuppressSaveLoad" value="1"/>
         <On Terms="Effect.AP_NovaWeaponHellfireShotgunBlastSearch.Start; At Caster" Send="Create"/>
@@ -14101,6 +14155,9 @@
     </CActorModel>
     <CActorTurret id="AP_PhoenixTurret">
         <On Terms="TurretEnable.AP_Phoenix" Send="Create"/>
+    </CActorTurret>
+    <CActorTurret id="AP_BansheeMengskTurret">
+        <On Terms="TurretEnable.AP_BansheeMengsk" Send="Create"/>
     </CActorTurret>
     <CActorSiteOpBankerUnit id="AP_SOpBankerBroodLord">
         <RollInActivationAngle value="15.000000"/>
@@ -19672,6 +19729,7 @@
         <ImpactPhysics Name="Attack" MatchKeys="Basic" Physics="AP_HiveQueenMeleeAttackForce"/>
     </CActorAction>
     <CActorAction id="AP_HiveQueenTalonsLMAttack" parent="GenericAttack" effectImpact="AP_HiveQueenTalonsDamage" effectLaunch="AP_HiveQueenTalonsLM">
+        <Missile value="AP_TalonsLMAttackMissile"/>
         <LaunchAttachQuery Methods="Weapon"/>
         <LaunchAssets Sound="AcidSpines_AttackLaunch"/>
         <ImpactMap index="None" Model="QueenMissileImpact" Sound="AcidSpines_AttackImpact"/>
@@ -19680,6 +19738,7 @@
         <ImpactPhysics Name="AcidSpinesImpact" MatchKeys="Basic" Physics="QueenAttackDeathForce"/>
     </CActorAction>
     <CActorAction id="AP_HiveQueenAcidSpinesAttack" parent="GenericAttack" effectImpact="AP_HiveQueenAcidSpinesDamage" effectLaunch="AP_HiveQueenAcidSpinesLM">
+        <Missile value="AP_AcidSpinesAttackMissile"/>
         <LaunchAttachQuery Methods="Weapon"/>
         <LaunchAssets Sound="AcidSpines_AttackLaunch"/>
         <ImpactMap index="None" Sound="AcidSpines_AttackImpact"/>
@@ -31122,6 +31181,30 @@
         <LaunchAssets Sound="Banshee_AttackLaunch2"/>
         <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
     </CActorAction>
+    <CActorAction id="AP_BansheeMengskBacklashAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBacklashDamage" effectLaunch="AP_BansheeMengskBacklashLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBacklash"/>
+        <Missile value="AP_BansheeMengskBacklashAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBacklashPreyseekerAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBacklashDamage" effectLaunch="AP_BansheeMengskBacklashPreyseekerLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBacklashPreyseeker"/>
+        <Missile value="AP_BansheeMengskPreyseekerAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="AP_BansheeMengskPreyseekerImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBarrageAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarrageLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBarrage"/>
+        <Missile value="AP_BansheeMengskBacklashAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="BansheeAttackImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
+    <CActorAction id="AP_BansheeMengskBarragePreyseekerAttack" parent="GenericAttack" effectImpact="AP_BansheeMengskBarrageDamage" effectLaunch="AP_BansheeMengskBarragePreyseekerLM">
+        <LaunchAttachQuery Methods="AP_AMPatternBansheeMengskBarragePreyseeker"/>
+        <Missile value="AP_BansheeMengskPreyseekerAttackMissile"/>
+        <LaunchAssets Sound="Banshee_AttackLaunch2"/>
+        <ImpactMap index="None" Model="AP_BansheeMengskPreyseekerImpact" Sound="Banshee_AttackImpact2"/>
+    </CActorAction>
     <CActorUnit id="AP_InfestedDuskWing" parent="GenericUnitStandard" unitName="AP_InfestedDuskWing">
         <Aliases value="_UnitLarge"/>
         <On Terms="ActorCreation" Send="Create AP_InfestedDuskWingInfestation"/>
@@ -31183,6 +31266,11 @@
         <On Terms="UnitDeath" Send="Destroy"/>
     </CActorModel>
     <CActorMissile id="AP_DuskWingBansheeAttackMissile" parent="GenericAttackMissile" unitName="AP_DuskWingWeapon"/>
+    <CActorMissile id="AP_BansheeMengskBacklashAttackMissile" parent="GenericAttackMissile" unitName="AP_BansheeMengskBacklashWeapon"/>
+    <CActorMissile id="AP_BansheeMengskPreyseekerAttackMissile" parent="GenericAttackMissile" unitName="AP_BansheeMengskPreyseekerWeapon">
+        <Model value="AP_BansheeMengskPreyseekerWeapon"/>
+        <On Terms="ActorCreation" Send="SetTintColor 255,144,144"/>
+    </CActorMissile>
     <CActorModel id="AP_DuskWingBansheeCarpetBombModel" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_DuskWingScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
         <On Terms="Effect.AP_InfestedScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
@@ -31191,6 +31279,14 @@
     <CActorSound id="AP_DuskWingBansheeCarpetBombSound" parent="SoundOneShot">
         <On Terms="Effect.AP_DuskWingScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
         <On Terms="Effect.AP_InfestedScreecherMissilesCarpetBombSearchArea.Start" Send="Create"/>
+        <Sound value="AP_BansheeCarpetBombImpact"/>
+    </CActorSound>
+    <CActorModel id="AP_BansheeMengskScreecherMissilesCarpetBombModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.AP_BansheeMengskShockwaveSearchArea.Start" Send="Create"/>
+        <Model value="AP_BansheeCarpetBombImpact"/>
+    </CActorModel>
+    <CActorSound id="AP_BansheeMengskScreecherMissilesCarpetBombSound" parent="SoundOneShot">
+        <On Terms="Effect.AP_BansheeMengskShockwaveSearchArea.Start" Send="Create"/>
         <Sound value="AP_BansheeCarpetBombImpact"/>
     </CActorSound>
     <CActorModel id="AP_BansheeMercenaryReentry" parent="ModelAdditionNoAnims">
@@ -36340,6 +36436,9 @@
         <On Terms="Behavior.AP_BansheeCloak.On" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloak.On" Send="StatusIncrement ActiveCount"/>
         <On Terms="Behavior.AP_BansheeCloak.Off" Send="StatusDecrement ActiveCount"/>
+        <On Terms="Behavior.AP_BansheeMengskCloak.On" Send="Create"/>
+        <On Terms="Behavior.AP_BansheeMengskCloak.On" Send="StatusIncrement ActiveCount"/>
+        <On Terms="Behavior.AP_BansheeMengskCloak.Off" Send="StatusDecrement ActiveCount"/>
         <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.On" Send="Create"/>
         <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.On" Send="StatusIncrement ActiveCount"/>
         <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.Off" Send="StatusDecrement ActiveCount"/>
@@ -44467,47 +44566,107 @@
         <Sound value="Reaper_JumpLaunch"/>
         <On Terms="Behavior.AP_SCVCliffJump.Launch" Send="Create"/>
     </CActorSound>
+    <CActorEventMacro id="AP_BansheeMengskGimbalMacro">
+        <On Terms="UnitBirth" Send="Create AP_PropsHost"/>
+        <On Terms="UnitBirth" Send="Create AP_BansheeMengskGimbalModel"/>
+        <On Terms="UnitBirth" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalBirth"/>
+        <On Terms="UnitBirth" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalSetUp"/>
+        <On Terms="SupporterDestruction" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="UnitDeath" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="ActorOrphan" Target="_AP_BansheeMengskGimbal" Send="Signal GimbalDeath"/>
+        <On Terms="SupporterDestruction" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="UnitDeath" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="AP_PropsHost" Send="Destroy"/>
+        <Supporter Subject="_Unit"/>
+    </CActorEventMacro>
+    <CActorLookAt id="AP_BansheeMengskGimbalTurretLookAt" parent="UnitTurret">
+        <On Terms="TurretEnable.AP_BansheeMengsk" Send="Create"/>
+        <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
+        <Types Id="DefaultLookAtTurret">
+            <Start Group="Turret_Right" Weight="1" Rate="1500.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="1500.000000"/>
+        </Types>
+    </CActorLookAt>
+    <CActorLookAt id="AP_BansheeMengskBarrageGimbalTurretLookAt" parent="UnitTurret">
+        <On Terms="TurretEnable.AP_BansheeMengskBarrage" Send="Create"/>
+        <Supporter Subject="_AP_BansheeMengskGimbal" Scope="Caster" ReachAcrossEffectTrees="1"/>
+        <Types Id="DefaultLookAtTurret">
+            <Start Group="Turret_Right" Weight="1" Rate="1800.000000"/>
+            <Stop Group="Turret_Right" Weight="1" Rate="1800.000000"/>
+        </Types>
+    </CActorLookAt>
+    <CActorModel id="AP_BansheeMengskGimbalModel">
+        <Terms value="Cap 1"/>
+        <Aliases value="_AP_BansheeMengskGimbal"/>
+        <AcceptedTransfers index="FOWColor" value="1"/>
+        <AcceptedTransfers index="FOWShader" value="1"/>
+        <AcceptedTransfers index="Status" value="1"/>
+        <On Terms="Signal.*.GimbalDeath" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.GimbalDeath" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalDeath" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalDeath" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalDeath" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="SupporterDestruction" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="SupporterDestruction" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="_Unit" Send="RefClear ::Host"/>
+        <On Terms="ActorOrphan" Target="AP_PropsHost" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="AP_BansheeMengskGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="ActorOrphan" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Signal.*.GimbalBirth" Send="Create AP_BansheeMengskGimbalTurretLookAt"/>
+        <On Terms="Signal.*.GimbalBirth" Send="Create AP_BansheeMengskBarrageGimbalTurretLookAt"/>
+        <On Terms="TurretTarget.AP_BansheeMengsk.Set" Send="TimerKill DelayAnim"/>
+        <On Terms="TurretTarget.AP_BansheeMengsk.Set" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtEngage Continue"/>
+        <On Terms="TurretTarget.AP_BansheeMengsk.Clear" Send="TimerSet 1.375000 DelayAnim"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.On" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="TurretTarget.AP_BansheeMengskBarrage.Set" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtEngage Continue"/>
+        <On Terms="TimerExpired; TimerName DelayAnim" Target="AP_BansheeMengskGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="Behavior.AP_BansheeMengskBacklashBarrageChannel.Off" Target="AP_BansheeMengskBarrageGimbalTurretLookAt" Send="LookAtDisengage"/>
+        <On Terms="Signal.*.GimbalBirth" Send="SetOpacity 0.000000 0.000000 GimbalOpacity"/>
+        <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps AP_PropsHost"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefClear ::Host"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefSet ::Host _AP_BansheeMengskGimbal"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="RefSet ::HostForProps AP_PropsHost"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::HostForProps" Send="HostSiteOpsSet ::HostForProps SOpMoveDownByDot25"/>
+        <On Terms="Signal.*.GimbalSetUp" Target="::Main" Send="HostSiteOpsSet ::Host SOpAttachTarget"/>
+        <On Terms="Signal.*.GimbalSetUp" Send="RefSet ::HostForProps _Unit"/>
+        <HostForProps Subject="_Unit"/>
+        <Model value="Cyclone"/>
+        <AcceptedHostedPropTransfers index="BaseModelScale" value="0"/>
+        <AcceptedHostedPropTransfers index="CastShadows" value="0"/>
+        <AcceptedHostedPropTransfers index="CloakEffect" value="0"/>
+        <AcceptedHostedPropTransfers index="CreepEngulfment" value="0"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <AcceptedHostedPropTransfers index="LocalTintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="ModelMaterials" value="0"/>
+        <AcceptedHostedPropTransfers index="Opacity" value="0"/>
+        <AcceptedHostedPropTransfers index="TeamColor" value="0"/>
+        <AcceptedHostedPropTransfers index="TintColor" value="0"/>
+        <AcceptedHostedPropTransfers index="WarpGroup" value="0"/>
+        <Supporter Subject="_Unit"/>
+    </CActorModel>
     <CActorUnit id="AP_BansheeMengsk" parent="GenericUnitStandard" unitName="AP_BansheeMengsk">
         <Aliases value="_UnitLarge"/>
+        <Macros value="AP_BansheeMengskGimbalMacro"/>
         <CustomUnitStatusFrame value="AP_Coop_UnitStatus_Mengsk/MengskBanshee_StatusFrame"/>
         <StatusBarOn index="Custom" value="1"/>
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
-        <On Terms="UnitPortrait.*.Configure; ValidateUnit Cloaked" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End Instant"/>
-        <On Terms="UnitPortrait.*.Configure; ValidateUnit NotCloaked" Target="::PortraitGameSelf" Send="AnimBracketStop Visor Instant"/>
-        <On Terms="Behavior.AP_BansheeCloak.On" Send="StatusIncrement Cloaked"/>
-        <On Terms="Behavior.AP_CloakFieldEffect.On" Send="StatusIncrement Cloaked"/>
-        <On Terms="Behavior.CloakFieldEffect.On" Send="StatusIncrement Cloaked"/>
-        <On Terms="Behavior.AP_BansheeCloak.Off" Send="StatusDecrement Cloaked"/>
-        <On Terms="Behavior.AP_CloakFieldEffect.Off" Send="StatusDecrement Cloaked"/>
-        <On Terms="Behavior.CloakFieldEffect.Off" Send="StatusDecrement Cloaked"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.On" Send="StatusIncrement Cloaked"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.Off" Send="StatusDecrement Cloaked"/>
-        <On Terms="Behavior.AP_BansheeCloak.On; IsStatus Cloaked 1" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_BansheeCloak.Off; IsStatus Cloaked 0" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.AP_CloakFieldEffect.On; IsStatus Cloaked 1" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_CloakFieldEffect.Off; IsStatus Cloaked 0" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.CloakFieldEffect.On; IsStatus Cloaked 1" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.CloakFieldEffect.Off; IsStatus Cloaked 0" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.On" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.Off" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.On" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_BansheeCloakCrossSpectrumDampeners.Off" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.On" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.Off" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.On" Target="::PortraitGameSelf" Send="AnimBracketStart Visor Morph,Start Morph,Stand Morph,End"/>
-        <On Terms="Behavior.AP_BansheeCloakFree.Off" Target="::PortraitGameSelf" Send="AnimBracketStop Visor"/>
         <HostSiteOps Ops="SOpBankerBanshee"/>
         <Model value="AP_BansheeMengsk"/>
         <Baselines index="Walk" BlendIn="0.750000" BlendOut="1.000000"/>
         <BuildModel value="AP_BansheeMengsk"/>
         <DeathArray index="Normal" ModelLink="AP_BansheeMengskDeath" SoundLink="Banshee_Explode"/>
         <PlacementModel value="AP_BansheeMengsk"/>
-        <PortraitModel value="BansheePortrait"/>
+        <PortraitModel value="AP_BansheeMengskPortrait"/>
         <AbilSoundArray AbilCmd="AP_BansheeCloak,0" Sound="Banshee_CloakOnVO"/>
+        <AbilSoundArray AbilCmd="AP_BansheeMengskCloak,0" Sound="Banshee_CloakOnVO"/>
         <BarOffset value="60"/>
         <BarWidth value="90"/>
         <GroupIcon>
-            <Image value="Assets\Textures\Wireframe-Terran-Banshee.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Banshee-mengsk.dds"/>
         </GroupIcon>
         <HeroIcon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
         <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds"/>
@@ -44519,9 +44678,10 @@
         <SoundArray index="Attack" value="Banshee_Attack"/>
         <SoundArray index="Pissed" value="Banshee_Pissed"/>
         <SoundArray index="Movement" value="Banshee_Movement"/>
+        <AbilSoundArray AbilCmd="AP_BansheeMengskBacklashBarrage,On" Sound="AP_BansheeMengskBarrageQuote"/>
         <UnitIcon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
         <Wireframe>
-            <Image value="Assets\Textures\Wireframe-Terran-Banshee.dds"/>
+            <Image value="AP\Assets\Textures\Wireframe-Terran-Banshee-mengsk.dds"/>
         </Wireframe>
     </CActorUnit>
     <CActorBeamSimple id="AP_BansheeMengskRechargeBeam" parent="BeamSimpleAnimationStyleOneShot">
@@ -44549,9 +44709,6 @@
         <On Terms="Behavior.AP_BansheeMengskCloakField.On" Send="SetVisibility 1"/>
         <On Terms="Behavior.AP_BansheeMengskCloakField.Off" Send="SetVisibility"/>
         <Range value="6"/>
-    </CActorRange>
-    <CActorRange id="AP_BansheeMengskNightAssault_Range" parent="RangeAbil" abil="AP_BansheeMengskNightAssault">
-        <Abil Link="AP_BansheeMengskNightAssaultDummy"/>
     </CActorRange>
     <CActorModel id="AP_SIStukovRallyBeacon">
         <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
@@ -48765,4 +48922,38 @@
         <EditorCategories value=""/>
         <AutoScaleFactor value="0.300000"/>
     </CActorModel>
+    <CActorUnit id="AP_FourBanelingsCocoon" parent="GenericUnitMorph" unitName="AP_FourBanelingsCocoon">
+        <Aliases value="_UnitSmall"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_FourBanelingsCocoon; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_FourBanelingsCocoon; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
+        <HostSiteOps Ops="SOpRotVariancerForward30"/>
+        <Model value="BanelingCocoon"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <BuildModel value="BanelingCocoon"/>
+        <DeathArray index="Normal" ModelLink="BanelingCocoonDeath" SoundLink="BanelingEgg_Explode"/>
+        <PlacementModel value="BanelingCocoon"/>
+        <PortraitModel value="BanelingCocoonPortrait"/>
+        <BarOffset value="40"/>
+        <BarWidth value="36"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>
+        <ShieldArmorIcon value="Assets\Textures\btn-upgrade-zerg-swarmfrenzy.dds"/>
+        <SoundArray index="What" value="Egg_What"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,0,128,0"/>
+        </StatusColors>
+        <UnitIcon value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        <VitalColors index="Shields">
+            <ColorArray value="255,0,128,0"/>
+        </VitalColors>
+        <VitalNames index="Shields" value="Vital/ZergShields"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-BanelingEgg.dds"/>
+        </Wireframe>
+        <WireframeShieldColor value="255,0,128,0"/>
+    </CActorUnit>
 </Catalog>

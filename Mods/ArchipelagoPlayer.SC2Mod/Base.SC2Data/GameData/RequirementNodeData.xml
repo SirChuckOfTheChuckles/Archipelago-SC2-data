@@ -5573,6 +5573,22 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_BansheeAirstrike" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBansheeMengskElusiveRotorsCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_BansheeMengskElusiveRotors" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBansheeMengskPreyseekerMissilesCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_BansheeMengskPreyseekerMissiles" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBansheeMengskShockwaveArtilleryCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_BansheeMengskShockwaveArtillery" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeBansheeMengskEnergizedBacklashCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_BansheeMengskEnergizedBacklash" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeHHVikingPiercingAttacksCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_HHVikingPiercingAttacks" State="CompleteOnly"/>

@@ -1065,8 +1065,6 @@ Button/Name/AP_BanelingSplitterlingSplitPassive=Zersplitterung /// Division
 Button/Name/AP_Banshee=Banshee bauen /// Build Banshee
 Button/Name/AP_BansheeAdvancedOptics=Erweiterte Zieloptik /// Advanced Targeting Optics
 Button/Name/AP_BansheeMengsk=Night Wolf bauen /// Build Night Wolf
-Button/Name/AP_BansheeMengskNightAssaultOff=Beende Nachtangriff /// End Night Assault
-Button/Name/AP_BansheeMengskNightAssaultOn=Starte Nachtangriff /// Start Night Assault
 Button/Name/AP_BansheeMengskRecharge=Wiederaufladen /// Recharge
 Button/Name/AP_BansheeSpeed=Hyperflugrotoren erforschen /// Research Hyperflight Rotors
 Button/Name/AP_Banshee_BlackOpsAirstrike=Raketenbeschuss
@@ -2433,8 +2431,6 @@ Button/Tooltip/AP_BansheeAdvancedOptics=Erhöht die Angriffsreichweite von Bansh
 Button/Tooltip/AP_BansheeMengsk=Royale Wache für taktische Angriffe.<n/><n/><c val="#ColorAttackInfo">Kann Bodeneinheiten angreifen.</c> /// Royal Guard tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c> ///
 Button/Tooltip/AP_InfestedDuskWings=Angeheuert von den Raidern, leisteten die Dusk Wings während der Invasion von Char hervorragende Dienste, erlitten Verluste, sicherten aber letztendlich einen unmöglichen Sieg. Als sich Raynors Raiders und Kerrigans Schwarm später verbündeten, fanden es die Söldner beunruhigend, dass viele dieser Zwischenfälle nun an ihrer Seite kämpften...<n/><n/><c val="#ColorAttackInfo">Kann Bodeneinheiten angreifen.</c> /// Hired by the Raiders, the Dusk Wings served with distinction during the Invasion of Char, suffering casualties but securing an impossible victory in the end. When Raynor's Raiders and Kerrigan's Swarm later allied together, the mercenaries found it unsettling that many of those casualties worked alongside them again....<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BansheeMengskConsussionShells=Angriffe des Night Wolf Night verlangsamen alle Einheiten in einem Zielgebiet.<n/><n/><c val="#ColorAttackInfo">Massive Einheiten sind immun.</c> /// Wolf attack temporarily slows all units in target area.<n/><n/><c val="#ColorAttackInfo">Massive units are immune.</c>
-Button/Tooltip/AP_BansheeMengskNightAssaultOff=Stoppt den Nachtangriff um dem Night Wolf zu ermöglichen Energie wiederherzustellen. /// Stops Night Assault to allow Night Wolf to regain energy.
-Button/Tooltip/AP_BansheeMengskNightAssaultOn=Tarnt verbündete Einheiten nahe dem Night Wolf.<n/><n/><c val="f078ff">Entzieht <d ref="-1 * (Behavior,AP_BansheeMengskCloakField,Modification.VitalRegenArray[Energy])" precision="1"/> Energie pro Sekunde.</c> /// Cloaks friendly units near Night Wolf.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_BansheeMengskCloakField,Modification.VitalRegenArray[Energy])" precision="1"/> energy per second.</c>
 Button/Tooltip/AP_BansheeMengskRank1=<n/><c val="ffff8a">Rang 1:</c> Erhält die "Wiederaufladen" Fähigkeit. /// <n/><c val="ffff8a">Rank 1:</c> Gains Recharge ability.
 Button/Tooltip/AP_BansheeMengskRank1Preview=<n/><c val="777777">Rang 1: Erhält die "Wiederaufladen" Fähigkeit.</c> /// <n/><c val="777777">Rank 1: Gains Recharge ability.</c>
 Button/Tooltip/AP_BansheeMengskRank2=<n/><c val="ffff8a">Rang 2:</c> Erhält die "Schockmunition" Fähigkeit. /// <n/><c val="ffff8a">Rank 2:</c> Gains Concussive Shells ability.

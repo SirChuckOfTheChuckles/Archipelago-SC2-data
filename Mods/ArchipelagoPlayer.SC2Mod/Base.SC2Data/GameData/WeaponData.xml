@@ -3961,8 +3961,73 @@
         <Effect value="AP_WraithMengskAGLaunchMissile"/>
         <DisplayEffect value="AP_WraithMengskAGU"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="AP_BacklashRocketsMengsk" parent="AP_DuskWingBanshee">
+    <CWeaponLegacy id="AP_BacklashRocketsMengsk">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
         <DisplayName value="Weapon/Name/AP_BacklashRockets"/>
+        <DisplayEffect value="AP_BansheeMengskBacklashDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6"/>
+        <Range value="6"/>
+        <Period value="1.25"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Effect value="AP_BacklashRocketsMengskSet"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_BacklashRocketsMengskDisplay" parent="AP_BacklashRocketsMengsk">
+        <Options index="Hidden" value="0"/>
+        <Effect value=""/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_BacklashRocketsMengskMoving">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Disabled" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <DisplayName value="Weapon/Name/AP_BacklashRockets"/>
+        <DisplayEffect value="AP_BansheeMengskBacklashDamage"/>
+        <DisplayAttackCount value="2"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="6"/>
+        <Range value="6"/>
+        <Period value="1.25"/>
+        <Backswing value="0"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Arc value="0"/>
+        <ArcSlop value="15"/>
+        <Effect value="AP_BacklashRocketsMengskMovingSet"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AP_BansheeMengskBarrageTrackingWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Disabled" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="0"/>
+        <ArcSlop value="15"/>
+        <Period value="0.0625"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <AcquireTargetSorts>
+            <SortArray value="TSDistance"/>
+        </AcquireTargetSorts>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <Effect value="AP_BansheeMengskBarrageTrackingSet"/>
+        <RangeSlop value="2"/>
+        <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_SILongboltMissile">
         <EditorCategories value="Race:Zerg"/>

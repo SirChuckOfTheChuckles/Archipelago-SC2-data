@@ -526,6 +526,7 @@ Behavior/Name/AP_BanelingSpawn=Summoned
 Behavior/Name/AP_BansheeCloak=Cloak
 Behavior/Name/AP_BansheeCloakCrossSpectrumDampeners=Cloak
 Behavior/Name/AP_BansheeCloak_Stukov=Cloak
+Behavior/Name/AP_BansheeMengskBacklashBarrageChannel=Apocalypse Now!
 Behavior/Name/AP_BatteryOvercharge=Battery Overcharge
 Behavior/Name/AP_BattlecruiserBonusRange=Field-Assist Targeting System
 Behavior/Name/AP_BattlecruiserCloak=Cloak
@@ -885,6 +886,7 @@ Behavior/Tooltip/AP_BanelingSpawn=This unit was summoned by a Baneling Nest.
 Behavior/Tooltip/AP_BansheeCloak=This unit is cloaked and will only be revealed by detectors or effects.
 Behavior/Tooltip/AP_BansheeCloakCrossSpectrumDampeners=This unit is cloaked and will only be revealed by detectors or effects.
 Behavior/Tooltip/AP_BansheeCloak_Stukov=This unit is cloaked and will only be revealed by detectors or effects.
+Behavior/Tooltip/AP_BansheeMengskBacklashBarrageChannel=Firing a barrage of rockets at enemies in front of the Night Wolf.
 Behavior/Tooltip/AP_BatteryOvercharge=Restoration rate increased by <d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>%. Restoring shields does not consume energy.
 Behavior/Tooltip/AP_BattlecruiserBonusRange=+<d ref="Behavior,AP_BattlecruiserBonusRange,Modification.RangedWeaponRange"/> weapon range.
 Behavior/Tooltip/AP_BattlecruiserMengskBehemothReactorIndicator=Battlecruiser special abilities require 25 less energy to cast. Pride of Augustgrad cooldown-based ability cooldowns are 20% shorter.
@@ -1306,9 +1308,15 @@ Button/Name/AP_BanelingSplitterlingSplitPassive=Division
 Button/Name/AP_Banshee=Build Banshee
 Button/Name/AP_BansheeAdvancedOptics=Advanced Targeting Optics
 Button/Name/AP_BansheeMengsk=Build Night Wolf
-Button/Name/AP_BansheeMengskNightAssaultOff=End Night Assault
-Button/Name/AP_BansheeMengskNightAssaultOn=Start Night Assault
+Button/Name/AP_BansheeMengskBacklashBarrageOff=Apocalypse Later
+Button/Name/AP_BansheeMengskBacklashBarrageOn=Apocalypse Now!
+Button/Name/AP_BansheeMengskCloakOff=Decloak
+Button/Name/AP_BansheeMengskCloakOn=Cloak
+Button/Name/AP_BansheeMengskElusiveRotors=Elusive Rotors
+Button/Name/AP_BansheeMengskEnergizedBacklash=Energized Backlash
+Button/Name/AP_BansheeMengskPreyseekerMissiles=Preyseeker Missiles
 Button/Name/AP_BansheeMengskRecharge=Recharge
+Button/Name/AP_BansheeMengskShockwaveArtillery=Shockwave Artillery
 Button/Name/AP_BansheeSpeed=Hyperflight Rotors
 Button/Name/AP_Banshee_BlackOpsAirstrike=Rocket Barrage
 Button/Name/AP_Barracks=Build Barracks
@@ -1558,7 +1566,6 @@ Button/Name/AP_Ghost=Train Ghost
 Button/Name/AP_GhostAcademy=Build Shadow Ops
 Button/Name/AP_GhostHoldFire=Hold Fire
 Button/Name/AP_GhostMengsk=Train Emperor's Shadow
-Button/Name/AP_GhostMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_GhostMengskEMP=EMP Blast
 Button/Name/AP_GhostMengskEMPLongStun=EMP Blast
 Button/Name/AP_GhostMengskGuidedStrike=Sovereign Tactical Missiles
@@ -1576,7 +1583,6 @@ Button/Name/AP_GlialReconstitution=Glial Reconstitution
 Button/Name/AP_Goliath=Build Goliath
 Button/Name/AP_GoliathMengsk=Build Bulwark Company
 Button/Name/AP_GoliathMengskAresClassTargetingAddon=Ares-Class Targeting Add-on
-Button/Name/AP_GoliathMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_GoliathMengskJump=Jump Jets
 Button/Name/AP_GoliathMengskJumpJetsMKII=Jump Jets MKII
 Button/Name/AP_GoliathMengskMoebiusDefenseMatrix=Moebius Defense Matrix
@@ -1827,7 +1833,6 @@ Button/Name/AP_Marauder=Train Marauder
 Button/Name/AP_MarauderMengsk=Train Aegis Guard
 Button/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
 Button/Name/AP_MarauderMengskAttackSpeedBoost=High-Grade Stimpacks
-Button/Name/AP_MarauderMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_MarauderMengskBolsteredBarrier=Bolstered Barrier
 Button/Name/AP_MarauderMengskShield=Aegis Barrier
 Button/Name/AP_MarauderMengskSlow=Incapacitator Shells
@@ -1835,7 +1840,6 @@ Button/Name/AP_MarauderMengskSovereignNeosteel=Sovereign Neosteel
 Button/Name/AP_Marine=Train Marine
 Button/Name/AP_MarineMengsk=Train Son of Korhal
 Button/Name/AP_MarineMengskBuildABoom=Build-A-Boom
-Button/Name/AP_MarineMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_MarineMengskCombatShield=Shield of the Dominion
 Button/Name/AP_MarineMengskProdigalSon=The Prodigal Son
 Button/Name/AP_MarineMengskSpiderMineLob=Toss Spider Mine
@@ -1845,7 +1849,6 @@ Button/Name/AP_MatrixOverloadEnergizer=Matrix Overload
 Button/Name/AP_Medic=Train Medic
 Button/Name/AP_MedicHeal=Heal
 Button/Name/AP_MedicMengsk=Train Field Response Theta
-Button/Name/AP_MedicMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_MedicMengskDefensiveMatrix=Defensive Matrix
 Button/Name/AP_MedicMengskHospiceCare=Hospice Care
 Button/Name/AP_MedicMengskOpticalRestoration=Optical Restoration
@@ -1860,6 +1863,7 @@ Button/Name/AP_MedivacRapidReignitionSystem=Rapid Reignition System
 Button/Name/AP_MedivacShield=Scatter Veil
 Button/Name/AP_SiegeTankMengskAirlift=Armament Stabilizers
 Button/Name/AP_MedivacSpeedBoost=Ignite Afterburners
+Button/Name/AP_MengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_MercCompound=Build Merc Compound
 Button/Name/AP_MercInfantry=Infantry Mercs
 Button/Name/AP_MercLiberator=Midnight Riders
@@ -2334,10 +2338,8 @@ Button/Name/AP_SiegeTankEnhancedCombustionEngines=All-Terrain Treads
 Button/Name/AP_SiegeTankJumpJet=Jump Jets
 Button/Name/AP_SiegeTankMengsk=Build Shock Division
 Button/Name/AP_SiegeTankMengskBlink=Blink
-Button/Name/AP_SiegeTankMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_SiegeTankMengskImprovedTankMode=Improved Tank Mode
 Button/Name/AP_SiegeTankMengskNapalmRounds=Napalm Rounds
-Button/Name/AP_SiegeTankMengskSiegedCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_SiegeTankMengskSmartServos=Smart Servos
 Button/Name/AP_SiegeTankMengskStun=Shock and Awe
 Button/Name/AP_SiegeTankTransportHook=Transport Hook
@@ -2526,7 +2528,6 @@ Button/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel5=Upgrade Vehicle Weapons
 Button/Name/AP_Thor=Build Thor
 Button/Name/AP_ThorMengsk=Build Blackhammer
 Button/Name/AP_ThorMengskArmorAura=Bulwark Field
-Button/Name/AP_ThorMengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_ThorMengskHammerOfTheLaw=Hammer of the Law
 Button/Name/AP_ThorMengskInfernoBlitz=Inferno Blitz
 Button/Name/AP_ThorMengskSiege=Overwatch Mode
@@ -2933,16 +2934,22 @@ Button/Tooltip/AP_BanelingSplitterlingSplitPassive=Splits into two smaller Banel
 Button/Tooltip/AP_Banshee=Tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_BansheeAdvancedOptics=Increases Banshee attack range by 2 while cloaked.
 Button/Tooltip/AP_BansheeMengsk=Royal Guard tactical-strike aircraft.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_BansheeMengskConsussionShells=Night Wolf attack temporarily slows all units in target area.<n/><n/><c val="#ColorAttackInfo">Massive units are immune.</c>
-Button/Tooltip/AP_BansheeMengskNightAssaultOff=Stops Night Assault to allow Night Wolf to regain energy.
-Button/Tooltip/AP_BansheeMengskNightAssaultOn=Cloaks friendly units near Night Wolf.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_BansheeMengskCloakField,Modification.VitalRegenArray[Energy])" precision="1"/> energy per second.</c>
-Button/Tooltip/AP_BansheeMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains Recharge ability.
-Button/Tooltip/AP_BansheeMengskRank1Preview=<n/><c val="777777">Rank 1: Gains Recharge ability.</c>
-Button/Tooltip/AP_BansheeMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Gains Concussive Shells ability.
-Button/Tooltip/AP_BansheeMengskRank2Preview=<n/><c val="777777">Rank 2: Gains Concussive Shells ability.</c>
-Button/Tooltip/AP_BansheeMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains Night Assault ability.
-Button/Tooltip/AP_BansheeMengskRank3Preview=<n/><c val="777777">Rank 3: Gains Night Assault ability.</c>
+Button/Tooltip/AP_BansheeMengskBacklashBarrageOff=Cancel Apocalypse Now!
+Button/Tooltip/AP_BansheeMengskBacklashBarrageOn=Cloaks the Night Wolf and unleashes a barrage of <c val="ffff8a">16</c> rockets a second in a cone towards the nearest enemy, dealing <c val="ffff8a"><d ref="Effect,AP_BansheeMengskBarrageDamage,Amount"/></c> (+<c val="ffff8a"><d ref="Effect,AP_BansheeMengskBarrageDamage,AttributeBonus[Light]"/></c> vs Light) damage to enemies with each missile. Each enemy can be struck up to <c val="ffff8a">4</c> times per second.<n/><n/><c val="f078ff">Drains 25 energy per second.</c>
+Button/Tooltip/AP_BansheeMengskCloakOff=Decloaks the selected unit, making it visible to enemies.
+Button/Tooltip/AP_BansheeMengskCloakOn=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains 0.9 energy per second.
+Button/Tooltip/AP_BansheeMengskCombatDiagnosis=<n/><n/>The stats for the Night Wolf are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_BansheeMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyBansheeMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_BansheeMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyBansheeMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_BansheeMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyBansheeMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_BansheeMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyBansheeMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_BansheeMengskBacklashDamage,Amount"/> (+<d ref="Effect,AP_BansheeMengskBacklashDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)
+Button/Tooltip/AP_BansheeMengskElusiveRotors=While the Night Wolf is moving, damage taken is reduced by <c val="ffff8a"><d ref="(1 - Behavior,AP_BansheeMengskElusiveRotors,DamageResponse.ModifyFraction) * 100"/>%</c>.
+Button/Tooltip/AP_BansheeMengskEnergizedBacklash=The Night Wolf restores <c val="ffff8a"><d ref="Effect,AP_BansheeMengskEnergizedBacklashEnergyRestore,VitalArray[Energy].Change" precision="2"/></c> energy whenever it fires a missile.
+Button/Tooltip/AP_BansheeMengskPreyseekerMissiles=The Night Wolf gains <c val="ffff8a">+<d ref="$UpgradeEffectArrayValue:AP_BansheeMengskPreyseekerMissiles:Weapon,AP_BacklashRocketsMengsk,Range$"/></c> range on its primary weapon and Apocalypse Now!, and the <c val="ffff8a">missile speed</c> of both is greatly increased.
+Button/Tooltip/AP_BansheeMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Can fire while moving.
+Button/Tooltip/AP_BansheeMengskRank1Preview=<n/><c val="777777">Rank 1: Can fire while moving.</c>
+Button/Tooltip/AP_BansheeMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases attack and movement speed by <c val="ffff8a">25%</c> while cloaked.
+Button/Tooltip/AP_BansheeMengskRank2Preview=<n/><c val="777777">Rank 2: Increases attack and movement speed by <c val="ffff8a">25%</c> while cloaked.</c>
+Button/Tooltip/AP_BansheeMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the Apocalypse Now! ability.
+Button/Tooltip/AP_BansheeMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the Apocalypse Now! ability.</c>
 Button/Tooltip/AP_BansheeMengskRecharge=Recharges <d ref="Effect,AP_BansheeMengskRecharge,VitalArray[Energy].Change"/> energy of target unit.
+Button/Tooltip/AP_BansheeMengskShockwaveArtillery=The Night Wolf's attacks deal area damage in a straight line, with length increasing by <c val="ffff8a">Rank</c>.
 Button/Tooltip/AP_BansheeMengsk_BlackOpsAirstrike=Deals
 Button/Tooltip/AP_BansheeMengsk_BlackOpsAirstrikeDamageL1= <d ref="Effect,AP_Banshee_BlackOpsAirstrikeDamage,Amount" precision="2"/>
 Button/Tooltip/AP_BansheeMengsk_BlackOpsAirstrikeDamageL2= <d ref="(Effect,AP_Banshee_BlackOpsAirstrikeDamage,Amount + Accumulator,AP_Banshee_BlackOpsAirstrikeDamage,BonusPerLevel)" precision="2"/>
@@ -3235,6 +3242,7 @@ Button/Tooltip/AP_FluxVanes=Increases movement speed.
 Button/Tooltip/AP_ForceField=Barrier that lasts <d time="15"/> and impedes movement of ground units. Massive units will shatter Force Fields on contact.
 Button/Tooltip/AP_Forge=Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.
 Button/Tooltip/AP_FortifiedBunker=Bunkers are fortified and have more life.
+Button/Tooltip/AP_FourBanelingsCocoon=This cocoon contains a Morphling that is morphing into 4 Banelings.
 Button/Tooltip/AP_FungalGrowth=Immobilizes target units and deals 60 damage over <d time="4"/>. Reveals cloaked and burrowed units.
 Button/Tooltip/AP_FusionCore=Contains Battlecruiser upgrades. <n/><n/><c val="ffff8a">Enables:</c><n/>- Battlecruisers at the Starport<n/>- Hercules at the Starport
 Button/Tooltip/AP_FusionCoreFusionReactor=Regenerates energy of nearby friendly units and buildings at a rate of <d ref="Behavior,AP_FusionCoreFusionReactorBuff,Modification.VitalRegenArray[Energy]"/> per second.
@@ -3245,7 +3253,7 @@ Button/Tooltip/AP_Ghost=Infiltration unit. Can use Snipe and Cloak abilities. Ca
 Button/Tooltip/AP_GhostAcademy=Can build Nukes that Ghosts or Spectres can use.<n/><n/><c val="ffff8a">Enables:</c><n/>- Ghosts and Spectres at the Barracks
 Button/Tooltip/AP_GhostHoldFire=Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.
 Button/Tooltip/AP_GhostMengsk=Royal Guard specialist. Can use Pyrokinetic Immolation and EMP Blast. Can call down Tactical Missiles built at the Shadow Ops.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/AP_GhostMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Emperor's Shadow are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GhostMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_GhostMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_GhostMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount"/>, <d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * (1 + Effect,AP_C10CanisterRifleMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * (1 + Effect,AP_C10CanisterRifleMengskDamage,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GhostMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_GhostMengskCombatDiagnosis=<n/><n/>The stats for the Emperor's Shadow are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GhostMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_GhostMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_GhostMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount"/>, <d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * (1 + Effect,AP_C10CanisterRifleMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_C10CanisterRifleMengskDamage,Amount * (1 + Effect,AP_C10CanisterRifleMengskDamage,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GhostMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGhostMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_GhostMengskEMP=Deals <c val="ffff8a"><d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/></c> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <c val="ffff8a"><d ref="Effect,AP_GhostMengskEMPStunShortAB,Duration"/></c> second. Cloaked units are revealed for <c val="ffff8a"><d ref="Behavior,AP_EMPMengskDecloak,Duration"/></c> seconds after being hit.
 Button/Tooltip/AP_GhostMengskEMPLongStun=Deals <c val="ffff8a"><d ref="Effect,AP_GhostMengskEMPDamage,ShieldBonus"/></c> damage to shields and depletes the energy of enemy units in the target area. Stuns Mechanical units for <c val="ffff8a"><d ref="Effect,AP_GhostMengskEMPStunLongAB,Duration"/></c> seconds. Cloaked units are revealed for <c val="ffff8a"><d ref="Behavior,AP_EMPMengskDecloak,Duration"/></c> seconds after being hit.
 Button/Tooltip/AP_GhostMengskGuidedStrike=Emperor's Shadows no longer need to channel the Tactical Missile Strike ability.
@@ -3266,7 +3274,7 @@ Button/Tooltip/AP_GlialReconstitution=Increases movement speed.
 Button/Tooltip/AP_Goliath=Heavy-fire support unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_GoliathMengsk=Royal Guard heavy-fire support unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_GoliathMengskAresClassTargetingAddon=Upon reaching <c val="ffff8a">Rank 2</c>, increases the Bulwark Company's anti-air attack range by 3 and ground attack range by 1.
-Button/Tooltip/AP_GoliathMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Bulwark Company are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GoliathMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskG,Amount"/> (+<d ref="Effect,AP_GoliathMengskG,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskAU,Amount"/>, <d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_GoliathMengskAU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GoliathMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_GoliathMengskCombatDiagnosis=<n/><n/>The stats for the Bulwark Company are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GoliathMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskG,Amount"/> (+<d ref="Effect,AP_GoliathMengskG,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskAU,Amount"/>, <d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_GoliathMengskAU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GoliathMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_GoliathMengskJump=Jump to a nearby target location.
 Button/Tooltip/AP_GoliathMengskJumpJetsMKII=Allows the Bulwark Company to jump up and down cliffs and increases the range of its Jump Jets ability by 33%.
 Button/Tooltip/AP_GoliathMengskMoebiusDefenseMatrix=Grants the Bulwark Company 50 shields. Shield regeneration increases by 2 per rank, from 2 at Rank 0 to 8 at Rank 3.
@@ -3587,7 +3595,7 @@ Button/Tooltip/AP_Marauder=Heavy assault infantry.<n/><n/><c val="#ColorAttackIn
 Button/Tooltip/AP_MarauderMengsk=Royal Guard heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengskAddictiveSupplements=Upon reaching <c val="ffff8a">Ranks 1 and 2</c>, Aegis Guards gain a <c val="ffff8a">one-time use</c> of High-Grade Stimpacks.<n/><n/>These stimpacks are replaced by the standard High-Grade Stimpacks ability at <c val="ffff8a">Rank 3</c>.
 Button/Tooltip/AP_MarauderMengskAttackSpeedBoost=Increases attack speed by <c val="ffff8a"><d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>%</c> for <c val="ffff8a"><d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/></c> seconds.
-Button/Tooltip/AP_MarauderMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Aegis Guard are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarauderMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_PunisherGrenadesMengskU,Amount"/>, <d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarauderMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_MarauderMengskCombatDiagnosis=<n/><n/>The stats for the Aegis Guard are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarauderMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_PunisherGrenadesMengskU,Amount"/>, <d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarauderMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MarauderMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Aegis Barrier ability.
 Button/Tooltip/AP_MarauderMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Aegis Barrier ability.</c>
 Button/Tooltip/AP_MarauderMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Attacks create a cone of shrapnel, dealing <c val="ffff8a"><d ref="Effect,AP_MarauderMengskShrapnelDamage,Amount/Effect,AP_PunisherGrenadesMengskU,Amount*100" precision="0"/>%</c> damage to enemies behind the target.
@@ -3601,7 +3609,7 @@ Button/Tooltip/AP_MarauderMengskSovereignNeosteel=Increases Aegis Guard life by 
 Button/Tooltip/AP_Marine=General-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengsk=Royal Guard general-purpose infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_MarineMengskBuildABoom=Sons of Korhal start with <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_MarineMengskBuildABoom:Abil,AP_MarineMengskSpiderMines,Cost[0].Charge.CountStart$"/></c> additional Spider Mines and gain <c val="ffff8a"><d ref="Abil,AP_MarineMengskSpiderMines,Cost[0].Charge.CountUse"/></c> additional Spider Mine per rank.
-Button/Tooltip/AP_MarineMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Son of Korhal are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarineMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_GaussRifleMengsk,Amount"/> (+<d ref="Effect,AP_GaussRifleMengsk,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarineMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_MarineMengskCombatDiagnosis=<n/><n/>The stats for the Son of Korhal are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarineMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_GaussRifleMengsk,Amount"/> (+<d ref="Effect,AP_GaussRifleMengsk,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarineMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarineMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MarineMengskCombatShield=Increases Son of Korhal life by <c val="ffff8a">+<d ref="Upgrade,AP_MarineMengskCombatShield,EffectArray[0].Value"/></c>.
 Button/Tooltip/AP_MarineMengskProdigalSon=<c val="ffff8a">Rank 3</c> Sons of Korhal become <c val="ffff8a">Heroic</c>, gain <c val="ffff8a">+<d ref="Behavior,AP_MarineMengskProdigalSonRank3Bonus,Modification.WeaponRange"/></c> range, and gain an additional <c val="ffff8a">Rank's worth</c> of stats.
 Button/Tooltip/AP_MarineMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Spider Mines ability.
@@ -3619,7 +3627,7 @@ Button/Tooltip/AP_Medic=Support trooper. Heals nearby biological units.
 Button/Tooltip/AP_MedicHeal=Heals a friendly biological target.<n/><n/><c val="f078ff">Heals <d ref="Effect,AP_heal,RechargeVitalRate"/> life per <d ref="Effect,AP_heal,RechargeVitalRate * Effect,AP_heal,DrainVitalCostFactor"  precision="2"/> energy.</c>
 Button/Tooltip/AP_MedicHealPlusMech=Heals a friendly biological or mechanical target.<n/><n/><c val="f078ff">Heals <d ref="Effect,AP_heal,RechargeVitalRate"/> life per <d ref="Effect,AP_heal,RechargeVitalRate * Effect,AP_heal,DrainVitalCostFactor" precision="2"/> energy.</c>
 Button/Tooltip/AP_MedicMengsk=Royal Guard support trooper. Heals nearby biological units.
-Button/Tooltip/AP_MedicMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for Field Response Theta are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MedicMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_MedicMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_MedicMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Heal Rate:</c> <d ref="Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> (+<d ref="Effect,AP_MedicMengskHealL2,RechargeVitalRate - Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MedicMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_MedicMengskCombatDiagnosis=<n/><n/>The stats for Field Response Theta are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MedicMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Energy:</c> <d ref="Unit,AP_MedicMengsk,EnergyMax"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Energy]"/> per rank)<n/><c val="ffff8a">Energy Regen:</c> <d ref="Unit,AP_MedicMengsk,EnergyRegenRate" precision="3"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.VitalRegenArray[Energy]" precision="2"/> per rank)<n/><c val="ffff8a">Heal Rate:</c> <d ref="Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> (+<d ref="Effect,AP_MedicMengskHealL2,RechargeVitalRate - Effect,AP_MedicMengskHealL1,RechargeVitalRate" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MedicMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMedicMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MedicMengskDefensiveMatrix=Surrounds the target unit with a shield that can absorb up to <c val="ffff8a"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,DamageResponse.ModifyLimit"/></c> damage for <c val="ffff8a"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,Duration"/></c> seconds.
 Button/Tooltip/AP_MedicMengskHospiceCare=Defensive Matrix restores <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_MedicMengskHospiceCare:Behavior,AP_MedicMengskDefensiveMatrixBuff,Modification.VitalRegenArray[Life]$"/></c> life per second to units it protects.
 Button/Tooltip/AP_MedicMengskOpticalRestoration=<c val="ffff8a">Removes</c> negative effects from all nearby friendly units. The Field Response Theta gains <c val="FFE303">Detection</c>, <c val="ffff8a">+<d ref="Behavior,AP_MedicMengskOpticalRestorationBuff,Modification.SightBonus"/></c> sight range, and vision of high ground for <c val="ffff8a"><d ref="Behavior,AP_MedicMengskOpticalRestorationBuff,Duration"/></c> seconds.
@@ -3640,6 +3648,7 @@ Button/Tooltip/AP_MedivacRapidReignitionSystem=Slightly increases Medivac moveme
 Button/Tooltip/AP_MedivacShield=Provides Medivacs with a shield that absorbs <d ref="$UpgradeEffectArrayValue:AP_MedivacShield:Unit,AP_Medivac,ShieldsMax$"/> damage.
 Button/Tooltip/AP_SiegeTankMengskAirlift=Allows a Shock Division in Siege Mode to attack air units while loaded in a Medivac. Its carried attack is 50% slower than its normal sieged attack.
 Button/Tooltip/AP_MedivacSpeedBoost=Increases the Medivac's movement speed by 70% for <d time="8"/>.
+Button/Tooltip/AP_MengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.
 Button/Tooltip/AP_MercCompound=Trains Mercenary units.
 Button/Tooltip/AP_MercInfantry=Show available <c val="ffff8a">Infantry</c> type units.
 Button/Tooltip/AP_MercLiberator=After ghost agent Nova Terra went AWOL in the wake of the Defenders of Man Insurgency, many members of her crew eventually went their own way, taking much of their top-secret technology with them. Several flights of Dominion Special Forces liberators have especially gained notoriety as a high-tech fleet-for-hire.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
@@ -4152,9 +4161,10 @@ Button/Tooltip/AP_SiegeTankEnhancedCombustionEngines=Increases Siege Tank moveme
 Button/Tooltip/AP_SiegeTankJumpJet=Repositions the Siege Tank to a target location. Can be used to jump up and down cliffs.
 Button/Tooltip/AP_SiegeTankMengsk=Royal Guard heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
 Button/Tooltip/AP_SiegeTankMengskBlink=Teleports the Shock Division to a nearby target location. Ability can only be used once every <d ref="Abil,AP_SiegeTankMengskBlink,Cost[0].Cooldown.TimeUse"/> seconds.
-Button/Tooltip/AP_SiegeTankMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Tank Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskDamage,Amount"/>, <d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_SiegeTankMengskCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Tank Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskDamage,Amount"/>, <d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_SiegeTankMengskImprovedTankMode=Tank Mode attacks deal 20% damage to nearby enemies. The Shock Division's rank bonuses also apply in Tank Mode: Shock and Awe at Rank 1, +2 vision and attack range at Rank 2, and increased splash radius at Rank 3.
 Button/Tooltip/AP_SiegeTankMengskNapalmRounds=Sieged attacks ignite the ground for 3 seconds, dealing <d ref="Effect,AP_SiegeTankMengskNapalmRoundsDamage,Amount"/> damage every 0.5 seconds to enemies in the area. The fire radius matches the attack's splash radius.
+Button/Tooltip/AP_SiegeTankMengskSiegedCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Siege Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount"/>, <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_SiegeTankMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Shock and Awe ability.
 Button/Tooltip/AP_SiegeTankMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Shock and Awe ability.</c>
 Button/Tooltip/AP_SiegeTankMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases vision and attack range by 2 in Siege Mode.
@@ -4375,7 +4385,7 @@ Button/Tooltip/AP_TerranVehicleWeaponsUltraCapacitorsLevel5=Maximizes the damage
 Button/Tooltip/AP_Thor=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ThorMengsk=Royal Guard heavy assault mech. Can use Overwatch Mode.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ThorMengskArmorAura=Grants +<d ref="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus"/> armor to nearby friendly ground units. Grants +<d ref="Behavior,AP_ThorMengskArmorAuraSiegedTarget,Modification.LifeArmorBonus"/> armor instead while in Overwatch Mode.
-Button/Tooltip/AP_ThorMengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_ThorsHammerMengskDamage,Amount"/> (+<d ref="Effect,AP_ThorsHammerMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount"/>, <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_ThorMengskCombatDiagnosis=<n/><n/>The stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_ThorsHammerMengskDamage,Amount"/> (+<d ref="Effect,AP_ThorsHammerMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount"/>, <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_ThorMengskHammerOfTheLaw=Reduces the windup of Thor's Hammer to <d ref="Weapon,AP_ThorsHammerMengsk,DamagePoint" precision="3"/> seconds without changing its total attack period. Thor's Hammer also gains the Overwatch Mode bonuses from Rank 1 and Rank 3: +2 range and +33% attack speed.
 Button/Tooltip/AP_ThorMengskInfernoBlitz=Each attack made in Overwatch Mode grants 3% attack speed for 6 seconds, stacking up to 30 times. Stacks are lost immediately upon leaving Overwatch Mode.
 Button/Tooltip/AP_ThorMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Increases the range of Overwatch Mode by <d ref="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]-Abil,AP_ThorMengskSiegeTargeted,Range[0]"/>.
@@ -6665,6 +6675,7 @@ Unit/Name/AP_Firebat=Firebat
 Unit/Name/AP_FleetBeacon=Fleet Beacon
 Unit/Name/AP_ForceField=Force Field
 Unit/Name/AP_Forge=Forge
+Unit/Name/AP_FourBanelingsCocoon=Baneling Cocoon
 Unit/Name/AP_FungalGrowthMissile=Fungal Growth
 Unit/Name/AP_FusionCore=Fusion Core
 Unit/Name/AP_G4ChargeWeapon=G-4 Charge

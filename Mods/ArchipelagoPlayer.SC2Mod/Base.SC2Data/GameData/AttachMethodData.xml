@@ -34,6 +34,22 @@
         <Keyword value="Weapon"/>
         <Driver value="AP_DuskWingBansheeLaunchMissile"/>
     </CAttachMethodPattern>
+    <CAttachMethodPattern id="AP_AMPatternBansheeMengskBacklash">
+        <Keyword value="Weapon"/>
+        <Driver value="AP_BansheeMengskBacklashLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="AP_AMPatternBansheeMengskBacklashPreyseeker">
+        <Keyword value="Weapon"/>
+        <Driver value="AP_BansheeMengskBacklashPreyseekerLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="AP_AMPatternBansheeMengskBarrage">
+        <Keyword value="Weapon"/>
+        <Driver value="AP_BansheeMengskBarrageLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="AP_AMPatternBansheeMengskBarragePreyseeker">
+        <Keyword value="Weapon"/>
+        <Driver value="AP_BansheeMengskBarragePreyseekerLM"/>
+    </CAttachMethodPattern>
     <CAttachMethodPattern id="AP_AMPatternInfestedDuskWing">
         <Keyword value="Weapon"/>
         <Driver value="AP_InfestedDuskWingLaunchMissile"/>
