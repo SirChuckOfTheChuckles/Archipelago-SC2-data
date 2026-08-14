@@ -707,6 +707,46 @@ void libABFE498B_gf_AP_Triggers_unlockTerranArmory8 (int lp_player, int lp_bitAr
     );
 }
 
+void libABFE498B_gf_AP_Triggers_unlockTerranArmory9 (int lp_player, int lp_bitArrayValue) {
+    // Automatic Variable Declarations
+    // Implementation
+    // Yeah, this must be done in Galaxy
+    ap_triggers_processBitsInBitArray(
+        lp_player,
+        lp_bitArrayValue,
+        ap_triggers_PlayerConsumer_sig, // 0
+        ap_triggers_PlayerConsumer_sig, // 1
+        ap_triggers_PlayerConsumer_sig, // 2 
+        ap_triggers_PlayerConsumer_sig, // 3
+        ap_triggers_PlayerConsumer_sig, // 4
+        ap_triggers_PlayerConsumer_sig, // 5
+        ap_triggers_PlayerConsumer_sig, // 6
+        ap_triggers_PlayerConsumer_sig, // 7
+        ap_triggers_PlayerConsumer_sig, // 8
+        ap_triggers_PlayerConsumer_sig, // 9
+        ap_triggers_PlayerConsumer_sig, // 10
+        ap_triggers_PlayerConsumer_sig, // 11
+        ap_triggers_PlayerConsumer_sig, // 12
+        ap_triggers_PlayerConsumer_sig, // 13
+        ap_triggers_PlayerConsumer_sig, // 14
+        ap_triggers_PlayerConsumer_sig, // 15
+        ap_triggers_PlayerConsumer_sig, // 16
+        ap_triggers_PlayerConsumer_sig, // 17
+        ap_triggers_PlayerConsumer_sig, // 18
+        ap_triggers_PlayerConsumer_sig, // 19
+        ap_triggers_PlayerConsumer_sig, // 20
+        ap_triggers_PlayerConsumer_sig, // 21
+        ap_triggers_PlayerConsumer_sig, // 22
+        ap_triggers_PlayerConsumer_sig, // 23
+        ap_triggers_PlayerConsumer_sig, // 24
+        ap_triggers_PlayerConsumer_sig, // 25
+        ap_triggers_PlayerConsumer_sig, // 26
+        ap_triggers_PlayerConsumer_sig, // 27
+        ap_triggers_PlayerConsumer_sig, // 28
+        ap_triggers_PlayerConsumer_sig // 29
+    );
+}
+
 void libABFE498B_gf_AP_Triggers_unlockTerranLaboratory (int lp_player, int lp_bitArrayValue) {
     // Automatic Variable Declarations
     // Implementation

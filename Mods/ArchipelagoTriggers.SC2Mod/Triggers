@@ -969,6 +969,7 @@
             <Item Type="FunctionDef" Library="ABFE498B" Id="D1EAAD52"/>
             <Item Type="FunctionDef" Library="ABFE498B" Id="651AD4D5"/>
             <Item Type="FunctionDef" Library="ABFE498B" Id="00905895"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="0E394B26"/>
             <Item Type="FunctionDef" Library="ABFE498B" Id="9706676A"/>
             <Item Type="FunctionDef" Library="ABFE498B" Id="52E13FC7"/>
             <Item Type="FunctionDef" Library="ABFE498B" Id="66568157"/>
@@ -3547,6 +3548,74 @@
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardAddictiveSupplements, // 21
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardBolsteredBarrier, // 22
                     libABFE498B_gf_AP_Triggers_Terran_unlockAegisGuardSovereignNeosteel, // 23
+                    ap_triggers_PlayerConsumer_sig, // 24
+                    ap_triggers_PlayerConsumer_sig, // 25
+                    ap_triggers_PlayerConsumer_sig, // 26
+                    ap_triggers_PlayerConsumer_sig, // 27
+                    ap_triggers_PlayerConsumer_sig, // 28
+                    ap_triggers_PlayerConsumer_sig // 29
+                );
+            </ScriptCode>
+        </Element>
+        <Element Type="FunctionDef" Id="0E394B26">
+            <Identifier>AP_Triggers_unlockTerranArmory9</Identifier>
+            <Internal/>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="AEFED0BA"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="D3FA3EB4"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="8E2318DC"/>
+        </Element>
+        <Element Type="ParamDef" Id="AEFED0BA">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="A1ADFFFB"/>
+        </Element>
+        <Element Type="Param" Id="A1ADFFFB">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="ParamDef" Id="D3FA3EB4">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="D0789A2F"/>
+        </Element>
+        <Element Type="Param" Id="D0789A2F">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="8E2318DC">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000123"/>
+            <ScriptCode>
+                // Yeah, this must be done in Galaxy
+                ap_triggers_processBitsInBitArray(
+                    lp_player,
+                    lp_bitArrayValue,
+                    ap_triggers_PlayerConsumer_sig, // 0
+                    ap_triggers_PlayerConsumer_sig, // 1
+                    ap_triggers_PlayerConsumer_sig, // 2 
+                    ap_triggers_PlayerConsumer_sig, // 3
+                    ap_triggers_PlayerConsumer_sig, // 4
+                    ap_triggers_PlayerConsumer_sig, // 5
+                    ap_triggers_PlayerConsumer_sig, // 6
+                    ap_triggers_PlayerConsumer_sig, // 7
+                    ap_triggers_PlayerConsumer_sig, // 8
+                    ap_triggers_PlayerConsumer_sig, // 9
+                    ap_triggers_PlayerConsumer_sig, // 10
+                    ap_triggers_PlayerConsumer_sig, // 11
+                    ap_triggers_PlayerConsumer_sig, // 12
+                    ap_triggers_PlayerConsumer_sig, // 13
+                    ap_triggers_PlayerConsumer_sig, // 14
+                    ap_triggers_PlayerConsumer_sig, // 15
+                    ap_triggers_PlayerConsumer_sig, // 16
+                    ap_triggers_PlayerConsumer_sig, // 17
+                    ap_triggers_PlayerConsumer_sig, // 18
+                    ap_triggers_PlayerConsumer_sig, // 19
+                    ap_triggers_PlayerConsumer_sig, // 20
+                    ap_triggers_PlayerConsumer_sig, // 21
+                    ap_triggers_PlayerConsumer_sig, // 22
+                    ap_triggers_PlayerConsumer_sig, // 23
                     ap_triggers_PlayerConsumer_sig, // 24
                     ap_triggers_PlayerConsumer_sig, // 25
                     ap_triggers_PlayerConsumer_sig, // 26
