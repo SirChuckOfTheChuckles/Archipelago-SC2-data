@@ -4992,6 +4992,30 @@ void libABFE498B_gf_AP_Triggers_Terran_unlockNightWolfElusiveRotors (int lp_play
     libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_BansheeMengskElusiveRotors", 1);
 }
 
+void libABFE498B_gf_AP_Triggers_Terran_unlockShockDivisionSmartServos (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_SiegeTankMengskSmartServos", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockShockDivisionNapalmStrike (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_SiegeTankMengskNapalmRounds", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockShockDivisionRetrofittedCannons (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_SiegeTankMengskImprovedTankMode", 1);
+}
+
+void libABFE498B_gf_AP_Triggers_Terran_unlockShockDivisionArmamentStabilizers (int lp_player) {
+    // Automatic Variable Declarations
+    // Implementation
+    libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_SiegeTankMengskAirlift", 1);
+}
+
 void libABFE498B_gf_AP_Triggers_Terran_unlockHiveMindEmulatorZerg (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
@@ -13192,7 +13216,6 @@ bool libABFE498B_gt_AP_HeroChoiceClicked_Func (bool testConds, bool runActions) 
 
         }
     }
-    return true;
     return true;
 }
 

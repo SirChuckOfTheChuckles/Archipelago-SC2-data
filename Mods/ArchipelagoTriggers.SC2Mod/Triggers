@@ -19857,6 +19857,9 @@
             <Item Type="Category" Library="ABFE498B" Id="49C51073"/>
             <Item Type="Category" Library="ABFE498B" Id="92776182"/>
             <Item Type="Category" Library="ABFE498B" Id="5F7C67E5"/>
+            <Item Type="Category" Library="ABFE498B" Id="872A54F5"/>
+            <Item Type="Category" Library="ABFE498B" Id="69A9493F"/>
+            <Item Type="Category" Library="ABFE498B" Id="AC5FAFCA"/>
         </Element>
         <Element Type="Category" Id="5EF49186">
             <Item Type="FunctionDef" Library="ABFE498B" Id="EC36AF20"/>
@@ -32283,6 +32286,164 @@
             <Value>AP_BansheeMengskElusiveRotors</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="Category" Id="872A54F5">
+            <Item Type="FunctionDef" Library="ABFE498B" Id="7F956B90"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="4BFA9788"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="6759C837"/>
+            <Item Type="FunctionDef" Library="ABFE498B" Id="9CEBB84E"/>
+        </Element>
+        <Element Type="FunctionDef" Id="7F956B90">
+            <Identifier>AP_Triggers_Terran_unlockShockDivisionSmartServos</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="18ABB230"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="ACC0F436"/>
+        </Element>
+        <Element Type="ParamDef" Id="18ABB230">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="E7EA0CFA"/>
+        </Element>
+        <Element Type="Param" Id="E7EA0CFA">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="ACC0F436">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="F006021D"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="B7533741"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="736DDBD8"/>
+        </Element>
+        <Element Type="Param" Id="F006021D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="18ABB230"/>
+        </Element>
+        <Element Type="Param" Id="B7533741">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="736DDBD8">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_SiegeTankMengskSmartServos</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="4BFA9788">
+            <Identifier>AP_Triggers_Terran_unlockShockDivisionNapalmStrike</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="286ADC10"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="0D177933"/>
+        </Element>
+        <Element Type="ParamDef" Id="286ADC10">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="E86CFF30"/>
+        </Element>
+        <Element Type="Param" Id="E86CFF30">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="0D177933">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="DBD06643"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="5909DFD5"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="95CAC30E"/>
+        </Element>
+        <Element Type="Param" Id="DBD06643">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="286ADC10"/>
+        </Element>
+        <Element Type="Param" Id="5909DFD5">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="95CAC30E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_SiegeTankMengskNapalmRounds</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="6759C837">
+            <Identifier>AP_Triggers_Terran_unlockShockDivisionRetrofittedCannons</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="AAD1C750"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="F0CA0E42"/>
+        </Element>
+        <Element Type="ParamDef" Id="AAD1C750">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="BFBC8093"/>
+        </Element>
+        <Element Type="Param" Id="BFBC8093">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="F0CA0E42">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="C5772290"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="3AC22F9D"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="54D1C51E"/>
+        </Element>
+        <Element Type="Param" Id="C5772290">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="AAD1C750"/>
+        </Element>
+        <Element Type="Param" Id="3AC22F9D">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="54D1C51E">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_SiegeTankMengskImprovedTankMode</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="FunctionDef" Id="9CEBB84E">
+            <Identifier>AP_Triggers_Terran_unlockShockDivisionArmamentStabilizers</Identifier>
+            <FlagAction/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="A3E4BF48"/>
+            <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="42347B5C"/>
+        </Element>
+        <Element Type="ParamDef" Id="A3E4BF48">
+            <ParameterType>
+                <Type Value="int"/>
+            </ParameterType>
+            <Default Type="Param" Library="ABFE498B" Id="4141D7EC"/>
+        </Element>
+        <Element Type="Param" Id="4141D7EC">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="FunctionCall" Id="42347B5C">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="9F8EF8FB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="98404CEB"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="362883B2"/>
+            <Parameter Type="Param" Library="ABFE498B" Id="82E42CE6"/>
+        </Element>
+        <Element Type="Param" Id="98404CEB">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="C7188352"/>
+            <Parameter Type="ParamDef" Library="ABFE498B" Id="A3E4BF48"/>
+        </Element>
+        <Element Type="Param" Id="362883B2">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="3BFEECBB"/>
+            <Value>1</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Param" Id="82E42CE6">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
+            <Value>AP_SiegeTankMengskAirlift</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Upgrade"/>
+        </Element>
+        <Element Type="Category" Id="69A9493F">
+        </Element>
+        <Element Type="Category" Id="AC5FAFCA">
         </Element>
         <Element Type="Category" Id="83878CB6">
             <Item Type="FunctionDef" Library="ABFE498B" Id="F0AE94EE"/>
