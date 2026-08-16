@@ -6697,6 +6697,10 @@
         <Find value="1"/>
         <Value value="AP_HaveSiegeTankTransportHook"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="AP_HaveSiegeTankMengskAirlift">
+        <Find value="1"/>
+        <Value value="AP_HaveSiegeTankMengskAirlift"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveSiegeTankMengskSmartServos">
         <Find value="1"/>
         <Value value="AP_HaveSiegeTankMengskSmartServos"/>
@@ -6852,6 +6856,10 @@
     <CValidatorUnitFilters id="AP_TargetIsArmored">
         <WhichUnit Value="Target"/>
         <Filters value="Armored;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="AP_TargetIsLight">
+        <WhichUnit Value="Target"/>
+        <Filters value="Light;-"/>
     </CValidatorUnitFilters>
     <CValidatorUnitCompareBehaviorCount id="AP_CasterHasVoidRaySwarmArmoredTarget">
         <WhichUnit Value="Caster"/>

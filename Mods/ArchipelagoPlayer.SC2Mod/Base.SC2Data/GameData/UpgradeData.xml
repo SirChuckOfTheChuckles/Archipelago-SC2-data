@@ -663,8 +663,6 @@
         <EffectArray Reference="Effect,AP_CrucioShockCannonDummy,Amount" Value="5.000000"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonFriendlyDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonEnemyDamage,Amount" Value="5"/>
-        <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftBlast,Amount" Value="5.000000"/>
-        <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftDirected,Amount" Value="5.000000"/>
         <!--  Hellion -->
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_InfernalFlameThrower,Amount" Value="1.000000"/>
@@ -705,8 +703,6 @@
         <EffectArray Reference="Effect,AP_ArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftBlast,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!-- Predator -->
         <EffectArray Reference="Effect,AP_Predator,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_RetributionFieldDamage,Amount" Value="2"/>
@@ -2097,8 +2093,6 @@
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftBlast,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!--  Hunter Killer -->
         <EffectArray Reference="Weapon,AP_HunterKillerNeedleSpines,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_HunterKillerDamage,Amount" Value="2"/>
@@ -2622,6 +2616,18 @@
         <AffectedUnitArray value="AP_InfestedSiegeBreakerSiegedTransportable"/>
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleSiegeMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleTankMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleWalkerMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleOverwatchMode">
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -11996,10 +12002,6 @@
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
@@ -12442,10 +12444,6 @@
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
@@ -13923,9 +13921,9 @@
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeMode,InfoArray[0].Unit" Value="AP_SiegeTankSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeBreakerSiege,InfoArray[0].Unit" Value="AP_SiegeBreakerSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_InfestedSiegeBreakerSiege,InfoArray[0].Unit" Value="AP_InfestedSiegeBreakerSiegedTransportable"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].Unit" Value="AP_SiegeTankMengskSiegedTransportable"/>
     </CUpgrade>
     <CUpgrade id="AP_SiegeTankMengskAirlift">
+        <EffectArray Operation="Set" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].Unit" Value="AP_SiegeTankMengskSiegedTransportable"/>
         <EffectArray Operation="Subtract" Reference="Weapon,AP_SiegeTankMengskAirlift,Options[Hidden]" Value="1"/>
         <AffectedUnitArray value="AP_Medivac"/>
         <AffectedUnitArray value="AP_SiegeTankMengsk"/>
@@ -14672,8 +14670,6 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank1,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank3,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_PunisherGrenadesMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_C10CanisterRifleMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_TrooperMengsk,RateMultiplier" Value="0.15"/>

@@ -1347,14 +1347,6 @@
         <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
         <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
         <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank0.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank1.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart; WeaponTargetDistance LE 1.000000" Send="AnimBracketStart Attack Spell,B {} {} 0 2.5 AsTimeScale"/>
-        <On Terms="WeaponStart.AP_ThorsHammerMengskHammerOfTheLawRank3.AttackStart" Send="AnimBracketStart Attack Attack {} {} 0 2.5 AsTimeScale"/>
         <On Terms="Effect.AP_ThorsHammerMengsk.Start; At Caster; ValidateUnit AP_HaveThorMengskHammerOfTheLaw" Send="AnimSetTimeScale Attack 1.000000"/>
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
@@ -3994,30 +3986,11 @@
         <DamageModel value="AP_SiegeTankAttackDamageModel"/>
         <ShieldFlashType value="Full"/>
     </CActorAction>
-    <CActorAction id="AP_SiegeTankSiegedAttackAirlift" parent="GenericAttack" effectAttack="AP_CrucioShockCannonAirliftBlast">
-        <LaunchAssets Model="SiegeTankSiegedAttackLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
-        <LaunchModel value="AP_SiegeTankSiegedAttackAirliftAttackLaunchModel"/>
-        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
-        <ImpactMap index="None" Model="SiegeTankSiegedAttackImpact" Sound="SiegeTank_SiegedAttackImpact"/>
-        <DamageSiteOps Ops="SOpAttachHarness"/>
-        <DamageMap index="None" Model="SiegeTankSiegedAttackDamage"/>
-        <DamageModel value="AP_SiegeTankAttackDamageModel"/>
-        <ShieldFlashType value="Full"/>
-    </CActorAction>
     <CActorModel id="AP_SiegeTankSiegedAttackAirliftAttackLaunchModel" parent="GenericAttackModel">
         <Host Subject="AP_SiegeTankLoadTransit"/>
     </CActorModel>
     <CActorAction id="AP_SiegeTankSiegedAttackDirected" parent="GenericAttack" effectAttack="AP_CrucioShockCannonDirected">
         <LaunchAssets Model="SiegeTankSiegedAttackDirectedLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>
-        <ImpactMap index="None" Model="SiegeTankSiegedAttackDirectedImpact" Sound="SiegeTank_SiegedAttackImpact"/>
-        <DamageMap index="None" Model="SiegeTankSiegedAttackDirectedDamage"/>
-        <DamageModel value="AP_SiegeTankAttackDamageModel"/>
-        <ShieldFlashType value="Header"/>
-    </CActorAction>
-    <CActorAction id="AP_SiegeTankSiegedAttackDirectedAirlift" parent="GenericAttack" effectAttack="AP_CrucioShockCannonAirliftDirected">
-        <LaunchAssets Model="SiegeTankSiegedAttackDirectedLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
-        <LaunchModel value="AP_SiegeTankSiegedAttackAirliftAttackLaunchModel"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>
         <ImpactMap index="None" Model="SiegeTankSiegedAttackDirectedImpact" Sound="SiegeTank_SiegedAttackImpact"/>
         <DamageMap index="None" Model="SiegeTankSiegedAttackDirectedDamage"/>
@@ -8775,9 +8748,6 @@
         <Abil Link="AP_BlinkDummy"/>
     </CActorRange>
     <CActorRange id="AP_DarkTemplarShadowDash_Range" parent="RangeAbil" abil="AP_DarkTemplarShadowDash">
-        <Abil Link="AP_BlinkDummy"/>
-    </CActorRange>
-    <CActorRange id="AP_SiegeTankMengskBlink_Range" parent="RangeAbil" abil="AP_SiegeTankMengskBlink">
         <Abil Link="AP_BlinkDummy"/>
     </CActorRange>
     <CActorRange id="AP_GoliathMengskJumpRange" parent="RangeAbil" abil="AP_GoliathMengskJump">
@@ -30617,27 +30587,10 @@
         <DamageSiteOps Ops="SOpAttachHarness"/>
         <ShieldFlashType value="Full"/>
     </CActorAction>
-    <CActorAction id="AP_SiegeBreakerSiegedAirliftAttack" parent="GenericAttack" effectAttack="AP_ArcliteShockCannonAirliftBlast">
-        <On Terms="Effect.AP_InfestedArcliteShockCannonAirliftBlast.Start; At Caster" Send="Create"/>
-        <LaunchAssets Model="AP_SiegeBreakerSiegedAttackLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
-        <LaunchModel value="AP_SiegeBreakerSiegedAttackAirliftAttackLaunchModel"/>
-        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
-        <ImpactMap index="None" Model="AP_SiegeBreakerSiegedAttackImpact" Sound="SiegeTank_SiegedAttackImpact"/>
-        <DamageSiteOps Ops="SOpAttachHarness"/>
-        <ShieldFlashType value="Full"/>
-    </CActorAction>
     <CActorAction id="AP_SiegeBreakerSiegedAttackDirected" parent="GenericAttack" effectAttack="AP_ArcliteShockCannonDirected">
         <LaunchAssets Sound="SiegeTank_SiegedAttackLaunch"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>
         <ImpactMap index="None" Sound="SiegeTank_SiegedAttackImpact"/>
-        <ShieldFlashType value="Header"/>
-    </CActorAction>
-    <CActorAction id="AP_SiegeBreakerSiegedAirliftAttackDirected" parent="GenericAttack" effectAttack="AP_ArcliteShockCannonAirliftDirected">
-        <On Terms="Effect.AP_InfestedArcliteShockCannonAirliftDirected.Start; At Caster" Send="Create"/>
-        <LaunchAssets Model="AP_SiegeBreakerSiegedAttackDirectedLaunch" Sound="SiegeTank_SiegedAttackLaunch"/>
-        <LaunchModel value="AP_SiegeBreakerSiegedAttackAirliftAttackLaunchModel"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>
-        <ImpactMap index="None" Model="AP_SiegeBreakerSiegedAttackDirectedImpact" Sound="SiegeTank_SiegedAttackImpact"/>
         <ShieldFlashType value="Header"/>
     </CActorAction>
     <CActorModel id="AP_SiegeBreakerSiegedAttackAirliftAttackLaunchModel" parent="GenericAttackModel">
@@ -41838,7 +41791,7 @@
         <CreepRateShrink value="Shrink"/>
         <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath" SoundLink="SiegeTank_Explode"/>
         <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
-        <PortraitModel value="SiegeTankPortrait"/>
+        <PortraitModel value="AP_SiegeTankMengskPortrait"/>
         <AbilSoundArray AbilCmd="SiegeMode,Execute" Sound="SiegeTank_SiegeModeVO"/>
         <BarOffset value="80"/>
         <BarWidth value="102"/>

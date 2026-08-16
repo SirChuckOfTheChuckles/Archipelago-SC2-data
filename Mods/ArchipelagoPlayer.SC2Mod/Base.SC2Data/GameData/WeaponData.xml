@@ -3723,7 +3723,7 @@
         <EditorCategories value="Race:Terran"/>
         <Options index="DisplayCooldown" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
-        <DisplayEffect value="AP_SiegeTankMengskSiegedDummy"/>
+        <DisplayEffect value="AP_SiegeTankMengskSiegedDirected"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <MinScanRange value="13.5"/>
         <Range value="13"/>
@@ -3785,18 +3785,9 @@
         <Backswing value="0.25"/>
         <LegacyOptions index="KeepChanneling" value="1"/>
     </CWeaponLegacy>
-    <!-- Yeah this is gross, but not really sure of a much better way to do it tbh. Weapons are controlled by a behavior
-        so there's not any weird hidden/disabled ui problems. If anyone finds a better way to do this lmk      -Chuck -->
     <CWeaponLegacy id="AP_ThorsHammerMengskHammerOfTheLawRank0" parent="AP_ThorsHammerMengsk">
         <DamagePoint value="0.331"/>
         <Effect value="AP_ThorsHammerMengsk"/>
-    </CWeaponLegacy>
-    <CWeaponLegacy id="AP_ThorsHammerMengskHammerOfTheLawRank1" parent="AP_ThorsHammerMengskHammerOfTheLawRank0">
-        <MinScanRange value="9.5"/>
-        <Range value="9"/>
-    </CWeaponLegacy>
-    <CWeaponLegacy id="AP_ThorsHammerMengskHammerOfTheLawRank3" parent="AP_ThorsHammerMengskHammerOfTheLawRank1">
-        <RateMultiplier value="1.33"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="AP_PunisherGrenadesMengsk">
         <EditorCategories value="Race:Terran"/>

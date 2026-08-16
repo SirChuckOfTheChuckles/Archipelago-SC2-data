@@ -7430,12 +7430,6 @@
         <EditorCategories value="Race:Terran"/>
         <HotkeySet value="TankModes"/>
     </CButton>
-    <CButton id="AP_SiegeTankMengskBlink">
-        <Icon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-protoss-blink-color.dds"/>
-        <EditorCategories value="Race:Terran"/>
-        <Universal value="1"/>
-    </CButton>
     <CButton id="AP_GoliathMengskJump">
         <Icon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-jumpjets.dds"/>
@@ -7445,7 +7439,6 @@
         <Universal value="1"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_SiegeTankMengskSpiderMines"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_SiegeTankMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_SiegeTankMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_SiegeTankMengskRank2Preview"/>

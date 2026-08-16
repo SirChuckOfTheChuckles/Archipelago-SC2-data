@@ -4218,21 +4218,6 @@
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_SiegeTankMengskBlink">
-        <AbilSetId value="Blnk"/>
-        <Effect index="0" value="AP_Blink"/>
-        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
-        <Flags index="BestUnit" value="0"/>
-        <Flags index="RequireTargetVision" value="0"/>
-        <Cost>
-            <Cooldown Link="AP_BlinkBlink" TimeUse="8"/>
-        </Cost>
-        <Range value="500"/>
-        <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_SiegeTankMengskBlink" State="Restricted" Requirements="AP_HaveHoverSiegeTank">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-    </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_GoliathMengskJump">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -13030,7 +13015,7 @@
         <InfoArray Unit="AP_InfestedSiegeBreakerSiegedTransportable"/>
     </CAbilMorph>
     <CAbilMorph id="AP_SiegeTankMengskSiegedTransportableMorph">
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_SiegeTankSieged" Requirements="AP_HaveSiegeTankTransportHook"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_SiegeTankSieged" Requirements="AP_HaveSiegeTankMengskAirlift"/>
         <Flags index="Automatic" value="1"/>
         <Flags index="IgnoreUnitCost" value="1"/>
         <InfoArray Unit="AP_SiegeTankMengskSiegedTransportable"/>

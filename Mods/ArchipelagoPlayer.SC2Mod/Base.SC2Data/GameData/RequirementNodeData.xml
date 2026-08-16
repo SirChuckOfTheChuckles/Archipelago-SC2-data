@@ -278,6 +278,18 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_NotPossibleSiegeMode" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeNotPossibleTankModeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_NotPossibleTankMode" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeNotPossibleWalkerModeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_NotPossibleWalkerMode" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeNotPossibleOverwatchModeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_NotPossibleOverwatchMode" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeMaelstromRoundsCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_MaelstromRounds" State="CompleteOnly"/>
@@ -7369,13 +7381,14 @@
         <OperandArray index="0" value="AP_CountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit"/>
         <OperandArray index="1" value="2"/>
     </CRequirementGTE>
-    <CRequirementAnd id="AP_AndGTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2CountUpgradeNotPossibleSiegeModeCompleteOnly">
-        <OperandArray value="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
-        <OperandArray value="AP_CountUpgradeNotPossibleSiegeModeCompleteOnly"/>
-    </CRequirementAnd>
-    <CRequirementAnd id="AP_AndGTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly">
-        <OperandArray value="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
-        <OperandArray value="AP_CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly"/>
+    <CRequirementOr id="AP_SiegeTankMengskTankModeStunAccess">
+        <Tooltip value="Upgrade/Name/AP_NotPossibleSiegeMode"/>
+        <OperandArray index="0" value="AP_CountUpgradeSiegeTankMengskImprovedTankModeCompleteOnly"/>
+        <OperandArray index="1" value="AP_CountUpgradeNotPossibleSiegeModeCompleteOnly"/>
+    </CRequirementOr>
+    <CRequirementAnd id="AP_SiegeTankMengskTankModeStunRequirements">
+        <OperandArray index="0" value="AP_GTECountBehaviorMengskVeterancySiegeTankMengskCompleteOnlyAtUnit2"/>
+        <OperandArray index="1" value="AP_SiegeTankMengskTankModeStunAccess"/>
     </CRequirementAnd>
     <CRequirementCountUpgrade id="AP_CountUpgradeWarpRelocateCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
