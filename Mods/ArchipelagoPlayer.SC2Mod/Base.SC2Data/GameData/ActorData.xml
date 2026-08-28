@@ -3960,8 +3960,6 @@
         <On Terms="AbilTransport.AP_MedivacTransport.TransportUnload;AbilTransport AP_SiegeTankSiegedTransportable" Send="SetVisibility"/>
         <On Terms="Signal.*.Dead" Send="Create ThorTransitDeath"/>
         <On Terms="Signal.*.Dead" Send="Destroy"/>
-        <On Terms="Signal.*.AP_BlackOpsTank" Send="ModelSwap AP_SiegeTank_BlackOps"/>
-        <On Terms="Upgrade.AP_HoverSiegeTank.Add" Send="ModelSwap AP_SiegeTank_BlackOps"/>
         <On Terms="ActorCreation; ValidateUnit AP_HaveHoverSiegeTank" Send="ModelSwap AP_SiegeTank_BlackOps"/>
         <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
@@ -30563,9 +30561,6 @@
         <On Terms="AbilTransport.AP_MedivacTransport.TransportUnload; AbilTransport AP_InfestedSiegeBreakerSiegedTransportable" Send="SetVisibility"/>
         <On Terms="Signal.*.Dead" Send="Create ThorTransitDeath"/>
         <On Terms="Signal.*.Dead" Send="Destroy"/>
-        <On Terms="Signal.*.AP_BlackOpsTank" Send="ModelSwap AP_Merc_SiegeTank_BlackOps"/>
-        <On Terms="Upgrade.AP_HoverSiegeTank.Add" Send="ModelSwap AP_Merc_SiegeTank_BlackOps"/>
-        <On Terms="ActorCreation; ValidateUnit AP_HaveHoverSiegeTank" Send="ModelSwap AP_Merc_SiegeTank_BlackOps"/>
         <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
         <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
         <Aliases value="_Turret2"/>
@@ -41593,7 +41588,7 @@
         <BuildModel value="SiegeTank_Mengsk_COOP_Sieged"/>
         <DeathArray index="Normal">
             <AnimProps value="Death"/>
-            <ModelLink value="SiegeTankMengskSiegedDeath"/>
+            <ModelLink value="AP_SiegeTankMengskSiegedDeath"/>
             <SoundLink value="SiegeTank_Explode"/>
             <VoiceLink value="SiegeTankSiegedDeathVoice"/>
         </DeathArray>
@@ -41609,7 +41604,7 @@
         <DeathCustoms ModelLink="ZergSmallUnitDeathLow" Name="AntiGravZerg"/>
         <DeathCustoms ModelLink="Invisible" Name="Vortex"/>
         <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
-        <DeathCustoms ActorModel="AP_SiegeTankMengskDeathRagdoll" ModelLink="AP_SiegeTankMengskSiegedDeathRagdoll" Name="RagdollBasic">
+        <DeathCustoms ActorModel="SiegeTankDeathRagdoll" ModelLink="AP_SiegeTankMengskSiegedDeathRagdoll" Name="RagdollBasic">
             <BodySquibs Name="Basic" Model="TerranSquibDeathRagdoll"/>
         </DeathCustoms>
         <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
