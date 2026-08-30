@@ -10143,7 +10143,7 @@
         <Alignment value="Negative"/>
         <InfoIcon value="Assets\Textures\btn-upgrade-swann-defensivematrix.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <Duration value="3"/>
+        <Duration value="2"/>
         <Modification>
             <ModifyFlags index="DisableAbils" value="1"/>
             <ModifyFlags index="Reveal" value="1"/>
@@ -10158,6 +10158,11 @@
             <BehaviorLinkDisableArray value="Detector11"/>
             <BehaviorLinkDisableArray value="Detector12"/>
         </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GoliathMengskLockdownStunImmunity">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="6"/>
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyMedicMengsk">
         <EditorCategories value="AbilityorEffectType:Units"/>

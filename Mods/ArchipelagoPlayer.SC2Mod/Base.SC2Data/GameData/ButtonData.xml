@@ -6693,6 +6693,7 @@
     <CButton id="AP_SiegeTankMengskNapalmRounds">
         <Icon value="AP\Assets\Textures\btn-upgrade-terran-lava-strike.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-lava-strike.dds"/>
+        <TooltipAppender Validator="AP_HaveSiegeTankMengskNapalmRoundsAndAirlift" Text="Button/Tooltip/AP_SiegeTankMengskNapalmRoundsAirliftWarning"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskImprovedTankMode">

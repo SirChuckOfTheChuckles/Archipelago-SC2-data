@@ -20219,8 +20219,8 @@
         <Model value="Assets\Effects\Neutral\GroundFire_Coop\GroundFire_Coop.m3"/>
         <EditorCategories value="Race:Terran"/>
         <Occlusion value="Show"/>
-        <ScaleMax value="0.820000,0.820000,0.820000"/>
-        <ScaleMin value="0.820000,0.820000,0.820000"/>
+        <ScaleMax value="0.800000,0.800000,0.100000"/>
+        <ScaleMin value="0.800000,0.800000,0.100000"/>
     </CModel>
     <CModel id="AP_SiegeTankMengskTankModeSplashImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Terran\Griffin_BombRun_Impact_COOP\Griffin_BombRun_Impact_COOP.m3"/>

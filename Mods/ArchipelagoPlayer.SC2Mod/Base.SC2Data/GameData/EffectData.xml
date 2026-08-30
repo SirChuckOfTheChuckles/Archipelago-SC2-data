@@ -24149,8 +24149,8 @@
     </CEffectDamage>
     <CEffectSet id="AP_GoliathMengskAULockdownSet">
         <EffectArray value="AP_GoliathMengskAU"/>
-        <EffectArray value="AP_GoliathMengskLockdownAB"/>
-        <EffectArray value="AP_GoliathMengskParalysisInducersAB"/>
+        <EffectArray value="AP_GoliathMengskMechanicalLockdownSet"/>
+        <EffectArray value="AP_GoliathMengskBiologicalLockdownSet"/>
     </CEffectSet>
     <CEffectDamage id="AP_GoliathMengskG" parent="DU_WEAP">
         <ValidatorArray value="CasterIsNotHidden"/>
@@ -24163,22 +24163,34 @@
     <CEffectApplyBehavior id="AP_GoliathMengskLockdownAB">
         <EditorCategories value="Race:Terran"/>
         <Behavior value="AP_NovaUnitLockdown"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AP_GoliathMengskLockdownStunImmunityAB">
+        <EditorCategories value="Race:Terran"/>
+        <Behavior value="AP_GoliathMengskLockdownStunImmunity"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_GoliathMengskMechanicalLockdownSet">
         <ValidatorArray value="AP_CasterLevelEq4"/>
         <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
+        <ValidatorArray value="AP_NotHeroic"/>
         <ValidatorArray value="AP_IsMechanical"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="AP_NoPreventKnockback"/>
-    </CEffectApplyBehavior>
-    <CEffectApplyBehavior id="AP_GoliathMengskParalysisInducersAB">
-        <EditorCategories value="Race:Terran"/>
-        <Behavior value="AP_NovaUnitLockdown"/>
+        <ValidatorArray value="AP_NoGoliathMengskLockdownStunImmunity"/>
+        <EffectArray value="AP_GoliathMengskLockdownAB"/>
+        <EffectArray value="AP_GoliathMengskLockdownStunImmunityAB"/>
+    </CEffectSet>
+    <CEffectSet id="AP_GoliathMengskBiologicalLockdownSet">
         <ValidatorArray value="AP_CasterLevelEq4"/>
         <ValidatorArray value="AP_HaveGoliathMengskParalysisInducers"/>
         <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
+        <ValidatorArray value="AP_NotHeroic"/>
         <ValidatorArray value="AP_IsBiological"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="AP_NoPreventKnockback"/>
-    </CEffectApplyBehavior>
+        <ValidatorArray value="AP_NoGoliathMengskLockdownStunImmunity"/>
+        <EffectArray value="AP_GoliathMengskLockdownAB"/>
+        <EffectArray value="AP_GoliathMengskLockdownStunImmunityAB"/>
+    </CEffectSet>
     <CEffectCreatePersistent id="AP_MedicMengskHealScanPersistent">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="CasterUnit"/>

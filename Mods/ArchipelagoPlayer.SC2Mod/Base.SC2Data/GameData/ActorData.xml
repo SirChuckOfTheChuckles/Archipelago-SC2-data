@@ -41845,7 +41845,7 @@
     <CActorModel id="AP_SiegeTankMengskNapalmRounds" parent="ModelAnimationStyleContinuous">
         <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsCP.Start" Send="Create"/>
         <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsCP.Stop" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="SetOpacity 0.650000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.350000"/>
         <HostSiteOps Ops="SOpShadow" HoldPosition="1"/>
         <Model value="AP_SiegeTankMengskNapalmRounds"/>
         <Scale value="2.500000"/>
@@ -41853,7 +41853,7 @@
     <CActorModel id="AP_SiegeTankMengskNapalmRoundsImproved" parent="ModelAnimationStyleContinuous">
         <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsImprovedCP.Start" Send="Create"/>
         <On Terms="Effect.AP_SiegeTankMengskNapalmRoundsImprovedCP.Stop" Send="Destroy"/>
-        <On Terms="ActorCreation" Send="SetOpacity 0.650000"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.350000"/>
         <HostSiteOps Ops="SOpShadow" HoldPosition="1"/>
         <Model value="AP_SiegeTankMengskNapalmRounds"/>
         <Scale value="3.500000"/>
