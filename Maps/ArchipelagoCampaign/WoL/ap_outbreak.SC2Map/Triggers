@@ -288,7 +288,7 @@
     </Element>
     <Element Type="Param" Id="A748FB89">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000220"/>
-        <Value>Zerg</Value>
+        <Value>Prot</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Race"/>
     </Element>
