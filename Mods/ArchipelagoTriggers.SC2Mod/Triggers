@@ -5051,7 +5051,7 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockDestroyer, // 3
                     libABFE498B_gf_AP_Triggers_Protoss_unlockScout, // 4
                     libABFE498B_gf_AP_Triggers_Protoss_unlockTempest, // 5
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothership, // 6
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarim, // 6
                     libABFE498B_gf_AP_Triggers_Protoss_unlockArbiter, // 7
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOracle, // 8
                     libABFE498B_gf_AP_Triggers_Protoss_unlockStalwart, // 9
@@ -5060,8 +5060,8 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockSkylord, // 12
                     libABFE498B_gf_AP_Triggers_Protoss_unlockPurger, // 13
                     libABFE498B_gf_AP_Triggers_Protoss_unlockSkirmisher, // 14
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothership, // 15
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothership, // 16
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiur, // 15
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifier, // 16
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOppressor, // 17
                     libABFE498B_gf_AP_Triggers_Protoss_unlockCaladrius, // 18
                     libABFE498B_gf_AP_Triggers_Protoss_unlockMistWing, // 19
@@ -5621,13 +5621,13 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTimeFieldModules, // 8
                     libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipWormholeModules, // 9
                     libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipHangarInstallations, // 10
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothershipAstralRestoration, // 11
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothershipPlanetCracker, // 12
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothershipSummonDeathFleet, // 13
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothershipHarmonizedFeedbackConductors, // 14
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothershipKhalaiShieldRechargers, // 15
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothershipSymbolOfUnity, // 16
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothershipCybrosShielding, // 17
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiurAstralRestoration, // 11
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifierPlanetCracker, // 12
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarimSummonDeathFleet, // 13
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiurHarmonizedFeedbackConductors, // 14
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiurKhalaiShieldRechargers, // 15
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiurSymbolOfUnity, // 16
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifierCybrosShielding, // 17
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOppressorOptimizedLogistics, // 18
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOppressorArmorMeltingBlasters, // 19
                     libABFE498B_gf_AP_Triggers_Protoss_unlockCaladriusSideMissiles, // 20
@@ -5678,11 +5678,11 @@
                     lp_player,
                     lp_bitArrayValue,
                     libABFE498B_gf_AP_Triggers_Protoss_unlockReaverBargainBinPrices, // 0
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothershipAmplifiedPowerRerouter, // 1
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothershipPurifiedEmbers, // 2
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothershipShadowOfDeath, // 3
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothershipSoulForgedConduits, // 4
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothershipBloodFusedParticles, // 5
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifierAmplifiedPowerRerouter, // 1
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifierPurifiedEmbers, // 2
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarimShadowOfDeath, // 3
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarimSoulForgedConduits, // 4
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarimBloodFusedParticles, // 5
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOracleSurfaceStabilizer, // 6
                     libABFE498B_gf_AP_Triggers_Protoss_unlockTempestDistributedAttack, // 7
                     libABFE498B_gf_AP_Triggers_Protoss_unlockCenturionCloak, // 8
@@ -5895,9 +5895,9 @@
                     libABFE498B_gf_AP_Triggers_Protoss_unlockScoutExpeditionaryHull, // 12
                     libABFE498B_gf_AP_Triggers_Protoss_unlockArbiterAbilityEfficiency, // 13
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOracleStasisCalibration, // 14
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothershipIntegratedPower, // 15
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockAiurMothershipValorousResolve, // 16
-                    libABFE498B_gf_AP_Triggers_Protoss_unlockPurifierMothershipMobilePowerField, // 17
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipTaldarimIntegratedPower, // 15
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipAiurValorousResolve, // 16
+                    libABFE498B_gf_AP_Triggers_Protoss_unlockMothershipPurifierMobilePowerField, // 17
                     ap_triggers_PlayerConsumer_sig, // 18
                     ap_triggers_PlayerConsumer_sig, // 19
                     libABFE498B_gf_AP_Triggers_Protoss_unlockOppressorVulcanBlaster, // 20
@@ -68232,7 +68232,7 @@
             <ValueType Type="bool"/>
         </Element>
         <Element Type="Variable" Id="57B8E956">
-            <Identifier>aP_Triggers_Protoss_has_AiurMothership</Identifier>
+            <Identifier>aP_Triggers_Protoss_has_MothershipAiur</Identifier>
             <VariableType>
                 <Type Value="bool"/>
                 <ArraySize Dim="0" Value="20"/>
@@ -68244,7 +68244,7 @@
             <ValueType Type="bool"/>
         </Element>
         <Element Type="Variable" Id="205B865C">
-            <Identifier>aP_Triggers_Protoss_has_PurifierMothership</Identifier>
+            <Identifier>aP_Triggers_Protoss_has_MothershipPurifier</Identifier>
             <VariableType>
                 <Type Value="bool"/>
                 <ArraySize Dim="0" Value="20"/>
@@ -74429,7 +74429,7 @@
             <ValueType Type="bool"/>
         </Element>
         <Element Type="FunctionDef" Id="CD0B76F8">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothership</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiur</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="ACA55283"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="FD36727C"/>
@@ -74591,7 +74591,7 @@
             <ValueType Type="bool"/>
         </Element>
         <Element Type="FunctionDef" Id="F937DD86">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothership</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifier</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="0E177ED0"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="B88300CE"/>
@@ -83732,7 +83732,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="F059DA81">
-            <Identifier>AP_Triggers_Protoss_unlockTaldarimMothershipIntegratedPower</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipTaldarimIntegratedPower</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="CFC54A7E"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="0D396B81"/>
@@ -83769,7 +83769,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="6A5D0761">
-            <Identifier>AP_Triggers_Protoss_unlockTaldarimMothershipSummonDeathFleet</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipTaldarimSummonDeathFleet</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="3371DC3F"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="73442E6F"/>
@@ -83806,7 +83806,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="953BD393">
-            <Identifier>AP_Triggers_Protoss_unlockTaldarimMothershipShadowOfDeath</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipTaldarimShadowOfDeath</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="F49FB0D5"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="E2D2C9DF"/>
@@ -83833,7 +83833,7 @@
         </Element>
         <Element Type="Param" Id="14962475">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallTaldarimMothershipGroundSlow</Value>
+            <Value>AP_CanInstallMothershipTaldarimGroundSlow</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -83843,7 +83843,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="DD366A30">
-            <Identifier>AP_Triggers_Protoss_unlockTaldarimMothershipSoulForgedConduits</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipTaldarimSoulForgedConduits</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="30B16850"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="B8E35CB5"/>
@@ -83870,7 +83870,7 @@
         </Element>
         <Element Type="Param" Id="C7B7A72D">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallTaldarimMothershipDeathHeal</Value>
+            <Value>AP_CanInstallMothershipTaldarimDeathHeal</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -83880,7 +83880,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="BF425834">
-            <Identifier>AP_Triggers_Protoss_unlockTaldarimMothershipBloodFusedParticles</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipTaldarimBloodFusedParticles</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="8CD7E62C"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="535704C2"/>
@@ -83907,7 +83907,7 @@
         </Element>
         <Element Type="Param" Id="8352873E">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallTaldarimMothershipFastAttack</Value>
+            <Value>AP_CanInstallMothershipTaldarimFastAttack</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -83917,7 +83917,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="DBD1D8C5">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothershipMobilePowerField</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifierMobilePowerField</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="9E9CC041"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="4EAA5FB6"/>
@@ -83954,7 +83954,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="AB826C4A">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothershipPlanetCracker</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifierPlanetCracker</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="D094340E"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="F7C7A946"/>
@@ -83991,7 +83991,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="1D8C3BE1">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothershipPurifiedEmbers</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifierPurifiedEmbers</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="EFCF0F82"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="FCDAC074"/>
@@ -84018,7 +84018,7 @@
         </Element>
         <Element Type="Param" Id="5C0AB842">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallPurifierMothershipDebuff</Value>
+            <Value>AP_CanInstallMothershipPurifierDebuff</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -84028,7 +84028,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="55029861">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothershipCybrosShielding</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifierCybrosShielding</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="7CFA0973"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="3D20DFB1"/>
@@ -84055,7 +84055,7 @@
         </Element>
         <Element Type="Param" Id="B811A515">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallPurifierMothershipShielding</Value>
+            <Value>AP_CanInstallMothershipPurifierShielding</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -84065,7 +84065,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="B5B81ABA">
-            <Identifier>AP_Triggers_Protoss_unlockPurifierMothershipAmplifiedPowerRerouter</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipPurifierAmplifiedPowerRerouter</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="47599C24"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="083237B0"/>
@@ -84092,7 +84092,7 @@
         </Element>
         <Element Type="Param" Id="B5F20F79">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallPurifierMothershipAttackSpeedBoost</Value>
+            <Value>AP_CanInstallMothershipPurifierAttackSpeedBoost</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -84102,7 +84102,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="1CE17D6C">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothershipValorousResolve</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiurValorousResolve</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="ABC81A6C"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="336BD5EF"/>
@@ -84139,7 +84139,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="BC07C218">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothershipAstralRestoration</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiurAstralRestoration</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="757C1168"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="D7648F45"/>
@@ -84176,7 +84176,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="D6C62ACE">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothershipHarmonizedFeedbackConductors</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiurHarmonizedFeedbackConductors</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="33436747"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="78370B08"/>
@@ -84203,7 +84203,7 @@
         </Element>
         <Element Type="Param" Id="8697B0F6">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallAiurMothershipFeedback</Value>
+            <Value>AP_CanInstallMothershipAiurFeedback</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -84213,7 +84213,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="2F7E6A79">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothershipKhalaiShieldRechargers</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiurKhalaiShieldRechargers</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="A535A62F"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="5F0DCC93"/>
@@ -84240,7 +84240,7 @@
         </Element>
         <Element Type="Param" Id="FDD23B02">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallAiurMothershipShieldRestore</Value>
+            <Value>AP_CanInstallMothershipAiurShieldRestore</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>
@@ -84250,7 +84250,7 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionDef" Id="B65A13A9">
-            <Identifier>AP_Triggers_Protoss_unlockAiurMothershipSymbolOfUnity</Identifier>
+            <Identifier>AP_Triggers_Protoss_unlockMothershipAiurSymbolOfUnity</Identifier>
             <FlagAction/>
             <Parameter Type="ParamDef" Library="ABFE498B" Id="C98EFF09"/>
             <FunctionCall Type="FunctionCall" Library="ABFE498B" Id="3F680AFF"/>
@@ -84277,7 +84277,7 @@
         </Element>
         <Element Type="Param" Id="254716A8">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="7E5035EE"/>
-            <Value>AP_CanInstallAiurMothershipEnergyRegenAura</Value>
+            <Value>AP_CanInstallMothershipAiurEnergyRegenAura</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Upgrade"/>
         </Element>

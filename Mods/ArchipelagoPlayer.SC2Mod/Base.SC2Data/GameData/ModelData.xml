@@ -3729,6 +3729,14 @@
         <Model value="Assets\Effects\Zerg\Kerrigan_Celestial_Beam_Charge\Kerrigan_Celestial_Beam_Charge.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
+    <CModel id="AP_ArtanisHeroCleansingSmiteAura" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AP_ArtanisHeroCleansingSmiteGlaze" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Fire_WorldSpace\Glaze_Fire_WorldSpace.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
     <CModel id="AP_ArtanisBladeWaltzEndShockwave" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Terran\PredatorImpactShockwave\PredatorImpactShockwave.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -12412,15 +12420,15 @@
         <Model value="Assets\COOP\Stetmann\Effects\GARY_Stetmann_COOP_TechnoOrbSmall\GARY_Stetmann_COOP_TechnoOrbSmall.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_PurifierMothershipAttackSpeedBoost" parent="PersistentSpellFX">
+    <CModel id="AP_MothershipPurifierAttackSpeedBoost" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\ProtossWeatherShieldLarge\ProtossWeatherShieldLarge.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_TaldarimMothershipGroundSlowAura" parent="PersistentSpellFX">
+    <CModel id="AP_MothershipTaldarimGroundSlowAura" parent="PersistentSpellFX">
         <Model value="Assets\Units\Protoss\Alarak_COOP_RespawnBase\Alarak_COOP_RespawnBase.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_PurifierMothershipShielding" parent="PersistentSpellFX">
+    <CModel id="AP_MothershipPurifierShielding" parent="PersistentSpellFX">
         <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Mothership_Purifier_Ex2_Shield_final.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
@@ -12481,10 +12489,10 @@
         <ScaleMin value="1.200000,1.200000,1.200000"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_TaldarimMothershipDeathHealGlaze">
+    <CModel id="AP_MothershipTaldarimDeathHealGlaze">
         <Model value="Assets\Effects\Glaze\Glaze_SoulAbsorption\Glaze_SoulAbsorption.m3"/>
     </CModel>
-    <CModel id="AP_TaldarimMothershipDeathHealDummyAttackMissile" parent="MissileFX">
+    <CModel id="AP_MothershipTaldarimDeathHealDummyAttackMissile" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\Alarak_SoulAbsorption_Missile\Alarak_SoulAbsorption_Missile.m3"/>
         <EditorCategories value="Race:Protoss"/>
         <SelectionRadius value="0.333200"/>
@@ -12578,13 +12586,13 @@
     <CModel id="AP_MothershipCoreMorphAddition" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\PurifierMatrixMorph\PurifierMatrixMorph.m3"/>
     </CModel>
-    <CModel id="AP_PurifierMothershipAttackImpact" parent="ImpactFX">
+    <CModel id="AP_MothershipPurifierAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\Arbiter_Purifier_Coop_Missile_Impact\Arbiter_Purifier_Coop_Missile_Impact.m3"/>
         <ScaleMax value="0.700000,0.700000,0.700000"/>
         <ScaleMin value="0.700000,0.700000,0.700000"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_PurifierMothershipAttackBeam" parent="MissileFX">
+    <CModel id="AP_MothershipPurifierAttackBeam" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\MohandarMissile\MohandarMissile.m3"/>
         <EditorCategories value="Race:Protoss"/>
         <RadiusLoose value="1.000000"/>
@@ -12593,13 +12601,13 @@
         <SelectionRadius value="0.714000"/>
         <ShadowRadius value="0.714000"/>
     </CModel>
-    <CModel id="AP_AiurMothershipAttackImpact" parent="ImpactFX">
+    <CModel id="AP_MothershipAiurAttackImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\MothershipPurifyMissileImpact\MothershipPurifyMissileImpact.m3"/>
         <ScaleMax value="0.700000,0.700000,0.700000"/>
         <ScaleMin value="0.700000,0.700000,0.700000"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_AiurMothershipAttackBeam" parent="MissileFX">
+    <CModel id="AP_MothershipAiurAttackBeam" parent="MissileFX">
         <Model value="Assets\Effects\Protoss\MothershipPhotonBeam\MothershipPhotonBeam.m3"/>
         <EditorCategories value="Race:Protoss"/>
         <RadiusLoose value="1.000000"/>
@@ -12608,7 +12616,7 @@
         <SelectionRadius value="0.714000"/>
         <ShadowRadius value="0.714000"/>
     </CModel>
-    <CModel id="AP_AiurMothership" parent="Unit" Race="Protoss">
+    <CModel id="AP_MothershipAiur" parent="Unit" Race="Protoss">
         <Model value="Assets\Units\Protoss\Mothership\Mothership.m3"/>
         <!--RequiredAnims value="Assets\Units\Protoss\Mothership_SwarmAnims\Mothership_SwarmAnims.m3a"/-->
         <AttachProps Id="Ref_Weapon 01">
@@ -12641,7 +12649,7 @@
         <TechPurchaseSpeed value="0.050000"/>
         <UnitGlossaryCamera value="Star2CameraLow20"/>
     </CModel>
-    <CModel id="AP_AiurMothershipDeath">
+    <CModel id="AP_MothershipAiurDeath">
         <Model value="Assets\Units\Protoss\MotherShipDeath\MotherShipDeath.m3"/>
         <LowQualityModel value="ProtossLargeUnitDeathLow"/>
         <Events>
@@ -12666,16 +12674,16 @@
             <Payload value="AP_MothershipVoid_DeathExplosion"/>
         </Events>
     </CModel>
-    <CModel id="AP_PurifierMothership" parent="AP_AiurMothership" Race="Protoss">
+    <CModel id="AP_MothershipPurifier" parent="AP_MothershipAiur" Race="Protoss">
         <Model value="AP\Assets\Units\Protoss\Mothership_Purifier\Mothership_Purifier_Ex2.m3"/>
     </CModel>
-    <CModel id="AP_PurifierMothershipDeath" parent="AP_AiurMothershipDeath">
+    <CModel id="AP_MothershipPurifierDeath" parent="AP_MothershipAiurDeath">
         <Model value="Assets\Units\Protoss\MotherShip_Purifier_Collection_Death\MotherShip_Purifier_Collection_Death.m3"/>
     </CModel>
-    <CModel id="AP_AiurMothershipUpgrade" parent="AP_AiurMothership" Race="Protoss">
+    <CModel id="AP_MothershipAiurUpgrade" parent="AP_MothershipAiur" Race="Protoss">
         <Model value="Assets\Units\Protoss\Mothership_Golden\Mothership_Golden.m3"/>
     </CModel>
-    <CModel id="AP_AiurMothershipUpgradeDeath" parent="AP_AiurMothershipDeath">
+    <CModel id="AP_MothershipAiurUpgradeDeath" parent="AP_MothershipAiurDeath">
         <Model value="Assets\Units\Protoss\Mothership_Golden_Death\Mothership_Golden_Death.m3"/>
     </CModel>
     <CModel id="AP_MothershipCoreAiur" parent="Unit">
@@ -12840,7 +12848,7 @@
         <Model value="Assets\Effects\Protoss\MothershipTeleportOutEx1\MothershipTeleportOutEx1.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_TaldarimMothershipDeath">
+    <CModel id="AP_MothershipTaldarimDeath">
         <Model value="Assets\Units\Protoss\MotherShip_Taldarim_Death\MotherShip_Taldarim_Death.m3"/>
         <LowQualityModel value="ProtossLargeTaldarimUnitDeathLow"/>
         <Events>
@@ -12865,7 +12873,7 @@
             <Payload value="AP_MothershipVoid_DeathExplosion"/>
         </Events>
     </CModel>
-    <CModel id="AP_TaldarimMothership" parent="Unit" Race="Protoss">
+    <CModel id="AP_MothershipTaldarim" parent="Unit" Race="Protoss">
         <Model value="Assets\Units\Protoss\MotherShip_Taldarim\MotherShip_Taldarim.m3"/>
         <!--RequiredAnims value="Assets\Units\Protoss\Mothership_SwarmAnims\Mothership_SwarmAnims.m3a"/-->
         <AttachProps Id="Ref_Weapon 01">
@@ -22543,8 +22551,8 @@
         <Model value="Assets\Effects\Protoss\Protoss_Generic_WarpOut_MP_Stand\Protoss_Generic_WarpOut_MP_Stand.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
-    <CModel id="AP_ArtanisShieldOverloadModel" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Protoss\Karax_UnityBarrier_Tall\Karax_UnityBarrier_Tall.m3"/>
+    <CModel id="AP_ArtanisShieldOverloadModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\PlasmaSurgeImpact\PlasmaSurgeImpact.m3"/>
         <EditorCategories value="Race:Protoss"/>
     </CModel>
     <CModel id="AP_ArtanisAiurAspectPassiveLightningBolt" parent="ImpactFX">
