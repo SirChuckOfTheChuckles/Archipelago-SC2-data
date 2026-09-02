@@ -1447,9 +1447,6 @@
     <CRequirement id="AP_HaveArtanisAirAttack">
         <NodeArray index="Show" Link="AP_CountUpgradeArtanisAirAttackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HavePhasePrismRecastBehavior">
-        <NodeArray index="Show" Link="AP_CountBehaviorPhasePrismRecastCompleteOnlyAtUnit"/>
-    </CRequirement>
     <CRequirement id="AP_HaveSuperStimpackNova">
         <NodeArray index="Show" Link="AP_CountUpgradeSuperStimpackNovaCompleteOnly"/>
     </CRequirement>
@@ -2615,23 +2612,23 @@
     <CRequirement id="AP_HaveBattlecruiserAdvancedDefensiveMatrix">
         <NodeArray index="Show" Link="AP_CountUpgradeBattlecruiserAdvancedDefensiveMatrix"/>
     </CRequirement>
-    <CRequirement id="AP_TalDarimMothershipRequirements">
+    <CRequirement id="AP_MothershipTaldarimRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitSOAMothershipv4QueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="AP_AiurMothershipRequirements">
+    <CRequirement id="AP_MothershipAiurRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="AP_PurifierMothershipRequirements">
+    <CRequirement id="AP_MothershipPurifierRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipPurifierQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="AP_AiurMothershipCoreRequirements">
+    <CRequirement id="AP_MothershipAiurCoreRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_AndCountUnitCyberneticsCoreCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="AP_PurifierMothershipCoreRequirements">
+    <CRequirement id="AP_MothershipPurifierCoreRequirements">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
         <NodeArray index="Use" Link="AP_AndCountUnitCyberneticsCoreCompleteOnlyTechTreeCheatEqCountUnitMothershipPurifierQueuedOrBetter0"/>
     </CRequirement>
@@ -2659,6 +2656,9 @@
     <CRequirement id="AP_CanInstallAstralRestoration">
         <NodeArray index="Show" Link="AP_AndCanInstallAstralRestorationCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="AP_HaveAstralRestorationKnown">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAstralRestorationCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="AP_AstralRestorationCooldown">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Show" Link="AP_CountBehaviorAstralRestorationCooldownCompleteOnlyAtUnit"/>
@@ -2680,32 +2680,32 @@
     <CRequirement id="AP_CanInstallWormholeModule">
         <NodeArray index="Show" Link="AP_AndCanInstallWormholeModuleCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallPurifierMothershipDebuff">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallPurifierMothershipDebuffCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipPurifierDebuff">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipPurifierDebuffCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallAiurMothershipEnergyRegenAura">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAiurMothershipEnergyRegenAuraCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipAiurEnergyRegenAura">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipAiurEnergyRegenAuraCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallTaldarimMothershipFastAttack">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallTaldarimMothershipFastAttackCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipTaldarimFastAttack">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipTaldarimFastAttackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallPurifierMothershipShielding">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallPurifierMothershipShieldingCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipPurifierShielding">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipPurifierShieldingCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallPurifierMothershipAttackSpeedBoost">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallPurifierMothershipAttackSpeedBoostCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipPurifierAttackSpeedBoost">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipPurifierAttackSpeedBoostCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallTaldarimMothershipDeathHeal">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallTaldarimMothershipDeathHealCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipTaldarimDeathHeal">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipTaldarimDeathHealCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallTaldarimMothershipGroundSlow">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallTaldarimMothershipGroundSlowCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipTaldarimGroundSlow">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipTaldarimGroundSlowCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallAiurMothershipFeedback">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAiurMothershipFeedbackCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipAiurFeedback">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipAiurFeedbackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_CanInstallAiurMothershipShieldRestore">
-        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallAiurMothershipShieldRestoreCompleteOnly"/>
+    <CRequirement id="AP_CanInstallMothershipAiurShieldRestore">
+        <NodeArray index="Show" Link="AP_CountUpgradeCanInstallMothershipAiurShieldRestoreCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_CanInstallTaldarimAuxiliary">
         <NodeArray index="Show" Link="AP_CountUpgradeCanInstallTaldarimAuxiliaryCompleteOnly"/>
@@ -2749,41 +2749,41 @@
     <CRequirement id="AP_HaveWormholeModuleInstalled">
         <NodeArray index="Show" Link="AP_CountBehaviorWormholeModuleInstalledCompleteOnlyAtUnit"/>
     </CRequirement>
-    <CRequirement id="AP_HavePurifierMothershipDebuff">
+    <CRequirement id="AP_HaveMothershipPurifierDebuff">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradePurifierMothershipDebuffCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipPurifierDebuffCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveAiurMothershipEnergyRegenAura">
+    <CRequirement id="AP_HaveMothershipAiurEnergyRegenAura">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeAiurMothershipEnergyRegenAuraCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipAiurEnergyRegenAuraCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveTaldarimMothershipFastAttack">
+    <CRequirement id="AP_HaveMothershipTaldarimFastAttack">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeTaldarimMothershipFastAttackCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipTaldarimFastAttackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HavePurifierMothershipShielding">
+    <CRequirement id="AP_HaveMothershipPurifierShielding">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradePurifierMothershipShieldingCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipPurifierShieldingCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HavePurifierMothershipAttackSpeedBoost">
+    <CRequirement id="AP_HaveMothershipPurifierAttackSpeedBoost">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradePurifierMothershipAttackSpeedBoostCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipPurifierAttackSpeedBoostCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveTaldarimMothershipGroundSlow">
+    <CRequirement id="AP_HaveMothershipTaldarimGroundSlow">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeTaldarimMothershipGroundSlowCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipTaldarimGroundSlowCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveTaldarimMothershipDeathHeal">
+    <CRequirement id="AP_HaveMothershipTaldarimDeathHeal">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeTaldarimMothershipDeathHealCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipTaldarimDeathHealCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveAiurMothershipFeedback">
+    <CRequirement id="AP_HaveMothershipAiurFeedback">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeAiurMothershipFeedbackCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipAiurFeedbackCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveAiurMothershipShieldRestore">
+    <CRequirement id="AP_HaveMothershipAiurShieldRestore">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeAiurMothershipShieldRestoreCompleteOnly"/>
+        <NodeArray index="Show" Link="AP_CountUpgradeMothershipAiurShieldRestoreCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveMothershipHangarUpgrade">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>

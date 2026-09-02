@@ -2820,10 +2820,6 @@
         <Count Link="AP_ArtanisPhasePrism" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountBehavior id="AP_CountBehaviorPhasePrismRecastCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="AP_PhasePrismRecast" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
     <CRequirementCountBehavior id="AP_CountBehaviorEnableArtanisAirAttackSwapCompleteOnlyAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_EnableArtanisAirAttackSwap" State="CompleteOnlyAtUnit"/>
@@ -4844,51 +4840,51 @@
     <CRequirementAnd id="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="AP_EqCountUnitAiurMothershipQueuedOrBetter0"/>
+        <OperandArray value="AP_EqCountUnitMothershipAiurQueuedOrBetter0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitMothershipPurifierQueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="AP_EqCountUnitPurifierMothershipQueuedOrBetter0"/>
+        <OperandArray value="AP_EqCountUnitMothershipPurifierQueuedOrBetter0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AP_AndCountUnitCyberneticsCoreCompleteOnlyTechTreeCheatEqCountUnitMothershipAiurQueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="AP_EqCountUnitAiurMothershipQueuedOrBetter0"/>
+        <OperandArray value="AP_EqCountUnitMothershipAiurQueuedOrBetter0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AP_AndCountUnitCyberneticsCoreCompleteOnlyTechTreeCheatEqCountUnitMothershipPurifierQueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitCyberneticsCoreCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="AP_EqCountUnitPurifierMothershipQueuedOrBetter0"/>
+        <OperandArray value="AP_EqCountUnitMothershipPurifierQueuedOrBetter0"/>
     </CRequirementAnd>
     <CRequirementAnd id="AP_AndCountUnitFleetBeaconCompleteOnlyTechTreeCheatEqCountUnitSOAMothershipv4QueuedOrBetter0">
         <Tooltip value=""/>
         <OperandArray value="AP_CountUnitFleetBeaconCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="AP_EqCountUnitTaldarimMothershipQueuedOrBetter0"/>
+        <OperandArray value="AP_EqCountUnitMothershipTaldarimQueuedOrBetter0"/>
     </CRequirementAnd>
-    <CRequirementEq id="AP_EqCountUnitTaldarimMothershipQueuedOrBetter0">
-        <OperandArray index="0" value="AP_SumCountTaldarimMothershipTypesQueuedOrBetter"/>
+    <CRequirementEq id="AP_EqCountUnitMothershipTaldarimQueuedOrBetter0">
+        <OperandArray index="0" value="AP_SumCountMothershipTaldarimTypesQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
-    <CRequirementEq id="AP_EqCountUnitPurifierMothershipQueuedOrBetter0">
-        <OperandArray index="0" value="AP_SumCountPurifierMothershipTypesQueuedOrBetter"/>
+    <CRequirementEq id="AP_EqCountUnitMothershipPurifierQueuedOrBetter0">
+        <OperandArray index="0" value="AP_SumCountMothershipPurifierTypesQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
-    <CRequirementEq id="AP_EqCountUnitAiurMothershipQueuedOrBetter0">
-        <OperandArray index="0" value="AP_SumCountAiurMothershipTypesQueuedOrBetter"/>
+    <CRequirementEq id="AP_EqCountUnitMothershipAiurQueuedOrBetter0">
+        <OperandArray index="0" value="AP_SumCountMothershipAiurTypesQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
-    <CRequirementSum id="AP_SumCountTaldarimMothershipTypesQueuedOrBetter">
+    <CRequirementSum id="AP_SumCountMothershipTaldarimTypesQueuedOrBetter">
         <OperandArray value="AP_CountUnitSOAMothershipv4QueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipTaldarimQueuedOrBetter"/>
         <OperandArray value="AP_CountUnitSOAMothershipv4PlacementQueuedOrBetter"/>
     </CRequirementSum>
-    <CRequirementSum id="AP_SumCountPurifierMothershipTypesQueuedOrBetter">
+    <CRequirementSum id="AP_SumCountMothershipPurifierTypesQueuedOrBetter">
         <OperandArray value="AP_CountUnitMothershipCorePurifierQueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipPurifierQueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipPurifierPowerSourceQueuedOrBetter"/>
     </CRequirementSum>
-    <CRequirementSum id="AP_SumCountAiurMothershipTypesQueuedOrBetter">
+    <CRequirementSum id="AP_SumCountMothershipAiurTypesQueuedOrBetter">
         <OperandArray value="AP_CountUnitMothershipCoreAiurQueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipAiurQueuedOrBetter"/>
     </CRequirementSum>
@@ -5052,40 +5048,40 @@
         <Count Link="AP_MothershipAiurHangar" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeAiurMothershipEnergyRegenAuraCompleteOnly">
-        <Count Link="AP_AiurMothershipEnergyRegenAura" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipAiurEnergyRegenAuraCompleteOnly">
+        <Count Link="AP_MothershipAiurEnergyRegenAura" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradePurifierMothershipDebuffCompleteOnly">
-        <Count Link="AP_PurifierMothershipDebuff" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipPurifierDebuffCompleteOnly">
+        <Count Link="AP_MothershipPurifierDebuff" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeTaldarimMothershipFastAttackCompleteOnly">
-        <Count Link="AP_TaldarimMothershipFastAttack" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipTaldarimFastAttackCompleteOnly">
+        <Count Link="AP_MothershipTaldarimFastAttack" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeTaldarimMothershipGroundSlowCompleteOnly">
-        <Count Link="AP_TaldarimMothershipGroundSlow" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipTaldarimGroundSlowCompleteOnly">
+        <Count Link="AP_MothershipTaldarimGroundSlow" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradePurifierMothershipAttackSpeedBoostCompleteOnly">
-        <Count Link="AP_PurifierMothershipAttackSpeedBoost" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipPurifierAttackSpeedBoostCompleteOnly">
+        <Count Link="AP_MothershipPurifierAttackSpeedBoost" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeTaldarimMothershipDeathHealCompleteOnly">
-        <Count Link="AP_TaldarimMothershipDeathHeal" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipTaldarimDeathHealCompleteOnly">
+        <Count Link="AP_MothershipTaldarimDeathHeal" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradePurifierMothershipShieldingCompleteOnly">
-        <Count Link="AP_PurifierMothershipShielding" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipPurifierShieldingCompleteOnly">
+        <Count Link="AP_MothershipPurifierShielding" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeAiurMothershipFeedbackCompleteOnly">
-        <Count Link="AP_AiurMothershipFeedback" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipAiurFeedbackCompleteOnly">
+        <Count Link="AP_MothershipAiurFeedback" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeAiurMothershipShieldRestoreCompleteOnly">
-        <Count Link="AP_AiurMothershipShieldRestore" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeMothershipAiurShieldRestoreCompleteOnly">
+        <Count Link="AP_MothershipAiurShieldRestore" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallTaldarimAuxiliaryCompleteOnly">
@@ -5128,40 +5124,40 @@
         <Count Link="AP_CanInstallMothershipRecall" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallAiurMothershipEnergyRegenAuraCompleteOnly">
-        <Count Link="AP_CanInstallAiurMothershipEnergyRegenAura" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipAiurEnergyRegenAuraCompleteOnly">
+        <Count Link="AP_CanInstallMothershipAiurEnergyRegenAura" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallPurifierMothershipDebuffCompleteOnly">
-        <Count Link="AP_CanInstallPurifierMothershipDebuff" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipPurifierDebuffCompleteOnly">
+        <Count Link="AP_CanInstallMothershipPurifierDebuff" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallTaldarimMothershipFastAttackCompleteOnly">
-        <Count Link="AP_CanInstallTaldarimMothershipFastAttack" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipTaldarimFastAttackCompleteOnly">
+        <Count Link="AP_CanInstallMothershipTaldarimFastAttack" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallPurifierMothershipShieldingCompleteOnly">
-        <Count Link="AP_CanInstallPurifierMothershipShielding" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipPurifierShieldingCompleteOnly">
+        <Count Link="AP_CanInstallMothershipPurifierShielding" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallPurifierMothershipAttackSpeedBoostCompleteOnly">
-        <Count Link="AP_CanInstallPurifierMothershipAttackSpeedBoost" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipPurifierAttackSpeedBoostCompleteOnly">
+        <Count Link="AP_CanInstallMothershipPurifierAttackSpeedBoost" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallTaldarimMothershipDeathHealCompleteOnly">
-        <Count Link="AP_CanInstallTaldarimMothershipDeathHeal" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipTaldarimDeathHealCompleteOnly">
+        <Count Link="AP_CanInstallMothershipTaldarimDeathHeal" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallAiurMothershipFeedbackCompleteOnly">
-        <Count Link="AP_CanInstallAiurMothershipFeedback" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipAiurFeedbackCompleteOnly">
+        <Count Link="AP_CanInstallMothershipAiurFeedback" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallAiurMothershipShieldRestoreCompleteOnly">
-        <Count Link="AP_CanInstallAiurMothershipShieldRestore" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipAiurShieldRestoreCompleteOnly">
+        <Count Link="AP_CanInstallMothershipAiurShieldRestore" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallTaldarimMothershipGroundSlowCompleteOnly">
-        <Count Link="AP_CanInstallTaldarimMothershipGroundSlow" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeCanInstallMothershipTaldarimGroundSlowCompleteOnly">
+        <Count Link="AP_CanInstallMothershipTaldarimGroundSlow" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="AP_CountUpgradeMothershipPurifierPowerSourceCompleteOnly">

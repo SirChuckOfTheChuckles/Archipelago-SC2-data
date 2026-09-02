@@ -39,8 +39,8 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_CleansingSmitePassive">
-        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_ExterminatePassive">
@@ -2312,20 +2312,30 @@
     <CButton id="AP_MothershipRepairDrones">
         <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipRepairDrones"/>
+        <HotkeyAlias value="AP_MothershipRepairDrones"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary1"/>
     </CButton>
-    <CButton id="AP_MothershipRepairDronesInstall" parent="AP_MothershipRepairDrones">
-        <Name value="Button/Name/AP_MothershipRepairDronesInstall"/>
+    <CButton id="AP_MothershipRepairDronesInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipRepairDrones"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipRepairDrones"/>
+        <HotkeyAlias value="AP_MothershipRepairDrones"/>
     </CButton>
     <CButton id="AP_MothershipChronoDrones">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipChronoDrones"/>
+        <HotkeyAlias value="AP_MothershipChronoDrones"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary1"/>
     </CButton>
-    <CButton id="AP_MothershipChronoDronesInstall" parent="AP_MothershipChronoDrones">
-        <Name value="Button/Name/AP_MothershipChronoDronesInstall"/>
+    <CButton id="AP_MothershipChronoDronesInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipChronoDrones"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipChronoDrones"/>
+        <HotkeyAlias value="AP_MothershipChronoDrones"/>
     </CButton>
     <CButton id="AP_GravitonBeam">
         <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
@@ -2657,15 +2667,12 @@
         <AlertIcon value="AP\Assets\Textures\btn-ability-phase-prism.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_PhasePrismRecast">
-        <Icon value="AP\Assets\Textures\btn-ability-phase-prism-recast.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-ability-phase-prism-recast.dds"/>
-        <EditorCategories value="Race:Protoss"/>
-    </CButton>
     <CButton id="AP_CleansingSmite">
-        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
-        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-zealotcleave.dds"/>
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-cleansing-smite.dds"/>
         <EditorCategories value="Race:Protoss"/>
+        <Hotkey value="Button/Hotkey/AP_ArtanisBladeWaltz"/>
+        <HotkeyAlias value="AP_ArtanisBladeWaltz"/>
     </CButton>
     <CButton id="AP_VoltaicShock">
         <Icon value="AP\Assets\Textures\btn-ability-voltaic-surge.dds"/>
@@ -2681,11 +2688,15 @@
         <Icon value="AP\Assets\Textures\btn-ability-exterminate.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-exterminate.dds"/>
         <EditorCategories value="Race:Protoss"/>
+        <Hotkey value="Button/Hotkey/AP_ArtanisBladeWaltz"/>
+        <HotkeyAlias value="AP_ArtanisBladeWaltz"/>
     </CButton>
     <CButton id="AP_ShadowSlice">
         <Icon value="Assets\Textures\btn-ability-zeratul-hero-shadowcleave.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zeratul-hero-shadowcleave.dds"/>
         <EditorCategories value="Race:Protoss"/>
+        <Hotkey value="Button/Hotkey/AP_ArtanisBladeWaltz"/>
+        <HotkeyAlias value="AP_ArtanisBladeWaltz"/>
     </CButton>
     <CButton id="AP_ArtanisAstralWind">
         <Icon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
@@ -3065,194 +3076,209 @@
         <Icon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipPurifierBlackHole"/>
+        <HotkeyAlias value="AP_MothershipPurifierBlackHole"/>
     </CButton>
     <CButton id="AP_TimeFieldAiur">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-timewarp-blue.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-timewarp-blue.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipAiurBlackHole"/>
+        <HotkeyAlias value="AP_MothershipAiurBlackHole"/>
     </CButton>
     <CButton id="AP_TimeFieldTaldarim">
         <Icon value="Assets\Textures\btn-ability-protoss-timewarp-red.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp-red.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_VoidSentryBlackHole"/>
+        <HotkeyAlias value="AP_VoidSentryBlackHole"/>
     </CButton>
     <CButton id="AP_MothershipCoreNexusRecall">
         <Icon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipCoreNexusRecall"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
-        <Universal value="1"/>
+        <HotkeyAlias value="AP_MothershipCoreNexusRecall"/>
     </CButton>
     <CButton id="AP_MothershipCoreMassRecall">
         <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipCoreMassRecall"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
-        <Universal value="1"/>
+        <HotkeyAlias value="AP_MothershipCoreMassRecall"/>
     </CButton>
     <CButton id="AP_WormholeTransit">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-warpharmonization-taldarim.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-warpharmonization-taldarim.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
+        <Hotkey value="Button/Hotkey/AP_VoidSentryBlackHole"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
-        <Universal value="1"/>
+        <HotkeyAlias value="AP_VoidSentryBlackHole"/>
     </CButton>
-    <CButton id="AP_WormholeTransitInstall" parent="AP_WormholeTransit">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility3"/>
-        <Tooltip value="Button/Tooltip/AP_WormholeTransitInstall"/>
-        <Name value="Button/Name/AP_WormholeTransitInstall"/>
+    <CButton id="AP_WormholeTransitInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-warpharmonization-taldarim.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-warpharmonization-taldarim.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_TimeFieldAiurInstall" parent="AP_TimeFieldAiur">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility2"/>
+    <CButton id="AP_TimeFieldAiurInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-timewarp-blue.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-timewarp-blue.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_TimeFieldAiurInstall"/>
         <Name value="Button/Name/AP_TimeFieldAiurInstall"/>
     </CButton>
-    <CButton id="AP_TimeFieldPurifierInstall" parent="AP_TimeFieldPurifier">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility2"/>
+    <CButton id="AP_TimeFieldPurifierInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-timewarp-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_TimeFieldPurifierInstall"/>
         <Name value="Button/Name/AP_TimeFieldPurifierInstall"/>
     </CButton>
-    <CButton id="AP_TimeFieldTaldarimInstall" parent="AP_TimeFieldTaldarim">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility2"/>
-        <Tooltip value="Button/Tooltip/AP_TimeFieldTaldarimInstall"/>
-        <Name value="Button/Name/AP_TimeFieldTaldarimInstall"/>
+    <CButton id="AP_TimeFieldTaldarimInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-timewarp-red.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-timewarp-red.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_MothershipNexusRecallInstall" parent="AP_MothershipCoreNexusRecall">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility3"/>
+    <CButton id="AP_MothershipNexusRecallInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-massrecall.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_MothershipNexusRecallInstall"/>
         <Name value="Button/Name/AP_MothershipNexusRecallInstall"/>
     </CButton>
-    <CButton id="AP_MothershipMassRecallInstall" parent="AP_MothershipCoreMassRecall">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility3"/>
-        <Tooltip value="Button/Tooltip/AP_MothershipNexusRecallInstall"/>
+    <CButton id="AP_MothershipMassRecallInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-wormholetransit-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipMassRecallInstall"/>
         <Name value="Button/Name/AP_MothershipMassRecallInstall"/>
     </CButton>
     <CButton id="AP_InterceptorMothershipTaldarim">
         <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_Interceptor"/>
     </CButton>
     <CButton id="AP_MothershipCoreAiur">
         <Icon value="Assets\Textures\btn-unit-protoss-mothershipcore.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-mothershipcore.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipCoreAiur"/>
+        <HotkeyAlias value="AP_MothershipCoreAiur"/>
     </CButton>
     <CButton id="AP_MothershipCorePurifier">
         <Icon value="AP\Assets\Textures\btn-unit-protoss-mothershipcore-purifier-ex2.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-unit-protoss-mothershipcore-purifier-ex2.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipCorePurifier"/>
+        <HotkeyAlias value="AP_MothershipCorePurifier"/>
     </CButton>
     <CButton id="AP_MothershipAiur">
         <Icon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-protoss-mothership.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MorphToMothership"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipAiur"/>
+        <HotkeyAlias value="AP_MothershipAiur"/>
     </CButton>
     <CButton id="AP_MothershipPurifier">
         <Icon value="AP\Assets\Textures\btn-unit-protoss-mothership-purifier-collection-ex2.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-unit-protoss-mothership-purifier-collection-ex2.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MorphToMothership"/>
+        <Hotkey value="Button/Hotkey/AP_MothershipPurifier"/>
+        <HotkeyAlias value="AP_MothershipPurifier"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipGroundSlow">
+    <CButton id="AP_MothershipTaldarimGroundSlow">
         <Icon value="AP\Assets\Textures\alarakdeath_ingame_heroportrait.dds"/>
         <AlertIcon value="AP\Assets\Textures\alarakdeath_ingame_heroportrait.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary3"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipGroundSlowInstall" parent="AP_TaldarimMothershipGroundSlow">
-        <Name value="Button/Name/AP_TaldarimMothershipGroundSlowInstall"/>
+    <CButton id="AP_MothershipTaldarimGroundSlowInstall" parent="AP_MothershipTaldarimGroundSlow">
+        <Name value="Button/Name/AP_MothershipTaldarimGroundSlowInstall"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipFastAttack">
+    <CButton id="AP_MothershipTaldarimFastAttack">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-orbitalthermallance-taldarim.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-orbitalthermallance-taldarim.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary2"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipFastAttackInstall" parent="AP_TaldarimMothershipFastAttack">
-        <Name value="Button/Name/AP_TaldarimMothershipFastAttackInstall"/>
+    <CButton id="AP_MothershipTaldarimFastAttackInstall" parent="AP_MothershipTaldarimFastAttack">
+        <Name value="Button/Name/AP_MothershipTaldarimFastAttackInstall"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipDeathHeal">
+    <CButton id="AP_MothershipTaldarimDeathHeal">
         <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary4"/>
     </CButton>
-    <CButton id="AP_TaldarimMothershipDeathHealInstall" parent="AP_TaldarimMothershipDeathHeal">
-        <Name value="Button/Name/AP_TaldarimMothershipDeathHealInstall"/>
+    <CButton id="AP_MothershipTaldarimDeathHealInstall" parent="AP_MothershipTaldarimDeathHeal">
+        <Name value="Button/Name/AP_MothershipTaldarimDeathHealInstall"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipDebuff">
+    <CButton id="AP_MothershipPurifierDebuff">
         <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonovercharge.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary2"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipDebuffInstall" parent="AP_PurifierMothershipDebuff">
-        <Name value="Button/Name/AP_PurifierMothershipDebuffInstall"/>
+    <CButton id="AP_MothershipPurifierDebuffInstall" parent="AP_MothershipPurifierDebuff">
+        <Name value="Button/Name/AP_MothershipPurifierDebuffInstall"/>
     </CButton>
-    <CButton id="AP_AiurMothershipEnergyRegenAura">
+    <CButton id="AP_MothershipAiurEnergyRegenAura">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-symbolofunity.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-symbolofunity.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary4"/>
     </CButton>
-    <CButton id="AP_AiurMothershipEnergyRegenAuraInstall" parent="AP_AiurMothershipEnergyRegenAura">
-        <Name value="Button/Name/AP_AiurMothershipEnergyRegenAuraInstall"/>
+    <CButton id="AP_MothershipAiurEnergyRegenAuraInstall" parent="AP_MothershipAiurEnergyRegenAura">
+        <Name value="Button/Name/AP_MothershipAiurEnergyRegenAuraInstall"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipAttackSpeedBoost">
+    <CButton id="AP_MothershipPurifierAttackSpeedBoost">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-purifier-sentry-optimizedemittersresearch-orange.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-purifier-sentry-optimizedemittersresearch-orange.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary4"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipAttackSpeedBoostInstall" parent="AP_PurifierMothershipAttackSpeedBoost">
-        <Name value="Button/Name/AP_PurifierMothershipAttackSpeedBoostInstall"/>
+    <CButton id="AP_MothershipPurifierAttackSpeedBoostInstall" parent="AP_MothershipPurifierAttackSpeedBoost">
+        <Name value="Button/Name/AP_MothershipPurifierAttackSpeedBoostInstall"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipShielding">
+    <CButton id="AP_MothershipPurifierShielding">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-purifier-shield-ex2.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifier-shield-ex2.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary3"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipShieldingInstall" parent="AP_PurifierMothershipShielding">
-        <Name value="Button/Name/AP_PurifierMothershipShieldingInstall"/>
+    <CButton id="AP_MothershipPurifierShieldingInstall" parent="AP_MothershipPurifierShielding">
+        <Name value="Button/Name/AP_MothershipPurifierShieldingInstall"/>
     </CButton>
-    <CButton id="AP_AiurMothershipFeedback">
+    <CButton id="AP_MothershipAiurFeedback">
         <Icon value="Assets\Textures\btn-ability-protoss-feedbackaoe-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-feedbackaoe-color.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <TooltipAppender Validator="AP_CanInstallAiurMothershipFeedback" Text="Button/Tooltip/AP_AppendAiurMothershipFeedback"/>
+        <TooltipAppender Validator="AP_ShowMothershipAiurFeedbackAstralRestorationAppend" Text="Button/Tooltip/AP_AppendMothershipAiurFeedback"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary3"/>
     </CButton>
-    <CButton id="AP_AiurMothershipFeedbackInstall" parent="AP_AiurMothershipFeedback">
-        <Name value="Button/Name/AP_AiurMothershipFeedbackInstall"/>
+    <CButton id="AP_MothershipAiurFeedbackInstall" parent="AP_MothershipAiurFeedback">
+        <Name value="Button/Name/AP_MothershipAiurFeedbackInstall"/>
     </CButton>
-    <CButton id="AP_AiurMothershipShieldRestore">
+    <CButton id="AP_MothershipAiurShieldRestore">
         <Icon value="Assets\Textures\talent-vorazun-level07-improvedshieldregeneration.dds"/>
         <AlertIcon value="Assets\Textures\talent-vorazun-level07-improvedshieldregeneration.dds"/>
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary2"/>
     </CButton>
-    <CButton id="AP_AiurMothershipShieldRestoreInstall" parent="AP_AiurMothershipShieldRestore">
-        <Name value="Button/Name/AP_AiurMothershipShieldRestoreInstall"/>
+    <CButton id="AP_MothershipAiurShieldRestoreInstall" parent="AP_MothershipAiurShieldRestore">
+        <Name value="Button/Name/AP_MothershipAiurShieldRestoreInstall"/>
     </CButton>
     <CButton id="AP_HangarInstallTaldarim">
         <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
         <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary1"/>
+        <Hotkey value="Button/Hotkey/AP_HangarInstallTaldarim"/>
+        <HotkeyAlias value="AP_HangarInstallTaldarim"/>
+    </CButton>
+    <CButton id="AP_HangarTaldarim">
+        <Icon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-taldarim-interceptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Tooltip value="Button/Tooltip/AP_HangarInstallTaldarim"/>
     </CButton>
     <CButton id="AP_CloakingFieldMothership">
         <Icon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
@@ -3275,11 +3301,13 @@
         <Icon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_RevitalizeShields"/>
+        <HotkeyAlias value="AP_RevitalizeShields"/>
     </CButton>
-    <CButton id="AP_BatteryOverchargeInstall" parent="AP_BatteryOvercharge">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage2"/>
+    <CButton id="AP_BatteryOverchargeInstall">
+        <Icon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zeratul-observer-sensorarray.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_BatteryOverchargeInstall"/>
         <Name value="Button/Name/AP_BatteryOverchargeInstall"/>
     </CButton>
@@ -3287,18 +3315,20 @@
         <Icon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_OverloadWeaponSystems"/>
+        <HotkeyAlias value="AP_OverloadWeaponSystems"/>
     </CButton>
     <CButton id="AP_PowerRedirectionUpgrade">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_OverloadWeaponSystems"/>
+        <HotkeyAlias value="AP_OverloadWeaponSystems"/>
     </CButton>
-    <CButton id="AP_PowerRedirectionInstall" parent="AP_PowerRedirectionUpgrade">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage2"/>
+    <CButton id="AP_PowerRedirectionInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-phasecannon-purifier.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_PowerRedirectionInstall"/>
         <Name value="Button/Name/AP_PowerRedirectionInstall"/>
     </CButton>
@@ -3306,47 +3336,51 @@
         <Icon value="AP\Assets\Textures\btn-ability-protoss-chargedshield-blue.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-chargedshield-blue.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
     </CButton>
     <CButton id="AP_AstralRestoration">
         <Icon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_RevitalizeShields"/>
+        <HotkeyAlias value="AP_RevitalizeShields"/>
     </CButton>
     <CButton id="AP_OverloadWeaponSystems">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-dischargestrike-orange.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-dischargestrike-orange.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
     </CButton>
     <CButton id="AP_PlanetCracker">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_OverloadWeaponSystems"/>
+        <HotkeyAlias value="AP_OverloadWeaponSystems"/>
     </CButton>
-    <CButton id="AP_RevitalizeShieldsInstall" parent="AP_RevitalizeShields">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage1"/>
+    <CButton id="AP_RevitalizeShieldsInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-chargedshield-blue.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-chargedshield-blue.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_RevitalizeShieldsInstall"/>
         <Name value="Button/Name/AP_RevitalizeShieldsInstall"/>
     </CButton>
-    <CButton id="AP_AstralRestorationInstall" parent="AP_AstralRestoration">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage3"/>
+    <CButton id="AP_AstralRestorationInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_AstralRestorationInstall"/>
         <Name value="Button/Name/AP_AstralRestorationInstall"/>
     </CButton>
-    <CButton id="AP_OverloadWeaponSystemsInstall" parent="AP_OverloadWeaponSystems">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage1"/>
+    <CButton id="AP_OverloadWeaponSystemsInstall">
+        <Icon value="AP\Assets\Textures\btn-upgrade-protoss-dischargestrike-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-dischargestrike-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_OverloadWeaponSystemsInstall"/>
         <Name value="Button/Name/AP_OverloadWeaponSystemsInstall"/>
     </CButton>
-    <CButton id="AP_PlanetCrackerInstall" parent="AP_PlanetCracker">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage3"/>
+    <CButton id="AP_PlanetCrackerInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifier-planetcracker.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_PlanetCrackerInstall"/>
         <Name value="Button/Name/AP_PlanetCrackerInstall"/>
     </CButton>
@@ -3554,37 +3588,31 @@
         <Icon value="Assets\Textures\btn-ability-protoss-thermallance.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-thermallance.dds"/>
         <EditorCategories value="Race:Protoss"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
     </CButton>
     <CButton id="AP_VoidSentryBlackHole">
         <Icon value="Assets\Textures\btn-ability-protoss-blackhole-redcolor.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-redcolor.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
    <CButton id="AP_SummonDeathFleet">
         <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-improveddeathfleet.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-improveddeathfleet.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamagePrimary"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipDamagePrimary"/>
+        <Hotkey value="Button/Hotkey/AP_SOAMothershipLineAttack"/>
+        <HotkeyAlias value="AP_SOAMothershipLineAttack"/>
     </CButton>
-    <CButton id="AP_SOAMothershipLineAttackInstall" parent="AP_SOAMothershipLineAttack">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage1"/>
-        <Tooltip value="Button/Tooltip/AP_SOAMothershipLineAttackInstall"/>
-        <Name value="Button/Name/AP_SOAMothershipLineAttackInstall"/>
+    <CButton id="AP_SOAMothershipLineAttackInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-thermallance.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-thermallance.dds"/>
     </CButton>
-    <CButton id="AP_VoidSentryBlackHoleInstall" parent="AP_VoidSentryBlackHole">
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility1"/>
-        <Tooltip value="Button/Tooltip/AP_VoidSentryBlackHoleInstall"/>
-        <Name value="Button/Name/AP_VoidSentryBlackHoleInstall"/>
+    <CButton id="AP_VoidSentryBlackHoleInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-blackhole-redcolor.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-redcolor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
-   <CButton id="AP_SummonDeathFleetInstall" parent="AP_SummonDeathFleet">
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage2"/>
-        <Tooltip value="Button/Tooltip/AP_SummonDeathFleetInstall"/>
-        <Name value="Button/Name/AP_SummonDeathFleetInstall"/>
+   <CButton id="AP_SummonDeathFleetInstall">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-improveddeathfleet.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-improveddeathfleet.dds"/>
     </CButton>
     <CButton id="AP_MothershipCloakField">
         <Icon value="Assets\Textures\btn-ability-protoss-cloakfield-color.dds"/>
@@ -3602,10 +3630,6 @@
         <EditorCategories value="Race:Protoss"/>
         <Name value="Button/Name/AP_MothershipDamage"/>
         <Tooltip value="Button/Tooltip/AP_MothershipDamage"/>
-        <AlertTooltip value="Button/Tooltip/AP_MothershipDamage"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipDamage"/>
-        <HotkeyAlias value="AP_MothershipDamage"/>
-        <Universal value="1"/>
     </CButton>
     <CButton id="AP_MothershipUtilityAiur">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-aiur-dragoonweapon.dds"/>
@@ -3613,10 +3637,6 @@
         <EditorCategories value="Race:Protoss"/>
         <Name value="Button/Name/AP_MothershipUtility"/>
         <Tooltip value="Button/Tooltip/AP_MothershipUtility"/>
-        <AlertTooltip value="Button/Tooltip/AP_MothershipUtility"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility"/>
-        <HotkeyAlias value="AP_MothershipUtility"/>
-        <Universal value="1"/>
     </CButton>
     <CButton id="AP_MothershipAuxiliaryAiur">
         <Icon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
@@ -3624,57 +3644,71 @@
         <EditorCategories value="Race:Protoss"/>
         <Name value="Button/Name/AP_MothershipAuxiliary"/>
         <Tooltip value="Button/Tooltip/AP_MothershipAuxiliary"/>
-        <AlertTooltip value="Button/Tooltip/AP_MothershipAuxiliary"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipAuxiliary"/>
-        <HotkeyAlias value="AP_MothershipAuxiliary"/>
-        <Universal value="1"/>
     </CButton>
-    <CButton id="AP_MothershipDamagePurifier" parent="AP_MothershipDamageAiur">
+    <CButton id="AP_MothershipDamagePurifier">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-prismaticrange-orange.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-prismaticrange-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipDamage"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipDamage"/>
     </CButton>
-    <CButton id="AP_MothershipUtilityPurifier" parent="AP_MothershipUtilityAiur">
+    <CButton id="AP_MothershipUtilityPurifier">
         <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds"/>
         <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-dragoonsuit-weapon.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipUtility"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipUtility"/>
     </CButton>
-    <CButton id="AP_MothershipAuxiliaryPurifier" parent="AP_MothershipAuxiliaryAiur">
+    <CButton id="AP_MothershipAuxiliaryPurifier">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-purifierauxiliary.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-purifierauxiliary.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipAuxiliary"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipAuxiliary"/>
     </CButton>
-    <CButton id="AP_MothershipDamageTaldarim" parent="AP_MothershipDamageAiur">
+    <CButton id="AP_MothershipDamageTaldarim">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-destroyer-bloodshardoverload.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-destroyer-bloodshardoverload.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipDamage"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipDamage"/>
     </CButton>
-    <CButton id="AP_MothershipUtilityTaldarim" parent="AP_MothershipUtilityAiur">
+    <CButton id="AP_MothershipUtilityTaldarim">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-dragoonweapon-taldarim.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-protoss-dragoonweapon-taldarim.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipUtility"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipUtility"/>
     </CButton>
-    <CButton id="AP_MothershipAuxiliaryTaldarim" parent="AP_MothershipAuxiliaryAiur">
+    <CButton id="AP_MothershipAuxiliaryTaldarim">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-arcshield-taldarim.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-arcshield-taldarim.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Name value="Button/Name/AP_MothershipAuxiliary"/>
+        <Tooltip value="Button/Tooltip/AP_MothershipAuxiliary"/>
     </CButton>
-    <CButton id="AP_AiurMothershipBlackHole">
+    <CButton id="AP_MothershipAiurBlackHole">
         <Icon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
-    <CButton id="AP_PurifierMothershipBlackHole">
+    <CButton id="AP_MothershipPurifierBlackHole">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtilityPrimary"/>
         <EditorCategories value="Race:Protoss"/>
-        <HotkeyAlias value="AP_MothershipUtilityPrimary"/>
     </CButton>
-    <CButton id="AP_MothershipAiurBlackHoleInstall" parent="AP_AiurMothershipBlackHole">
+    <CButton id="AP_MothershipAiurBlackHoleInstall">
+        <Icon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-blackhole-color.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_MothershipAiurBlackHoleInstall"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility1"/>
         <Name value="Button/Name/AP_MothershipBlackHoleInstall"/>
     </CButton>
-    <CButton id="AP_MothershipPurifierBlackHoleInstall" parent="AP_PurifierMothershipBlackHole">
+    <CButton id="AP_MothershipPurifierBlackHoleInstall">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-blackhole-orange.dds"/>
+        <EditorCategories value="Race:Protoss"/>
         <Tooltip value="Button/Tooltip/AP_MothershipPurifierBlackHoleInstall"/>
-        <Hotkey value="Button/Hotkey/AP_MothershipUtility1"/>
         <Name value="Button/Name/AP_MothershipBlackHoleInstall"/>
     </CButton>
     <CButton id="AP_CancelMothershipMorph">
@@ -8390,6 +8424,7 @@
     </CButton>
     <CButton id="AP_ElderProbes">
         <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
     </CButton>
     <CButton id="AP_ElderProbePowerOn">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-elderprobepoweron.dds"/>
@@ -8410,6 +8445,7 @@
     </CButton>
     <CButton id="AP_ReconstructElderProbe">
         <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
     </CButton>
     <CButton id="AP_StalkerPurifierReconstruction">
         <Icon value="AP\Assets\Textures\btn-upgrade-protoss-stalkerpurifier-reconstruction.dds"/>

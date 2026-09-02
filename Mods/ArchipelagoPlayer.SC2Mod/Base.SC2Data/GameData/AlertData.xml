@@ -27,7 +27,7 @@
         <Peripheral value="MorphComplete"/>
     </CAlert>
     <CAlert id="AP_ArtanisReviveComplete">
-        <Icon value="Assets\Textures\btn-upgrade-nova-novarespawn.dds"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-resurgence.dds"/>
         <Sound value="Ping"/>
         <Voice value="Ready"/>
         <Peripheral value="MorphComplete"/>
@@ -37,5 +37,22 @@
         <Sound value="Ping"/>
         <Voice value="Ready"/>
         <Peripheral value="MorphComplete"/>
+    </CAlert>
+    <CAlert id="AP_MothershipRepairDroneComplete">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
+    <CAlert id="AP_MothershipChronoDroneComplete">
+        <Icon value="AP\Assets\Textures\btn-ability-protoss-carrierrepairdrones-purifier.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
+    <CAlert id="AP_ElderProbeComplete">
+        <Icon value="Assets\Textures\btn-unit-collection-probe-remastered.dds"/>
+        <Peripheral value="TrainComplete"/>
+    </CAlert>
+    <CAlert id="AP_SupplicantWarpComplete">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-supplicant.dds"/>
+        <Sound value="AP_ZealotAlarak_Ready"/>
+        <Peripheral value="TrainComplete"/>
     </CAlert>
 </Catalog>
