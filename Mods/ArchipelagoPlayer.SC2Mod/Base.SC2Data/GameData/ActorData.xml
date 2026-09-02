@@ -18079,12 +18079,14 @@
     <CActorSound id="AP_Mothership_BlinkDownSound" parent="SoundOneShot">
         <On Terms="Effect.AP_SOAMothershipBlinkStrikeTeleport.Start" Send="Create"/>
         <On Terms="Effect.AP_SOAMothershipBlinkTeleport.Start" Send="Create"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalTeleport.Start" Send="Create"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <Sound value="AP_Mothership_BlinkDown"/>
     </CActorSound>
     <CActorSound id="AP_Mothership_BlinkUpSound" parent="SoundOneShot">
         <On Terms="Effect.AP_SOAMothershipBlinkCP.Start; At Source" Send="Create"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalCP.Start; At Source" Send="Create"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachOriginStationary"/>
         <Sound value="AP_Mothership_BlinkUp"/>
@@ -24692,6 +24694,7 @@
     <CActorModel id="AP_SOAMothershipBlinkStrikeIn" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_SOAMothershipBlinkStrikeTeleport.Start" Send="Create"/>
         <On Terms="Effect.AP_SOAMothershipBlinkTeleport.Start" Send="Create"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalTeleport.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="AnimSetTimeScale BSD 2.000000"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
@@ -24700,6 +24703,7 @@
     <CActorModel id="AP_SOAMothershipBlinkStrikeOut" parent="ModelAnimationStyleOneShot">
         <On Terms="Effect.AP_SOAMothershipBlinkStrikeCP.Start" Send="Create"/>
         <On Terms="Effect.AP_SOAMothershipBlinkCP.Start" Send="Create"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalCP.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="AnimSetTimeScale BSD 2.000000"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachOrigin"/>
@@ -24780,6 +24784,8 @@
         <!--        <On Terms="Abil.Vortex.SourceCastStart" Send="$Spell"/>-->
         <On Terms="Effect.AP_SOAMothershipBlinkCP.Start" Send="SetOpacity 0.050000 0.375000"/>
         <On Terms="Effect.AP_SOAMothershipBlinkTeleport.Stop" Send="SetOpacity 1.000000 0.625000"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalCP.Start" Send="SetOpacity 0.050000 0.375000"/>
+        <On Terms="Effect.AP_SOAMothershipBlinkGlobalTeleport.Stop" Send="SetOpacity 1.000000 0.625000"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_Mothership_Land"/>
         <On Terms="Abil.AP_SummonDeathFleet.SourceCastStart" Send="$Spell"/>
         <On Terms="TimerExpired; TimerName ShrinkDelay" Target="::Main" Send="SetScale 1.000000 0.500000"/>

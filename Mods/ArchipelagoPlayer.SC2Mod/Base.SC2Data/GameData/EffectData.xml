@@ -13065,6 +13065,13 @@
         <PeriodicEffectArray value="AP_SOAMothershipBlinkTeleport"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="AP_SOAMothershipBlinkGlobalCP">
+        <EditorCategories value="Race:Protoss"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="AP_SOAMothershipBlinkGlobalTeleport"/>
+        <PeriodicPeriodArray value="0.375"/>
+    </CEffectCreatePersistent>
     <CEffectCreatePersistent id="AP_SOAMothershipBlinkStrikeCP">
         <EditorCategories value="Race:Protoss"/>
         <Flags index="Channeled" value="1"/>
@@ -13116,6 +13123,11 @@
     <CEffectTeleport id="AP_SOAMothershipBlinkTeleport">
         <EditorCategories value="Race:Protoss"/>
         <Range value="10"/>
+        <WhichUnit Value="Source"/>
+        <TargetLocation Value="TargetPoint"/>
+    </CEffectTeleport>
+    <CEffectTeleport id="AP_SOAMothershipBlinkGlobalTeleport">
+        <EditorCategories value="Race:Protoss"/>
         <WhichUnit Value="Source"/>
         <TargetLocation Value="TargetPoint"/>
     </CEffectTeleport>

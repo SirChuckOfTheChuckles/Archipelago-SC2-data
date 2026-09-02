@@ -7558,6 +7558,7 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_SOAMothershipBlink"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AP_SOAMothershipBlinkGlobal" parent="AP_SOAMothershipBlink">
+        <Effect index="0" value="AP_SOAMothershipBlinkGlobalCP"/>
         <Cost index="0">
             <Vital index="Energy" value="50"/>
             <Cooldown Link="Abil/AP_SOAMothershipBlink" TimeUse="120"/>
