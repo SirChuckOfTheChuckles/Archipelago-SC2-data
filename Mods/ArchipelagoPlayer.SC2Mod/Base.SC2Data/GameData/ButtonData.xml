@@ -7470,12 +7470,13 @@
         <Universal value="1"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_SiegeTankMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_SiegeTankMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_SiegeTankMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_SiegeTankMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_SiegeTankMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_SiegeTankMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowSiegeTankMengskRank3Preview" Text="Button/Tooltip/AP_SiegeTankMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowSiegeTankMengskRank3" Text="Button/Tooltip/AP_SiegeTankMengskRank3"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7517,12 +7518,13 @@
         <AlertIcon value="Assets\Textures\btn-unit-terran-thormengsk.dds"/>
     </CButton>
     <CButton id="AP_ThorMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_ThorMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_ThorMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_ThorMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_ThorMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_ThorMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_ThorMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowThorMengskRank3Preview" Text="Button/Tooltip/AP_ThorMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowThorMengskRank3" Text="Button/Tooltip/AP_ThorMengskRank3"/>
     </CButton>
     <CButton id="AP_ThorMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7576,12 +7578,13 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MarauderMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MarauderMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MarauderMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_MarauderMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_MarauderMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_MarauderMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowMarauderMengskRank3Preview" Text="Button/Tooltip/AP_MarauderMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowMarauderMengskRank3" Text="Button/Tooltip/AP_MarauderMengskRank3"/>
     </CButton>
     <CButton id="AP_MarauderMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7696,12 +7699,13 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GhostMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_GhostMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_GhostMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_GhostMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_GhostMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_GhostMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_GhostMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowGhostMengskRank3Preview" Text="Button/Tooltip/AP_GhostMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowGhostMengskRank3" Text="Button/Tooltip/AP_GhostMengskRank3"/>
     </CButton>
     <CButton id="AP_GhostMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7753,12 +7757,13 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="AP_MarineMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MarineMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MarineMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MarineMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_MarineMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_MarineMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_MarineMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowMarineMengskRank3Preview" Text="Button/Tooltip/AP_MarineMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowMarineMengskRank3" Text="Button/Tooltip/AP_MarineMengskRank3"/>
     </CButton>
     <CButton id="AP_MarineMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7818,12 +7823,13 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
     </CButton>
     <CButton id="AP_GoliathMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_GoliathMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_GoliathMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_GoliathMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_GoliathMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_GoliathMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_GoliathMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowGoliathMengskRank3Preview" Text="Button/Tooltip/AP_GoliathMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowGoliathMengskRank3" Text="Button/Tooltip/AP_GoliathMengskRank3"/>
     </CButton>
     <CButton id="AP_GoliathMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -7857,12 +7863,13 @@
         <Icon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
     </CButton>
     <CButton id="AP_MedicMengskVeterancy" parent="AP_RoyalGuardMengsk">
+        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MedicMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MedicMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MedicMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_MedicMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_MedicMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_MedicMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowMedicMengskRank3Preview" Text="Button/Tooltip/AP_MedicMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowMedicMengskRank3" Text="Button/Tooltip/AP_MedicMengskRank3"/>
     </CButton>
     <CButton id="AP_MedicMengskCombatDiagnosis">
         <Icon value="Assets\Textures\btn-ability-mengsk-royalguard-mightoftheempire.dds"/>
@@ -8978,5 +8985,54 @@
         <EditorCategories value="Race:Protoss"/>
         <Hotkey value="Button/Hotkey/GravitonBeam"/>
         <HotkeyAlias value="GravitonBeam"/>
+    </CButton>
+    <CButton id="AP_MarineMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MarineMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MarauderMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MarauderMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_MedicMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_MedicMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GhostMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_GhostMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_GoliathMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_GoliathMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_SiegeTankMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_SiegeTankMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_ThorMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_ThorMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
     </CButton>
 </Catalog>

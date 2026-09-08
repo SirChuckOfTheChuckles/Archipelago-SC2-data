@@ -20,6 +20,12 @@
         <BonusPerLevel value="1"/>
         <PreviousValueFactor value="1"/>
     </CAccumulatorVeterancyLevel>
+    <CAccumulatorVeterancyLevel id="AP_0.5DamagePerRank">
+        <MinAccumulation value="0"/>
+        <Amount value="-0.5"/>
+        <BonusPerLevel value="0.5"/>
+        <PreviousValueFactor value="1"/>
+    </CAccumulatorVeterancyLevel>
     <CAccumulatorVeterancyLevel id="AP_2DamagePerRank">
         <MinAccumulation value="0"/>
         <Amount value="-2"/>

@@ -29702,8 +29702,9 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_SiegeModeMengsk"/>
+        <AbilArray Link="AP_SiegeTankMengskUnlockRank3"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancySiegeTankMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancySiegeTankMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -29726,6 +29727,8 @@
             <LayoutButtons Face="AP_SiegeTankMengskImprovedTankMode" Type="Passive" Requirements="AP_HaveSiegeTankMengskImprovedTankMode" Row="1" Column="4"/>
             <LayoutButtons Face="AP_SiegeTankMengskSmartServos" Type="Passive" Requirements="AP_HaveSiegeTankMengskSmartServos" Row="2" Column="2"/>
             <LayoutButtons Face="AP_SiegeTankMengskAirlift" Type="Passive" Requirements="AP_TankModeHaveSiegeTankMengskAirlift" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_SiegeTankMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_SiegeTankMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_SiegeTankMengskUnlockRank3" Type="Passive" Requirements="AP_SiegeTankMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="1"/>
@@ -29785,8 +29788,9 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="AP_UnsiegeMengsk"/>
         <AbilArray Link="AP_SiegeTankMengskSiegedTransportableMorph"/>
+        <AbilArray Link="AP_SiegeTankMengskUnlockRank3"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancySiegeTankMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancySiegeTankMengskRank2"/>
         <BehaviorArray Link="AP_SiegeTankMengskRangeBonus"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
@@ -29807,6 +29811,8 @@
             <LayoutButtons Face="AP_SiegeTankMengskImprovedTankMode" Type="Passive" Requirements="AP_SiegeModeHaveSiegeTankMengskImprovedTankMode" Row="1" Column="4"/>
             <LayoutButtons Face="AP_SiegeTankMengskSmartServos" Type="Passive" Requirements="AP_HaveSiegeTankMengskSmartServos" Row="2" Column="2"/>
             <LayoutButtons Face="AP_SiegeTankMengskAirlift" Type="Passive" Requirements="AP_HaveSiegeTankMengskAirlift" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_SiegeTankMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_SiegeTankMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_SiegeTankMengskUnlockRank3" Type="Passive" Requirements="AP_SiegeTankMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="1"/>
@@ -29881,8 +29887,9 @@
         <AbilArray Link="AP_ThorMengskSiegeTargeted"/>
         <AbilArray Link="AP_ThorMengskSiegeTargetedIncreasedRange"/>
         <AbilArray Link="AP_ThorMengskSiegeTargetedLargeAoE"/>
+        <AbilArray Link="AP_ThorMengskUnlockRank3"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyThorMengskRank2"/>
         <BehaviorArray Link="AP_ThorMengskArmorAura"/>
         <BehaviorArray Link="AP_ThorMengskHammerOfTheLawBase"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
@@ -29907,6 +29914,8 @@
             <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_HaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_WalkerModeHaveThorMengskInfernoBlitz" Row="1" Column="4"/>
             <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -29970,8 +29979,9 @@
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_ThorMengskUnsiege"/>
+        <AbilArray Link="AP_ThorMengskUnlockRank3"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
-        <BehaviorArray Link="AP_MengskVeterancyThorMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyThorMengskRank2"/>
         <BehaviorArray Link="AP_ThorMengskSiegeAttackRate"/>
         <BehaviorArray Link="AP_ThorMengskArmorAuraSieged"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
@@ -29993,6 +30003,8 @@
             <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_OverwatchModeHaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_HaveThorMengskInfernoBlitz" Row="1" Column="4"/>
             <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -30068,7 +30080,8 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_MarauderMengskAttackSpeedBoost"/>
         <AbilArray Link="AP_MarauderMengskAddictiveSupplements"/>
-        <BehaviorArray Link="AP_MengskVeterancyMarauderMengsk"/>
+        <AbilArray Link="AP_MarauderMengskUnlockRank3"/>
+        <BehaviorArray Link="AP_MengskVeterancyMarauderMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30107,6 +30120,8 @@
             <LayoutButtons Face="AP_MarauderMengskSlow" Type="Passive" Requirements="AP_HaveMarauderMengskIncapacitatorShells" Row="1" Column="3"/>
             <LayoutButtons Face="AP_MarauderMengskBolsteredBarrier" Type="Passive" Requirements="AP_HaveMarauderMengskBolsteredBarrier" Row="1" Column="4"/>
             <LayoutButtons Face="AP_MarauderMengskSovereignNeosteel" Type="Passive" Requirements="AP_HaveMarauderMengskSovereignNeosteel" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarauderMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="Passive" Requirements="AP_MarauderMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
@@ -30216,13 +30231,15 @@
         <AbilArray Link="AP_GhostMengskSuperCloak"/>
         <AbilArray Link="AP_GhostMengskEMPLongStun"/>
         <AbilArray Link="AP_GhostMengskIrradiateBigDamage"/>
-        <BehaviorArray Link="AP_MengskVeterancyGhostMengsk"/>
+        <AbilArray Link="AP_GhostMengskUnlockRank3"/>
+        <BehaviorArray Link="AP_MengskVeterancyGhostMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL4Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_GhostMengskGuidedStrike"/>
+        <BehaviorArray Link="AP_GhostMengskPsychicEnhancerIndicator"/>
         <WeaponArray Link="AP_C10CanisterRifleMengsk"/>
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
         <CardLayouts>
@@ -30247,7 +30264,8 @@
             <LayoutButtons Face="AP_GhostMengskNemesisRoundsMech" Type="Passive" Requirements="AP_ShowGhostMengskNemesisRoundsMech" Row="1" Column="3"/>
             <LayoutButtons Face="AP_GhostMengskNemesisRounds" Type="Passive" Requirements="AP_ShowGhostMengskNemesisRoundsBase" Row="1" Column="3"/>
             <LayoutButtons Face="AP_GhostMengskSuperCloak" Type="AbilCmd" AbilCmd="AP_GhostMengskSuperCloak,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_GhostMengskPsychicEnhancer" Type="Passive" Requirements="AP_HaveGhostMengskPsychicEnhancer" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_GhostMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_GhostMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_GhostMengskUnlockRank3" Type="Passive" Requirements="AP_GhostMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <InnerRadius value="0.5"/>
         <CargoSize value="2"/>
@@ -30692,8 +30710,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="100"/>
-        <LifeMax value="100"/>
+        <LifeStart value="120"/>
+        <LifeMax value="120"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/TerranInfantryArmor"/>
         <Speed value="2.25"/>
@@ -30716,8 +30734,9 @@
         <AbilArray Link="move"/>
         <AbilArray Link="Warpable"/>
         <AbilArray Link="AP_MarineMengskSpiderMines"/>
+        <AbilArray Link="AP_MarineMengskUnlockRank3"/>
         <AbilArray Link="AP_MarineMengskSpiderMineLob"/>
-        <BehaviorArray Link="AP_MengskVeterancyMarineMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyMarineMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30739,6 +30758,8 @@
             <LayoutButtons Face="AP_MarineMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_MarineMengskBuildABoom" Type="Passive" Requirements="AP_HaveMarineMengskBuildABoom" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarineMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="Passive" Requirements="AP_MarineMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -30809,10 +30830,11 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_GoliathMengskJump"/>
+        <AbilArray Link="AP_GoliathMengskUnlockRank3"/>
         <BehaviorArray Link="AP_MultilockTargetingSystems"/>
         <BehaviorArray Link="AP_ScavengingSystemsMechDeath"/>
         <BehaviorArray Link="AP_GoliathCliffJump"/>
-        <BehaviorArray Link="AP_MengskVeterancyGoliathMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyGoliathMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30838,6 +30860,8 @@
             <LayoutButtons Face="AP_GoliathMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskJumpJetsMKII" Type="Passive" Requirements="AP_HaveGoliathMengskJumpJetsMKII" Row="2" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskMoebiusDefenseMatrix" Type="Passive" Requirements="AP_HaveGoliathMengskMoebiusDefenseMatrix" Row="2" Column="2"/>
+            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_GoliathMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="Passive" Requirements="AP_GoliathMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.6875"/>
         <InnerRadius value="0.5"/>
@@ -30907,7 +30931,8 @@
         <AbilArray Link="AP_MengskMedicDoubleBeamHeal"/>
         <AbilArray Link="AP_MedicMengskDefensiveMatrix"/>
         <AbilArray Link="AP_MedicMengskOpticalRestoration"/>
-        <BehaviorArray Link="AP_MengskVeterancyMedicMengsk"/>
+        <AbilArray Link="AP_MedicMengskUnlockRank3"/>
+        <BehaviorArray Link="AP_MengskVeterancyMedicMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30934,6 +30959,8 @@
             <LayoutButtons Face="AP_MedicMengskPhysicalTherapy" Type="Passive" Row="1" Column="2" Requirements="AP_MedicMengskPhysicalTherapyResearched"/>
             <LayoutButtons Face="AP_MedicMengskHospiceCare" Type="Passive" Row="1" Column="3" Requirements="AP_MedicMengskHospiceCareResearched"/>
             <LayoutButtons Face="AP_MedicMengskRoyalAcademyDegree" Type="Passive" Row="1" Column="4" Requirements="AP_MedicMengskRoyalAcademyDegreeResearched"/>
+            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MedicMengskUnlockRank3,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="Passive" Requirements="AP_MedicMengskPromotionGranted" Row="2" Column="3"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
