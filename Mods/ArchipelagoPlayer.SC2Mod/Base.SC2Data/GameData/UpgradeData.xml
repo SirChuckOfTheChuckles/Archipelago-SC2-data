@@ -663,9 +663,6 @@
         <EffectArray Reference="Effect,AP_CrucioShockCannonDummy,Amount" Value="5.000000"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonFriendlyDamage,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_CrucioShockCannonEnemyDamage,Amount" Value="5"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Level" Value="1"/>
-        <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftBlast,Amount" Value="5.000000"/>
-        <EffectArray Reference="Effect,AP_CrucioShockCannonAirliftDirected,Amount" Value="5.000000"/>
         <!--  Hellion -->
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_InfernalFlameThrower,Amount" Value="1.000000"/>
@@ -706,9 +703,6 @@
         <EffectArray Reference="Effect,AP_ArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_ArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Level" Value="1"/>
-        <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftBlast,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_ArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!-- Predator -->
         <EffectArray Reference="Effect,AP_Predator,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_RetributionFieldDamage,Amount" Value="2"/>
@@ -742,7 +736,6 @@
         <EffectArray Reference="Weapon,AP_MercLanceMissileLaunchers,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,RateMultiplier" Value="0.05"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_HellionTank,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_Diamondback,RateMultiplier" Value="0.05"/>
@@ -758,7 +751,6 @@
         <EffectArray Reference="Weapon,AP_SpartanCompanyAUpgraded,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,RateMultiplier" Value="0.05"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_Predator,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_TyphoonMissilePod,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_WarHound,RateMultiplier" Value="0.05"/>
@@ -1011,15 +1003,15 @@
         <EffectArray Reference="Effect,AP_CarrierTaldarimLaserDamage,Amount" Value="5"/>
         <!--  Mothership -->
         <EffectArray Reference="Weapon,AP_SOAMothershipv4Weapon,Level" Value="1"/>
-        <EffectArray Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Level" Value="1"/>
+        <EffectArray Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_SOAMothershipv4BeamDamage,Amount" Value="4"/>
         <EffectArray Reference="Effect,AP_SOAMothershipv4FastBeamDamage,Amount" Value="2"/>
         <EffectArray Reference="Weapon,AP_RepulsorCannon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_MothershipCoreRepulsorCannonDamage,Amount" Value="1"/>
-        <EffectArray Reference="Weapon,AP_AiurMothershipWeapon,Level" Value="1"/>
-        <EffectArray Reference="Effect,AP_AiurMothershipBeamDamage,Amount" Value="1"/>
-        <EffectArray Reference="Weapon,AP_PurifierMothershipWeapon,Level" Value="1"/>
-        <EffectArray Reference="Effect,AP_PurifierMothershipBeamDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,AP_MothershipAiurWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,AP_MothershipAiurBeamDamage,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,AP_MothershipPurifierWeapon,Level" Value="1"/>
+        <EffectArray Reference="Effect,AP_MothershipPurifierBeamDamage,Amount" Value="1"/>
         <EffectArray Reference="Weapon,AP_MothershipCorePurifierWeapon,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_MothershipCorePurifierWeaponDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_MothershipCorePurifierWeaponFriendlyDamage,Amount" Value="2"/>
@@ -2101,9 +2093,6 @@
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonDummy,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonFriendlyDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonEnemyDamage,Amount" Value="10"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Level" Value="1"/>
-        <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftBlast,Amount" Value="10"/>
-        <EffectArray Reference="Effect,AP_InfestedArcliteShockCannonAirliftDirected,Amount" Value="10"/>
         <!--  Hunter Killer -->
         <EffectArray Reference="Weapon,AP_HunterKillerNeedleSpines,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_HunterKillerDamage,Amount" Value="2"/>
@@ -2482,13 +2471,6 @@
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
-    <CUpgrade id="AP_TurboChargedEngines">
-        <Flags index="UpgradeCheat" value="0"/>
-        <Alert value="ResearchComplete_Terr"/>
-        <Race value="Terr"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_Hellion,Speed" Value="1.398400"/>
-        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
-    </CUpgrade>
     <CUpgrade id="AP_TwinLinkedFlameThrowers">
         <Flags index="UpgradeCheat" value="0"/>
         <EffectArray Operation="Set" Reference="Effect,AP_InfernalFlameThrowerE,AreaArray[0].Radius" Value="0.5"/>
@@ -2511,6 +2493,7 @@
     <CUpgrade id="AP_HoverHellbat">
         <AffectedUnitArray value="AP_Hellion"/>
         <AffectedUnitArray value="AP_HellionTank"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_Hellion,Speed" Value="1.398400"/>
     </CUpgrade>
     <CUpgrade id="AP_CerberusMines">
         <Flags index="UpgradeCheat" value="0"/>
@@ -2627,6 +2610,18 @@
         <AffectedUnitArray value="AP_InfestedSiegeBreakerSiegedTransportable"/>
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleSiegeMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleTankMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleWalkerMode">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+    </CUpgrade>
+    <CUpgrade id="AP_NotPossibleOverwatchMode">
         <Flags index="UpgradeCheat" value="0"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -3305,7 +3300,7 @@
     </CUpgrade>
     <CUpgrade id="AP_AdvancedMedicTraining">
         <Flags index="UpgradeCheat" value="0"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BarracksTrain,InfoArray[Train5].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_BarracksTrain,InfoArray[Train5].Button.Requirements" Value ="AP_UnlockMedicInternalTechModule"/>
         <!-- Train AP_Medic -->
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
     </CUpgrade>
@@ -3620,8 +3615,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="0.601500"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="0.601500"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="3.000000"/>
@@ -3738,8 +3731,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="2"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="3.000000"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="3.000000"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="3.000000"/>
@@ -3857,8 +3848,6 @@
         <EffectArray Operation="Set" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenDelay" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengsk,LifeRegenRate" Value="10"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenDelay" Value="2"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskAP,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenDelay" Value="2"/>
         <EffectArray Operation="Set" Reference="Unit,AP_ThorMengskSieged,LifeRegenRate" Value="10"/>
         <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,LifeRegenDelay" Value="2"/>
@@ -5496,7 +5485,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <LeaderLevel value="1"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel2" parent="AP_BaseTerranVehicleWeapons">
@@ -5530,7 +5518,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <LeaderLevel value="2"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel3" parent="AP_BaseTerranVehicleWeapons">
@@ -5564,7 +5551,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <LeaderLevel value="3"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel4" parent="AP_BaseTerranVehicleWeapons">
@@ -5598,7 +5584,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <LeaderLevel value="4"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsLevel5" parent="AP_BaseTerranVehicleWeapons">
@@ -5632,7 +5617,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <LeaderLevel value="5"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel1" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
@@ -5666,7 +5650,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel2" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel2"/>
@@ -5699,7 +5682,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel3" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel3"/>
@@ -5732,7 +5714,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel4" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
         <Name value="Upgrade/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel4"/>
@@ -5765,7 +5746,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel4.dds"/>
         <LeaderLevel value="4"/>
     </CUpgrade>
     <CUpgrade id="AP_TerranVehicleWeaponsUltraCapacitorsLevel5" parent="AP_BaseTerranVehicleWeaponsUltraCapacitors">
@@ -5799,7 +5779,6 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TyphoonMissilePod,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHound,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarHoundMeleeBrawler,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_MedivacSiegeTankAirlift,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-terran-vehicleweaponslevel5.dds"/>
         <LeaderLevel value="5"/>
     </CUpgrade>
     <CUpgrade id="AP_UltraCapacitors">
@@ -7992,10 +7971,8 @@
         <EffectArray Reference="Unit,AP_SiegeTankSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_SiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_SiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_SiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -8004,10 +7981,8 @@
         <EffectArray Reference="Unit,AP_SiegeBreakerSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -8016,10 +7991,8 @@
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSiegedTransportable,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreaker,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_InfestedSiegeBreakerSieged,SightBonus[Dusk]" Value="2"/>
@@ -8259,7 +8232,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Marauder"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_BarracksTrain,InfoArray[Train4].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_BarracksTrain,InfoArray[Train4].Button.Requirements" Value="AP_UnlockMarauderInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_InternalizedTechModuleSiegeTank">
         <Flags index="UpgradeCheat" value="0"/>
@@ -8269,7 +8242,7 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_SiegeTank"/>
         <AffectedUnitArray value="AP_SiegeTankSieged"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train2].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train2].Button.Requirements" Value="AP_UnlockSiegeTankInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_InternalizedTechModuleBattlecruiser">
         <Flags index="UpgradeCheat" value="0"/>
@@ -8279,13 +8252,13 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Starport"/>
         <AffectedUnitArray value="Battlecruiser"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train4].Button.Requirements" Value="AP_HaveFusionCore"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train4].Button.Requirements" Value="AP_UnlockBattlecruiserInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_InternalizedTechModuleRaven">
         <Flags index="UpgradeCheat" value="0"/>
         <InfoTooltipPriority value="2"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train3].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train3].Button.Requirements" Value="AP_UnlockRavenInternalTechModule"/>
         <AffectedUnitArray value="AP_Raven"/>
         <AffectedUnitArray value="AP_Starport"/>
     </CUpgrade>
@@ -8294,7 +8267,7 @@
         <InfoTooltipPriority value="2"/>
         <Race value="Prot"/>
         <ScoreResult value="BuildOrder"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train2].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train2].Button.Requirements" Value="AP_UnlockBansheeInternalTechModule"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Banshee"/>
     </CUpgrade>
@@ -8754,11 +8727,11 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_PurifierMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel1.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_ProtossAirWeaponsLevel2" parent="AP_BaseProtossAirWeapons">
         <Name value="Upgrade/Name/ProtossAirWeaponsLevel2"/>
@@ -8794,11 +8767,11 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_PurifierMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel2.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_ProtossAirWeaponsLevel3" parent="AP_BaseProtossAirWeapons">
         <Name value="Upgrade/Name/ProtossAirWeaponsLevel3"/>
@@ -8834,11 +8807,11 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_PurifierMothershipWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-airweaponslevel3.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_ProtossAirWeaponsLevel4" parent="AP_BaseProtossAirWeapons">
         <Icon value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
@@ -8873,11 +8846,11 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_PurifierMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel4.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_ProtossAirWeaponsLevel5" parent="AP_BaseProtossAirWeapons">
         <Icon value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
@@ -8912,11 +8885,11 @@
         <EffectArray Operation="Set" Reference="Weapon,AP_TempestPurifierGround,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_TaldarimMothershipFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipTaldarimFastAttackWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_RepulsorCannon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_MothershipCorePurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_AiurMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
-        <EffectArray Operation="Set" Reference="Weapon,AP_PurifierMothershipWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipAiurWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_MothershipPurifierWeapon,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airweaponslevel5.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_ProtossGroundArmorsQuatro" parent="AP_BaseProtossGroundArmors"/>
     <CUpgrade id="AP_ProtossGroundArmorsPreplacedNoBuild" parent="AP_BaseProtossGroundArmors">
@@ -11701,7 +11674,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Goliath"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train7].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train7].Button.Requirements" Value="AP_UnlockGoliathInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_ResourceEfficiencyCyclone">
         <EffectArray Operation="Subtract" Reference="Unit,AP_Cyclone,CostResource[Minerals]" Value="25"/>
@@ -11716,7 +11689,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Cyclone"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train12].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[Train12].Button.Requirements" Value="AP_UnlockCycloneInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_ReplenishSpiderMineFree">
         <EffectArray Operation="Set" Reference="Abil,AP_MakeVultureSpiderMines,InfoArray[Specialize1].Resource[Minerals]" Value="0"/>
@@ -11839,7 +11812,7 @@
         <ScoreResult value="BuildOrder"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_Wraith"/>
-        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train8].Button.Requirements"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train8].Button.Requirements" Value="AP_UnlockWraithInternalTechModule"/>
     </CUpgrade>
     <CUpgrade id="AP_ResourceEfficiencyRaven">
         <EffectArray Operation="Subtract" Reference="Unit,AP_Raven,CostResource[Vespene]" Value="50"/>
@@ -11976,7 +11949,7 @@
     <CUpgrade id="AP_PredatorCharge"/>
     <CUpgrade id="AP_ThorNuke"/>
     <CUpgrade id="AP_InternalFusionModuleHercules">
-        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train6].Button.Requirements" Value="HaveAttachedTechLab"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_StarportTrain,InfoArray[Train6].Button.Requirements" Value="AP_UnlockHerculesInternalFusionModule"/>
     </CUpgrade>
     <CUpgrade id="AP_HerculesHyperjump"/>
     <CUpgrade id="AP_ThorImmortalityFree">
@@ -12013,8 +11986,6 @@
         <EffectArray Reference="Weapon,AP_MercThorsHammer,MinScanRange" Value="1"/>
         <EffectArray Reference="Unit,AP_ThorMengsk,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengsk,SightBonus[Dawn]" Value="2"/>
-        <EffectArray Reference="Unit,AP_ThorMengskAP,SightBonus[Dusk]" Value="2"/>
-        <EffectArray Reference="Unit,AP_ThorMengskAP,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengskSieged,SightBonus[Dusk]" Value="2"/>
         <EffectArray Reference="Unit,AP_ThorMengskSieged,SightBonus[Dawn]" Value="2"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,Range" Value="1"/>
@@ -12023,8 +11994,8 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
@@ -12275,8 +12246,6 @@
         <EffectArray Reference="Weapon,AP_90mmCannons,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,MinScanRange" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange1,Range" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange2,Range" Value="1"/>
         <EffectArray Reference="Actor,AP_SiegeTankSieged_BlackOpsRange3,Range" Value="1"/>
@@ -12370,8 +12339,6 @@
         <EffectArray Reference="Weapon,AP_SiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,MinScanRange" Value="1"/>
         <!-- Merc Goliath -->
         <EffectArray Reference="Weapon,AP_SpartanCompanyA,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SpartanCompanyA,MinScanRange" Value="1"/>
@@ -12441,8 +12408,6 @@
         <EffectArray Reference="Weapon,AP_InfestedSiegeBreaker,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_InfestedArcliteShockCannon,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacInfestedSiegeBreakerAirlift,MinScanRange" Value="1"/>
         <!-- Pride of Augustgrad -->
         <EffectArray Reference="Weapon,AP_ATXLaserBatteryMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ATXLaserBatteryMengsk,MinScanRange" Value="1"/>
@@ -12459,11 +12424,11 @@
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,MinScanRange" Value="1"/>
         <!-- Blackhammer -->
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,MinScanRange" Value="1"/>
@@ -12471,22 +12436,18 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,MinScanRange" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargeted,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]" Value="1"/>
         <EffectArray Reference="Abil,AP_ThorMengskSiegeTargetedLargeAoE,Range[0]" Value="1"/>
         <!-- Bulwark Company -->
         <EffectArray Reference="Weapon,AP_GoliathMengskA,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskA,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,MinScanRange" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,Range" Value="1"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
         <!-- Emperor's Guardian -->
@@ -12570,7 +12531,7 @@
         <EffectArray Operation="Set" Reference="Abil,AP_ZergBuild,InfoArray[Build1].Time" Value="15"/>
     </CUpgrade>
     <CUpgrade id="AP_UnavailableInThisMission"/>
-    <CUpgrade id="AP_AiurMothershipEnergyRegenAura">
+    <CUpgrade id="AP_MothershipAiurEnergyRegenAura">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipAiur"/>
     </CUpgrade>
@@ -12886,42 +12847,42 @@
         <AffectedUnitArray value="AP_CarrierAiur"/>
     </CUpgrade>
     <CUpgrade id="AP_SkylordHyperjump"/>
-     <CUpgrade id="AP_PurifierMothershipDebuff">
-        <EffectArray Operation="Set" Reference="Effect,AP_PurifierMothershipSecondaryBeamPersistent,FinalEffect" Value="AP_PurifierMothershipDebuffAB"/>
+     <CUpgrade id="AP_MothershipPurifierDebuff">
+        <EffectArray Operation="Set" Reference="Effect,AP_MothershipPurifierSecondaryBeamPersistent,FinalEffect" Value="AP_MothershipPurifierDebuffAB"/>
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipPurifier"/>
         <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
     </CUpgrade>
-    <CUpgrade id="AP_PurifierMothershipShielding">
+    <CUpgrade id="AP_MothershipPurifierShielding">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipPurifier"/>
         <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
     </CUpgrade>
-    <CUpgrade id="AP_PurifierMothershipAttackSpeedBoost">
+    <CUpgrade id="AP_MothershipPurifierAttackSpeedBoost">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipPurifier"/>
         <AffectedUnitArray value="AP_MothershipPurifierPowerSource"/>
     </CUpgrade>
-    <CUpgrade id="AP_TaldarimMothershipDeathHeal">
+    <CUpgrade id="AP_MothershipTaldarimDeathHeal">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
     </CUpgrade>
-    <CUpgrade id="AP_TaldarimMothershipGroundSlow">
+    <CUpgrade id="AP_MothershipTaldarimGroundSlow">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
     </CUpgrade>
-    <CUpgrade id="AP_TaldarimMothershipFastAttack">
+    <CUpgrade id="AP_MothershipTaldarimFastAttack">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_SOAMothershipv4"/>
         <AffectedUnitArray value="AP_MothershipTaldarim"/>
     </CUpgrade>
-    <CUpgrade id="AP_AiurMothershipFeedback">
+    <CUpgrade id="AP_MothershipAiurFeedback">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipAiur"/>
     </CUpgrade>
-    <CUpgrade id="AP_AiurMothershipShieldRestore">
+    <CUpgrade id="AP_MothershipAiurShieldRestore">
         <EditorCategories value="Race:Protoss,UpgradeType:Talents"/>
         <AffectedUnitArray value="AP_MothershipAiur"/>
     </CUpgrade>
@@ -12946,15 +12907,15 @@
     <CUpgrade id="AP_CanInstallSummonDeathFleet"/>
     <CUpgrade id="AP_CanInstallTimeField"/>
     <CUpgrade id="AP_CanInstallWormholeModule"/>
-    <CUpgrade id="AP_CanInstallPurifierMothershipDebuff"/>
-    <CUpgrade id="AP_CanInstallAiurMothershipEnergyRegenAura"/>
-    <CUpgrade id="AP_CanInstallTaldarimMothershipFastAttack"/>
-    <CUpgrade id="AP_CanInstallPurifierMothershipShielding"/>
-    <CUpgrade id="AP_CanInstallAiurMothershipFeedback"/>
-    <CUpgrade id="AP_CanInstallTaldarimMothershipGroundSlow"/>
-    <CUpgrade id="AP_CanInstallPurifierMothershipAttackSpeedBoost"/>
-    <CUpgrade id="AP_CanInstallAiurMothershipShieldRestore"/>
-    <CUpgrade id="AP_CanInstallTaldarimMothershipDeathHeal"/>
+    <CUpgrade id="AP_CanInstallMothershipPurifierDebuff"/>
+    <CUpgrade id="AP_CanInstallMothershipAiurEnergyRegenAura"/>
+    <CUpgrade id="AP_CanInstallMothershipTaldarimFastAttack"/>
+    <CUpgrade id="AP_CanInstallMothershipPurifierShielding"/>
+    <CUpgrade id="AP_CanInstallMothershipAiurFeedback"/>
+    <CUpgrade id="AP_CanInstallMothershipTaldarimGroundSlow"/>
+    <CUpgrade id="AP_CanInstallMothershipPurifierAttackSpeedBoost"/>
+    <CUpgrade id="AP_CanInstallMothershipAiurShieldRestore"/>
+    <CUpgrade id="AP_CanInstallMothershipTaldarimDeathHeal"/>
     <CUpgrade id="AP_MothershipPurifierPowerSource"/>
     <CUpgrade id="AP_MothershipAiurShieldArmorAura"/>
     <CUpgrade id="AP_ArtanisResurgence">
@@ -13041,10 +13002,8 @@
         <AffectedUnitArray value="AP_ArtanisHero"/>
     </CUpgrade>
     <CUpgrade id="AP_ArtanisValorOfTheFirstborn">
-        <EffectArray Reference="Effect,AP_ArtanisBlades,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisAirAttackDamage,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisTaldarimAspectNearbyDamageGround,LeechFraction[Shields]" Value="0.33"/>
-        <EffectArray Reference="Effect,AP_ArtanisTaldarimAspectNearbyDamageAir,LeechFraction[Shields]" Value="0.33"/>
+        <EffectArray Reference="Effect,AP_ArtanisBlades,LeechFraction[Shields]" Value="0.50"/>
+        <EffectArray Reference="Effect,AP_ArtanisAirAttackDamage,LeechFraction[Shields]" Value="0.50"/>
         <EffectArray Reference="Weapon,AP_ArtanisTwilightBlades,RateMultiplier" Value="0.20"/>
         <EffectArray Reference="Weapon,AP_ArtanisAirAttack,RateMultiplier" Value="0.20"/>
         <AffectedUnitArray value="AP_ArtanisHero"/>
@@ -13135,6 +13094,8 @@
         <EffectArray Operation="Set" Reference="Button,AP_TransportMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprism.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,UnitIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,HeroIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,PortraitModel" Value="WarpPrism_Taldarim_Portrait"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_WarpPrismPhasing,PortraitModel" Value="WarpPrism_Taldarim_Portrait"/>
         <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,Icon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Button,AP_PhasingMode,AlertIcon" Value="Assets\Textures\btn-unit-protoss-alarak-taldarim-warpprismstationary.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_WarpPrism,PlacementModel" Value="AP_WarpPrismTaldarim"/>
@@ -13386,6 +13347,7 @@
         <EffectArray Reference="Effect,AP_HighArchonPsiStormSearch,AreaArray[0].Radius" Value="0.8"/>
         <EffectArray Reference="Abil,AP_HighArchonPsiStormArchon,Range[0]" Value="2"/>
         <EffectArray Reference="Abil,AP_HighArchonPsiStorm,Range[0]" Value="2"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_HighArchonPsiStormModel,Scale" Value="1.300000"/>
     </CUpgrade>
     <CUpgrade id="AP_HighArchon">
         <!-- Handled via behaviors now
@@ -13955,9 +13917,31 @@
         <EffectArray Operation="Set" Reference="Abil,AP_SiegeBreakerSiege,InfoArray[0].Unit" Value="AP_SiegeBreakerSiegedTransportable"/>
         <EffectArray Operation="Set" Reference="Abil,AP_InfestedSiegeBreakerSiege,InfoArray[0].Unit" Value="AP_InfestedSiegeBreakerSiegedTransportable"/>
     </CUpgrade>
-    <CUpgrade id="AP_MedivacSiegeTankAirlift">
-        <EffectArray Operation="Subtract" Reference="Weapon,AP_MedivacSiegeTankAirlift,Options[Hidden]" Value="1"/>
+    <CUpgrade id="AP_SiegeTankMengskAirlift">
+        <EffectArray Operation="Set" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].Unit" Value="AP_SiegeTankMengskSiegedTransportable"/>
+        <EffectArray Operation="Subtract" Reference="Weapon,AP_SiegeTankMengskAirlift,Options[Hidden]" Value="1"/>
         <AffectedUnitArray value="AP_Medivac"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskSmartServos">
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Delay]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Delay]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_SiegeModeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_UnsiegeMengsk,InfoArray[0].SectionArray[Stats].DurationArray[Duration]" Value="3"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
+        <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskNapalmRounds">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-bearclawnozzles.dds"/>
+        <AffectedUnitArray value="AP_SiegeTankMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SiegeTankMengskImprovedTankMode">
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_SiegeTankMengsk,Effect" Value="AP_SiegeTankMengskImprovedTankModeSet"/>
+        <AffectedUnitArray value="AP_SiegeTankMengsk"/>
     </CUpgrade>
     <CUpgrade id="AP_ResourceEfficiencyReaper">
         <EffectArray Operation="Subtract" Reference="Unit,AP_Reaper,CostResource[Vespene]" Value="50"/>
@@ -14561,12 +14545,8 @@
         <!-- Blackhammer -->
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengsk,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengsk,LifeStart" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskAP,LifeMax" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskAP,LifeStart" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeStart" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskWreckage,LifeMax" Value="1.2001"/>
-        <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskWreckage,LifeStart" Value="1.2001"/>
         <!-- Bulwark Company -->
         <EffectArray Operation="Multiply" Reference="Unit,AP_GoliathMengsk,LifeMax" Value="1.2001"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_GoliathMengsk,LifeStart" Value="1.2001"/>
@@ -14596,7 +14576,6 @@
         <EffectArray Reference="Weapon,AP_SpartanCompanyAUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_SiegeBreaker,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ArcliteShockCannon,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacMercSiegeTankAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithG,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithA,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_MercWraithAG,RateMultiplier" Value="0.15"/>
@@ -14645,7 +14624,6 @@
         <EffectArray Reference="Weapon,AP_LanceMissileLaunchers,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_90mmCannons,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_CrucioShockCannon,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacSiegeTankAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_InfernalFlameThrower,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_HellionTank,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_Diamondback,RateMultiplier" Value="0.15"/>
@@ -14682,11 +14660,11 @@
         <EffectArray Reference="Weapon,AP_SiegeTankMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_90mmCannonsMengskLookAt,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_MedivacMengskSiegeTankAirlift,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_JavelinMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_ThorsHammerMengsk,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_LanceMissileLaunchersMengsk,RateMultiplier" Value="0.15"/>
+        <EffectArray Reference="Weapon,AP_ThorsHammerMengskHammerOfTheLawRank0,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_PunisherGrenadesMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_C10CanisterRifleMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_TrooperMengsk,RateMultiplier" Value="0.15"/>
@@ -14695,10 +14673,8 @@
         <EffectArray Reference="Weapon,AP_TrooperMengskFlamethrower,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GaussRifleMengsk,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskA,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskADisplay,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,RateMultiplier" Value="0.15"/>
-        <EffectArray Reference="Weapon,AP_GoliathMengskGDisplay,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeapon,RateMultiplier" Value="0.15"/>
         <EffectArray Reference="Weapon,AP_LiberatorMengskAGWeaponAA,RateMultiplier" Value="0.15"/>
@@ -15142,11 +15118,28 @@
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="Assets\Textures\btn-ability-mengsk-thor-bigboycover.dds"/>
         <AffectedUnitArray value="AP_ThorMengsk"/>
-        <AffectedUnitArray value="AP_ThorMengskAP"/>
         <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
-    <CUpgrade id="AP_ThorMengskArmorAuraL2">
-        <EffectArray Reference="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus" Value="2"/>
+    <CUpgrade id="AP_ThorMengskSmartServos">
+        <Icon value="Assets\Textures\btn-upgrade-mengsk-armory-smartservos.dds"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskSiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Abil,AP_ThorMengskUnsiege,InfoArray[0].SectionArray[Actor].DurationArray[Duration]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetDelayCP,PeriodicPeriodArray[1]" Value="3"/>
+        <EffectArray Operation="Divide" Reference="Effect,AP_ThorMengskSiegeTargetLargeAoEDelayCP,PeriodicPeriodArray[1]" Value="3"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengsk"/>
+        <AffectedUnitArray value="AP_ThorMengskSieged"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ThorMengskHammerOfTheLaw">
+        <Icon value="AP\Assets\Textures\btn-upgrade-hammer-of-the-law.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ThorsHammerMengsk,Options[Hidden]" Value="1"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ThorMengskInfernoBlitz">
+        <Icon value="Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <AffectedUnitArray value="AP_ThorMengskSieged"/>
     </CUpgrade>
     <CUpgrade id="AP_NotPossibleNukeArmed"/>
     <CUpgrade id="AP_UnfriendlyNukeIndicator">
@@ -16153,6 +16146,7 @@
         <EffectArray Reference="Effect,AP_ScoutTaldarimGroundWeaponDamage,AttributeBonus[Armored]" Value="3"/>
         <EffectArray Operation="Set" Reference="Effect,AP_ScoutTaldarimVulcanBlasterPersistent,PeriodicEffectArray[0]" Value="AP_ScoutTaldarimVulcanBlasterSearchStructure"/>
         <EffectArray Reference="Effect,AP_ScoutTaldarimGroundWeaponDamageUpgrade,AttributeBonus[Armored]" Value="3"/>
+        <EffectArray Operation="Set" Reference="Button,AP_ScoutTaldarimVulcanBlaster,Tooltip" Value="Button/Tooltip/AP_ScoutTaldarimVulcanBlasterUpgrade"/>
         <EditorCategories value="Race:Protoss"/>
     </CUpgrade>
     <CUpgrade id="AP_ScoutTaldarimImprovedMissiles">
@@ -17115,7 +17109,7 @@
     <CUpgrade id="AP_HighTemplarTaldarimArchon"/>
     <CUpgrade id="AP_DarkTemplarShakurasArchon"/>
     <CUpgrade id="AP_RemoveHighlanderBehavior">
-        <EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train8].Button.Requirements" Value="AP_MercCompoundStarships"/>
+        <EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train8].Button.Requirements" Value="AP_UnlockJacksonsRevengeNoHighlander"/>
         <EffectArray Operation="Set" Reference="Abil,AP_SummonZergMercs,InfoArray[Train6].Button.Requirements" Value="AP_ZergMercCompoundBroodWar"/>
     </CUpgrade>
     <CUpgrade id="AP_AllowTradeWorkers"/>
@@ -17440,9 +17434,6 @@
         <EffectArray Reference="Unit,AP_Ghost,ShieldRegenRate" Value="2.000000"/>
         <EffectArray Reference="Unit,AP_Ghost,ShieldRegenDelay" Value="10.000000"/>
     </CUpgrade>
-    <CUpgrade id="AP_Hellion">
-        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[13].Flags[AutoCast]" Value="1"/>
-    </CUpgrade>
     <CUpgrade id="AP_MirageDetector">
         <EffectArray Reference="Weapon,AP_MirageAttack,MinScanRange" Value="1"/>
         <EffectArray Reference="Weapon,AP_MirageAttack,Range" Value="1"/>
@@ -17480,7 +17471,244 @@
         <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Vespene]" Value="25"/>
         <EffectArray Operation="Subtract" Reference="Unit,AP_PhoenixTaldarim,CostResource[Minerals]" Value="25"/>
     </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskMoebiusDefenseMatrix">
+        <Icon value="AP\Assets\Textures\btn-upgrade-defense-protocol.dds"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsStart" Value="60"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldsMax" Value="60"/>
+        <EffectArray Reference="Unit,AP_GoliathMengsk,ShieldRegenRate" Value="1"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_GoliathMengsk,CustomUnitStatusFrame" Value="AP_Coop_UnitStatus_Mengsk/MengskGoliath_StatusFrameShields"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskJumpJetsMKII">
+        <Icon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
+        <EffectArray Operation="Set" Reference="Unit,AP_GoliathMengsk,Mover" Value="CliffJumper"/>
+        <EffectArray Reference="Abil,AP_GoliathMengskJump,Range[0]" Value="3"/>
+        <EffectArray Reference="Actor,AP_GoliathMengskJump_Range,Range" Value="3.000000"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskParalysisInducers">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
+    </CUpgrade>
+    <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">
+        <Icon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,Range" Value="2"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,MinScanRange" Value="2"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AP_GoliathMengskGUpgraded,MinScanRange" Value="1"/>
+    </CUpgrade>
     <CUpgrade id="AP_BiggerAttackWaves">
         <MaxLevel value="5"/>
     </CUpgrade>
+    <CUpgrade id="AP_UnlockBarracks"/>
+    <CUpgrade id="AP_UnlockBarracksTechLab"/>
+    <CUpgrade id="AP_UnlockBarracksReactor"/>
+    <CUpgrade id="AP_UnlockShadowOps"/>
+    <CUpgrade id="AP_UnlockEngineeringBay"/>
+    <CUpgrade id="AP_UnlockFactory"/>
+    <CUpgrade id="AP_UnlockFactoryReactor"/>
+    <CUpgrade id="AP_UnlockFactoryTechLab"/>
+    <CUpgrade id="AP_UnlockArmory"/>
+    <CUpgrade id="AP_UnlockStarport"/>
+    <CUpgrade id="AP_UnlockStarportReactor"/>
+    <CUpgrade id="AP_UnlockStarportTechLab"/>
+    <CUpgrade id="AP_UnlockFusionCore"/>
+    <CUpgrade id="AP_UnlockEliteBarracks"/>
+    <CUpgrade id="AP_UnlockEliteFactory"/>
+    <CUpgrade id="AP_UnlockEliteStarport"/>
+    <CUpgrade id="AP_UnlockMercCompound"/>
+    <CUpgrade id="AP_UnlockMarine"/>
+    <CUpgrade id="AP_UnlockMedic"/>
+    <CUpgrade id="AP_UnlockFirebat"/>
+    <CUpgrade id="AP_UnlockMarauder"/>
+    <CUpgrade id="AP_UnlockReaper"/>
+    <CUpgrade id="AP_UnlockGhost"/>
+    <CUpgrade id="AP_UnlockSpectre"/>
+    <CUpgrade id="AP_UnlockHerc"/>
+    <CUpgrade id="AP_UnlockDominionTrooper"/>
+    <CUpgrade id="AP_UnlockHellion">
+        <EffectArray Operation="Set" Reference="Abil,AP_FactoryTrain,InfoArray[13].Flags[AutoCast]" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ToggleHellbat"/>
+    <CUpgrade id="AP_UnlockVulture"/>
+    <CUpgrade id="AP_UnlockGoliath"/>
+    <CUpgrade id="AP_UnlockDiamondback"/>
+    <CUpgrade id="AP_UnlockSiegeTank"/>
+    <CUpgrade id="AP_UnlockThor"/>
+    <CUpgrade id="AP_UnlockWidowMine"/>
+    <CUpgrade id="AP_UnlockCyclone"/>
+    <CUpgrade id="AP_UnlockWarhound"/>
+    <CUpgrade id="AP_UnlockPredator"/>
+    <CUpgrade id="AP_UnlockMedivac"/>
+    <CUpgrade id="AP_UnlockWraith"/>
+    <CUpgrade id="AP_UnlockViking"/>
+    <CUpgrade id="AP_UnlockBanshee"/>
+    <CUpgrade id="AP_UnlockBattlecruiser"/>
+    <CUpgrade id="AP_UnlockLiberator"/>
+    <CUpgrade id="AP_UnlockValkyrie"/>
+    <CUpgrade id="AP_UnlockRaven"/>
+    <CUpgrade id="AP_UnlockScienceVessel"/>
+    <CUpgrade id="AP_UnlockHercules"/>
+    <CUpgrade id="AP_UnlockAegisGuard"/>
+    <CUpgrade id="AP_UnlockEmperorsShadow"/>
+    <CUpgrade id="AP_UnlockSonOfKorhal"/>
+    <CUpgrade id="AP_UnlockFieldResponseTheta"/>
+    <CUpgrade id="AP_UnlockShockDivision"/>
+    <CUpgrade id="AP_UnlockBlackhammer"/>
+    <CUpgrade id="AP_UnlockBulwarkCompany"/>
+    <CUpgrade id="AP_UnlockPrideOfAugustgrad"/>
+    <CUpgrade id="AP_UnlockSkyFury"/>
+    <CUpgrade id="AP_UnlockEmperorsGuardian"/>
+    <CUpgrade id="AP_UnlockNightHawk"/>
+    <CUpgrade id="AP_UnlockNightWolf"/>
+    <CUpgrade id="AP_UnlockWarPigs"/>
+    <CUpgrade id="AP_UnlockDevilDogs"/>
+    <CUpgrade id="AP_UnlockHammerSecurities"/>
+    <CUpgrade id="AP_UnlockSpartanCompany"/>
+    <CUpgrade id="AP_UnlockSiegeBreakers"/>
+    <CUpgrade id="AP_UnlockHelsAngels"/>
+    <CUpgrade id="AP_UnlockDuskWings"/>
+    <CUpgrade id="AP_UnlockJacksonsRevenge"/>
+    <CUpgrade id="AP_UnlockSkibisAngels"/>
+    <CUpgrade id="AP_UnlockDeathHeads"/>
+    <CUpgrade id="AP_UnlockWingedNightmares"/>
+    <CUpgrade id="AP_UnlockMidnightRiders"/>
+    <CUpgrade id="AP_UnlockBrynhilds"/>
+    <CUpgrade id="AP_UnlockJotun"/>
+    <CUpgrade id="AP_UnlockBunker"/>
+    <CUpgrade id="AP_UnlockMissileTurret"/>
+    <CUpgrade id="AP_UnlockSensorTower"/>
+    <CUpgrade id="AP_UnlockDevastatorTurret"/>
+    <CUpgrade id="AP_UnlockPlanetaryFortress"/>
+    <CUpgrade id="AP_UnlockPerditionTurret"/>
+    <CUpgrade id="AP_UnlockPsiDisrupter"/>
+    <CUpgrade id="AP_UnlockHiveMindEmulator"/>
+    <CUpgrade id="AP_UnlockZergling"/>
+    <CUpgrade id="AP_UnlockSwarmQueen"/>
+    <CUpgrade id="AP_UnlockRoach"/>
+    <CUpgrade id="AP_UnlockHydralisk"/>
+    <CUpgrade id="AP_UnlockBaneling"/>
+    <CUpgrade id="AP_UnlockAberration"/>
+    <CUpgrade id="AP_UnlockMutalisk"/>
+    <CUpgrade id="AP_UnlockSwarmHost"/>
+    <CUpgrade id="AP_UnlockInfestor"/>
+    <CUpgrade id="AP_UnlockUltralisk"/>
+    <CUpgrade id="AP_UnlockSporeCrawler"/>
+    <CUpgrade id="AP_UnlockSpineCrawler"/>
+    <CUpgrade id="AP_UnlockCorruptor"/>
+    <CUpgrade id="AP_UnlockScourge"/>
+    <CUpgrade id="AP_UnlockBroodQueen"/>
+    <CUpgrade id="AP_UnlockDefiler"/>
+    <CUpgrade id="AP_UnlockInfestedMarine"/>
+    <CUpgrade id="AP_UnlockInfestedBunker"/>
+    <CUpgrade id="AP_UnlockNydusWorm"/>
+    <CUpgrade id="AP_UnlockEchidnaWorm"/>
+    <CUpgrade id="AP_UnlockInfestedSiegeTank"/>
+    <CUpgrade id="AP_UnlockInfestedDiamondback"/>
+    <CUpgrade id="AP_UnlockInfestedBanshee"/>
+    <CUpgrade id="AP_UnlockInfestedLiberator"/>
+    <CUpgrade id="AP_UnlockInfestedMissileTurret"/>
+    <CUpgrade id="AP_UnlockPygalisk"/>
+    <CUpgrade id="AP_UnlockBileLauncher"/>
+    <CUpgrade id="AP_UnlockBullfrog"/>
+    <CUpgrade id="AP_UnlockHiveQueen"/>
+    <CUpgrade id="AP_UnlockImpaler"/>
+    <CUpgrade id="AP_UnlockLurker"/>
+    <CUpgrade id="AP_UnlockBroodLord"/>
+    <CUpgrade id="AP_UnlockViper"/>
+    <CUpgrade id="AP_UnlockInfestedMedics"/>
+    <CUpgrade id="AP_UnlockInfestedSiegeBreakers"/>
+    <CUpgrade id="AP_UnlockInfestedDuskWings"/>
+    <CUpgrade id="AP_UnlockDevouringOnes"/>
+    <CUpgrade id="AP_UnlockHunterKillers"/>
+    <CUpgrade id="AP_UnlockWiseOldTorrasque"/>
+    <CUpgrade id="AP_UnlockHunterlings"/>
+    <CUpgrade id="AP_UnlockYggdrasil"/>
+    <CUpgrade id="AP_UnlockCausticHorrors"/>
+    <CUpgrade id="AP_UnlockGuardian"/>
+    <CUpgrade id="AP_UnlockDevourer"/>
+    <CUpgrade id="AP_UnlockRavager"/>
+    <CUpgrade id="AP_UnlockOverseer"/>
+    <CUpgrade id="AP_UnlockPrimalIgniter"/>
+    <CUpgrade id="AP_UnlockTyrannozor"/>
+    <CUpgrade id="AP_UnlockSpawningPool"/>
+    <CUpgrade id="AP_UnlockEvolutionChamber"/>
+    <CUpgrade id="AP_UnlockRoachWarren"/>
+    <CUpgrade id="AP_UnlockBanelingNest"/>
+    <CUpgrade id="AP_UnlockHydraliskDen"/>
+    <CUpgrade id="AP_UnlockGreaterHydraliskDen"/>
+    <CUpgrade id="AP_UnlockInfestationPit"/>
+    <CUpgrade id="AP_UnlockSpire"/>
+    <CUpgrade id="AP_UnlockGreaterSpire"/>
+    <CUpgrade id="AP_UnlockUltraliskCavern"/>
+    <CUpgrade id="AP_UnlockPredatorNest"/>
+    <CUpgrade id="AP_UnlockInfestedBarracks"/>
+    <CUpgrade id="AP_UnlockInfestedFactory"/>
+    <CUpgrade id="AP_UnlockInfestedStarport"/>
+    <CUpgrade id="AP_UnlockInfestedFactoryTechLab"/>
+    <CUpgrade id="AP_UnlockInfestedStarportTechLab"/>
+    <CUpgrade id="AP_UnlockLair"/>
+    <CUpgrade id="AP_UnlockHive"/>
+    <CUpgrade id="AP_UnlockMorphling"/>
+    <CUpgrade id="AP_UnlockInfestedSCV"/>
+    <CUpgrade id="AP_UnlockNydusNetwork"/>
+    <CUpgrade id="AP_UnlockGateway"/>
+    <CUpgrade id="AP_UnlockRoboticsFacility"/>
+    <CUpgrade id="AP_UnlockStargate"/>
+    <CUpgrade id="AP_UnlockCyberneticsCore"/>
+    <CUpgrade id="AP_UnlockForge"/>
+    <CUpgrade id="AP_UnlockDarkShrine"/>
+    <CUpgrade id="AP_UnlockTemplarArchives"/>
+    <CUpgrade id="AP_UnlockRoboticsBay"/>
+    <CUpgrade id="AP_UnlockFleetBeacon"/>
+    <CUpgrade id="AP_UnlockZealot"/>
+    <CUpgrade id="AP_UnlockStalker"/>
+    <CUpgrade id="AP_UnlockHighTemplar"/>
+    <CUpgrade id="AP_UnlockDarkTemplar"/>
+    <CUpgrade id="AP_UnlockImmortal"/>
+    <CUpgrade id="AP_UnlockColossus"/>
+    <CUpgrade id="AP_UnlockPhoenix"/>
+    <CUpgrade id="AP_UnlockVoidray"/>
+    <CUpgrade id="AP_UnlockCarrier"/>
+    <CUpgrade id="AP_UnlockObserver"/>
+    <CUpgrade id="AP_UnlockCenturion"/>
+    <CUpgrade id="AP_UnlockSentinel"/>
+    <CUpgrade id="AP_UnlockSupplicant"/>
+    <CUpgrade id="AP_UnlockInstigator"/>
+    <CUpgrade id="AP_UnlockSlayer"/>
+    <CUpgrade id="AP_UnlockSentry"/>
+    <CUpgrade id="AP_UnlockEnergizer"/>
+    <CUpgrade id="AP_UnlockHavoc"/>
+    <CUpgrade id="AP_UnlockSignifier"/>
+    <CUpgrade id="AP_UnlockAscendant"/>
+    <CUpgrade id="AP_UnlockAvenger"/>
+    <CUpgrade id="AP_UnlockBloodhunter"/>
+    <CUpgrade id="AP_UnlockDragoon"/>
+    <CUpgrade id="AP_UnlockDarkArchon"/>
+    <CUpgrade id="AP_UnlockAdept"/>
+    <CUpgrade id="AP_UnlockWarpPrism"/>
+    <CUpgrade id="AP_UnlockAnnihilator"/>
+    <CUpgrade id="AP_UnlockVanguard"/>
+    <CUpgrade id="AP_UnlockWrathwalker"/>
+    <CUpgrade id="AP_UnlockReaver"/>
+    <CUpgrade id="AP_UnlockDisruptor"/>
+    <CUpgrade id="AP_UnlockMirage"/>
+    <CUpgrade id="AP_UnlockCorsair"/>
+    <CUpgrade id="AP_UnlockDestroyer"/>
+    <CUpgrade id="AP_UnlockScout"/>
+    <CUpgrade id="AP_UnlockTempest"/>
+    <CUpgrade id="AP_UnlockMothershipTaldarim"/>
+    <CUpgrade id="AP_UnlockArbiter"/>
+    <CUpgrade id="AP_UnlockOracle"/>
+    <CUpgrade id="AP_UnlockStalwart"/>
+    <CUpgrade id="AP_UnlockPulsar"/>
+    <CUpgrade id="AP_UnlockDawnbringer"/>
+    <CUpgrade id="AP_UnlockSkylord"/>
+    <CUpgrade id="AP_UnlockTrireme"/>
+    <CUpgrade id="AP_UnlockSkirmisher"/>
+    <CUpgrade id="AP_UnlockMothershipAiur"/>
+    <CUpgrade id="AP_UnlockMothershipPurifier"/>
+    <CUpgrade id="AP_UnlockOppressor"/>
+    <CUpgrade id="AP_UnlockCaladrius"/>
+    <CUpgrade id="AP_UnlockMistwing"/>
+    <CUpgrade id="AP_UnlockPhotonCannon"/>
+    <CUpgrade id="AP_UnlockKhaydarinMonolith"/>
+    <CUpgrade id="AP_UnlockShieldBattery"/>
 </Catalog>

@@ -403,11 +403,11 @@ Abil/Name/AP_TerranBuild=Build (SCV)
 Abil/Name/AP_TerranBuildDrop=Calldown
 Abil/Name/AP_ThorReborn=Thor Reborn
 Abil/Name/AP_ThorWreckage=Thor Wreckage
-Abil/Name/AP_TimeFieldAiur=Empowered Deceleration Field
+Abil/Name/AP_TimeFieldAiur=Deceleration Field
 Abil/Name/AP_TimeFieldAiurCore=Deceleration Field
-Abil/Name/AP_TimeFieldPurifier=Empowered Acceleration Field
+Abil/Name/AP_TimeFieldPurifier=Acceleration Field
 Abil/Name/AP_TimeFieldPurifierCore=Acceleration Field
-Abil/Name/AP_TimeFieldTaldarim=Maddening Field
+Abil/Name/AP_TimeFieldTaldarim=Dominance Field
 Abil/Name/AP_TimeWarp=Chrono Boost
 Abil/Name/AP_TornadoMissile=Tornado Missile
 Abil/Name/AP_TorrasqueChrysalis=Torrasque Chrysalis
@@ -492,8 +492,13 @@ Abil/Name/MercCompoundResearch=Research
 Abil/Name/que5CancelToSelection2=Queue (5) (Cancel To Selection)
 Actor/AddonIndicator/AP_TechLab=T
 Actor/AddonIndicator/AP_TechReactor=TR
+Alert/Text/AP_ArtanisReviveComplete=Revival complete.
+Alert/Text/AP_ElderProbeComplete=Elder Probe complete.
+Alert/Text/AP_MothershipChronoDroneComplete=Drone complete.
 Alert/Text/AP_MothershipComplete=Mothership complete.
+Alert/Text/AP_MothershipRepairDroneComplete=Drone complete.
 Alert/Text/AP_NovaReviveComplete=Revival complete.
+Alert/Text/AP_SupplicantWarpComplete=Warp complete.
 Alert/Text/AP_TorrasqueReviveComplete=Morph complete.
 Alert/Text/AP_TransformationComplete=Transformation complete.
 Alert/Text/AP_ZerglingReconstitution=Unit complete.
@@ -505,8 +510,6 @@ Behavior/Name/AP_330mmBarrageCannons=330mm Barrage Cannon
 Behavior/Name/AP_AberrationArmorAuraTarget=Protective Cover
 Behavior/Name/AP_AdeptPsionicTransferDamageBuff=Psionic Transfer
 Behavior/Name/AP_AdeptPsionicTransferDamageDebuff=Psionic Transfer
-Behavior/Name/AP_AiurMothershipEnergyRegenAuraBuff=Honor in Unity
-Behavior/Name/AP_AiurMothershipEnergyRegenAuraBuffAiur=Glory in Unity
 Behavior/Name/AP_AlarakLightningStrikes=Lightning Strikes
 Behavior/Name/AP_AlarakStalkerPhasingArmorBuff=Phase Armor
 Behavior/Name/AP_AmorphousArmorcloud=Microbial Shroud
@@ -515,6 +518,7 @@ Behavior/Name/AP_AnnihilatorCloak=Shadow Path
 Behavior/Name/AP_ArbiterMPCloakFieldEffect=Cloaking Field
 Behavior/Name/AP_ArbiterMPStasisField=Stasis Field
 Behavior/Name/AP_ArtanisCharging=Charging
+Behavior/Name/AP_ArtanisLightningDashSlowHeroic=Slowed
 Behavior/Name/AP_ArtanisLightningDashStun=Stunned
 Behavior/Name/AP_ArtanisResurgenceDisable=Resurged
 Behavior/Name/AP_ArtanisResurgenceInvulnerable=Resurging
@@ -536,7 +540,7 @@ Behavior/Name/AP_BurstCapacitorsDamageBuff=Burst Capacitors
 Behavior/Name/AP_CarrierRepairDroneRecall=Carrier Repair Drone Recall
 Behavior/Name/AP_CenturionDodge=Quantum Dodge
 Behavior/Name/AP_Charging=Charging
-Behavior/Name/AP_CleansingSmite=Burning
+Behavior/Name/AP_CleansingSmite=Cleansing Smite
 Behavior/Name/AP_Contaminated=Contaminated
 Behavior/Name/AP_Corruption=Corruption
 Behavior/Name/AP_CorsairMPDisruptionWeb=Disruption Web
@@ -626,6 +630,7 @@ Behavior/Name/AP_MarauderMengskAbsorb=Aegis Barrier
 Behavior/Name/AP_MarauderMengskAttackSpeedBoost=High-Grade Stimpacks
 Behavior/Name/AP_MarauderMengskShrapnelSlow=Incapacitator Shells
 Behavior/Name/AP_MatrixOverloadTarget=Matrix Overload
+Behavior/Name/AP_MedicMengskDefensiveMatrixBuff=Defensive Matrix
 Behavior/Name/AP_MedicMengskOpticalRestorationBuff=Optical Restoration
 Behavior/Name/AP_MedicMengskPhysicalTherapyDR1=Physical Therapy
 Behavior/Name/AP_MedicMengskPhysicalTherapyDR2=Physical Therapy
@@ -638,9 +643,16 @@ Behavior/Name/AP_MercTorrasqueTimerBehavior=Reincarnation Suppressed
 Behavior/Name/AP_MindControl=Mind Control
 Behavior/Name/AP_MindControlImmune=Big Brain
 Behavior/Name/AP_MineDroneCountdown=Widow Mine Detonating
+Behavior/Name/AP_MothershipAiurEnergyRegenAuraBuff=Honor in Unity
+Behavior/Name/AP_MothershipAiurEnergyRegenAuraBuffAiur=Glory in Unity
 Behavior/Name/AP_MothershipAiurShieldArmor=Valorous Resolve
 Behavior/Name/AP_MothershipAiurSlow=Time Slowed
 Behavior/Name/AP_MothershipAiurSlowHeroic=Time Slowed
+Behavior/Name/AP_MothershipPurifierAttackSpeedBoostBuff=Enhanced Power
+Behavior/Name/AP_MothershipPurifierAttackSpeedBoostBuffEmpowered=Overloaded Power
+Behavior/Name/AP_MothershipPurifierDebuff=Burning
+Behavior/Name/AP_MothershipPurifierShielding=Cybros Shielding
+Behavior/Name/AP_MothershipTaldarimGroundSlowDebuff=Shadow of Death
 Behavior/Name/AP_MothershipTaldarimMovementNerfOutsidePower=Pylon Power Loss
 Behavior/Name/AP_MothershipTaldarimRecallShield=Recall Shield
 Behavior/Name/AP_NPSwarm=Parasitic Domination
@@ -669,7 +681,8 @@ Behavior/Name/AP_PersonalCloakingFree=Cloak
 Behavior/Name/AP_PersonalDefensiveMatrix=Ionic Force Field
 Behavior/Name/AP_PhaseBlinkDamage=Overcharged
 Behavior/Name/AP_PhasePrismPullStun=Pulled
-Behavior/Name/AP_PhasePrismStun=In Stasis
+Behavior/Name/AP_PhasePrismStun=Stunned
+Behavior/Name/AP_PhasePrismTemporaryShields=Phase Prism
 Behavior/Name/AP_PhotonOverchage=Photon Overcharge
 Behavior/Name/AP_PlanetCracker=Planet Cracker
 Behavior/Name/AP_PlanetCrackerChargeUp=Planet Cracker Charging
@@ -693,10 +706,6 @@ Behavior/Name/AP_PsionicLiftSlow=Immobilized
 Behavior/Name/AP_PsionicLiftStun=Immobilized
 Behavior/Name/AP_PsionicLiftUp=Immobilized
 Behavior/Name/AP_PurificationNova=Phased
-Behavior/Name/AP_PurifierMothershipAttackSpeedBoostBuff=Enhanced Power
-Behavior/Name/AP_PurifierMothershipAttackSpeedBoostBuffEmpowered=Overloaded Power
-Behavior/Name/AP_PurifierMothershipDebuff=Burning
-Behavior/Name/AP_PurifierMothershipShielding=Cybros Shielding
 Behavior/Name/AP_QueenBurstHeal=Rapid Transfusion
 Behavior/Name/AP_QueenClassicParasite=Parasite
 Behavior/Name/AP_QueenSCBWEnsnare=Ensnare
@@ -735,7 +744,6 @@ Behavior/Name/AP_SOATimeFreeze=Time Stop
 Behavior/Name/AP_SOAVortexEnemy=SOAVortex Enemy
 Behavior/Name/AP_ScienceVesselCloakField=Cloaking Field
 Behavior/Name/AP_ScienceVesselSCBWDefensiveMatrix=Defensive Matrix
-Behavior/Name/AP_MedicMengskDefensiveMatrixBuff=Defensive Matrix
 Behavior/Name/AP_ScopophobiaTarget=Scopophobia
 Behavior/Name/AP_ScourgeSpawn=Summoned
 Behavior/Name/AP_ScoutNerazimCloak=Cloak
@@ -754,6 +762,7 @@ Behavior/Name/AP_SentryReclamation=Reclamation
 Behavior/Name/AP_ShadowCharging=Shadow Charging
 Behavior/Name/AP_SiegeTankMengskSlowHeroic=Shock and Awe
 Behavior/Name/AP_SiegeTankMengskStun=Shock and Awe
+Behavior/Name/AP_SiegeTankMengskTransportHookIndicator=Transport Hook
 Behavior/Name/AP_SkirmisherAttackspeed=Terrazine Injectors
 Behavior/Name/AP_Slow=Slow
 Behavior/Name/AP_SoASuperShield=Shield Overcharge
@@ -779,14 +788,14 @@ Behavior/Name/AP_SupplyDepotCloak=Cloak
 Behavior/Name/AP_SupplyDrop=Supply drop
 Behavior/Name/AP_SuppressionPulse=Suppressed
 Behavior/Name/AP_SwarmGrenade=Swarm Grenade
-Behavior/Name/AP_TaldarimMothershipGroundSlowDebuff=Shadow of Death
 Behavior/Name/AP_ThermalLancesFireBeam=Burning
+Behavior/Name/AP_ThorMengskArmorAuraSiegedTarget=Bulwark Field
 Behavior/Name/AP_ThorMengskArmorAuraTarget=Bulwark Field
 Behavior/Name/AP_TimeFieldAiur=Decelerated
 Behavior/Name/AP_TimeFieldAiurHeroic=Decelerated (Heroic)
 Behavior/Name/AP_TimeFieldPurifier=Accelerated
-Behavior/Name/AP_TimeFieldTaldarim=Verge of Madness
-Behavior/Name/AP_TimeFieldTaldarimConfusion=Driven to Madness
+Behavior/Name/AP_TimeFieldTaldarim=Decelerated
+Behavior/Name/AP_TimeFieldTaldarimFriendly=Accelerated
 Behavior/Name/AP_TimeWarpProduction=Chrono Boost
 Behavior/Name/AP_TorrasqueTimerBehavior=Reincarnation Suppressed
 Behavior/Name/AP_TyrannozorTyrantsProtectionTarget=Tyrant's Protection
@@ -865,14 +874,13 @@ Behavior/Tooltip/AP_AP_NovaArmorBlinkSuitBlinkCloaked=This unit is cloaked and w
 Behavior/Tooltip/AP_AberrationArmorAuraTarget=An Aberration is granting this unit <d ref="Behavior,AP_AberrationArmorAuraTarget,DamageResponse.ModifyFraction*100"/>% damage reduction.
 Behavior/Tooltip/AP_AdeptPsionicTransferDamageBuff=Enemies that touch this unit take increased damage.
 Behavior/Tooltip/AP_AdeptPsionicTransferDamageDebuff=This unit is taking increased damage.
-Behavior/Tooltip/AP_AiurMothershipEnergyRegenAuraBuff=This unit has <d ref="Behavior,AP_AiurMothershipEnergyRegenAuraBuff,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration.
-Behavior/Tooltip/AP_AiurMothershipEnergyRegenAuraBuffAiur=This unit has <d ref="Behavior,AP_AiurMothershipEnergyRegenAuraBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration.
 Behavior/Tooltip/AP_AlarakLightningStrikes=Alarak's next Deadly Charge also deals <d ref="Effect,AlarakLightningStrikesDamage,Amount"/> damage to <d ref="Effect,AlarakLightningStrikesSearch,AreaArray[0].MaxCount"/> enemy units near the primary target.
 Behavior/Tooltip/AP_AmorphousArmorcloud=Incoming damage from air units reduced by <d ref="Behavior,AP_AmorphousArmorcloud,DamageResponse.ModifyFraction*100" precision="1"/>%.
 Behavior/Tooltip/AP_AnnihilatorAirAttack=Can attack air units.
 Behavior/Tooltip/AP_AnnihilatorCloak=This unit is cloaked and has increased movement speed.
 Behavior/Tooltip/AP_ArbiterMPCloakFieldEffect=This unit is cloaked unless revealed by <c val="FFE303">Detectors</c> or effects.
 Behavior/Tooltip/AP_ArtanisCharging=Artanis is charging, allowing him to quickly close the distance with his target.
+Behavior/Tooltip/AP_ArtanisLightningDashSlowHeroic=Movement speed reduced by <d ref="(1 - Behavior,AP_ArtanisLightningDashSlowHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_ArtanisLightningDashStun=This unit is stunned.
 Behavior/Tooltip/AP_ArtanisResurgenceDisable=Artanis is unable to benefit from Resurgence.
 Behavior/Tooltip/AP_ArtanisResurgenceInvulnerable="But none of us are ever truly alone."
@@ -891,7 +899,7 @@ Behavior/Tooltip/AP_BattlecruiserMengskBehemothReactorIndicator=Battlecruiser sp
 Behavior/Tooltip/AP_BloodHunterLifeSteal=Recovering life and shields.
 Behavior/Tooltip/AP_CenturionDodge=The next hit will be dodged.
 Behavior/Tooltip/AP_Charging=This Zealot is charging, allowing it to quickly close the distance with its target.
-Behavior/Tooltip/AP_CleansingSmite=This unit is taking damage over time and restoring Artanis' shields.
+Behavior/Tooltip/AP_CleansingSmite=Artanis is burning nearby enemies and restoring shields.
 Behavior/Tooltip/AP_Contaminated=This structure is unable to train new units or research upgrades.
 Behavior/Tooltip/AP_Corruption=This unit takes 20% extra damage.
 Behavior/Tooltip/AP_CorsairMPDisruptionWeb=This unit cannot attack.
@@ -909,7 +917,7 @@ Behavior/Tooltip/AP_DevourerSCBWWeapon=While active, reduces weapon attack speed
 Behavior/Tooltip/AP_DisablingCloud=This unit is slowed and cannot attack or use energy-based abilities.
 Behavior/Tooltip/AP_EMPDecloak=Target was recently hit by an EMP Round, making it unable to cloak for a short duration.
 Behavior/Tooltip/AP_ElderProbeWarpin=Elder Probe is being materialized by a Nexus.
-Behavior/Tooltip/AP_Exterminate=Artanis gains +100% attack speed and +20 attack damage.
+Behavior/Tooltip/AP_Exterminate=Artanis gains +100% attack speed, +20 attack damage, and +2 life and shield armor.
 Behavior/Tooltip/AP_ExterminateCharging=Artanis is charging to his target.
 Behavior/Tooltip/AP_ExterminateTarget=Pray for mercy.
 Behavior/Tooltip/AP_FungalGrowth=Target is affected by Fungal Growth. Target is detected and cannot move.
@@ -969,6 +977,7 @@ Behavior/Tooltip/AP_MarauderMengskAbsorb=When active, this Aegis Barrier blocks 
 Behavior/Tooltip/AP_MarauderMengskAttackSpeedBoost=This unit attacks more quickly while under the effects of High-Grade Stimpacks.
 Behavior/Tooltip/AP_MarauderMengskShrapnelSlow=Movement speed reduced by <d ref="(1-Behavior,AP_MarauderMengskShrapnelSlow,Modification.MoveSpeedMultiplier)*100" precision="0"/>%.
 Behavior/Tooltip/AP_MatrixOverloadTarget=This unit's movement and attack speed has been increased.
+Behavior/Tooltip/AP_MedicMengskDefensiveMatrixBuff=While active, Defensive Matrix absorbs up to <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,DamageResponse.ModifyLimit"/></c> damage for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,Duration"/></c> seconds.
 Behavior/Tooltip/AP_MedicMengskOpticalRestorationBuff=This unit has detection, +<d ref="Behavior,AP_MedicMengskOpticalRestorationBuff,Modification.SightBonus"/> sight range, and vision of high ground.
 Behavior/Tooltip/AP_MedicMengskPhysicalTherapyDR1=Damage taken reduced by <d ref="-Behavior,AP_MedicMengskPhysicalTherapyDR1,Modification.DamageTakenFraction[Ranged]*100" precision="0"/>% while healing a friendly unit.
 Behavior/Tooltip/AP_MedicMengskPhysicalTherapyDR2=Damage taken reduced by <d ref="-Behavior,AP_MedicMengskPhysicalTherapyDR2,Modification.DamageTakenFraction[Ranged]*100" precision="0"/>% while healing an additional friendly unit.
@@ -976,10 +985,17 @@ Behavior/Tooltip/AP_MedicMengskPhysicalTherapyHealBuff=Armor increased by <d ref
 Behavior/Tooltip/AP_MedicSCBWOpticFlare=Sight range reduced to melee range. Passive detection disabled.
 Behavior/Tooltip/AP_MercTorrasqueTimerBehavior=Cannot revive at this time.
 Behavior/Tooltip/AP_MindControlImmune=This unit is immune to mind control effects.
+Behavior/Tooltip/AP_MothershipAiurEnergyRegenAuraBuff=This unit has <d ref="Behavior,AP_MothershipAiurEnergyRegenAuraBuff,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration.
+Behavior/Tooltip/AP_MothershipAiurEnergyRegenAuraBuffAiur=This unit has <d ref="Behavior,AP_MothershipAiurEnergyRegenAuraBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration.
 Behavior/Tooltip/AP_MothershipAiurShieldArmor=This unit has increased shield armor.
 Behavior/Tooltip/AP_MothershipAiurSlow=Attack and move speed reduced by <d ref="(1 - Behavior,AP_MothershipAiurSlow,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_MothershipAiurSlowHeroic=Attack and move speed reduced by <d ref="(1 - Behavior,AP_MothershipAiurSlowHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.
-Behavior/Tooltip/AP_MothershipTaldarimMovementNerfOutsidePower=The Mothership travels <d ref="(Behavior,AP_MothershipTaldarimMovementNerfOutsidePower,Modification.MoveSpeedMultiplier - 1) * 100"/>% slower outside Pylon power fields.
+Behavior/Tooltip/AP_MothershipPurifierAttackSpeedBoostBuff=Attack speed increased by <d ref="Behavior,AP_MothershipPurifierAttackSpeedBoostBuff,Modification.AttackSpeedMultiplier*100 - 100"/>%.
+Behavior/Tooltip/AP_MothershipPurifierAttackSpeedBoostBuffEmpowered=Attack speed increased by <d ref="Behavior,AP_MothershipPurifierAttackSpeedBoostBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>%.
+Behavior/Tooltip/AP_MothershipPurifierDebuff=Taking <d ref="Behavior,AP_MothershipPurifierDebuff,Duration/Behavior,AP_MothershipPurifierDebuff,Period * Effect,AP_MothershipPurifierDebuffDOT,Amount" precision="1"/> damage over <d ref="Behavior,AP_MothershipPurifierDebuff,Duration" precision="2"/> seconds and armor reduced by <d ref="-1*Behavior,AP_MothershipPurifierDebuff,Modification.LifeArmorBonus"/>.
+Behavior/Tooltip/AP_MothershipPurifierShielding=This unit is taking <d ref="(1-Behavior,AP_MothershipPurifierShielding,DamageResponse.ModifyFraction)*100"/>% reduced damage.
+Behavior/Tooltip/AP_MothershipTaldarimGroundSlowDebuff=Attack and movement speed reduced by <d ref="(1 - Behavior,AP_MothershipTaldarimGroundSlowDebuff,Modification.MoveSpeedMultiplier) * 100"/>%.
+Behavior/Tooltip/AP_MothershipTaldarimMovementNerfOutsidePower=The Mothership travels <d ref="(1 - Behavior,AP_MothershipTaldarimMovementNerfOutsidePower,Modification.MoveSpeedMultiplier) * 100"/>% slower outside Pylon power fields.
 Behavior/Tooltip/AP_NPSwarm=This unit is being controlled by the Swarm.
 Behavior/Tooltip/AP_NeuralParasite=This unit is being controlled by an Infestor.
 Behavior/Tooltip/AP_NovaApolloCloak=This unit is cloaked and will only be revealed by detectors or effects.
@@ -1002,7 +1018,8 @@ Behavior/Tooltip/AP_PersonalCloakingFree=This unit is cloaked and will only be r
 Behavior/Tooltip/AP_PersonalDefensiveMatrix=Nova is absorbing a portion of the damage dealt to her.
 Behavior/Tooltip/AP_PhaseBlinkDamage=This unit's next attack will be improved.
 Behavior/Tooltip/AP_PhasePrismPullStun=This unit is being pulled by Phase Prism.
-Behavior/Tooltip/AP_PhasePrismStun=This unit is in stasis and can be swapped with Artanis.
+Behavior/Tooltip/AP_PhasePrismStun=This unit is stunned.
+Behavior/Tooltip/AP_PhasePrismTemporaryShields=Phase Prism absorbs up to <d ref="Behavior,AP_PhasePrismTemporaryShields,DamageResponse.ModifyLimit"/> incoming damage.
 Behavior/Tooltip/AP_PlanetCracker=Firing the Planet Cracker and is unable to perform any other actions.
 Behavior/Tooltip/AP_PlanetCrackerChargeUp=Preparing for planetary annihilation...
 Behavior/Tooltip/AP_PowerRedirectionCaster=Redirecting power, cannot perform any other actions.
@@ -1022,10 +1039,6 @@ Behavior/Tooltip/AP_PsionicLiftDamage=Taking damage over time.
 Behavior/Tooltip/AP_PsionicLiftFlier=This unit is stunned and taking damage over time.
 Behavior/Tooltip/AP_PsionicLiftRaise=This unit is stunned and taking damage over time.
 Behavior/Tooltip/AP_PurificationNova=This unit is invulnerable and is able to move through other units.
-Behavior/Tooltip/AP_PurifierMothershipAttackSpeedBoostBuff=Attack speed increased by <d ref="Behavior,AP_PurifierMothershipAttackSpeedBoostBuff,Modification.AttackSpeedMultiplier*100 - 100"/>%.
-Behavior/Tooltip/AP_PurifierMothershipAttackSpeedBoostBuffEmpowered=Attack speed increased by <d ref="Behavior,AP_PurifierMothershipAttackSpeedBoostBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>%.
-Behavior/Tooltip/AP_PurifierMothershipDebuff=Taking <d ref="Behavior,AP_PurifierMothershipDebuff,Duration/Behavior,AP_PurifierMothershipDebuff,Period * Effect,AP_PurifierMothershipDebuffDOT,Amount" precision="1"/> damage over <d ref="Behavior,AP_PurifierMothershipDebuff,Duration" precision="2"/> seconds and armor reduced by <d ref="-1*Behavior,AP_PurifierMothershipDebuff,Modification.LifeArmorBonus"/>.
-Behavior/Tooltip/AP_PurifierMothershipShielding=This unit is taking <d ref="(1-Behavior,AP_PurifierMothershipShielding,DamageResponse.ModifyFraction)*100"/>% reduced damage.
 Behavior/Tooltip/AP_QueenBurstHeal=Regenerating life.
 Behavior/Tooltip/AP_QueenClassicParasite=This unit can detect cloaked or burrowed units and has increased vision.
 Behavior/Tooltip/AP_QueenSCBWEnsnare=Unit's movement and attack speed is slowed.
@@ -1052,7 +1065,6 @@ Behavior/Tooltip/AP_SOARepairBeam=This unit or structure is being healed.
 Behavior/Tooltip/AP_SOASuperChrono=This structure's production and research speed has been greatly increased.
 Behavior/Tooltip/AP_SOATimeFreeze=This unit is frozen in time. It cannot move or attack.
 Behavior/Tooltip/AP_ScienceVesselSCBWDefensiveMatrix=While active, the Defensive Matrix blocks all incoming damage, up to a maximum of <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ScienceVesselSCBWDefensiveMatrix@Dummy,Modification.VitalMaxArray[Shields]"/></c>.
-Behavior/Tooltip/AP_MedicMengskDefensiveMatrixBuff=While active, Defensive Matrix absorbs up to <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,DamageResponse.ModifyLimit"/></c> damage for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MedicMengskDefensiveMatrixBuff,Duration"/></c> seconds.
 Behavior/Tooltip/AP_ScopophobiaTarget=This unit moves and attacks <d ref="100*(1 - Behavior,AP_ScopophobiaTarget,Modification.MoveSpeedMultiplier)"/>% slower.
 Behavior/Tooltip/AP_ScourgeSpawn=This unit was summoned by a Spire.
 Behavior/Tooltip/AP_ScoutNerazimCloak=This unit is cloaked and will only be revealed by detectors or effects.
@@ -1068,6 +1080,7 @@ Behavior/Tooltip/AP_SensorTowerRangeBuff=This structure has increased attack ran
 Behavior/Tooltip/AP_SentryReclamation=This unit is temporarily under Karax's control. It will self-destruct once this effect expires.
 Behavior/Tooltip/AP_SiegeTankMengskSlowHeroic=Target's movement speed is reduced for a short period of time.
 Behavior/Tooltip/AP_SiegeTankMengskStun=Target is stunned.
+Behavior/Tooltip/AP_SiegeTankMengskTransportHookIndicator=Can be picked up by a Medivac to fire from it.
 Behavior/Tooltip/AP_SkirmisherAttackspeed=This unit has modified attack speed  and loses life over time.
 Behavior/Tooltip/AP_Slow=Target's movement speed is reduced for a short period of time.
 Behavior/Tooltip/AP_SoASuperShield=This unit or structure is absorbing damage.
@@ -1089,14 +1102,14 @@ Behavior/Tooltip/AP_SupplyDepotCloak=This unit is cloaked and will only be revea
 Behavior/Tooltip/AP_SupplyDrop=This Supply Depot is providing an additional 8 supply.
 Behavior/Tooltip/AP_SuppressionPulse=This unit cannot deal weapon damage.
 Behavior/Tooltip/AP_SwarmGrenade=This unit is slowed and cannot attack or use energy-based abilities.
-Behavior/Tooltip/AP_TaldarimMothershipGroundSlowDebuff=Attack and movement speed reduced by <d ref="(1 - Behavior,AP_TaldarimMothershipGroundSlowDebuff,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_ThermalLancesFireBeam=This unit is taking additional damage over time.
+Behavior/Tooltip/AP_ThorMengskArmorAuraSiegedTarget=A Blackhammer in Overwatch Mode is granting this unit +<d ref="Behavior,AP_ThorMengskArmorAuraSiegedTarget,Modification.LifeArmorBonus"/> armor.
 Behavior/Tooltip/AP_ThorMengskArmorAuraTarget=A Blackhammer is granting this unit +<d ref="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus"/> armor.
 Behavior/Tooltip/AP_TimeFieldAiur=Attack and move speed reduced by <d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_TimeFieldAiurHeroic=Attack and move speed reduced by <d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.
 Behavior/Tooltip/AP_TimeFieldPurifier=Attack and move speed increased by <d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%.
-Behavior/Tooltip/AP_TimeFieldTaldarim=Attack and move speed reduced by <d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.AttackSpeedMultiplier) * 100"/>%.
-Behavior/Tooltip/AP_TimeFieldTaldarimConfusion=Attacking nearby allies with <d ref="((Behavior,AP_TimeFieldTaldarimConfusion,Modification.AttackSpeedMultiplier) * 100) - 100"/>% increased attack and movement speed.
+Behavior/Tooltip/AP_TimeFieldTaldarim=Attack and move speed reduced by <d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.MoveSpeedMultiplier) * 100"/>%.
+Behavior/Tooltip/AP_TimeFieldTaldarimFriendly=Attack and move speed increased by <d ref="((Behavior,AP_TimeFieldTaldarimFriendly,Modification.MoveSpeedMultiplier) * 100) - 100"/>%.
 Behavior/Tooltip/AP_TimeWarpProduction=This structure is in an accelerated state.
 Behavior/Tooltip/AP_TorrasqueTimerBehavior=Cannot revive at this time.
 Behavior/Tooltip/AP_UltraliskBurrowChargeStun=This unit is stunned.
@@ -1206,13 +1219,6 @@ Button/Name/AP_AdvancedHealingAI=Advanced Healing AI
 Button/Name/AP_AdvancedWeaponryRaven=Hunter-Seeker Missile
 Button/Name/AP_AerodynamicGlaveShape=Aerodynamic Glaive Shape
 Button/Name/AP_AiurFaction=<c val="64e4fa">Aiur</c> Faction
-Button/Name/AP_AiurMothershipBlackHole=Black Hole
-Button/Name/AP_AiurMothershipEnergyRegenAura=Symbol of Unity
-Button/Name/AP_AiurMothershipEnergyRegenAuraInstall=Install Symbol of Unity
-Button/Name/AP_AiurMothershipFeedback=Harmonized Feedback Conductors
-Button/Name/AP_AiurMothershipFeedbackInstall=Install Harmonized Feedback Conductors
-Button/Name/AP_AiurMothershipShieldRestore=Khalai Shield Rechargers
-Button/Name/AP_AiurMothershipShieldRestoreInstall=Install Khalai Shield Rechargers
 Button/Name/AP_AlarakACMyLifefortheHighlord=Devotion
 Button/Name/AP_AlarakColossusChargedBlastChargeTime=Rapid Power Cycling
 Button/Name/AP_AlarakHavocAbilityRange=Bloodshard Resonance
@@ -1434,11 +1440,11 @@ Button/Name/AP_CorpserPassive=Infest Roachlings
 Button/Name/AP_CorrosiveAcidDevourer=Acid Spores
 Button/Name/AP_Corruption=Corruption
 Button/Name/AP_Corruptor=Morph to Corruptor
-Button/Name/AP_CorruptorSporefall=Sporefall
 Button/Name/AP_CorruptorConstructRegeneration=Construct Regeneration
 Button/Name/AP_CorruptorIncubateScourge=Incubate Scourge
 Button/Name/AP_CorruptorMonstrousResilience=Monstrous Resilience
 Button/Name/AP_CorruptorPassive=Corruptor
+Button/Name/AP_CorruptorSporefall=Sporefall
 Button/Name/AP_Corsair=Warp in Corsair
 Button/Name/AP_CorsairArgusJewel=Argus Jewel
 Button/Name/AP_CorsairMPDisruptionWeb=Disruption Web
@@ -1578,8 +1584,12 @@ Button/Name/AP_GhostSCBWLockdown=Lockdown
 Button/Name/AP_GlialReconstitution=Glial Reconstitution
 Button/Name/AP_Goliath=Build Goliath
 Button/Name/AP_GoliathMengsk=Build Bulwark Company
+Button/Name/AP_GoliathMengskAresClassTargetingAddon=Ares-Class Targeting Add-on
 Button/Name/AP_GoliathMengskJump=Jump Jets
+Button/Name/AP_GoliathMengskJumpJetsMKII=Jump Jets MKII
+Button/Name/AP_GoliathMengskMoebiusDefenseMatrix=Moebius Shielding
 Button/Name/AP_GoliathMengskMultilock=Multi-Lock Weapons System
+Button/Name/AP_GoliathMengskParalysisInducers=Neural Shutdown
 Button/Name/AP_GraviticDrive=Gravitic Drive
 Button/Name/AP_GravitonBeam=Graviton Beam
 Button/Name/AP_GravitonBeamVoidCampaign=Graviton Beam
@@ -1606,6 +1616,7 @@ Button/Name/AP_Hallucination=Hallucination
 Button/Name/AP_HangarInstallAiur=Install Interceptor Hangar
 Button/Name/AP_HangarInstallPurifier=Install Bomber Hangar
 Button/Name/AP_HangarInstallTaldarim=Install Interceptor Hangar
+Button/Name/AP_HangarTaldarim=Interceptor Hangar
 Button/Name/AP_HardenedShield=Hardened Shield
 Button/Name/AP_Hatchery=Mutate into Hatchery
 Button/Name/AP_HaveBarrier=Improved Barrier
@@ -1853,7 +1864,6 @@ Button/Name/AP_MedivacExpandedHull=Expanded Hull
 Button/Name/AP_MedivacPermanentCloak=Permanently Cloaked
 Button/Name/AP_MedivacRapidReignitionSystem=Rapid Reignition System
 Button/Name/AP_MedivacShield=Scatter Veil
-Button/Name/AP_MedivacSiegeTankAirlift=Armament Stabilizers
 Button/Name/AP_MedivacSpeedBoost=Ignite Afterburners
 Button/Name/AP_MengskCombatDiagnosis=Combat Diagnosis
 Button/Name/AP_MercCompound=Build Merc Compound
@@ -1911,7 +1921,14 @@ Button/Name/AP_MorphtoHunter=Morph to Baneling
 Button/Name/AP_MorphtoSplitterling=Morph to Baneling
 Button/Name/AP_Mothership=Warp In Tal'darim Mothership
 Button/Name/AP_MothershipAiur=Morph to Aiur Mothership
+Button/Name/AP_MothershipAiurBlackHole=Black Hole
+Button/Name/AP_MothershipAiurEnergyRegenAura=Symbol of Unity
+Button/Name/AP_MothershipAiurEnergyRegenAuraInstall=Install Symbol of Unity
+Button/Name/AP_MothershipAiurFeedback=Feedback Conductors
+Button/Name/AP_MothershipAiurFeedbackInstall=Install Feedback Conductors
 Button/Name/AP_MothershipAiurShieldArmorAura=Valorous Resolve
+Button/Name/AP_MothershipAiurShieldRestore=Khalai Shield Rechargers
+Button/Name/AP_MothershipAiurShieldRestoreInstall=Install Khalai Shield Rechargers
 Button/Name/AP_MothershipAuxiliary=Install Auxiliary Upgrades
 Button/Name/AP_MothershipBlackHole=Black Hole
 Button/Name/AP_MothershipBlackHoleInstall=Install Black Hole
@@ -1919,23 +1936,33 @@ Button/Name/AP_MothershipChronoDrones=Chrono Drones
 Button/Name/AP_MothershipChronoDronesInstall=Install Chrono Drones
 Button/Name/AP_MothershipCloakField=Cloaking Field
 Button/Name/AP_MothershipCoreAiur=Warp In Aiur Mothership Core
-Button/Name/AP_MothershipCoreAiurQuantumProjection=Quantum Projection
 Button/Name/AP_MothershipCoreMassRecall=Mass Recall
 Button/Name/AP_MothershipCoreNexusRecall=Nexus Recall
 Button/Name/AP_MothershipCorePurifier=Warp In Purifier Mothership Core
-Button/Name/AP_MothershipCorePurifierControlledBurn=Controlled Burn
 Button/Name/AP_MothershipDamage=Install Offensive Ability
 Button/Name/AP_MothershipMassRecallInstall=Install Mass Recall
 Button/Name/AP_MothershipNexusRecallInstall=Install Nexus Recall
 Button/Name/AP_MothershipPowerField=Mobile Power Supply
 Button/Name/AP_MothershipPurifier=Morph to Purifier Mothership
+Button/Name/AP_MothershipPurifierAttackSpeedBoost=Energized Network
+Button/Name/AP_MothershipPurifierAttackSpeedBoostInstall=Install Energized Network
 Button/Name/AP_MothershipPurifierBlackHole=Black Hole
 Button/Name/AP_MothershipPurifierBlackHoleInstall=Install Black Hole
+Button/Name/AP_MothershipPurifierDebuff=Purified Embers
+Button/Name/AP_MothershipPurifierDebuffInstall=Install Purified Embers
+Button/Name/AP_MothershipPurifierShielding=Cybros Shielding
+Button/Name/AP_MothershipPurifierShieldingInstall=Install Cybros Shielding
 Button/Name/AP_MothershipRepairDrones=Repair Drones
 Button/Name/AP_MothershipRepairDronesInstall=Install Repair Drones
 Button/Name/AP_MothershipTaldarim=Warp in Tal'darim Mothership
 Button/Name/AP_MothershipTaldarimBaseAttackDisable=Enable Blood-Fused Particles
 Button/Name/AP_MothershipTaldarimBaseAttackEnable=Enable Base Attack
+Button/Name/AP_MothershipTaldarimDeathHeal=Soul-Forged Conduits
+Button/Name/AP_MothershipTaldarimDeathHealInstall=Install Soul-Forged Conduits
+Button/Name/AP_MothershipTaldarimFastAttack=Blood-Fused Particles
+Button/Name/AP_MothershipTaldarimFastAttackInstall=Install Blood-Fused Particles
+Button/Name/AP_MothershipTaldarimGroundSlow=Shadow of Death
+Button/Name/AP_MothershipTaldarimGroundSlowInstall=Install Shadow of Death
 Button/Name/AP_MothershipTaldarimIntegratedPower=Integrated Power
 Button/Name/AP_MothershipTaldarimMassRecall=Mass Recall
 Button/Name/AP_MothershipTaldarimMassRecallInstall=Install Mass Recall
@@ -2047,7 +2074,6 @@ Button/Name/AP_PermanentlyCloakedStasis=Permanently Cloaked
 Button/Name/AP_PersonalDefensiveMatrix=Ionic Force Field
 Button/Name/AP_PhaseBlaster=Phase Blaster
 Button/Name/AP_PhasePrism=Phase Prism
-Button/Name/AP_PhasePrismRecast=Phase Prism (Recast)
 Button/Name/AP_PhasingMode=Phasing Mode
 Button/Name/AP_PhoenixAiur=Warp in Phoenix
 Button/Name/AP_PhoenixAiurGravitonBeam=Graviton Beam
@@ -2121,13 +2147,6 @@ Button/Name/AP_PurificationNova=Purification Nova
 Button/Name/AP_PurificationNovaEarly=Explode Purification Nova
 Button/Name/AP_PurificationNovaTargeted=Purification Nova
 Button/Name/AP_PurifierFaction=<c val="f2bf16">Purifier</c> Faction
-Button/Name/AP_PurifierMothershipAttackSpeedBoost=Amplified Power Rerouter
-Button/Name/AP_PurifierMothershipAttackSpeedBoostInstall=Install Amplified Power Rerouter
-Button/Name/AP_PurifierMothershipBlackHole=Black Hole
-Button/Name/AP_PurifierMothershipDebuff=Purified Embers
-Button/Name/AP_PurifierMothershipDebuffInstall=Install Purified Embers
-Button/Name/AP_PurifierMothershipShielding=Cybros Shielding
-Button/Name/AP_PurifierMothershipShieldingInstall=Install Cybros Shielding
 Button/Name/AP_Pygalisk=Morph Pygalisk
 Button/Name/AP_PygaliskCombatCarapace=Combat Carapace
 Button/Name/AP_PygaliskDucalBlades=Ducal Blades
@@ -2329,7 +2348,10 @@ Button/Name/AP_SiegeTank=Build Siege Tank
 Button/Name/AP_SiegeTankEnhancedCombustionEngines=All-Terrain Treads
 Button/Name/AP_SiegeTankJumpJet=Jump Jets
 Button/Name/AP_SiegeTankMengsk=Build Shock Division
-Button/Name/AP_SiegeTankMengskBlink=Blink
+Button/Name/AP_SiegeTankMengskAirlift=Armament Stabilizers
+Button/Name/AP_SiegeTankMengskImprovedTankMode=Retrofitted Cannons
+Button/Name/AP_SiegeTankMengskNapalmRounds=Napalm Strike
+Button/Name/AP_SiegeTankMengskSmartServos=Smart Servos
 Button/Name/AP_SiegeTankMengskStun=Shock and Awe
 Button/Name/AP_SiegeTankTransportHook=Transport Hook
 Button/Name/AP_SingularityAnchor=Tomahawk Power Cells
@@ -2351,7 +2373,6 @@ Button/Name/AP_Spectre=Train Spectre
 Button/Name/AP_SpectreConsumption=Consumption
 Button/Name/AP_SpectreHoldFire=Hold Fire
 Button/Name/AP_SpectreImpalerRounds=Impaler Rounds
-Button/Name/AP_SpectreMindSplatter=Mind Splatter
 Button/Name/AP_SpectreNukeCalldown=Tac Nuke Strike
 Button/Name/AP_SpectreShadowClones=Shadow Clone
 Button/Name/AP_SpectreWeaponsFree=Weapons Free
@@ -2454,12 +2475,6 @@ Button/Name/AP_SwarmQueenWildMutation=Wild Mutation
 Button/Name/AP_SwarmSeeds=Swarm Seeds
 Button/Name/AP_SwarmlingPassive=Rapid Gestation
 Button/Name/AP_TaldarimFaction=<c val="d40d24">Tal'darim</c> Faction
-Button/Name/AP_TaldarimMothershipDeathHeal=Soul-Forged Conduits
-Button/Name/AP_TaldarimMothershipDeathHealInstall=Install Soul-Forged Conduits
-Button/Name/AP_TaldarimMothershipFastAttack=Blood-Fused Particles
-Button/Name/AP_TaldarimMothershipFastAttackInstall=Install Blood-Fused Particles
-Button/Name/AP_TaldarimMothershipGroundSlow=Shadow of Death
-Button/Name/AP_TaldarimMothershipGroundSlowInstall=Install Shadow of Death
 Button/Name/AP_TaldarimWarpConduit=War Configuration
 Button/Name/AP_TargetLock=Target Lock
 Button/Name/AP_TechLab=Build Tech Lab
@@ -2517,18 +2532,20 @@ Button/Name/AP_TerranVehicleWeaponsUltraCapacitorsLevel5=Upgrade Vehicle Weapons
 Button/Name/AP_Thor=Build Thor
 Button/Name/AP_ThorMengsk=Build Blackhammer
 Button/Name/AP_ThorMengskArmorAura=Bulwark Field
+Button/Name/AP_ThorMengskHammerOfTheLaw=Hammer of the Law
+Button/Name/AP_ThorMengskInfernoBlitz=Inferno Blitz
 Button/Name/AP_ThorMengskSiege=Overwatch Mode
-Button/Name/AP_ThorMengskSiegedCombatDiagnosis=Combat Diagnosis
+Button/Name/AP_ThorMengskSmartServos=Smart Servos
 Button/Name/AP_ThorMengskUnsiege=Walker Mode
 Button/Name/AP_ThorRapidReload=Rapid Reload
-Button/Name/AP_TimeFieldAiur=Empowered Deceleration Field
+Button/Name/AP_TimeFieldAiur=Deceleration Field
 Button/Name/AP_TimeFieldAiurCore=Deceleration Field
-Button/Name/AP_TimeFieldAiurInstall=Install Empowered Deceleration Field
-Button/Name/AP_TimeFieldPurifier=Empowered Acceleration Field
+Button/Name/AP_TimeFieldAiurInstall=Install Deceleration Field
+Button/Name/AP_TimeFieldPurifier=Acceleration Field
 Button/Name/AP_TimeFieldPurifierCore=Acceleration Field
-Button/Name/AP_TimeFieldPurifierInstall=Install Empowered Acceleration Field
-Button/Name/AP_TimeFieldTaldarim=Maddening Field
-Button/Name/AP_TimeFieldTaldarimInstall=Install Maddening Field
+Button/Name/AP_TimeFieldPurifierInstall=Install Acceleration Field
+Button/Name/AP_TimeFieldTaldarim=Dominance Field
+Button/Name/AP_TimeFieldTaldarimInstall=Install Dominance Field
 Button/Name/AP_TimeWarp=Chrono Boost
 Button/Name/AP_TissueAssimilation=Tissue Assimilation
 Button/Name/AP_TornadoMissile=Haywire Missiles
@@ -2798,10 +2815,6 @@ Button/Tooltip/AP_AdvancedHealingAI=The Medivac can heal two targets at once.
 Button/Tooltip/AP_AdvancedWeaponryRaven=Adds a Hunter-Seeker Missile weapon that automatically attacks enemy units and does not cost energy.
 Button/Tooltip/AP_AerodynamicGlaveShape=Increases Mutalisk attack range by 2.
 Button/Tooltip/AP_AiurFaction=Produce units from Aiur faction
-Button/Tooltip/AP_AiurMothershipBlackHole=Stuns enemy units in the target area for <d ref="Effect,AP_AiurMothershipBlackHolePersistent,PeriodCount*Effect,AP_AiurMothershipBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_AiurMothershipEnergyRegenAura=Friendly units within the Aiur Mothership's Cloaking Field now also gain <d ref="Behavior,AP_AiurMothershipEnergyRegenAuraBuff,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration. Aiur units instead gain <d ref="Behavior,AP_AiurMothershipEnergyRegenAuraBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/> increased energy regeneration.
-Button/Tooltip/AP_AiurMothershipFeedback=After the Aiur Mothership uses an ability, it casts Feedback on a nearby enemy unit.
-Button/Tooltip/AP_AiurMothershipShieldRestore=Whenever the Aiur Mothership deals weapon damages, it restores <d ref="Effect,AP_AiurMothershipShieldRestore,VitalArray[Shields].Change"/> shields to a nearby friendly unit.
 Button/Tooltip/AP_AlarakACMyLifefortheHighlord=Supplicants are the first units sacrificed to heal Alarak when he is near death.
 Button/Tooltip/AP_AlarakColossusChargedBlastChargeTime=Reduces the charging time and increases attack speed of the Wrathwalker's Charged Blast.
 Button/Tooltip/AP_AlarakHavocAbilityRange=Increases the radius of Squad Sight and the range of Target Lock and Force Field.
@@ -2821,8 +2834,8 @@ Button/Tooltip/AP_AnnihilatorCloak=Annihilators are cloaked and move 25% faster 
 Button/Tooltip/AP_AnnihilatorTwilightChassis=The Annihilator gains +<d ref="$UpgradeEffectArrayValue:AP_AnnihilatorTwilightChassis:Unit,AP_ImmortalShakuras,LifeMax$"/> Maximum Life.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_Apocalypse=Deals <d ref="Effect,AP_ApocalypseDamage,Amount"/> damage to enemy units and <d ref="(Effect,AP_ApocalypseDamage,Amount) + (Effect,AP_ApocalypseDamage,AttributeBonus[Structure])"/> damage to enemy structures in a large area.
 Button/Tooltip/AP_ApolloCloakOnNova=Cloaks Nova for <d ref="Behavior,AP_NovaApolloCloak,Duration"/> seconds, preventing enemy units from seeing or attacking her. A cloaked unit will only be revealed by detectors or effects.
-Button/Tooltip/AP_AppendAiurMothershipFeedback=<n/><n/>Astral Restoration instead casts 3 Feedbacks over it's duration.
 Button/Tooltip/AP_AppendCanAttackGroundAndAirUnits=<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_AppendMothershipAiurFeedback=<n/><n/>Astral Restoration instead casts 3 Feedbacks over its duration.
 Button/Tooltip/AP_AppendProtossBullet=</n><c val="FFE303"> Protoss</c>
 Button/Tooltip/AP_AppendTerranBullet=</n><c val="FFE303"> Terran</c>
 Button/Tooltip/AP_AppendWarCouncilAbility=<n/><n/><c val="FFE303">War Council Ability.</c>
@@ -2852,36 +2865,36 @@ Button/Tooltip/AP_Armory=Contains weapon and armor upgrades for Factory and Star
 Button/Tooltip/AP_ArtanisAirAttackDisable=Disable Artanis' <c val="#ColorTooltipNumber">anti-air</c> attack.
 Button/Tooltip/AP_ArtanisAirAttackEnable=Enable Artanis' <c val="#ColorTooltipNumber">anti-air</c> attack.
 Button/Tooltip/AP_ArtanisAiurAspect=Switch Artanis' active aspect to <c val="#AP_ColorAiur">Aiur</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorAiur">Aiur</c> unit.
-Button/Tooltip/AP_ArtanisAiurAspectPassive=While <c val="#AP_ColorAiur">Aiur</c> Aspect is active, Artanis' abilities deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/></c> additional damage to enemies in their area of effect.<n/><n/>When Artanis Charges, his next attack deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/> damage</c> to other enemies near his target.
-Button/Tooltip/AP_ArtanisAstralWind=Heals Artanis <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Shields].Change"/> shields</c> and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Life].Change"/> life</c>, and heals other nearby friendly units for <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Shields].Change"/> shields</c> and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Life].Change"/> life</c>.<n/><n/>Cooldown reduced by <c val="#ColorTooltipNumber">6 seconds</c> whenever Artanis attacks.
-Button/Tooltip/AP_ArtanisBladeWaltz=Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/> damage</c> to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/> damage</c> to enemies near the end of the dash.
-Button/Tooltip/AP_ArtanisBladeWaltzPassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ArtanisBladeWaltz,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ArtanisBladeWaltz,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/> damage</c> to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/> damage</c> to enemies near the end of the dash.
+Button/Tooltip/AP_ArtanisAiurAspectPassive=While <c val="#AP_ColorAiur">Aiur</c> Aspect is active, Artanis calls down lightning whenever he deals damage, dealing an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAiurAspectPassiveDamage,Amount"/></c> damage to the target.
+Button/Tooltip/AP_ArtanisAstralWind=Heals Artanis <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Shields].Change"/></c> shields and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindSelf,VitalArray[Life].Change"/></c> life, and heals other nearby friendly units for <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Shields].Change"/></c> shields and <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisAstralWindOther,VitalArray[Life].Change"/></c> life.<n/><n/>Cooldown reduced by <c val="#ColorTooltipNumber">4</c> seconds whenever Artanis attacks.
+Button/Tooltip/AP_ArtanisBladeWaltz=Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/></c> damage to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/></c> damage to enemies near the end of the dash.
+Button/Tooltip/AP_ArtanisBladeWaltzPassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ArtanisBladeWaltz,Cost[0].Vital[Energy]"/></c><n/>Cooldown: No Cooldown<n/><n/>Artanis <c val="#ColorTooltipNumber">dashes</c> forward and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzDamage,Amount"/></c> damage to enemy ground units along the way and an additional <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisBladeWaltzEndDamage,Amount"/></c> damage to enemies near the end of the dash.
 Button/Tooltip/AP_ArtanisCharge=Intercepts enemy units.
-Button/Tooltip/AP_ArtanisForceOfWillPassive=Artanis gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisForceOfWill,EffectArray[1].Value"/> maximum life</c> and <c val="#ColorTooltipNumber"><d ref="(Upgrade,AP_ArtanisForceOfWill,EffectArray[2].Value - 1) * 100" precision="0"/>% increased life and shield regeneration</c>.<n/><n/>While Artanis is at <c val="#ColorTooltipNumber">maximum life</c>, his life regeneration instead restores shields.
+Button/Tooltip/AP_ArtanisForceOfWillPassive=Artanis gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisForceOfWill,EffectArray[1].Value"/></c> maximum life and <c val="#ColorTooltipNumber"><d ref="(Upgrade,AP_ArtanisForceOfWill,EffectArray[2].Value - 1) * 100" precision="0"/>%</c> increased life and shield regeneration.<n/><n/>While Artanis is at <c val="#ColorTooltipNumber">maximum life</c>, his life regeneration instead restores shields.
 Button/Tooltip/AP_ArtanisHero=Hierarch of the Daelaam. Can choose various factions to gain bonus abilities and passives.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_ArtanisLightningDash=Artanis <c val="#ColorTooltipNumber">dashes</c> to the target location dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisLightningDashDamage,Amount"/> damage</c> to nearby enemies on impact and <c val="#ColorTooltipNumber">stunning</c> them for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisLightningDashStun,Duration" precision="2"/> seconds</c>.
+Button/Tooltip/AP_ArtanisLightningDash=Artanis <c val="#ColorTooltipNumber">dashes</c> to the target location, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisLightningDashDamage,Amount"/></c> damage to nearby enemies on impact and <c val="#ColorTooltipNumber">stunning</c> them for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisLightningDashStun,Duration" precision="2"/></c> seconds.<n/><n/><c val="#ColorTooltipNumber">Heroic units are slowed instead.</c>
 Button/Tooltip/AP_ArtanisNerazimAspect=Switch Artanis' active aspect to <c val="#AP_ColorNerazim">Nerazim</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorNerazim">Nerazim</c> unit.
-Button/Tooltip/AP_ArtanisNerazimAspectPassive=While <c val="#AP_ColorNerazim">Nerazim</c> Aspect is active, Artanis' abilities empower his next attack, causing it to deal <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_RaszagalsRhythm,Modification.DamageDealtUnscaled[Melee]"/></c> damage per strike and restore <c val="#ColorTooltipNumber"><d ref="Effect,AP_RaszagalsRhythmEnergyRestore,VitalArray[Energy].Change"/> energy</c>.
+Button/Tooltip/AP_ArtanisNerazimAspectPassive=While <c val="#AP_ColorNerazim">Nerazim</c> Aspect is active, Artanis' abilities empower his next attack, causing it to deal <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_RaszagalsRhythm,Modification.DamageDealtUnscaled[Melee]"/></c> damage per strike, restore <c val="#ColorTooltipNumber"><d ref="Effect,AP_RaszagalsRhythmEnergyRestore,VitalArray[Energy].Change"/></c> energy, and reduce his ability cooldowns by <c val="#ColorTooltipNumber">1</c> second.
 Button/Tooltip/AP_ArtanisNoAspect=Artanis removes his current Weapon Aspect, returning to his base form.
 Button/Tooltip/AP_ArtanisPassiveMenu=Open Artanis' passive ability menu to review his unlocked passive upgrades.
 Button/Tooltip/AP_ArtanisPurifierAspect=Switch Artanis' active aspect to <c val="#AP_ColorPurifier">Purifier</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorPurifier">Purifier</c> unit.
-Button/Tooltip/AP_ArtanisPurifierAspectPassive=While <c val="#AP_ColorPurifier">Purifier</c> Aspect is active, whenever Artanis takes damage he deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisPurifierSolarBombardmentDamage,Amount"/> damage</c> to a nearby enemy.<n/><n/>Can only occur once every <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisPurifierSolarBombardmentPassive,DamageResponse.Cost.Cooldown.TimeUse"/> second</c>.
+Button/Tooltip/AP_ArtanisPurifierAspectPassive=While <c val="#AP_ColorPurifier">Purifier</c> Aspect is active, whenever Artanis takes damage he deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisPurifierSolarBombardmentDamage,Amount"/></c> damage to a nearby enemy.<n/><n/>Can only occur once every <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisPurifierSolarBombardmentPassive,DamageResponse.Cost.Cooldown.TimeUse"/></c> second.
 Button/Tooltip/AP_ArtanisRespawn=Artanis has been placed in stasis as he recovers from his injuries.
-Button/Tooltip/AP_ArtanisResurgence=Grants Artanis invulnerability for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisResurgenceInvulnerable,Duration"/> seconds</c> upon taking lethal damage, <c val="#ColorTooltipNumber">preventing death</c> and replenishing his Shields and Life.<n/><n/>Also releases a large blast of energy that knocks back and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisResurgenceEnemyImpactDamage,Amount"/> damage</c> to all nearby enemies.<n/><n/>This effect cannot occur more than once every <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisResurgenceDisable,Duration"/> seconds</c>.
-Button/Tooltip/AP_ArtanisShieldOverloadPassive=Artanis' gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisShieldOverload,EffectArray[1].Value"/> maximum shields</c>.<n/><n/>Artanis <c val="#ColorTooltipNumber">restores shields</c> equal to the <c val="#ColorTooltipNumber">energy cost spent</c> when using abilities.
+Button/Tooltip/AP_ArtanisResurgence=Grants Artanis invulnerability for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisResurgenceInvulnerable,Duration"/></c> seconds upon taking lethal damage, <c val="#ColorTooltipNumber">preventing death</c> and replenishing his Shields and Life.<n/><n/>Also releases a large blast of energy that knocks back and deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisResurgenceEnemyImpactDamage,Amount"/></c> damage to all nearby enemies.<n/><n/>This effect cannot occur more than once every <c val="#ColorTooltipNumber"><d ref="Behavior,AP_ArtanisResurgenceDisable,Duration"/></c> seconds.
+Button/Tooltip/AP_ArtanisShieldOverloadPassive=Artanis' gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisShieldOverload,EffectArray[1].Value"/></c> maximum shields.<n/><n/>Artanis <c val="#ColorTooltipNumber">restores shields</c> equal to the <c val="#ColorTooltipNumber">energy cost spent</c> when using abilities.
 Button/Tooltip/AP_ArtanisTaldarimAspect=Switch Artanis' active aspect to <c val="#AP_ColorTaldarim">Taldarim</c>, granting him access to any unlocked bonuses and making him count as a <c val="#AP_ColorTaldarim">Taldarim</c> unit.
-Button/Tooltip/AP_ArtanisTaldarimAspectPassive=While <c val="#AP_ColorTaldarim">Taldarim</c> Aspect is active, Artanis' attacks also deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisTaldarimAspectNearbyDamageGround,Amount"/> damage</c> to up to <c val="#ColorTooltipNumber">4</c> other enemies around his target.
-Button/Tooltip/AP_ArtanisTemperedInTwilight=Artanis gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisTemperedInTwilight,EffectArray[0].Value"/> attack damage</c> and restores <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisTemperedInTwilightEnergy,VitalArray[Energy].Change" precision="1"/> energy</c> whenever he attacks.
-Button/Tooltip/AP_ArtanisValorOfTheFirstbornPassive=Artanis gains <c val="#ColorTooltipNumber"><d ref="Upgrade,AP_ArtanisValorOfTheFirstborn,EffectArray[4].Value * 100" precision="0"/>% attack speed</c> and <c val="#ColorTooltipNumber">restores shields</c> equal to <c val="#ColorTooltipNumber"><d ref="Upgrade,AP_ArtanisValorOfTheFirstborn,EffectArray[0].Value * 100" precision="0"/>%</c> of the damage dealt by his attacks.
-Button/Tooltip/AP_ArtanisWeaponAspectDamagePassive=Each unlocked Weapon Aspect active and passive grants Artanis <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisBaseAspectPassive,EffectArray[0].Value"/> attack damage</c> and <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisBaseAspectPassive,EffectArray[3].Value"/> maximum shields</c>.
+Button/Tooltip/AP_ArtanisTaldarimAspectPassive=While <c val="#AP_ColorTaldarim">Taldarim</c> Aspect is active, Artanis' attacks also deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisTaldarimAspectNearbyDamageGround,Amount"/></c> damage to up to <c val="#ColorTooltipNumber">4</c> other enemies around his target.
+Button/Tooltip/AP_ArtanisTemperedInTwilight=Artanis gains <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisTemperedInTwilight,EffectArray[0].Value"/></c> attack damage and restores <c val="#ColorTooltipNumber"><d ref="Effect,AP_ArtanisTemperedInTwilightEnergy,VitalArray[Energy].Change" precision="1"/></c> energy whenever he attacks.
+Button/Tooltip/AP_ArtanisValorOfTheFirstbornPassive=Artanis gains <c val="#ColorTooltipNumber"><d ref="Upgrade,AP_ArtanisValorOfTheFirstborn,EffectArray[3].Value * 100" precision="0"/>%</c> attack speed and <c val="#ColorTooltipNumber">restores shields</c> equal to <c val="#ColorTooltipNumber"><d ref="Upgrade,AP_ArtanisValorOfTheFirstborn,EffectArray[0].Value * 100" precision="0"/>%</c> of the damage dealt by his attacks. Does not affect bonus damage events from his passives.
+Button/Tooltip/AP_ArtanisWeaponAspectDamagePassive=Each unlocked Weapon Aspect active and passive grants Artanis <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisBaseAspectPassive,EffectArray[0].Value"/></c> attack damage and <c val="#ColorTooltipNumber">+<d ref="Upgrade,AP_ArtanisBaseAspectPassive,EffectArray[3].Value"/></c> maximum shields.
 Button/Tooltip/AP_ArtanisWeaponAspectSwap=Swap Artanis to a different weapon aspect.
 Button/Tooltip/AP_AscendantAbilityEfficiency=Ascendant abilities cost <d ref="Upgrade,AP_AscendantAbilityEfficiency,EffectArray[0].Value"/> less energy.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_AscendantSacrifice=Reduces target friendly unit to <d ref="Effect,AP_AscendantSacrificeDamage,Amount"/> life (shields are not affected).<n/><n/>Grants the Ascendant <d ref="Effect,AP_AscendantSacrificeDamage5,LeechFraction[Energy]"/> energy for each life point reduced, up to its maximum energy.<n/><n/><c val="#ColorAttackInfo">Can only target friendly units.</c>
 Button/Tooltip/AP_AssaultModeMengsk=Transforms the Sky Fury to Assault Mode. In this mode Sky Furies move on the ground and can only attack ground targets.
 Button/Tooltip/AP_Assimilator=Warped in over a Vespene Geyser to allow harvesting of vespene gas.
 Button/Tooltip/AP_AssimilatorRich=Warped in over a Vespene Geyser to allow harvesting of vespene gas.
-Button/Tooltip/AP_AstralRestoration=Channel the Astral Winds through the Mothership, increasing the radius of Cloaking Field by 50% and restoring 80 health and 160 shields over 10 seconds to friendly units and structures within the Cloaking Field.
-Button/Tooltip/AP_AstralRestorationInstall=<d ref="Abil,AP_AstralRestoration,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_AstralRestoration,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Channel the Astral Winds through the Mothership, increasing the radius of Cloaking Field by 50% and restoring 160 health and 160 shields over 10 seconds to friendly units and structures within the Cloaking Field.
+Button/Tooltip/AP_AstralRestoration=Channel the Astral Winds through the Mothership, increasing the radius of Cloaking Field by <c val="#ColorTooltipNumber">50%</c> and restoring <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration / Behavior,AP_AstralRestorationCaster,Period * Effect,AP_AstralRestorationHeal,VitalArray[Life].Change"/></c> life and <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration / Behavior,AP_AstralRestorationCaster,Period * Effect,AP_AstralRestorationHeal,VitalArray[Shields].Change"/></c> shields over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration"/></c> seconds to friendly units and structures within the Cloaking Field.
+Button/Tooltip/AP_AstralRestorationInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_AstralRestoration,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_AstralRestoration,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Channel the Astral Winds through the Mothership, increasing the radius of Cloaking Field by <c val="#ColorTooltipNumber">50%</c> and restoring <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration / Behavior,AP_AstralRestorationCaster,Period * Effect,AP_AstralRestorationHeal,VitalArray[Life].Change"/></c> life and <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration / Behavior,AP_AstralRestorationCaster,Period * Effect,AP_AstralRestorationHeal,VitalArray[Shields].Change"/></c> shields over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_AstralRestorationCaster,Duration"/></c> seconds to friendly units and structures within the Cloaking Field.
 Button/Tooltip/AP_AttackChampions=Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.
 Button/Tooltip/AP_AutoTurret=Automated defensive turret. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_AutomatedAssimilator=Warped in over a Vespene Geyser to allow harvesting of vespene gas.
@@ -2949,8 +2962,8 @@ Button/Tooltip/AP_Barracks=Infantry production facility. <n/><n/><c val="ffff8a"
 Button/Tooltip/AP_BarracksFlying=Barracks must land to start unit production.
 Button/Tooltip/AP_BarracksMengsk=Elite infantry production facility.
 Button/Tooltip/AP_BarracksMengskFlying=Elite Barracks must land to start unit production.
-Button/Tooltip/AP_BatteryOvercharge=Empowers a Shield Battery, increasing its restoration speed by <d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>% and allows them to restore shields without consuming energy for <d ref="Behavior,AP_BatteryOvercharge,Duration"/> seconds.
-Button/Tooltip/AP_BatteryOverchargeInstall=<d ref="Abil,AP_BatteryOverchargeUpgrade,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_BatteryOverchargeUpgrade,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Empowers a Shield Battery, increasing its restoration speed by <d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>% and allows them to restore shields without consuming energy for <d ref="Behavior,AP_BatteryOvercharge,Duration"/> seconds.
+Button/Tooltip/AP_BatteryOvercharge=Empowers a Shield Battery, increasing its restoration speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>%</c> and allowing it to restore shields without consuming energy for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_BatteryOvercharge,Duration"/></c> seconds.
+Button/Tooltip/AP_BatteryOverchargeInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_BatteryOverchargeUpgrade,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_BatteryOverchargeUpgrade,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Empowers a Shield Battery, increasing its restoration speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_BatteryOvercharge,Modification.HealDealtMultiplier - 1) * 100"/>%</c> and allowing it to restore shields without consuming energy for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_BatteryOvercharge,Duration"/></c> seconds.
 Button/Tooltip/AP_Battlecruiser=Powerful warship.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_BattlecruiserBehemothReactor=Battlecruiser special abilities require 25 less energy to cast.
 Button/Tooltip/AP_BattlecruiserCovertOpsEngines=Increases Battlecruiser movement speed.
@@ -3049,8 +3062,8 @@ Button/Tooltip/AP_Charge=Intercepts enemy ground units.
 Button/Tooltip/AP_ChargePredator=Intercepts enemy ground units. The first attack after charging applies a slow to surrounding enemy units.
 Button/Tooltip/AP_ChitinousPlating=Increases Ultralisk armor by 2.
 Button/Tooltip/AP_ChronoBoostEfficiency=The effect of Chrono Boost is doubled.
-Button/Tooltip/AP_CleansingSmite=Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, dealing an additional <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration / Behavior,AP_CleansingSmite,Period"/> damage</c> over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>The damage over time <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">75%</c> of the damage done.
-Button/Tooltip/AP_CleansingSmitePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/> damage</c> to nearby enemy ground units, dealing an additional <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration / Behavior,AP_CleansingSmite,Period"/> damage</c> over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/> seconds</c>.<n/><n/>The damage over time <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">75%</c> of the damage done.
+Button/Tooltip/AP_CleansingSmite=Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/></c> damage to nearby enemy ground units, then deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDOT,Amount / Behavior,AP_CleansingSmite,Period"/></c> damage per second to nearby enemy ground units around Artanis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/></c> seconds.<n/><n/>Cleansing Smite <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">40%</c> of the damage done.
+Button/Tooltip/AP_CleansingSmitePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_CleansingSmite,Cost[0].Cooldown.TimeUse"/></c> seconds<n/><n/>Deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDamage,Amount"/></c> damage to nearby enemy ground units, then deal <c val="#ColorTooltipNumber"><d ref="Effect,AP_CleansingSmiteDOT,Amount / Behavior,AP_CleansingSmite,Period"/></c> damage per second to nearby enemy ground units around Artanis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_CleansingSmite,Duration"/></c> seconds.<n/><n/>Cleansing Smite <c val="#ColorTooltipNumber">restores shields</c> to Artanis equal to <c val="#ColorTooltipNumber">40%</c> of the damage done.
 Button/Tooltip/AP_CliffJumper=This unit can jump up and down cliffs.
 Button/Tooltip/AP_CliffWalk=This unit can walk up and down cliffs.
 Button/Tooltip/AP_CloakOnBanshee=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_BansheeCloak,Modification.VitalRegenArray[2] + Unit,AP_Banshee,EnergyRegenRate)" precision="1"/> energy per second.</c>
@@ -3201,8 +3214,8 @@ Button/Tooltip/AP_ExpandedCloakingCapability=The Mothership now also cloaks itse
 Button/Tooltip/AP_ExplodeVolatileInfested=The Volatile Infested detonates where it is standing, damaging nearby enemy units and structures.
 Button/Tooltip/AP_ExplosiveGlaive=Mutalisk gains +9 damage vs. armored units. Doesn't affect bounces.
 Button/Tooltip/AP_ExplosiveMode=Arms the Thor's Javelin missile launchers. Javelin missiles deal splash damage to nearby air units and additional damage vs. light units.
-Button/Tooltip/AP_Exterminate=Artanis charges the target enemy attacking them and gaining <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_Exterminate,Modification.AttackSpeedMultiplier)-1)*100"/>% attack speed</c> and <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_Exterminate,Modification.DamageDealtUnscaled[Melee]"/> attack damage</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_Exterminate,Duration"/> seconds</c>.
-Button/Tooltip/AP_ExterminatePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_Exterminate,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_Exterminate,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Artanis charges the target enemy attacking them and gaining <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_Exterminate,Modification.AttackSpeedMultiplier)-1)*100"/>% attack speed</c> and <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_Exterminate,Modification.DamageDealtUnscaled[Melee]"/> attack damage</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_Exterminate,Duration"/> seconds</c>.
+Button/Tooltip/AP_Exterminate=Artanis charges the target enemy attacking them and gaining <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_Exterminate,Modification.AttackSpeedMultiplier)-1)*100"/>%</c> attack speed, <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_Exterminate,Modification.DamageDealtUnscaled[Melee]"/></c> attack damage, and <c val="#ColorTooltipNumber">+2</c> life and shield armor for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_Exterminate,Duration"/></c> seconds.
+Button/Tooltip/AP_ExterminatePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_Exterminate,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_Exterminate,Cost[0].Cooldown.TimeUse"/></c> seconds<n/><n/>Artanis charges the target enemy attacking them and gaining <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_Exterminate,Modification.AttackSpeedMultiplier)-1)*100"/>%</c> attack speed, <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_Exterminate,Modification.DamageDealtUnscaled[Melee]"/></c> attack damage, and <c val="#ColorTooltipNumber">+2</c> life and shield armor for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_Exterminate,Duration"/></c> seconds.
 Button/Tooltip/AP_Extractor=Mutated over a Vespene Geyser to allow harvesting of vespene gas.
 Button/Tooltip/AP_ExtractorRich=Mutated over a Vespene Geyser to allow harvesting of vespene gas.
 Button/Tooltip/AP_FaceEmbrace=Pulls target unit to the Viper. Enemy is stunned for 1 second.
@@ -3259,15 +3272,19 @@ Button/Tooltip/AP_GhostSCBWLockdown=Fires a Lockdown round disabling a mechanica
 Button/Tooltip/AP_GlialReconstitution=Increases movement speed.
 Button/Tooltip/AP_Goliath=Heavy-fire support unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_GoliathMengsk=Royal Guard heavy-fire support unit.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/AP_GoliathMengskCombatDiagnosis=<n/><n/>The stats for the Bulwark Company are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GoliathMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskG,Amount"/> (+<d ref="Effect,AP_GoliathMengskG,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskAU,Amount"/>, <d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_GoliathMengskAU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_GoliathMengskAU,Amount * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GoliathMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_GoliathMengskAresClassTargetingAddon=Increases the Bulwark Company's anti-air attack range by <c val="ffff8a">+2</c> and ground attack range by <c val="ffff8a">+1</c>.
+Button/Tooltip/AP_GoliathMengskCombatDiagnosis=<n/><n/>The stats for the Bulwark Company are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_GoliathMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskG,Amount"/> (+3 per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_GoliathMengskAU,Amount"/>, <d ref="(Effect,AP_GoliathMengskAU,Amount + Effect,AP_GoliathMengskAU,AttributeBonus[Armored]) * (1 + Effect,AP_GoliathMengskAU,AttributeFactor[Armored])" precision="2"/> vs armored (+2/+3 per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_GoliathMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyGoliathMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_GoliathMengskJump=Jump to a nearby target location.
+Button/Tooltip/AP_GoliathMengskJumpJetsMKII=Allows the Bulwark Company to jump up and down cliffs and increases the range of its Jump Jets ability by <c val="ffff8a">33%</c>.
+Button/Tooltip/AP_GoliathMengskMoebiusDefenseMatrix=Grants the Bulwark Company <c val="ffff8a">60</c> shields. Shield regeneration starts at <c val="ffff8a">1</c> and increases by <c val="ffff8a">+1</c> per Rank.
 Button/Tooltip/AP_GoliathMengskMultilock=The Bulwark Company can target ground and air units simultaneously.
+Button/Tooltip/AP_GoliathMengskParalysisInducers=Lockdown Missiles now also stun Biological targets.<n/><n/><c val="#ColorAttackInfo">Heroic units are immune.</c>
 Button/Tooltip/AP_GoliathMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Jump Jets ability.
 Button/Tooltip/AP_GoliathMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Jump Jets ability.</c>
 Button/Tooltip/AP_GoliathMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Can attack ground and air targets simultaneously.
 Button/Tooltip/AP_GoliathMengskRank2Preview=<n/><c val="777777">Rank 2: Can attack ground and air targets simultaneously.</c>
-Button/Tooltip/AP_GoliathMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the Lockdown Missiles ability.
-Button/Tooltip/AP_GoliathMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the Lockdown Missiles ability.</c>
+Button/Tooltip/AP_GoliathMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the Lockdown Missiles passive.
+Button/Tooltip/AP_GoliathMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the Lockdown Missiles passive.</c>
 Button/Tooltip/AP_GoliathShapedHull=Increases Goliath life by 25.
 Button/Tooltip/AP_GraviticDrive=Increases the movement speed of <c val="ffff8a">Warp Prisms</c>.
 Button/Tooltip/AP_GravitonBeam=Makes the target unit float in the air, disabling its abilities and dealing damage over time. Effect lasts up to <d time="10"/>.<n/><n/><c val="#ColorAttackInfo">Massive units are immune.</c>
@@ -3295,7 +3312,7 @@ Button/Tooltip/AP_HHWidowMineRangeAttack=Sentinel missile range is increased by 
 Button/Tooltip/AP_HHWraithFury=<c val="FFFF8A">Wraith</c> attack speed increases by 10% with each attack, up to a maximum of 100%.<n/><n/><c val="#ColorAttackInfo">Passive ability.</c>
 Button/Tooltip/AP_Hallucination=Creates hallucinations that cannot use active abilities, cannot deal damage, and die more easily. Hallucinations last <d ref="Behavior,AP_HallucinationTimedLife,Duration"/> seconds. Enemy detectors reveal hallucinations.
 Button/Tooltip/AP_HammerSecurity=A private security firm based in the Kel-Morian Combine. H-Sec provides corporate security, and often finds itself at odds with the Dominion.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_HangarInstallTaldarim=Allow the Tal'Darim Mothership to build Interceptors that launch alongside it's primary weapon.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_HangarInstallTaldarim=Allow the Tal'darim Mothership to build <c val="FFFF8A">Interceptors</c> that launch alongside it's primary weapon.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_HardenedShield=Reduces incoming damage to a maximum of 10 while the Immortal still has shields.
 Button/Tooltip/AP_HardenedShieldStalwart=Reduces incoming damage to a maximum of <d ref="Behavior,AP_HardenedShield,DamageResponse.ClampMaximum"/> while the Stalwart still has shields.
 Button/Tooltip/AP_HatchToHive=Evolve this Hatchery directly to a Hive, allowing additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources.
@@ -3577,6 +3594,7 @@ Button/Tooltip/AP_Marauder=Heavy assault infantry.<n/><n/><c val="#ColorAttackIn
 Button/Tooltip/AP_MarauderMengsk=Royal Guard heavy assault infantry.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_MarauderMengskAddictiveSupplements=Upon reaching <c val="ffff8a">Ranks 1 and 2</c>, Aegis Guards gain a <c val="ffff8a">one-time use</c> of High-Grade Stimpacks.<n/><n/>These stimpacks are replaced by the standard High-Grade Stimpacks ability at <c val="ffff8a">Rank 3</c>.
 Button/Tooltip/AP_MarauderMengskAttackSpeedBoost=Increases attack speed by <c val="ffff8a"><d ref="(Behavior,AP_MarauderMengskAttackSpeedBoost,Modification.AttackSpeedMultiplier-1)*100"/>%</c> for <c val="ffff8a"><d ref="Behavior,AP_MarauderMengskAttackSpeedBoost,Duration"/></c> seconds.
+Button/Tooltip/AP_MarauderMengskBolsteredBarrier=Increases the Aegis Barrier's damage absorption by <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_MarauderMengskBolsteredBarrier:Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit$"/></c> and reduces its recharge time by <c val="ffff8a">10</c> seconds.
 Button/Tooltip/AP_MarauderMengskCombatDiagnosis=<n/><n/>The stats for the Aegis Guard are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_MarauderMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Weapon Damage:</c> <d ref="Effect,AP_PunisherGrenadesMengskU,Amount"/>, <d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_PunisherGrenadesMengskU,Amount * (1 + Effect,AP_PunisherGrenadesMengskU,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_MarauderMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyMarauderMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
 Button/Tooltip/AP_MarauderMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Aegis Barrier ability.
 Button/Tooltip/AP_MarauderMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Aegis Barrier ability.</c>
@@ -3584,7 +3602,6 @@ Button/Tooltip/AP_MarauderMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Attacks cr
 Button/Tooltip/AP_MarauderMengskRank2Preview=<n/><c val="777777">Rank 2: Attacks create a cone of shrapnel, dealing <c val="ffff8a"><d ref="Effect,AP_MarauderMengskShrapnelDamage,Amount/Effect,AP_PunisherGrenadesMengskU,Amount*100" precision="0"/>%</c> damage to enemies behind the target.</c>
 Button/Tooltip/AP_MarauderMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Gains the High-Grade Stimpacks ability.
 Button/Tooltip/AP_MarauderMengskRank3Preview=<n/><c val="777777">Rank 3: Gains the High-Grade Stimpacks ability.</c>
-Button/Tooltip/AP_MarauderMengskBolsteredBarrier=Increases the Aegis Barrier's damage absorption by <c val="ffff8a"><d ref="$UpgradeEffectArrayValue:AP_MarauderMengskBolsteredBarrier:Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit$"/></c> and reduces its recharge time by <c val="ffff8a">10</c> seconds.
 Button/Tooltip/AP_MarauderMengskShield=Grants the Aegis Guard a shield that absorbs <c val="ffff8a"><d ref="Behavior,AP_MarauderMengskAbsorb,DamageResponse.ModifyLimit"/></c> damage. When the shield takes fatal damage, it releases a pulse of energy that <c val="ffff8a">knocks back</c> nearby ground units. This shield refreshes to full every <c val="ffff8a"><d ref="Behavior,AP_MarauderMengskAbsorbReapplicator,Duration"/></c> seconds.
 Button/Tooltip/AP_MarauderMengskSlow=Aegis Guard's attacks slow enemy units hit by <c val="ffff8a"><d ref="(1-Behavior,AP_MarauderMengskShrapnelSlow,Modification.MoveSpeedMultiplier)*100" precision="0"/>%</c> for <c val="ffff8a"><d ref="Behavior,AP_MarauderMengskShrapnelSlow,Duration"/></c> seconds.<n/><n/><c val="#ColorAttackInfo">Frenzied units are immune.</c>
 Button/Tooltip/AP_MarauderMengskSovereignNeosteel=Increases Aegis Guard life by <c val="ffff8a">+<d ref="$UpgradeEffectArrayValue:AP_MarauderMengskSovereignNeosteel:Unit,AP_MarauderMengsk,LifeMax$"/></c> and life gained per rank by <c val="ffff8a">+<d ref="Behavior,AP_MarauderMengskSovereignNeosteelRankBonus,Modification.VitalMaxArray[Life]"/></c>.
@@ -3628,7 +3645,6 @@ Button/Tooltip/AP_MedivacExpandedHull=Increases Medivac's cargo space by 4.
 Button/Tooltip/AP_MedivacPermanentCloak=The Medivac is permanently cloaked.
 Button/Tooltip/AP_MedivacRapidReignitionSystem=Slightly increases Medivac movement speed. Ignite Afterburners cooldown is reduced by 7 seconds.
 Button/Tooltip/AP_MedivacShield=Provides Medivacs with a shield that absorbs <d ref="$UpgradeEffectArrayValue:AP_MedivacShield:Unit,AP_Medivac,ShieldsMax$"/> damage.
-Button/Tooltip/AP_MedivacSiegeTankAirlift=Siege Tanks in Siege Mode can now attack while loaded in a Medivac's cargo. Targets air units only.
 Button/Tooltip/AP_MedivacSpeedBoost=Increases the Medivac's movement speed by 70% for <d time="8"/>.
 Button/Tooltip/AP_MengskCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.
 Button/Tooltip/AP_MercCompound=Trains Mercenary units.
@@ -3692,32 +3708,37 @@ Button/Tooltip/AP_MorphtoDefiler=Caster
 Button/Tooltip/AP_MorphtoHunter=Hunter Strain<n/><n/>Suicide unit. Deals damage over a small area upon death. Launches toward enemies at range 6.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_MorphtoSplitterling=Splitter Strain<n/><n/>Suicide unit. Deals damage over a small area upon death. Splits into smaller units as it dies. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_MothershipAiur=Aiur Faction<n/>Ultimate Aiur vessel. Can use Battery Overcharge, Revitalize Shields, and Black Hole. Cloaks nearby friendly units.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
-Button/Tooltip/AP_MothershipAiurBlackHoleInstall=<d ref="Abil,AP_AiurMothershipBlackHole,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <d ref="Effect,AP_AiurMothershipBlackHolePersistent,PeriodCount*Effect,AP_AiurMothershipBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_MothershipAiurShieldArmorAura=Friendly units that are cloaked by the Aiur Mothership gain +<d ref="Behavior,AP_MothershipAiurShieldArmor,Modification.ShieldArmorBonus"/> shield armor.
+Button/Tooltip/AP_MothershipAiurBlackHole=Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipAiurBlackHolePersistent,PeriodCount*Effect,AP_MothershipAiurBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_MothershipAiurBlackHoleInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipAiurBlackHole,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipAiurBlackHolePersistent,PeriodCount*Effect,AP_MothershipAiurBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_MothershipAiurEnergyRegenAura=Friendly units within the Aiur Mothership's Cloaking Field now also gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipAiurEnergyRegenAuraBuff,Modification.VitalRegenArray[Energy]" precision="1"/></c> increased energy regeneration. Aiur units instead gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipAiurEnergyRegenAuraBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/></c> increased energy regeneration.
+Button/Tooltip/AP_MothershipAiurFeedback=After the Aiur Mothership uses an ability, it casts <c val="FFFF8A">Feedback</c> on a nearby enemy unit.
+Button/Tooltip/AP_MothershipAiurShieldArmorAura=Friendly units and structures cloaked by the Aiur Mothership gain <c val="#ColorTooltipNumber">+<d ref="Behavior,AP_MothershipAiurShieldArmor,Modification.ShieldArmorBonus"/></c> shield armor.
+Button/Tooltip/AP_MothershipAiurShieldRestore=Whenever the Aiur Mothership deals weapon damage to an enemy, it restores <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipAiurShieldRestore,VitalArray[Shields].Change"/></c> shields to a nearby friendly unit or structure.
 Button/Tooltip/AP_MothershipAuxiliary=Install auxiliary upgrades for the Mothership, which are passive effects that improve the Mothership. These upgrades persist through death.
-Button/Tooltip/AP_MothershipChronoDrones=A chrono drone automatically casts Chrono Beam on nearby friendly units near the Mothership, granting <d ref="100*Behavior,AP_VoidSentryChronoBeam,Modification.AdditiveAttackSpeedFactor"/>% attack and <d ref="100*Behavior,AP_VoidSentryChronoBeam,Modification.AdditiveMoveSpeedFactor"/>% movement speed for <d ref="Behavior,AP_VoidSentryChronoBeam,Duration"/> seconds.</n></n><c val="FF4040">The drone can not target the Purifier Mothership.</c>
+Button/Tooltip/AP_MothershipChronoDrones=A chrono drone automatically casts Chrono Beam on nearby friendly units near the Mothership, granting <c val="#ColorTooltipNumber"><d ref="100*Behavior,AP_VoidSentryChronoBeam,Modification.AdditiveAttackSpeedFactor"/>%</c> attack and <c val="#ColorTooltipNumber"><d ref="100*Behavior,AP_VoidSentryChronoBeam,Modification.AdditiveMoveSpeedFactor"/>%</c> movement speed for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_VoidSentryChronoBeam,Duration"/></c> seconds.<n/><n/><c val="FF4040">The drone cannot target the Purifier Mothership.</c>
 Button/Tooltip/AP_MothershipCloakField=Cloaks friendly units and structures near the Mothership.
 Button/Tooltip/AP_MothershipCoreAiur=Mobile flying caster. Can use Battery Overcharge, Nexus Recall, and Time Warp abilities. Can upgrade into an Aiur Mothership.<n/><n/><c val="#ColorAttackInfo">Can attack air and ground units.</c>
-Button/Tooltip/AP_MothershipCoreAiurQuantumProjection=Battery Overcharge and Deceleration Field gain +<d ref="Upgrade,AP_MothershipCoreAiurQuantumProjection,EffectArray[0].Value"/> cast range, and Nexus Recall gains <d ref="($UpgradeEffectArrayValue:AP_MothershipCoreAiurQuantumProjection:Effect,AP_MothershipCoreNexusRecallSearch,AreaArray[0].Radius$/Effect,AP_MothershipCoreNexusRecallSearch,AreaArray[0].Radius)*100" player="0"/>% increased size.
 Button/Tooltip/AP_MothershipCoreMassRecall=Teleports all friendly units in the target area to the location of the Mothership.
 Button/Tooltip/AP_MothershipCoreNexusRecall=Teleports all friendly units near the Mothership to the target Nexus.
 Button/Tooltip/AP_MothershipCorePurifier=Mobile flying caster. Can use Power Redirection, Mass Recall, and Time Warp abilities. Can upgrade into a Purifier Mothership.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_MothershipCorePurifierControlledBurn=Purifier Mothership Cores gain +2 range and 25% attack speed.
 Button/Tooltip/AP_MothershipDamage=Install an offensive ability for the Mothership. <n/><n/>Different Mothership abilities can be swapped at any time, but you must pay their installation cost whenever you swap.
-Button/Tooltip/AP_MothershipMassRecallInstall=<d ref="Abil,AP_MothershipMassRecall,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_MothershipMassRecall,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Teleports all friendly units in the target area to the location of the Mothership.
-Button/Tooltip/AP_MothershipNexusRecallInstall=<d ref="Abil,AP_MothershipNexusRecall,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_MothershipNexusRecall,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Teleports all friendly units near the Mothership to the target Nexus.
+Button/Tooltip/AP_MothershipMassRecallInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipMassRecall,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipMassRecall,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Teleports all friendly units in the target area to the location of the Mothership.
+Button/Tooltip/AP_MothershipNexusRecallInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipNexusRecall,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipNexusRecall,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Teleports all friendly units near the Mothership to the target Nexus.
 Button/Tooltip/AP_MothershipPowerField=Provides power in a small radius around the Mothership.
 Button/Tooltip/AP_MothershipPurifier=Purifier Faction<n/>Ultimate Purifier vessel. Can use Enhanced Power Redirection, Overload Weapon Systems, and Black Hole. Creates a power field.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
-Button/Tooltip/AP_MothershipPurifierBlackHoleInstall=<d ref="Abil,AP_PurifierMothershipBlackHole,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <d ref="Effect,AP_PurifierMothershipBlackHolePersistent,PeriodCount*Effect,AP_PurifierMothershipBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_MothershipRepairDrones=Two shield-repair drones automatically restore shields to friendly units near the Mothership.
+Button/Tooltip/AP_MothershipPurifierAttackSpeedBoost=Nearby friendly units gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipPurifierAttackSpeedBoostBuff,Modification.AttackSpeedMultiplier*100 - 100"/>%</c> attack speed. Purifier units instead gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipPurifierAttackSpeedBoostBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>%</c> attack speed.
+Button/Tooltip/AP_MothershipPurifierBlackHole=Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipPurifierBlackHolePersistent,PeriodCount*Effect,AP_MothershipPurifierBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_MothershipPurifierBlackHoleInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_MothershipPurifierBlackHole,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipPurifierBlackHolePersistent,PeriodCount*Effect,AP_MothershipPurifierBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_MothershipPurifierDebuff=The Purifier Mothership's weapon deals an additional <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipPurifierDebuff,Duration/Behavior,AP_MothershipPurifierDebuff,Period * Effect,AP_MothershipPurifierDebuffDOT,Amount" precision="2"/></c> damage over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_MothershipPurifierDebuff,Duration" precision="2"/></c> seconds to its targets and reduces their armor by <c val="#ColorTooltipNumber"><d ref="-1*Behavior,AP_MothershipPurifierDebuff,Modification.LifeArmorBonus"/></c> for the duration.
+Button/Tooltip/AP_MothershipPurifierShielding=While charging up and firing the Planet Cracker, or while under the effects of Overload Weapon Systems, the Purifier Mothership takes <c val="#ColorTooltipNumber"><d ref="(1-Behavior,AP_MothershipPurifierShielding,DamageResponse.ModifyFraction)*100"/>%</c> reduced damage.<n/><n/>When the Purifier Mothership uses Power Redirection, the friendly structure also takes <c val="#ColorTooltipNumber"><d ref="(1-Behavior,AP_MothershipPurifierShielding,DamageResponse.ModifyFraction)*100"/>%</c> reduced damage for the duration.
+Button/Tooltip/AP_MothershipRepairDrones=Two shield-repair drones automatically <c val="FFFF8A">restore shields</c> to friendly units near the Mothership.
 Button/Tooltip/AP_MothershipTaldarim=Tal'darim Faction<n/>Ultimate Tal'darim vessel. Can use Thermal Lance, Black Hole, and Blink.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/AP_MothershipTaldarimBaseAttackDisable=Enables the Tal'darim Mothership's upgraded attack, firing at a faster rate but doing less damage per attack.
 Button/Tooltip/AP_MothershipTaldarimBaseAttackEnable=Enables the Tal'darim Mothership's base attack, firing at a slower rate but doing more damage per attack.
+Button/Tooltip/AP_MothershipTaldarimDeathHeal=Friendly non-worker units that die near the Tal'darim Mothership have their souls consumed, restoring <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipTaldarimDeathHealMU,VitalArray[Shields].Change"/></c> shields and <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipTaldarimDeathHealMU,VitalArray[Life].Change"/></c> life.<n/><n/>The souls of friendly Tal'darim units are more potent, instead restoring <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipTaldarimDeathHealTaldarimMU,VitalArray[Shields].Change"/></c> shields and <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipTaldarimDeathHealTaldarimMU,VitalArray[Life].Change"/></c> life, as well as <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipTaldarimDeathHealTaldarimMU,VitalArray[Energy].Change"/></c> energy.
+Button/Tooltip/AP_MothershipTaldarimFastAttack=Increases the attack speed of the Mothership's primary weapon by <c val="#ColorTooltipNumber">121%</c>, but reduces its weapon damage by <c val="#ColorTooltipNumber">50%</c>.<n/><n/><c val="ffff8a">Can be toggled on and off in the Auxiliary menu.</c>
+Button/Tooltip/AP_MothershipTaldarimGroundSlow=The Tal'darim Mothership reduces the attack and movement speed of nearby enemy ground units by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_MothershipTaldarimGroundSlowDebuff,Modification.MoveSpeedMultiplier) * 100"/>%</c>.
 Button/Tooltip/AP_MothershipTaldarimIntegratedPower=The mothership regains full movement speed outside Pylon power fields.<n/><c val="FF4040">Cannot be found if overpowered items are excluded.</c>
-Button/Tooltip/AP_MothershipTaldarimMassRecall=Teleports all friendly units in the target area to the location of the Mothership. </n><c val="#ColorAttackInfo">Tal'darim bonus:</c> After teleporting, grant all friend units a barrier that absorbs up to <d ref="Behavior,AP_MothershipTaldarimRecallShield,DamageResponse.ModifyLimit"/> damage for <d ref="Behavior,AP_MothershipTaldarimRecallShield,Duration"/> seconds.
-Button/Tooltip/AP_MothershipTaldarimMassRecallInstall=<d ref="Abil,AP_MothershipMassRecall,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_MothershipMassRecall,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Teleports all friendly units in the target area to the location of the Mothership. </n><c val="#ColorAttackInfo">Tal'darim bonus:</c> After teleporting, grant all friend units a barrier that absorbs up to <d ref="Behavior,AP_MothershipTaldarimRecallShield,DamageResponse.ModifyLimit"/> damage for <d ref="Behavior,AP_MothershipTaldarimRecallShield,Duration"/> seconds.
-Button/Tooltip/AP_MothershipTaldarimNexusRecall=Teleports all friendly units near the Mothership to the target Nexus.  </n><c val="#ColorAttackInfo">Tal'darim bonus:</c> After teleporting, grant all friend units a barrier that absorbs up to <d ref="Behavior,AP_MothershipTaldarimRecallShield,DamageResponse.ModifyLimit"/> damage for <d ref="Behavior,AP_MothershipTaldarimRecallShield,Duration"/> seconds.
-Button/Tooltip/AP_MothershipTaldarimNexusRecallInstall=<d ref="Abil,AP_MothershipNexusRecall,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_MothershipNexusRecall,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Teleports all friendly units near the Mothership to the target Nexus.  </n><c val="#ColorAttackInfo">Tal'darim bonus:</c> After teleporting, grant all friend units a barrier that absorbs up to <d ref="Behavior,AP_MothershipTaldarimRecallShield,DamageResponse.ModifyLimit"/> damage for <d ref="Behavior,AP_MothershipTaldarimRecallShield,Duration"/> seconds.
 Button/Tooltip/AP_MothershipUtility=Install a utility ability for the Mothership. <n/><n/>Different Mothership abilities can be swapped at any time, but you must pay their installation cost whenever you swap.
 Button/Tooltip/AP_MoveChampions=Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.
 Button/Tooltip/AP_MultiLockTargetingSystem=The Goliath can target ground and air units simultaneously.
@@ -3756,7 +3777,7 @@ Button/Tooltip/AP_NovaNukeArm=Arms the Silo with a Tactical Nuke.<n/><n/>Nukes t
 Button/Tooltip/AP_NovaReleaseMinion=Releases Nova's current Domination target, returning it to its original alliance.
 Button/Tooltip/AP_NovaRespawn=Nova has been placed in stasis as she recovers from her injuries.
 Button/Tooltip/AP_NovaSilentkill=Instantly kill target enemy unit. Nova must move within melee range to execute the attack.
-Button/Tooltip/AP_NovaUnitLockdown=Stuns and disables the detection of mechanical units hit by the Bulwark Company's anti-air attacks for <d ref="Behavior,AP_NovaUnitLockdown,Duration"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are immune.</c>
+Button/Tooltip/AP_NovaUnitLockdown=Stuns and disables the <c val="FFE303">Detection</c> of mechanical units hit by the Bulwark Company's anti-air attacks for <c val="ffff8a"><d ref="Behavior,AP_NovaUnitLockdown,Duration"/></c> seconds. Affected units cannot be stunned by Lockdown Missiles again for <c val="ffff8a"><d ref="Behavior,AP_GoliathMengskLockdownStunImmunity,Duration"/></c> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are immune.</c>
 Button/Tooltip/AP_NovaWeaponBlazefireBladeShadowFury=Rapidly jump to random enemies within <d ref="Effect,AP_NovaWeaponBlazefireBladeShadowFurySearch,AreaArray[0].Radius"/> radius <d ref="Behavior,AP_NovaWeaponBlazefireBladeShadowFuryController,PeriodCount+1"/> times, attacking each of them for <d ref="Effect,AP_NovaWeaponBlazefireBladeShadowFuryDamage,Amount"/> damage. A single target can be hit more than once. Can target ground and air units.
 Button/Tooltip/AP_NovaWeaponBlazefireBladeSwap=Damage: <d ref="Effect,AP_NovaWeaponBlazefireBladeDamageUncloaked,Amount"/> (+ <d ref="Effect,AP_NovaWeaponBlazefireBladeDamageCloaked,Amount - Effect,AP_NovaWeaponBlazefireBladeDamageUncloaked,Amount"/> if cloaked) (Ground), <d ref="Effect,AP_NovaWeaponBlazefireBladeGunDamageCloaked,Amount"/> (Air)<n/>Range: Melee (Ground), <d ref="Weapon,AP_NovaWeaponBlazefireBladeGun,Range"/> (Air)<n/>Fire Rate: <d ref="Weapon,AP_NovaWeaponBlazefireBlade,Period" precision="2"/> seconds<n/><n/>Special: Fury of One
 Button/Tooltip/AP_NovaWeaponCanisterRifleSnipe=Deals <d ref="Effect,AP_NovaWeaponCanisterRifleSnipe,Amount"/> damage to target enemy ground or air unit from long range.</n></n><C val = "#ColorAttackInfo">Cannot target structures.</c>
@@ -3806,8 +3827,8 @@ Button/Tooltip/AP_OracleWeaponOn=Charges the Oracle's Pulsar Beam and allows it 
 Button/Tooltip/AP_OrbitalCommandFlying=Primary structure. Must land to receive resources, produce units, or use abilities.
 Button/Tooltip/AP_OrbitalCommandUnit=Primary structure. Used to train SCVs and receive gathered resources. Can use the Scanner Sweep ability. Can use the abilities Calldown: MULE and Calldown: Extra Supplies.
 Button/Tooltip/AP_OrganicCarapace=Increases life by 25.
-Button/Tooltip/AP_OverloadWeaponSystems=Disable movement, increase attack speed by <d ref="100*Behavior,AP_OverloadWeaponSystems,Modification.AdditiveAttackSpeedFactor"/>%, and cause the Mothership to hit an additional <d ref="Effect,AP_PurifierMothershipWeaponOverloadSearch,AreaArray[0].MaxCount - Effect,AP_PurifierMothershipWeaponSearch,AreaArray[0].MaxCount"/> targets with its weapon for <d ref="Behavior,AP_OverloadWeaponSystems,Duration"/> seconds. After the overload, the Mothership is stunned for <d ref="Behavior,AP_OverloadWeaponSystemsStun,Duration" precision="1"/> seconds.
-Button/Tooltip/AP_OverloadWeaponSystemsInstall=<d ref="Abil,AP_OverloadWeaponSystems,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Disables movement, increases attack speed by <d ref="100*Behavior,AP_OverloadWeaponSystems,Modification.AdditiveAttackSpeedFactor"/>%, and causes the Mothership to hit an additional <d ref="Effect,AP_PurifierMothershipWeaponOverloadSearch,AreaArray[0].MaxCount - Effect,AP_PurifierMothershipWeaponSearch,AreaArray[0].MaxCount"/> targets with its weapon for <d ref="Behavior,AP_OverloadWeaponSystems,Duration"/> seconds. After the overload, the Mothership is stunned for <d ref="Behavior,AP_OverloadWeaponSystemsStun,Duration" precision="1"/> seconds.
+Button/Tooltip/AP_OverloadWeaponSystems=Disables movement, increases attack speed by <c val="#ColorTooltipNumber"><d ref="100*Behavior,AP_OverloadWeaponSystems,Modification.AdditiveAttackSpeedFactor"/>%</c>, and causes the Mothership to hit <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipPurifierWeaponOverloadSearch,AreaArray[0].MaxCount - Effect,AP_MothershipPurifierWeaponSearch,AreaArray[0].MaxCount"/></c> additional targets with its weapon for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_OverloadWeaponSystems,Duration"/></c> seconds. After the overload, the Mothership is stunned for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_OverloadWeaponSystemsStun,Duration" precision="1"/></c> seconds.
+Button/Tooltip/AP_OverloadWeaponSystemsInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_OverloadWeaponSystems,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Disables movement, increases attack speed by <c val="#ColorTooltipNumber"><d ref="100*Behavior,AP_OverloadWeaponSystems,Modification.AdditiveAttackSpeedFactor"/>%</c>, and causes the Mothership to hit <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipPurifierWeaponOverloadSearch,AreaArray[0].MaxCount - Effect,AP_MothershipPurifierWeaponSearch,AreaArray[0].MaxCount"/></c> additional targets with its weapon for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_OverloadWeaponSystems,Duration"/></c> seconds. After the overload, the Mothership is stunned for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_OverloadWeaponSystemsStun,Duration" precision="1"/></c> seconds.
 Button/Tooltip/AP_Overlord=Increases supply. Supply allows you to create more units.<n/><n/><c val="ffff8a">Cannot attack.</c>
 Button/Tooltip/AP_OverlordCocoon=This cocoon contains an Overlord as it is morphing into an Overseer.
 Button/Tooltip/AP_OverlordSightUpgrade=Increases Overlord sight range.
@@ -3836,8 +3857,7 @@ Button/Tooltip/AP_PermanentlyCloakedSpectre=Spectre is permanently cloaked.
 Button/Tooltip/AP_PermanentlyCloakedStasis=The Stasis Ward is permanently cloaked.
 Button/Tooltip/AP_PersonalDefensiveMatrix=Provides Nova with a shield that reduces incoming damage to a maximum of <d ref="Behavior,AP_PersonalDefensiveMatrix,DamageResponse.ClampMaximum"/> until <d ref="Behavior,AP_PersonalDefensiveMatrix,Modification.VitalMaxArray[Shields]"/> total damage is absorbed. Shield lasts for <d time="10"/>.
 Button/Tooltip/AP_PhaseBlaster=Warp Prisms are equipped with a Phase Blaster weapon to attack ground and air targets. In phasing mode, the Phase Blaster gains <c val="#ColorTooltipNumber">+<d ref="Weapon,AP_WarpPrismTaldarimDeployedWeapon,Range - Weapon,AP_WarpPrismTaldarimWeapon,Range"/></c> <c val="#ColorTooltipAttribute">range</c> and <c val="#ColorTooltipNumber"><d ref="Weapon,AP_WarpPrismTaldarimWeapon,Period / Weapon,AP_WarpPrismTaldarimDeployedWeapon,Period * 100 - 100"/>%</c> increased <c val="#ColorTooltipAttribute">attack speed</c>.
-Button/Tooltip/AP_PhasePrism=Place target unit in stasis for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/> seconds, pulling</c> all nearby enemy units to that unit's location.<n/><n/>This ability can be <c val="#ColorTooltipNumber">recast</c> to have Artanis <c val="#ColorTooltipNumber">swap places</c> with the unit in stasis, <c val="#ColorTooltipNumber">pulling in</c> nearby enemy units to Artanis after the swap.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
-Button/Tooltip/AP_PhasePrismRecast=Swap Artanis with the unit in stasis, and pull in all nearby enemy units to Artanis. Does not work across massive distances.
+Button/Tooltip/AP_PhasePrism=Stun target unit for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismStun,Duration"/></c> seconds, automatically <c val="#ColorTooltipNumber">swap</c> places with it, then <c val="#ColorTooltipNumber">pull in</c> nearby enemy units to Artanis.<n/><n/>After the swap, Artanis gains a barrier that absorbs up to <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,DamageResponse.ModifyLimit"/></c> damage for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PhasePrismTemporaryShields,Duration"/></c> seconds.<n/><n/><c val="#ColorTooltipNumber">Cannot target Heroic units.</c>
 Button/Tooltip/AP_PhasingMode=Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.
 Button/Tooltip/AP_PhoenixAiur=Aiur Faction<n/>Air superiority starfighter. Can use Graviton Beam.<n/><n/><c val="ffff8a">Can attack air units.</c>
 Button/Tooltip/AP_PhoenixAiurDoubleGraviton=Aiur Faction<n/>Air superiority starfighter. Can use Graviton Beam on two enemy units simultaneously.<n/><n/><c val="ffff8a">Can attack air units.</c>
@@ -3854,17 +3874,17 @@ Button/Tooltip/AP_PhoenixTaldarimAA=Tal'darim Faction<n/>Fast skirmish starfight
 Button/Tooltip/AP_PhotonCannon=Primary defensive structure.<n/><n/><c val="ffff8a">Can attack ground and air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/AP_PickupGas5=This item can be collected.
 Button/Tooltip/AP_PickupGas5Text=<s val="Kicker_Gas">+5 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
-Button/Tooltip/AP_PlanetCracker=Teleport to a nearby location and fire the Planet Cracker after a <d ref="Behavior,AP_PlanetCrackerChargeUp,Duration"/> charge-up, dealing <d ref="Behavior,AP_PlanetCracker,Duration/Behavior,AP_PlanetCracker,Period * Effect,AP_PlanetCrackerDamage,Amount"/> damage over <d ref="Behavior,AP_PlanetCracker,Duration"/> seconds ALL UNITS in the area. The radius grows over the course of the duration, and the Mothership is unable to take any other action during this time.
-Button/Tooltip/AP_PlanetCrackerInstall=<d ref="Abil,AP_PlanetCracker,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_PlanetCracker,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Teleport to a nearby location and fire the Planet Cracker after a <d ref="Behavior,AP_PlanetCrackerChargeUp,Duration"/> charge-up, dealing <d ref="Behavior,AP_PlanetCracker,Duration/Behavior,AP_PlanetCracker,Period * Effect,AP_PlanetCrackerDamage,Amount"/> damage over <d ref="Behavior,AP_PlanetCracker,Duration"/> seconds ALL UNITS in the area. The radius grows over the course of the duration, and the Mothership is unable to take any other action during this time.
+Button/Tooltip/AP_PlanetCracker=Teleports to a nearby location and fires the Planet Cracker after a <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCrackerChargeUp,Duration"/></c>-second charge-up, dealing <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCracker,Duration/Behavior,AP_PlanetCracker,Period * Effect,AP_PlanetCrackerDamage,Amount"/></c> damage over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCracker,Duration"/></c> seconds to <c val="FF4040">ALL</c> OTHER UNITS in the area. The radius grows over the duration, and the Mothership is unable to take any other action during this time.
+Button/Tooltip/AP_PlanetCrackerInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_PlanetCracker,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_PlanetCracker,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Teleports to a nearby location and fires the Planet Cracker after a <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCrackerChargeUp,Duration"/></c>-second charge-up, dealing <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCracker,Duration/Behavior,AP_PlanetCracker,Period * Effect,AP_PlanetCrackerDamage,Amount"/></c> damage over <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PlanetCracker,Duration"/></c> seconds to <c val="FF4040">ALL</c> OTHER UNITS in the area. The radius grows over the duration, and the Mothership is unable to take any other action during this time.
 Button/Tooltip/AP_PlanetaryFortress=Primary structure. Used to train SCVs and receive gathered resources. Has exceptional combat capabilities that are extremely potent against swarms of small units.<n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_PlanetaryFortressAdvancedTargeting=Allows Planetary Fortress to attack air units.
 Button/Tooltip/AP_PlanetaryFortressAttackAirlift=Allows Planetary Fortress to attack while lifted off.
 Button/Tooltip/AP_PlanetaryFortressLoad=Loads nearby SCVs into the Planetary Fortress.
 Button/Tooltip/AP_PointDefenseDrone=Uses a laser to shoot down enemy missiles.  <n/>Cannot target special attacks. <n/>Times out after <d ref="Behavior,AP_PointDefenseDroneTimedLife,Duration"/> seconds.<n/><n/><c val="f078ff">Each shot consumes 10 energy.</c>
 Button/Tooltip/AP_PoisonNova=Instantly deals 20 damage to enemy units nearby.
-Button/Tooltip/AP_PowerRedirection=Transfer power to a Photon Cannon or Khaydarin Monolith, powering them if they are unpowered. The Mothership Core cannot perform any other action while transferring power. Lasts <d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to hit an additional <d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/> targets. <n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to splash in a small radius around the target, dealing <d ref="Effect,AP_KhaydarinSplashDamage,Amount"/> damage.
-Button/Tooltip/AP_PowerRedirectionInstall=<d ref="Abil,AP_PowerRedirectionUpgrade,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_PowerRedirectionUpgrade,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Transfer power to a Photon Cannon or Khaydarin Monolith, powering them if they are unpowered. Lasts <d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to hit an additional <d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/> targets. <n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to splash in a small radius around the target, dealing <d ref="Effect,AP_KhaydarinSplashDamage,Amount"/> damage.
-Button/Tooltip/AP_PowerRedirectionUpgrade=Transfer power to a Photon Cannon or Khaydarin Monolith, powering them if they are unpowered. Lasts <d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to hit an additional <d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/> targets. <n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increase attack speed by <d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>% and cause attacks to splash in a small radius around the target, dealing <d ref="Effect,AP_KhaydarinSplashDamage,Amount"/> damage.
+Button/Tooltip/AP_PowerRedirection=Transfers power to a Photon Cannon or Khaydarin Monolith, powering it if unpowered. The Mothership Core cannot perform any other action while transferring power. Lasts <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/></c> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to hit <c val="#ColorTooltipNumber"><d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/></c> additional targets.<n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to splash in a small radius around the target, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_KhaydarinSplashDamage,Amount"/></c> damage.
+Button/Tooltip/AP_PowerRedirectionInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_PowerRedirectionUpgrade,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_PowerRedirectionUpgrade,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Transfers power to a Photon Cannon or Khaydarin Monolith, powering it if unpowered. Lasts <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/></c> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to hit <c val="#ColorTooltipNumber"><d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/></c> additional targets.<n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to splash in a small radius around the target, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_KhaydarinSplashDamage,Amount"/></c> damage.
+Button/Tooltip/AP_PowerRedirectionUpgrade=Transfers power to a Photon Cannon or Khaydarin Monolith, powering it if unpowered. Lasts <c val="#ColorTooltipNumber"><d ref="Behavior,AP_PowerRedirectionPhoton,Duration"/></c> seconds.<n/><n/><c val="ffff8a">Photon Cannon:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionPhoton,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to hit <c val="#ColorTooltipNumber"><d ref="Effect,AP_PhotonCannonSearch,AreaArray[0].MaxCount"/></c> additional targets.<n/><n/><c val="ffff8a">Khaydarin Monolith:</c> Increases attack speed by <c val="#ColorTooltipNumber"><d ref="(Behavior,AP_PowerRedirectionKhaydarin,Modification.AdditiveAttackSpeedFactor * 100)"/>%</c> and causes attacks to splash in a small radius around the target, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_KhaydarinSplashDamage,Amount"/></c> damage.
 Button/Tooltip/AP_Predator=Anti-infantry specialist that deals area damage with each attack.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_PredatorAdaptiveDefenses=Predators gain recharging shields, and take 50% reduced splash and ranged damage while the shield is active. A portion of damage dealt by Lightning Field also restores shields.<n/><n/>Shields have 2 base armor and are improved by Terran Vehicle Armor upgrades.
 Button/Tooltip/AP_PredatorVespeneSynthesis=Predators generate 1 Vespene for their owner every time Lightning Field deals damage.
@@ -3916,10 +3936,6 @@ Button/Tooltip/AP_PurificationNovaEarly=Explode the Purification Nova early, dea
 Button/Tooltip/AP_PurificationNovaTargeted=Shoots out a ball of energy that lasts <d ref="Behavior,AP_PurificationNovaTargettedTarget,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,AP_PurificationNovaDamage,Amount"/> splash damage and an additional <d ref="Effect,AP_PurificationNovaDamage,ShieldBonus"/> shield damage to nearby enemy ground units and structures. Friendly ground units take <d ref="Effect,AP_PurificationNovaFriendlyDamage,Amount"/> splash damage. The Disruptor is immobile while this is active.
 Button/Tooltip/AP_PurificationNovaTargetedUpgrade=Shoots out a ball of energy that lasts <d ref="Behavior,AP_PurificationNovaTargettedTarget,Duration"/> seconds and emits a powerful nova dealing <d ref="Effect,AP_PurificationNovaDamage,Amount"/> splash damage and an additional <d ref="Effect,AP_PurificationNovaDamage,ShieldBonus"/> shield damage to nearby enemy ground units and structures. Friendly ground units take <d ref="Effect,AP_PurificationNovaFriendlyDamage,Amount"/> splash damage.
 Button/Tooltip/AP_PurifierFaction=Produce units from Purifier faction
-Button/Tooltip/AP_PurifierMothershipAttackSpeedBoost=Friendly units near the Purifier Mothership gain <d ref="Behavior,AP_PurifierMothershipAttackSpeedBoostBuff,Modification.AttackSpeedMultiplier*100 - 100"/>% attack speed, increased to <d ref="Behavior,AP_PurifierMothershipAttackSpeedBoostBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>% when their shields are depleted. Purifier units always gain <d ref="Behavior,AP_PurifierMothershipAttackSpeedBoostBuffEmpowered,Modification.AttackSpeedMultiplier*100 - 100"/>% attack speed.
-Button/Tooltip/AP_PurifierMothershipBlackHole=Stuns enemy units in the target area for <d ref="Effect,AP_PurifierMothershipBlackHolePersistent,PeriodCount*Effect,AP_PurifierMothershipBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_PurifierMothershipDebuff=The Purifier Mothership's weapon deals an additional <d ref="Behavior,AP_PurifierMothershipDebuff,Duration/Behavior,AP_PurifierMothershipDebuff,Period * Effect,AP_PurifierMothershipDebuffDOT,Amount" precision="2"/> damage over <d ref="Behavior,AP_PurifierMothershipDebuff,Duration" precision="2"/> seconds to its targets and reduces their armor by <d ref="-1*Behavior,AP_PurifierMothershipDebuff,Modification.LifeArmorBonus"/> for the duration.
-Button/Tooltip/AP_PurifierMothershipShielding=While charging up and firing the Planet Cracker, or while under the effects of Overload Weapon Systems, the Purifier Mothership takes <d ref="(1-Behavior,AP_PurifierMothershipShielding,DamageResponse.ModifyFraction)*100"/>% reduced damage.<n/><n/>When the Purifier Mothership uses Power Redirection, the friendly structure also takes <d ref="(1-Behavior,AP_PurifierMothershipShielding,DamageResponse.ModifyFraction)*100"/>% reduced damage for the duration.
 Button/Tooltip/AP_Pygalisk=New xenotype created by Dominion scientists.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_PygaliskCombatCarapace=Pygalisks gain +<d ref="$UpgradeEffectArrayValue:AP_PygaliskCombatCarapace:Unit,AP_Pygalisk,LifeMax$"/> maximum health.
 Button/Tooltip/AP_PygaliskDucalBlades=Pygalisks deal area damage.
@@ -3977,8 +3993,8 @@ Button/Tooltip/AP_ResearchMagFieldLaunchers=Increases <c val="ffff8a">Cyclone's<
 Button/Tooltip/AP_RespawnZergling=Respawns up to <d ref="Effect,AP_ZerglingRespawnTooltipDummy,SpawnCount"/> Zerglings at no cost until all Zerglings have returned to life.
 Button/Tooltip/AP_RestrainedDestruction=Purification Nova does 75% reduced damage to friendly units and structures, and friendly fire radius reduced to the center of the blast.
 Button/Tooltip/AP_RetributionField=The Predator unleashes a deadly field of electricity each time it attacks. Deals <d ref="Effect,AP_RetributionFieldDamage,Amount"/> damage.
-Button/Tooltip/AP_RevitalizeShields=Regenerate the shields of friendly units and structures in the target area, restoring <d ref="Effect,AP_RevitalizeShieldsModifyUnit,VitalArray[Shields].Change"/> shields to each.
-Button/Tooltip/AP_RevitalizeShieldsInstall=<d ref="Abil,AP_RevitalizeShields,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Regenerate the shields of friendly units and structures in the target area, restoring <d ref="Effect,AP_RevitalizeShieldsModifyUnit,VitalArray[Shields].Change"/> shields to each.
+Button/Tooltip/AP_RevitalizeShields=Regenerates the shields of friendly units and structures in the target area, restoring <c val="#ColorTooltipNumber"><d ref="Effect,AP_RevitalizeShieldsModifyUnit,VitalArray[Shields].Change"/></c> shields to each.
+Button/Tooltip/AP_RevitalizeShieldsInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_RevitalizeShields,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Regenerates the shields of friendly units and structures in the target area, restoring <c val="#ColorTooltipNumber"><d ref="Effect,AP_RevitalizeShieldsModifyUnit,VitalArray[Shields].Change"/></c> shields to each.
 Button/Tooltip/AP_RipwaveMissiles=Viking missiles deal area damage.
 Button/Tooltip/AP_Roach=Assault unit. Regenerates life quickly when burrowed.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_RoachCorpserPassive=Corpser Strain<n/><n/>Roach Warren enables you to morph Roaches.
@@ -4051,8 +4067,8 @@ Button/Tooltip/AP_SOAGravitonBomb=Drops 3 Temporal Fields that freeze enemy unit
 Button/Tooltip/AP_SOAHeroicShield=Friendly units become invulnerable for <d time="5"/>, preventing death. Each unit can be shielded only once every <d time="60"/>.<n/><n/><c val="ffff8a">Passive ability.</c>
 Button/Tooltip/AP_SOAMatrixOverload=All friendly units gain <d ref="Behavior,AP_MatrixOverloadTarget,Modification.MoveSpeedMultiplier*100-100"/>% movement speed and <d ref="Behavior,AP_MatrixOverloadTarget,Modification.AttackSpeedMultiplier*100-100"/>% attack speed within Pylon power fields. Effect lasts for up to <d ref="Behavior,AP_MatrixOverloadTarget,Duration"/> seconds after leaving.<n/><n/><c val="ffff8a">Passive ability.</c>
 Button/Tooltip/AP_SOAMothershipBlink=Teleports the Mothership to target location.
-Button/Tooltip/AP_SOAMothershipLineAttack=Deals <d ref="Effect,AP_SOAMothershipLineAttackDamage,Amount"/> damage to all enemies in a straight line up to 10 range away.
-Button/Tooltip/AP_SOAMothershipLineAttackInstall=<d ref="Abil,AP_SOAMothershipLineAttack,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Deals <d ref="Effect,AP_SOAMothershipLineAttackDamage,Amount"/> damage to all enemies in a straight line up to 10 range away.
+Button/Tooltip/AP_SOAMothershipLineAttack=Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_SOAMothershipLineAttackDamage,Amount"/></c> damage to all enemies in a straight line up to <c val="#ColorTooltipNumber">10</c> range away.
+Button/Tooltip/AP_SOAMothershipLineAttackInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_SOAMothershipLineAttack,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_SOAMothershipLineAttackDamage,Amount"/></c> damage to all enemies in a straight line up to <c val="#ColorTooltipNumber">10</c> range away.
 Button/Tooltip/AP_SOAOrbitalStrike=Fire 5 lasers onto the battlefield from orbit, each of them dealing <d ref="Effect,AP_SOAOrbitalStrikeDamage,Amount"/> (<d ref="Effect,AP_SOAOrbitalStrikeDamage,AttributeBonus[Armored]+Effect,AP_SOAOrbitalStrikeDamage,Amount"/> vs armored units) area damage.
 Button/Tooltip/AP_SOAProxyPylon=Quickly warps in a Pylon to any visible location.
 Button/Tooltip/AP_SOAPurifierBeam=Fires a beam that deals <d ref="Effect,AP_SOAPurifierBeamDamage,Amount*Behavior,AP_SOAPurifierBeamFiring,Duration*(1/Behavior,AP_SOAPurifierBeamFiring,Period)" player="current"/> (<d ref="(Effect,AP_SOAPurifierBeamDamage,Amount+Effect,AP_SOAPurifierBeamDamage,AttributeBonus[Armored])*Behavior,AP_SOAPurifierBeamFiring,Duration*(1/Behavior,AP_SOAPurifierBeamFiring,Period)" player="current"/> vs Armored) damage over <d ref="Behavior,AP_SOAPurifierBeamFiring,Duration" player="current"/> seconds. The beam will auto-acquire targets if not manually controlled.
@@ -4082,12 +4098,12 @@ Button/Tooltip/AP_ScourgePassive=This building enables you to morph Scourge.
 Button/Tooltip/AP_ScourgeSpawn=Spawn a Scourge for free, until you control 6 spawned Scourges.
 Button/Tooltip/AP_ScourgeSpawnUpgrade=Spawn 2 Scourges for free, until you control 6 spawned Scourges.
 Button/Tooltip/AP_ScourgeSplashUpgrade=Scourge deal splash damage.
-Button/Tooltip/AP_Scout=Versatile high-speed fighter.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_Scout=Aiur Faction<n/>Versatile high-speed fighter.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutAdvancedPhotonBlasters=Improves Photon Blaster weapon damage.
 Button/Tooltip/AP_ScoutApialSensors=<c val="ffff8a">Scouts</c> gain increased sight range.
 Button/Tooltip/AP_ScoutExpeditionaryHull=<c val="ffff8a">Scouts</c> gain +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,ShieldsMax$"/> shields, +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,LifeMax$"/> health, and +<d ref="$UpgradeEffectArrayValue:AP_ScoutExpeditionaryHull:Unit,AP_ScoutMP,ShieldArmor$"/> shield armor.<n/><n/><c val="FFE303">War Council Upgrade.</c>
 Button/Tooltip/AP_ScoutGraviticThrusters=<c val="ffff8a">Scouts</c> and its variants gain increased movement speed.
-Button/Tooltip/AP_ScoutNerazim=Nerazim Scout variant. Specialized stealth fighter.<n/>Has Cloak, Phantom Dash and Pilot (Transport) abilities.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_ScoutNerazim=Nerazim Faction<n/>Specialized stealth fighter. Has Cloak and Phantom Dash abilities.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutNerazimCloak=Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<n/><n/><c val="f078ff">Drains <d ref="-1 * (Behavior,AP_ScoutNerazimCloak,Modification.VitalRegenArray[2] + Unit,AP_ScoutNerazim,EnergyRegenRate)" precision="1"/> energy per second.</c>
 Button/Tooltip/AP_ScoutNerazimCloakUpgrade=The Mist Wing is undetectable on activating cloak for 5 seconds. Cloak no longer drains energy while active.
 Button/Tooltip/AP_ScoutNerazimDecloak=Decloaks the selected unit, making it visible to enemies.
@@ -4096,18 +4112,19 @@ Button/Tooltip/AP_ScoutNerazimPhantomDash=Dash forward to quickly close distance
 Button/Tooltip/AP_ScoutNerazimPilot=Load a unit to co-pilot the Mist Wing. A pilot provides +2 damage to all weapons, 10% attack speed and +1 armor for life and shields.<n/><n/><c val="#ColorAttackInfo">Can load 1 pilot at a time.</c>
 Button/Tooltip/AP_ScoutNerazimPilotUnload=Unload your pilot. It will be cloaked for 5 seconds after unloading.</n></n>A pilot provides +2 damage to all weapons, 10% attack speed and +1 armor for life and shields.<n/><n/><c val="#ColorAttackInfo">Can load 1 pilot at a time.</c>
 Button/Tooltip/AP_ScoutNerazimWeaponRange=<c val="ffff8a">Mist Wings</c> gain +3 air attack range and +1 ground attack range.
-Button/Tooltip/AP_ScoutPurifier=Purifier Scout variant. Specialized air-to-air fighter. Has no ground attack, anti-air missiles that can be upgraded to hit multiple targets.<n/>Has the Corona Beam ability.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
+Button/Tooltip/AP_ScoutPurifier=Purifier Faction<n/>Specialized air-to-air fighter with no ground attack. Has the Corona Beam ability.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/AP_ScoutPurifierCoronaBeam=Channels a beam on the target unit, draining up to 100 of your shield and dealing up to 200 damage over 4 seconds. <n/>Deactivates if you run out of shields.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutPurifierSideMissiles=Solarite Missiles fire up to 4 additional missiles at nearby enemies, 2 at each side of the Caladrius. The side missiles cannot hit your main attack target, and enemies can only be hit by one side missile at a time.<n/><n/><c val="#ColorAttackInfo">Can attack air units.</c>
 Button/Tooltip/AP_ScoutPurifierSolariteReactor=If your shields fall below 20, recover 80 shields over 2 seconds.This effect cannot occur more than once every 40 seconds.
 Button/Tooltip/AP_ScoutPurifierSolariteReactorCooldown=Solarite Reactor cannot restore shields at this time.
 Button/Tooltip/AP_ScoutPurifierStructureTargeting=Allows Solarite Missiles to target ground structures. Side missiles will not hit structures.<n/><n/><c val="#ColorAttackInfo">Can attack ground structures.</c>
 Button/Tooltip/AP_ScoutPurifierWeaponRange=<c val="ffff8a">Caladrius</c> gain +3 attack range.
-Button/Tooltip/AP_ScoutTaldarim=Tal'Darim Scout variant. Specialized air-to-ground fighter. Has weaker antimatter missiles, but a stronger photon blaster.<n/>Has the Vulcan Blaster ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_ScoutTaldarim=Tal'darim Faction<n/>Specialized air-to-ground fighter. Has a weak anti-air attack, but a stronger anti-ground attack.<n/>Has the Vulcan Blaster ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ScoutTaldarimAdvancedPhotonBlasters=Improves Photon Blaster weapon damage and Vulcan Blaster damage.
 Button/Tooltip/AP_ScoutTaldarimArmorMeltingBlasters=Twin Photon Blasters gain +3 damage against armored targets. Vulcan Blasters can attack buildings.
-Button/Tooltip/AP_ScoutTaldarimVulcanBlaster=The Oppressor slows down to activate powerful air to ground weapons.<n/>Disables air to air missiles.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
+Button/Tooltip/AP_ScoutTaldarimVulcanBlaster=The Oppressor slows down to activate powerful air to ground weapons. Cannot hit structures. <n/>Disables air to air missiles.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_ScoutTaldarimVulcanBlasterCancel=Cancels the Vulcan Blasters. Restores mobility and anti-air missiles.
+Button/Tooltip/AP_ScoutTaldarimVulcanBlasterUpgrade=The Oppressor slows down to activate powerful air to ground weapons.<n/>Disables air to air missiles.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_ScoutTaldarimWeaponRange=<c val="ffff8a">Oppressors</c> gain +2 air attack range and +2 ground attack range. Also increases the area of effect for Vulcan Blasters.
 Button/Tooltip/AP_ScoutWeaponRange=<c val="ffff8a">Scouts</c> gain +3 air attack range and +1 ground attack range.
 Button/Tooltip/AP_SeismicSpines=Increases attack range by 2.
@@ -4124,8 +4141,8 @@ Button/Tooltip/AP_SentryPhasing=Purifier Faction<n/>Robotic support unit. Create
 Button/Tooltip/AP_SentryPurifier=Purifier Faction<n/>Robotic support unit. Can use Chrono Beam and Phasing Mode.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_SentryTaldarimForceField=Creates a solid barrier that lasts for <d ref="Behavior,AP_ForceFieldFate,Duration"/> seconds and impedes movement of ground units.<n/><n/><c val="#ColorAttackInfo">Massive units shatter Force Fields on contact.</c>
 Button/Tooltip/AP_SeveringGlave=Attacks no longer decrease in damage with each subsequent bounce.
-Button/Tooltip/AP_ShadowSlice=Artanis teleports to an enemy, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ShadowSliceDamage,Amount"/> damage</c> before teleporting back.<n/><n/>If this damage kills an enemy, <c val="#ColorTooltipNumber">refund 50%</c> of the cooldown and energy cost.
-Button/Tooltip/AP_ShadowSlicePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ShadowSlice,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ShadowSlice,Cost[0].Cooldown.TimeUse"/></c><n/><n/>Artanis teleports to an enemy, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ShadowSliceDamage,Amount"/> damage</c> before teleporting back.<n/><n/>If this damage kills an enemy, <c val="#ColorTooltipNumber">refund 50%</c> of the cooldown and energy cost.
+Button/Tooltip/AP_ShadowSlice=Artanis teleports to an enemy, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ShadowSliceDamage,Amount"/></c> damage before teleporting back.<n/><n/>If this damage kills an enemy, <c val="#ColorTooltipNumber">refund 50%</c> of the cooldown and energy cost.
+Button/Tooltip/AP_ShadowSlicePassive=Energy Cost: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ShadowSlice,Cost[0].Vital[Energy]"/></c><n/>Cooldown: <c val="#ColorTooltipNumber"><d ref="Abil,AP_ShadowSlice,Cost[0].Cooldown.TimeUse"/></c> seconds<n/><n/>Artanis teleports to an enemy, dealing <c val="#ColorTooltipNumber"><d ref="Effect,AP_ShadowSliceDamage,Amount"/></c> damage before teleporting back.<n/><n/>If this damage kills an enemy, <c val="#ColorTooltipNumber">refund 50%</c> of the cooldown and energy cost.
 Button/Tooltip/AP_ShapedBlast=Shock Cannon damage to friendly units reduced by 75%.
 Button/Tooltip/AP_ShapedHull=Increases Diamondback life by 50.
 Button/Tooltip/AP_ShieldBattery=Restores shields to nearby friendly units and structures.
@@ -4142,19 +4159,21 @@ Button/Tooltip/AP_SiegeTank=Heavy tank. Long-range artillery in Siege Mode.<n/><
 Button/Tooltip/AP_SiegeTankEnhancedCombustionEngines=Increases Siege Tank movement speed.
 Button/Tooltip/AP_SiegeTankJumpJet=Repositions the Siege Tank to a target location. Can be used to jump up and down cliffs.
 Button/Tooltip/AP_SiegeTankMengsk=Royal Guard heavy tank. Can switch into Siege Mode to provide long-range artillery support.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
-Button/Tooltip/AP_SiegeTankMengskBlink=Teleports the Shock Division to a nearby target location. Ability can only be used once every <d ref="Abil,AP_SiegeTankMengskBlink,Cost[0].Cooldown.TimeUse"/> seconds.
-Button/Tooltip/AP_SiegeTankMengskCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Tank Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskDamage,Amount"/>, <d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskDamage,Amount * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
-Button/Tooltip/AP_SiegeTankMengskSiegedCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Siege Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount"/>, <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
-Button/Tooltip/AP_SiegeTankMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Shock and Awe ability.
-Button/Tooltip/AP_SiegeTankMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Shock and Awe ability.</c>
-Button/Tooltip/AP_SiegeTankMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases vision and attack range by 2 in Siege Mode.
-Button/Tooltip/AP_SiegeTankMengskRank2Preview=<n/><c val="777777">Rank 2: Increases vision and attack range by 2 in Siege Mode.</c>
-Button/Tooltip/AP_SiegeTankMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Increases the area of sieged attacks by <d ref="(Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,AreaArray[2].Radius/Effect,AP_SiegeTankMengskSiegedBlast,AreaArray[2].Radius-1)*100" precision="0"/>%.
-Button/Tooltip/AP_SiegeTankMengskRank3Preview=<n/><c val="777777">Rank 3: Increases the area of sieged attacks by <d ref="(Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,AreaArray[2].Radius/Effect,AP_SiegeTankMengskSiegedBlast,AreaArray[2].Radius-1)*100" precision="0"/>%.</c>
+Button/Tooltip/AP_SiegeTankMengskAirlift=Allows a Shock Division in Siege Mode to attack air units while loaded in a Medivac. Its carried attack is <c val="ffff8a">50%</c> slower than its normal sieged attack.
+Button/Tooltip/AP_SiegeTankMengskCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Tank Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskDamage,Amount"/>, <d ref="(Effect,AP_SiegeTankMengskDamage,Amount + Effect,AP_SiegeTankMengskDamage,AttributeBonus[Armored]) * (1 + Effect,AP_SiegeTankMengskDamage,AttributeFactor[Armored])" precision="2"/> vs armored (+3/+5 per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_SiegeTankMengskImprovedTankMode=Tank Mode attacks deal <c val="ffff8a">20%</c> damage to nearby enemies. The Shock Division's Rank bonuses also apply to the Tank Mode weapon.
+Button/Tooltip/AP_SiegeTankMengskNapalmRounds=Sieged attacks ignite the ground for 3 seconds, dealing <c val="ffff8a"><d ref="Effect,AP_SiegeTankMengskNapalmRoundsDamage,Amount * 6"/></c> damage over <c val="ffff8a">3</c> seconds. The fire radius matches the attack's splash radius.
+Button/Tooltip/AP_SiegeTankMengskNapalmRoundsAirliftWarning=<n/><n/>Attacks made while lifted by a Medivac do not create fire.
+Button/Tooltip/AP_SiegeTankMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Gains the Shock and Awe passive.
+Button/Tooltip/AP_SiegeTankMengskRank1Preview=<n/><c val="777777">Rank 1: Gains the Shock and Awe passive.</c>
+Button/Tooltip/AP_SiegeTankMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases vision and attack range by <c val="ffff8a">2</c> in Siege Mode.
+Button/Tooltip/AP_SiegeTankMengskRank2Preview=<n/><c val="777777">Rank 2: Increases vision and attack range by <c val="ffff8a">2</c> in Siege Mode.</c>
+Button/Tooltip/AP_SiegeTankMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Increases the area of sieged attacks by <c val="ffff8a"><d ref="(Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,AreaArray[2].Radius/Effect,AP_SiegeTankMengskSiegedBlast,AreaArray[2].Radius-1)*100" precision="0"/>%</c>.
+Button/Tooltip/AP_SiegeTankMengskRank3Preview=<n/><c val="777777">Rank 3: Increases the area of sieged attacks by <c val="ffff8a"><d ref="(Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,AreaArray[2].Radius/Effect,AP_SiegeTankMengskSiegedBlast,AreaArray[2].Radius-1)*100" precision="0"/>%</c>.</c>
 Button/Tooltip/AP_SiegeTankMengskSieged=Royal Guard Heavy tank. Can switch into Tank Mode to provide mobile tank support.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/AP_SiegeTankMengskSiegedCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Siege Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount"/>, <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored])" precision="2"/> vs armored (+<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount * (1 + Effect,AP_SiegeTankMengskSiegedDummy,AttributeFactor[Armored]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
-Button/Tooltip/AP_SiegeTankMengskSpiderMines=Spider Mines ability gets an additional charge for each rank gained.
-Button/Tooltip/AP_SiegeTankMengskStun=In Siege Mode, this unit's attacks now stun enemy units for <d ref="Behavior,AP_SiegeTankMengskStun,Duration"/> second. Can only occur once every <d ref="Behavior,AP_SiegeTankMengskStunImmunity,Duration"/> seconds on each unit.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed.</c>
+Button/Tooltip/AP_SiegeTankMengskSiegedCombatDiagnosis=<n/><n/>The stats for the Shock Division are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Siege Weapon Damage:</c> <d ref="Effect,AP_SiegeTankMengskSiegedDirected,Amount"/>, <d ref="(Effect,AP_SiegeTankMengskSiegedDirected,Amount + Effect,AP_SiegeTankMengskSiegedDirected,AttributeBonus[Armored]) * (1 + Effect,AP_SiegeTankMengskSiegedDirected,AttributeFactor[Armored])" precision="2"/> vs armored (+5/+10 per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_SiegeTankMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancySiegeTankMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_SiegeTankMengskSmartServos=Shock Divisions transform between Tank Mode and Siege Mode <c val="ffff8a">3</c> times as fast.
+Button/Tooltip/AP_SiegeTankMengskStun=In Siege Mode, this unit's attacks now stun enemy units for <c val="ffff8a"><d ref="Behavior,AP_SiegeTankMengskStun,Duration"/></c> second. Can only occur once every <c val="ffff8a"><d ref="Behavior,AP_SiegeTankMengskStunImmunity,Duration"/></c> seconds on each unit.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed.</c>
 Button/Tooltip/AP_SiegeTankShapedHull=Increases Siege Tank life by 25.
 Button/Tooltip/AP_SiegeTankSieged=Heavy tank. Long-range artillery in Siege Mode.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_SiegeTankTransportHook=Allows Siege Tanks to be transported while in Siege Mode.
@@ -4182,7 +4201,6 @@ Button/Tooltip/AP_Spectre=Infiltration unit. Can use Ultrasonic Pulse, Psionic L
 Button/Tooltip/AP_SpectreConsumption=Drains half the life from a friendly biological unit and gives the Spectre 2 energy for each point of life drained.
 Button/Tooltip/AP_SpectreHoldFire=Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.
 Button/Tooltip/AP_SpectreImpalerRounds=Spectres deal <c val="ffff8a">+<d ref="Upgrade,AP_SpectreImpalerRounds,EffectArray[0].Value"/></c> damage to armored units.
-Button/Tooltip/AP_SpectreMindSplatter=Deals <d ref="Effect,AP_SpectreMindSplatterInitialDamage,Amount"/> damage to the target biological unit. When the unit dies, it explodes and deals <d ref="Effect,AP_SpectreMindSplatterExplosionDamage,Amount"/> damage to nearby enemy units.
 Button/Tooltip/AP_SpectreNukeCalldown=Calls down a Nuclear Strike at a target location. Nukes take <d time="20"/> to land, but they deal up to 300 (+200 vs. structures) damage to enemies in a large radius.
 Button/Tooltip/AP_SpectreShadowClones=The Spectre creates a clone of himself.  This clone can be used to draw fire away from friendly units.  The clone deals no damage and lasts <d ref="Behavior,ToshShadowCloneTimedLife,Duration"/> seconds.<n/>
 Button/Tooltip/AP_SpectreWeaponsFree=Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.
@@ -4242,7 +4260,7 @@ Button/Tooltip/AP_StrainInjectionRoachWarren=When a Hive Queen uses Strain Injec
 Button/Tooltip/AP_StrainInjectionSpawningPool=When a Hive Queen uses Strain Injection on this building, it will spawn <d ref="Behavior,AP_StrainInjectionSpawningPool,Duration / Behavior,AP_StrainInjectionSpawningPool,Period + 1"/> timed-life Broodlings over <d ref="Behavior,AP_StrainInjectionSpawningPool,Duration"/> seconds.
 Button/Tooltip/AP_StrainInjectionSpire=When a Hive Queen uses Strain Injection on this building, it will spawn <d ref="Behavior,AP_StrainInjectionSpire,Duration / Behavior,AP_StrainInjectionSpire,Period"/> timed-life Flying Locusts over <d ref="Behavior,AP_StrainInjectionSpire,Duration"/> seconds.
 Button/Tooltip/AP_StrainInjectionUltraliskCavern=When a Hive Queen uses Strain Injection on this building, it will spawn <d ref="Behavior,AP_StrainInjectionUltraliskCavern,Duration / Behavior,AP_StrainInjectionUltraliskCavern,Period"/> timed-life Pygalisks over <d ref="Behavior,AP_StrainInjectionUltraliskCavern,Duration"/> seconds.
-Button/Tooltip/AP_StrengthInUnity=Rally nearby units around Artanis based on each <c val="#ColorTooltipNumber">Protoss Faction</c> in his radius for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnity,Duration"/> seconds</c>.<n/><n/><c val="#AP_ColorAiur">Aiur</c>: Gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/> energy regen</c>, and cooldowns recharge <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffAiur,Modification.RateMultiplierArray[Cooldown] * 100 - 100"/>% faster</c>.<n/><c val="#AP_ColorNerazim">Nerazim</c>: Become <c val="#ColorTooltipNumber">Cloaked</c> and gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffNerazim,Modification.MoveSpeedMultiplier * 100 - 100"/>% movement speed</c>.<n/><c val="#AP_ColorPurifier">Purifier</c>: Gain <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_StrengthInUnityBuffPurifier,DamageResponse.ModifyFraction) * 100"/>% damage reduction</c>.<n/><c val="#AP_ColorTaldarim">Taldarim</c>: Deal <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffTaldarim,Modification.DamageDealtFraction[Spell] * 100"/>% increased damage</c>.<n/><n/>Artanis counts as the faction of his weapon aspect, and gains <c val="#ColorTooltipNumber">double</c> the bonuses.
+Button/Tooltip/AP_StrengthInUnity=Rally nearby units around Artanis based on each <c val="#ColorTooltipNumber">Protoss Faction</c> in his radius for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnity,Duration"/></c> seconds.<n/><n/><c val="#AP_ColorAiur">Aiur</c>: Gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffAiur,Modification.VitalRegenArray[Energy]" precision="1"/></c> energy regen, and cooldowns recharge <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffAiur,Modification.RateMultiplierArray[Cooldown] * 100 - 100"/>%</c> faster.<n/><c val="#AP_ColorNerazim">Nerazim</c>: Become <c val="#ColorTooltipNumber">Cloaked</c> and gain <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffNerazim,Modification.MoveSpeedMultiplier * 100 - 100"/>%</c> movement speed.<n/><c val="#AP_ColorPurifier">Purifier</c>: Gain <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_StrengthInUnityBuffPurifier,DamageResponse.ModifyFraction) * 100"/>%</c> damage reduction.<n/><c val="#AP_ColorTaldarim">Taldarim</c>: Deal <c val="#ColorTooltipNumber"><d ref="Behavior,AP_StrengthInUnityBuffTaldarim,Modification.DamageDealtFraction[Spell] * 100"/>%</c> increased damage.<n/><n/>Artanis counts as the faction of his weapon aspect, and gains <c val="#ColorTooltipNumber">double</c> the bonuses.
 Button/Tooltip/AP_StukovInfestedBanshee=Tactical-strike aircraft. Can cloak and can be upgraded to burrow.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_StukovInfestedBansheeBurrowRegeneration=Infested Banshees regenerate 20 life and energy per second while burrowed.
 Button/Tooltip/AP_StukovInfestedBansheeBurrowed=Tactical-strike aircraft. Can cloak and can be upgraded to burrow.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -4255,8 +4273,8 @@ Button/Tooltip/AP_StukovInfestedSiegeTankDeepTunnel=Can travel quickly to any vi
 Button/Tooltip/AP_StukovInfestedSiegeTankRoot=Roots the Infested Siege Tank. A rooted Infested Siege Tank gains the ability to attack at long-range with Volatile Burst, but is unable to move.
 Button/Tooltip/AP_StukovInfestedSiegeTankUproot=Uproots the Infested Siege Tank. An uprooted Infested Siege Tank has the ability to move but can only attack with Impaler Tentacle. Moves much faster on creep.
 Button/Tooltip/AP_StukovInfestedSiegeTankUprooted=Heavy tank. Can root itself to provide long-range artillery support by consuming Infested infantry units. Can use the Deep Tunnel ability to travel quickly to any visible location with creep.<n/><n/><c val="FFFF8A">Can attack ground units.</c>
-Button/Tooltip/AP_SummonDeathFleet=Warp in <d ref="Effect,AP_SummonDeathFleet,PeriodCount"/> Destroyers around the Mothership with a timed life of <d ref="Behavior,AP_SummonDeathFleetTimer,Duration"/> seconds.
-Button/Tooltip/AP_SummonDeathFleetInstall=<d ref="Abil,AP_SummonDeathFleet,Cost[0].Vital"/> Energy<n/><d ref="Abil,AP_SummonDeathFleet,Cost[0].Cooldown.TimeUse"/> second cooldown<n/>Warp in <d ref="Effect,AP_SummonDeathFleet,PeriodCount"/> Destroyers around the Mothership with a timed life of <d ref="Behavior,AP_SummonDeathFleetTimer,Duration"/> seconds.
+Button/Tooltip/AP_SummonDeathFleet=Warps in <c val="#ColorTooltipNumber"><d ref="Effect,AP_SummonDeathFleet,PeriodCount"/></c> Destroyers around the Mothership with a timed life of <c val="#ColorTooltipNumber"><d ref="Behavior,AP_SummonDeathFleetTimer,Duration"/></c> seconds.
+Button/Tooltip/AP_SummonDeathFleetInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_SummonDeathFleet,Cost[0].Vital"/></c> Energy<n/><c val="#ColorTooltipNumber"><d ref="Abil,AP_SummonDeathFleet,Cost[0].Cooldown.TimeUse"/></c> second cooldown<n/>Warps in <c val="#ColorTooltipNumber"><d ref="Effect,AP_SummonDeathFleet,PeriodCount"/></c> Destroyers around the Mothership with a timed life of <c val="#ColorTooltipNumber"><d ref="Behavior,AP_SummonDeathFleetTimer,Duration"/></c> seconds.
 Button/Tooltip/AP_SummonEchidnaWorm=Summons an Echidna Worm at the target location.<n/>Echidna Worms cannot transport units, but have increased health, can generate Creep and Creep Tumors, and workers can dropoff their gathered resources at an Echidna Worm.<n/><n/><c val="#ColorAttackInfo">Bonus: Zerg move faster on creep.</c>
 Button/Tooltip/AP_SummonHunterKiller=Summon <d ref="Effect,AP_SummonZergMercenaryDummy,PeriodicPeriodArray[4]"/> Hunter Killers.<n/><n/>Initially bred by Daggoth as a superior Hydralisk strain, and charged to protect Kerrigan, Hunter Killers are renowned across the sector for their brutality.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FF4040">Cannot morph into Lurkers or Impalers.</c>
 Button/Tooltip/AP_SummonMercRoach=Summon <d ref="Effect,AP_SummonZergMercenaryDummy,PeriodicPeriodArray[9]"/> Caustic Horrors.<n/><n/>Elite Roaches, that have evolved to attack air units. Regenerate life quickly when burrowed.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FF4040">Cannot morph into Ravagers.</c>
@@ -4276,7 +4294,7 @@ Button/Tooltip/AP_SupplyDepotCloak=Lowered Supply Depots are permanently cloaked
 Button/Tooltip/AP_SupplyDepotDrop=Improved Supply Depot. Can be instantly deployed from orbit. Eliminates the time required for an SCV to assemble a standard Supply Depot.
 Button/Tooltip/AP_SupplyDepotLowered=Provides supply.<n/>Supply allows you to create more units.<n/>Supply Depots can be lowered to allow units to walk over them.
 Button/Tooltip/AP_SupplyDrop=Drops additional supplies, permanently increasing the supply output of the target Supply Depot by <d ref="Behavior,AP_SupplyDrop,Modification.Food"/>.
-Button/Tooltip/AP_SuppressionPulse=Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_SuppressionPulseDamage,Amount"/> damage</c> to enemies around Artanis and reduces their <c val="#ColorTooltipNumber">attack damage</c> by <c val="#ColorTooltipNumber">100%</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_SuppressionPulse,Duration"/> seconds</c>.
+Button/Tooltip/AP_SuppressionPulse=Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_SuppressionPulseDamage,Amount"/></c> damage to enemies around Artanis and reduces their <c val="#ColorTooltipNumber">attack damage</c> by <c val="#ColorTooltipNumber">100%</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_SuppressionPulse,Duration"/></c> seconds.
 Button/Tooltip/AP_SurveillanceModeObserverOff=Deactivate stationary detection mode. Allows moving and attacking, but removes the sight range and detection range bonuses.
 Button/Tooltip/AP_SurveillanceModeObserverOn=Activate stationary detection mode. Adds +<d ref="Behavior,AP_SurveillanceMode,Modification.SightBonus"/> sight range and +<d ref="Behavior,AP_SurveillanceMode,Modification.SightBonus"/> detection range, but renders the unit unable to move and attack.
 Button/Tooltip/AP_SurveillanceModeOracleOff=Deactivate stationary detection mode. Allows moving and attacking, but removes the sight range and detection range bonuses.
@@ -4303,9 +4321,6 @@ Button/Tooltip/AP_SwarmQueenWildMutation=Target friendly zerg unit gains <c val=
 Button/Tooltip/AP_SwarmSeeds=The Brood Lord shoots Broodlings at its target. A Broodling is a small creature that can attack ground units.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_SwarmlingPassive=Morphs almost instantly. Spawns in groups of three.
 Button/Tooltip/AP_TaldarimFaction=Produce units from Tal'darim faction
-Button/Tooltip/AP_TaldarimMothershipDeathHeal=Friendly non-worker units that die near the Tal'darim Mothership have their souls consumed, restoring <d ref="(Effect,AP_TaldarimMothershipDeathHealMU,VitalArray[Shields].Change)"/> shields and <d ref="(Effect,AP_TaldarimMothershipDeathHealMU,VitalArray[Life].Change)"/> life.</n></n>The souls of friendly Tal'darim units are more potent, instead restoring <d ref="(Effect,AP_TaldarimMothershipDeathHealTaldarimMU,VitalArray[Shields].Change)"/> shields and <d ref="(Effect,AP_TaldarimMothershipDeathHealTaldarimMU,VitalArray[Life].Change)"/> life, as well as <d ref="(Effect,AP_TaldarimMothershipDeathHealTaldarimMU,VitalArray[Energy].Change)"/> energy.
-Button/Tooltip/AP_TaldarimMothershipFastAttack=Increase attack speed of the Mothership's primary weapon by 121% and causes it to deal damage much faster, but reduce its weapon damage by 50%.<n/><n    /><c val="ffff8a">Can be toggled on and off in the Auxiliary menu.</c>
-Button/Tooltip/AP_TaldarimMothershipGroundSlow=The Tal'darim Mothership becomes a beacon of the Highlord's Will, reducing the attack and movement speed of nearby enemy ground units by <d ref="(1 - Behavior,AP_TaldarimMothershipGroundSlowDebuff,Modification.MoveSpeedMultiplier) * 100"/>%.
 Button/Tooltip/AP_TaldarimWarpConduit=Warp Prisms transform between modes faster and increases power radius in Phasing Mode.
 Button/Tooltip/AP_TargetLock=Increases damage dealt to target enemy unit by <d ref="Behavior,AP_ObserverTargetLock,Modification.DamageTakenFraction[Splash]*100"/>%. Effect lasts as long as the Havoc remains locked onto the target.
 Button/Tooltip/AP_TechLab=Enables additional unit construction options.
@@ -4363,29 +4378,32 @@ Button/Tooltip/AP_TerranVehicleWeaponsUltraCapacitorsLevel4=Maximizes the damage
 Button/Tooltip/AP_TerranVehicleWeaponsUltraCapacitorsLevel5=Maximizes the damage dealt by and firing speed of ground vehicles.
 Button/Tooltip/AP_Thor=Heavy assault mech.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ThorMengsk=Royal Guard heavy assault mech. Can use Overwatch Mode.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/AP_ThorMengskArmorAura=Other nearby friendly ground units gain +<d ref="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus"/> armor.
-Button/Tooltip/AP_ThorMengskCombatDiagnosis=<n/><n/>The stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_ThorsHammerMengskDamage,Amount"/> (+<d ref="Effect,AP_ThorsHammerMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount"/>, <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/>/<d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light]) * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
-Button/Tooltip/AP_ThorMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Increases the range of Overwatch Mode by <d ref="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]-Abil,AP_ThorMengskSiegeTargeted,Range[0]"/>.
-Button/Tooltip/AP_ThorMengskRank1Preview=<n/><c val="777777">Rank 1: Increases the range of Overwatch Mode by <d ref="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]-Abil,AP_ThorMengskSiegeTargeted,Range[0]"/>.</c>
-Button/Tooltip/AP_ThorMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases the area of effect of Overwatch Mode by <d ref="(Effect,AP_ThorMengskSiegeTargetLargeAoESearch,AreaArray[0].Radius/Effect,AP_ThorMengskSiegeTargetSearch,AreaArray[0].Radius-1)*100" precision="0"/>%.
-Button/Tooltip/AP_ThorMengskRank2Preview=<n/><c val="777777">Rank 2: Increases the area of effect of Overwatch Mode by <d ref="(Effect,AP_ThorMengskSiegeTargetLargeAoESearch,AreaArray[0].Radius/Effect,AP_ThorMengskSiegeTargetSearch,AreaArray[0].Radius-1)*100" precision="0"/>%.</c>
-Button/Tooltip/AP_ThorMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Increases attack speed in Overwatch Mode by <d ref="(Behavior,AP_ThorMengskSiegeAttackRate,Modification.AttackSpeedMultiplier-1)*100" precision="0"/>%.
-Button/Tooltip/AP_ThorMengskRank3Preview=<n/><c val="777777">Rank 3: Increases attack speed in Overwatch Mode by <d ref="(Behavior,AP_ThorMengskSiegeAttackRate,Modification.AttackSpeedMultiplier-1)*100" precision="0"/>%.</c>
+Button/Tooltip/AP_ThorMengskArmorAura=Grants <c val="ffff8a">+<d ref="Behavior,AP_ThorMengskArmorAuraTarget,Modification.LifeArmorBonus"/></c> armor to nearby friendly ground units. Grants <c val="ffff8a">+<d ref="Behavior,AP_ThorMengskArmorAuraSiegedTarget,Modification.LifeArmorBonus"/></c> armor instead while in Overwatch Mode.
+Button/Tooltip/AP_ThorMengskCombatDiagnosis=<n/><n/>The stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengsk,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Ground Weapon Damage:</c> <d ref="Effect,AP_ThorsHammerMengskDamage,Amount"/> (+10 per rank)<n/><c val="ffff8a">Air Weapon Damage:</c> <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount"/>, <d ref="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount * (1 + Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeFactor[Light])" precision="2"/> vs light (+2/+3 per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengsk,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_ThorMengskHammerOfTheLaw=Reduces the windup of Thor's Hammer. Thor's Hammer deals <c val="ffff8a">20%</c> of its damage as splash damage in a small area around their target.
+Button/Tooltip/AP_ThorMengskInfernoBlitz=Each attack made in Overwatch Mode grants <c val="ffff8a">3%</c> attack speed for <c val="ffff8a">6</c> seconds, stacking up to <c val="ffff8a">30</c> times. Stacks are lost immediately upon leaving Overwatch Mode.
+Button/Tooltip/AP_ThorMengskRank1=<n/><c val="ffff8a">Rank 1:</c> Increases the range of Overwatch Mode by <c val="ffff8a"><d ref="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]-Abil,AP_ThorMengskSiegeTargeted,Range[0]"/></c>.
+Button/Tooltip/AP_ThorMengskRank1Preview=<n/><c val="777777">Rank 1: Increases the range of Overwatch Mode by <c val="ffff8a"><d ref="Abil,AP_ThorMengskSiegeTargetedIncreasedRange,Range[0]-Abil,AP_ThorMengskSiegeTargeted,Range[0]"/></c>.</c>
+Button/Tooltip/AP_ThorMengskRank2=<n/><c val="ffff8a">Rank 2:</c> Increases the area of effect of Overwatch Mode by <c val="ffff8a"><d ref="(Effect,AP_ThorMengskSiegeTargetLargeAoESearch,AreaArray[0].Radius/Effect,AP_ThorMengskSiegeTargetSearch,AreaArray[0].Radius-1)*100" precision="0"/>%</c>.
+Button/Tooltip/AP_ThorMengskRank2Preview=<n/><c val="777777">Rank 2: Increases the area of effect of Overwatch Mode by <c val="ffff8a"><d ref="(Effect,AP_ThorMengskSiegeTargetLargeAoESearch,AreaArray[0].Radius/Effect,AP_ThorMengskSiegeTargetSearch,AreaArray[0].Radius-1)*100" precision="0"/>%</c>.</c>
+Button/Tooltip/AP_ThorMengskRank3=<n/><c val="ffff8a">Rank 3:</c> Increases attack speed in Overwatch Mode by <c val="ffff8a">33%</c>.
+Button/Tooltip/AP_ThorMengskRank3Preview=<n/><c val="777777">Rank 3: Increases attack speed in Overwatch Mode by <c val="ffff8a">33%</c>.</c>
 Button/Tooltip/AP_ThorMengskSiege=Deploys into Overwatch Mode. In this mode Blackhammers inflict heavy area damage to air units. Blackhammers in this mode cannot move.
-Button/Tooltip/AP_ThorMengskSiegedCombatDiagnosis=<c val="ffff8a">Royal Guards</c> do not benefit from weapon and armor upgrades, but their stats are increased by their <c val="ffff8a">Rank</c>.<n/><n/>The base stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Overwatch Damage:</c> <d ref="Effect,AP_ThorMengskSiegedDamage,Amount"/> (+<d ref="Effect,AP_ThorMengskSiegedDamage,Amount * Accumulator,AP_BaseMengskVeterancyDamageFactor,BonusPerLevel" precision="2"/> per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_ThorMengskSiegedCombatDiagnosis=<n/><n/>The stats for the Blackhammer are listed below:<n/><c val="ffff8a">Life:</c> <d ref="Unit,AP_ThorMengskSieged,LifeMax"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.VitalMaxArray[Life]"/> per rank)<n/><c val="ffff8a">Overwatch Damage:</c> <d ref="Effect,AP_ThorMengskSiegedDamage,Amount"/> (+1 per rank)<n/><c val="ffff8a">Armor:</c> <d ref="Unit,AP_ThorMengskSieged,LifeArmor"/> (+<d ref="Behavior,AP_MengskVeterancyThorMengsk,VeterancyLevelArray[1].Modification.LifeArmorBonus"/> per rank)
+Button/Tooltip/AP_ThorMengskSmartServos=Blackhammers transform between Walker Mode and Overwatch Mode <c val="ffff8a">3</c> times as fast.
 Button/Tooltip/AP_ThorMengskUnsiege=Reverts to Walker Mode. In this mode Blackhammers can move.
 Button/Tooltip/AP_ThorRapidReload=Increases Thor's ground attack speed.
 Button/Tooltip/AP_ThorUpgraded=Heavy assault mech. Can use 330mm Barrage Cannons.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ThorWreckage=Heavy assault mech. Can use 250mm Strike Cannons.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_ThorWreckageUpgraded=Heavy assault mech.  Can use 330mm Barrage Cannon.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/AP_TimeFieldAiur=Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units in the area by <d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%. Lasts <d ref="Effect,AP_TimeFieldAiurCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCreatePersistent,PeriodicPeriodArray[0]"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by <d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.</c>
-Button/Tooltip/AP_TimeFieldAiurCore=Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units in the area by <d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%. Lasts <d ref="Effect,AP_TimeFieldAiurCoreCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCoreCreatePersistent,PeriodicPeriodArray[0]"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by <d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.</c>
-Button/Tooltip/AP_TimeFieldAiurInstall=<d ref="Abil,AP_TimeFieldAiur,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units in the area by <d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%. Lasts <d ref="Effect,AP_TimeFieldAiurCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCreatePersistent,PeriodicPeriodArray[0]"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by <d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%.</c>
-Button/Tooltip/AP_TimeFieldPurifier=Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units in the area by <d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%. Lasts <d ref="Effect,AP_TimeFieldPurifierCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCreatePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_TimeFieldPurifierCore=Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units in the area by <d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%. Lasts <d ref="Effect,AP_TimeFieldPurifierCoreCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCoreCreatePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_TimeFieldPurifierInstall=<d ref="Abil,AP_TimeFieldPurifier,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units in the area by <d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%. Lasts <d ref="Effect,AP_TimeFieldPurifierCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCreatePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_TimeFieldTaldarim=Enstrangle time at the target location, reducing the attack speed of enemy units by <d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.AttackSpeedMultiplier) * 100"/>%. The Mothership confuses enemies in a small radius around its weapon targets in the field, forcing them to attack their allies with <d ref="((Behavior,AP_TimeFieldTaldarimConfusion,Modification.AttackSpeedMultiplier) * 100) - 100"/>% increased attack speed. Lasts <d ref="Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodCount*Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodicPeriodArray[0]"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units cannot be confused.</c>
-Button/Tooltip/AP_TimeFieldTaldarimInstall=<d ref="Abil,AP_TimeFieldTaldarim,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Enstrangle time at the target location, reducing the attack speed of enemy units by <d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.AttackSpeedMultiplier) * 100"/>%. The Mothership confuses enemies in a small radius around its weapon targets in the field, forcing them to attack their allies with <d ref="((Behavior,AP_TimeFieldTaldarimConfusion,Modification.AttackSpeedMultiplier) * 100) - 100"/>% increased attack speed. Lasts <d ref="Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodCount*Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodicPeriodArray[0]"/> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units cannot be confused.</c>
+Button/Tooltip/AP_TimeFieldAiur=Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units and structures in the area by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldAiurCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by </c><c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%</c><c val="#ColorAttackInfo">.</c>
+Button/Tooltip/AP_TimeFieldAiurCore=Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units and structures in the area by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldAiurCoreCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCoreCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by </c><c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%</c><c val="#ColorAttackInfo">.</c>
+Button/Tooltip/AP_TimeFieldAiurInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_TimeFieldAiur,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Creates a time-slowing field at the target location, reducing the attack and movement speed of enemy units and structures in the area by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiur,Modification.MoveSpeedMultiplier) * 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldAiurCreatePersistent,PeriodCount*Effect,AP_TimeFieldAiurCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.<n/><n/><c val="#ColorAttackInfo">Heroic units are slowed by </c><c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldAiurHeroic,Modification.MoveSpeedMultiplier) * 100"/>%</c><c val="#ColorAttackInfo">.</c>
+Button/Tooltip/AP_TimeFieldPurifier=Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units and structures in the area by <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldPurifierCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_TimeFieldPurifierCore=Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units and structures in the area by <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldPurifierCoreCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCoreCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_TimeFieldPurifierInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_TimeFieldPurifier,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Creates a time-speeding field at the target location, increasing the attack and movement speed of friendly units and structures in the area by <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_TimeFieldPurifier,Modification.MoveSpeedMultiplier) * 100) - 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldPurifierCreatePersistent,PeriodCount*Effect,AP_TimeFieldPurifierCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_TimeFieldTaldarim=Creates a temporal field at the target location, reducing enemy attack and movement speed by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.MoveSpeedMultiplier) * 100"/>%</c> and increasing friendly attack and movement speed by <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_TimeFieldTaldarimFriendly,Modification.MoveSpeedMultiplier) * 100) - 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodCount*Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_TimeFieldTaldarimInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_TimeFieldTaldarim,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Creates a temporal field at the target location, reducing enemy attack and movement speed by <c val="#ColorTooltipNumber"><d ref="(1 - Behavior,AP_TimeFieldTaldarim,Modification.MoveSpeedMultiplier) * 100"/>%</c> and increasing friendly attack and movement speed by <c val="#ColorTooltipNumber"><d ref="((Behavior,AP_TimeFieldTaldarimFriendly,Modification.MoveSpeedMultiplier) * 100) - 100"/>%</c>. Lasts <c val="#ColorTooltipNumber"><d ref="Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodCount*Effect,AP_TimeFieldTaldarimCreatePersistent,PeriodicPeriodArray[0]"/></c> seconds.
 Button/Tooltip/AP_TimeWarp=Places target structure in a Chrono Boost, causing it to operate <d ref="((Behavior,AP_TimeWarpProduction,Modification.TimeScale) - 1) * 100" precision="1"/>% faster.
 Button/Tooltip/AP_TissueAssimilation=Gains life equal to 40% of all damage dealt from normal attacks.
 Button/Tooltip/AP_TornadoMissile=When attacking a mechanical unit, the Warhound launches electrically charged missiles at its target, dealing 30 damage per volley.<n/><c val="#ColorAttackInfo">Can attack ground units.</c>
@@ -4494,8 +4512,8 @@ Button/Tooltip/AP_VoidRayShakuras=Nerazim Faction<n/>Surgical strike craft. Atta
 Button/Tooltip/AP_VoidRaySwarmDamageBoost=Realigns the Scorcher's Prismatic Beam to gain +<d ref="Behavior,AP_VoidRaySwarmDamageBoost,Modification[0].DamageDealtAttributeScaled[Armored]"/> damage vs. armored units for <d ref="Behavior,AP_VoidRaySwarmDamageBoost,Duration[0]"/> seconds. Movement speed reduced while active.
 Button/Tooltip/AP_VoidRayTaldarim=Tal'darim Faction<n/>Area assault craft. Can use Destruction Beam to attack multiple units.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_VoidRayVoidPrismaticRange=Increases the range of the Void Ray's Prismatic Beam as it continues to attack, up to a maximum of +<d ref="$UpgradeEffectArrayValue:AP_VoidRayPrismaticRange:Behavior,AP_VoidRayChargeBeamRangePhase3,Modification.WeaponRange$"/> range.
-Button/Tooltip/AP_VoidSentryBlackHole=Stuns enemy units in the target area for <d ref="Effect,AP_VoidSentryBlackHolePersistent,PeriodCount*Effect,AP_VoidSentryBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
-Button/Tooltip/AP_VoidSentryBlackHoleInstall=<d ref="Abil,AP_VoidSentryBlackHole,Cost[0].Vital"/> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <d ref="Effect,AP_VoidSentryBlackHolePersistent,PeriodCount*Effect,AP_VoidSentryBlackHolePersistent,PeriodicPeriodArray[0]"/> seconds.
+Button/Tooltip/AP_VoidSentryBlackHole=Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoidSentryBlackHolePersistent,PeriodCount*Effect,AP_VoidSentryBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
+Button/Tooltip/AP_VoidSentryBlackHoleInstall=<c val="#ColorTooltipNumber"><d ref="Abil,AP_VoidSentryBlackHole,Cost[0].Vital"/></c> Energy<n/>No Cooldown<n/>Stuns enemy units in the target area for <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoidSentryBlackHolePersistent,PeriodCount*Effect,AP_VoidSentryBlackHolePersistent,PeriodicPeriodArray[0]"/></c> seconds.
 Button/Tooltip/AP_VoidSentryChronoBeam=Friendly target gains 50% attack and 50% movement speed.
 Button/Tooltip/AP_VoidSentryMobileMode=Transforms the Energizer to Mobile Mode. The Energizer can move, but no longer creates a power field.
 Button/Tooltip/AP_VoidSentryPhasingMode=Transforms the Energizer to Phasing Mode and generates a power field as if it was a Pylon. The Energizer cannot move in this mode.
@@ -4510,7 +4528,7 @@ Button/Tooltip/AP_VoidVoidRayBeamBounce=Prismatic Beam splits and deals damage t
 Button/Tooltip/AP_VoidZealotShadowCharge=Intercepts enemy ground units. Briefly cloaks the Centurion and allows it to move through other units.
 Button/Tooltip/AP_VoidZealotShadowChargeStun=Stuns target enemy ground unit and all nearby enemy ground units <d ref="Behavior,AP_VoidZealotShadowChargeStun,Duration" precision="1"/> seconds.</n></n><c val="#ColorAttackInfo">Massive units are slowed.</c>
 Button/Tooltip/AP_VoidZealotWhirlwind=Deals <d ref="Effect,AP_VoidZealotWhirlwindDamage,Amount/Behavior,AP_VoidZealotWhirlwind,Period"/> damage per second to all nearby enemy units. Lasts <d ref="Behavior,AP_VoidZealotWhirlwind,Duration"/> seconds.
-Button/Tooltip/AP_VoltaicShock=Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoltaicShockDamage,Amount"/> damage</c> to enemies in the target area, increased to <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoltaicShockDamageAir,Amount"/></c> against air units.<n/><n/>Air units hit are <c val="#ColorTooltipNumber">grounded</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_VoltaicShock,Duration"/> seconds</c>, allowing units to attack them as if they were ground units.
+Button/Tooltip/AP_VoltaicShock=Deals <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoltaicShockDamage,Amount"/></c> damage to enemies in the target area, increased to <c val="#ColorTooltipNumber"><d ref="Effect,AP_VoltaicShockDamageAir,Amount"/></c> against air units.<n/><n/>Air units hit are <c val="#ColorTooltipNumber">grounded</c> for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_VoltaicShock,Duration"/></c> seconds, allowing units to attack them as if they were ground units.
 Button/Tooltip/AP_Vulture=Fast skirmish unit. Can use the Spider Mine ability.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_VultureAutoLaunchers=Vulture can attack while moving
 Button/Tooltip/AP_VultureAutoRepair=Vulture regenerates life.
@@ -4549,8 +4567,8 @@ Button/Tooltip/AP_WidowMineDemolitionArmaments=Allows Widow Mines to attack buil
 Button/Tooltip/AP_WidowMineLingeringConcealment=Widow Mines remain cloaked for <c val="#ColorTooltipNumber"><d ref="Behavior,AP_WidowMineLingeringCloak,Duration"/></c> seconds after unburrowing.
 Button/Tooltip/AP_WidowMineUnburrow=Unburrows the Widow Mine and deactivates its weapon, allowing it to move.
 Button/Tooltip/AP_WildMutation=Friendly zerg units and your biological units in the target area gain +<d ref="Behavior,AP_WildMutation,Modification.VitalMaxArray[1]"/> maximum life and <d ref="(Behavior,AP_WildMutation,Modification.AttackSpeedMultiplier - 1) * 100"/>% increased attack speed for <d ref="Behavior,AP_WildMutation,Duration"/> seconds.<n/><n/><c val="ffff8a">Does not affect heroic units.</c>
-Button/Tooltip/AP_WormholeTransit=Teleports the Mothership to target location anywhere on the map.<n/></n><c val="FF4040">This ability shares a cooldown with Blink.</c>
-Button/Tooltip/AP_WormholeTransitInstall=Teleports the Mothership to target location anywhere on the map.<n/></n><c val="FF4040">This ability shares a cooldown with Blink.</c>
+Button/Tooltip/AP_WormholeTransit=Teleports the Mothership to the target location <c val="FFFF8A">anywhere</c> on the map.<n/><n/><c val="FF4040">This ability shares a cooldown with Blink.</c>
+Button/Tooltip/AP_WormholeTransitInstall=Teleports the Mothership to the target location <c val="FFFF8A">anywhere</c> on the map.<n/><n/><c val="FF4040">This ability shares a cooldown with Blink.</c>
 Button/Tooltip/AP_Wraith=Highly mobile flying unit. Excellent at surgical strikes.<n/><n/><c val="ffff8a">Can attack ground and air units.</c>
 Button/Tooltip/AP_WraithAdvancedLaserTechnology=<c val="ffff8a">Burst Lasers</c> do more damage and hit both air and ground units. Replaces Gemini Missiles weapon.
 Button/Tooltip/AP_WraithCloakOff=Decloaks the selected unit, making it visible to enemies.
@@ -5473,8 +5491,6 @@ Effect/Name/AP_NeedleSpinesLaunchMissile=Needle Spines
 Effect/Name/AP_NeuralParasite=Neural Parasite (Apply Behavior Normal)
 Effect/Name/AP_NeuralParasiteLockOnRemove=Neural Parasite Lock On Remove
 Effect/Name/AP_NeutronFlare=Neutron Flare
-Effect/Name/AP_NexusDeathKillMothershipCore=Nexus Death Kill Mothership Core
-Effect/Name/AP_NexusDeathSearch=Nexus Death Search
 Effect/Name/AP_NexusInvulnerabilityApplyBehavior=Nexus Invulnerability Apply Behavior
 Effect/Name/AP_NovaArmorBlinkSuitBlink=NovaArmorBlinkSuitBlink
 Effect/Name/AP_NovaDefensiveDroneTimedLife=NovaDefensiveDroneTimedLife
@@ -5804,6 +5820,7 @@ Effect/Name/AP_SOAMothershipLineAttackDamage=SOAMothership Line Attack Damage
 Effect/Name/AP_SOAMothershipLineAttackInitialCP=SOAMothership Line Attack Initial
 Effect/Name/AP_SOAMothershipLineAttackScanCP=SOAMothership Line Attack Scan
 Effect/Name/AP_SOAMothershipLineAttackSearch=SOAMothership Line Attack Search
+Effect/Name/AP_SOAMothershipPurifierCreate=SOA Purifier Mothership (Create)
 Effect/Name/AP_SOAMothershipTimedLifeAB=SOA Mothership Timed Life AB
 Effect/Name/AP_SOAMothershipv4BeamDamage=SOA Mothership v4 Beam Damage
 Effect/Name/AP_SOAMothershipv4BeamDummy=SOA Mothership v4 Beam Dummy
@@ -5821,7 +5838,6 @@ Effect/Name/AP_SOAOverWatchDamage=SOAOver Watch Damage
 Effect/Name/AP_SOAOverWatchSearch=SOAOver Watch Search
 Effect/Name/AP_SOAOverWatchSet=SOAOver Watch Set
 Effect/Name/AP_SOAPurifierBeamCU=SOAPurifier Beam CU
-Effect/Name/AP_SOAPurifierMothershipCreate=SOA Purifier Mothership (Create)
 Effect/Name/AP_SOAPylonPower=SOAPylon Power (Initial Set)
 Effect/Name/AP_SOAPylonPowerCU=SOAPylon Power (Create Unit)
 Effect/Name/AP_SOAPylonPowerCreatePersistent=SOAPylon Power Create Persistent
@@ -6353,8 +6369,6 @@ RequirementNode/Tooltip/AP_CountUpgradeImmortalImprovedBarrierCompleteOnly=Find 
 RequirementNode/Tooltip/AP_CountUpgradeInstigatorModernizedServosCompleteOnly=Find Modernized Servos (Instigator)
 RequirementNode/Tooltip/AP_CountUpgradeMirageGravitonBeamCompleteOnly=Find Graviton Beam (Mirage)
 RequirementNode/Tooltip/AP_CountUpgradeMothershipAiurShieldArmorAuraCompleteOnly=Find Valorous Resolve (Aiur Mothership)
-RequirementNode/Tooltip/AP_CountUpgradeMothershipCoreAiurQuantumProjectionCompleteOnly=Find Quantum Projection (Aiur Mothership Core)
-RequirementNode/Tooltip/AP_CountUpgradeMothershipCorePurifierControlledBurnCompleteOnly=Find Controlled Burn (Purifier Mothership Core War Council)
 RequirementNode/Tooltip/AP_CountUpgradeMothershipPurifierPowerSourceCompleteOnly=Find Mobile Power Field (Purifier Mothership War Council)
 RequirementNode/Tooltip/AP_CountUpgradeMothershipTaldarimIntegratedPowerCompleteOnly=Find Integrated Power (Tal'darim Mothership)
 RequirementNode/Tooltip/AP_CountUpgradeObserverScopophobiaCompleteOnly=Find Induce Scopophobia (Observer)
@@ -6408,9 +6422,9 @@ RequirementNode/Tooltip/AP_ElderProbe5=Have less than 5 Elder Probes
 RequirementNode/Tooltip/AP_EnergizerTransformToPhasingMode=Transform to Phasing Mode
 RequirementNode/Tooltip/AP_Eq1667402654CountUnitAP_DukesRevengeQueuedOrBetter0=Can only control one Jackson's Revenge
 RequirementNode/Tooltip/AP_Eq777695981SumCountUnitAP_MercUltraliskQueuedOrBetterCountUnitAP_MercUltraliskBurrowedQueuedOrBetterCountUnitAP_MercTorrasqueCorpseQueuedOrBetter0=Can only control one Torrasque
-RequirementNode/Tooltip/AP_EqCountUnitAiurMothershipQueuedOrBetter0=No Aiur Mothership or Mothership Core
-RequirementNode/Tooltip/AP_EqCountUnitPurifierMothershipQueuedOrBetter0=No Purifier Mothership or Mothership Core
-RequirementNode/Tooltip/AP_EqCountUnitTaldarimMothershipQueuedOrBetter0=No Tal'darim Mothership
+RequirementNode/Tooltip/AP_EqCountUnitMothershipAiurQueuedOrBetter0=No Aiur Mothership or Mothership Core
+RequirementNode/Tooltip/AP_EqCountUnitMothershipPurifierQueuedOrBetter0=No Purifier Mothership or Mothership Core
+RequirementNode/Tooltip/AP_EqCountUnitMothershipTaldarimQueuedOrBetter0=No Tal'darim Mothership
 RequirementNode/Tooltip/AP_EqCountUpgradeProtossAirArmorsLevel1CompleteOnly1=Protoss Air Armor Level 1
 RequirementNode/Tooltip/AP_EqCountUpgradeProtossAirArmorsLevel2CompleteOnly1=Protoss Air Armor Level 2
 RequirementNode/Tooltip/AP_EqCountUpgradeProtossAirArmorsLevel3CompleteOnly1=Protoss Air Armor Level 3
@@ -6788,6 +6802,7 @@ Unit/Name/AP_MarineMengsk=Son of Korhal
 Unit/Name/AP_Medic=Medic
 Unit/Name/AP_MedicMengsk=Field Response Theta
 Unit/Name/AP_Medivac=Medivac
+Unit/Name/AP_MedivacCustomFrame=Medivac
 Unit/Name/AP_MercCompound=Merc Compound
 Unit/Name/AP_MercLiberator=Midnight Rider
 Unit/Name/AP_MercMedic=Skibi's Angel
@@ -6986,7 +7001,6 @@ Unit/Name/AP_TemplarArchive=Templar Archives
 Unit/Name/AP_Thor=Thor
 Unit/Name/AP_ThorAAWeapon=Thor AA
 Unit/Name/AP_ThorMengsk=Blackhammer
-Unit/Name/AP_ThorMengskWreckage=Blackhammer Wreckage
 Unit/Name/AP_ThorWreckage=Thor Wreckage
 Unit/Name/AP_TornadoMissileDummyWeapon=Tornado Missile Dummy
 Unit/Name/AP_TornadoMissileWeapon=Tornado Missile
@@ -7266,8 +7280,8 @@ Upgrade/Name/AP_MaelstromRounds=Maelstrom Rounds
 Upgrade/Name/AP_MagFieldLaunchers=Mag-Field Launchers
 Upgrade/Name/AP_MarauderLifeBoost=Kinetic Foam
 Upgrade/Name/AP_MarauderMengskAddictiveSupplements=Addictive Supplements
-Upgrade/Name/AP_MarauderMengskIncapacitatorShells=Incapacitator Shells
 Upgrade/Name/AP_MarauderMengskBolsteredBarrier=Bolstered Barrier
+Upgrade/Name/AP_MarauderMengskIncapacitatorShells=Incapacitator Shells
 Upgrade/Name/AP_MarauderMengskSovereignNeosteel=Sovereign Neosteel
 Upgrade/Name/AP_MarineMengskBuildABoom=Build-A-Boom
 Upgrade/Name/AP_MarineMengskCombatShield=Shield of the Dominion
@@ -7291,11 +7305,14 @@ Upgrade/Name/AP_NotPossibleFighterMode=Fighter Mode
 Upgrade/Name/AP_NotPossibleLand=Landed
 Upgrade/Name/AP_NotPossibleLiftOff=Lifted Off
 Upgrade/Name/AP_NotPossibleNukeArmed=No missile in this structure
+Upgrade/Name/AP_NotPossibleOverwatchMode=Overwatch Mode
 Upgrade/Name/AP_NotPossibleRooted=Rooted
 Upgrade/Name/AP_NotPossibleSiegeMode=Siege Mode
+Upgrade/Name/AP_NotPossibleTankMode=Tank Mode
 Upgrade/Name/AP_NotPossibleTransportMode=Transport Mode
 Upgrade/Name/AP_NotPossibleVikingAssault=Assault Mode
 Upgrade/Name/AP_NotPossibleVikingFighter=Fighter Mode
+Upgrade/Name/AP_NotPossibleWalkerMode=Walker Mode
 Upgrade/Name/AP_NotPossibleWidowMineBurrowed=Widow Mine activated
 Upgrade/Name/AP_NovaArmorApolloInfantrySuit=Apollo Infantry Suit
 Upgrade/Name/AP_NovaArmorBlinkSuit=NovaArmorBlinkSuit
@@ -7580,7 +7597,6 @@ Weapon/Name/AP_AcidSpew=Acid Spew
 Weapon/Name/AP_AcidSpines=Acid Spines
 Weapon/Name/AP_AcidSporeVentsWeapon=Acid Spores
 Weapon/Name/AP_Adept=Purifier Glaive Cannon
-Weapon/Name/AP_AiurMothershipWeapon=Photon Beam
 Weapon/Name/AP_AllPurposeLaserBattery=ATX Laser Battery
 Weapon/Name/AP_AnnihilatorParticleDisruptors=Particle Disruptors
 Weapon/Name/AP_AnnihilatorParticleDisruptorsAir=Particle Disruptors
@@ -7695,7 +7711,6 @@ Weapon/Name/AP_KhaydarinBeam=Khaydarin Beam
 Weapon/Name/AP_KhaydarinBeam1=Khaydarin Beam1
 Weapon/Name/AP_KhaydarinBeam3=Khaydarin Beam3
 Weapon/Name/AP_LanceMissileLaunchers=250mm Punisher Cannons
-Weapon/Name/AP_LanceMissileLaunchersMengsk=250mm Punisher Cannons
 Weapon/Name/AP_LanzerTorpedoes=Lanzer Torpedoes
 Weapon/Name/AP_LaserDrillTripodLaserBeam=Laser Drill
 Weapon/Name/AP_LiberatorAGWeapon=Concord Cannon
@@ -7717,8 +7732,11 @@ Weapon/Name/AP_MercRoachMelee=Needle Spines (Melee)
 Weapon/Name/AP_MercRoachVileAcidSaliva=Acid Saliva (Ground)
 Weapon/Name/AP_MercRoachVileAcidSalivaAir=Acid Saliva (Air)
 Weapon/Name/AP_MirageAttack=Ion Cannons
+Weapon/Name/AP_MothershipAiurWeapon=Photon Beam
 Weapon/Name/AP_MothershipCorePurifierWeapon=Flame Lance
 Weapon/Name/AP_MothershipCoreWeapon=Purify
+Weapon/Name/AP_MothershipPurifierWeapon=Purification Array
+Weapon/Name/AP_MothershipTaldarimFastAttackWeapon=Terminator Beam
 Weapon/Name/AP_NeedleClaws=Needle Claws
 Weapon/Name/AP_NeedleSpines=Needle Spines
 Weapon/Name/AP_NeutronFlare=Neutron Flare
@@ -7753,7 +7771,6 @@ Weapon/Name/AP_PsionicShockwave=Psionic Shockwave
 Weapon/Name/AP_PsionicShockwaveUpgrade=Psionic Shockwave
 Weapon/Name/AP_PunisherGrenades=Punisher Grenades
 Weapon/Name/AP_PunisherGrenadesMengsk=Punisher Grenades
-Weapon/Name/AP_PurifierMothershipWeapon=Purification Array
 Weapon/Name/AP_Pygalisk=Princeps Blades
 Weapon/Name/AP_PygaliskHeadAttack=Headbutt
 Weapon/Name/AP_RailGunTurret=RGX Perforator
@@ -7796,6 +7813,7 @@ Weapon/Name/AP_SentryBot=Defender Cannon
 Weapon/Name/AP_ShrikeTurret=Shrike Turret
 Weapon/Name/AP_SiegeBreaker=90mm Cannons
 Weapon/Name/AP_SiegeTankMengsk=90mm Cannons
+Weapon/Name/AP_SiegeTankMengskAirlift=Crucio Shock Cannon
 Weapon/Name/AP_SiegeTankMengskSieged=Crucio Shock Cannon
 Weapon/Name/AP_SlaynMissileTurret=Particle Cannon
 Weapon/Name/AP_SolariteReaper=Psi Blades
@@ -7817,7 +7835,6 @@ Weapon/Name/AP_StukovInfestedSiegeTankImpalerTentacle=Impaler Tentacle
 Weapon/Name/AP_Suicide=Suicide
 Weapon/Name/AP_SuicideBuilding=Suicide
 Weapon/Name/AP_SupplicantWeapon=Blood Orb
-Weapon/Name/AP_TaldarimMothershipFastAttackWeapon=Terminator Beam
 Weapon/Name/AP_Talons=Talons
 Weapon/Name/AP_TalonsMissile=Talons
 Weapon/Name/AP_TempestPurifier=Kinetic Overload
@@ -7869,11 +7886,11 @@ Weapon/Tip/AP_Impaler=<c val="#ColorAttackInfo">Must be burrowed to attack.</c>
 Weapon/Tip/AP_LocustFlyingLaunch=<c val="#ColorAttackInfo">Must be rooted or burrowed to attack.</c>
 Weapon/Tip/AP_LocustLaunch=<c val="#ColorAttackInfo">Must be rooted or burrowed to attack.</c>
 Weapon/Tip/AP_Lurker=<c val="#ColorAttackInfo">Must be burrowed to attack.</c>
-Weapon/Tip/AP_MedivacSiegeTankAirlift=Requires a loaded Siege Tank in Siege mode.<n/><n/><n/>If used with Siege Breakers, deals <d ref="Effect,AP_ArcliteShockCannonDummy,Amount"/> damage.<n/><n/>If used with Shock Divisions, deals damage depending on rank:<n/>Rank 0: <d ref="Effect,AP_SiegeTankMengskSiegedDummy,Amount" precision="2"/> + <d ref="Effect,AP_SiegeTankMengskSiegedDummy,AttributeBonus[Armored]"/> vs Armoured.<n/>+25% damage per rank.<n/>Has <d ref="Behavior,AP_SiegeTankMengskRangeBonus,Modification.WeaponRange"/> extra range if Shock Division is at least at rank 2.
+Weapon/Tip/AP_MothershipPurifierWeapon=Deals damage to up to <c val="#ColorTooltipNumber"><d ref="Effect,AP_MothershipPurifierWeaponSearch,AreaArray[0].MaxCount + 1"/> targets</c> within range of the Purifier Mothership.
 Weapon/Tip/AP_NovaWeaponBlazefireBlade=Deals <d ref="Effect,AP_NovaWeaponBlazefireBladeDamageCloaked,Amount - Effect,AP_NovaWeaponBlazefireBladeDamageUncloaked,Amount"/> extra damage if Nova is cloaked
 Weapon/Tip/AP_PrismaticBeam=Deals <d ref="Effect,AP_PrismaticBeamMUx2,Amount"/> (<d ref="Effect,AP_PrismaticBeamMUx2,Amount + Effect,AP_PrismaticBeamMUx2,AttributeBonus[Armored]"/> vs Armored) damage if halfway charged,<n/><d ref="Effect,AP_PrismaticBeamMUx3,Amount"/> (<d ref="Effect,AP_PrismaticBeamMUx3,Amount + Effect,AP_PrismaticBeamMUx3,AttributeBonus[Armored]"/> vs Armored) damage if fully charged.
-Weapon/Tip/AP_PurifierMothershipWeapon=Deals damage to up to <d ref="Effect,AP_PurifierMothershipWeaponSearch,AreaArray[0].MaxCount + 1"/> targets within range of the Purifier Mothership.
 Weapon/Tip/AP_PygaliskHeadAttack=Only used against structures.
+Weapon/Tip/AP_SiegeTankMengskAirlift=Requires a loaded Shock Division in Siege Mode.<n/><n/>Damage, range, and splash scale with the carried Shock Division's rank.
 Weapon/Tip/AP_StalwartLightningWeapon=Ignores armor. Deals <d ref="Effect,AP_StalwartLightningWeaponBounceDamage,Amount"/> damage to up to <d ref="Effect,AP_StalwartLightningWeaponSearch,AreaArray[0].MaxCount"/> enemies within <d ref="Effect,AP_StalwartLightningWeaponSearch,AreaArray[0].Radius"/> range of the target.
 Weapon/Tip/AP_StukovInfestedSiegeTank=Launches a Volatile Infested with timed life that will detonate on the targeted enemy.  Deals high damage to groups, and buildings.<n/><n/><c val="#ColorAttackInfo">Must have volatile ammo to attack.</c>
 Weapon/Tip/AP_Talons=

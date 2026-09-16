@@ -260,6 +260,7 @@ trigger gt_Init07Help;
 trigger gt_DebugIntro;
 trigger gt_DebugStage2FindIntel;
 trigger gt_DebugStage3CatchStationOfficer;
+trigger gt_DebugClearGarrison;
 trigger gt_DebugBonus;
 trigger gt_DebugVictory;
 trigger gt_NovaPicksUpRestorationCharge2;
@@ -268,6 +269,8 @@ trigger gt_NovaFlashbangsUnitInDefendRegion;
 trigger gt_NovaLosesDetectorConeDetectedEMPedQ;
 trigger gt_NovaLosesDetectorConeDetectedStillCloakedQ;
 trigger gt_NovaReCloaksTransmissionQ;
+trigger gt_HeroSummons;
+trigger gt_UnitIsDominated;
 trigger gt_StartGame01QGarrisonSpots;
 trigger gt_StartGame02QReachCommsHub;
 trigger gt_StartGame03QReachCommandRoom;
@@ -865,7 +868,7 @@ void gf_handleUnitGarrisonEnter (unit lp_enteredUnit) {
     // Implementation
     if ((libNCMI_gf_GameIsOver() == false) && (libNCMI_gf_PlayerInCinematicModeCampaign() == false) && (TriggerIsEnabled(TriggerGetCurrent()) == true) && (lp_enteredUnit != gv_nova) && (UnitFilterMatch(lp_enteredUnit, gv_pLAYER_01_USER, UnitFilter((1 << c_targetFilterGround), 0, (1 << c_targetFilterStructure) | (1 << c_targetFilterWorker) | (1 << c_targetFilterMissile) | (1 << c_targetFilterUncommandable), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterHallucination - 32)) | (1 << (c_targetFilterInvulnerable - 32)) | (1 << (c_targetFilterSummoned - 32)))) == true) && (UnitHasBehavior(lp_enteredUnit, "AP_HallucinationTimedLife") == false) && (UnitHasBehavior(lp_enteredUnit, "AP_HighTemplarSCBWHallucination@TimedLife") == false) && (gv_currentStage == 1)) {
         autoA03C75C1_ae = gv_s1_GarrisonSpotsCount;
-        lv_iter = 1;
+        lv_iter = 0;
         for ( ; ( (autoA03C75C1_ai >= 0 && lv_iter <= autoA03C75C1_ae) || (autoA03C75C1_ai < 0 && lv_iter >= autoA03C75C1_ae) ) ; lv_iter += autoA03C75C1_ai ) {
             if ((gv_s1_GarrisonSpots[lv_iter].lv_garrisonSpotCompleted == false) && (UnitIsAlive(gv_s1_GarrisonSpots[lv_iter].lv_entryInfestation) == false) && (UnitIsAlive(gv_s1_GarrisonSpots[lv_iter].lv_beaconUnit) == true) && (libNtve_gf_UnitIsVisibleToPlayer(gv_s1_GarrisonSpots[lv_iter].lv_beaconUnit, gv_pLAYER_01_USER) == true) && (libNtve_gf_UnitInRegion(lp_enteredUnit, gv_s1_GarrisonSpots[lv_iter].lv_beaconRegion) == true) && (UnitGetOwner(lp_enteredUnit) == gv_pLAYER_01_USER) && (gf_getGarrisonStrength(UnitGetType(lp_enteredUnit)) > 0)) {
                 gf_S1GarrisonUnit(lp_enteredUnit, lv_iter);
@@ -914,7 +917,7 @@ bool auto_gf_S1GarrisonUnit_TriggerFunc (bool testConds, bool runActions) {
     }
 
     if ((gv_s1_GarrisonSpots[lp_garrisonIndex].lv_garrisonUnitCount >= gv_s1_GarrisonSpots[lp_garrisonIndex].lv_garrisonUnitMax)) {
-        if ((gv_s1_GarrisonSpots[lp_garrisonIndex].lv_garrisonSpotCompleted == false)) {
+        if ((gv_s1_GarrisonSpots[lp_garrisonIndex].lv_garrisonSpotCompleted == false) && (lp_garrisonIndex != 0)) {
             lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(lp_garrisonIndex);
         }
 
@@ -923,6 +926,10 @@ bool auto_gf_S1GarrisonUnit_TriggerFunc (bool testConds, bool runActions) {
         PingDestroy(libHots_gf_PingStoredForUnit(gv_s1_GarrisonSpots[lp_garrisonIndex].lv_beaconUnit, 1));
         TextTagDestroy(libHots_gf_TextTagForUnit(gv_s1_GarrisonSpots[lp_garrisonIndex].lv_beaconUnit, 1));
         UnitKill(gv_s1_GarrisonSpots[lp_garrisonIndex].lv_beaconUnit);
+        if ((lp_garrisonIndex == 0)) {
+            return true;
+        }
+
         gv_objectiveFillGarrisonsCount += 1;
         TriggerExecute(gt_AchievementBunkerRush, true, false);
         TriggerExecute(gt_ObjectiveFillGarrisonsUpdate, true, false);
@@ -1598,6 +1605,9 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
     unitgroup auto22F63574_g;
     int auto22F63574_u;
     unit auto22F63574_var;
+    unitgroup auto4B9C2BFB_g;
+    int auto4B9C2BFB_u;
+    unit auto4B9C2BFB_var;
 
     // Variable Initialization
     lv_group = UnitGroupEmpty();
@@ -1612,11 +1622,10 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         libABFE498B_gv_aP_Triggers_Option_overridePlayerRace = "Zerg";
         libABFE498B_gv_aP_Triggers_skipCutscenes = true;
         libABFE498B_gv_aP_Triggers_DebugMode = true;
-        libABFE498B_gv_aP_Triggers_Option_HeroPresence = 2;
+        libABFE498B_gv_aP_Triggers_Option_HeroPresence = 0;
         libABFE498B_gf_AP_Triggers_setDifficulty("B");
         libABFE498B_gf_AP_Triggers_setGameSpeed("5");
-        libABFE498B_gf_AP_Triggers_Debug_Tech(lib5BD4895D_gf_AP_Core_getUser(), 2);
-        libABFE498B_gf_AP_Triggers_Zerg_SwarmQueenDeepTunnel(1);
+        libABFE498B_gf_AP_Triggers_Debug_Tech(lib5BD4895D_gf_AP_Core_getUser(), 3);
         TriggerExecute(libABFE498B_gv_aP_Triggers_onDifficultyBrutal, true, false);
     }
 
@@ -1681,6 +1690,13 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         auto22F63574_var = UnitGroupUnitFromEnd(auto22F63574_g, auto22F63574_u);
         if (auto22F63574_var == null) { break; }
         libNtve_gf_ShowHideUnit(auto22F63574_var, true);
+    }
+    auto4B9C2BFB_g = libABFE498B_gv_aP_Triggers_HeroUnits;
+    auto4B9C2BFB_u = UnitGroupCount(auto4B9C2BFB_g, c_unitCountAll);
+    for (;; auto4B9C2BFB_u -= 1) {
+        auto4B9C2BFB_var = UnitGroupUnitFromEnd(auto4B9C2BFB_g, auto4B9C2BFB_u);
+        if (auto4B9C2BFB_var == null) { break; }
+        libNCMI_gf_StealthAIAddUnitToStealthAIEnemyUnitGroup(auto4B9C2BFB_var);
     }
     return true;
 }
@@ -2088,7 +2104,6 @@ bool gt_Init02Players_Func (bool testConds, bool runActions) {
     PlayerSetState(gv_pLAYER_02_NOVASUPPORT, c_playerStateFoodIgnored, true);
     TechTreeUpgradeAddLevel(gv_pLAYER_02_NOVASUPPORT, "GarrisonRadiusReduction", 1);
     libABFE498B_gf_AP_Triggers_giveTerranDefaultTech(gv_pLAYER_02_NOVASUPPORT);
-    libABFE498B_gf_AP_Triggers_Zerg_SwarmHostCarrion(gv_pLAYER_02_NOVASUPPORT);
     return true;
 }
 
@@ -2909,6 +2924,70 @@ void gt_DebugStage3CatchStationOfficer_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Debug - Clear Garrison
+//--------------------------------------------------------------------------------------------------
+bool gt_DebugClearGarrison_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup auto07C88163_g;
+    int auto07C88163_u;
+    unit auto07C88163_var;
+
+    // Conditions
+    if (testConds) {
+        if (!((libABFE498B_gv_aP_Triggers_DebugMode == true))) {
+            return false;
+        }
+
+        if (!((libNCMI_gf_PlayerInCinematicModeCampaign() == false))) {
+            return false;
+        }
+
+        if (!((libNCMI_gf_GameIsOver() == false))) {
+            return false;
+        }
+
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+
+        if (!((gv_currentStage == 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/A08B658E"), true);
+    TriggerEnable(TriggerGetCurrent(), false);
+    gv_s1_GarrisonSpots[0].lv_garrisonUnitCount = 0;
+    gv_s1_GarrisonSpots[0].lv_garrisonSpotCompleted = false;
+    libNtve_gf_ShowHideUnit(gv_s1_GarrisonSpots[0].lv_beaconUnit, true);
+    TextTagShow(libHots_gf_TextTagForUnit(gv_s1_GarrisonSpots[0].lv_beaconUnit, 1), PlayerGroupAll(), true);
+    UnitRemove(gv_s1_GarrisonSpots[0].lv_entryInfestation);
+    auto07C88163_g = UnitGroup(null, gv_pLAYER_02_NOVASUPPORT, RegionFromId(89), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto07C88163_u = UnitGroupCount(auto07C88163_g, c_unitCountAll);
+    for (;; auto07C88163_u -= 1) {
+        auto07C88163_var = UnitGroupUnitFromEnd(auto07C88163_g, auto07C88163_u);
+        if (auto07C88163_var == null) { break; }
+        if ((UnitGetType(auto07C88163_var) != "MannedTurret") && (UnitGetType(auto07C88163_var) != "Virophage") && (UnitGetType(auto07C88163_var) != "AP_PhotonCannonGarrison")) {
+            UnitRemove(auto07C88163_var);
+        }
+
+    }
+    UnitSetOwner(gv_s1_GarrisonSpots[0].lv_garrisonTurret, 0, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DebugClearGarrison_Init () {
+    gt_DebugClearGarrison = TriggerCreate("gt_DebugClearGarrison_Func");
+    TriggerAddEventChatMessage(gt_DebugClearGarrison, c_playerAny, "-cleargarrison", true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Debug - Bonus
 //--------------------------------------------------------------------------------------------------
 bool gt_DebugBonus_Func (bool testConds, bool runActions) {
@@ -3515,6 +3594,102 @@ void gt_NovaReCloaksTransmissionQ_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: Hero Summons
+//--------------------------------------------------------------------------------------------------
+bool gt_HeroSummons_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libNCMI_gf_GameIsOver() == false))) {
+            return false;
+        }
+
+        if (!((libNCMI_gf_PlayerInCinematicModeCampaign() == false))) {
+            return false;
+        }
+
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+
+        if (!((UnitFilterMatch(EventUnitCreatedUnit(), gv_pLAYER_01_USER, UnitFilter(0, 0, (1 << c_targetFilterMissile) | (1 << c_targetFilterItem), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)))) == true))) {
+            return false;
+        }
+
+        if (!((UnitGroupHasUnit(libABFE498B_gv_aP_Triggers_HeroUnits, EventUnit()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNCMI_gf_StealthAIAddUnitToStealthAIEnemyUnitGroup(EventUnitCreatedUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_HeroSummons_Init () {
+    gt_HeroSummons = TriggerCreate("gt_HeroSummons_Func");
+    TriggerEnable(gt_HeroSummons, false);
+    TriggerAddEventUnitCreated(gt_HeroSummons, null, null, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit Is Dominated
+//--------------------------------------------------------------------------------------------------
+bool gt_UnitIsDominated_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((libNCMI_gf_GameIsOver() == false))) {
+            return false;
+        }
+
+        if (!((libNCMI_gf_PlayerInCinematicModeCampaign() == false))) {
+            return false;
+        }
+
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNCMI_gf_StealthAISetStealthAIUnitState(EventUnit(), libNCMI_ge_StealthAIUnitState_Unavailable);
+    UnitAbilityEnable(EventUnit(), "NovaAlarmBotToggleDetectionVisionMode", false);
+    UnitAbilityShow(EventUnit(), "NovaAlarmBotToggleDetectionVisionMode", false);
+    while ((libNCMI_gf_GameIsOver() == false) && (UnitIsAlive(EventUnit()) == true) && ((UnitGetType(EventUnit()) == "GhostDetectorCone") || (UnitGetType(EventUnit()) == "GhostAlternateDetectorCone"))) {
+        UnitIssueOrder(EventUnit(), Order(AbilityCommand("GhostDetetorConeExit", 0)), c_orderQueueReplace);
+        UnitIssueOrder(EventUnit(), Order(AbilityCommand("GhostAlternateDetetorConeExit", 0)), c_orderQueueReplace);
+        UnitAbilityEnable(EventUnit(), "GhostDetetorConeEnter", false);
+        UnitAbilityEnable(EventUnit(), "GhostAlternateDetetorConeEnter", false);
+        UnitAbilityShow(EventUnit(), "GhostDetetorConeEnter", false);
+        UnitAbilityShow(EventUnit(), "GhostAlternateDetetorConeEnter", false);
+        UnitBehaviorRemove(EventUnit(), "DetectorCone9", 1);
+        Wait(0.0625, c_timeAI);
+    }
+    UnitIssueOrder(EventUnit(), Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
+    Wait(5.0, c_timeAI);
+    libNCMI_gf_StealthAIAddUnitToStealthAIEnemyUnitGroup(EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_UnitIsDominated_Init () {
+    gt_UnitIsDominated = TriggerCreate("gt_UnitIsDominated_Func");
+    TriggerEnable(gt_UnitIsDominated, false);
+    TriggerAddEventUnitBehaviorChange(gt_UnitIsDominated, null, "NovaDomination", c_unitBehaviorChangeCreate);
+    TriggerAddEventUnitBehaviorChange(gt_UnitIsDominated, null, "AP_NovaDomination", c_unitBehaviorChangeCreate);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Start Game 01 Q - Garrison Spots
 //--------------------------------------------------------------------------------------------------
 bool gt_StartGame01QGarrisonSpots_Func (bool testConds, bool runActions) {
@@ -3631,6 +3806,8 @@ bool gt_StartGame02QReachCommsHub_Func (bool testConds, bool runActions) {
     SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryAmbience, "Ambience_TarsonisCityUnderground_Quad", c_soundtrackCueAny, c_soundtrackIndexAny, true);
     UIAlertPoint("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/30FCFA14"), null, PointFromId(163));
     libNCMI_gf_CreateMissionAutosavePoint(StringExternal("Param/Value/52DC9371"));
+    TriggerEnable(gt_HeroSummons, true);
+    TriggerEnable(gt_UnitIsDominated, true);
     TriggerEnable(gt_S2FirstUnitsFleeStealthedNova, true);
     TriggerEnable(gt_S2HallwayUnitsConfrontStealthedNova, true);
     auto99FF777A_g = UnitGroup(null, gv_pLAYER_06_DEFENDERSOFMAN, RegionFromId(32), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
@@ -3901,6 +4078,23 @@ bool gt_S1GarrisonSpotsInit_Func (bool testConds, bool runActions) {
     }
 
     gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonTurret = UnitFromId(12);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonUnitType = "Marauder";
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonUnitMax = 6;
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_beaconUnit = UnitFromId(1240329409);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_beaconRegion = RegionFromId(118);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_unitTargetPoint = PointFromId(414);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonTurret = UnitFromId(12);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonSightRegion = RegionFromId(90);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonZergPlayer = gv_pLAYER_03_FERALZERG_MIDDLEBULLIES;
+    TextExpressionSetToken("Param/Expression/DF116B3B", "A", StringExternal("Param/Value/64C85DD7"));
+    TextExpressionSetToken("Param/Expression/DF116B3B", "B", IntToText(gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonUnitCount));
+    TextExpressionSetToken("Param/Expression/DF116B3B", "C", IntToText(gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonUnitMax));
+    TextTagCreate(TextExpressionAssemble("Param/Expression/DF116B3B"), 24, PointWithOffset(UnitGetPosition(gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_beaconUnit), 0.0, -1.5), 0.0, true, false, PlayerGroupAll());
+    TextTagSetMaxSize(TextTagLastCreated(), 100.0, 2.0);
+    libHots_gf_StoreTextTagForUnit(gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_beaconUnit, 1, TextTagLastCreated());
+    TextTagShow(TextTagLastCreated(), PlayerGroupAll(), false);
+    libNtve_gf_ShowHideUnit(gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_beaconUnit, false);
+    gv_s1_GarrisonSpots[gv_s1_GarrisonSpotsCount].lv_garrisonSpotCompleted = true;
     UnitSetFacing(UnitFromId(12), 315.0, 0.0);
     UnitSetState(UnitFromId(12), c_unitStateTurnSuppressed, false);
     gv_s1_GarrisonSpotsCount += 1;
@@ -4295,6 +4489,7 @@ bool gt_S1UnitEntersGarrison_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void gt_S1UnitEntersGarrison_Init () {
     gt_S1UnitEntersGarrison = TriggerCreate("gt_S1UnitEntersGarrison_Func");
+    TriggerAddEventUnitRegion(gt_S1UnitEntersGarrison, null, RegionFromId(118), true);
     TriggerAddEventUnitRegion(gt_S1UnitEntersGarrison, null, RegionFromId(2), true);
     TriggerAddEventUnitRegion(gt_S1UnitEntersGarrison, null, RegionFromId(4), true);
     TriggerAddEventUnitRegion(gt_S1UnitEntersGarrison, null, RegionFromId(5), true);
@@ -11854,10 +12049,11 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         while (true) {
             lv_player = PlayerGroupNextPlayer(auto4544C4E9_g, lv_player);
             if (lv_player < 0) { break; }
-            libABFE498B_gf_AP_Triggers_Terran_unlockNovaWeaponMonomolecularBlade(lv_player);
-            libABFE498B_gf_AP_Triggers_Terran_unlockNovaProgressiveCloak(lv_player, 2);
-            libABFE498B_gf_AP_Triggers_Terran_unlockNovaGadgetFlashbangGrenades(lv_player);
-            libABFE498B_gf_AP_Triggers_Terran_unlockNovaGhostVisor(lv_player);
+            TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "AP_NovaWeaponPsiBlade", 1);
+            TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "AP_NovaCloak", 1);
+            TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "AP_NovaArmorStealthSuit", 1);
+            TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "AP_NovaGadgetFlashBangGrenades", 1);
+            TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "AP_NovaHelmetGhostVisor", 1);
         }
     }
 
@@ -12602,6 +12798,7 @@ void InitTriggers () {
     gt_DebugIntro_Init();
     gt_DebugStage2FindIntel_Init();
     gt_DebugStage3CatchStationOfficer_Init();
+    gt_DebugClearGarrison_Init();
     gt_DebugBonus_Init();
     gt_DebugVictory_Init();
     gt_NovaPicksUpRestorationCharge2_Init();
@@ -12610,6 +12807,8 @@ void InitTriggers () {
     gt_NovaLosesDetectorConeDetectedEMPedQ_Init();
     gt_NovaLosesDetectorConeDetectedStillCloakedQ_Init();
     gt_NovaReCloaksTransmissionQ_Init();
+    gt_HeroSummons_Init();
+    gt_UnitIsDominated_Init();
     gt_StartGame01QGarrisonSpots_Init();
     gt_StartGame02QReachCommsHub_Init();
     gt_StartGame03QReachCommandRoom_Init();
