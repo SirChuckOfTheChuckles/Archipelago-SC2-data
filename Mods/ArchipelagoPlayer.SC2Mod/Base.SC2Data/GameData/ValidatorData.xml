@@ -9054,7 +9054,7 @@
     </CValidatorUnitType>
     <CValidatorUnitCompareBehaviorCount id="AP_NotMengskVeterancySwapping">
         <WhichUnit Value="Caster"/>
-        <Compare value="EQ"/>
+        <Compare value="Eq"/>
         <Value value="0"/>
         <Behavior value="AP_MengskVeterancySwapping"/>
     </CValidatorUnitCompareBehaviorCount>

@@ -12076,7 +12076,6 @@
         <MaxStackCount value="1"/>
     </CBehaviorBuff>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarineMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="600" LevelGainEffect="AP_MarineMengskLevelUpSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
@@ -12096,7 +12095,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyMarauderMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
         <VeterancyLevelArray MinVeterancyXP="1200" LevelGainEffect="AP_MarauderMengskLevelUpAddictiveSupplementsSet" RankNameSchema="Behavior/RankName/AP_MengskRank1">
@@ -12115,7 +12113,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyMedicMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
@@ -12140,7 +12137,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyGhostMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
@@ -12163,7 +12159,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyGoliathMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
@@ -12184,7 +12179,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancySiegeTankMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
@@ -12203,7 +12197,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyThorMengskRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
@@ -12222,7 +12215,6 @@
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="AP_MengskVeterancyMedivacRank2">
-        <Name value="Button/Name/AP_RoyalGuardMengsk"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <XPFraction index="Kills" value="0"/>
         <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
