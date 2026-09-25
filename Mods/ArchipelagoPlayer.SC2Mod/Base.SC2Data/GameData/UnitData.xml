@@ -5723,8 +5723,7 @@
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
         <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="250"/>
-        <CostResource index="Vespene" value="50"/>
+        <CostResource index="Minerals" value="150"/>
         <RepairTime value="65"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="BuildInProgress"/>
@@ -7533,8 +7532,8 @@
         <TurningRate value="719.4726"/>
         <Sight value="9"/>
         <CostCategory value="Technology"/>
-        <CostResource index="Minerals" value="250"/>
-        <CostResource index="Vespene" value="150"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="11"/>
         <AbilArray Link="BuildInProgress"/>
@@ -29914,8 +29913,8 @@
             <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_HaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_WalkerModeHaveThorMengskInfernoBlitz" Row="1" Column="4"/>
             <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -30003,8 +30002,8 @@
             <LayoutButtons Face="AP_ThorMengskHammerOfTheLaw" Type="Passive" Requirements="AP_OverwatchModeHaveThorMengskHammerOfTheLaw" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ThorMengskInfernoBlitz" Type="Passive" Requirements="AP_HaveThorMengskInfernoBlitz" Row="1" Column="4"/>
             <LayoutButtons Face="AP_ThorMengskSmartServos" Type="Passive" Requirements="AP_HaveThorMengskSmartServos" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_ThorMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_ThorMengskUnlockRank3" Type="Passive" Requirements="AP_ThorMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -30120,8 +30119,8 @@
             <LayoutButtons Face="AP_MarauderMengskSlow" Type="Passive" Requirements="AP_HaveMarauderMengskIncapacitatorShells" Row="1" Column="3"/>
             <LayoutButtons Face="AP_MarauderMengskBolsteredBarrier" Type="Passive" Requirements="AP_HaveMarauderMengskBolsteredBarrier" Row="1" Column="4"/>
             <LayoutButtons Face="AP_MarauderMengskSovereignNeosteel" Type="Passive" Requirements="AP_HaveMarauderMengskSovereignNeosteel" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarauderMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="Passive" Requirements="AP_MarauderMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarauderMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_MarauderMengskUnlockRank3" Type="Passive" Requirements="AP_MarauderMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.5625"/>
         <InnerRadius value="0.375"/>
@@ -30737,6 +30736,7 @@
         <AbilArray Link="AP_MarineMengskUnlockRank3"/>
         <AbilArray Link="AP_MarineMengskSpiderMineLob"/>
         <BehaviorArray Link="AP_MengskVeterancyMarineMengskRank2"/>
+        <BehaviorArray Link="AP_MarineMengskProdigalSonRank2Bonus"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -30758,8 +30758,8 @@
             <LayoutButtons Face="AP_MarineMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_MarineMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_MarineMengskBuildABoom" Type="Passive" Requirements="AP_HaveMarineMengskBuildABoom" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarineMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="Passive" Requirements="AP_MarineMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MarineMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_MarineMengskUnlockRank3" Type="Passive" Requirements="AP_MarineMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -30842,6 +30842,7 @@
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_GoliathMengskBaseWeapons"/>
         <BehaviorArray Link="AP_GoliathMengskRank2Weapons"/>
+        <BehaviorArray Link="AP_GoliathMengskAntiAirCountermeasures"/>
         <EffectArray index="Create" value="AP_MengskVeteranTrigger"/>
         <LeaderAlias value="AP_GoliathMengsk"/>
         <SelectAlias value="AP_GoliathMengsk"/>
@@ -30854,14 +30855,14 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AP_GoliathMengskJump" Type="AbilCmd" AbilCmd="AP_GoliathMengskJump,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_NovaUnitLockdown" Type="Passive" Requirements="AP_HaveGoliathMengskVeterancyLevel4" Row="1" Column="2"/>
-            <LayoutButtons Face="AP_GoliathMengskParalysisInducers" Type="Passive" Requirements="AP_HaveGoliathMengskParalysisInducers" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_GoliathMengskAntiAirCountermeasures" Type="Passive" Requirements="AP_HaveGoliathMengskAntiAirCountermeasures" Row="1" Column="3"/>
             <LayoutButtons Face="AP_GoliathMengskAresClassTargetingAddon" Type="Passive" Requirements="AP_HaveGoliathMengskAresClassTargetingAddon" Row="1" Column="4"/>
             <LayoutButtons Face="AP_GoliathMengskVeterancy" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_GoliathMengskCombatDiagnosis" Type="Passive" Row="1" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskJumpJetsMKII" Type="Passive" Requirements="AP_HaveGoliathMengskJumpJetsMKII" Row="2" Column="1"/>
             <LayoutButtons Face="AP_GoliathMengskMoebiusDefenseMatrix" Type="Passive" Requirements="AP_HaveGoliathMengskMoebiusDefenseMatrix" Row="2" Column="2"/>
-            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_GoliathMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="Passive" Requirements="AP_GoliathMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_GoliathMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_GoliathMengskUnlockRank3" Type="Passive" Requirements="AP_GoliathMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.6875"/>
         <InnerRadius value="0.5"/>
@@ -30959,8 +30960,8 @@
             <LayoutButtons Face="AP_MedicMengskPhysicalTherapy" Type="Passive" Row="1" Column="2" Requirements="AP_MedicMengskPhysicalTherapyResearched"/>
             <LayoutButtons Face="AP_MedicMengskHospiceCare" Type="Passive" Row="1" Column="3" Requirements="AP_MedicMengskHospiceCareResearched"/>
             <LayoutButtons Face="AP_MedicMengskRoyalAcademyDegree" Type="Passive" Row="1" Column="4" Requirements="AP_MedicMengskRoyalAcademyDegreeResearched"/>
-            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MedicMengskUnlockRank3,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="Passive" Requirements="AP_MedicMengskPromotionGranted" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_MedicMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_MedicMengskUnlockRank3" Type="Passive" Requirements="AP_MedicMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
@@ -31205,8 +31206,9 @@
         <AbilArray Link="AP_BansheeMengskCloak"/>
         <AbilArray Link="AP_BansheeMengskBacklashBarrage"/>
         <AbilArray Link="AP_BansheeMengskBarrageRangeDummy"/>
+        <AbilArray Link="AP_BansheeMengskUnlockRank3"/>
         <BehaviorArray Link="AP_ScavengingSystemsMechDeath"/>
-        <BehaviorArray Link="AP_MengskVeterancyBansheeMengsk"/>
+        <BehaviorArray Link="AP_MengskVeterancyBansheeMengskRank2"/>
         <BehaviorArray Link="AP_MengskVeteranL1Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL2Tracker"/>
         <BehaviorArray Link="AP_MengskVeteranL3Tracker"/>
@@ -31214,6 +31216,7 @@
         <BehaviorArray Link="AP_MengskVeteranTrigger"/>
         <BehaviorArray Link="AP_BansheeMengskMovingWeaponCheck"/>
         <BehaviorArray Link="AP_BansheeMengskElusiveRotors"/>
+        <BehaviorArray Link="AP_BansheeMengskEnergizedBacklashIndicator"/>
         <BehaviorArray Link="AP_BansheeMengskCloakedSpeedRank2"/>
         <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL1"/>
         <BehaviorArray Link="AP_BansheeMengskCloakEnergyDrainL2"/>
@@ -31240,11 +31243,12 @@
             <LayoutButtons Face="AP_BansheeMengskElusiveRotors" Type="Passive" Requirements="AP_HaveBansheeMengskElusiveRotors" Row="1" Column="2"/>
             <LayoutButtons Face="AP_BansheeMengskPreyseekerMissiles" Type="Passive" Requirements="AP_HaveBansheeMengskPreyseekerMissiles" Row="1" Column="3"/>
             <LayoutButtons Face="AP_BansheeMengskShockwaveArtillery" Type="Passive" Requirements="AP_HaveBansheeMengskShockwaveArtillery" Row="1" Column="4"/>
-            <LayoutButtons Face="AP_BansheeMengskEnergizedBacklash" Type="Passive" Requirements="AP_HaveBansheeMengskEnergizedBacklash" Row="2" Column="4"/>
             <LayoutButtons Face="AP_BansheeMengskCloakOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_BansheeMengskCloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_BansheeMengskCloakOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskCloak,1" Row="2" Column="0"/>
             <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOn" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,On" Row="2" Column="2"/>
             <LayoutButtons Face="AP_BansheeMengskBacklashBarrageOff" Type="AbilCmd" AbilCmd="AP_BansheeMengskBacklashBarrage,Off" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_BansheeMengskUnlockRank3" Type="AbilCmd" AbilCmd="AP_BansheeMengskUnlockRank3,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="AP_BansheeMengskUnlockRank3" Type="Passive" Requirements="AP_BansheeMengskPromotionGranted" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>

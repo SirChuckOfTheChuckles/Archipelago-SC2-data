@@ -24004,14 +24004,7 @@
         <EffectArray value="AP_MengskVeteranMaxedTrigger"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddCharge"/>
         <EffectArray value="AP_MarineMengskSpiderMinesAddBuildABoomCharge"/>
-        <EffectArray value="AP_MarineMengskProdigalSonRank3BonusAB"/>
     </CEffectSet>
-    <CEffectApplyBehavior id="AP_MarineMengskProdigalSonRank3BonusAB">
-        <EditorCategories value="Race:Terran"/>
-        <WhichUnit Value="Source"/>
-        <Behavior value="AP_MarineMengskProdigalSonRank3Bonus"/>
-        <ValidatorArray value="AP_HaveMarineMengskProdigalSon"/>
-    </CEffectApplyBehavior>
     <CEffectModifyUnit id="AP_MarineMengskSpiderMinesAddCharge">
         <ValidatorArray value="AP_CasterLevelGTE2"/>
         <EditorCategories value="Race:Zerg"/>
@@ -24117,7 +24110,6 @@
     <CEffectSet id="AP_GoliathMengskAULockdownSet">
         <EffectArray value="AP_GoliathMengskAU"/>
         <EffectArray value="AP_GoliathMengskMechanicalLockdownSet"/>
-        <EffectArray value="AP_GoliathMengskBiologicalLockdownSet"/>
     </CEffectSet>
     <CEffectDamage id="AP_GoliathMengskG" parent="DU_WEAP">
         <ValidatorArray value="CasterIsNotHidden"/>
@@ -24140,18 +24132,6 @@
         <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
         <ValidatorArray value="AP_NotHeroic"/>
         <ValidatorArray value="AP_IsMechanical"/>
-        <ValidatorArray value="NotStructure"/>
-        <ValidatorArray value="AP_NoPreventKnockback"/>
-        <ValidatorArray value="AP_NoGoliathMengskLockdownStunImmunity"/>
-        <EffectArray value="AP_GoliathMengskLockdownAB"/>
-        <EffectArray value="AP_GoliathMengskLockdownStunImmunityAB"/>
-    </CEffectSet>
-    <CEffectSet id="AP_GoliathMengskBiologicalLockdownSet">
-        <ValidatorArray value="AP_CasterLevelEq4"/>
-        <ValidatorArray value="AP_HaveGoliathMengskParalysisInducers"/>
-        <ValidatorArray value="AP_NovaUnitLockdownABTargetFilters"/>
-        <ValidatorArray value="AP_NotHeroic"/>
-        <ValidatorArray value="AP_IsBiological"/>
         <ValidatorArray value="NotStructure"/>
         <ValidatorArray value="AP_NoPreventKnockback"/>
         <ValidatorArray value="AP_NoGoliathMengskLockdownStunImmunity"/>
@@ -28104,5 +28084,13 @@
     <CEffectApplyBehavior id="AP_ThorMengskUnlockRank3Apply">
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_ThorMengskRank3Unlocked"/>
+    </CEffectApplyBehavior>
+    <CEffectSet id="AP_BansheeMengskUnlockRank3Set">
+        <EffectArray value="AP_BansheeMengskUnlockRank3Apply"/>
+        <EffectArray value="AP_MengskVeteranTrigger"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AP_BansheeMengskUnlockRank3Apply">
+        <WhichUnit Value="Caster"/>
+        <Behavior value="AP_BansheeMengskRank3Unlocked"/>
     </CEffectApplyBehavior>
 </Catalog>

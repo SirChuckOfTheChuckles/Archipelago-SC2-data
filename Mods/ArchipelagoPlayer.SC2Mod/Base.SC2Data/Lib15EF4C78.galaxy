@@ -3597,6 +3597,10 @@ void lib15EF4C78_gf_CM_Mengsk_ActivateRank3Veterancy (unit lp_unit) {
         lib15EF4C78_gf_CM_Mengsk_SwapVeterancy(lp_unit, "AP_MengskVeterancyThorMengskRank2", "AP_MengskVeterancyThorMengsk");
     }
 
+    if (((UnitHasBehavior(lp_unit, "AP_MengskVeterancyBansheeMengskRank2") == true) && (UnitHasBehavior(lp_unit, "AP_BansheeMengskRank3Unlocked") == true))) {
+        lib15EF4C78_gf_CM_Mengsk_SwapVeterancy(lp_unit, "AP_MengskVeterancyBansheeMengskRank2", "AP_MengskVeterancyBansheeMengsk");
+    }
+
 }
 
 string lib15EF4C78_gf_CM_Mengsk_LockedVeterancy (unit lp_unit) {
@@ -3632,6 +3636,10 @@ string lib15EF4C78_gf_CM_Mengsk_LockedVeterancy (unit lp_unit) {
 
     if ((UnitHasBehavior(lp_unit, "AP_MengskVeterancyMedivacRank2") == true)) {
         return "AP_MengskVeterancyMedivacRank2";
+    }
+
+    if ((UnitHasBehavior(lp_unit, "AP_MengskVeterancyBansheeMengskRank2") == true)) {
+        return "AP_MengskVeterancyBansheeMengskRank2";
     }
 
     return "";

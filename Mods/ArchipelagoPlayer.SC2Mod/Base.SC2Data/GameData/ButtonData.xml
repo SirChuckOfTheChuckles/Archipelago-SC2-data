@@ -7470,7 +7470,6 @@
         <Universal value="1"/>
     </CButton>
     <CButton id="AP_SiegeTankMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_SiegeTankMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_SiegeTankMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_SiegeTankMengskRank2Preview"/>
@@ -7518,7 +7517,6 @@
         <AlertIcon value="Assets\Textures\btn-unit-terran-thormengsk.dds"/>
     </CButton>
     <CButton id="AP_ThorMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_ThorMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_ThorMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_ThorMengskRank2Preview"/>
@@ -7578,7 +7576,6 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_MarauderMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MarauderMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MarauderMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MarauderMengskRank2Preview"/>
@@ -7699,7 +7696,6 @@
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GhostMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_GhostMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_GhostMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_GhostMengskRank2Preview"/>
@@ -7757,7 +7753,6 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="AP_MarineMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MarineMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MarineMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MarineMengskRank2Preview"/>
@@ -7823,7 +7818,6 @@
         <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-hellfiremissiles.dds"/>
     </CButton>
     <CButton id="AP_GoliathMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_GoliathMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_GoliathMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_GoliathMengskRank2Preview"/>
@@ -7849,9 +7843,9 @@
         <AlertIcon value="AP\Assets\Textures\btn-upgrade-goliath-mengsk-cliff-jump.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
-    <CButton id="AP_GoliathMengskParalysisInducers">
-        <Icon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
-        <AlertIcon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
+    <CButton id="AP_GoliathMengskAntiAirCountermeasures">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
     <CButton id="AP_GoliathMengskAresClassTargetingAddon">
@@ -7863,7 +7857,6 @@
         <Icon value="AP\Assets\Textures\btn-unit-terran-goliath-mengsk.dds"/>
     </CButton>
     <CButton id="AP_MedicMengskVeterancy" parent="AP_RoyalGuardMengsk">
-        <TooltipAppender Text="Button/Tooltip/AP_MarineMengskRankCap"/>
         <TooltipAppender Validator="AP_CasterLevelLT2" Text="Button/Tooltip/AP_MedicMengskRank1Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_MedicMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_MedicMengskRank2Preview"/>
@@ -8021,8 +8014,8 @@
         <TooltipAppender Validator="AP_CasterLevelGTE2" Text="Button/Tooltip/AP_BansheeMengskRank1"/>
         <TooltipAppender Validator="AP_CasterLevelLT3" Text="Button/Tooltip/AP_BansheeMengskRank2Preview"/>
         <TooltipAppender Validator="AP_CasterLevelGTE3" Text="Button/Tooltip/AP_BansheeMengskRank2"/>
-        <TooltipAppender Validator="AP_CasterLevelLT4" Text="Button/Tooltip/AP_BansheeMengskRank3Preview"/>
-        <TooltipAppender Validator="AP_CasterLevelGTE4" Text="Button/Tooltip/AP_BansheeMengskRank3"/>
+        <TooltipAppender Validator="AP_ShowBansheeMengskRank3Preview" Text="Button/Tooltip/AP_BansheeMengskRank3Preview"/>
+        <TooltipAppender Validator="AP_ShowBansheeMengskRank3" Text="Button/Tooltip/AP_BansheeMengskRank3"/>
     </CButton>
     <CButton id="AP_BansheeMengsk">
         <Icon value="AP\Assets\Textures\btn-unit-terran-banshee-mengsk.dds"/>
@@ -9033,6 +9026,13 @@
         <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
         <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
         <Hotkey value="Button/Hotkey/AP_ThorMengskUnlockRank3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CButton>
+    <CButton id="AP_BansheeMengskUnlockRank3">
+        <Name value="Button/Name/AP_PromotionGranted"/>
+        <Tooltip value="Button/Tooltip/AP_PromotionGranted"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <Hotkey value="Button/Hotkey/AP_BansheeMengskUnlockRank3"/>
         <EditorCategories value="Race:Terran"/>
     </CButton>
 </Catalog>

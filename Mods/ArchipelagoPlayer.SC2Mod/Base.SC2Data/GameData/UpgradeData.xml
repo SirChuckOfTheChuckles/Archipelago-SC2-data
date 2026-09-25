@@ -17787,8 +17787,9 @@
         <EffectArray Reference="Abil,AP_GoliathMengskJump,Range[0]" Value="3"/>
         <EffectArray Reference="Actor,AP_GoliathMengskJump_Range,Range" Value="3.000000"/>
     </CUpgrade>
-    <CUpgrade id="AP_GoliathMengskParalysisInducers">
-        <Icon value="AP\Assets\Textures\btn-upgrade-terran-neural-inhibitors.dds"/>
+    <CUpgrade id="AP_GoliathMengskAntiAirCountermeasures">
+        <Name value="Upgrade/Name/AP_GoliathMengskAntiAirCountermeasures"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
     </CUpgrade>
     <CUpgrade id="AP_GoliathMengskAresClassTargetingAddon">
         <Icon value="AP\Assets\Textures\btn-upgrade-terran-aresclasstargetingaddon.dds"/>
@@ -17848,5 +17849,12 @@
         <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
         <MaxLevel value="1"/>
         <AffectedUnitArray value="AP_ThorMengsk"/>
+    </CUpgrade>
+    <CUpgrade id="AP_BansheeMengskRank3Training">
+        <Name value="Upgrade/Name/AP_BansheeMengskRank3Training"/>
+        <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
+        <Icon value="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds"/>
+        <MaxLevel value="1"/>
+        <AffectedUnitArray value="AP_BansheeMengsk"/>
     </CUpgrade>
 </Catalog>

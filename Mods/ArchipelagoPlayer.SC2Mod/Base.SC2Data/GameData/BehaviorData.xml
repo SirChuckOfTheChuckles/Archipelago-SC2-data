@@ -9284,6 +9284,18 @@
         <InfoIcon value="Assets\Textures\btn-upgrade-terran-behemothreactor.dds"/>
         <Name value="Button/Name/AP_BattlecruiserBehemothReactor"/>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_GoliathMengskAntiAirCountermeasures">
+        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AP_HaveGoliathMengskAntiAirCountermeasures"/>
+        <DamageResponse>
+            <ModifyAmount value="-2"/>
+            <Kind index="Spell" value="0"/>
+            <ValidatorArray value="AP_TargetIsAirUnitFilter"/>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
     <CBehaviorBuff id="AP_VoidRayPurifierAntiGroundArmor">
         <InfoFlags index="Hidden" value="1" />
         <Alignment value="Positive"/>
@@ -9950,16 +9962,14 @@
         <BehaviorFlags index="Permanent" value="1"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorBuff id="AP_MarineMengskProdigalSonRank3Bonus">
+    <CBehaviorBuff id="AP_MarineMengskProdigalSonRank2Bonus">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <DisableValidatorArray value="AP_HaveMarineMengskProdigalSon"/>
         <Modification>
-            <StateFlags index="UnitAttrOnHeroic" value="1"/>
-            <LifeArmorBonus value="0"/>
-            <VitalMaxArray index="Life" value="15"/>
-                <WeaponRange value="1"/>
-                <WeaponScanBonus value="1"/>
+            <WeaponRange value="2"/>
+            <WeaponScanBonus value="2"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_WarpRelocating">
@@ -12232,5 +12242,43 @@
         <InfoIcon value="AP\Assets\Textures\btn-upgrade-terran-psychic-amplifier.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Requirements value="AP_HaveGhostMengskPsychicEnhancer"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AP_BansheeMengskRank3Unlocked">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+        <MaxStackCount value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorVeterancy id="AP_MengskVeterancyBansheeMengskRank2">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <XPFraction index="Kills" value="0"/>
+        <VeterancyLevelArray RankNameSchema="Behavior/RankName/AP_MengskRank0"/>
+        <VeterancyLevelArray MinVeterancyXP="1800" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank1">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxArray index="Life" value="70"/>
+                <VitalMaxArray index="Energy" value="50"/>
+                <VitalRegenArray index="Energy" value="0.5"/>
+                <WeaponDisableArray value="AP_BacklashRocketsMengsk"/>
+                <WeaponEnableArray value="AP_BacklashRocketsMengskMoving"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="4200" LevelGainEffect="AP_MengskVeteranLevelUpDummy" RankNameSchema="Behavior/RankName/AP_MengskRank2">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxArray index="Life" value="70"/>
+                <VitalMaxArray index="Energy" value="50"/>
+                <VitalRegenArray index="Energy" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <BehaviorFlags index="EnabledWhileDead" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="AP_BansheeMengskEnergizedBacklashIndicator">
+        <Name value="Button/Name/AP_BansheeMengskEnergizedBacklash"/>
+        <Tooltip value="Button/Tooltip/AP_BansheeMengskEnergizedBacklash"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-stetmann-corruptormissileaoe.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Requirements value="AP_HaveBansheeMengskEnergizedBacklash"/>
     </CBehaviorBuff>
 </Catalog>

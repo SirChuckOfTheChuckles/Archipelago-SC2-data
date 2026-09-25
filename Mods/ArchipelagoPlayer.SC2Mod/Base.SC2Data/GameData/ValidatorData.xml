@@ -7908,10 +7908,10 @@
         <Compare value="GE"/>
         <Value value="3"/>
     </CValidatorUnitCompareVeterancyLevel>
-    <CValidatorPlayerRequirement id="AP_HaveGoliathMengskParalysisInducers">
+    <CValidatorPlayerRequirement id="AP_HaveGoliathMengskAntiAirCountermeasures">
         <WhichPlayer Value="Caster"/>
         <Find value="1"/>
-        <Value value="AP_HaveGoliathMengskParalysisInducers"/>
+        <Value value="AP_HaveGoliathMengskAntiAirCountermeasures"/>
     </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="AP_HaveAdaptiveMedPacks">
         <Find value="1"/>
