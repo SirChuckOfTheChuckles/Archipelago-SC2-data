@@ -463,6 +463,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="0.6"/>
         <Modification>
+            <AbilLinkDisableArray value="AP_HerculesTransport"/>
             <ModifyFlags index="SuppressMoving" value="1"/>
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Invulnerable" value="1"/>
@@ -487,6 +488,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="4.8"/>
         <Modification>
+            <AbilLinkDisableArray value="AP_HerculesTransport"/>
             <ModifyFlags index="SuppressMoving" value="1"/>
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Invulnerable" value="1"/>
@@ -502,6 +504,7 @@
         <EditorCategories value="AbilityorEffectType:Units,Race:Terran"/>
         <Duration value="0.6"/>
         <Modification>
+            <AbilLinkDisableArray value="AP_HerculesTransport"/>
             <ModifyFlags index="SuppressMoving" value="1"/>
             <ModifyFlags index="SuppressTurning" value="1"/>
             <StateFlags index="Invulnerable" value="1"/>
@@ -8553,7 +8556,7 @@
         <DamageResponse Handled="AP_ImpalingStrikeSet" Location="Attacker">
             <RequireEffectArray value="AP_TyrannozorKaiserBladesDamage"/>
             <RequireEffectArray value="AP_TyrannozorKaiserBladesSecondaryDamage"/>
-            <Chance value="0.3"/>
+            <Chance value="1"/>
         </DamageResponse>
         <InfoFlags index="Hidden" value="1"/>
         <DisableValidatorArray value="AP_HaveImpalingStrike"/>
@@ -8574,7 +8577,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-ability-zerg-dehaka-ultralisk-impalingstrike.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="4"/>
+        <Duration value="6"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_TyrannozorTyrantsProtectionCaster">
         <InfoFlags index="Hidden" value="1"/>
