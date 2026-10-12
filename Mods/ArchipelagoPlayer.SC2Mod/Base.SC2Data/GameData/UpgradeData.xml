@@ -796,7 +796,7 @@
         <EffectArray Reference="Weapon,AP_ImmortalTaldarim,Level" Value="1"/>
         <EffectArray Reference="Weapon,AP_AnnihilatorParticleDisruptors,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_AnnihilatorParticleDisruptors,Amount" Value="2"/>
-        <EffectArray Reference="Effect,AP_AnnihilatorParticleDisruptors,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,AP_AnnihilatorParticleDisruptors,AttributeBonus[Armored]" Value="3"/>
         <EffectArray Reference="Weapon,AP_AnnihilatorParticleDisruptorsAir,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_AnnihilatorParticleDisruptorsAir,Amount" Value="2"/>
         <!--  Dark Templar -->

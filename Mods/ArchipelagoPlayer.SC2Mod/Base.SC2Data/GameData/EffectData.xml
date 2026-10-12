@@ -9747,8 +9747,7 @@
         <EditorCategories value="Race:Protoss"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="-5"/>
-        <AttributeFactor index="Armored" value="1"/>
+        <AttributeBonus index="Armored" value="30"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
         <Kind value="Ranged"/>
