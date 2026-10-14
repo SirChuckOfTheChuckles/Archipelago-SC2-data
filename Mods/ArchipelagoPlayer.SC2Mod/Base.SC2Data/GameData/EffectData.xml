@@ -3829,8 +3829,8 @@
         <Visibility value="Visible"/>
         <Flags index="Notification" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="20">
-            <AccumulatorArray value="AP_2DamagePerRank"/>
+        <Amount value="22">
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </Amount>
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
@@ -22769,7 +22769,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22777,7 +22777,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.6562" Fraction="1"/>
@@ -22857,7 +22857,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22865,7 +22865,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.6562" Fraction="1"/>
@@ -22883,7 +22883,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22891,7 +22891,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.4687" Fraction="1"/>
@@ -22909,7 +22909,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22917,7 +22917,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <SearchFilters value="Air;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -22932,7 +22932,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22940,7 +22940,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.4687" Fraction="1"/>
@@ -22958,7 +22958,7 @@
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
         <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
@@ -22966,7 +22966,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="50">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
+            <AccumulatorArray value="AP_10DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -22984,12 +22984,12 @@
     <CEffectDamage id="AP_SiegeTankMengskDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <AttributeBonus index="Armored" value="15">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </AttributeBonus>
         <AttributeFactor index="Armored" value="0"/>
         <Kind value="Ranged"/>
         <Amount value="25">
-            <AccumulatorArray value="AP_3DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
@@ -23087,7 +23087,7 @@
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="10">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
+            <AccumulatorArray value="AP_2DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="1.5" Fraction="1"/>
@@ -23116,7 +23116,7 @@
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
         <Amount value="75">
-            <AccumulatorArray value="AP_8DamagePerRank"/>
+            <AccumulatorArray value="AP_15DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
@@ -23146,12 +23146,14 @@
     </CEffectCreatePersistent>
     <CEffectDamage id="AP_JavelinMissileLaunchersMengskDamage" parent="DU_WEAP_SPLASH">
         <EditorCategories value="Race:Terran"/>
-        <AttributeBonus index="Light" value="-3.5"/>
-        <AttributeFactor index="Light" value="1"/>
+        <AttributeBonus index="Light" value="6">
+            <AccumulatorArray value="AP_1DamagePerRank"/>
+        </AttributeBonus>
+        <AttributeFactor index="Light" value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="14">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
+            <AccumulatorArray value="AP_2DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.5" Fraction="1"/>
@@ -23271,7 +23273,7 @@
         <AttributeFactor index="Armored" value="1"/>
         <Kind value="Ranged"/>
         <Amount value="20">
-            <AccumulatorArray value="AP_2DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
@@ -23591,7 +23593,7 @@
         <AttributeFactor index="Light" value="1"/>
         <Kind value="Ranged"/>
         <Amount value="20">
-            <AccumulatorArray value="AP_2DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectDamage id="AP_C10CanisterRifleMengskNemesisRoundsDamage" parent="DU_WEAP">
@@ -23599,7 +23601,7 @@
         <AttributeFactor index="Light" value="1"/>
         <Kind value="Ranged"/>
         <Amount value="40">
-            <AccumulatorArray value="AP_4DamagePerRank"/>
+            <AccumulatorArray value="AP_8DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectSwitch id="AP_C10CanisterRifleMengskNemesisRoundsBioSwitch">
@@ -23964,14 +23966,14 @@
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
         <Amount value="10">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
+            <AccumulatorArray value="AP_2DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectDamage id="AP_GaussRifleMengskSplashDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
         <Amount value="5">
-            <AccumulatorArray value="AP_0.5DamagePerRank"/>
+            <AccumulatorArray value="AP_1DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectEnumArea id="AP_GaussRifleMengskSplash">
@@ -24098,7 +24100,7 @@
         <AttributeBonus index="Armored" value="0"/>
         <AttributeFactor index="Armored" value="1"/>
         <Amount value="12">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
+            <AccumulatorArray value="AP_2DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectSet id="AP_GoliathMengskAULockdownSet">
@@ -24110,7 +24112,7 @@
         <EditorCategories value="Race:Terran"/>
         <Kind value="Ranged"/>
         <Amount value="24">
-            <AccumulatorArray value="AP_2DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRank"/>
         </Amount>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_GoliathMengskLockdownAB">
@@ -24163,7 +24165,7 @@
         <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.25"/>
-        <RechargeVitalRate value="16"/>
+        <RechargeVitalRate value="16.5"/>
         <InitialEffect value="AP_MedicMengskHealStartSet"/>
         <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
@@ -24176,7 +24178,7 @@
         <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.25"/>
-        <RechargeVitalRate value="18"/>
+        <RechargeVitalRate value="19"/>
         <InitialEffect value="AP_MedicMengskHealStartSet"/>
         <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
@@ -24189,7 +24191,7 @@
         <ValidatorArray value="AP_UnitIsBiologicalOrMechanical"/>
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.25"/>
-        <RechargeVitalRate value="20"/>
+        <RechargeVitalRate value="21.5"/>
         <InitialEffect value="AP_MedicMengskHealStartSet"/>
         <FinalEffect value="AP_MedicMengskHealStopSet"/>
     </CEffectCreateHealer>
@@ -24311,7 +24313,7 @@
         <EditorCategories value="Race:Terran"/>
         <DrainVital value="Energy"/>
         <DrainVitalCostFactor value="0.25"/>
-        <RechargeVitalRate value="20"/>
+        <RechargeVitalRate value="21.5"/>
         <Flags index="Channeled" value="0"/>
         <PeriodCount value="4"/>
         <Marker Link="Abil/MedivacHeal">

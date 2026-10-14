@@ -769,12 +769,12 @@
         <EffectArray Reference="Effect,AP_MercJavelinMissileLaunchersDamage,AttributeBonus[Light]" Value="1"/>
         <EffectArray Reference="Effect,AP_MercLanceMissileLaunchersDamage,Amount" Value="3"/>
         <EffectArray Reference="Effect,AP_MercLanceMissileLaunchersDamage,AttributeBonus[Massive]" Value="1"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskDamage,Amount" Value="3"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskDamage,AttributeBonus[Armored]" Value="1"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeSplash,Amount" Value="3"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeSplash,AttributeBonus[Armored]" Value="1"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeImprovedSplash,Amount" Value="3"/>
-        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeImprovedSplash,AttributeBonus[Armored]" Value="1"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskDamage,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskDamage,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeSplash,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeSplash,AttributeBonus[Armored]" Value="2"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeImprovedSplash,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_SiegeTankMengskTankModeImprovedSplash,AttributeBonus[Armored]" Value="2"/>
         <EffectArray Reference="Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,Amount" Value="5"/>
         <EffectArray Reference="Effect,AP_SiegeTankMengskSiegedImprovedAoEBlast,AttributeBonus[Armored]" Value="3"/>
         <EffectArray Reference="Effect,AP_SiegeTankMengskAirliftImprovedAoEBlast,Amount" Value="5"/>
@@ -800,10 +800,11 @@
         <EffectArray Reference="Weapon,AP_ThorMengskSieged,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_GoliathMengskG,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_GoliathMengskAU,Amount" Value="1"/>
-        <EffectArray Reference="Effect,AP_ThorsHammerMengskDamage,Amount" Value="8"/>
+        <EffectArray Reference="Effect,AP_ThorsHammerMengskDamage,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_JavelinMissileLaunchersMengskDamage,Amount" Value="1"/>
-        <EffectArray Reference="Effect,AP_ThorsHammerMengskHammerOfTheLawSplash,Amount" Value="8"/>
+        <EffectArray Reference="Effect,AP_ThorsHammerMengskHammerOfTheLawSplash,Amount" Value="10"/>
         <EffectArray Reference="Effect,AP_ThorMengskSiegedDamage,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_JavelinMissileLaunchersMengskDamage,AttributeBonus[Light]" Value="1"/>
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranVehicleWeaponsUltraCapacitors" parent="AP_BaseTerranVehicleWeapons">
         <Name value="Upgrade/Name/AP_BaseTerranVehicleWeaponsUltraCapacitors"/>

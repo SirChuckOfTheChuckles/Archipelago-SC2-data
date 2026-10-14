@@ -128,4 +128,11 @@
     <CAccumulatorBehavior id="AP_BattlecruiserRangeBuff">
         <Behavior value="AP_BattlecruiserBonusRange"/>
     </CAccumulatorBehavior>
+
+    <CAccumulatorVeterancyLevel id="AP_15DamagePerRank">
+        <MinAccumulation value="0"/>
+        <Amount value="-15"/>
+        <BonusPerLevel value="15"/>
+        <PreviousValueFactor value="1"/>
+    </CAccumulatorVeterancyLevel>
 </Catalog>
