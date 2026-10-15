@@ -31200,7 +31200,7 @@
         <Height value="3.75"/>
         <VisionHeight value="4"/>
         <CostCategory value="Army"/>
-        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Minerals" value="325"/>
         <CostResource index="Vespene" value="425"/>
         <RepairTime value="60"/>
         <AttackTargetPriority value="20"/>

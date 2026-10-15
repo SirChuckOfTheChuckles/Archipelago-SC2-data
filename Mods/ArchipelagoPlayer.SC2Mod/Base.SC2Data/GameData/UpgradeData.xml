@@ -67,6 +67,8 @@
         <EffectArray Reference="Unit,AP_MarauderMengsk,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_GhostMengsk,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_GhostMengsk,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_MedicMengsk,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_MedicMengsk,LifeArmorLevel" Value="1"/>
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranInfantryArmorsVanadiumPlating" parent="AP_BaseTerranInfantryArmors">
         <!-- Set the HP boost here -->
@@ -153,6 +155,10 @@
         <EffectArray Operation="Multiply" Reference="Unit,AP_MarauderMengsk,LifeStart" Value="1.05"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_GhostMengsk,LifeMax" Value="1.05"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_GhostMengsk,LifeStart" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_MarineMengsk,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_MarineMengsk,LifeStart" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_MedicMengsk,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_MedicMengsk,LifeStart" Value="1.05"/>
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranInfantryWeapons">
         <Name value="Upgrade/Name/AP_BaseTerranInfantryWeapons"/>
@@ -235,6 +241,7 @@
         <EffectArray Reference="Weapon,AP_PunisherGrenadesMengsk,Level" Value="1"/>
         <EffectArray Reference="Weapon,AP_C10CanisterRifleMengsk,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_PunisherGrenadesMengskU,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_MarauderMengskShrapnelDamage,Amount" Value="0.4"/>
         <EffectArray Reference="Effect,AP_C10CanisterRifleMengskDamage,Amount" Value="2"/>
         <EffectArray Reference="Effect,AP_C10CanisterRifleMengskNemesisRoundsDamage,Amount" Value="4"/>
     </CUpgrade>
@@ -272,6 +279,8 @@
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranShipArmors">
         <Name value="Upgrade/Name/AP_BaseTerranShipArmors"/>
+        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_BansheeMengsk,LifeArmorLevel" Value="1"/>
         <!--  Banshee -->
         <EffectArray Reference="Unit,AP_Banshee,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_Banshee,LifeArmor" Value="1"/>
@@ -339,6 +348,8 @@
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranShipArmorsVanadiumPlating" parent="AP_BaseTerranShipArmors">
         <Name value="Upgrade/Name/AP_BaseTerranShipArmorsVanadiumPlating"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_BansheeMengsk,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_BansheeMengsk,LifeStart" Value="1.05"/>
         <!--  Banshee -->
         <EffectArray Operation="Multiply" Reference="Unit,AP_Banshee,LifeMax" Value="1.05"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_Banshee,LifeStart" Value="1.05"/>
@@ -497,6 +508,9 @@
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranShipWeaponsUltraCapacitors" parent="AP_BaseTerranShipWeapons">
         <Name value="Upgrade/Name/AP_BaseTerranShipWeaponsUltraCapacitors"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengsk,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskMoving,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,AP_BacklashRocketsMengskDisplay,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_BacklashRockets,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_ATSLaserBattery,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_ATALaserBattery,RateMultiplier" Value="0.05"/>
@@ -684,6 +698,12 @@
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengsk,LifeStart" Value="1.05"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeMax" Value="1.05"/>
         <EffectArray Operation="Multiply" Reference="Unit,AP_ThorMengskSieged,LifeStart" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengsk,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengsk,LifeStart" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengskSieged,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengskSieged,LifeStart" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeMax" Value="1.05"/>
+        <EffectArray Operation="Multiply" Reference="Unit,AP_SiegeTankMengskSiegedTransportable,LifeStart" Value="1.05"/>
     </CUpgrade>
     <CUpgrade default="1" id="AP_BaseTerranVehicleWeapons">
         <Name value="Upgrade/Name/AP_BaseTerranVehicleWeapons"/>

@@ -23339,8 +23339,8 @@
         <ArmorReduction value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
-        <Amount value="3">
-            <AccumulatorArray value="AP_BaseMengskVeterancyDamageMultiplier"/>
+        <Amount value="4">
+            <AccumulatorArray value="AP_0.8DamagePerRank"/>
         </Amount>
         <Death value="Eviscerate"/>
     </CEffectDamage>
@@ -23375,13 +23375,13 @@
     <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorMU">
         <ValidatorArray value="AP_NotHaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value="Race:Terran"/>
-        <Cost Behavior="AP_MarauderMengskAbsorbReapplicator" CooldownTimeUse="60"/>
+        <Cost Behavior="AP_MarauderMengskAbsorbReapplicator" CooldownTimeUse="70"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>
     <CEffectModifyUnit id="AP_MarauderMengskAbsorbReapplicatorUpgradedMU">
         <ValidatorArray value="AP_HaveMarauderMengskBolsteredBarrier"/>
         <EditorCategories value="Race:Terran"/>
-        <Cost Behavior="AP_MarauderMengskAbsorbReapplicatorUpgraded" CooldownTimeUse="50"/>
+        <Cost Behavior="AP_MarauderMengskAbsorbReapplicatorUpgraded" CooldownTimeUse="60"/>
         <ImpactUnit Value="Caster"/>
     </CEffectModifyUnit>
     <CEffectSet id="AP_MarauderMengskAbsorbReapplicatorSet">

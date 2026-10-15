@@ -9666,20 +9666,20 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="60"/>
+        <Duration value="70"/>
         <ExpireEffect value="AP_MarauderMengskAbsorbAndPrimeSet"/>
         <Cost>
-            <Cooldown Location="Unit" TimeUse="60"/>
+            <Cooldown Location="Unit" TimeUse="70"/>
         </Cost>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskAbsorbReapplicatorUpgraded">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <TimeScaleSource Value="Global"/>
-        <Duration value="50"/>
+        <Duration value="60"/>
         <ExpireEffect value="AP_MarauderMengskAbsorbAndPrimeSet"/>
         <Cost>
-            <Cooldown Location="Unit" TimeUse="50"/>
+            <Cooldown Location="Unit" TimeUse="60"/>
         </Cost>
     </CBehaviorBuff>
     <CBehaviorBuff id="AP_MarauderMengskAttackSpeedBoost">

@@ -9127,6 +9127,20 @@
         <CombineArray value="AP_HaveSiegeTankMengskRank3Training"/>
         <CombineArray value="AP_CasterLevelGTE4"/>
     </CValidatorCombine>
+    <CValidatorPlayerRequirement id="AP_HaveBansheeMengskRank3Training">
+        <Find value="1"/>
+        <Value value="AP_HaveBansheeMengskRank3Training"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="AP_ShowBansheeMengskRank3Preview">
+        <Type value="And"/>
+        <CombineArray value="AP_HaveBansheeMengskRank3Training"/>
+        <CombineArray value="AP_CasterLevelLT4"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_ShowBansheeMengskRank3">
+        <Type value="And"/>
+        <CombineArray value="AP_HaveBansheeMengskRank3Training"/>
+        <CombineArray value="AP_CasterLevelGTE4"/>
+    </CValidatorCombine>
     <CValidatorPlayerRequirement id="AP_HaveThorMengskRank3Training">
         <Find value="1"/>
         <Value value="AP_HaveThorMengskRank3Training"/>
