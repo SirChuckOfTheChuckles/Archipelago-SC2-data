@@ -3561,6 +3561,7 @@ void lib15EF4C78_gf_CM_Mengsk_SwapVeterancy (unit lp_unit, string lp_old, string
     }
     UnitXPSetCurrentXP(lp_unit, lp_new, lv_xp);
     UnitBehaviorRemove(lp_unit, lp_old, c_unitBehaviorCountAll);
+    UnitBehaviorRemove(lp_unit, "AP_MarauderMengskSovereignNeosteelRankBonus", c_unitBehaviorCountAll);
     UnitSetPropertyFixed(lp_unit, c_unitPropLife, lv_life);
     UnitSetPropertyFixed(lp_unit, c_unitPropShields, lv_shields);
     UnitBehaviorRemove(lp_unit, "AP_MengskVeterancySwapping", c_unitBehaviorCountAll);

@@ -9657,7 +9657,7 @@
         <DamageResponse>
             <Handled value="AP_MarauderMengskAbsorbReapplicatorSet"/>
             <ModifyFraction value="0"/>
-            <ModifyLimit value="200"/>
+            <ModifyLimit value="150"/>
             <ModifyMinimumDamage value="1"/>
             <Chance value="1"/>
         </DamageResponse>

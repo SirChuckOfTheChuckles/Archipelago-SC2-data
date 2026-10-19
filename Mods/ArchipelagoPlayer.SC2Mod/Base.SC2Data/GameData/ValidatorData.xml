@@ -9207,4 +9207,12 @@
     <CValidatorUnitType id="AP_IsLaunchBay">
         <Value value="AP_LaunchBay"/>
     </CValidatorUnitType>
+    <CValidatorUnitFilters id="AP_RankDamageTargetIsArmored">
+        <WhichUnit Value="Target"/>
+        <Filters value="Armored;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="AP_RankDamageTargetIsLight">
+        <WhichUnit Value="Target"/>
+        <Filters value="Light;-"/>
+    </CValidatorUnitFilters>
 </Catalog>

@@ -22763,9 +22763,7 @@
         <Marker Link="Effect/CrucioShockCannonBlast"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22773,6 +22771,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.6562" Fraction="1"/>
@@ -22851,9 +22850,7 @@
         <Marker Link="Effect/CrucioShockCannonBlast"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22861,6 +22858,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.6562" Fraction="1"/>
@@ -22877,9 +22875,7 @@
         <Marker Link="Effect/CrucioShockCannonBlast"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22887,6 +22883,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.4687" Fraction="1"/>
@@ -22903,9 +22900,7 @@
         <Marker Link="Effect/CrucioShockCannonDirected"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22913,6 +22908,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <SearchFilters value="Air;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -22926,9 +22922,7 @@
         <Marker Link="Effect/CrucioShockCannonBlast"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22936,6 +22930,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.4687" Fraction="1"/>
@@ -22952,9 +22947,7 @@
         <Marker Link="Effect/CrucioShockCannonDirected"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
-        <AttributeBonus index="Armored" value="30">
-            <AccumulatorArray value="AP_5DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="30"/>
         <AttributeFactor index="Armored" value="0"/>
         <ArmorReduction value="1"/>
         <Flags index="Notification" value="1"/>
@@ -22962,6 +22955,7 @@
         <KindSplash value="Splash"/>
         <Amount value="50">
             <AccumulatorArray value="AP_10DamagePerRank"/>
+            <AccumulatorArray value="AP_5DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
         <SearchFilters value="Ground;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -22978,13 +22972,12 @@
     <CEffectModifyUnit id="AP_90mmCannonsMengskLookAt"/>
     <CEffectDamage id="AP_SiegeTankMengskDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Terran"/>
-        <AttributeBonus index="Armored" value="15">
-            <AccumulatorArray value="AP_4DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Armored" value="15"/>
         <AttributeFactor index="Armored" value="0"/>
         <Kind value="Ranged"/>
         <Amount value="25">
             <AccumulatorArray value="AP_4DamagePerRank"/>
+            <AccumulatorArray value="AP_4DamagePerRankVsArmored"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
@@ -23141,14 +23134,13 @@
     </CEffectCreatePersistent>
     <CEffectDamage id="AP_JavelinMissileLaunchersMengskDamage" parent="DU_WEAP_SPLASH">
         <EditorCategories value="Race:Terran"/>
-        <AttributeBonus index="Light" value="6">
-            <AccumulatorArray value="AP_1DamagePerRank"/>
-        </AttributeBonus>
+        <AttributeBonus index="Light" value="6"/>
         <AttributeFactor index="Light" value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
         <Amount value="14">
             <AccumulatorArray value="AP_2DamagePerRank"/>
+            <AccumulatorArray value="AP_1DamagePerRankVsLight"/>
         </Amount>
         <Death value="Blast"/>
         <AreaArray Radius="0.5" Fraction="1"/>
@@ -23267,8 +23259,8 @@
         <EditorCategories value="Race:Terran"/>
         <AttributeFactor index="Armored" value="1"/>
         <Kind value="Ranged"/>
-        <Amount value="20">
-            <AccumulatorArray value="AP_4DamagePerRank"/>
+        <Amount value="18">
+            <AccumulatorArray value="AP_3DamagePerRank"/>
         </Amount>
         <Death value="Blast"/>
     </CEffectDamage>
@@ -23339,8 +23331,8 @@
         <ArmorReduction value="0"/>
         <Kind value="Ranged"/>
         <KindSplash value="Splash"/>
-        <Amount value="4">
-            <AccumulatorArray value="AP_0.8DamagePerRank"/>
+        <Amount value="3.6">
+            <AccumulatorArray value="AP_0.6DamagePerRank"/>
         </Amount>
         <Death value="Eviscerate"/>
     </CEffectDamage>

@@ -856,6 +856,9 @@
         <EffectArray Reference="Weapon,AP_WarHound,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_WarHoundMelee,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_WarHoundMeleeBrawler,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengsk,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskSieged,RateMultiplier" Value="0.05"/>
+        <EffectArray Reference="Weapon,AP_SiegeTankMengskAirlift,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskA,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskAUpgraded,RateMultiplier" Value="0.05"/>
         <EffectArray Reference="Weapon,AP_GoliathMengskG,RateMultiplier" Value="0.05"/>
@@ -15565,8 +15568,8 @@
     <CUpgrade id="AP_MarineMengskCombatShield">
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <Icon value="AP\Assets\Textures\btn-upgrade-terran-marine-mengsk-shield.dds"/>
-        <EffectArray Reference="Unit,AP_MarineMengsk,LifeMax" Value="20"/>
-        <EffectArray Reference="Unit,AP_MarineMengsk,LifeStart" Value="20"/>
+        <EffectArray Reference="Unit,AP_MarineMengsk,LifeMax" Value="25"/>
+        <EffectArray Reference="Unit,AP_MarineMengsk,LifeStart" Value="25"/>
         <EffectArray Operation="Set" Reference="Actor,AP_MarineMengsk,GroupIcon.Image[0]" Value="AP\Assets\Textures\wireframe-terran-marine-mengsk-shield.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_MarineMengsk,Wireframe.Image[0]" Value="AP\Assets\Textures\wireframe-terran-marine-mengsk-shield.dds"/>
         <AffectedUnitArray value="AP_MarineMengsk"/>
